@@ -1,6 +1,6 @@
 {
   "name": "sd-material-ui",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "StratoDem Analytics Dash implementation of material-ui components",
   "main": "lib/index.js",
   "repository": {
