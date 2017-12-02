@@ -13,7 +13,7 @@
             "type": {
               "name": "signature",
               "type": "object",
-              "raw": "{\n  label: string,\n  icon: Element | string,\n  value: string | number,\n  url?: string,\n  iconClassName?: string,\n}",
+              "raw": "{\n  label: string,\n  icon: Element | string,\n  value: string | number,\n  targetId?: string,\n  iconClassName?: string,\n}",
               "signature": {
                 "properties": [
                   {
@@ -56,7 +56,7 @@
                     }
                   },
                   {
-                    "key": "url",
+                    "key": "targetId",
                     "value": {
                       "name": "string",
                       "required": false
@@ -126,9 +126,9 @@
                 ],
                 "required": false
               },
-              "url": {
+              "targetId": {
                 "name": "string",
-                "description": "URL to jump to when this option is selected",
+                "description": "ID of component to jump to when this option is selected",
                 "required": false
               },
               "iconClassName": {
@@ -147,7 +147,7 @@
             {
               "name": "signature",
               "type": "object",
-              "raw": "{\n  label: string,\n  icon: Element | string,\n  value: string | number,\n  url?: string,\n  iconClassName?: string,\n}",
+              "raw": "{\n  label: string,\n  icon: Element | string,\n  value: string | number,\n  targetId?: string,\n  iconClassName?: string,\n}",
               "signature": {
                 "properties": [
                   {
@@ -190,7 +190,7 @@
                     }
                   },
                   {
-                    "key": "url",
+                    "key": "targetId",
                     "value": {
                       "name": "string",
                       "required": false

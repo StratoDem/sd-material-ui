@@ -15,7 +15,7 @@ type T_NAV_ITEM = {
   label: string,
   icon: Element | string,
   value: string | number,
-  url?: string,
+  targetId?: string,
   iconClassName?: string,
 }
 type Props = {
@@ -40,8 +40,8 @@ const propTypes = {
     label: PropTypes.string,
     icon: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
     value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-    /** URL to jump to when this option is selected */
-    url: PropTypes.string,
+    /** ID of component to jump to when this option is selected */
+    targetId: PropTypes.string,
     /** Class to apply to the icon span */
     iconClassName: PropTypes.string,
   })).isRequired,
@@ -118,8 +118,11 @@ export default class BottomNavigation extends React.Component<Props, State> {
         onClick={() => {
           this.setState({selectedIndex});
 
-          if (typeof navItem.url === 'string')
-            window.location.hash = navItem.url;
+          if (typeof navItem.targetId === 'string') {
+            const targetElement = document.getElementById(navItem.targetId);
+            targetElement.scrollIntoView();
+          }
+
           if (typeof this.props.setProps === 'function')
             this.props.setProps({selectedIndex});
         }}
