@@ -13,6 +13,8 @@
   },
   "homepage": "https://github.com/StratoDem/sd-material-ui",
   "scripts": {
+    "build-dist": "builder run clean-lib && builder run extract-metadata && webpack --config=config/webpack.config.dist.js --display-error-details && npm run copy-lib",
+    "build-dist-production": "builder run clean-lib && builder run extract-metadata && webpack -p --config=config/webpack.config.dist.js && npm run copy-lib",
     "copy-lib": "copyfiles -u 1 lib/* sd_material_ui",
     "demo": "builder run demo",
     "install-local": "npm run copy-lib && python setup.py install",
@@ -26,16 +28,24 @@
     "uninstall-local": "pip uninstall sd-material-ui -y"
   },
   "dependencies": {
-    "builder": "3.2.2",
+    "@stratodem/js-archetype": "^1.8.0",
+    "babel-loader": "^7.1.2",
+    "builder": "^3.2.2",
     "copyfiles": "^1.2.0",
     "dash-components-archetype": "^0.2.11",
-    "prop-types": "^15.5.9",
-    "react": "^15.5.4",
-    "react-dom": "^15.5.4"
+    "ify-loader": "^1.1.0",
+    "material-ui": "^0.19.4",
+    "prop-types": "^15.6.0",
+    "react": "^15.6.2",
+    "react-dom": "^15.6.2",
+    "webpack": "^3.8.1"
   },
   "devDependencies": {
+    "compression-webpack-plugin": "^1.0.1",
     "dash-components-archetype-dev": "^0.2.11",
-    "enzyme": "^2.8.2",
+    "enzyme": "^3.2.0",
+    "flow-bin": "^0.60.1",
+    "git-labelmaker": "^0.9.0",
     "react-test-renderer": "^15.5.4"
   }
 }
