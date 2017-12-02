@@ -22,10 +22,25 @@ describe('BottomNavigation', () => {
             icon: <span className="test-class-2" />,
           },
         ]}
+        selectedStyle={{color: 'blue'}}
       />);
 
     expect(component.props().id).toEqual('test-id');
     expect(component.find(MUIBottomNavigation).length).toBe(1);
     expect(component.find(MUIBottomNavigation).find(BottomNavigationItem).length).toBe(2);
+
+    // Make sure that only the selected Icon has color blue
+    expect(
+      component
+        .find(MUIBottomNavigation)
+        .find(BottomNavigationItem)
+        .get(0).props.icon.props.style)
+      .toEqual({color: 'blue'});
+    expect(
+      component
+        .find(MUIBottomNavigation)
+        .find(BottomNavigationItem)
+        .get(1).props.icon.props.style)
+      .toEqual({});
   });
 });

@@ -2,7 +2,81 @@
   "src/components/BottomNavigation.react.js": {
     "description": "BottomNavigationItem is an item in a BottomNavigation component",
     "displayName": "BottomNavigation",
-    "methods": [],
+    "methods": [
+      {
+        "name": "buildBottomNavigationItem",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "navItem",
+            "type": {
+              "name": "signature",
+              "type": "object",
+              "raw": "{\n  label: string,\n  icon: Element | string,\n  value: string | number,\n  url?: string,\n}",
+              "signature": {
+                "properties": [
+                  {
+                    "key": "label",
+                    "value": {
+                      "name": "string",
+                      "required": true
+                    }
+                  },
+                  {
+                    "key": "icon",
+                    "value": {
+                      "name": "union",
+                      "raw": "Element | string",
+                      "elements": [
+                        {
+                          "name": "Element"
+                        },
+                        {
+                          "name": "string"
+                        }
+                      ],
+                      "required": true
+                    }
+                  },
+                  {
+                    "key": "value",
+                    "value": {
+                      "name": "union",
+                      "raw": "string | number",
+                      "elements": [
+                        {
+                          "name": "string"
+                        },
+                        {
+                          "name": "number"
+                        }
+                      ],
+                      "required": true
+                    }
+                  },
+                  {
+                    "key": "url",
+                    "value": {
+                      "name": "string",
+                      "required": false
+                    }
+                  }
+                ]
+              },
+              "alias": "T_NAV_ITEM"
+            }
+          },
+          {
+            "name": "selectedIndex",
+            "type": {
+              "name": "number"
+            }
+          }
+        ],
+        "returns": null
+      }
+    ],
     "props": {
       "id": {
         "type": {
@@ -114,7 +188,7 @@
               }
             }
           ],
-          "raw": "Array<{\n  label: string,\n  icon: Element | string,\n  value: string | number,\n  url?: string,\n}>"
+          "raw": "Array<T_NAV_ITEM>"
         }
       },
       "selectedIndex": {
@@ -157,7 +231,7 @@
         "flowType": {
           "name": "signature",
           "type": "function",
-          "raw": "(props: {selectedIndex: number}) => void",
+          "raw": "(props: { selectedIndex: number }) => void",
           "signature": {
             "arguments": [
               {
@@ -165,7 +239,7 @@
                 "type": {
                   "name": "signature",
                   "type": "object",
-                  "raw": "{selectedIndex: number}",
+                  "raw": "{ selectedIndex: number }",
                   "signature": {
                     "properties": [
                       {
@@ -186,7 +260,7 @@
           }
         },
         "defaultValue": {
-          "value": "() => {}",
+          "value": "() => {\n}",
           "computed": false
         }
       }

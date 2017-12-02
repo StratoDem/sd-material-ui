@@ -5,20 +5,22 @@ import PropTypes from 'prop-types';
 
 import {
   BottomNavigationItem,
-  BottomNavigation as MUIBottomNavigation } from 'material-ui/BottomNavigation';
+  BottomNavigation as MUIBottomNavigation,
+} from 'material-ui/BottomNavigation';
 import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
+type T_NAV_ITEM = {
+  label: string,
+  icon: Element | string,
+  value: string | number,
+  url?: string,
+}
 type Props = {
-  navItems: Array<{
-    label: string,
-    icon: Element | string,
-    value: string | number,
-    url?: string,
-  }>,
+  navItems: Array<T_NAV_ITEM>,
 
-  setProps?: (props: {selectedIndex: number}) => void,
+  setProps?: (props: { selectedIndex: number }) => void,
   selectedIndex?: number,
   selectedStyle?: Object,
 };
@@ -63,7 +65,8 @@ export default class BottomNavigation extends React.Component<Props, State> {
 
   static defaultProps = {
     selectedIndex: 0,
-    setProps: () => {},
+    setProps: () => {
+    },
     selectedStyle: {},
   };
 
@@ -80,36 +83,59 @@ export default class BottomNavigation extends React.Component<Props, State> {
       this.setState({selectedIndex: nextProps.selectedIndex});
   }
 
+  buildBottomNavigationItem = (navItem: T_NAV_ITEM, selectedIndex: number) => {
+    const {selectedStyle} = this.props;
+
+    let navItemIcon;
+
+    switch (typeof navItem.icon) {
+      case 'string':
+      case 'number':
+        navItemIcon = (
+          <span
+            style={selectedIndex === this.state.selectedIndex ? selectedStyle : {}}
+          >
+            {navItem.icon}
+          </span>);
+        break;
+      case 'undefined':
+        navItemIcon = navItem.icon;
+        break;
+      case 'object':
+        navItemIcon = (
+          <span style={selectedIndex === this.state.selectedIndex ? selectedStyle : {}}>
+            {navItem.icon}
+          </span>);
+        break;
+      default:
+        break;
+    }
+
+    return (
+      <BottomNavigationItem
+        key={navItem.label}
+        label={navItem.label}
+        icon={navItemIcon}
+        onClick={() => {
+          this.setState({selectedIndex});
+
+          if (typeof navItem.url === 'string')
+            window.location.hash = navItem.url;
+          if (typeof this.props.setProps === 'function')
+            this.props.setProps({selectedIndex});
+        }}
+      />);
+  };
+
   render() {
-    const { id, navItems, selectedStyle } = this.props;
+    const {id, navItems} = this.props;
 
     return (
       <div id={id}>
         <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
           <MUIBottomNavigation selectedIndex={this.state.selectedIndex}>
             {
-              navItems.map((navItem, selectedIndex) => (
-                <BottomNavigationItem
-                  key={navItem.label}
-                  label={navItem.label}
-                  icon={
-                    typeof navItem.icon === 'string'
-                      ? (
-                        <span
-                          style={selectedIndex === this.state.selectedIndex ? selectedStyle : {}}
-                        >
-                          {navItem.icon}
-                        </span>)
-                      : navItem.icon}
-                  onClick={() => {
-                    this.setState({selectedIndex});
-
-                    if (typeof navItem.url === 'string')
-                      window.location.hash = navItem.url;
-                    if (typeof this.props.setProps === 'function')
-                      this.props.setProps({selectedIndex});
-                  }}
-                />))
+              navItems.map(this.buildBottomNavigationItem)
             }
           </MUIBottomNavigation>
         </MuiThemeProvider>
