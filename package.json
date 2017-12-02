@@ -1,0 +1,41 @@
+{
+  "name": "sd-material-ui",
+  "version": "0.0.1",
+  "description": "StratoDem Analytics Dash implementation of material-ui components",
+  "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/StratoDem/sd-material-ui.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/StratoDem/sd-material-ui/issues"
+  },
+  "homepage": "https://github.com/StratoDem/sd-material-ui",
+  "scripts": {
+    "copy-lib": "copyfiles -u 1 lib/* sd_material_ui",
+    "demo": "builder run demo",
+    "install-local": "npm run copy-lib && python setup.py install",
+    "prepublish": "npm test && builder run build-dist && npm run copy-lib",
+    "publish-all": "npm publish && python setup.py sdist upload",
+    "publish-pypi": "npm run prepublish && python setup.py sdist upload",
+    "start": "builder run build-dev",
+    "test": "builder run check",
+    "test-watch": "builder run test-frontend-watch",
+    "test-debug": "builder run test-frontend-debug",
+    "uninstall-local": "pip uninstall sd-material-ui -y"
+  },
+  "dependencies": {
+    "builder": "3.2.2",
+    "copyfiles": "^1.2.0",
+    "dash-components-archetype": "^0.2.11",
+    "prop-types": "^15.5.9",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4"
+  },
+  "devDependencies": {
+    "dash-components-archetype-dev": "^0.2.11",
+    "enzyme": "^2.8.2",
+    "react-test-renderer": "^15.5.4"
+  }
+}

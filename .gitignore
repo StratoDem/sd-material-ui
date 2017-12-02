@@ -1,0 +1,16 @@
+build/
+coverage/
+dist/
+lib/
+lib/bundle.js*
+node_modules/
+sd_material_ui/metadata.json
+sd_material_ui/bundle.js*
+.npm
+vv/
+venv/
+*.pyc
+*.egg-info
+*.log
+.DS_Store
+.idea/
