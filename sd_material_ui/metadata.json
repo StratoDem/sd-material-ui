@@ -13,7 +13,7 @@
             "type": {
               "name": "signature",
               "type": "object",
-              "raw": "{\n  label: string,\n  icon: Element | string,\n  value: string | number,\n  url?: string,\n}",
+              "raw": "{\n  label: string,\n  icon: Element | string,\n  value: string | number,\n  url?: string,\n  iconClassName?: string,\n}",
               "signature": {
                 "properties": [
                   {
@@ -57,6 +57,13 @@
                   },
                   {
                     "key": "url",
+                    "value": {
+                      "name": "string",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "iconClassName",
                     "value": {
                       "name": "string",
                       "required": false
@@ -123,6 +130,11 @@
                 "name": "string",
                 "description": "URL to jump to when this option is selected",
                 "required": false
+              },
+              "iconClassName": {
+                "name": "string",
+                "description": "Class to apply to the icon span",
+                "required": false
               }
             }
           }
@@ -135,7 +147,7 @@
             {
               "name": "signature",
               "type": "object",
-              "raw": "{\n  label: string,\n  icon: Element | string,\n  value: string | number,\n  url?: string,\n}",
+              "raw": "{\n  label: string,\n  icon: Element | string,\n  value: string | number,\n  url?: string,\n  iconClassName?: string,\n}",
               "signature": {
                 "properties": [
                   {
@@ -179,6 +191,13 @@
                   },
                   {
                     "key": "url",
+                    "value": {
+                      "name": "string",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "iconClassName",
                     "value": {
                       "name": "string",
                       "required": false

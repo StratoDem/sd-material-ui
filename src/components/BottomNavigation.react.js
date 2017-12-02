@@ -16,6 +16,7 @@ type T_NAV_ITEM = {
   icon: Element | string,
   value: string | number,
   url?: string,
+  iconClassName?: string,
 }
 type Props = {
   navItems: Array<T_NAV_ITEM>,
@@ -41,6 +42,8 @@ const propTypes = {
     value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     /** URL to jump to when this option is selected */
     url: PropTypes.string,
+    /** Class to apply to the icon span */
+    iconClassName: PropTypes.string,
   })).isRequired,
 
   /** Initial selected index for the BottomNavigation */
@@ -91,21 +94,17 @@ export default class BottomNavigation extends React.Component<Props, State> {
     switch (typeof navItem.icon) {
       case 'string':
       case 'number':
+      case 'undefined':
         navItemIcon = (
           <span
             style={selectedIndex === this.state.selectedIndex ? selectedStyle : {}}
+            className={navItem.iconClassName}
           >
             {navItem.icon}
           </span>);
         break;
-      case 'undefined':
-        navItemIcon = navItem.icon;
-        break;
       case 'object':
-        navItemIcon = (
-          <span style={selectedIndex === this.state.selectedIndex ? selectedStyle : {}}>
-            {navItem.icon}
-          </span>);
+        navItemIcon = navItem.icon;
         break;
       default:
         break;

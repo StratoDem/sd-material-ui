@@ -14,12 +14,12 @@ describe('BottomNavigation', () => {
           {
             label: 'test 1',
             value: 'val1',
-            icon: <span className="test-class" />,
+            iconClassName: 'glyphicons glyphicons-family',
           },
           {
             label: 'test 2',
             value: 'val2',
-            icon: <span className="test-class-2" />,
+            iconClassName: 'glyphicons glyphicons-family-2',
           },
         ]}
         selectedStyle={{color: 'blue'}}
