@@ -1,2 +1,6 @@
----
-  extends: ./node_modules/dash-components-archetype/config/eslint/eslintrc-react.json
+{
+  "extends": ["./node_modules/@stratodem/js-archetype/.eslintrc"],
+  "rules": {
+    "react/jsx-filename-extension": "off"
+  }
+}
