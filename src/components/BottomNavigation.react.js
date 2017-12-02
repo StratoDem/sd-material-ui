@@ -15,7 +15,7 @@ type Props = {
     value: string | number,
   }>,
 
-  setProps: (props: {selectedIndex: number}) => void,
+  setProps?: (props: {selectedIndex: number}) => void,
   selectedIndex?: number,
 };
 type State = {
@@ -54,6 +54,7 @@ export default class BottomNavigation extends React.Component<Props, State> {
 
   static defaultProps = {
     selectedIndex: 0,
+    setProps: () => {},
   };
 
   constructor(props: Props) {
@@ -78,6 +79,7 @@ export default class BottomNavigation extends React.Component<Props, State> {
           {
             navItems.map((navItem, selectedIndex) => (
               <BottomNavigationItem
+                key={navItem.label}
                 label={navItem.label}
                 icon={navItem.icon}
                 onClick={() => {

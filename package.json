@@ -13,18 +13,13 @@
   },
   "homepage": "https://github.com/StratoDem/sd-material-ui",
   "scripts": {
-    "build-dist": "builder run clean-lib && builder run extract-metadata && webpack --config=config/webpack.config.dist.js --display-error-details && npm run copy-lib",
-    "build-dist-production": "builder run clean-lib && builder run extract-metadata && webpack -p --config=config/webpack.config.dist.js && npm run copy-lib",
+    "build-dist": "builder run clean-lib && builder run extract-metadata && webpack --config=config/webpack.config.dist.js --display-error-details",
+    "build-dist-production": "builder run clean-lib && builder run extract-metadata && webpack -p --config=config/webpack.config.dist.js",
     "copy-lib": "copyfiles -u 1 lib/* sd_material_ui",
-    "demo": "builder run demo",
     "install-local": "npm run copy-lib && python setup.py install",
-    "prepublish": "npm test && builder run build-dist && npm run copy-lib",
-    "publish-all": "npm publish && python setup.py sdist upload",
-    "publish-pypi": "npm run prepublish && python setup.py sdist upload",
-    "start": "builder run build-dev",
-    "test": "builder run check",
-    "test-watch": "builder run test-frontend-watch",
-    "test-debug": "builder run test-frontend-debug",
+    "prepublish": "npm test && npm run build-dist-production && npm run copy-lib",
+    "start": "npm run build-dist && npm run copy-lib",
+    "test": "jest --verbose",
     "uninstall-local": "pip uninstall sd-material-ui -y"
   },
   "dependencies": {
@@ -44,8 +39,35 @@
     "compression-webpack-plugin": "^1.0.1",
     "dash-components-archetype-dev": "^0.2.11",
     "enzyme": "^3.2.0",
+    "enzyme-adapter-react-15": "^1.0.5",
+    "enzyme-to-json": "^3.2.2",
     "flow-bin": "^0.60.1",
     "git-labelmaker": "^0.9.0",
-    "react-test-renderer": "^15.5.4"
+    "jest": "^21.2.1",
+    "react-test-renderer": "^15.6.2"
+  },
+  "jest": {
+    "modulePaths": [
+      "<rootDir>/src/js"
+    ],
+    "moduleFileExtensions": [
+      "js"
+    ],
+    "moduleDirectories": [
+      "node_modules"
+    ],
+    "moduleNameMapper": {
+      "\\.(css|less)$": "identity-obj-proxy",
+      "\\.(gif|ttf|eot|svg)$": "<rootDir>/__mocks__/fileMock.js"
+    },
+    "testRegex": "\\.test\\.js$",
+    "setupFiles": [
+      "raf/polyfill",
+      "<rootDir>test/_test-env.js"
+    ],
+    "collectCoverage": true,
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
   }
 }
