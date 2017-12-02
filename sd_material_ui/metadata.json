@@ -1,0 +1,195 @@
+{
+  "src/components/BottomNavigation.react.js": {
+    "description": "BottomNavigationItem is an item in a BottomNavigation component",
+    "displayName": "BottomNavigation",
+    "methods": [],
+    "props": {
+      "id": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "The ID used to identify this compnent in Dash callbacks"
+      },
+      "navItems": {
+        "type": {
+          "name": "arrayOf",
+          "value": {
+            "name": "shape",
+            "value": {
+              "label": {
+                "name": "string",
+                "required": false
+              },
+              "icon": {
+                "name": "union",
+                "value": [
+                  {
+                    "name": "element"
+                  },
+                  {
+                    "name": "string"
+                  }
+                ],
+                "required": false
+              },
+              "value": {
+                "name": "union",
+                "value": [
+                  {
+                    "name": "string"
+                  },
+                  {
+                    "name": "number"
+                  }
+                ],
+                "required": false
+              },
+              "url": {
+                "name": "string",
+                "description": "URL to jump to when this option is selected",
+                "required": false
+              }
+            }
+          }
+        },
+        "required": true,
+        "description": "Array of navigation item props to pass to BottomNavigationItem",
+        "flowType": {
+          "name": "Array",
+          "elements": [
+            {
+              "name": "signature",
+              "type": "object",
+              "raw": "{\n  label: string,\n  icon: Element | string,\n  value: string | number,\n  url?: string,\n}",
+              "signature": {
+                "properties": [
+                  {
+                    "key": "label",
+                    "value": {
+                      "name": "string",
+                      "required": true
+                    }
+                  },
+                  {
+                    "key": "icon",
+                    "value": {
+                      "name": "union",
+                      "raw": "Element | string",
+                      "elements": [
+                        {
+                          "name": "Element"
+                        },
+                        {
+                          "name": "string"
+                        }
+                      ],
+                      "required": true
+                    }
+                  },
+                  {
+                    "key": "value",
+                    "value": {
+                      "name": "union",
+                      "raw": "string | number",
+                      "elements": [
+                        {
+                          "name": "string"
+                        },
+                        {
+                          "name": "number"
+                        }
+                      ],
+                      "required": true
+                    }
+                  },
+                  {
+                    "key": "url",
+                    "value": {
+                      "name": "string",
+                      "required": false
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "raw": "Array<{\n  label: string,\n  icon: Element | string,\n  value: string | number,\n  url?: string,\n}>"
+        }
+      },
+      "selectedIndex": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Initial selected index for the BottomNavigation",
+        "flowType": {
+          "name": "number"
+        },
+        "defaultValue": {
+          "value": "0",
+          "computed": false
+        }
+      },
+      "selectedStyle": {
+        "type": {
+          "name": "objectOf",
+          "value": {
+            "name": "any"
+          }
+        },
+        "required": false,
+        "description": "Style to apply to the selected icon",
+        "flowType": {
+          "name": "Object"
+        },
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "setProps": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Dash-assigned callback that should be called whenever any of the\nproperties change",
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "(props: {selectedIndex: number}) => void",
+          "signature": {
+            "arguments": [
+              {
+                "name": "props",
+                "type": {
+                  "name": "signature",
+                  "type": "object",
+                  "raw": "{selectedIndex: number}",
+                  "signature": {
+                    "properties": [
+                      {
+                        "key": "selectedIndex",
+                        "value": {
+                          "name": "number",
+                          "required": true
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "return": {
+              "name": "void"
+            }
+          }
+        },
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      }
+    }
+  }
+}

@@ -1,3 +1,8 @@
 --index-url https://pypi.python.org/simple/
 
 -e .
+
+dash
+dash-core-components
+dash-html-components
+dash-renderer
