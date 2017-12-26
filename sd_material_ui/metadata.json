@@ -290,82 +290,55 @@
     "displayName": "SDDialog",
     "methods": [],
     "props": {
-      "id": {
-        "type": {
-          "name": "string"
-        },
-        "required": true,
-        "description": "The ID used to identify this component in Dash callbacks"
-      },
       "actions": {
-        "type": {
-          "name": "union",
-          "value": [
-            {
-              "name": "arrayOf",
-              "value": {
-                "name": "node"
-              }
-            },
-            {
-              "name": "node"
-            }
-          ]
-        },
-        "required": true,
-        "description": "The button that will close the window",
         "flowType": {
           "name": "Node"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
         }
       },
       "children": {
-        "type": {
-          "name": "node"
-        },
-        "required": true,
-        "description": "Dialog children, usually the included sub-components",
         "flowType": {
           "name": "Node"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
         }
       },
       "modal": {
-        "type": {
-          "name": "bool"
-        },
-        "required": true,
-        "description": "A boolean indicating whether the Dialog window can only be closed by\nselecting an action button inside the window",
         "flowType": {
           "name": "boolean"
         },
+        "required": false,
+        "description": "",
         "defaultValue": {
           "value": "false",
           "computed": false
         }
       },
       "open": {
-        "type": {
-          "name": "bool"
-        },
-        "required": true,
-        "description": "If `true`, the Dialog is open",
         "flowType": {
           "name": "boolean"
         },
+        "required": false,
+        "description": "",
         "defaultValue": {
           "value": "false",
           "computed": false
         }
       },
       "setProps": {
-        "type": {
-          "name": "func"
-        },
-        "required": false,
-        "description": "Dash-assigned callback that should be called whenever any of the\nproperties change",
         "flowType": {
           "name": "signature",
           "type": "function",
-          "raw": "(props: { modal?: boolean, open?: boolean }) => void",
+          "raw": "(props: { modal: boolean, open: boolean }) => void",
           "signature": {
             "arguments": [
               {
@@ -373,21 +346,21 @@
                 "type": {
                   "name": "signature",
                   "type": "object",
-                  "raw": "{ modal?: boolean, open?: boolean }",
+                  "raw": "{ modal: boolean, open: boolean }",
                   "signature": {
                     "properties": [
                       {
                         "key": "modal",
                         "value": {
                           "name": "boolean",
-                          "required": false
+                          "required": true
                         }
                       },
                       {
                         "key": "open",
                         "value": {
                           "name": "boolean",
-                          "required": false
+                          "required": true
                         }
                       }
                     ]
@@ -400,8 +373,10 @@
             }
           }
         },
+        "required": false,
+        "description": "",
         "defaultValue": {
-          "value": "() => {\n}",
+          "value": "() => {}",
           "computed": false
         }
       }
