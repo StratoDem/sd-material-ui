@@ -16,21 +16,30 @@ app.layout = html.Div([
             dict(label='test 2', value='val2', icon='2'),
         ]),
     html.Div(id='output'),
-    sd_material_ui.SDDialog(
-        id='dialog-window',
-        children=html.Div(children=[
-            html.P('Share this page:'),
-            html.P('http://localhost'),
-        ]),
-    ),
+    sd_material_ui.SDDialog(id='dialog-window'),
+    html.Div(id='show-dialog')
 ])
 
 
 @app.callback(
-	dash.dependencies.Output('output', 'children'),
-	[dash.dependencies.Input('input', 'selectedIndex')])
+    dash.dependencies.Output('output', 'children'),
+    [dash.dependencies.Input('input', 'selectedIndex')])
 def display_output(value):
     return 'You have entered {}'.format(value)
+
+
+@app.callback(
+    dash.dependencies.Output('dialog-window', 'children'),
+    [dash.dependencies.Input('url-pathname', 'pathname')])
+def update_url(pathname: str):
+    return html.Div(html.P(pathname))
+
+
+@app.callback(
+    dash.dependencies.Output('dialog-window', 'open'),
+    [dash.dependencies.Input('show-dialog', 'n-clicks')])
+def show_dialog(n_clicks: int):
+    return True
 
 
 if __name__ == '__main__':
