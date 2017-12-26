@@ -10,19 +10,25 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
 type Props = {
   actions?: Node,
-  children: Node,
+  children?: Node,
   modal?: boolean,
   open?: boolean,
   setProps?: (props: { modal: boolean, open: boolean }) => void,
 };
 
+type State = {
+  open: boolean,
+}
+
 const defaultProps = {
+  actions: null,
+  children: null,
   open: false,
   modal: false,
   setProps: () => {},
 };
 
-export default class SDDialog extends React.Component<Props> {
+export default class SDDialog extends React.Component<Props, State> {
   props: Props;
   state: State;
 
@@ -52,7 +58,6 @@ export default class SDDialog extends React.Component<Props> {
       <div id={id} className="sd-dialog">
         <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
           <Dialog
-            title={<h5>Share this page:</h5>}
             actions={actions}
             modal={this.props.modal}
             open={this.state.open}
