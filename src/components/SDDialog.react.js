@@ -14,7 +14,7 @@ type Props = {
   children: Node,
   modal: boolean,
   open: boolean,
-  setProps?: (props: { modal: boolean, open: boolean }) => void,
+  setProps?: (props: { modal?: boolean, open?: boolean }) => void,
 };
 
 const propTypes = {
@@ -65,7 +65,7 @@ export default class SDDialog extends React.Component<Props> {
 
     const actions = [
       <FlatButton
-        label='Close'
+        label="Close"
         primary={true}
         onClick={() => { this.setProps({open: false}); }}
       />
@@ -74,17 +74,12 @@ export default class SDDialog extends React.Component<Props> {
     return (
       <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
         <div id={id} className="sd-dialog">
-          <div className="openWindow">
-            <a
-              href="#linkWindow"
-              onClick={(event) => {
-                event.preventDefault();
-                this.setProps({open: true});
-              }}
-            >
-              <span> className="</span>
-            </a>
-          <Dialog open={this.props.open} modal={this.props.modal}>
+          <Dialog
+            actions={actions}
+            modal={this.props.modal}
+            open={this.props.open}
+            onRequestClose={() => { this.setProps({open: false}); }}
+          >
             {
               this.props.children
             }
