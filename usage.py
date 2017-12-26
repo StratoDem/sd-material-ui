@@ -16,7 +16,13 @@ app.layout = html.Div([
             dict(label='test 2', value='val2', icon='2'),
         ]),
     html.Div(id='output'),
-    sd_material_ui.SDDialog(),
+    sd_material_ui.SDDialog(
+        id='dialog-window',
+        children=html.Div(children=[
+            html.P('Share this page:'),
+            html.P('http://localhost'),
+        ]),
+    ),
 ])
 
 
