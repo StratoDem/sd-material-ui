@@ -10,8 +10,8 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
 type Props = {
-  actions,
-  children,
+  actions: Node,
+  children: Node,
   modal: boolean,
   open: boolean,
   setProps?: (props: { modal: boolean, open: boolean }) => void,
@@ -48,7 +48,7 @@ const defaultProps = {
   },
 };
 
-export default class Dialog extends React.Component<Props> {
+export default class SDDialog extends React.Component<Props> {
   props: Props;
 
   constructor(props: Props) {
@@ -61,7 +61,7 @@ export default class Dialog extends React.Component<Props> {
   }
 
   render() {
-    const {id, modal} = this.props;
+    const {id, modal, setProps} = this.props;
 
     const actions = [
       <FlatButton
@@ -72,14 +72,27 @@ export default class Dialog extends React.Component<Props> {
     ];
 
     return (
-      <div id={id} className="sd-dialog">
-        <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
+      <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
+        <div id={id} className="sd-dialog">
+          <div className="openWindow">
+            <a
+              href="#linkWindow"
+              onClick={(event) => {
+                event.preventDefault();
+                this.setProps({open: true});
+              }}
+            >
+              <span> className="</span>
+            </a>
           <Dialog open={this.props.open} modal={this.props.modal}>
             {
               this.props.children
             }
           </Dialog>
-        </MuiThemeProvider>
-      </div>);
+        </div>
+      </MuiThemeProvider>);
   }
 }
+
+SDDialog.propTypes = propTypes;
+SDDialog.defaultProps = defaultProps;
