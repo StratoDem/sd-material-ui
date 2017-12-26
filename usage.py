@@ -15,7 +15,8 @@ app.layout = html.Div([
             dict(label='test 1', value='val1', icon='1'),
             dict(label='test 2', value='val2', icon='2'),
         ]),
-    html.Div(id='output')
+    html.Div(id='output'),
+    sd_material_ui.SDDialog(),
 ])
 
 

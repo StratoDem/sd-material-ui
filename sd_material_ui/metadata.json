@@ -284,5 +284,127 @@
         }
       }
     }
+  },
+  "src/components/SDDialog.react.js": {
+    "description": "",
+    "displayName": "SDDialog",
+    "methods": [],
+    "props": {
+      "id": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "The ID used to identify this component in Dash callbacks"
+      },
+      "actions": {
+        "type": {
+          "name": "union",
+          "value": [
+            {
+              "name": "arrayOf",
+              "value": {
+                "name": "node"
+              }
+            },
+            {
+              "name": "node"
+            }
+          ]
+        },
+        "required": true,
+        "description": "MUST BE FILLED OUT",
+        "flowType": {
+          "name": "Node"
+        }
+      },
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "Dialog children, usually the included sub-components",
+        "flowType": {
+          "name": "Node"
+        }
+      },
+      "modal": {
+        "type": {
+          "name": "bool"
+        },
+        "required": true,
+        "description": "A boolean indicating whether the Dialog window can only be closed by\nselecting an action button inside the window",
+        "flowType": {
+          "name": "boolean"
+        },
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "open": {
+        "type": {
+          "name": "bool"
+        },
+        "required": true,
+        "description": "If `true`, the Dialog is open",
+        "flowType": {
+          "name": "boolean"
+        },
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "setProps": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Dash-assigned callback that should be called whenever any of the\nproperties change",
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "(props: { modal?: boolean, open?: boolean }) => void",
+          "signature": {
+            "arguments": [
+              {
+                "name": "props",
+                "type": {
+                  "name": "signature",
+                  "type": "object",
+                  "raw": "{ modal?: boolean, open?: boolean }",
+                  "signature": {
+                    "properties": [
+                      {
+                        "key": "modal",
+                        "value": {
+                          "name": "boolean",
+                          "required": false
+                        }
+                      },
+                      {
+                        "key": "open",
+                        "value": {
+                          "name": "boolean",
+                          "required": false
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "return": {
+              "name": "void"
+            }
+          }
+        },
+        "defaultValue": {
+          "value": "() => {\n}",
+          "computed": false
+        }
+      }
+    }
   }
 }
