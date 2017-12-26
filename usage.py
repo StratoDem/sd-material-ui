@@ -21,7 +21,9 @@ app.layout = html.Div([
         id='dialog-id',
         modal=False,
         open=False),
-    html.Div(id='show-dialog')
+    html.Div(id='show-dialog', children=[
+        html.P('Share the page')
+    ])
 ])
 
 

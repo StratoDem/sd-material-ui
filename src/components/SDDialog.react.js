@@ -1,6 +1,6 @@
 // @flow
 
-import React from 'react';
+import React, { Component } from 'react';
 
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
@@ -9,6 +9,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
 type Props = {
+  id: string,
   actions?: Node,
   children?: Node,
   modal?: boolean,
@@ -28,10 +29,7 @@ const defaultProps = {
   setProps: () => {},
 };
 
-export default class SDDialog extends React.Component<Props, State> {
-  props: Props;
-  state: State;
-
+export default class SDDialog extends Component {
   constructor(props: Props) {
     super(props);
     this.state = {open: props.open};
