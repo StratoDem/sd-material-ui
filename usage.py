@@ -16,7 +16,11 @@ app.layout = html.Div([
             dict(label='test 2', value='val2', icon='2'),
         ]),
     html.Div(id='output'),
-    sd_material_ui.SDDialog(id='dialog-window'),
+    sd_material_ui.SDDialog(
+        html.Div('pathname'),
+        id='dialog-id',
+        modal=False,
+        open=False),
     html.Div(id='show-dialog')
 ])
 
@@ -29,14 +33,7 @@ def display_output(value):
 
 
 @app.callback(
-    dash.dependencies.Output('dialog-window', 'children'),
-    [dash.dependencies.Input('url-pathname', 'pathname')])
-def update_url(pathname: str):
-    return html.Div(html.P(pathname))
-
-
-@app.callback(
-    dash.dependencies.Output('dialog-window', 'open'),
+    dash.dependencies.Output('dialog-id', 'open'),
     [dash.dependencies.Input('show-dialog', 'n-clicks')])
 def show_dialog(n_clicks: int):
     return True
