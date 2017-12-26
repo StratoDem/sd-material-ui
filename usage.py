@@ -38,7 +38,10 @@ def display_output(value):
     dash.dependencies.Output('dialog-id', 'open'),
     [dash.dependencies.Input('show-dialog', 'n_clicks')])
 def show_dialog(n_clicks: int):
-    return True
+    if n_clicks > 0:
+        return True
+    else:
+        return False
 
 
 if __name__ == '__main__':
