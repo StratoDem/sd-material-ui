@@ -21,8 +21,8 @@ const propTypes = {
   /** The ID used to identify this component in Dash callbacks */
   id: PropTypes.string.isRequired,
 
-  /** MUST BE FILLED OUT */
-  actions: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]).isRequired,
+  /** The button that will close the window */
+  actions: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
 
   /** Dialog children, usually the included sub-components */
   children: PropTypes.node.isRequired,
@@ -72,8 +72,8 @@ export default class SDDialog extends React.Component<Props> {
     ];
 
     return (
-      <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
-        <div id={id} className="sd-dialog">
+      <div id={id} className="sd-dialog">
+        <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
           <Dialog
             actions={actions}
             modal={this.props.modal}
@@ -84,8 +84,8 @@ export default class SDDialog extends React.Component<Props> {
               this.props.children
             }
           </Dialog>
-        </div>
-      </MuiThemeProvider>);
+        </MuiThemeProvider>
+      </div>);
   }
 }
 

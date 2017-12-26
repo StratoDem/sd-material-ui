@@ -313,7 +313,7 @@
           ]
         },
         "required": true,
-        "description": "MUST BE FILLED OUT",
+        "description": "The button that will close the window",
         "flowType": {
           "name": "Node"
         }
