@@ -165,6 +165,10 @@ export default class SDFlatButton extends Component<Props> {
     super(props);
   }
 
+  // componentWillReceiveProps(nextProps: Props): void {
+  //   this.setProps(nextProps);
+  // }
+
   render() {
     const { backgroundColor, className, disableTouchRipple, disabled,
       fullWidth, hoverColor, href, icon, id, label, labelPosition, labelStyle,
