@@ -288,35 +288,150 @@
   "src/components/SDDialog.react.js": {
     "description": "",
     "displayName": "SDDialog",
-    "methods": [],
+    "methods": [
+      {
+        "name": "changeDialogOpenStatus",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "open",
+            "type": {
+              "name": "boolean"
+            }
+          }
+        ],
+        "returns": {
+          "type": {
+            "name": "void"
+          }
+        }
+      }
+    ],
     "props": {
+      "id": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "Dialog ID",
+        "flowType": {
+          "name": "string"
+        }
+      },
       "actions": {
+        "type": {
+          "name": "union",
+          "value": [
+            {
+              "name": "node"
+            },
+            {
+              "name": "arrayOf",
+              "value": {
+                "name": "node"
+              }
+            }
+          ]
+        },
+        "required": false,
+        "description": "Actions component or list of components for the Dialog",
+        "flowType": {
+          "name": "Node"
+        },
         "defaultValue": {
           "value": "null",
           "computed": false
         }
       },
-      "children": {
-        "defaultValue": {
-          "value": "null",
-          "computed": false
-        }
-      },
-      "open": {
+      "modal": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Is the Dialog a modal (must click on an action to close the Dialog)?",
+        "flowType": {
+          "name": "boolean"
+        },
         "defaultValue": {
           "value": "false",
           "computed": false
         }
       },
-      "modal": {
+      "open": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Is the Dialog open?",
+        "flowType": {
+          "name": "boolean"
+        },
         "defaultValue": {
           "value": "false",
           "computed": false
         }
       },
       "setProps": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Dash callback to update props on the server",
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "(props: { modal: boolean, open: boolean }) => void",
+          "signature": {
+            "arguments": [
+              {
+                "name": "props",
+                "type": {
+                  "name": "signature",
+                  "type": "object",
+                  "raw": "{ modal: boolean, open: boolean }",
+                  "signature": {
+                    "properties": [
+                      {
+                        "key": "modal",
+                        "value": {
+                          "name": "boolean",
+                          "required": true
+                        }
+                      },
+                      {
+                        "key": "open",
+                        "value": {
+                          "name": "boolean",
+                          "required": true
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "return": {
+              "name": "void"
+            }
+          }
+        },
         "defaultValue": {
           "value": "() => {}",
+          "computed": false
+        }
+      },
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "children of the Dialog",
+        "flowType": {
+          "name": "Node"
+        },
+        "defaultValue": {
+          "value": "null",
           "computed": false
         }
       }

@@ -36,7 +36,7 @@ def display_output(value):
 
 @app.callback(
     dash.dependencies.Output('dialog-id', 'open'),
-    [dash.dependencies.Input('show-dialog', 'n-clicks')])
+    [dash.dependencies.Input('show-dialog', 'n_clicks')])
 def show_dialog(n_clicks: int):
     return True
 
