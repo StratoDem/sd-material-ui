@@ -6,11 +6,11 @@ import SDFlatButton from '../SDFlatButton.react';
 describe('SDFlatButton', () => {
   it('renders', () => {
     const component = shallow(
-      <SDDialog id='test-id'>
+      <SDFlatButton id='test-id'>
         children=<div>
           <p>Button text</p>
-      </div>
-      </SDDialog>);
+        </div>
+      </SDFlatButton>);
 
     expect(component.props().id).toEqual('test-id');
     expect(component.find(FlatButton).length).toBe(1);
