@@ -18,6 +18,7 @@ type Props = {
   disabled?: boolean,
   disabledBackgroundColor?: string,
   disabledLabelColor?: string,
+  fireEvent?: () => void,
   fullWidth?: boolean,
   href?: string,
   icon?: Node,
@@ -26,7 +27,6 @@ type Props = {
   labelPosition?: string,
   labelStyle?: Object,
   n_clicks?: number,
-  onClick?: () => void,
   overlayStyle?: Object,
   primary?: boolean,
   rippleColor?: string,
@@ -37,7 +37,8 @@ type Props = {
 
 const propTypes = {
   /**
-   * Color of button when mouse is not hovering over it.
+   * Override the default background color for the button, but not the default disabled
+   * background color (use disabledBackgroundColor for this).
    */
   backgroundColor: PropTypes.string,
 
@@ -47,13 +48,8 @@ const propTypes = {
   buttonStyle: PropTypes.object,
 
   /**
-   * This is what will be displayed inside the button.
-   * If a label is specified, the text within the label prop will
-   * be displayed. Otherwise, the component will expect children
-   * which will then be displayed. (In our example,
-   * we are nesting an `<input type="file" />` and a `span`
-   * that acts as our label to be displayed.) This only
-   * applies to flat and raised buttons.
+   * The content of the button. If a label is provided via the label prop, the text within the
+   * label will be displayed in addition to the content provided here.
    */
   children: PropTypes.node,
 
@@ -63,11 +59,10 @@ const propTypes = {
   className: PropTypes.string,
 
   /**
-   * The element to use as the container for the FlatButton. Either a string to
-   * use a DOM element or a ReactElement. This is useful for wrapping the
-   * FlatButton in a custom Link component. If a ReactElement is given, ensure
-   * that it passes all of its given props through to the underlying DOM
-   * element and renders its children prop for proper integration.
+   * The element to use as the container for the RaisedButton. Either a string to use a DOM element
+   * or a ReactElement. This is useful for wrapping the RaisedButton in a custom Link component.
+   * If a ReactElement is given, ensure that it passes all of its given props through to the
+   * underlying DOM element and renders its children prop for proper integration.
    */
   containerElement: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
 
@@ -82,14 +77,24 @@ const propTypes = {
   disabled: PropTypes.bool,
 
   /**
+   * Override the default background color for the button when it is disabled.
+   */
+  disabledBackgroundColor: PropTypes.string,
+
+  /**
+   * The color of the button's label when the button is disabled.
+   */
+  disabledLabelColor: PropTypes.string,
+
+  /**
+   * A callback for firing events to dash.
+   */
+  fireEvent: PropTypes.func,
+
+  /**
    * If true, the button will take up the full width of its container.
    */
   fullWidth: PropTypes.bool,
-
-  /**
-   * Color of button when mouse hovers over.
-   */
-  hoverColor: PropTypes.string,
 
   /**
    * The URL to link to when the button is clicked.
@@ -101,16 +106,24 @@ const propTypes = {
    */
   icon: PropTypes.node,
 
-  /* The element's ID */
+  /**
+   *  The element's ID
+   */
   id: PropTypes.string,
 
   /**
-   * Label for the button.
+   * The label to be displayed within the button. If content is provided via the children prop,
+   * that content will be displayed in addition to the label provided here.
    */
   label: PropTypes.string,
 
   /**
-   * Place label before or after the passed children.
+   * The color of the button's label.
+   */
+  labelColor: PropTypes.string,
+
+  /**
+   * The position of the button's label relative to the button's children.
    */
   labelPosition: PropTypes.oneOf(['before', 'after']),
 
@@ -126,35 +139,23 @@ const propTypes = {
   n_clicks: PropTypes.integer,
 
   /**
-   * Callback function fired when the button is clicked.
-   *
-   * @param {object} event Click event targeting the button.
+   * Override the inline style of the button overlay.
    */
-
-  onClick: PropTypes.func,
+  overlayStyle: PropTypes.object,
 
   /**
-   * Callback function fired when the element is focused or blurred by the keyboard.
-   *
-   * @param {object} event `focus` or `blur` event targeting the element.
-   * @param {boolean} isKeyboardFocused Indicates whether the element is focused.
-   */
-  onKeyboardFocus: PropTypes.func,
-
-  /**
-   * If true, colors button according to
-   * primaryTextColor from the Theme.
+   * If true, the button will use the theme's primary color.
    */
   primary: PropTypes.bool,
 
   /**
-   * Color for the ripple after button is clicked.
+   * Override the inline style of the ripple element.
    */
-  rippleColor: PropTypes.string,
+  rippleStyle: PropTypes.object,
 
   /**
-   * If true, colors button according to secondaryTextColor from the theme.
-   * The primary prop has precendent if set to true.
+   * If true, the button will use the theme's secondary color. If both secondary and primary are
+   * true, the button will use the theme's primary color.
    */
   secondary: PropTypes.bool,
 
@@ -166,3 +167,95 @@ const propTypes = {
    */
   style: PropTypes.object,
 };
+
+const defaultProps = {
+  disabled: false,
+  fireEvent: () => {},
+  fullWidth: false,
+  labelPosition: 'after',
+  primary: false,
+  secondary: false,
+  setProps: () => {},
+};
+
+export default class SDRaisedButton extends Compnent<Props> {
+  constructor(props: Props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    if (this.props.setProps) this.props.setProps({n_clicks: this.props.n_clicks + 1});
+    if (this.props.fireEvent) this.props.fireEvent({event: 'click'});
+  }
+
+  render() {
+    const { backgroundColor, buttonStyle, className, containerElement, disabled,
+      disabledBackgroundColor, disabledLabelColor, disableTouchRipple, fullWidth, href,
+      icon, id, label, labelPosition, labelStyle, primary, rippleColor, secondary,
+      style} = this.props;
+
+    if (this.props.fireEvent || this.props.setProps) {
+      return (
+        <div id={id}>
+          <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
+            <RaisedButton
+              backgroundColor={backgroundColor}
+              buttonStyle={buttonStyle}
+              className={className}
+              containerElement={containerElement}
+              disabled={disabled}
+              disabledBackgroundColor={disabledBackgroundColor}
+              disabledLabelColor={disabledLabelColor}
+              disableTouchRipple={disableTouchRipple}
+              fullWidth={fullWidth}
+              href={href}
+              icon={icon}
+              label={label}
+              labelPosition={labelPosition}
+              labelStyle={labelStyle}
+              onClick={this.handleClick}
+              primary={primary}
+              rippleColor={rippleColor}
+              secondary={secondary}
+              style={style}
+            >
+              {this.props.children}
+            </RaisedButton>
+          </MuiThemeProvider>
+        </div>);
+    }
+    else {
+      return (
+        <div id={id}>
+          <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
+            <RaisedButton
+              backgroundColor={backgroundColor}
+              buttonStyle={buttonStyle}
+              className={className}
+              containerElement={containerElement}
+              disabled={disabled}
+              disabledBackgroundColor={disabledBackgroundColor}
+              disabledLabelColor={disabledLabelColor}
+              disableTouchRipple={disableTouchRipple}
+              fullWidth={fullWidth}
+              href={href}
+              icon={icon}
+              label={label}
+              labelPosition={labelPosition}
+              labelStyle={labelStyle}
+              primary={primary}
+              rippleColor={rippleColor}
+              secondary={secondary}
+              style={style}
+            >
+              {this.props.children}
+            </RaisedButton>
+          </MuiThemeProvider>
+        </div>);
+    }
+  }
+}
+
+SDRaisedButton.propTypes = propTypes;
+SDRaisedButton.defaultProps = defaultProps;
