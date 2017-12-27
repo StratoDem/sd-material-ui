@@ -39,7 +39,7 @@ const propTypes = {
 
 type State = {
   open: boolean,
-}
+};
 
 const defaultProps = {
   actions: null,
