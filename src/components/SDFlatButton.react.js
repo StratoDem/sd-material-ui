@@ -24,14 +24,11 @@ type Props = {
   labelStyle?: Object,
   onClick?: () => void,
   onKeyboardFocus?: () => void,
-  onMouseEnter?: () => void,
-  onMouseLeave?: () => void,
-  onTouchStart?: () => void,
   primary?: boolean,
   rippleColor?: string,
   secondary?: boolean,
   style?: Object,
-}
+};
 
 const propTypes = {
   /**
@@ -93,6 +90,9 @@ const propTypes = {
    * Use this property to display an icon.
    */
   icon: PropTypes.node,
+
+  /* The element's ID */
+  id: PropTypes.string,
 
   /**
    * Label for the button.
@@ -160,16 +160,21 @@ const defaultProps = {
 export default class SDFlatButton extends Component<Props> {
   constructor(props: Props) {
     super(props);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   // componentWillReceiveProps(nextProps: Props): void {
   //   this.setProps(nextProps);
   // }
 
+  handleClick() {
+    if (this.props.onClick) this.props.onClick({event: 'click'});
+  }
+
   render() {
     const { backgroundColor, className, containerElement, disableTouchRipple, disabled,
       fullWidth, hoverColor, href, icon, id, label, labelPosition, labelStyle,
-      onClick, onKeyboardFocus, primary, rippleColor, secondary, style} = this.props;
+      onKeyboardFocus, primary, rippleColor, secondary, style} = this.props;
 
     return (
       <div id={id}>
@@ -187,7 +192,7 @@ export default class SDFlatButton extends Component<Props> {
             label={label}
             labelPosition={labelPosition}
             labelStyle={labelStyle}
-            onClick={onClick}
+            onClick={this.handleClick}
             onKeyboardFocus={onKeyboardFocus}
             primary={primary}
             rippleColor={rippleColor}

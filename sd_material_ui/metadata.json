@@ -436,5 +436,279 @@
         }
       }
     }
+  },
+  "src/components/SDFlatButton.react.js": {
+    "description": "",
+    "displayName": "SDFlatButton",
+    "methods": [
+      {
+        "name": "handleClick",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      }
+    ],
+    "props": {
+      "backgroundColor": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Color of button when mouse is not hovering over it.",
+        "flowType": {
+          "name": "string"
+        }
+      },
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "This is what will be displayed inside the button.\nIf a label is specified, the text within the label prop will\nbe displayed. Otherwise, the component will expect children\nwhich will then be displayed. (In our example,\nwe are nesting an `<input type=\"file\" />` and a `span`\nthat acts as our label to be displayed.) This only\napplies to flat and raised buttons.",
+        "flowType": {
+          "name": "Node"
+        }
+      },
+      "className": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The CSS class name of the root element.",
+        "flowType": {
+          "name": "string"
+        }
+      },
+      "containerElement": {
+        "type": {
+          "name": "union",
+          "value": [
+            {
+              "name": "string"
+            },
+            {
+              "name": "element"
+            }
+          ]
+        },
+        "required": false,
+        "description": "The element to use as the container for the FlatButton. Either a string to\nuse a DOM element or a ReactElement. This is useful for wrapping the\nFlatButton in a custom Link component. If a ReactElement is given, ensure\nthat it passes all of its given props through to the underlying DOM\nelement and renders its children prop for proper integration."
+      },
+      "disableTouchRipple": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "If true, the element's ripple effect will be disabled.",
+        "flowType": {
+          "name": "boolean"
+        }
+      },
+      "disabled": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Disables the button if set to true.",
+        "flowType": {
+          "name": "boolean"
+        },
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "fullWidth": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "If true, the button will take up the full width of its container.",
+        "flowType": {
+          "name": "boolean"
+        },
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "hoverColor": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Color of button when mouse hovers over.",
+        "flowType": {
+          "name": "string"
+        }
+      },
+      "href": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The URL to link to when the button is clicked.",
+        "flowType": {
+          "name": "string"
+        }
+      },
+      "icon": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Use this property to display an icon.",
+        "flowType": {
+          "name": "Node"
+        }
+      },
+      "id": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "flowType": {
+          "name": "string"
+        }
+      },
+      "label": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Label for the button.",
+        "flowType": {
+          "name": "string"
+        }
+      },
+      "labelPosition": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'before'",
+              "computed": false
+            },
+            {
+              "value": "'after'",
+              "computed": false
+            }
+          ]
+        },
+        "required": false,
+        "description": "Place label before or after the passed children.",
+        "flowType": {
+          "name": "string"
+        },
+        "defaultValue": {
+          "value": "'after'",
+          "computed": false
+        }
+      },
+      "labelStyle": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Override the inline-styles of the button's label element.",
+        "flowType": {
+          "name": "Object"
+        },
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "onClick": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Callback function fired when the button is clicked.\n\n@param {object} event Click event targeting the button.",
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "() => void",
+          "signature": {
+            "arguments": [],
+            "return": {
+              "name": "void"
+            }
+          }
+        }
+      },
+      "onKeyboardFocus": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Callback function fired when the element is focused or blurred by the keyboard.\n\n@param {object} event `focus` or `blur` event targeting the element.\n@param {boolean} isKeyboardFocused Indicates whether the element is focused.",
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "() => void",
+          "signature": {
+            "arguments": [],
+            "return": {
+              "name": "void"
+            }
+          }
+        },
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      },
+      "primary": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "If true, colors button according to\nprimaryTextColor from the Theme.",
+        "flowType": {
+          "name": "boolean"
+        },
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "rippleColor": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Color for the ripple after button is clicked.",
+        "flowType": {
+          "name": "string"
+        }
+      },
+      "secondary": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "If true, colors button according to secondaryTextColor from the theme.\nThe primary prop has precendent if set to true.",
+        "flowType": {
+          "name": "boolean"
+        },
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "style": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Override the inline-styles of the root element.",
+        "flowType": {
+          "name": "Object"
+        }
+      }
+    }
   }
 }
