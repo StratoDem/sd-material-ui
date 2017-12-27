@@ -13,7 +13,7 @@ type Props = {
   buttonStyle?: Object,
   children?: Node,
   className?: string,
-  containerElement: string,
+  containerElement?: string,
   disableTouchRipple?: boolean,
   disabled?: boolean,
   disabledBackgroundColor?: string,
@@ -178,7 +178,7 @@ const defaultProps = {
   setProps: () => {},
 };
 
-export default class SDRaisedButton extends Compnent<Props> {
+export default class SDRaisedButton extends Component<Props> {
   constructor(props: Props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);

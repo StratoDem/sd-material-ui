@@ -16,6 +16,7 @@ app.layout = html.Div([
             dict(label='test 2', value='val2', icon='2'),
         ]),
     html.Div(id='output'),
+
     sd_material_ui.SDDialog(
         html.Div(children=[
             html.P('pathname'),
@@ -24,16 +25,16 @@ app.layout = html.Div([
         id='dialog-id',
         modal=True,
         open=False),
-    html.Div(id='show-dialog', children=[
-        html.P('Share the page (modal)')
-    ]),
+    # TODO the fault lies, I think, with the following line
+    sd_material_ui.SDRaisedButton(id='show-dialog', label='Share the page (modal)'),
+
     sd_material_ui.SDDialog(
         html.Div('pathname b'),
         id='dialog-id-b',
         modal=False,
         open=False),
     sd_material_ui.SDFlatButton(id='show-dialog-b', label='Share the page b',
-                                backgroundColor='blue'),
+                                backgroundColor='blue')
 ])
 
 
@@ -49,8 +50,8 @@ def display_output(value):
     [dash.dependencies.Input('show-dialog', 'n_clicks'),
      dash.dependencies.Input('closer', 'n_clicks')],
     [dash.dependencies.State('dialog-id', 'open')])
-def show_dialog(open_button: int, close_button: int, open_state: bool):
-    if open_button:
+def show_dialog(n_clicks: int, close_button: int, open_state: bool):
+    if n_clicks and n_clicks > 0:
         if not open_state:
             return True
     elif close_button:
