@@ -32,9 +32,8 @@ app.layout = html.Div([
         id='dialog-id-b',
         modal=False,
         open=False),
-    html.Div(id='show-dialog-b', children=[
-        html.P('Share the page b')
-    ]),
+    sd_material_ui.SDFlatButton(id='show-dialog-b', label='Share the page b',
+                                backgroundColor='blue'),
 ])
 
 
@@ -65,7 +64,7 @@ def show_dialog(open_button: int, close_button: int, open_state: bool):
     dash.dependencies.Output('dialog-id-b', 'open'),
     [dash.dependencies.Input('show-dialog-b', 'n_clicks')])
 def show_dialog(n_clicks: int):
-    if n_clicks > 0:
+    if n_clicks and n_clicks > 0:
         return True
     else:
         return False
