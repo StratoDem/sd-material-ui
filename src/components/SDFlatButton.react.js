@@ -22,7 +22,7 @@ type Props = {
   label?: string,
   labelPosition?: string,
   labelStyle?: Object,
-  n_clicks: number,
+  n_clicks?: number,
   onClick?: () => void,
   onKeyboardFocus?: () => void,
   primary?: boolean,
@@ -178,15 +178,13 @@ export default class SDFlatButton extends Component<Props> {
   }
 
   handleClick() {
-    if (this.props.onClick) {
-      this.props.setProps({n_clicks: this.props.n_clicks + 1});
-      this.props.onClick({event: 'click'});
-    }
+    this.props.setProps({n_clicks: this.props.n_clicks + 1});
+    this.props.onClick({event: 'click'});
   }
 
   render() {
     const { backgroundColor, className, containerElement, disableTouchRipple, disabled,
-      fullWidth, hoverColor, href, icon, id, label, labelPosition, labelStyle,
+      fullWidth, hoverColor, href, icon, id, label, labelPosition, labelStyle, n_clicks,
       onKeyboardFocus, primary, rippleColor, secondary, style} = this.props;
 
     return (
@@ -205,6 +203,7 @@ export default class SDFlatButton extends Component<Props> {
             label={label}
             labelPosition={labelPosition}
             labelStyle={labelStyle}
+            n_clicks={n_clicks}
             onClick={this.handleClick}
             onKeyboardFocus={onKeyboardFocus}
             primary={primary}
