@@ -32,7 +32,8 @@ app.layout = html.Div([
         id='dialog-id-b',
         modal=False,
         open=False),
-    sd_material_ui.SDFlatButton(id='show-dialog-b', label='Share the page b'),
+    sd_material_ui.SDFlatButton(id='show-dialog-b', label='Share the page b',
+                                backgroundColor='blue'),
 ])
 
 
