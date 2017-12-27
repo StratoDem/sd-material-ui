@@ -24,7 +24,6 @@ type Props = {
   labelStyle?: Object,
   n_clicks?: number,
   onClick?: () => void,
-  onKeyboardFocus?: () => void,
   primary?: boolean,
   rippleColor?: string,
   secondary?: boolean,
@@ -126,14 +125,6 @@ const propTypes = {
   onClick: PropTypes.func,
 
   /**
-   * Callback function fired when the element is focused or blurred by the keyboard.
-   *
-   * @param {object} event `focus` or `blur` event targeting the element.
-   * @param {boolean} isKeyboardFocused Indicates whether the element is focused.
-   */
-  onKeyboardFocus: PropTypes.func,
-
-  /**
    * If true, colors button according to
    * primaryTextColor from the Theme.
    */
@@ -165,7 +156,6 @@ const defaultProps = {
   labelPosition: 'after',
   labelStyle: {},
   n_clicks: 0,
-  onKeyboardFocus: () => {},
   primary: false,
   secondary: false,
   setProps: () => {},
@@ -185,7 +175,7 @@ export default class SDFlatButton extends Component<Props> {
   render() {
     const { backgroundColor, className, containerElement, disableTouchRipple, disabled,
       fullWidth, hoverColor, href, icon, id, label, labelPosition, labelStyle, n_clicks,
-      onKeyboardFocus, primary, rippleColor, secondary, style} = this.props;
+      primary, rippleColor, secondary, style} = this.props;
 
     return (
       <div id={id}>
@@ -205,7 +195,6 @@ export default class SDFlatButton extends Component<Props> {
             labelStyle={labelStyle}
             n_clicks={n_clicks}
             onClick={this.handleClick}
-            onKeyboardFocus={onKeyboardFocus}
             primary={primary}
             rippleColor={rippleColor}
             secondary={secondary}
