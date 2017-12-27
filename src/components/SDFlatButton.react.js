@@ -56,6 +56,15 @@ const propTypes = {
   className: PropTypes.string,
 
   /**
+   * The element to use as the container for the FlatButton. Either a string to
+   * use a DOM element or a ReactElement. This is useful for wrapping the
+   * FlatButton in a custom Link component. If a ReactElement is given, ensure
+   * that it passes all of its given props through to the underlying DOM
+   * element and renders its children prop for proper integration.
+   */
+  containerElement: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
+
+  /**
    * If true, the element's ripple effect will be disabled.
    */
   disableTouchRipple: PropTypes.bool,
@@ -115,15 +124,6 @@ const propTypes = {
    */
   onKeyboardFocus: PropTypes.func,
 
-  /** @ignore */
-  onMouseEnter: PropTypes.func,
-
-  /** @ignore */
-  onMouseLeave: PropTypes.func,
-
-  /** @ignore */
-  onTouchStart: PropTypes.func,
-
   /**
    * If true, colors button according to
    * primaryTextColor from the Theme.
@@ -150,12 +150,9 @@ const propTypes = {
 const defaultProps = {
   disabled: false,
   fullWidth: false,
-  labelStyle: {},
   labelPosition: 'after',
+  labelStyle: {},
   onKeyboardFocus: () => {},
-  onMouseEnter: () => {},
-  onMouseLeave: () => {},
-  onTouchStart: () => {},
   primary: false,
   secondary: false,
 };
@@ -170,10 +167,9 @@ export default class SDFlatButton extends Component<Props> {
   // }
 
   render() {
-    const { backgroundColor, className, disableTouchRipple, disabled,
+    const { backgroundColor, className, containerElement, disableTouchRipple, disabled,
       fullWidth, hoverColor, href, icon, id, label, labelPosition, labelStyle,
-      onClick, onKeyboardFocus, onMouseEnter, onMouseLeave, onTouchStart,
-      primary, rippleColor, secondary, style} = this.props;
+      onClick, onKeyboardFocus, primary, rippleColor, secondary, style} = this.props;
 
     return (
       <div id={id}>
@@ -181,6 +177,7 @@ export default class SDFlatButton extends Component<Props> {
           <FlatButton
             backgroundColor={backgroundColor}
             className={className}
+            containerElement={containerElement}
             disableTouchRipple={disableTouchRipple}
             disabled={disabled}
             fullWidth={fullWidth}
@@ -192,9 +189,6 @@ export default class SDFlatButton extends Component<Props> {
             labelStyle={labelStyle}
             onClick={onClick}
             onKeyboardFocus={onKeyboardFocus}
-            onMouseEnter={onMouseEnter}
-            onMouseLeave={onMouseLeave}
-            onTouchStart={onTouchStart}
             primary={primary}
             rippleColor={rippleColor}
             secondary={secondary}
