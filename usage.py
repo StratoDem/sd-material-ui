@@ -63,9 +63,9 @@ def show_dialog(open_button: int, close_button: int, open_state: bool):
 
 @app.callback(
     dash.dependencies.Output('dialog-id-b', 'open'),
-    [dash.dependencies.Input('show-dialog-b', 'onClick')])
+    [dash.dependencies.Input('show-dialog-b', 'n_clicks')])
 def show_dialog(n_clicks: int):
-    if n_clicks > 0:
+    if n_clicks is not None and n_clicks > 0:
         return True
     else:
         return False

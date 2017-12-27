@@ -22,11 +22,13 @@ type Props = {
   label?: string,
   labelPosition?: string,
   labelStyle?: Object,
+  n_clicks: number,
   onClick?: () => void,
   onKeyboardFocus?: () => void,
   primary?: boolean,
   rippleColor?: string,
   secondary?: boolean,
+  setProps?: () => void,
   style?: Object,
 };
 
@@ -110,10 +112,17 @@ const propTypes = {
   labelStyle: PropTypes.object,
 
   /**
+   * An integer that represents the number of times
+   * that this element has been clicked on.
+   */
+  n_clicks: PropTypes.integer,
+
+  /**
    * Callback function fired when the button is clicked.
    *
    * @param {object} event Click event targeting the button.
    */
+
   onClick: PropTypes.func,
 
   /**
@@ -141,6 +150,9 @@ const propTypes = {
    */
   secondary: PropTypes.bool,
 
+  /** Dash callback to update props on the server */
+  setProps: PropTypes.func,
+
   /**
    * Override the inline-styles of the root element.
    */
@@ -152,9 +164,11 @@ const defaultProps = {
   fullWidth: false,
   labelPosition: 'after',
   labelStyle: {},
+  n_clicks: 0,
   onKeyboardFocus: () => {},
   primary: false,
   secondary: false,
+  setProps: () => {},
 };
 
 export default class SDFlatButton extends Component<Props> {
@@ -163,12 +177,11 @@ export default class SDFlatButton extends Component<Props> {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  // componentWillReceiveProps(nextProps: Props): void {
-  //   this.setProps(nextProps);
-  // }
-
   handleClick() {
-    if (this.props.onClick) this.props.onClick({event: 'click'});
+    if (this.props.onClick) {
+      this.props.setProps({n_clicks: this.props.n_clicks + 1});
+      this.props.onClick({event: 'click'});
+    }
   }
 
   render() {
