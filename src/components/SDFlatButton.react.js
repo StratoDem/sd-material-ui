@@ -220,7 +220,6 @@ export default class SDFlatButton extends Component<Props> {
               label={label}
               labelPosition={labelPosition}
               labelStyle={labelStyle}
-              n_clicks={n_clicks}
               primary={primary}
               rippleColor={rippleColor}
               secondary={secondary}
