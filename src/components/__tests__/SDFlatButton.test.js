@@ -43,11 +43,20 @@ describe('SDFlatButton', () => {
     expect(component.find('FlatButton').props().fullWidth).toEqual(true);
   });
 
-  it('increments n_clicks', () => {
+  it('renders with no callbacks', () => {
+    const blankFunc = () => { return null; };
     const component = shallow(
-      <SDFlatButton label='myButton' />);
+      <SDFlatButton fireEvent={blankFunc} setProps={blankFunc} />);
+
+    expect(component).toBe.ok;
+  });
+
+  it('increments n_clicks', () => {
+    const mockProps = jest.fn();
+    const component = shallow(
+      <SDFlatButton label='myButton' n_clicks={1} setProps={mockProps} />);
 
     component.find('FlatButton').simulate('click');
-    expect(component.props().n_clicks).toEqual(1);
+    expect(mockProps).toHaveBeenCalledWith({n_clicks: 2});
   });
 });
