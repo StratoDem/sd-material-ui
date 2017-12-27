@@ -172,7 +172,7 @@ export default class SDFlatButton extends Component<Props> {
 
   render() {
     const { backgroundColor, className, containerElement, disableTouchRipple, disabled,
-      fullWidth, hoverColor, href, icon, id, label, labelPosition, labelStyle, n_clicks,
+      fullWidth, hoverColor, href, icon, id, label, labelPosition, labelStyle,
       primary, rippleColor, secondary, style} = this.props;
 
     if (this.props.fireEvent || this.props.setProps) {
@@ -192,7 +192,6 @@ export default class SDFlatButton extends Component<Props> {
               label={label}
               labelPosition={labelPosition}
               labelStyle={labelStyle}
-              n_clicks={n_clicks}
               onClick={this.handleClick}
               primary={primary}
               rippleColor={rippleColor}
