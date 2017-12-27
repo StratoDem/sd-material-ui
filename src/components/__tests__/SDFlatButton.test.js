@@ -15,14 +15,13 @@ describe('SDFlatButton', () => {
     expect(component).toBe.ok;
   });
 
-  it('simulates click events', () => {
+  it('handles click events', () => {
     const clickCheck = jest.fn();
     const component = shallow(
-      <SDFlatButton id='test-id' fireEvent={clickCheck} />);
+      <SDFlatButton id='test-id' label='myButton' fireEvent={clickCheck} />);
 
     component.find('FlatButton').simulate('click');
-    expect(clickCheck.mock.calls.length).toBe(1);
-    expect(component.props().n_clicks).toEqual(1);
+    expect(clickCheck.mock.calls.length).toEqual(1);
   });
 
   it('renders children when passed in', () => {
@@ -42,5 +41,13 @@ describe('SDFlatButton', () => {
 
     expect(component.find('FlatButton').props().backgroundColor).toEqual('black');
     expect(component.find('FlatButton').props().fullWidth).toEqual(true);
+  });
+
+  it('increments n_clicks', () => {
+    const component = shallow(
+      <SDFlatButton label='myButton' />);
+
+    component.find('FlatButton').simulate('click');
+    expect(component.props().n_clicks).toEqual(1);
   });
 });
