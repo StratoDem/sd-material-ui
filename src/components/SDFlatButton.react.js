@@ -14,6 +14,7 @@ type Props = {
   className?: string,
   disableTouchRipple?: boolean,
   disabled?: boolean,
+  fireEvent?: () => void,
   fullWidth?: boolean,
   hoverColor?: string,
   href?: string,
@@ -23,7 +24,6 @@ type Props = {
   labelPosition?: string,
   labelStyle?: Object,
   n_clicks?: number,
-  onClick?: () => void,
   primary?: boolean,
   rippleColor?: string,
   secondary?: boolean,
@@ -73,6 +73,11 @@ const propTypes = {
   disabled: PropTypes.bool,
 
   /**
+   * A callback for firing events to dash.
+   */
+  fireEvent: PropTypes.func,
+
+  /**
    * If true, the button will take up the full width of its container.
    */
   fullWidth: PropTypes.bool,
@@ -117,14 +122,6 @@ const propTypes = {
   n_clicks: PropTypes.integer,
 
   /**
-   * Callback function fired when the button is clicked.
-   *
-   * @param {object} event Click event targeting the button.
-   */
-
-  onClick: PropTypes.func,
-
-  /**
    * If true, colors button according to
    * primaryTextColor from the Theme.
    */
@@ -152,6 +149,7 @@ const propTypes = {
 
 const defaultProps = {
   disabled: false,
+  fireEvent: () => {},
   fullWidth: false,
   labelPosition: 'after',
   labelStyle: {},
@@ -168,8 +166,8 @@ export default class SDFlatButton extends Component<Props> {
   }
 
   handleClick() {
-    this.props.setProps({n_clicks: this.props.n_clicks + 1});
-    this.props.onClick({event: 'click'});
+    if (this.props.setProps) this.props.setProps({n_clicks: this.props.n_clicks + 1});
+    if (this.props.fireEvent) this.props.fireEvent({event: 'click'});
   }
 
   render() {
@@ -177,33 +175,63 @@ export default class SDFlatButton extends Component<Props> {
       fullWidth, hoverColor, href, icon, id, label, labelPosition, labelStyle, n_clicks,
       primary, rippleColor, secondary, style} = this.props;
 
-    return (
-      <div id={id}>
-        <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
-          <FlatButton
-            backgroundColor={backgroundColor}
-            className={className}
-            containerElement={containerElement}
-            disableTouchRipple={disableTouchRipple}
-            disabled={disabled}
-            fullWidth={fullWidth}
-            hoverColor={hoverColor}
-            href={href}
-            icon={icon}
-            label={label}
-            labelPosition={labelPosition}
-            labelStyle={labelStyle}
-            n_clicks={n_clicks}
-            onClick={this.handleClick}
-            primary={primary}
-            rippleColor={rippleColor}
-            secondary={secondary}
-            style={style}
-          >
-            {this.props.children}
-          </FlatButton>
-        </MuiThemeProvider>
-      </div>);
+    if (this.props.fireEvent || this.props.setProps) {
+      return (
+        <div id={id}>
+          <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
+            <FlatButton
+              backgroundColor={backgroundColor}
+              className={className}
+              containerElement={containerElement}
+              disableTouchRipple={disableTouchRipple}
+              disabled={disabled}
+              fullWidth={fullWidth}
+              hoverColor={hoverColor}
+              href={href}
+              icon={icon}
+              label={label}
+              labelPosition={labelPosition}
+              labelStyle={labelStyle}
+              n_clicks={n_clicks}
+              onClick={this.handleClick}
+              primary={primary}
+              rippleColor={rippleColor}
+              secondary={secondary}
+              style={style}
+            >
+              {this.props.children}
+            </FlatButton>
+          </MuiThemeProvider>
+        </div>);
+    }
+    else {
+      return (
+        <div id={id}>
+          <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
+            <FlatButton
+              backgroundColor={backgroundColor}
+              className={className}
+              containerElement={containerElement}
+              disableTouchRipple={disableTouchRipple}
+              disabled={disabled}
+              fullWidth={fullWidth}
+              hoverColor={hoverColor}
+              href={href}
+              icon={icon}
+              label={label}
+              labelPosition={labelPosition}
+              labelStyle={labelStyle}
+              n_clicks={n_clicks}
+              primary={primary}
+              rippleColor={rippleColor}
+              secondary={secondary}
+              style={style}
+            >
+              {this.props.children}
+            </FlatButton>
+          </MuiThemeProvider>
+        </div>);
+    }
   }
 }
 

@@ -658,46 +658,6 @@
           "computed": false
         }
       },
-      "onClick": {
-        "type": {
-          "name": "func"
-        },
-        "required": false,
-        "description": "Callback function fired when the button is clicked.\n\n@param {object} event Click event targeting the button.",
-        "flowType": {
-          "name": "signature",
-          "type": "function",
-          "raw": "() => void",
-          "signature": {
-            "arguments": [],
-            "return": {
-              "name": "void"
-            }
-          }
-        }
-      },
-      "onKeyboardFocus": {
-        "type": {
-          "name": "func"
-        },
-        "required": false,
-        "description": "Callback function fired when the element is focused or blurred by the keyboard.\n\n@param {object} event `focus` or `blur` event targeting the element.\n@param {boolean} isKeyboardFocused Indicates whether the element is focused.",
-        "flowType": {
-          "name": "signature",
-          "type": "function",
-          "raw": "() => void",
-          "signature": {
-            "arguments": [],
-            "return": {
-              "name": "void"
-            }
-          }
-        },
-        "defaultValue": {
-          "value": "() => {}",
-          "computed": false
-        }
-      },
       "primary": {
         "type": {
           "name": "bool"
