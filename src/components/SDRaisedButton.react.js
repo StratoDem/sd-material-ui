@@ -192,7 +192,7 @@ export default class SDRaisedButton extends Component<Props> {
   render() {
     const { backgroundColor, buttonStyle, className, containerElement, disabled,
       disabledBackgroundColor, disabledLabelColor, disableTouchRipple, fullWidth, href,
-      icon, id, label, labelPosition, labelStyle, primary, rippleColor, secondary,
+      icon, id, label, labelPosition, labelStyle, overlayStyle, primary, rippleColor, secondary,
       style } = this.props;
 
     if (this.props.fireEvent || this.props.setProps) {
@@ -215,6 +215,7 @@ export default class SDRaisedButton extends Component<Props> {
               labelPosition={labelPosition}
               labelStyle={labelStyle}
               onClick={this.handleClick}
+              overlayStyle={overlayStyle}
               primary={primary}
               rippleColor={rippleColor}
               secondary={secondary}
@@ -243,6 +244,7 @@ export default class SDRaisedButton extends Component<Props> {
               label={label}
               labelPosition={labelPosition}
               labelStyle={labelStyle}
+              overlayStyle={overlayStyle}
               primary={primary}
               rippleColor={rippleColor}
               secondary={secondary}
