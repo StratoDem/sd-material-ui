@@ -193,7 +193,7 @@ export default class SDRaisedButton extends Component<Props> {
     const { backgroundColor, buttonStyle, className, containerElement, disabled,
       disabledBackgroundColor, disabledLabelColor, disableTouchRipple, fullWidth, href,
       icon, id, label, labelPosition, labelStyle, primary, rippleColor, secondary,
-      style} = this.props;
+      style } = this.props;
 
     if (this.props.fireEvent || this.props.setProps) {
       return (
@@ -224,8 +224,7 @@ export default class SDRaisedButton extends Component<Props> {
             </RaisedButton>
           </MuiThemeProvider>
         </div>);
-    }
-    else {
+    } else {
       return (
         <div id={id}>
           <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
