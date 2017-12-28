@@ -115,6 +115,7 @@ const propTypes = {
 };
 
 type State = {
+  docked: boolean,
   open: boolean,
 };
 
@@ -135,13 +136,22 @@ export default class SDDrawer extends Component<Props, State> {
   }
 
   componentWillReceiveProps(nextProps: Props): void {
-    if (nextProps.open !== this.state.open)
-      this.changeOpenStatus();
+    if (nextProps.open !== null && nextProps.open !== this.state.open) {
+      this.changeDrawerStatus(nextProps);
+    } else if (nextProps.docked !== this.props.docked) {
+      this.changeDrawerStatus(nextProps);
+      this.setProps({docked: nextProps.docked});
+    }
   }
 
-  changeOpenStatus () {
-    this.setProps({open: !this.state.open});
-    this.setState({open: !this.state.open});
+  changeDrawerStatus (nextProps: Props) {
+    if (nextProps.open !== null) {
+      this.setProps({open: !this.state.open});
+      this.setState({open: !this.state.open});
+    } else {
+      this.setProps({docked: !this.state.docked});
+      this.setState({docked: !this.state.docked});
+    }
   };
 
   render() {
@@ -158,7 +168,7 @@ export default class SDDrawer extends Component<Props, State> {
             containerStyle={containerStyle}
             disableSwipeToOpen={disableSwipeToOpen}
             docked={docked}
-            onrequestchange={this.changeOpenStatus}
+            onrequestchange={this.changeDrawerStatus}
             open={this.state.open}
             openSecondary={openSecondary}
             overlayClassName={overlayClassName}
