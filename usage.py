@@ -22,23 +22,23 @@ app.layout = html.Div([
             html.P('pathname'),
             html.P(id='closer', children='Close window'),
         ]),
-        id='dialog-id',
+        id='output2',
         modal=True,
         open=False),
-    sd_material_ui.SDFlatButton(id='show-dialog', label='Share the page (modal)'),
+    sd_material_ui.SDFlatButton(id='input2', label='Share the page (modal)'),
 
     sd_material_ui.SDDialog(
         html.Div('pathname b'),
-        id='dialog-id-b',
+        id='output3',
         modal=False,
         open=False),
-    sd_material_ui.SDFlatButton(id='show-dialog-b', label='Share the page b',
+    sd_material_ui.SDFlatButton(id='input3', label='Share the page (non-modal)',
                                 backgroundColor='blue'),
 
     html.Div(children=[
-        html.P(id='show-value', children=['n_clicks value: '])
+        html.P(id='output4', children=['n_clicks value: '])
     ]),
-    sd_material_ui.SDRaisedButton(id='count-button', label='Click me'),
+    sd_material_ui.SDRaisedButton(id='input4', label='Click me'),
 ])
 
 
@@ -50,10 +50,10 @@ def display_output(value):
 
 
 @app.callback(
-    dash.dependencies.Output('dialog-id', 'open'),
-    [dash.dependencies.Input('show-dialog', 'n_clicks'),
+    dash.dependencies.Output('output2', 'open'),
+    [dash.dependencies.Input('input2', 'n_clicks'),
      dash.dependencies.Input('closer', 'n_clicks')],
-    [dash.dependencies.State('dialog-id', 'open')])
+    [dash.dependencies.State('output2', 'open')])
 def show_dialog(n_clicks: int, close_button: int, open_state: bool):
     if n_clicks and n_clicks > 0:
         if not open_state:
@@ -66,8 +66,8 @@ def show_dialog(n_clicks: int, close_button: int, open_state: bool):
 
 
 @app.callback(
-    dash.dependencies.Output('dialog-id-b', 'open'),
-    [dash.dependencies.Input('show-dialog-b', 'n_clicks')])
+    dash.dependencies.Output('output3', 'open'),
+    [dash.dependencies.Input('input3', 'n_clicks')])
 def show_dialog(n_clicks: int):
     if n_clicks and n_clicks > 0:
         return True
@@ -76,8 +76,8 @@ def show_dialog(n_clicks: int):
 
 
 @app.callback(
-    dash.dependencies.Output('show-value', 'children'),
-    [dash.dependencies.Input('count-button', 'n_clicks')])
+    dash.dependencies.Output('output4', 'children'),
+    [dash.dependencies.Input('input4', 'n_clicks')])
 def display_clicks(n_clicks: int):
     if n_clicks:
         return ['n_clicks value: {}'.format(n_clicks)]
