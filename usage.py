@@ -35,8 +35,8 @@ app.layout = html.Div([
     # sd_material_ui.SDFlatButton(id='show-dialog-b', label='Share the page b',
     #                             backgroundColor='blue'),
 
-    sd_material_ui.Drawer(id='output5', children=[html.P('Drawer item')]),
-    html.Div(id=input5, children=[
+    sd_material_ui.SDDrawer(id='output5', children=[html.P('Drawer item')]),
+    html.Div(id='input5', children=[
         html.P('Open or close the drawer')
     ]),
 ])
@@ -77,7 +77,7 @@ app.layout = html.Div([
 
 @app.callback(
     dash.dependencies.Output('output5', 'docked'),
-    [dash.dependencies.Input('input5', 'click')],
+    [dash.dependencies.Input('input5', 'n_clicks')],
     [dash.dependencies.State('output5', 'docked')])
 def operate_drawer(button_click, drawer_state):
     if button_click:
