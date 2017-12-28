@@ -16,7 +16,6 @@ type Props = {
   disableSwipeToOpen?: boolean,
   docked?: boolean,
   id: string,
-  onRequestChange?: () => void,
   open?: boolean,
   openSecondary?: boolean,
   overlayClassName?: string,
@@ -64,16 +63,6 @@ const propTypes = {
    *
    */
   id: string,
-
-  /**
-   * 	Callback function fired when the open state of the Drawer is requested to be changed.
-   * 	Signature:
-        function(open: boolean, reason: string) => void
-        open: If true, the Drawer was requested to be opened.
-        reason: The reason for the open or close request. Possible values are 'swipe' for open requests; '
-        clickaway' (on overlay clicks), 'escape' (on escape key press), and 'swipe' for close requests.
-   */
-  onRequestChange: () => void,
 
   /**
    * If true, the Drawer is opened. Providing a value will turn the Drawer into a
@@ -147,16 +136,12 @@ export default class SDDrawer extends Component<Props, State> {
 
   componentWillReceiveProps(nextProps: Props): void {
     if (nextProps.open !== this.state.open)
-      this.changeOpenStatus(nextProps.open);
+      this.changeOpenStatus();
   }
 
-  changeOpenStatus = (open: boolean): void => {
-    const { setProps } = this.props;
-
-    if (typeof setProps === 'function')
-      setProps({open});
-
-    this.setState({open});
+  changeOpenStatus () {
+    this.setProps({open: !this.state.open});
+    this.setState({open: !this.state.open});
   };
 
   render() {
