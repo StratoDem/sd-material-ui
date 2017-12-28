@@ -17,23 +17,23 @@ app.layout = html.Div([
         ]),
     html.Div(id='output'),
 
-    # sd_material_ui.SDDialog(
-    #     html.Div(children=[
-    #         html.P('pathname'),
-    #         html.P(id='closer', children='Close window'),
-    #     ]),
-    #     id='output2',
-    #     modal=True,
-    #     open=False),
-    # sd_material_ui.SDFlatButton(id='input2', label='Share the page (modal)'),
-    #
-    # sd_material_ui.SDDialog(
-    #     html.Div('pathname b'),
-    #     id='output3',
-    #     modal=False,
-    #     open=False),
-    # sd_material_ui.SDFlatButton(id='input3', label='Share the page (non-modal)',
-    #                             backgroundColor='blue'),
+    sd_material_ui.SDDialog(
+        html.Div(children=[
+            html.P('pathname'),
+            html.P(id='closer', children='Close window'),
+        ]),
+        id='output2',
+        modal=True,
+        open=False),
+    sd_material_ui.SDFlatButton(id='input2', label='Share the page (modal)'),
+
+    sd_material_ui.SDDialog(
+        html.Div('pathname b'),
+        id='output3',
+        modal=False,
+        open=False),
+    sd_material_ui.SDFlatButton(id='input3', label='Share the page (non-modal)',
+                                backgroundColor='blue'),
 
     html.Div(children=[
         html.P(id='output4', children=['n_clicks value: '])
@@ -49,30 +49,30 @@ def display_output(value):
     return 'You have entered {}'.format(value)
 
 
-# @app.callback(
-#     dash.dependencies.Output('output2', 'open'),
-#     [dash.dependencies.Input('input2', 'n_clicks'),
-#      dash.dependencies.Input('closer', 'n_clicks')],
-#     [dash.dependencies.State('output2', 'open')])
-# def show_dialog(n_clicks: int, close_button: int, open_state: bool):
-#     if n_clicks and n_clicks > 0:
-#         if not open_state:
-#             return True
-#     elif close_button:
-#         if open_state:
-#             return False
-#     else:
-#         return False
-#
-#
-# @app.callback(
-#     dash.dependencies.Output('output3', 'open'),
-#     [dash.dependencies.Input('input3', 'n_clicks')])
-# def show_dialog(n_clicks: int):
-#     if n_clicks and n_clicks > 0:
-#         return True
-#     else:
-#         return False
+@app.callback(
+    dash.dependencies.Output('output2', 'open'),
+    [dash.dependencies.Input('input2', 'n_clicks'),
+     dash.dependencies.Input('closer', 'n_clicks')],
+    [dash.dependencies.State('output2', 'open')])
+def show_dialog(n_clicks: int, close_button: int, open_state: bool):
+    if n_clicks and n_clicks > 0:
+        if not open_state:
+            return True
+    elif close_button:
+        if open_state:
+            return False
+    else:
+        return False
+
+
+@app.callback(
+    dash.dependencies.Output('output3', 'open'),
+    [dash.dependencies.Input('input3', 'n_clicks')])
+def show_dialog(n_clicks: int):
+    if n_clicks and n_clicks > 0:
+        return True
+    else:
+        return False
 
 
 @app.callback(
