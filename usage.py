@@ -18,14 +18,6 @@ app.layout = html.Div([
     html.Div(id='output'),
 
     sd_material_ui.SDDialog(
-        html.Div('pathname b'),
-        id='dialog-id-b',
-        modal=False,
-        open=False),
-    sd_material_ui.SDFlatButton(id='show-dialog-b', label='Share the page b',
-                                backgroundColor='blue'),
-
-    sd_material_ui.SDDialog(
         html.Div(children=[
             html.P('pathname'),
             html.P(id='closer', children='Close window'),
@@ -33,8 +25,20 @@ app.layout = html.Div([
         id='dialog-id',
         modal=True,
         open=False),
-    # TODO the fault lies, I think, with the following line, but it works as a FlatButton
-    sd_material_ui.SDRaisedButton(id='show-dialog', label='Share the page (modal)'),
+    sd_material_ui.SDFlatButton(id='show-dialog', label='Share the page (modal)'),
+
+    sd_material_ui.SDDialog(
+        html.Div('pathname b'),
+        id='dialog-id-b',
+        modal=False,
+        open=False),
+    sd_material_ui.SDFlatButton(id='show-dialog-b', label='Share the page b',
+                                backgroundColor='blue'),
+
+    html.Div(children=[
+        html.P(id='show-value', children=['n_clicks value: '])
+    ]),
+    sd_material_ui.SDRaisedButton(id='count-button', label='Click me'),
 ])
 
 
@@ -69,6 +73,16 @@ def show_dialog(n_clicks: int):
         return True
     else:
         return False
+
+
+@app.callback(
+    dash.dependencies.Output('show-value', 'children'),
+    [dash.dependencies.Input('count-button', 'n_clicks')])
+def display_clicks(n_clicks: int):
+    if n_clicks:
+        return ['n_clicks value: {}'.format(n_clicks)]
+    else:
+        return ['n_clicks value: ']
 
 
 if __name__ == '__main__':
