@@ -31,87 +31,87 @@ const propTypes = {
   /**
    * The contents of the Drawer
    */
-  children: Node,
+  children: PropTypes.node,
 
   /**
    * The CSS class name of the root element.
    */
-  className: string,
+  className: PropTypes.string,
 
   /**
    * The CSS class name of the container element.
    */
-  containerclassName: string,
+  containerclassName: PropTypes.string,
 
   /**
    * Override the inline-styles of the container element.
    */
-  containerStyle: Object,
+  containerStyle: PropTypes.object,
 
   /**
    * If true, swiping sideways when the Drawer is closed will not open it.
    */
-  disableSwipeToOpen: boolean,
+  disableSwipeToOpen: PropTypes.bool,
 
   /**
    * 	If true, the Drawer will be docked. In this state, the overlay won't show and clicking on a
    * 	menu item will not close the Drawer.
    */
-  docked: boolean,
+  docked: PropTypes.bool,
 
   /**
    *
    */
-  id: string,
+  id: PropTypes.string,
 
   /**
    * If true, the Drawer is opened. Providing a value will turn the Drawer into a
    * controlled component.
    */
-  open: boolean,
+  open: PropTypes.bool,
 
   /**
    * If true, the Drawer is positioned to open from the opposite side.
    */
-  openSecondary: boolean,
+  openSecondary: PropTypes.bool,
 
   /**
    * The CSS class name to add to the Overlay component that is rendered behind the Drawer.
    */
-  overlayClassName: string,
+  overlayClassName: PropTypes.string,
 
   /**
    * Override the inline-styles of the Overlay component that is rendered behind the Drawer.
    */
-  overlayStyle: Object,
+  overlayStyle: PropTypes.object,
 
   /**
    *
    */
-  setProps: () => void,
+  setProps: PropTypes.func,
 
   /**
    * Override the inline-styles of the root element.
    */
-  style: Object,
+  style: PropTypes.object,
 
   /**
    * The width of the left most (or right most) area in pixels where the Drawer can be swiped
    * open from. Setting this to null spans that area to the entire page (CAUTION! Setting this
    * property to null might cause issues with sliders and swipeable Tabs: use at your own risk).
    */
-  swipeAreaWidth: number,
+  swipeAreaWidth: PropTypes.number,
 
   /**
    * The width of the Drawer in pixels or percentage in string format ex. 50% to fill half of the
    * window or 100% and so on. Defaults to using the values from theme.
    */
-  width: string | number,
+  width: PropTypes.oneOf([PropTypes.string, PropTypes.number]),
 
   /**
    * The zDepth of the Drawer.
    */
-  zDepth: number,
+  zDepth: PropTypes.number,
 };
 
 type State = {
