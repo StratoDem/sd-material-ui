@@ -15,16 +15,33 @@ describe('SDDrawer', () => {
     expect(component).toBe.ok;
   });
 
-  // it('docks on Esc keystroke', () => {
-  //   const component = shallow(
-  //     <SDDrawer id='test-id' docked={false}>
-  //       children=<div>
-  //       <p>Item</p>
-  //       </div>
-  //     </SDDrawer>);
-  //
-  //   expect(component.find('Drawer').props().docked).toEqual(false);
-  //   component.simulate('keyDown', { keyCode: 27, which: 27});
-  //   expect(component.find('Drawer').props().docked).toEqual(true);
-  // });
+  it('opens and closes (docked)', () => {
+    const component = shallow(
+      <SDDrawer id='test-id' docked={false}>
+        children=<div>
+          <p>Item</p>
+        </div>
+      </SDDrawer>);
+
+    expect(component.state('open')).toEqual(false);
+    component.setProps({docked: true});
+    expect(component.state('open')).toEqual(true);
+    component.setProps({docked: false});
+    expect(component.state('open')).toEqual(false);
+  });
+
+    it('opens and closes (open)', () => {
+    const component = shallow(
+      <SDDrawer id='test-id' open={false}>
+        children=<div>
+          <p>Item</p>
+        </div>
+      </SDDrawer>);
+
+    expect(component.state('open')).toEqual(false);
+    component.setProps({open: true});
+    expect(component.state('open')).toEqual(true);
+    component.setProps({open: false});
+    expect(component.state('open')).toEqual(false);
+  });
 });

@@ -115,13 +115,12 @@ const propTypes = {
 };
 
 type State = {
-  docked: boolean,
   open: boolean,
 };
 
 const defaultProps = {
   disableSwipeToOpen: false,
-  docked: true,
+  docked: false,
   open: null,
   openSecondary: false,
   swipeAreaWidth: 30,
@@ -132,32 +131,25 @@ const defaultProps = {
 export default class SDDrawer extends Component<Props, State> {
   constructor(props: Props) {
     super(props);
-    this.state = {open: props.open};
+    this.state = {open: props.docked};
   }
 
   componentWillReceiveProps(nextProps: Props): void {
-    if (nextProps.open !== null && nextProps.open !== this.state.open) {
-      this.changeDrawerStatus(nextProps);
-    } else if (nextProps.docked !== this.props.docked) {
-      this.changeDrawerStatus(nextProps);
-      this.setProps({docked: nextProps.docked});
+    if (nextProps.open !== null) {
+      this.setState({open: nextProps.open});
+    } else if (this.props.docked !== nextProps.docked) {
+      this.setState({open: nextProps.docked});
     }
   }
 
-  changeDrawerStatus (nextProps: Props) {
-    if (nextProps.open !== null) {
-      this.setProps({open: !this.state.open});
-      this.setState({open: !this.state.open});
-    } else {
-      this.setProps({docked: !this.state.docked});
-      this.setState({docked: !this.state.docked});
-    }
-  };
+  changeDrawerStatus() {
+    this.setState({open: !this.state.open});
+  }
 
   render() {
-    const { className, containerclassName, containerStyle, disableSwipeToOpen, docked, id,
-            openSecondary, overlayClassName, overlayStyle, style, swipeAreaWidth, width,
-            zDepth } = this.props;
+    const { className, containerclassName, containerStyle, disableSwipeToOpen, docked, id, open,
+      openSecondary, overlayClassName, overlayStyle, style, swipeAreaWidth, width,
+      zDepth } = this.props;
 
     return (
       <div id={id}>
@@ -169,7 +161,7 @@ export default class SDDrawer extends Component<Props, State> {
             disableSwipeToOpen={disableSwipeToOpen}
             docked={docked}
             onrequestchange={this.changeDrawerStatus}
-            open={this.state.open}
+            open={open}
             openSecondary={openSecondary}
             overlayClassName={overlayClassName}
             overlayStyle={overlayStyle}
