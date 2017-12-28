@@ -7,6 +7,8 @@ app = dash.Dash('')
 app.scripts.config.serve_locally = True
 
 app.layout = html.Div([
+
+    # Test BottomNavigation
     sd_material_ui.BottomNavigation(
         id='input',
         selectedIndex=0,
@@ -17,6 +19,7 @@ app.layout = html.Div([
         ]),
     html.Div(id='output'),
 
+    # Test SDDialog (modal)
     sd_material_ui.SDDialog(
         html.Div(children=[
             html.P('pathname'),
@@ -25,23 +28,31 @@ app.layout = html.Div([
         id='output2',
         modal=True,
         open=False),
-    sd_material_ui.SDFlatButton(id='input2', label='Share the page (modal)'),
+    html.Div(id='input2', children=[html.P('Share the page (modal)')]),
 
+    # Test SDDialog (non-modal)
     sd_material_ui.SDDialog(
         html.Div('pathname b'),
         id='output3',
         modal=False,
         open=False),
-    sd_material_ui.SDFlatButton(id='input3', label='Share the page (non-modal)',
-                                backgroundColor='blue'),
+    html.Div(id='input3', children=[html.P('Share the page (non-modal)')]),
 
+    # Test SDRaisedButton
     html.Div(children=[
         html.P(id='output4', children=['n_clicks value: '])
     ]),
     sd_material_ui.SDRaisedButton(id='input4', label='Click me'),
+
+    # Test SDFlatButton
+    html.Div(children=[
+        html.P(id='output5', children=['n_clicks value: '])
+    ]),
+    sd_material_ui.SDFlatButton(id='input5', label='Click me', backgroundColor='orange'),
 ])
 
 
+# Callback for BottomNavigation
 @app.callback(
     dash.dependencies.Output('output', 'children'),
     [dash.dependencies.Input('input', 'selectedIndex')])
@@ -49,6 +60,7 @@ def display_output(value):
     return 'You have entered {}'.format(value)
 
 
+# Callback for SDDialog (modal)
 @app.callback(
     dash.dependencies.Output('output2', 'open'),
     [dash.dependencies.Input('input2', 'n_clicks'),
@@ -65,6 +77,7 @@ def show_dialog(n_clicks: int, close_button: int, open_state: bool):
         return False
 
 
+# Callback for SDDialog (non-modal)
 @app.callback(
     dash.dependencies.Output('output3', 'open'),
     [dash.dependencies.Input('input3', 'n_clicks')])
@@ -75,9 +88,21 @@ def show_dialog(n_clicks: int):
         return False
 
 
+# Callback for SDRaisedButton
 @app.callback(
     dash.dependencies.Output('output4', 'children'),
     [dash.dependencies.Input('input4', 'n_clicks')])
+def display_clicks(n_clicks: int):
+    if n_clicks:
+        return ['n_clicks value: {}'.format(n_clicks)]
+    else:
+        return ['n_clicks value: ']
+
+
+# Callback for SDFlatButton
+@app.callback(
+    dash.dependencies.Output('output5', 'children'),
+    [dash.dependencies.Input('input5', 'n_clicks')])
 def display_clicks(n_clicks: int):
     if n_clicks:
         return ['n_clicks value: {}'.format(n_clicks)]
