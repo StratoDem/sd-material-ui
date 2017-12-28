@@ -75,6 +75,13 @@ module.exports = {
       nodeModulesPath,
       sourcePath,
     ],
+    alias: {
+      react: path.resolve(nodeModulesPath, 'react'),
+    },
+  },
+  externals: {
+    // Use external version of React
+    react: "React",
   },
   watchOptions: {
     poll: 500,

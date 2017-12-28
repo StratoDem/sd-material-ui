@@ -33,15 +33,15 @@ describe('SDRaisedButton', () => {
     expect(component.contains(<div className="myDiv" />)).toEqual(true);
   });
 
-  it('uses the styles provided', () => {
-    const component = shallow(
-      <SDRaisedButton id='test-id' backgroundColor='black' fullWidth={true}>
-        children=<div />
-      </SDRaisedButton>);
-
-    expect(component.find('RaisedButton').props().backgroundColor).toEqual('black');
-    expect(component.find('RaisedButton').props().fullWidth).toEqual(true);
-  });
+  // it('uses the styles provided', () => {
+  //   const component = shallow(
+  //     <SDRaisedButton id='test-id' backgroundColor='black' fullWidth={true}>
+  //       children=<div />
+  //     </SDRaisedButton>);
+  //
+  //   expect(component.find('RaisedButton').props().backgroundColor).toEqual('black');
+  //   expect(component.find('RaisedButton').props().fullWidth).toEqual(true);
+  // });
 
   it('increments n_clicks', () => {
     const mockProps = jest.fn();
