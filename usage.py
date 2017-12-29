@@ -20,14 +20,15 @@ app.layout = html.Div([
     html.Div(id='output'),
 
     # Test SDDialog (modal)
-    sd_material_ui.SDDialog(
-        html.Div(children=[
-            html.P('pathname'),
-            html.P(id='closer', children='Close window'),
-        ]),
-        id='output2',
-        modal=True,
-        open=False),
+    html.Div(
+        sd_material_ui.SDDialog(
+            html.Div(children=[
+                html.P('pathname'),
+                html.P(id='closer', children='Close window'),
+            ]),
+            id='output2',
+            modal=True,
+            open=False)),
     html.Div(id='input2', children=[html.P('Share the page (modal)')]),
 
     # Test SDDialog (non-modal)

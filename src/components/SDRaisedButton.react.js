@@ -1,6 +1,6 @@
 // @flow
 
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 import RaisedButton from 'material-ui/RaisedButton';
@@ -109,7 +109,7 @@ const propTypes = {
   /**
    *  The element's ID
    */
-  id: PropTypes.string,
+  id: PropTypes.string.isRequired,
 
   /**
    * The label to be displayed within the button. If content is provided via the children prop,
@@ -174,12 +174,14 @@ const defaultProps = {
   fullWidth: false,
   labelPosition: 'after',
   n_clicks: 0,
+  label: '',
   primary: false,
   secondary: false,
   setProps: () => {},
+  children: null,
 };
 
-export default class SDRaisedButton extends Component<Props> {
+export default class SDRaisedButton extends React.Component<Props> {
   constructor(props: Props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
