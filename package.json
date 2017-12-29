@@ -1,6 +1,6 @@
 {
   "name": "sd-material-ui",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "StratoDem Analytics Dash implementation of material-ui components",
   "main": "lib/index.js",
   "repository": {
@@ -13,17 +13,16 @@
   },
   "homepage": "https://github.com/StratoDem/sd-material-ui",
   "scripts": {
-    "build-dist": "builder run clean-lib && builder run extract-metadata && webpack --config=config/webpack.config.dist.js --display-error-details",
+    "build-dist": "builder run clean-lib && builder run extract-metadata && webpack --config=config/webpack.config.dev.js --display-error-details",
     "build-dist-production": "builder run clean-lib && builder run extract-metadata && webpack -p --config=config/webpack.config.dist.js",
     "copy-lib": "copyfiles -u 1 lib/* sd_material_ui",
-    "install-local": "npm run copy-lib && python setup.py install",
+    "install-local": "npm run copy-lib && venv/bin/python setup.py install",
     "prepublish": "npm test && npm run build-dist-production && npm run copy-lib",
     "start": "npm run build-dist && npm run copy-lib",
     "test": "jest --verbose",
     "uninstall-local": "pip uninstall sd-material-ui -y"
   },
   "dependencies": {
-    "@stratodem/js-archetype": "^1.8.0",
     "babel-loader": "^7.1.2",
     "builder": "^3.2.2",
     "copyfiles": "^1.2.0",
@@ -31,11 +30,10 @@
     "ify-loader": "^1.1.0",
     "material-ui": "^0.20.0",
     "prop-types": "^15.6.0",
-    "react": "^15.6.2",
-    "react-dom": "^15.6.2",
     "webpack": "^3.8.1"
   },
   "devDependencies": {
+    "@stratodem/js-archetype": "^1.9.0",
     "compression-webpack-plugin": "^1.0.1",
     "dash-components-archetype-dev": "^0.2.11",
     "dezalgo": "^1.0.3",
@@ -45,7 +43,9 @@
     "flow-bin": "^0.61.0",
     "git-labelmaker": "^0.9.0",
     "jest": "^22.0.4",
-    "react-test-renderer": "^15.6.2"
+    "react": "^15.4",
+    "react-dom": "^15.4",
+    "react-test-renderer": "^15.4"
   },
   "jest": {
     "modulePaths": [
