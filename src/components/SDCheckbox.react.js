@@ -99,6 +99,10 @@ const propTypes = {
   valueLink: PropTypes.object,
 };
 
+type State = {
+  checked: boolean,
+};
+
 const defaultProps = {
   disabled: false,
   fireEvent: () => {},
@@ -106,19 +110,26 @@ const defaultProps = {
   setProps: () => {},
 };
 
-export default class SDCheckbox extends Component<Props> {
+export default class SDCheckbox extends Component<Props, State> {
   constructor(props: Props) {
     super(props);
+    this.state = {checked: false};
     this.handleClick = this.handleClick.bind(this);
   }
 
   // TODO increment version number before making PR
 
-  handleClick = (checked: boolean): void => {
+  componentWillReceiveProps(nextProps: Props): void {
+    if (nextProps.checked !== this.state.checked)
+      this.handleClick();
+  }
+
+  handleClick = (): void => {
     const { setProps } = this.props;
 
     if (typeof setProps === 'function')
-      setProps({checked});
+      setProps({checked: !this.state.checked});
+      setState({checked: !this.state.checked});
     if (this.props.fireEvent) this.props.fireEvent({event: 'click'});
   };
 
