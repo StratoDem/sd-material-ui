@@ -112,6 +112,8 @@ export default class SDCheckbox extends Component<Props> {
     this.handleClick = this.handleClick.bind(this);
   }
 
+  // TODO increment version number before making PR
+
   handleClick = (checked: boolean): void => {
     const { setProps } = this.props;
 
