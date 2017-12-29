@@ -1,3 +1,14 @@
+"""
+StratoDem Analytics : __init__
+Principal Author(s) : Michael Clawar
+Secondary Author(s) : 
+Description :
+
+Notes : 
+
+December 28, 2017
+"""
+
 import os as _os
 import dash as _dash
 import sys as _sys
@@ -30,4 +41,4 @@ _css_dist = []
 for _component in _components:
     setattr(_this_module, _component.__name__, _component)
     setattr(_component, '_js_dist', _js_dist)
-    setattr(_component, '_css_dist', _css_dist)
+setattr(_component, '_css_dist', _css_dist)
