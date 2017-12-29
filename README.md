@@ -6,6 +6,9 @@ Dash wrappers around the excellent [`material-ui`](https://github.com/mui-org/ma
 
 ## Material-UI components ported to Dash
 - [x] [`BottomNavigation`](http://www.material-ui.com/#/components/bottom-navigation)
+- [x] [`FlatButton`](http://www.material-ui.com/#/components/flat-button)
+- [x] [`RaisedButton`](http://www.material-ui.com/#/components/raised-button)
+- [x] [`Dialog`](http://www.material-ui.com/#/components/dialog)
 - [ ] Drawer
 
 ## Dash
@@ -16,7 +19,26 @@ Go to this link to learn about [Dash][].
 
 See the [dash-components-archetype][] repo for more information.
 
+## Contributing
+To set up the development environment:
 
-[Builder]: https://github.com/FormidableLabs/builder
-[Dash]: https://github.com/plotly/dash2
+```shell
+$ npm install
+# Run webpack to create the Dash React bundle
+$ npm run build-dist
+# Set up a virtualenv
+$ virtualenv venv -p python3
+$ source venv/bin/activate
+# Install the local Python Dash package
+$ npm run install-local
+```
+
+### Running a local server
+Run `usage.py` in the virtual environment
+```
+$ source venv/bin/activate
+$ python usage.py
+```
+
+[Dash]: https://github.com/plotly/dash
 [dash-components-archetype]: https://github.com/plotly/dash-components-archetype
