@@ -1,9 +1,9 @@
 // @flow
 
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
-import { RaisedButton } from 'material-ui';
+import {RaisedButton} from 'material-ui';
 import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
@@ -59,7 +59,8 @@ const propTypes = {
   // className: PropTypes.string,
   //
   // /**
-  //  * The element to use as the container for the RaisedButton. Either a string to use a DOM element
+  //  * The element to use as the container for the RaisedButton. Either a string to use a DOM
+  // element
   //  * or a ReactElement. This is useful for wrapping the RaisedButton in a custom Link component.
   //  * If a ReactElement is given, ensure that it passes all of its given props through to the
   //  * underlying DOM element and renders its children prop for proper integration.
@@ -109,7 +110,7 @@ const propTypes = {
   /**
    *  The element's ID
    */
-  id: PropTypes.string,
+  id: PropTypes.string.isRequired,
 
   /**
    * The label to be displayed within the button. If content is provided via the children prop,
@@ -174,12 +175,14 @@ const defaultProps = {
   // fullWidth: false,
   // labelPosition: 'after',
   n_clicks: 0,
+  label: '',
   // primary: false,
   // secondary: false,
   setProps: () => {},
+  children: null,
 };
 
-export default class SDRaisedButton extends Component<Props> {
+export default class SDRaisedButton extends React.Component<Props> {
   constructor(props: Props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
@@ -195,7 +198,7 @@ export default class SDRaisedButton extends Component<Props> {
     //   disabledBackgroundColor, disabledLabelColor, disableTouchRipple, fullWidth, href,
     //   icon, id, label, labelPosition, labelStyle, overlayStyle, primary, rippleColor, secondary,
     //   style } = this.props;
-    const { id, label } = this.props;
+    const {id, label} = this.props;
 
     if (this.props.fireEvent || this.props.setProps) {
       return (
@@ -227,36 +230,35 @@ export default class SDRaisedButton extends Component<Props> {
             </RaisedButton>
           </MuiThemeProvider>
         </div>);
-    } else {
-      return (
-        <div id={id}>
-          <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
-            <RaisedButton
-              // backgroundColor={backgroundColor}
-              // buttonStyle={buttonStyle}
-              // className={className}
-              // containerElement={containerElement}
-              // disabled={disabled}
-              // disabledBackgroundColor={disabledBackgroundColor}
-              // disabledLabelColor={disabledLabelColor}
-              // disableTouchRipple={disableTouchRipple}
-              // fullWidth={fullWidth}
-              // href={href}
-              // icon={icon}
-              label={label}
-              // labelPosition={labelPosition}
-              // labelStyle={labelStyle}
-              // overlayStyle={overlayStyle}
-              // primary={primary}
-              // rippleColor={rippleColor}
-              // secondary={secondary}
-              // style={style}
-            >
-              {this.props.children}
-            </RaisedButton>
-          </MuiThemeProvider>
-        </div>);
     }
+    return (
+      <div id={id}>
+        <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
+          <RaisedButton
+            // backgroundColor={backgroundColor}
+            // buttonStyle={buttonStyle}
+            // className={className}
+            // containerElement={containerElement}
+            // disabled={disabled}
+            // disabledBackgroundColor={disabledBackgroundColor}
+            // disabledLabelColor={disabledLabelColor}
+            // disableTouchRipple={disableTouchRipple}
+            // fullWidth={fullWidth}
+            // href={href}
+            // icon={icon}
+            label={label}
+            // labelPosition={labelPosition}
+            // labelStyle={labelStyle}
+            // overlayStyle={overlayStyle}
+            // primary={primary}
+            // rippleColor={rippleColor}
+            // secondary={secondary}
+            // style={style}
+          >
+            {this.props.children}
+          </RaisedButton>
+        </MuiThemeProvider>
+      </div>);
   }
 }
 

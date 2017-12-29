@@ -751,6 +751,10 @@
         "description": "The content of the button. If a label is provided via the label prop, the text within the\nlabel will be displayed in addition to the content provided here.",
         "flowType": {
           "name": "Node"
+        },
+        "defaultValue": {
+          "value": "null",
+          "computed": false
         }
       },
       "fireEvent": {
@@ -793,6 +797,10 @@
         "description": "The label to be displayed within the button. If content is provided via the children prop,\nthat content will be displayed in addition to the label provided here.",
         "flowType": {
           "name": "string"
+        },
+        "defaultValue": {
+          "value": "''",
+          "computed": false
         }
       },
       "n_clicks": {
