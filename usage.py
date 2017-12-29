@@ -20,24 +20,25 @@ app.layout = html.Div([
     html.Div(id='output'),
 
     # Test SDDialog (modal)
-    html.Div(
-        sd_material_ui.SDDialog(
-            html.Div(children=[
-                html.P('pathname'),
-                html.P(id='closer', children='Close window'),
-            ]),
-            id='output2',
-            modal=True,
-            open=False)),
+    sd_material_ui.SDDialog(
+        html.Div(children=[
+            html.P('pathname'),
+            html.P(id='closer', children='Close window'),
+        ]),
+        id='output2',
+        modal=True,
+        open=False),
     html.Div(id='input2', children=[html.P('Share the page (modal)')]),
 
     # Test SDDialog (non-modal)
     sd_material_ui.SDDialog(
-        html.Div('pathname b'),
-        id='output3',
+        html.Div(children=[
+            html.P('Non-modal dialog'),
+        ]),
+        id='non-modal-output',
         modal=False,
         open=False),
-    html.Div(id='input3', children=[html.P('Share the page (non-modal)')]),
+    html.Div(id='non-modal-input', children=[html.P('Share the page (non-modal)')]),
 
     # Test SDRaisedButton
     html.Div(children=[
@@ -67,8 +68,8 @@ def display_output(value):
     [dash.dependencies.Input('input2', 'n_clicks'),
      dash.dependencies.Input('closer', 'n_clicks')],
     [dash.dependencies.State('output2', 'open')])
-def show_dialog(n_clicks: int, close_button: int, open_state: bool):
-    if n_clicks and n_clicks > 0:
+def show_modal_dialog(modal_click: int, close_button: int, open_state: bool):
+    if modal_click and modal_click > 0:
         if not open_state:
             return True
     elif close_button:
@@ -80,11 +81,13 @@ def show_dialog(n_clicks: int, close_button: int, open_state: bool):
 
 # Callback for SDDialog (non-modal)
 @app.callback(
-    dash.dependencies.Output('output3', 'open'),
-    [dash.dependencies.Input('input3', 'n_clicks')])
-def show_dialog(n_clicks: int):
-    if n_clicks and n_clicks > 0:
-        return True
+    dash.dependencies.Output('non-modal-output', 'open'),
+    [dash.dependencies.Input('non-modal-input', 'n_clicks')],
+    [dash.dependencies.State('non-modal-output', 'open')])
+def show_non_modal_dialog(non_modal_click: int, open_state: bool):
+    if non_modal_click and non_modal_click > 0:
+        if not open_state:
+            return True
     else:
         return False
 
@@ -93,9 +96,9 @@ def show_dialog(n_clicks: int):
 @app.callback(
     dash.dependencies.Output('output4', 'children'),
     [dash.dependencies.Input('input4', 'n_clicks')])
-def display_clicks(n_clicks: int):
-    if n_clicks:
-        return ['n_clicks value: {}'.format(n_clicks)]
+def display_clicks_raised(n_clicks_raised: int):
+    if n_clicks_raised:
+        return ['n_clicks value: {}'.format(n_clicks_raised)]
     else:
         return ['n_clicks value: ']
 
@@ -104,9 +107,9 @@ def display_clicks(n_clicks: int):
 @app.callback(
     dash.dependencies.Output('output5', 'children'),
     [dash.dependencies.Input('input5', 'n_clicks')])
-def display_clicks(n_clicks: int):
-    if n_clicks:
-        return ['n_clicks value: {}'.format(n_clicks)]
+def display_clicks_flat(n_clicks_flat: int):
+    if n_clicks_flat:
+        return ['n_clicks value: {}'.format(n_clicks_flat)]
     else:
         return ['n_clicks value: ']
 
