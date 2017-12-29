@@ -119,7 +119,7 @@ const propTypes = {
    * An integer that represents the number of times
    * that this element has been clicked on.
    */
-  n_clicks: PropTypes.integer,
+  n_clicks: PropTypes.number,
 
   /**
    * If true, colors button according to
