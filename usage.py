@@ -82,12 +82,10 @@ def show_modal_dialog(modal_click: int, close_button: int, open_state: bool):
 # Callback for SDDialog (non-modal)
 @app.callback(
     dash.dependencies.Output('non-modal-output', 'open'),
-    [dash.dependencies.Input('non-modal-input', 'n_clicks')],
-    [dash.dependencies.State('non-modal-output', 'open')])
-def show_non_modal_dialog(non_modal_click: int, open_state: bool):
+    [dash.dependencies.Input('non-modal-input', 'n_clicks')])
+def show_non_modal_dialog(non_modal_click: int):
     if non_modal_click and non_modal_click > 0:
-        if not open_state:
-            return True
+        return True
     else:
         return False
 
