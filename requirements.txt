@@ -6,3 +6,4 @@ dash
 dash-core-components
 dash-html-components
 dash-renderer
+selenium
