@@ -1,12 +1,12 @@
 """
 StratoDem Analytics : version
 Principal Author(s) : Michael Clawar
-Secondary Author(s) : 
+Secondary Author(s) :
 Description :
 
-Notes : 
+Notes :
 
 December 28, 2017
 """
 
-__version__ = '1.5.0'
+__version__ = '1.2.0'
