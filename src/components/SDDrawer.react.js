@@ -134,6 +134,8 @@ export default class SDDrawer extends Component<Props, State> {
     this.state = {open: props.docked};
   }
 
+  // TODO increment version number before making PR
+
   componentWillReceiveProps(nextProps: Props): void {
     if (nextProps.open !== null) {
       this.setState({open: nextProps.open});
