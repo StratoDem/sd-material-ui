@@ -15,7 +15,7 @@ describe('SDDrawer', () => {
     expect(component).toBe.ok;
   });
 
-  it('opens and closes (docked)', () => {
+  it('opens and closes (props.docked)', () => {
     const component = shallow(
       <SDDrawer id='test-id' docked={false}>
         children=<div>
@@ -30,7 +30,7 @@ describe('SDDrawer', () => {
     expect(component.state('open')).toEqual(false);
   });
 
-    it('opens and closes (open)', () => {
+    it('opens and closes (props.open)', () => {
     const component = shallow(
       <SDDrawer id='test-id' open={false}>
         children=<div>
