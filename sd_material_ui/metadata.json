@@ -465,6 +465,10 @@
         "description": "The contents of the Drawer",
         "flowType": {
           "name": "Node"
+        },
+        "defaultValue": {
+          "value": "[]",
+          "computed": false
         }
       },
       "className": {
@@ -475,6 +479,10 @@
         "description": "The CSS class name of the root element.",
         "flowType": {
           "name": "string"
+        },
+        "defaultValue": {
+          "value": "''",
+          "computed": false
         }
       },
       "containerclassName": {
@@ -485,16 +493,27 @@
         "description": "The CSS class name of the container element.",
         "flowType": {
           "name": "string"
+        },
+        "defaultValue": {
+          "value": "''",
+          "computed": false
         }
       },
       "containerStyle": {
         "type": {
-          "name": "object"
+          "name": "objectOf",
+          "value": {
+            "name": "any"
+          }
         },
         "required": false,
         "description": "Override the inline-styles of the container element.",
         "flowType": {
           "name": "Object"
+        },
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
         }
       },
       "disableSwipeToOpen": {
@@ -516,7 +535,7 @@
           "name": "bool"
         },
         "required": false,
-        "description": "If true, the Drawer will be docked. In this state, the overlay won't show and clicking on a\n\tmenu item will not close the Drawer.",
+        "description": "If true, the Drawer will be docked. In this state, the overlay won't show and clicking on a\nmenu item will not close the Drawer.",
         "flowType": {
           "name": "boolean"
         },
@@ -571,16 +590,27 @@
         "description": "The CSS class name to add to the Overlay component that is rendered behind the Drawer.",
         "flowType": {
           "name": "string"
+        },
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
         }
       },
       "overlayStyle": {
         "type": {
-          "name": "object"
+          "name": "objectOf",
+          "value": {
+            "name": "any"
+          }
         },
         "required": false,
         "description": "Override the inline-styles of the Overlay component that is rendered behind the Drawer.",
         "flowType": {
           "name": "Object"
+        },
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
         }
       },
       "setProps": {
@@ -599,16 +629,27 @@
               "name": "void"
             }
           }
+        },
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
         }
       },
       "style": {
         "type": {
-          "name": "object"
+          "name": "objectOf",
+          "value": {
+            "name": "any"
+          }
         },
         "required": false,
         "description": "Override the inline-styles of the root element.",
         "flowType": {
           "name": "Object"
+        },
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
         }
       },
       "swipeAreaWidth": {

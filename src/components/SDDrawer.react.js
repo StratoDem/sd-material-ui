@@ -46,7 +46,7 @@ const propTypes = {
   /**
    * Override the inline-styles of the container element.
    */
-  containerStyle: PropTypes.object,
+  containerStyle: PropTypes.objectOf(PropTypes.any),
 
   /**
    * If true, swiping sideways when the Drawer is closed will not open it.
@@ -54,15 +54,15 @@ const propTypes = {
   disableSwipeToOpen: PropTypes.bool,
 
   /**
-   * 	If true, the Drawer will be docked. In this state, the overlay won't show and clicking on a
-   * 	menu item will not close the Drawer.
+   * If true, the Drawer will be docked. In this state, the overlay won't show and clicking on a
+   * menu item will not close the Drawer.
    */
   docked: PropTypes.bool,
 
   /**
    *
    */
-  id: PropTypes.string,
+  id: PropTypes.string.isRequired,
 
   /**
    * If true, the Drawer is opened. Whether true or false, ensures that the drawer is a controlled
@@ -83,7 +83,7 @@ const propTypes = {
   /**
    * Override the inline-styles of the Overlay component that is rendered behind the Drawer.
    */
-  overlayStyle: PropTypes.object,
+  overlayStyle: PropTypes.objectOf(PropTypes.any),
 
   /**
    *
@@ -93,7 +93,7 @@ const propTypes = {
   /**
    * Override the inline-styles of the root element.
    */
-  style: PropTypes.object,
+  style: PropTypes.objectOf(PropTypes.any),
 
   /**
    * The width of the left most (or right most) area in pixels where the Drawer can be swiped
@@ -119,10 +119,18 @@ type State = {
 };
 
 const defaultProps = {
+  children: [],
+  className: '',
+  containerclassName: '',
+  containerStyle: {},
   disableSwipeToOpen: false,
   docked: true,
   open: false,
   openSecondary: false,
+  overlayClassName: {},
+  overlayStyle: {},
+  setProps: () => {},
+  style: {},
   swipeAreaWidth: 30,
   width: null,
   zDepth: 2,
