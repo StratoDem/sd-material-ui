@@ -52,10 +52,18 @@ app.layout = html.Div([
     ]),
     sd_material_ui.SDFlatButton(id='input5', label='Click me', backgroundColor='orange'),
 
-    # Test for SDDrawer
-    sd_material_ui.SDDrawer(id='output5', docked=False, children=[html.P('Drawer item')]),
-    html.Div(id='input5', children=[
-        html.P('Open or close the drawer')
+    # Test for SDDrawer (docked, secondary)
+    sd_material_ui.SDDrawer(id='output6', docked=True, openSecondary=True,
+                            children=[html.P(children='Drawer item')]),
+    html.Div(id='input6', children=[
+        html.P(children='Open or close the drawer (docked)')
+    ]),
+
+    # Test for SDDrawer (not docked)
+    sd_material_ui.SDDrawer(id='output7', docked=False, open=True, children=[
+        html.P(id='close-input7', children='Drawer item')]),
+    html.Div(id='input7', children=[
+        html.P(children='Open or close the drawer (not docked)')
     ]),
 ])
 
@@ -120,19 +128,37 @@ def display_clicks_flat(n_clicks_flat: int):
         return ['n_clicks value: ']
 
 
-# TODO figure out what value to use for opening and closing the drawer; hidden doesn't work
-# Here is a list of the available properties in "output5":
-# ['children', 'id', 'n_clicks', 'key', 'accessKey', 'className', 'contentEditable',
-# 'contextMenu', 'dir', 'draggable', 'hidden', 'lang', 'spellCheck', 'style', 'tabIndex', 'title']
-
-# Callback for SDDrawer
+# TODO this drawer requires two clicks on its input because the open prop must go from null -> false
+# and then from false -> true
+# Callback for SDDrawer (docked, secondary)
 @app.callback(
-    dash.dependencies.Output('output5', 'hidden'),
-    [dash.dependencies.Input('input5', 'n_clicks')],
-    [dash.dependencies.State('output5', 'hidden')])
+    dash.dependencies.Output('output6', 'open'),
+    [dash.dependencies.Input('input6', 'n_clicks')],
+    [dash.dependencies.State('output6', 'open')])
 def operate_drawer(button_click, drawer_state):
     if button_click:
         return not drawer_state
+
+# available properties for drawer item:
+# ['children', 'className', 'containerclassName', 'containerStyle', 'disableSwipeToOpen',
+#  'docked', 'id', 'open', 'openSecondary', 'overlayClassName', 'overlayStyle', 'style',
+#  'swipeAreaWidth', 'width', 'zDepth']
+
+
+# TODO this drawer is only responsive to the overlay on page load, after that, it is updating the
+# open prop, which is undesired behavior
+# Callback for SDDrawer (not docked)
+@app.callback(
+    dash.dependencies.Output('output7', 'open'),
+    [dash.dependencies.Input('input7', 'n_clicks'),
+     dash.dependencies.Input('close-input7', 'n_clicks')],
+    [dash.dependencies.State('output7', 'open')])
+def operate_drawer(button_click, menu_item_click, drawer_state):
+    if not drawer_state:
+        if button_click:
+            return True
+    if menu_item_click:
+        return False
 
 
 if __name__ == '__main__':

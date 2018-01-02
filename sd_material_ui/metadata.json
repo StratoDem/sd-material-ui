@@ -363,7 +363,7 @@
           "name": "bool"
         },
         "required": false,
-        "description": "Is the dialog open?\nIMPORTANT: When using this component in Dash, a listener must be set up (either as state or\nan input) for this component's props.open value in order to achieve the desired behavior.\nIf such a listener is not in place, the non-modal version of this dialog will contaminate\nother callbacks in the browser.",
+        "description": "Is the dialog open?\nIMPORTANT: When using this component in Dash, a listener must be set up (either as state or\nan input) for this component's props.open value in order to achieve the desired behavior.\nIf such a listener is not in place, the non-modal version of this dialog will contaminate\nother callbacks in the browser",
         "flowType": {
           "name": "boolean"
         },
@@ -381,9 +381,36 @@
         "flowType": {
           "name": "signature",
           "type": "function",
-          "raw": "() => void",
+          "raw": "(props: { modal?: boolean, open?: boolean }) => void",
           "signature": {
-            "arguments": [],
+            "arguments": [
+              {
+                "name": "props",
+                "type": {
+                  "name": "signature",
+                  "type": "object",
+                  "raw": "{ modal?: boolean, open?: boolean }",
+                  "signature": {
+                    "properties": [
+                      {
+                        "key": "modal",
+                        "value": {
+                          "name": "boolean",
+                          "required": false
+                        }
+                      },
+                      {
+                        "key": "open",
+                        "value": {
+                          "name": "boolean",
+                          "required": false
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
             "return": {
               "name": "void"
             }
@@ -418,7 +445,14 @@
         "name": "changeDrawerStatus",
         "docblock": null,
         "modifiers": [],
-        "params": [],
+        "params": [
+          {
+            "name": "open",
+            "type": {
+              "name": "boolean"
+            }
+          }
+        ],
         "returns": null
       }
     ],
@@ -487,7 +521,7 @@
           "name": "boolean"
         },
         "defaultValue": {
-          "value": "false",
+          "value": "true",
           "computed": false
         }
       },
@@ -506,12 +540,12 @@
           "name": "bool"
         },
         "required": false,
-        "description": "If true, the Drawer is opened. Providing a value will turn the Drawer into a\ncontrolled component.",
+        "description": "If true, the Drawer is opened. Whether true or false, ensures that the drawer is a controlled\ncomponent.",
         "flowType": {
           "name": "boolean"
         },
         "defaultValue": {
-          "value": "null",
+          "value": "false",
           "computed": false
         }
       },

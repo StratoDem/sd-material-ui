@@ -65,8 +65,8 @@ const propTypes = {
   id: PropTypes.string,
 
   /**
-   * If true, the Drawer is opened. Providing a value will turn the Drawer into a
-   * controlled component.
+   * If true, the Drawer is opened. Whether true or false, ensures that the drawer is a controlled
+   * component.
    */
   open: PropTypes.bool,
 
@@ -120,8 +120,8 @@ type State = {
 
 const defaultProps = {
   disableSwipeToOpen: false,
-  docked: false,
-  open: null,
+  docked: true,
+  open: false,
   openSecondary: false,
   swipeAreaWidth: 30,
   width: null,
@@ -131,25 +131,26 @@ const defaultProps = {
 export default class SDDrawer extends Component<Props, State> {
   constructor(props: Props) {
     super(props);
-    this.state = {open: props.docked};
+    this.state = {open: props.open};
   }
 
-  // TODO increment version number before making PR
-
   componentWillReceiveProps(nextProps: Props): void {
-    if (nextProps.open !== null) {
-      this.setState({open: nextProps.open});
-    } else if (this.props.docked !== nextProps.docked) {
-      this.setState({open: nextProps.docked});
+    if (nextProps.open !== null && nextProps.open !== this.props.open) {
+      this.changeDrawerStatus(nextProps.open);
     }
   }
 
-  changeDrawerStatus() {
-    this.setState({open: !this.state.open});
-  }
+  changeDrawerStatus = (open: boolean) => {
+    const { setProps } = this.props;
+
+    if (typeof setProps === 'function')
+      setProps({open});
+
+    this.setState({open});
+  };
 
   render() {
-    const { className, containerclassName, containerStyle, disableSwipeToOpen, docked, id, open,
+    const { className, containerclassName, containerStyle, disableSwipeToOpen, docked, id,
       openSecondary, overlayClassName, overlayStyle, style, swipeAreaWidth, width,
       zDepth } = this.props;
 
@@ -162,8 +163,8 @@ export default class SDDrawer extends Component<Props, State> {
             containerStyle={containerStyle}
             disableSwipeToOpen={disableSwipeToOpen}
             docked={docked}
-            onrequestchange={this.changeDrawerStatus}
-            open={open}
+            onRequestChange={(openStatus: boolean) => this.changeDrawerStatus(openStatus)}
+            open={this.state.open}
             openSecondary={openSecondary}
             overlayClassName={overlayClassName}
             overlayStyle={overlayStyle}
