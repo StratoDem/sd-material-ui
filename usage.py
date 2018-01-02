@@ -128,8 +128,6 @@ def display_clicks_flat(n_clicks_flat: int):
         return ['n_clicks value: ']
 
 
-# TODO this drawer requires two clicks on its input because the open prop must go from null -> false
-# and then from false -> true
 # Callback for SDDrawer (docked, secondary)
 @app.callback(
     dash.dependencies.Output('output6', 'open'),
@@ -139,14 +137,7 @@ def operate_drawer(button_click, drawer_state):
     if button_click:
         return not drawer_state
 
-# available properties for drawer item:
-# ['children', 'className', 'containerclassName', 'containerStyle', 'disableSwipeToOpen',
-#  'docked', 'id', 'open', 'openSecondary', 'overlayClassName', 'overlayStyle', 'style',
-#  'swipeAreaWidth', 'width', 'zDepth']
 
-
-# TODO this drawer is only responsive to the overlay on page load, after that, it is updating the
-# open prop, which is undesired behavior
 # Callback for SDDrawer (not docked)
 @app.callback(
     dash.dependencies.Output('output7', 'open'),
