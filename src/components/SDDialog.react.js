@@ -14,7 +14,7 @@ type Props = {
   children?: Node,
   modal?: boolean,
   open?: boolean,
-  setProps?: () => void,
+  setProps?: (props: { modal?: boolean, open?: boolean }) => void,
 };
 
 const propTypes = {
