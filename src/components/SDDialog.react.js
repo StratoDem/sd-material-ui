@@ -31,7 +31,7 @@ const propTypes = {
  * IMPORTANT: When using this component in Dash, a listener must be set up (either as state or
  * an input) for this component's props.open value in order to achieve the desired behavior.
  * If such a listener is not in place, the non-modal version of this dialog will contaminate
- * other callbacks in the browser.
+ * other callbacks in the browser
  */
   open: PropTypes.bool,
 
