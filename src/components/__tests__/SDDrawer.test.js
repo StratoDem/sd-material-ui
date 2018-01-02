@@ -6,7 +6,7 @@ describe('SDDrawer', () => {
   it('renders', () => {
     const component = shallow(
       <SDDrawer id='test-id'>
-        children=<div>
+        <div>
           <p>Item</p>
         </div>
       </SDDrawer>);
@@ -18,7 +18,7 @@ describe('SDDrawer', () => {
     it('opens and closes (props.open)', () => {
     const component = shallow(
       <SDDrawer id='test-id' open={false}>
-        children=<div>
+        <div>
           <p>Item</p>
         </div>
       </SDDrawer>);
