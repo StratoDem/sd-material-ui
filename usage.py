@@ -30,12 +30,6 @@ app.layout = html.Div([
         open=False),
     html.Div(id='input2', children=[html.P('Share the page (modal)')]),
 
-    sd_material_ui.SDDrawer(id='output5', children=[html.P('Drawer item')]),
-    html.Div(id='input5', children=[
-        html.P('Open or close the drawer')
-    ]),
-])
-
     # Test SDDialog (non-modal)
     sd_material_ui.SDDialog(
         html.Div(children=[
@@ -57,6 +51,12 @@ app.layout = html.Div([
         html.P(id='output5', children=['n_clicks value: '])
     ]),
     sd_material_ui.SDFlatButton(id='input5', label='Click me', backgroundColor='orange'),
+
+    # Test for SDDrawer
+    sd_material_ui.SDDrawer(id='output5', docked=False, children=[html.P('Drawer item')]),
+    html.Div(id='input5', children=[
+        html.P('Open or close the drawer')
+    ]),
 ])
 
 
@@ -117,10 +117,17 @@ def display_clicks_flat(n_clicks_flat: int):
     else:
         return ['n_clicks value: ']
 
+
+# TODO figure out what value to use for opening and closing the drawer; hidden doesn't work
+# Here is a list of the available properties in "output5":
+# ['children', 'id', 'n_clicks', 'key', 'accessKey', 'className', 'contentEditable',
+# 'contextMenu', 'dir', 'draggable', 'hidden', 'lang', 'spellCheck', 'style', 'tabIndex', 'title']
+
+# Callback for SDDrawer
 @app.callback(
-    dash.dependencies.Output('output5', 'docked'),
+    dash.dependencies.Output('output5', 'hidden'),
     [dash.dependencies.Input('input5', 'n_clicks')],
-    [dash.dependencies.State('output5', 'docked')])
+    [dash.dependencies.State('output5', 'hidden')])
 def operate_drawer(button_click, drawer_state):
     if button_click:
         return not drawer_state
