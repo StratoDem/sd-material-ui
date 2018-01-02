@@ -363,7 +363,7 @@
           "name": "bool"
         },
         "required": false,
-        "description": "Is the dialog open?\nIMPORTANT: When using this component in Dash, a listener must be set up (either as state or\nan input) for this component's props.open value in order to achieve the desired behavior.\nIf such a listener is not in place, the non-modal version of this dialog will contaminate\nother callbacks in the browser.",
+        "description": "Is the dialog open?\nIMPORTANT: When using this component in Dash, a listener must be set up (either as state or\nan input) for this component's props.open value in order to achieve the desired behavior.\nIf such a listener is not in place, the non-modal version of this dialog will contaminate\nother callbacks in the browser",
         "flowType": {
           "name": "boolean"
         },
@@ -381,9 +381,36 @@
         "flowType": {
           "name": "signature",
           "type": "function",
-          "raw": "() => void",
+          "raw": "(props: { modal?: boolean, open?: boolean }) => void",
           "signature": {
-            "arguments": [],
+            "arguments": [
+              {
+                "name": "props",
+                "type": {
+                  "name": "signature",
+                  "type": "object",
+                  "raw": "{ modal?: boolean, open?: boolean }",
+                  "signature": {
+                    "properties": [
+                      {
+                        "key": "modal",
+                        "value": {
+                          "name": "boolean",
+                          "required": false
+                        }
+                      },
+                      {
+                        "key": "open",
+                        "value": {
+                          "name": "boolean",
+                          "required": false
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
             "return": {
               "name": "void"
             }
@@ -405,6 +432,284 @@
         },
         "defaultValue": {
           "value": "null",
+          "computed": false
+        }
+      }
+    }
+  },
+  "src/components/SDDrawer.react.js": {
+    "description": "",
+    "displayName": "SDDrawer",
+    "methods": [
+      {
+        "name": "changeDrawerStatus",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "open",
+            "type": {
+              "name": "boolean"
+            }
+          }
+        ],
+        "returns": null
+      }
+    ],
+    "props": {
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "The contents of the Drawer",
+        "flowType": {
+          "name": "Node"
+        },
+        "defaultValue": {
+          "value": "[]",
+          "computed": false
+        }
+      },
+      "className": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The CSS class name of the root element.",
+        "flowType": {
+          "name": "string"
+        },
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "containerclassName": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The CSS class name of the container element.",
+        "flowType": {
+          "name": "string"
+        },
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "containerStyle": {
+        "type": {
+          "name": "objectOf",
+          "value": {
+            "name": "any"
+          }
+        },
+        "required": false,
+        "description": "Override the inline-styles of the container element.",
+        "flowType": {
+          "name": "Object"
+        },
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "disableSwipeToOpen": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "If true, swiping sideways when the Drawer is closed will not open it.",
+        "flowType": {
+          "name": "boolean"
+        },
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "docked": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "If true, the Drawer will be docked. In this state, the overlay won't show and clicking on a\nmenu item will not close the Drawer.",
+        "flowType": {
+          "name": "boolean"
+        },
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        }
+      },
+      "id": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "",
+        "flowType": {
+          "name": "string"
+        }
+      },
+      "open": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "If true, the Drawer is opened. Whether true or false, ensures that the drawer is a controlled\ncomponent.",
+        "flowType": {
+          "name": "boolean"
+        },
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "openSecondary": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "If true, the Drawer is positioned to open from the opposite side.",
+        "flowType": {
+          "name": "boolean"
+        },
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "overlayClassName": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The CSS class name to add to the Overlay component that is rendered behind the Drawer.",
+        "flowType": {
+          "name": "string"
+        },
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "overlayStyle": {
+        "type": {
+          "name": "objectOf",
+          "value": {
+            "name": "any"
+          }
+        },
+        "required": false,
+        "description": "Override the inline-styles of the Overlay component that is rendered behind the Drawer.",
+        "flowType": {
+          "name": "Object"
+        },
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "setProps": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "",
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "() => void",
+          "signature": {
+            "arguments": [],
+            "return": {
+              "name": "void"
+            }
+          }
+        },
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      },
+      "style": {
+        "type": {
+          "name": "objectOf",
+          "value": {
+            "name": "any"
+          }
+        },
+        "required": false,
+        "description": "Override the inline-styles of the root element.",
+        "flowType": {
+          "name": "Object"
+        },
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "swipeAreaWidth": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "The width of the left most (or right most) area in pixels where the Drawer can be swiped\nopen from. Setting this to null spans that area to the entire page (CAUTION! Setting this\nproperty to null might cause issues with sliders and swipeable Tabs: use at your own risk).",
+        "flowType": {
+          "name": "number"
+        },
+        "defaultValue": {
+          "value": "30",
+          "computed": false
+        }
+      },
+      "width": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "PropTypes.string",
+              "computed": true
+            },
+            {
+              "value": "PropTypes.number",
+              "computed": true
+            }
+          ]
+        },
+        "required": false,
+        "description": "The width of the Drawer in pixels or percentage in string format ex. 50% to fill half of the\nwindow or 100% and so on. Defaults to using the values from theme.",
+        "flowType": {
+          "name": "union",
+          "raw": "string | number",
+          "elements": [
+            {
+              "name": "string"
+            },
+            {
+              "name": "number"
+            }
+          ]
+        },
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "zDepth": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "The zDepth of the Drawer.",
+        "flowType": {
+          "name": "number"
+        },
+        "defaultValue": {
+          "value": "2",
           "computed": false
         }
       }
