@@ -363,7 +363,7 @@
           "name": "bool"
         },
         "required": false,
-        "description": "Is the Dialog open?",
+        "description": "Is the dialog open?\nIMPORTANT: When using this component in Dash, a listener must be set up (either as state or\nan input) for this component's props.open value in order to achieve the desired behavior.\nIf such a listener is not in place, the non-modal version of this dialog will contaminate\nother callbacks in the browser.",
         "flowType": {
           "name": "boolean"
         },
@@ -381,36 +381,9 @@
         "flowType": {
           "name": "signature",
           "type": "function",
-          "raw": "(props: { modal: boolean, open: boolean }) => void",
+          "raw": "() => void",
           "signature": {
-            "arguments": [
-              {
-                "name": "props",
-                "type": {
-                  "name": "signature",
-                  "type": "object",
-                  "raw": "{ modal: boolean, open: boolean }",
-                  "signature": {
-                    "properties": [
-                      {
-                        "key": "modal",
-                        "value": {
-                          "name": "boolean",
-                          "required": true
-                        }
-                      },
-                      {
-                        "key": "open",
-                        "value": {
-                          "name": "boolean",
-                          "required": true
-                        }
-                      }
-                    ]
-                  }
-                }
-              }
-            ],
+            "arguments": [],
             "return": {
               "name": "void"
             }
