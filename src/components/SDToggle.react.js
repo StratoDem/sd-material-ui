@@ -138,10 +138,10 @@ const defaultProps = {
   trackSwitchedStyle: {},
 };
 
-export default class SDToggle extends React.Component<Props, State> {
+export default class SDToggle extends Component<Props, State> {
   constructor(props: Props) {
     super(props);
-    this.state = {toggled: props.toggled};
+    this.state = {switched: props.toggled};
   }
 
   componentWillReceiveProps(nextProps: Props): void {
@@ -155,7 +155,7 @@ export default class SDToggle extends React.Component<Props, State> {
     if (typeof setProps === 'function')
       setProps({toggled});
 
-    this.setState({toggled});
+    this.setState({switched: toggled});
 
     if (this.props.fireEvent) this.props.fireEvent({event: 'click'});
   };
@@ -208,7 +208,7 @@ export default class SDToggle extends React.Component<Props, State> {
               style={style}
               thumbStyle={thumbStyle}
               thumbSwitchedStyle={thumbSwitchedStyle}
-              toggled={this.state.toggled}
+              toggled={this.state.switched}
               trackStyle={trackStyle}
               trackSwitchedStyle={trackSwitchedStyle}
             />
