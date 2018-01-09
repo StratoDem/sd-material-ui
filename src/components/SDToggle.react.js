@@ -45,14 +45,14 @@ const propTypes = {
   fireEvent: PropTypes.func,
 
   /**
-   * 	Overrides the inline-styles of the Icon element.
+   * Overrides the inline-styles of the Icon element.
    */
   iconStyle: PropTypes.objectOf(PropTypes.any),
 
   /**
    * The element's ID
    */
-  id: PropTypes.string,
+  id: PropTypes.string.isRequired,
 
   /**
    * Overrides the inline-styles of the input element.
@@ -70,7 +70,7 @@ const propTypes = {
   labelPosition: PropTypes.string,
 
   /**
-   * 	Overrides the inline-styles of the Toggle element label.
+   * Overrides the inline-styles of the Toggle element label.
    */
   labelStyle: PropTypes.objectOf(PropTypes.any),
 
@@ -100,7 +100,7 @@ const propTypes = {
   thumbSwitchedStyle: PropTypes.objectOf(PropTypes.any),
 
   /**
-   * 	Toggled if set to true.
+   * Toggled if set to true.
    */
   toggled: PropTypes.bool,
 
@@ -113,6 +113,10 @@ const propTypes = {
    * Override the inline styles for track when the toggle switch is toggled on.
    */
   trackSwitchedStyle: PropTypes.objectOf(PropTypes.any),
+};
+
+type State = {
+  switched: boolean,
 };
 
 const defaultProps = {
@@ -134,21 +138,33 @@ const defaultProps = {
   trackSwitchedStyle: {},
 };
 
-export default class SDToggle extends React.Component<Props> {
-  constructor(props.Props) {
+export default class SDToggle extends React.Component<Props, State> {
+  constructor(props: Props) {
     super(props);
+    this.state = {toggled: props.toggled};
   }
 
-  handleToggle() {
-    if (this.props.setProps) this.props.setProps({toggled: this.props.});
+  componentWillReceiveProps(nextProps: Props): void {
+    if (nextProps.toggled !== null && nextProps.toggled !== this.props.toggled)
+      this.handleToggle(nextProps.toggled);
+  }
+
+  handleToggle = (toggled: boolean) => {
+    const { setProps } = this.props;
+
+    if (typeof setProps === 'function')
+      setProps({toggled});
+
+    this.setState({toggled});
+
     if (this.props.fireEvent) this.props.fireEvent({event: 'click'});
-}
+  };
 
   // TODO increment version number
 
   render() {
-    const { disabled, elementStyle, iconStyle, inputStyle, label, labelPosition,
-      labelStyle, rippleStyle, style, thumbStyle, thumbSwitchedStyle, toggled,
+    const { disabled, elementStyle, iconStyle, id, inputStyle, label, labelPosition,
+      labelStyle, rippleStyle, style, thumbStyle, thumbSwitchedStyle,
       trackStyle, trackSwitchedStyle } = this.props;
 
     if (this.props.fireEvent || this.props.setProps) {
@@ -163,19 +179,19 @@ export default class SDToggle extends React.Component<Props> {
               label={label}
               labelposition={labelPosition}
               labelStyle={labelStyle}
-              onToggle=(event: object, isInputChecked: boolean) =>
-                { this.handleToggle(isInputChecked) }
+              onToggle={(event: object, isInputChecked: boolean) =>
+                this.handleToggle(isInputChecked)}
               rippleStyle={rippleStyle}
               style={style}
               thumbStyle={thumbStyle}
               thumbSwitchedStyle={thumbSwitchedStyle}
-              toggled={toggled}
+              toggled={this.state.switched}
               trackStyle={trackStyle}
               trackSwitchedStyle={trackSwitchedStyle}
             />
           </MuiThemeProvider>
         </div>
-      )
+      );
     } else {
       return (
         <div id={id}>
@@ -192,13 +208,16 @@ export default class SDToggle extends React.Component<Props> {
               style={style}
               thumbStyle={thumbStyle}
               thumbSwitchedStyle={thumbSwitchedStyle}
-              toggled={toggled}
+              toggled={this.state.toggled}
               trackStyle={trackStyle}
               trackSwitchedStyle={trackSwitchedStyle}
             />
           </MuiThemeProvider>
         </div>
-      )
+      );
     }
   }
 }
+
+SDToggle.propTypes = propTypes;
+SDToggle.defaultProps = defaultProps;
