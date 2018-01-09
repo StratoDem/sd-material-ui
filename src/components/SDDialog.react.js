@@ -14,7 +14,7 @@ type Props = {
   children?: Node,
   modal?: boolean,
   open?: boolean,
-  setProps?: (props: { modal: boolean, open: boolean }) => void,
+  setProps?: (props: { modal?: boolean, open?: boolean }) => void,
 };
 
 const propTypes = {
@@ -27,7 +27,12 @@ const propTypes = {
   /** Is the Dialog a modal (must click on an action to close the Dialog)? */
   modal: PropTypes.bool,
 
-  /** Is the Dialog open? */
+  /** Is the dialog open?
+ * IMPORTANT: When using this component in Dash, a listener must be set up (either as state or
+ * an input) for this component's props.open value in order to achieve the desired behavior.
+ * If such a listener is not in place, the non-modal version of this dialog will contaminate
+ * other callbacks in the browser
+ */
   open: PropTypes.bool,
 
   /** Dash callback to update props on the server */
@@ -63,8 +68,9 @@ export default class SDDialog extends Component<Props, State> {
   changeDialogOpenStatus = (open: boolean): void => {
     const { setProps } = this.props;
 
-    if (typeof setProps === 'function')
+    if (typeof setProps === 'function') {
       setProps({open});
+    }
 
     this.setState({open});
   };

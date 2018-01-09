@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import SDFlatButton from '../SDFlatButton.react';
 
 describe('SDFlatButton', () => {
@@ -46,7 +46,7 @@ describe('SDFlatButton', () => {
   it('renders with no callbacks', () => {
     const blankFunc = () => { return null; };
     const component = shallow(
-      <SDFlatButton fireEvent={blankFunc} setProps={blankFunc} />);
+      <SDFlatButton label='myButton' fireEvent={blankFunc} setProps={blankFunc} />);
 
     expect(component).toBe.ok;
   });
