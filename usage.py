@@ -71,6 +71,12 @@ app.layout = html.Div([
         html.P('Box is not checked')
     ]),
     sd_material_ui.SDCheckbox(id='input8', label='Check to change the text above.'),
+
+    # Test for SDToggle
+    sd_material_ui.SDToggle(id='input9', label='Johnny?'),
+    html.Div(id='output9', children=[
+        html.P('Flame off')
+    ]),
 ])
 
 
@@ -167,6 +173,17 @@ def use_clickbox(checkbox):
         return ['Box is checked']
     else:
         return ['Box is unchecked']
+
+
+# Callback for SDToggle
+@app.callback(
+    dash.dependencies.Output('output9', 'children'),
+    [dash.dependencies.Input('input9', 'toggled')])
+def use_toggle(switch):
+    if switch:
+        return ['Flame on!']
+    else:
+        return ['Flame off']
 
 
 if __name__ == '__main__':
