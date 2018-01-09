@@ -102,8 +102,6 @@ export default class SDCheckbox extends Component<Props, State> {
     this.state = {checked: props.checked};
   }
 
-  // TODO increment version number before making PR
-
   componentWillReceiveProps(nextProps: Props): void {
     if (nextProps.checked !== null && nextProps.checked !== this.props.checked)
       this.handleClick(nextProps.checked);
