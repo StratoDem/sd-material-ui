@@ -60,11 +60,17 @@ app.layout = html.Div([
     ]),
 
     # Test for SDDrawer (not docked)
-    sd_material_ui.SDDrawer(id='output7', docked=False, open=True, children=[
+    sd_material_ui.SDDrawer(id='output7', docked=False, open=False, children=[
         html.P(id='close-input7', children='Drawer item')]),
     html.Div(id='input7', children=[
         html.P(children='Open or close the drawer (not docked)')
     ]),
+
+    # Test for SDCheckbox
+    html.Div(id='output8', children=[
+        html.P('Box is not checked')
+    ]),
+    sd_material_ui.SDCheckbox(id='input8', label='Check to change the text above.'),
 ])
 
 
@@ -150,6 +156,17 @@ def operate_drawer(button_click, menu_item_click, drawer_state):
             return True
     if menu_item_click:
         return False
+
+
+# Callback for SDCheckbox
+@app.callback(
+    dash.dependencies.Output('output8', 'children'),
+    [dash.dependencies.Input('input8', 'checked')])
+def use_clickbox(checkbox):
+    if checkbox:
+        return ['Box is checked']
+    else:
+        return ['Box is unchecked']
 
 
 if __name__ == '__main__':

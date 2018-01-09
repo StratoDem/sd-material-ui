@@ -285,6 +285,206 @@
       }
     }
   },
+  "src/components/SDCheckbox.react.js": {
+    "description": "",
+    "displayName": "SDCheckbox",
+    "methods": [
+      {
+        "name": "handleClick",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "checked",
+            "type": {
+              "name": "boolean"
+            }
+          }
+        ],
+        "returns": null
+      }
+    ],
+    "props": {
+      "checked": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Checkbox is checked if true.",
+        "flowType": {
+          "name": "boolean"
+        },
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "disabled": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Disabled if true.",
+        "flowType": {
+          "name": "boolean"
+        },
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "fireEvent": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "A callback for firing events to dash.",
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "() => void",
+          "signature": {
+            "arguments": [],
+            "return": {
+              "name": "void"
+            }
+          }
+        },
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      },
+      "iconStyle": {
+        "type": {
+          "name": "objectOf",
+          "value": {
+            "name": "any"
+          }
+        },
+        "required": false,
+        "description": "Overrides the inline-styles of the icon element.",
+        "flowType": {
+          "name": "Object"
+        },
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "id": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "The element's ID",
+        "flowType": {
+          "name": "string"
+        }
+      },
+      "inputStyle": {
+        "type": {
+          "name": "objectOf",
+          "value": {
+            "name": "any"
+          }
+        },
+        "required": false,
+        "description": "Overrides the inline-styles of the input element.",
+        "flowType": {
+          "name": "Object"
+        },
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "label": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The text label for the checkbox",
+        "flowType": {
+          "name": "string"
+        },
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "labelPosition": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Where the label will be placed next to the checkbox.",
+        "flowType": {
+          "name": "string"
+        },
+        "defaultValue": {
+          "value": "'right'",
+          "computed": false
+        }
+      },
+      "labelStyle": {
+        "type": {
+          "name": "objectOf",
+          "value": {
+            "name": "any"
+          }
+        },
+        "required": false,
+        "description": "Overrides the inline-styles of the Checkbox element label.",
+        "flowType": {
+          "name": "Object"
+        },
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "setProps": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Dash callback to update props on the server",
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "() => void",
+          "signature": {
+            "arguments": [],
+            "return": {
+              "name": "void"
+            }
+          }
+        },
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      },
+      "style": {
+        "type": {
+          "name": "objectOf",
+          "value": {
+            "name": "any"
+          }
+        },
+        "required": false,
+        "description": "Override the inline-styles of the root element.",
+        "flowType": {
+          "name": "Object"
+        },
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      }
+    }
+  },
   "src/components/SDDialog.react.js": {
     "description": "",
     "displayName": "SDDialog",
