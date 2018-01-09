@@ -51,6 +51,26 @@ app.layout = html.Div([
         html.P(id='output5', children=['n_clicks value: '])
     ]),
     sd_material_ui.SDFlatButton(id='input5', label='Click me', backgroundColor='orange'),
+
+    # Test for SDDrawer (docked, secondary)
+    sd_material_ui.SDDrawer(id='output6', docked=True, openSecondary=True,
+                            children=[html.P(children='Drawer item')]),
+    html.Div(id='input6', children=[
+        html.P(children='Open or close the drawer (docked)')
+    ]),
+
+    # Test for SDDrawer (not docked)
+    sd_material_ui.SDDrawer(id='output7', docked=False, open=False, children=[
+        html.P(id='close-input7', children='Drawer item')]),
+    html.Div(id='input7', children=[
+        html.P(children='Open or close the drawer (not docked)')
+    ]),
+
+    # Test for SDCheckbox
+    html.Div(id='output8', children=[
+        html.P('Box is not checked')
+    ]),
+    sd_material_ui.SDCheckbox(id='input8', label='Check to change the text above.'),
 ])
 
 
@@ -82,10 +102,12 @@ def show_modal_dialog(modal_click: int, close_button: int, open_state: bool):
 # Callback for SDDialog (non-modal)
 @app.callback(
     dash.dependencies.Output('non-modal-output', 'open'),
-    [dash.dependencies.Input('non-modal-input', 'n_clicks')])
-def show_non_modal_dialog(non_modal_click: int):
+    [dash.dependencies.Input('non-modal-input', 'n_clicks')],
+    [dash.dependencies.State('non-modal-output', 'open')])
+def show_non_modal_dialog(non_modal_click: int, open_state: bool):
     if non_modal_click and non_modal_click > 0:
-        return True
+        if not open_state:
+            return True
     else:
         return False
 
@@ -110,6 +132,41 @@ def display_clicks_flat(n_clicks_flat: int):
         return ['n_clicks value: {}'.format(n_clicks_flat)]
     else:
         return ['n_clicks value: ']
+
+
+# Callback for SDDrawer (docked, secondary)
+@app.callback(
+    dash.dependencies.Output('output6', 'open'),
+    [dash.dependencies.Input('input6', 'n_clicks')],
+    [dash.dependencies.State('output6', 'open')])
+def operate_drawer(button_click, drawer_state):
+    if button_click:
+        return not drawer_state
+
+
+# Callback for SDDrawer (not docked)
+@app.callback(
+    dash.dependencies.Output('output7', 'open'),
+    [dash.dependencies.Input('input7', 'n_clicks'),
+     dash.dependencies.Input('close-input7', 'n_clicks')],
+    [dash.dependencies.State('output7', 'open')])
+def operate_drawer(button_click, menu_item_click, drawer_state):
+    if not drawer_state:
+        if button_click:
+            return True
+    if menu_item_click:
+        return False
+
+
+# Callback for SDCheckbox
+@app.callback(
+    dash.dependencies.Output('output8', 'children'),
+    [dash.dependencies.Input('input8', 'checked')])
+def use_clickbox(checkbox):
+    if checkbox:
+        return ['Box is checked']
+    else:
+        return ['Box is unchecked']
 
 
 if __name__ == '__main__':
