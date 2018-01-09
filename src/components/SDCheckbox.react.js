@@ -15,11 +15,11 @@ type Props = {
   iconStyle?: Object,
   id: string,
   inputStyle?: Object,
+  label?: string,
   labelPosition?: string,
   labelStyle?: Object,
   setProps?: () => void,
   style?: Object,
-  valueLink?: Object,
 };
 
 const propTypes = {
@@ -54,6 +54,11 @@ const propTypes = {
   inputStyle: PropTypes.objectOf(PropTypes.any),
 
   /**
+   * The text label for the checkbox
+   */
+  label: PropTypes.string,
+
+  /**
    * Where the label will be placed next to the checkbox.
    */
   labelPosition: PropTypes.string,
@@ -72,11 +77,6 @@ const propTypes = {
    * Override the inline-styles of the root element.
    */
   style: PropTypes.objectOf(PropTypes.any),
-
-  /**
-   * ValueLink for when using controlled checkbox.
-   */
-  valueLink: PropTypes.objectOf(PropTypes.any),
 };
 
 type State = {
@@ -89,11 +89,11 @@ const defaultProps = {
   fireEvent: () => {},
   iconStyle: {},
   inputStyle: {},
+  label: '',
   labelPosition: 'right',
   labelStyle: {},
   setProps: () => {},
   style: {},
-  valueLink: {},
 };
 
 export default class SDCheckbox extends Component<Props, State> {
@@ -121,8 +121,8 @@ export default class SDCheckbox extends Component<Props, State> {
   };
 
   render() {
-    const { disabled, iconStyle, id, inputStyle, labelPosition, labelStyle, style,
-      valueLink } = this.props;
+    const { disabled, iconStyle, id, inputStyle, label, labelPosition, labelStyle,
+      style} = this.props;
     if (this.props.fireEvent || this.props.setProps) {
       return (
         <div id={id}>
@@ -132,11 +132,11 @@ export default class SDCheckbox extends Component<Props, State> {
               disabled={disabled}
               iconStyle={iconStyle}
               inputStyle={inputStyle}
+              label={label}
               labelPosition={labelPosition}
               labelStyle={labelStyle}
-              onCheck={(checkedStatus: boolean) => this.handleClick(checkedStatus)}
+              onCheck={(event: object, isInputChecked: boolean) => this.handleClick(isInputChecked)}
               style={style}
-              valueLink={valueLink}
             />
           </MuiThemeProvider>
         </div>);
@@ -145,14 +145,14 @@ export default class SDCheckbox extends Component<Props, State> {
         <div id={id}>
           <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
             <Checkbox
-              checked={checked}
+              checked={this.state.checked}
               disabled={disabled}
               iconStyle={iconStyle}
               inputStyle={inputStyle}
+              label={label}
               labelPosition={labelPosition}
               labelStyle={labelStyle}
               style={style}
-              valueLink={valueLink}
             />
           </MuiThemeProvider>
         </div>);
