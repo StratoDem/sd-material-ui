@@ -10,8 +10,6 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
 type Props = {
   checked?: boolean,
-  checkedIcon?: Element,
-  defaultChecked?: boolean,
   disabled?: boolean,
   fireEvent?: () => void,
   iconStyle?: Object,
@@ -21,7 +19,6 @@ type Props = {
   labelStyle?: Object,
   setProps?: () => void,
   style?: Object,
-  uncheckedIcon?: Element,
   valueLink?: Object,
 };
 
@@ -30,18 +27,6 @@ const propTypes = {
    * Checkbox is checked if true.
    */
   checked: PropTypes.bool,
-
-  /**
-   * The SvgIcon to use for the checked state. This is useful to create icon toggles.
-   */
-  checkedIcon: PropTypes.element,
-
-  /**
-   * The default state of our checkbox component. Warning: This cannot be used in conjunction with
-   * checked. Decide between using a controlled or uncontrolled input element and remove one of
-   * these props.
-   */
-  defaultChecked: PropTypes.bool,
 
   /**
    * Disabled if true.
@@ -56,7 +41,7 @@ const propTypes = {
   /**
    * Overrides the inline-styles of the icon element.
    */
-  iconStyle: PropTypes.object,
+  iconStyle: PropTypes.objectOf(PropTypes.any),
 
   /**
    * The element's ID
@@ -66,7 +51,7 @@ const propTypes = {
   /**
    * Overrides the inline-styles of the input element.
    */
-  inputStyle: PropTypes.object,
+  inputStyle: PropTypes.objectOf(PropTypes.any),
 
   /**
    * Where the label will be placed next to the checkbox.
@@ -76,7 +61,7 @@ const propTypes = {
   /**
    * Overrides the inline-styles of the Checkbox element label.
    */
-  labelStyle: PropTypes.object,
+  labelStyle: PropTypes.objectOf(PropTypes.any),
 
   /**
    * Dash callback to update props on the server
@@ -86,17 +71,12 @@ const propTypes = {
   /**
    * Override the inline-styles of the root element.
    */
-  style: PropTypes.object,
-
-  /**
-   * The SvgIcon to use for the unchecked state. This is useful to create icon toggles.
-   */
-  uncheckedIcon: PropTypes.element,
+  style: PropTypes.objectOf(PropTypes.any),
 
   /**
    * ValueLink for when using controlled checkbox.
    */
-  valueLink: PropTypes.object,
+  valueLink: PropTypes.objectOf(PropTypes.any),
 };
 
 type State = {
@@ -104,54 +84,58 @@ type State = {
 };
 
 const defaultProps = {
+  checked: false,
   disabled: false,
   fireEvent: () => {},
+  iconStyle: {},
+  inputStyle: {},
   labelPosition: 'right',
+  labelStyle: {},
   setProps: () => {},
+  style: {},
+  valueLink: {},
 };
 
 export default class SDCheckbox extends Component<Props, State> {
   constructor(props: Props) {
     super(props);
-    this.state = {checked: false};
-    this.handleClick = this.handleClick.bind(this);
+    this.state = {checked: props.checked};
   }
 
   // TODO increment version number before making PR
 
   componentWillReceiveProps(nextProps: Props): void {
-    if (nextProps.checked !== this.state.checked)
-      this.handleClick();
+    if (nextProps.checked !== null && nextProps.checked !== this.props.checked)
+      this.handleClick(nextProps.checked);
   }
 
-  handleClick = (): void => {
+  handleClick = (checked: boolean) => {
     const { setProps } = this.props;
 
     if (typeof setProps === 'function')
-      setProps({checked: !this.state.checked});
-      setState({checked: !this.state.checked});
+      setProps({checked});
+
+    this.setState({checked});
+
     if (this.props.fireEvent) this.props.fireEvent({event: 'click'});
   };
 
   render() {
-    const { checked, checkedIcon, defaultChecked, disabled, iconStyle, id, inputStyle,
-      labelPosition, labelStyle, style, uncheckedIcon, valueLink } = this.props;
+    const { disabled, iconStyle, id, inputStyle, labelPosition, labelStyle, style,
+      valueLink } = this.props;
     if (this.props.fireEvent || this.props.setProps) {
       return (
         <div id={id}>
           <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
             <Checkbox
-              checked={checked}
-              checkedIcon={checkedIcon}
-              defaultChecked={defaultChecked}
+              checked={this.state.checked}
               disabled={disabled}
               iconStyle={iconStyle}
               inputStyle={inputStyle}
               labelPosition={labelPosition}
               labelStyle={labelStyle}
-              onCheck={this.handleClick}
+              onCheck={(checkedStatus: boolean) => this.handleClick(checkedStatus)}
               style={style}
-              uncheckedIcon={uncheckedIcon}
               valueLink={valueLink}
             />
           </MuiThemeProvider>
@@ -162,15 +146,12 @@ export default class SDCheckbox extends Component<Props, State> {
           <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
             <Checkbox
               checked={checked}
-              checkedIcon={checkedIcon}
-              defaultChecked={defaultChecked}
               disabled={disabled}
               iconStyle={iconStyle}
               inputStyle={inputStyle}
               labelPosition={labelPosition}
               labelStyle={labelStyle}
               style={style}
-              uncheckedIcon={uncheckedIcon}
               valueLink={valueLink}
             />
           </MuiThemeProvider>
