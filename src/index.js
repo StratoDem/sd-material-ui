@@ -4,6 +4,7 @@ import SDDialog from './components/SDDialog.react';
 import SDDrawer from './components/SDDrawer.react';
 import SDFlatButton from './components/SDFlatButton.react';
 import SDRaisedButton from './components/SDRaisedButton.react';
+import SDToggle from './components/SDToggle.react';
 
 export {
   BottomNavigation,
@@ -12,4 +13,5 @@ export {
   SDDrawer,
   SDFlatButton,
   SDRaisedButton,
+  SDToggle,
 };

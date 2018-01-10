@@ -6,6 +6,8 @@ app = dash.Dash('')
 
 app.scripts.config.serve_locally = True
 
+spacer = html.Div(children=[], style=dict(height=20))
+
 app.layout = html.Div([
 
     # Test BottomNavigation
@@ -19,6 +21,8 @@ app.layout = html.Div([
         ]),
     html.Div(id='output'),
 
+    spacer,
+
     # Test SDDialog (modal)
     sd_material_ui.SDDialog(
         html.Div(children=[
@@ -30,6 +34,8 @@ app.layout = html.Div([
         open=False),
     html.Div(id='input2', children=[html.P('Share the page (modal)')]),
 
+    spacer,
+
     # Test SDDialog (non-modal)
     sd_material_ui.SDDialog(
         html.Div(children=[
@@ -40,17 +46,23 @@ app.layout = html.Div([
         open=False),
     html.Div(id='non-modal-input', children=[html.P('Share the page (non-modal)')]),
 
+    spacer,
+
     # Test SDRaisedButton
     html.Div(children=[
         html.P(id='output4', children=['n_clicks value: '])
     ]),
     sd_material_ui.SDRaisedButton(id='input4', label='Click me'),
 
+    spacer,
+
     # Test SDFlatButton
     html.Div(children=[
         html.P(id='output5', children=['n_clicks value: '])
     ]),
     sd_material_ui.SDFlatButton(id='input5', label='Click me', backgroundColor='orange'),
+
+    spacer,
 
     # Test for SDDrawer (docked, secondary)
     sd_material_ui.SDDrawer(id='output6', docked=True, openSecondary=True,
@@ -59,6 +71,8 @@ app.layout = html.Div([
         html.P(children='Open or close the drawer (docked)')
     ]),
 
+    spacer,
+
     # Test for SDDrawer (not docked)
     sd_material_ui.SDDrawer(id='output7', docked=False, open=False, children=[
         html.P(id='close-input7', children='Drawer item')]),
@@ -66,11 +80,23 @@ app.layout = html.Div([
         html.P(children='Open or close the drawer (not docked)')
     ]),
 
+    spacer,
+
     # Test for SDCheckbox
     html.Div(id='output8', children=[
         html.P('Box is not checked')
     ]),
     sd_material_ui.SDCheckbox(id='input8', label='Check to change the text above.'),
+
+    spacer,
+
+    # Test for SDToggle
+    html.Div(children=[
+        sd_material_ui.SDToggle(id='input9', label='Johnny?'),
+        html.Div(id='output9', children=[
+            html.P('Flame off')
+        ]),
+     ], style=dict(width=150)),
 ])
 
 
@@ -167,6 +193,17 @@ def use_clickbox(checkbox):
         return ['Box is checked']
     else:
         return ['Box is unchecked']
+
+
+# Callback for SDToggle
+@app.callback(
+    dash.dependencies.Output('output9', 'children'),
+    [dash.dependencies.Input('input9', 'toggled')])
+def use_toggle(switch):
+    if switch:
+        return ['Flame on!']
+    else:
+        return ['Flame off']
 
 
 if __name__ == '__main__':
