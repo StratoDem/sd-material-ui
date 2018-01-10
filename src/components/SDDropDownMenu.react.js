@@ -16,7 +16,6 @@ type Props = {
   children?: Node,
   className?: string,
   disabled?: boolean,
-  fireEvent?: () => void,
   iconButton?: Node,
   iconStyle?: object,
   id: string,
@@ -26,6 +25,7 @@ type Props = {
   menuItemStyle?: object,
   menuStyle?: object,
   multiple?: boolean,
+  open?: boolean,
   openImmediately?: boolean,
   selectedMenuItemStyle?: object,
   setProps?: () => void,
@@ -75,11 +75,6 @@ const propTypes = {
   disabled: PropTypes.bool,
 
   /**
-   * A callback for firing events to dash.
-   */
-  fireEvent: PropTypes.func,
-
-  /**
    * Overrides default SvgIcon dropdown arrow component.
    */
   iconButton: PropTypes.node,
@@ -125,6 +120,11 @@ const propTypes = {
   multiple: PropTypes.bool,
 
   /**
+   * If true, the menu is open
+   */
+  open: PropTypes.bool,
+
+  /**
    * Set to true to have the DropDownMenu automatically open on mount.
    */
   openImmediately: PropTypes.bool,
@@ -164,6 +164,7 @@ const propTypes = {
 
 type State = {
   open: boolean,
+  value: number,
 };
 
 const defaultProps = {
@@ -174,7 +175,6 @@ const defaultProps = {
   children: null,
   className: '',
   disabled: false,
-  fireEvent: () => {},
   iconButton: Node,
   iconStyle: {},
   labelStyle: {},
@@ -183,6 +183,7 @@ const defaultProps = {
   menuItemStyle: {},
   menuStyle: {},
   multiple: false,
+  open: false,
   openImmediately: false,
   selectedMenuItemStyle: {},
   setProps: () => {},
@@ -195,5 +196,65 @@ const defaultProps = {
 export default class SDDropDownMenu extends Component<Props, State> {
   constructor(props: Props) {
     super(props);
+    this.state = {open: props.open};
+  }
+
+  componentWillReceiveProps(nextProps: Props): void {
+    if (nextProps.open !== null && nextProps.open !== this.props.open)
+      this.operateMenu(nextProps.open);
+  }
+
+  operateMenu = (open: boolean) => {
+    const { setProps } = this.props;
+
+    if (typeof setProps === 'function')
+      setProps({open});
+
+    this.setState({open});
+  };
+
+  render() {
+    const { anchorOrigin, animated, animation, autoWidth, className, disabled, iconButton,
+      iconStyle, id, labelStyle, listStyle, maxHeight, menuItemStyle, menuStyle, multiple,
+      openImmediately, selectedMenuItemStyle, style, targetOrigin, underlineStyle,
+      value } = this.props;
+
+    return (
+      <div id={id}>
+        <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
+          <DropDownMenu
+            anchorOrigin={anchorOrigin}
+            animated={animated}
+            animation={animation}
+            autoWidth={autoWidth}
+            className={className}
+            disabled={disabled}
+            iconButton={iconButton}
+            iconStyle={iconStyle}
+            labelStyle={labelStyle}
+            listStyle={listStyle}
+            maxHeight={maxHeight}
+            menuItemStyle={menuItemStyle}
+            menuStyle={menuStyle}
+            multiple={multiple}
+            onChange={() => {}} // fill out
+            onClose={() => {}} // fill out
+            open={this.state.open}
+            openImmediately={openImmediately}
+            selectedMenuItemStyle={selectedMenuItemStyle}
+            selectionRenderer={() => {}} // fill out
+            style={style}
+            targetOrigin={targetOrigin}
+            underlineStyle={underlineStyle}
+            value={value}
+          >
+            {this.props.children}
+          </DropDownMenu>
+        </MuiThemeProvider>
+      </div>
+    );
   }
 }
+
+SDDropDownMenu.propTypes = propTypes;
+SDDropDownMenu.defaultProps = defaultProps;
