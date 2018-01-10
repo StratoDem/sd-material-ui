@@ -160,8 +160,6 @@ export default class SDToggle extends Component<Props, State> {
     if (this.props.fireEvent) this.props.fireEvent({event: 'click'});
   };
 
-  // TODO increment version number
-
   render() {
     const { disabled, elementStyle, iconStyle, id, inputStyle, label, labelPosition,
       labelStyle, rippleStyle, style, thumbStyle, thumbSwitchedStyle,
