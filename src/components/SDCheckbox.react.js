@@ -150,6 +150,8 @@ export default class SDCheckbox extends Component<Props, State> {
               label={label}
               labelPosition={labelPosition}
               labelStyle={labelStyle}
+              onCheck={(event: object, isInputChecked: boolean) =>
+                this.setState({checked: isInputChecked})}
               style={style}
             />
           </MuiThemeProvider>

@@ -175,7 +175,7 @@ export default class SDToggle extends Component<Props, State> {
               iconStyle={iconStyle}
               inputStyle={inputStyle}
               label={label}
-              labelposition={labelPosition}
+              labelPosition={labelPosition}
               labelStyle={labelStyle}
               onToggle={(event: object, isInputChecked: boolean) =>
                 this.handleToggle(isInputChecked)}
@@ -202,6 +202,8 @@ export default class SDToggle extends Component<Props, State> {
               label={label}
               labelposition={labelPosition}
               labelStyle={labelStyle}
+              onToggle={(event: object, isInputChecked: boolean) =>
+                this.setState({switched: isInputChecked})}
               rippleStyle={rippleStyle}
               style={style}
               thumbStyle={thumbStyle}
