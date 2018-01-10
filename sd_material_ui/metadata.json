@@ -1546,5 +1546,307 @@
         "description": ""
       }
     }
+  },
+  "src/components/SDToggle.react.js": {
+    "description": "",
+    "displayName": "SDToggle",
+    "methods": [
+      {
+        "name": "handleToggle",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "toggled",
+            "type": {
+              "name": "boolean"
+            }
+          }
+        ],
+        "returns": null
+      }
+    ],
+    "props": {
+      "disabled": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Will disable the toggle if true.",
+        "flowType": {
+          "name": "boolean"
+        },
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "elementStyle": {
+        "type": {
+          "name": "objectOf",
+          "value": {
+            "name": "any"
+          }
+        },
+        "required": false,
+        "description": "Overrides the inline-styles of the Toggle element.",
+        "flowType": {
+          "name": "Object"
+        },
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "fireEvent": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "A callback for firing events to dash.",
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "() => void",
+          "signature": {
+            "arguments": [],
+            "return": {
+              "name": "void"
+            }
+          }
+        },
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      },
+      "iconStyle": {
+        "type": {
+          "name": "objectOf",
+          "value": {
+            "name": "any"
+          }
+        },
+        "required": false,
+        "description": "Overrides the inline-styles of the Icon element.",
+        "flowType": {
+          "name": "Object"
+        },
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "id": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "The element's ID",
+        "flowType": {
+          "name": "string"
+        }
+      },
+      "inputStyle": {
+        "type": {
+          "name": "objectOf",
+          "value": {
+            "name": "any"
+          }
+        },
+        "required": false,
+        "description": "Overrides the inline-styles of the input element.",
+        "flowType": {
+          "name": "Object"
+        },
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "label": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Label for toggle.",
+        "flowType": {
+          "name": "Node"
+        },
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "labelPosition": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Where the label will be placed next to the toggle.",
+        "flowType": {
+          "name": "string"
+        },
+        "defaultValue": {
+          "value": "'left'",
+          "computed": false
+        }
+      },
+      "labelStyle": {
+        "type": {
+          "name": "objectOf",
+          "value": {
+            "name": "any"
+          }
+        },
+        "required": false,
+        "description": "Overrides the inline-styles of the Toggle element label.",
+        "flowType": {
+          "name": "Object"
+        },
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "rippleStyle": {
+        "type": {
+          "name": "objectOf",
+          "value": {
+            "name": "any"
+          }
+        },
+        "required": false,
+        "description": "Override style of ripple.",
+        "flowType": {
+          "name": "Object"
+        },
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "setProps": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Dash callback to update props on the server",
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "() => void",
+          "signature": {
+            "arguments": [],
+            "return": {
+              "name": "void"
+            }
+          }
+        },
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      },
+      "style": {
+        "type": {
+          "name": "objectOf",
+          "value": {
+            "name": "any"
+          }
+        },
+        "required": false,
+        "description": "Override the inline-styles of the root element.",
+        "flowType": {
+          "name": "Object"
+        },
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "thumbStyle": {
+        "type": {
+          "name": "objectOf",
+          "value": {
+            "name": "any"
+          }
+        },
+        "required": false,
+        "description": "Override style for thumb.",
+        "flowType": {
+          "name": "Object"
+        },
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "thumbSwitchedStyle": {
+        "type": {
+          "name": "objectOf",
+          "value": {
+            "name": "any"
+          }
+        },
+        "required": false,
+        "description": "Override the inline styles for thumb when the toggle switch is toggled on.",
+        "flowType": {
+          "name": "Object"
+        },
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "toggled": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Toggled if set to true.",
+        "flowType": {
+          "name": "boolean"
+        },
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "trackStyle": {
+        "type": {
+          "name": "objectOf",
+          "value": {
+            "name": "any"
+          }
+        },
+        "required": false,
+        "description": "Override style for track.",
+        "flowType": {
+          "name": "Object"
+        },
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "trackSwitchedStyle": {
+        "type": {
+          "name": "objectOf",
+          "value": {
+            "name": "any"
+          }
+        },
+        "required": false,
+        "description": "Override the inline styles for track when the toggle switch is toggled on.",
+        "flowType": {
+          "name": "Object"
+        },
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      }
+    }
   }
 }
