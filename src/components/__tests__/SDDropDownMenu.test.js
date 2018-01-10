@@ -22,13 +22,13 @@ describe('SDDropDownMenu', () => {
     );
 
     expect(component.state('value')).toEqual(1);
-    component.setProps().onChange({}, 1, 2);
+    component.find('DropDownMenu').props().onChange({}, 1, 2);
     expect(component.state('value')).toEqual(2);
   });
 
   it('handles multiple selections', () => {
     const component = mount(
-      <SDMenuItem id='test-id' multiple={true} value={1} >
+      <SDMenuItem id='test-id' multiple={true} value={1}>
         <SDMenuItem id='test-id2' value={1} primaryText='Test text' />
         <SDMenuItem id='test-id3' value={2} primaryText='Test text' />
       </SDMenuItem>
