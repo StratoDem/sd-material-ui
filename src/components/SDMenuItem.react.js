@@ -130,6 +130,7 @@ const defaultProps = {
   open: false,
   primaryText: '',
   secondaryText: '',
+  setProps: () => {},
   style: {},
   targetOrigin: {},
   value: null,

@@ -3,6 +3,7 @@ import SDCheckbox from './components/SDCheckbox.react';
 import SDDialog from './components/SDDialog.react';
 import SDDrawer from './components/SDDrawer.react';
 import SDFlatButton from './components/SDFlatButton.react';
+import SDMenuItem from './components/SDMenuItem.react';
 import SDRaisedButton from './components/SDRaisedButton.react';
 import SDToggle from './components/SDToggle.react';
 
@@ -12,6 +13,7 @@ export {
   SDDialog,
   SDDrawer,
   SDFlatButton,
+  SDMenuItem,
   SDRaisedButton,
   SDToggle,
 };
