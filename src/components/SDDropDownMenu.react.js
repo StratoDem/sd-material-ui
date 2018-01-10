@@ -11,11 +11,11 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 type Props = {
   anchorOrigin?: object, // ???
   animated?: boolean,
-  animation?: () => void,
   autoWidth?: boolean,
   children?: Node,
   className?: string,
   disabled?: boolean,
+  fireEvent?: () => void,
   iconButton?: Node,
   iconStyle?: object,
   id: string,
@@ -25,7 +25,6 @@ type Props = {
   menuItemStyle?: object,
   menuStyle?: object,
   multiple?: boolean,
-  open?: boolean,
   openImmediately?: boolean,
   selectedMenuItemStyle?: object,
   setProps?: () => void,
@@ -48,11 +47,6 @@ const propTypes = {
   animated: PropTypes.bool,
 
   /**
-   * Override the default animation component used.
-   */
-  animation: PropTypes.func,
-
-  /**
    * The width will automatically be set according to the items inside the menu. To control
    * this width in css instead, set this prop to false.
    */
@@ -73,6 +67,11 @@ const propTypes = {
    * Disables the menu.
    */
   disabled: PropTypes.bool,
+
+  /**
+   * A callback for firing events to dash.
+   */
+  fireEvent: PropTypes.func,
 
   /**
    * Overrides default SvgIcon dropdown arrow component.
@@ -120,11 +119,6 @@ const propTypes = {
   multiple: PropTypes.bool,
 
   /**
-   * If true, the menu is open
-   */
-  open: PropTypes.bool,
-
-  /**
    * Set to true to have the DropDownMenu automatically open on mount.
    */
   openImmediately: PropTypes.bool,
@@ -170,11 +164,11 @@ type State = {
 const defaultProps = {
   anchorOrigin: { vertical: 'top', horizontal: 'left'},
   animated: true,
-  animation: () => {},
   autoWidth: true,
   children: null,
   className: '',
   disabled: false,
+  fireEvent: () => {},
   iconButton: Node,
   iconStyle: {},
   labelStyle: {},
@@ -183,7 +177,6 @@ const defaultProps = {
   menuItemStyle: {},
   menuStyle: {},
   multiple: false,
-  open: false,
   openImmediately: false,
   selectedMenuItemStyle: {},
   setProps: () => {},
@@ -196,28 +189,22 @@ const defaultProps = {
 export default class SDDropDownMenu extends Component<Props, State> {
   constructor(props: Props) {
     super(props);
-    this.state = {open: props.open};
+    this.state = {value: this.props.value};
   }
 
-  componentWillReceiveProps(nextProps: Props): void {
-    if (nextProps.open !== null && nextProps.open !== this.props.open)
-      this.operateMenu(nextProps.open);
-  }
-
-  operateMenu = (open: boolean) => {
+  handleChange = (key, value) => {
     const { setProps } = this.props;
 
     if (typeof setProps === 'function')
-      setProps({open});
+      setProps({value});
 
-    this.setState({open});
+    this.setState({value});
   };
 
   render() {
-    const { anchorOrigin, animated, animation, autoWidth, className, disabled, iconButton,
+    const { anchorOrigin, animated, autoWidth, className, disabled, iconButton,
       iconStyle, id, labelStyle, listStyle, maxHeight, menuItemStyle, menuStyle, multiple,
-      openImmediately, selectedMenuItemStyle, style, targetOrigin, underlineStyle,
-      value } = this.props;
+      openImmediately, selectedMenuItemStyle, style, targetOrigin, underlineStyle} = this.props;
 
     return (
       <div id={id}>
@@ -225,7 +212,6 @@ export default class SDDropDownMenu extends Component<Props, State> {
           <DropDownMenu
             anchorOrigin={anchorOrigin}
             animated={animated}
-            animation={animation}
             autoWidth={autoWidth}
             className={className}
             disabled={disabled}
@@ -237,16 +223,13 @@ export default class SDDropDownMenu extends Component<Props, State> {
             menuItemStyle={menuItemStyle}
             menuStyle={menuStyle}
             multiple={multiple}
-            onChange={() => {}} // fill out
-            onClose={() => {}} // fill out
-            open={this.state.open}
+            onChange={(event: object, key: number, value: any) => handleChange(key, value)}
             openImmediately={openImmediately}
             selectedMenuItemStyle={selectedMenuItemStyle}
-            selectionRenderer={() => {}} // fill out
             style={style}
             targetOrigin={targetOrigin}
             underlineStyle={underlineStyle}
-            value={value}
+            value={this.state.value}
           >
             {this.props.children}
           </DropDownMenu>
