@@ -2,6 +2,14 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 1.6.0 - 2018-01-10
+### Added
+- SDMenuItem
+- SDDropDownMenu
+
+### Fixes
+- Default value in SDDrawer
+
 ## 1.5.0 - 2018-01-10
 ### Added
 - SDToggle
