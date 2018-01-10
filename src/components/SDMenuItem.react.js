@@ -193,10 +193,10 @@ export default class SDMenuItem extends Component<Props, State> {
     this.setState({checked});
   };
 
-  handleClick = (nextProps: Props) => {
+  handleClick = (wasClicked: boolean) => {
     if (this.props.fireEvent) this.props.fireEvent({event: 'click'});
-    if (this.props.menuItems) this.changeOpenStatus(nextProps.open);
-    if (this.props.checkable) this.changeChecked(nextProps.checked);
+    if (this.props.menuItems) this.changeOpenStatus(wasClicked);
+    if (this.props.checkable) this.changeChecked(wasClicked);
   };
 
   render() {
@@ -215,7 +215,7 @@ export default class SDMenuItem extends Component<Props, State> {
             insetChildren={insetChildren}
             label={label}
             menuItems={this.props.menuItems}
-            onClick={this.handleClick}
+            onClick={(wasItemClicked: boolean) => this.handleClick(wasItemClicked)}
             open={this.state.open}
             primaryText={primaryText}
             secondaryText={secondaryText}
