@@ -10,9 +10,11 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
 type Props = {
   anchorOrigin?: object,
+  checkable?: boolean,
   checked?: boolean,
   children?: Node,
   disabled?: boolean,
+  fireEvent?: () => void,
   innerDivStyle?: object,
   insetChildren?: boolean,
   id: string,
@@ -38,6 +40,11 @@ const propTypes = {
   anchorOrigin: PropTypes.objectOf(PropTypes.any),
 
   /**
+   * Whether this item can be checked or not.
+   */
+  checkable: PropTypes.bool,
+
+  /**
    * If true, a left check mark will be rendered.
    */
   checked: PropTypes.bool,
@@ -51,6 +58,11 @@ const propTypes = {
    * Disables this menu item.
    */
   disabled: PropTypes.bool,
+
+  /**
+   * A callback for firing events to dash.
+   */
+  fireEvent: PropTypes.func,
 
   /**
    * The element's ID.
@@ -120,9 +132,11 @@ const propTypes = {
 
 const defaultProps = {
   anchorOrigin: {},
+  checkable: false,
   checked: false,
   children: null,
   disabled: false,
+  fireEvent: () => {},
   innerDivStyle: {},
   insetChildren: false,
   label: '',
@@ -148,12 +162,16 @@ export default class SDMenuItem extends Component<Props, State> {
   }
 
   componentWillReceiveProps(nextProps: Props): void {
-    if (nextProps.open !== null && nextProps.open !== this.props.open) {
-      this.changeOpenStatus(nextProps.open);
+    if (menuItems) {
+      if (nextProps.open !== null && nextProps.open !== this.props.open) {
+        this.changeOpenStatus(nextProps.open);
+      }
     }
 
-    if (nextProps.checked !== null && nextProps.checked !== this.props.checked) {
-      this.changeChecked(nextProps.checked);
+    if (this.props.checkable) {
+      if (nextProps.checked !== null && nextProps.checked !== this.props.checked) {
+        this.changeChecked(nextProps.checked);
+      }
     }
   }
 
@@ -173,6 +191,10 @@ export default class SDMenuItem extends Component<Props, State> {
       setProps({checked});
 
     this.setState({checked});
+  };
+
+  handleClick = () => {
+    if (this.props.fireEvent) this.props.fireEvent({event: 'click'});
   };
 
   render() {
