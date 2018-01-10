@@ -162,7 +162,7 @@ export default class SDMenuItem extends Component<Props, State> {
   }
 
   componentWillReceiveProps(nextProps: Props): void {
-    if (menuItems) {
+    if (this.props.menuItems) {
       if (nextProps.open !== null && nextProps.open !== this.props.open) {
         this.changeOpenStatus(nextProps.open);
       }
@@ -193,13 +193,15 @@ export default class SDMenuItem extends Component<Props, State> {
     this.setState({checked});
   };
 
-  handleClick = () => {
+  handleClick = (nextProps: Props) => {
     if (this.props.fireEvent) this.props.fireEvent({event: 'click'});
+    if (this.props.menuItems) this.changeOpenStatus(nextProps.open);
+    if (this.props.checkable) this.changeChecked(nextProps.checked);
   };
 
   render() {
     const { anchorOrigin, disabled, innerDivStyle, insetChildren,
-      id, label, menuItems, primaryText, secondaryText, style, targetOrigin,
+      id, label, primaryText, secondaryText, style, targetOrigin,
       value } = this.props;
 
     return (
@@ -212,7 +214,8 @@ export default class SDMenuItem extends Component<Props, State> {
             innerDivStyle={innerDivStyle}
             insetChildren={insetChildren}
             label={label}
-            menuItems={menuItems}
+            menuItems={this.props.menuItems}
+            onClick={this.handleClick}
             open={this.state.open}
             primaryText={primaryText}
             secondaryText={secondaryText}
