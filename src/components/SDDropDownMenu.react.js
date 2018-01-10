@@ -192,7 +192,7 @@ export default class SDDropDownMenu extends Component<Props, State> {
     this.state = {value: this.props.value};
   }
 
-  handleChange = (key, value) => {
+  handleChange = (key: number, value: any) => {
     const { setProps } = this.props;
 
     if (typeof setProps === 'function')

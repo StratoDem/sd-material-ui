@@ -926,11 +926,15 @@
         "params": [
           {
             "name": "key",
-            "type": null
+            "type": {
+              "name": "number"
+            }
           },
           {
             "name": "value",
-            "type": null
+            "type": {
+              "name": "any"
+            }
           }
         ],
         "returns": null
