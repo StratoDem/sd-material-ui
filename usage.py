@@ -97,6 +97,16 @@ app.layout = html.Div([
             html.P('Flame off')
         ]),
      ], style=dict(width=150)),
+
+    spacer,
+
+    # Test for SDDropDownMenu and SDMenuItem (single selection)
+    sd_material_ui.SDDropDownMenu(id='input10', children=[
+        sd_material_ui.SDMenuItem(id='input10-item1', value=1, primaryText='Item 1'),
+        sd_material_ui.SDMenuItem(id='input10-item2', value=2, primaryText='Item 2'),
+        sd_material_ui.SDMenuItem(id='input10-item3', value=3, primaryText='Item 3'),
+    ]),
+    html.Div(id='output10', children=['Selected item appears here.']),
 ])
 
 
@@ -204,6 +214,15 @@ def use_toggle(switch):
         return ['Flame on!']
     else:
         return ['Flame off']
+
+# TODO this callback is not working, and the dropdown does not appear on the page
+
+# Callback for SDDropdownMenu and SDMenuItem
+@app.callback(
+    dash.dependencies.Output('output10', 'children'),
+    [dash.dependencies.Input('input10', 'value')])
+def dropdown_callback(value):
+    return ['Selection is: {}'.format(value)]
 
 
 if __name__ == '__main__':
