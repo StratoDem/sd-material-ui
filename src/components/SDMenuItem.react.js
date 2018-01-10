@@ -18,8 +18,10 @@ type Props = {
   id: string,
   label?: string,
   menuItems?: Node,
+  open?: boolean,
   primaryText?: string,
   secondaryText?: string,
+  setProps?: () => void,
   style?: object,
   targetOrigin?: object,
   value?: number,
@@ -77,6 +79,11 @@ const propTypes = {
   menuItems: PropTypes.node,
 
   /**
+   * Is this menu item open? Only applies when it contains menuItems.
+   */
+  open: PropTypes.bool,
+
+  /**
    * The text used when displaying this menu item in its menu, or as the menu's selection
    */
   primaryText: PropTypes.string,
@@ -85,6 +92,11 @@ const propTypes = {
    * Additional text included alongside the primaryText
    */
   secondaryText: PropTypes.string,
+
+  /**
+   * Dash callback to update props on the server
+   */
+  setProps: PropTypes.func,
 
   /**
    * Override the inline-styles of the root element.
@@ -115,6 +127,7 @@ const defaultProps = {
   insetChildren: false,
   label: '',
   menuItems: null,
+  open: false,
   primaryText: '',
   secondaryText: '',
   style: {},
@@ -128,5 +141,69 @@ type State = {
 };
 
 export default class SDMenuItem extends Component<Props, State> {
+  constructor(props: Props) {
+    super(props);
+    this.state = {open: props.open, checked: props.checked};
+  }
 
+  componentWillReceiveProps(nextProps: Props): void {
+    if (nextProps.open !== null && nextProps.open !== this.props.open) {
+      this.changeOpenStatus(nextProps.open);
+    }
+
+    if (nextProps.checked !== null && nextProps.checked !== this.props.checked) {
+      this.changeChecked(nextProps.checked);
+    }
+  }
+
+  changeOpenStatus = (open: boolean) => {
+    const { setProps } = this.props;
+
+    if (typeof setProps === 'function')
+      setProps({open});
+
+    this.setState({open});
+  };
+
+  changeChecked = (checked: boolean) => {
+    const { setProps } = this.props;
+
+    if (typeof setProps === 'function')
+      setProps({checked});
+
+    this.setState({checked});
+  };
+
+  render() {
+    const { anchorOrigin, disabled, innerDivStyle, insetChildren,
+      id, label, menuItems, primaryText, secondaryText, style, targetOrigin,
+      value } = this.props;
+
+    return (
+      <div id={id}>
+        <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
+          <MenuItem
+            anchorOrigin={anchorOrigin}
+            checked={this.state.checked}
+            disabled={disabled}
+            innerDivStyle={innerDivStyle}
+            insetChildren={insetChildren}
+            label={label}
+            menuItems={menuItems}
+            open={this.state.open}
+            primaryText={primaryText}
+            secondaryText={secondaryText}
+            style={style}
+            targetOrigin={targetOrigin}
+            value={value}
+          >
+            {this.props.children}
+          </MenuItem>
+        </MuiThemeProvider>
+      </div>
+    );
+  }
 }
+
+SDMenuItem.propTypes = propTypes;
+SDMenuItem.defaultProps = defaultProps;
