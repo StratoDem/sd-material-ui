@@ -920,15 +920,17 @@
     "displayName": "SDDropDownMenu",
     "methods": [
       {
-        "name": "operateMenu",
+        "name": "handleChange",
         "docblock": null,
         "modifiers": [],
         "params": [
           {
-            "name": "open",
-            "type": {
-              "name": "boolean"
-            }
+            "name": "key",
+            "type": null
+          },
+          {
+            "name": "value",
+            "type": null
           }
         ],
         "returns": null
@@ -963,28 +965,6 @@
         },
         "defaultValue": {
           "value": "true",
-          "computed": false
-        }
-      },
-      "animation": {
-        "type": {
-          "name": "func"
-        },
-        "required": false,
-        "description": "Override the default animation component used.",
-        "flowType": {
-          "name": "signature",
-          "type": "function",
-          "raw": "() => void",
-          "signature": {
-            "arguments": [],
-            "return": {
-              "name": "void"
-            }
-          }
-        },
-        "defaultValue": {
-          "value": "() => {}",
           "computed": false
         }
       },
@@ -1044,6 +1024,28 @@
           "computed": false
         }
       },
+      "fireEvent": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "A callback for firing events to dash.",
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "() => void",
+          "signature": {
+            "arguments": [],
+            "return": {
+              "name": "void"
+            }
+          }
+        },
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      },
       "iconButton": {
         "type": {
           "name": "node"
@@ -1054,8 +1056,8 @@
           "name": "Node"
         },
         "defaultValue": {
-          "value": "Node",
-          "computed": true
+          "value": "null",
+          "computed": false
         }
       },
       "iconStyle": {
@@ -1173,20 +1175,6 @@
         },
         "required": false,
         "description": "If true, value must be an array and the menu will support multiple selections.",
-        "flowType": {
-          "name": "boolean"
-        },
-        "defaultValue": {
-          "value": "false",
-          "computed": false
-        }
-      },
-      "open": {
-        "type": {
-          "name": "bool"
-        },
-        "required": false,
-        "description": "If true, the menu is open",
         "flowType": {
           "name": "boolean"
         },

@@ -169,7 +169,7 @@ const defaultProps = {
   className: '',
   disabled: false,
   fireEvent: () => {},
-  iconButton: Node,
+  iconButton: null,
   iconStyle: {},
   labelStyle: {},
   listStyle: {},
@@ -223,7 +223,7 @@ export default class SDDropDownMenu extends Component<Props, State> {
             menuItemStyle={menuItemStyle}
             menuStyle={menuStyle}
             multiple={multiple}
-            onChange={(event: object, key: number, value: any) => handleChange(key, value)}
+            onChange={(event: object, key: number, value: any) => this.handleChange(key, value)}
             openImmediately={openImmediately}
             selectedMenuItemStyle={selectedMenuItemStyle}
             style={style}
