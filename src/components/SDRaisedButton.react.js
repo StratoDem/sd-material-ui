@@ -187,8 +187,6 @@ export default class SDRaisedButton extends React.Component<Props> {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  // TODO increment version number (if not done already) before making PR
-
   handleClick() {
     if (this.props.setProps) this.props.setProps({n_clicks: this.props.n_clicks + 1});
     if (this.props.fireEvent) this.props.fireEvent({event: 'click'});
