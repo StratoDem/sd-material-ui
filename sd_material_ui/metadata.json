@@ -792,7 +792,7 @@
           "name": "string"
         },
         "defaultValue": {
-          "value": "{}",
+          "value": "''",
           "computed": false
         }
       },
