@@ -72,8 +72,6 @@ app.layout = html.Div([
     ]),
     sd_material_ui.SDCheckbox(id='input8', label='Check to change the text above.'),
 
-    # TODO why isn't SDToggle found (error on page load)?
-
     # Test for SDToggle
     sd_material_ui.SDToggle(id='input9', label='Johnny?'),
     html.Div(id='output9', children=[
