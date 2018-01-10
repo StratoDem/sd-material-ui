@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 import SDToggle from '../SDToggle.react';
 
 describe('SDToggle', () => {
@@ -12,7 +12,7 @@ describe('SDToggle', () => {
     expect(component).toBe.ok;
   });
 
-  it('updates based on clicks', () => {
+  it('updates props correctly', () => {
     const component = shallow(
       <SDToggle id='test-id' />);
 
@@ -21,5 +21,23 @@ describe('SDToggle', () => {
     expect(component.state('switched')).toEqual(true);
     component.setProps({toggled: false});
     expect(component.state('switched')).toEqual(false);
+  });
+
+  it('handles click events', () => {
+    const component = mount(
+      <SDToggle id='test-id' />);
+
+    expect(component.state('switched')).toEqual(false);
+    component.find('Toggle').props().onToggle({}, true);
+    expect(component.state('switched')).toEqual(true);
+  });
+
+  it('sets state even without setProps/fireEvent', () => {
+    const component = shallow(
+      <SDToggle id='test-id' setProps={null} fireEvent={null} />);
+
+    expect(component.state('switched')).toEqual(false);
+    component.find('Toggle').props().onToggle({}, true);
+    expect(component.state('switched')).toEqual(true);
   });
 });
