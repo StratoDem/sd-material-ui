@@ -15,7 +15,6 @@ type Props = {
   children?: Node,
   className?: string,
   disabled?: boolean,
-  fireEvent?: () => void,
   iconButton?: Node,
   iconStyle?: object,
   id: string,
@@ -67,11 +66,6 @@ const propTypes = {
    * Disables the menu.
    */
   disabled: PropTypes.bool,
-
-  /**
-   * A callback for firing events to dash.
-   */
-  fireEvent: PropTypes.func,
 
   /**
    * Overrides default SvgIcon dropdown arrow component.
@@ -168,7 +162,6 @@ const defaultProps = {
   children: null,
   className: '',
   disabled: false,
-  fireEvent: () => {},
   iconButton: null,
   iconStyle: {},
   labelStyle: {},
