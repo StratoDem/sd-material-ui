@@ -1619,20 +1619,6 @@
     "displayName": "SDMenuItem",
     "methods": [
       {
-        "name": "changeOpenStatus",
-        "docblock": null,
-        "modifiers": [],
-        "params": [
-          {
-            "name": "open",
-            "type": {
-              "name": "boolean"
-            }
-          }
-        ],
-        "returns": null
-      },
-      {
         "name": "changeChecked",
         "docblock": null,
         "modifiers": [],
@@ -1824,20 +1810,6 @@
         },
         "defaultValue": {
           "value": "null",
-          "computed": false
-        }
-      },
-      "open": {
-        "type": {
-          "name": "bool"
-        },
-        "required": false,
-        "description": "Is this menu item open? Only applies when it contains menuItems.",
-        "flowType": {
-          "name": "boolean"
-        },
-        "defaultValue": {
-          "value": "false",
           "computed": false
         }
       },

@@ -24,22 +24,6 @@ describe('SDMenuItem', () => {
     expect(component.state('checked')).toEqual(true);
   });
 
-  it('updates open correctly', () => {
-    const component = shallow(
-      <SDMenuItem
-        id='test-id'
-        menuItems={[
-          <SDMenuItem id='test1' />,
-          <SDMenuItem id='test2' />
-        ]}
-      />
-    );
-
-    expect(component.state('open')).toEqual(false);
-    component.setProps({open: true});
-    expect(component.state('open')).toEqual(true);
-  });
-
   it('handles click events', () => {
     const component = mount(
       <SDMenuItem
