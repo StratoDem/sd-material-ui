@@ -20,7 +20,6 @@ type Props = {
   id: string,
   label?: string,
   menuItems?: Node,
-  open?: boolean,
   primaryText?: string,
   secondaryText?: string,
   setProps?: () => void,
@@ -91,11 +90,6 @@ const propTypes = {
   menuItems: PropTypes.node,
 
   /**
-   * Is this menu item open? Only applies when it contains menuItems.
-   */
-  open: PropTypes.bool,
-
-  /**
    * The text used when displaying this menu item in its menu, or as the menu's selection
    */
   primaryText: PropTypes.string,
@@ -141,7 +135,6 @@ const defaultProps = {
   insetChildren: false,
   label: '',
   menuItems: null,
-  open: false,
   primaryText: '',
   secondaryText: '',
   setProps: () => {},
@@ -152,7 +145,6 @@ const defaultProps = {
 
 type State = {
   checked: boolean,
-  open: boolean,
 };
 
 export default class SDMenuItem extends Component<Props, State> {
@@ -162,27 +154,12 @@ export default class SDMenuItem extends Component<Props, State> {
   }
 
   componentWillReceiveProps(nextProps: Props): void {
-    if (this.props.menuItems) {
-      if (nextProps.open !== null && nextProps.open !== this.props.open) {
-        this.changeOpenStatus(nextProps.open);
-      }
-    }
-
     if (this.props.checkable) {
       if (nextProps.checked !== null && nextProps.checked !== this.props.checked) {
         this.changeChecked(nextProps.checked);
       }
     }
   }
-
-  changeOpenStatus = (open: boolean) => {
-    const { setProps } = this.props;
-
-    if (typeof setProps === 'function')
-      setProps({open});
-
-    this.setState({open});
-  };
 
   changeChecked = (checked: boolean) => {
     const { setProps } = this.props;
@@ -195,7 +172,6 @@ export default class SDMenuItem extends Component<Props, State> {
 
   handleClick = (wasClicked: object) => {
     if (this.props.fireEvent) this.props.fireEvent({event: 'click'});
-    if (this.props.menuItems) this.changeOpenStatus(wasClicked);
     if (this.props.checkable) this.changeChecked(wasClicked);
   };
 
@@ -216,7 +192,6 @@ export default class SDMenuItem extends Component<Props, State> {
             label={label}
             menuItems={this.props.menuItems}
             onClick={(wasItemClicked: object) => this.handleClick(wasItemClicked)}
-            open={this.state.open}
             primaryText={primaryText}
             secondaryText={secondaryText}
             style={style}
