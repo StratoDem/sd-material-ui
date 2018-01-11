@@ -192,11 +192,13 @@ export default class SDDropDownMenu extends Component<Props, State> {
   }
 
   componentWillReceiveProps(nextProps: Props): void {
-    if (nextProps.value !== null && nextProps.value !== this.props.value)
+    if (nextProps.value !== null && nextProps.value !== this.props.value) {
+      console.log('component is receiving props');
       this.handleChange({}, 0, nextProps.value);
+    }
   }
 
-  handleChange = (event: object, key: number, value: any) => {
+  handleChange = (event: object, index: number, value: any) => {
     const { setProps } = this.props;
 
     if (typeof setProps === 'function')
@@ -204,7 +206,34 @@ export default class SDDropDownMenu extends Component<Props, State> {
 
     this.setState({value});
 
-    if (this.props.fireEvent) this.props.fireEvent({event: 'change'});
+    console.log('fireEvent:');
+    console.log(this.props.fireEvent);
+
+    if (this.props.fireEvent) {
+      console.log('firing event!');
+      this.props.fireEvent({event: 'change'});
+    }
+  };
+
+  updateSelection = (value, menuItem) => {
+    const { setProps } = this.props;
+
+    if (typeof setProps === 'function')
+      setProps({value});
+
+    this.setState({value});
+
+    console.log('fireEvent in updateSelection');
+    console.log(this.props.fireEvent);
+
+    if (this.props.fireEvent) {
+      console.log('firing event from updateSelection!');
+      this.props.fireEvent({event: 'change'});
+    }
+  };
+
+  handleClose = (event) => {
+    console.log('handle close func');
   };
 
   render() {
@@ -229,10 +258,11 @@ export default class SDDropDownMenu extends Component<Props, State> {
             menuItemStyle={menuItemStyle}
             menuStyle={menuStyle}
             multiple={multiple}
-            onChange={(event: object, key: number, value: any) =>
-              this.handleChange(event, key, value)}
+            onChange={this.handleChange}
+            onClose={this.handleClose}
             openImmediately={openImmediately}
             selectedMenuItemStyle={selectedMenuItemStyle}
+            selectionRenderer={this.updateSelection}
             style={style}
             targetOrigin={targetOrigin}
             underlineStyle={underlineStyle}

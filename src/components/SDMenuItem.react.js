@@ -200,6 +200,7 @@ export default class SDMenuItem extends Component<Props, State> {
             innerDivStyle={innerDivStyle}
             insetChildren={insetChildren}
             label={label}
+            // menuItems={React.Children.toArray(menuItems)}
             menuItems={menuItems}
             onClick={(wasItemClicked: object) => this.handleClick(wasItemClicked)}
             primaryText={primaryText}

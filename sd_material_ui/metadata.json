@@ -932,7 +932,7 @@
             }
           },
           {
-            "name": "key",
+            "name": "index",
             "type": {
               "name": "number"
             }
@@ -942,6 +942,34 @@
             "type": {
               "name": "any"
             }
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "updateSelection",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "value",
+            "type": null
+          },
+          {
+            "name": "menuItem",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "handleClose",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "event",
+            "type": null
           }
         ],
         "returns": null
