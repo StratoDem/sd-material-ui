@@ -153,21 +153,28 @@ export default class SDMenuItem extends Component<Props, State> {
     this.state = {checked: props.checked};
   }
 
-  componentWillReceiveProps(nextProps: Props): void {
-    if (this.props.checkable) {
-      if (nextProps.checked !== null && nextProps.checked !== this.props.checked) {
-        this.changeChecked(nextProps.checked);
-      }
-    }
-  }
+  // Removing this func made the check state update correctly (it was being called twice)
+  // but it also is now producing this error in the console:
+  // [Violation] Added non-passive event listener to a scroll-blocking 'wheel' event. Consider
+  // marking event handler as 'passive' to make the page more responsive.
+  // See https://www.chromestatus.com/feature/5745543795965952
+
+  // componentWillReceiveProps(nextProps: Props): void {
+  //   if (this.props.checkable) {
+  //     if (nextProps.checked !== null && nextProps.checked !== this.props.checked) {
+  //       this.changeChecked(nextProps.checked);
+  //     }
+  //   }
+  // }
 
   changeChecked = (checked: object) => {
     const { setProps } = this.props;
 
-    if (typeof setProps === 'function')
-      setProps({checked: !this.props.checked});
+    this.setState((state: State) => ({checked: !this.state.checked}));
 
-    this.setState((state: State) => ({checked: !state.checked}));
+    if (typeof setProps === 'function') {
+      setProps({checked: !this.props.checked});
+    }
   };
 
   handleClick = (wasClicked: object) => {
