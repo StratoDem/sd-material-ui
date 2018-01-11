@@ -12,6 +12,7 @@ type Props = {
   id: string,
   actions?: Node,
   children?: Node,
+  className?: string,
   modal?: boolean,
   open?: boolean,
   setProps?: (props: { modal?: boolean, open?: boolean }) => void,
@@ -23,6 +24,11 @@ const propTypes = {
 
   /** Actions component or list of components for the Dialog */
   actions: PropTypes.oneOfType([PropTypes.node, PropTypes.arrayOf(PropTypes.node)]),
+
+  /**
+   * The css class name of the root element.
+   */
+  className: PropTypes.string,
 
   /** Is the Dialog a modal (must click on an action to close the Dialog)? */
   modal: PropTypes.bool,
@@ -49,6 +55,7 @@ type State = {
 const defaultProps = {
   actions: null,
   children: null,
+  className: '',
   open: false,
   modal: false,
   setProps: () => {},
@@ -76,13 +83,14 @@ export default class SDDialog extends Component<Props, State> {
   };
 
   render() {
-    const { id, modal, actions } = this.props;
+    const { id, className, modal, actions } = this.props;
 
     return (
       <div id={id} className="sd-dialog">
         <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
           <Dialog
             actions={actions}
+            className={className}
             modal={modal}
             open={this.state.open}
             onRequestClose={() => { this.changeDialogOpenStatus(false); }}
