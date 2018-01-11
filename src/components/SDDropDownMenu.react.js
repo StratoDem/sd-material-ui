@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import DropDownMenu from 'material-ui/DropDownMenu';
+import MenuItem from 'material-ui/MenuItem';
 import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
@@ -200,6 +201,7 @@ export default class SDDropDownMenu extends Component<Props, State> {
   }
 
   handleChange = (event: object, index: number, value: any) => {
+    // This func appears to control which item is highlighted after having been selected
     console.log('entered handleChange');
     // const { setProps } = this.props;
     //
@@ -218,13 +220,14 @@ export default class SDDropDownMenu extends Component<Props, State> {
   };
 
   updateSelection = (value, menuItem) => {
+    // This keeps calling over and over until the stack size is exceeded
     console.log('entered updateSelection');
     // const { setProps } = this.props;
     //
     // if (typeof setProps === 'function')
     //   setProps({value});
     //
-    // this.setState({value});
+    this.setState({value});
     //
     // console.log('fireEvent in updateSelection');
     // console.log(this.props.fireEvent);
@@ -265,13 +268,15 @@ export default class SDDropDownMenu extends Component<Props, State> {
             onClose={this.handleClose}
             openImmediately={openImmediately}
             selectedMenuItemStyle={selectedMenuItemStyle}
-            selectionRenderer={this.updateSelection}
+            // selectionRenderer={this.updateSelection}
             style={style}
             targetOrigin={targetOrigin}
             underlineStyle={underlineStyle}
             value={this.state.value}
           >
-            {this.props.children}
+            <MenuItem value={1} primaryText="Test item 1" />
+            <MenuItem value={2} primaryText="Test item 2" />
+            <MenuItem value={3} primaryText="Test item 3" />
           </DropDownMenu>
         </MuiThemeProvider>
       </div>
