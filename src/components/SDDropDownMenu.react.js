@@ -157,7 +157,6 @@ const propTypes = {
 };
 
 type State = {
-  open: boolean,
   value: number,
 };
 
@@ -181,7 +180,7 @@ const defaultProps = {
   selectedMenuItemStyle: {},
   setProps: () => {},
   style: {},
-  targetOrigin: {}, // ???
+  targetOrigin: {vertical: 'top', horizontal: 'left'},
   underlineStyle: {},
   value: null,
 };
@@ -194,7 +193,7 @@ export default class SDDropDownMenu extends Component<Props, State> {
 
   componentWillReceiveProps(nextProps: Props): void {
     if (nextProps.value !== null && nextProps.value !== this.props.value)
-      this.handleChange(0, nextProps.value)
+      this.handleChange(0, nextProps.value);
   }
 
   handleChange = (key: number, value: any) => {
@@ -206,10 +205,6 @@ export default class SDDropDownMenu extends Component<Props, State> {
     this.setState({value});
 
     if (this.props.fireEvent) this.props.fireEvent({event: 'change'});
-  };
-
-  handleClick = () => {
-    this.setState(!this.state.open);
   };
 
   render() {
@@ -235,7 +230,6 @@ export default class SDDropDownMenu extends Component<Props, State> {
             menuStyle={menuStyle}
             multiple={multiple}
             onChange={(event: object, key: number, value: any) => this.handleChange(key, value)}
-            onItemClick={(event, item, index) => this.handleClick()}
             openImmediately={openImmediately}
             selectedMenuItemStyle={selectedMenuItemStyle}
             style={style}

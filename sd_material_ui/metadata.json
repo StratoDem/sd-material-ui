@@ -938,13 +938,6 @@
           }
         ],
         "returns": null
-      },
-      {
-        "name": "handleClick",
-        "docblock": null,
-        "modifiers": [],
-        "params": [],
-        "returns": null
       }
     ],
     "props": {
@@ -1277,7 +1270,7 @@
           "name": "object"
         },
         "defaultValue": {
-          "value": "{}",
+          "value": "{vertical: 'top', horizontal: 'left'}",
           "computed": false
         }
       },
