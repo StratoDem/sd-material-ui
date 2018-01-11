@@ -188,48 +188,51 @@ const defaultProps = {
 export default class SDDropDownMenu extends Component<Props, State> {
   constructor(props: Props) {
     super(props);
-    this.state = {value: this.props.value};
+    this.state = {value: 1};
   }
 
   componentWillReceiveProps(nextProps: Props): void {
+    console.log('component is receiving props');
+    console.log(nextProps);
     if (nextProps.value !== null && nextProps.value !== this.props.value) {
-      console.log('component is receiving props');
       this.handleChange({}, 0, nextProps.value);
     }
   }
 
   handleChange = (event: object, index: number, value: any) => {
-    const { setProps } = this.props;
-
-    if (typeof setProps === 'function')
-      setProps({value});
-
-    this.setState({value});
-
-    console.log('fireEvent:');
-    console.log(this.props.fireEvent);
-
-    if (this.props.fireEvent) {
-      console.log('firing event!');
-      this.props.fireEvent({event: 'change'});
-    }
+    console.log('entered handleChange');
+    // const { setProps } = this.props;
+    //
+    // if (typeof setProps === 'function')
+    //   setProps({value});
+    //
+    // this.setState({value});
+    //
+    // console.log('fireEvent:');
+    // console.log(this.props.fireEvent);
+    //
+    // if (this.props.fireEvent) {
+    //   console.log('firing event!');
+    //   this.props.fireEvent({event: 'change'});
+    // }
   };
 
   updateSelection = (value, menuItem) => {
-    const { setProps } = this.props;
-
-    if (typeof setProps === 'function')
-      setProps({value});
-
-    this.setState({value});
-
-    console.log('fireEvent in updateSelection');
-    console.log(this.props.fireEvent);
-
-    if (this.props.fireEvent) {
-      console.log('firing event from updateSelection!');
-      this.props.fireEvent({event: 'change'});
-    }
+    console.log('entered updateSelection');
+    // const { setProps } = this.props;
+    //
+    // if (typeof setProps === 'function')
+    //   setProps({value});
+    //
+    // this.setState({value});
+    //
+    // console.log('fireEvent in updateSelection');
+    // console.log(this.props.fireEvent);
+    //
+    // if (this.props.fireEvent) {
+    //   console.log('firing event from updateSelection!');
+    //   this.props.fireEvent({event: 'change'});
+    // }
   };
 
   handleClose = (event) => {
