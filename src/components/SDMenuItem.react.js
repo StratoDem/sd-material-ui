@@ -159,6 +159,9 @@ export default class SDMenuItem extends Component<Props, State> {
   // marking event handler as 'passive' to make the page more responsive.
   // See https://www.chromestatus.com/feature/5745543795965952
 
+  // a possible alternative was to remove the call to changeChecked from inside handleClick,
+  // but that not only didn't work, but stopped the Dash callback from functioning at all
+
   // componentWillReceiveProps(nextProps: Props): void {
   //   if (this.props.checkable) {
   //     if (nextProps.checked !== null && nextProps.checked !== this.props.checked) {
