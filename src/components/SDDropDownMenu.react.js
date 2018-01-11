@@ -208,6 +208,10 @@ export default class SDDropDownMenu extends Component<Props, State> {
     if (this.props.fireEvent) this.props.fireEvent({event: 'change'});
   };
 
+  handleClick = () => {
+    this.setState(!this.state.open);
+  };
+
   render() {
     const { anchorOrigin, animated, autoWidth, className, disabled, iconButton,
       iconStyle, id, labelStyle, listStyle, maxHeight, menuItemStyle, menuStyle, multiple,
@@ -231,6 +235,7 @@ export default class SDDropDownMenu extends Component<Props, State> {
             menuStyle={menuStyle}
             multiple={multiple}
             onChange={(event: object, key: number, value: any) => this.handleChange(key, value)}
+            onItemClick={(event, item, index) => this.handleClick()}
             openImmediately={openImmediately}
             selectedMenuItemStyle={selectedMenuItemStyle}
             style={style}

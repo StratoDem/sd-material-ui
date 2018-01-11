@@ -114,7 +114,7 @@ app.layout = html.Div([
 @app.callback(
     dash.dependencies.Output('output', 'children'),
     [dash.dependencies.Input('input', 'selectedIndex')])
-def display_output(value):
+def display_output(value: int):
     return 'You have entered {}'.format(value)
 
 

@@ -938,6 +938,13 @@
           }
         ],
         "returns": null
+      },
+      {
+        "name": "handleClick",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
       }
     ],
     "props": {
@@ -1033,7 +1040,7 @@
           "name": "func"
         },
         "required": false,
-        "description": "A callback for firing events to dash.",
+        "description": "Dash-assigned callback that gets fired when the input changes.",
         "flowType": {
           "name": "signature",
           "type": "function",
@@ -1293,7 +1300,15 @@
       },
       "value": {
         "type": {
-          "name": "any"
+          "name": "union",
+          "value": [
+            {
+              "name": "number"
+            },
+            {
+              "name": "array"
+            }
+          ]
         },
         "required": false,
         "description": "If multiple is true, an array of the values of the selected menu items. Otherwise, the value\nof the selected menu item. If provided, the menu will be a controlled component.",
