@@ -544,6 +544,20 @@
           "computed": false
         }
       },
+      "className": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The css class name of the root element.",
+        "flowType": {
+          "name": "string"
+        },
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
       "modal": {
         "type": {
           "name": "bool"
