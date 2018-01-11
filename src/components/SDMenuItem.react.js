@@ -150,7 +150,7 @@ type State = {
 export default class SDMenuItem extends Component<Props, State> {
   constructor(props: Props) {
     super(props);
-    this.state = {open: props.open, checked: props.checked};
+    this.state = {checked: props.checked};
   }
 
   componentWillReceiveProps(nextProps: Props): void {
@@ -161,13 +161,13 @@ export default class SDMenuItem extends Component<Props, State> {
     }
   }
 
-  changeChecked = (checked: boolean) => {
+  changeChecked = (checked: object) => {
     const { setProps } = this.props;
 
     if (typeof setProps === 'function')
-      setProps({checked});
+      setProps({checked: !this.props.checked});
 
-    this.setState({checked});
+    this.setState((state: State) => ({checked: !state.checked}));
   };
 
   handleClick = (wasClicked: object) => {
@@ -177,7 +177,7 @@ export default class SDMenuItem extends Component<Props, State> {
 
   render() {
     const { anchorOrigin, disabled, innerDivStyle, insetChildren,
-      id, label, primaryText, secondaryText, style, targetOrigin,
+      id, label, menuItems, primaryText, secondaryText, style, targetOrigin,
       value } = this.props;
 
     return (
@@ -190,7 +190,7 @@ export default class SDMenuItem extends Component<Props, State> {
             innerDivStyle={innerDivStyle}
             insetChildren={insetChildren}
             label={label}
-            menuItems={this.props.menuItems}
+            menuItems={menuItems}
             onClick={(wasItemClicked: object) => this.handleClick(wasItemClicked)}
             primaryText={primaryText}
             secondaryText={secondaryText}

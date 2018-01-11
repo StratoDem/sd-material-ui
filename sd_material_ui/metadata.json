@@ -1626,7 +1626,8 @@
           {
             "name": "checked",
             "type": {
-              "name": "boolean"
+              "name": "object",
+              "alias": "object"
             }
           }
         ],
