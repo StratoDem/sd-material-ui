@@ -100,23 +100,8 @@ app.layout = html.Div([
 
     spacer,
 
-    # TODO checkable items are only updating the prop while the menu is open, not state
-    # state only updates when the menu is closed and then reopened
-
-    # TODO menuItems are producing the following React error, and the menu does not open:
-    # Objects are not valid as a React child (found: object with keys {props, type, namespace}).
-
     # Test for SDDropDownMenu and SDMenuItem (single selection)
     sd_material_ui.SDDropDownMenu(id='input10', value=1, children=[
-        # sd_material_ui.SDMenuItem(id='input10-item1', value=1, checkable=True, primaryText='Item 1',
-        #                           menuItems=[
-        #                               sd_material_ui.SDMenuItem(id='input10-item1-child1', value=11,
-        #                                                         primaryText='Child1'),
-        #                               sd_material_ui.SDMenuItem(id='input10-item1-child2', value=12,
-        #                                                         primaryText='Child2'),
-        #                               sd_material_ui.SDMenuItem(id='input10-item1-child2', value=13,
-        #                                                         primaryText='Child3')
-        # ]),
         sd_material_ui.SDMenuItem(id='input10-item1', value=1, checkable=True,
                                   primaryText='Check me'),
         sd_material_ui.SDMenuItem(id='input10-item2', value=2, primaryText='Item 2'),
@@ -233,7 +218,6 @@ def use_toggle(switch):
         return ['Flame off']
 
 # TODO this callback is not working
-
 # Callback for SDDropdownMenu and SDMenuItem
 @app.callback(
     dash.dependencies.Output('output10', 'children'),
