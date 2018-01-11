@@ -189,7 +189,7 @@ const defaultProps = {
 export default class SDDropDownMenu extends Component<Props, State> {
   constructor(props: Props) {
     super(props);
-    this.state = {value: 1};
+    this.state = {value: this.props.value};
   }
 
   componentWillReceiveProps(nextProps: Props): void {
@@ -203,39 +203,20 @@ export default class SDDropDownMenu extends Component<Props, State> {
   handleChange = (event: object, index: number, value: any) => {
     // This func appears to control which item is highlighted after having been selected
     console.log('entered handleChange');
-    // const { setProps } = this.props;
-    //
-    // if (typeof setProps === 'function')
-    //   setProps({value});
-    //
-    // this.setState({value});
-    //
-    // console.log('fireEvent:');
-    // console.log(this.props.fireEvent);
-    //
-    // if (this.props.fireEvent) {
-    //   console.log('firing event!');
-    //   this.props.fireEvent({event: 'change'});
-    // }
-  };
+    const { setProps } = this.props;
 
-  updateSelection = (value, menuItem) => {
-    // This keeps calling over and over until the stack size is exceeded
-    console.log('entered updateSelection');
-    // const { setProps } = this.props;
-    //
-    // if (typeof setProps === 'function')
-    //   setProps({value});
-    //
+    if (typeof setProps === 'function')
+      setProps({value});
+
     this.setState({value});
-    //
-    // console.log('fireEvent in updateSelection');
-    // console.log(this.props.fireEvent);
-    //
-    // if (this.props.fireEvent) {
-    //   console.log('firing event from updateSelection!');
-    //   this.props.fireEvent({event: 'change'});
-    // }
+
+    console.log('fireEvent:');
+    console.log(this.props.fireEvent);
+
+    if (this.props.fireEvent) {
+      console.log('firing event!');
+      this.props.fireEvent({event: 'change'});
+    }
   };
 
   handleClose = (event) => {
@@ -268,7 +249,6 @@ export default class SDDropDownMenu extends Component<Props, State> {
             onClose={this.handleClose}
             openImmediately={openImmediately}
             selectedMenuItemStyle={selectedMenuItemStyle}
-            // selectionRenderer={this.updateSelection}
             style={style}
             targetOrigin={targetOrigin}
             underlineStyle={underlineStyle}
