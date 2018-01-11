@@ -925,6 +925,13 @@
         "modifiers": [],
         "params": [
           {
+            "name": "event",
+            "type": {
+              "name": "object",
+              "alias": "object"
+            }
+          },
+          {
             "name": "key",
             "type": {
               "name": "number"
@@ -1647,7 +1654,8 @@
           {
             "name": "wasClicked",
             "type": {
-              "name": "boolean"
+              "name": "object",
+              "alias": "object"
             }
           }
         ],
