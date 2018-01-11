@@ -201,7 +201,6 @@ export default class SDDropDownMenu extends Component<Props, State> {
   }
 
   handleChange = (event: object, index: number, value: any) => {
-    // This func appears to control which item is highlighted after having been selected
     console.log('entered handleChange');
     const { setProps } = this.props;
 
