@@ -15,6 +15,7 @@ type Props = {
   children?: Node,
   className?: string,
   disabled?: boolean,
+  fireEvent?: () => void,
   iconButton?: Node,
   iconStyle?: object,
   id: string,
@@ -66,6 +67,11 @@ const propTypes = {
    * Disables the menu.
    */
   disabled: PropTypes.bool,
+
+  /**
+   * Dash-assigned callback that gets fired when the input changes.
+   */
+  fireEvent: PropTypes.func,
 
   /**
    * Overrides default SvgIcon dropdown arrow component.
@@ -147,7 +153,7 @@ const propTypes = {
    * If multiple is true, an array of the values of the selected menu items. Otherwise, the value
    * of the selected menu item. If provided, the menu will be a controlled component.
    */
-  value: PropTypes.any,
+  value: PropTypes.oneOfType([PropTypes.number, PropTypes.array]),
 };
 
 type State = {
@@ -162,6 +168,7 @@ const defaultProps = {
   children: null,
   className: '',
   disabled: false,
+  fireEvent: () => {},
   iconButton: null,
   iconStyle: {},
   labelStyle: {},
@@ -185,6 +192,11 @@ export default class SDDropDownMenu extends Component<Props, State> {
     this.state = {value: this.props.value};
   }
 
+  componentWillReceiveProps(nextProps: Props): void {
+    if (nextProps.value !== null && nextProps.value !== this.props.value)
+      this.handleChange(0, nextProps.value)
+  }
+
   handleChange = (key: number, value: any) => {
     const { setProps } = this.props;
 
@@ -192,6 +204,8 @@ export default class SDDropDownMenu extends Component<Props, State> {
       setProps({value});
 
     this.setState({value});
+
+    if (this.props.fireEvent) this.props.fireEvent({event: 'change'});
   };
 
   render() {
