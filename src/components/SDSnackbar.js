@@ -138,7 +138,7 @@ export default class SDSnackbar extends Component<Props, State> {
 
   render() {
     const { action, autoHideDuration, bodyStyle, className, contentStyle, id,
-      message, style }
+      message, style } = this.props;
 
     if (this.props.fireEvent) {
       return (
