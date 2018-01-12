@@ -217,7 +217,7 @@ def use_toggle(switch):
     else:
         return ['Flame off']
 
-# # TODO this callback is not working
+
 # Callback for SDDropdownMenu and SDMenuItem
 @app.callback(
     dash.dependencies.Output('output10', 'children'),

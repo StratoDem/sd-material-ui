@@ -177,14 +177,14 @@ export default class SDMenuItem extends Component<Props, State> {
   //   }
   // }
 
-  changeChecked = (checked: object) => {
+  changeChecked = () => {
     const { setProps } = this.props;
-
-    this.setState((state: State) => ({checked: !this.state.checked}));
 
     if (typeof setProps === 'function') {
       setProps({checked: !this.props.checked});
     }
+
+    this.setState((state: State) => ({checked: !this.state.checked}));
   };
 
   handleClick = (wasClicked: object) => {

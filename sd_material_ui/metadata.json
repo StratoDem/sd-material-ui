@@ -959,18 +959,6 @@
           }
         ],
         "returns": null
-      },
-      {
-        "name": "handleClose",
-        "docblock": null,
-        "modifiers": [],
-        "params": [
-          {
-            "name": "event",
-            "type": null
-          }
-        ],
-        "returns": null
       }
     ],
     "props": {
@@ -1648,15 +1636,7 @@
         "name": "changeChecked",
         "docblock": null,
         "modifiers": [],
-        "params": [
-          {
-            "name": "checked",
-            "type": {
-              "name": "object",
-              "alias": "object"
-            }
-          }
-        ],
+        "params": [],
         "returns": null
       },
       {
