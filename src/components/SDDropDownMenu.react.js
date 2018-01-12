@@ -253,9 +253,7 @@ export default class SDDropDownMenu extends Component<Props, State> {
             underlineStyle={underlineStyle}
             value={this.state.value}
           >
-            <MenuItem value={1} primaryText="Test item 1" />
-            <MenuItem value={2} primaryText="Test item 2" />
-            <MenuItem value={3} primaryText="Test item 3" />
+            {this.props.children}
           </DropDownMenu>
         </MuiThemeProvider>
       </div>
