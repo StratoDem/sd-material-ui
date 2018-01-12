@@ -193,15 +193,12 @@ export default class SDDropDownMenu extends Component<Props, State> {
   }
 
   componentWillReceiveProps(nextProps: Props): void {
-    console.log('component is receiving props');
-    console.log(nextProps);
     if (nextProps.value !== null && nextProps.value !== this.props.value) {
       this.handleChange({}, 0, nextProps.value);
     }
   }
 
   handleChange = (event: object, index: number, value: any) => {
-    console.log('entered handleChange');
     const { setProps } = this.props;
 
     if (typeof setProps === 'function')
@@ -209,17 +206,9 @@ export default class SDDropDownMenu extends Component<Props, State> {
 
     this.setState({value});
 
-    console.log('fireEvent:');
-    console.log(this.props.fireEvent);
-
     if (this.props.fireEvent) {
-      console.log('firing event!');
       this.props.fireEvent({event: 'change'});
     }
-  };
-
-  handleClose = (event) => {
-    console.log('handle close func');
   };
 
   render() {
@@ -245,7 +234,6 @@ export default class SDDropDownMenu extends Component<Props, State> {
             menuStyle={menuStyle}
             multiple={multiple}
             onChange={this.handleChange}
-            onClose={this.handleClose}
             openImmediately={openImmediately}
             selectedMenuItemStyle={selectedMenuItemStyle}
             style={style}
