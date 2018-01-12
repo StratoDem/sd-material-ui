@@ -40,6 +40,7 @@ const propTypes = {
 
   /**
    * If true, a left check mark will be rendered.
+   * Note: A Dash callback must be listening for this prop otherwise the checkmarks will not work!
    */
   checked: PropTypes.bool,
 

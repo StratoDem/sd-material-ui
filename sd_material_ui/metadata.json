@@ -1663,7 +1663,7 @@
           "name": "bool"
         },
         "required": false,
-        "description": "If true, a left check mark will be rendered.",
+        "description": "If true, a left check mark will be rendered.\nNote: A Dash callback must be listening for this prop otherwise the checkmarks will not work!",
         "flowType": {
           "name": "boolean"
         },
