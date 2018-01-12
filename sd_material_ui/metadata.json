@@ -961,22 +961,6 @@
         "returns": null
       },
       {
-        "name": "updateSelection",
-        "docblock": null,
-        "modifiers": [],
-        "params": [
-          {
-            "name": "value",
-            "type": null
-          },
-          {
-            "name": "menuItem",
-            "type": null
-          }
-        ],
-        "returns": null
-      },
-      {
         "name": "handleClose",
         "docblock": null,
         "modifiers": [],
@@ -1748,6 +1732,23 @@
         },
         "defaultValue": {
           "value": "null",
+          "computed": false
+        }
+      },
+      "classes": {
+        "type": {
+          "name": "objectOf",
+          "value": {
+            "name": "any"
+          }
+        },
+        "required": false,
+        "description": "Useful to extend the style applied to components.",
+        "flowType": {
+          "name": "object"
+        },
+        "defaultValue": {
+          "value": "{}",
           "computed": false
         }
       },
