@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 import Snackbar from 'material-ui/Snackbar';
 import SDSnackbar from '../SDSnackbar.react';
 
@@ -34,5 +34,21 @@ describe('SDSnackbar', () => {
     component.setProps({open: true});
     expect(component.state().open).toEqual(true);
     setTimeout(() => expect(component.state().open).toEqual(false), 600);
+  });
+
+  it('fires events', () => {
+    const mockFire = jest.fn();
+    const component = mount(
+      <SDSnackbar
+        id='test-id'
+        message='test message'
+        open={true}
+        action='ready, aim...'
+        fireEvent={mockFire}
+      />
+    );
+
+    component.find('button').simulate('click');
+    expect(mockFire.mock.calls.length).toEqual(1);
   });
 });
