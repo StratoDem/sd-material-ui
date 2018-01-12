@@ -51,4 +51,12 @@ describe('SDSnackbar', () => {
     component.find('button').simulate('click');
     expect(mockFire.mock.calls.length).toEqual(1);
   });
+
+  it('renders without fireEvent', () => {
+    const component = shallow(
+      <SDSnackbar id='test-id' open={false} message='test message' fireEvent={null} />
+    );
+
+    expect(component.find(Snackbar).length).toBe(1);
+  });
 });
