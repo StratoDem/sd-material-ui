@@ -17,6 +17,7 @@ type Props = {
   fireEvent?: () => void,
   id: string,
   message: Node,
+  n_clicks?: number,
   open: boolean,
   setProps?: (props: {open?: boolean}) => void,
   style?: object,
@@ -69,6 +70,11 @@ const propTypes = {
   message: PropTypes.node.isRequired,
 
   /**
+   * An integer that represents the number of times that action button has been clicked on.
+   */
+  n_clicks: PropTypes.number,
+
+  /**
    * Controls whether the Snackbar is opened or not.
    */
   open: PropTypes.bool.isRequired,
@@ -90,11 +96,12 @@ type State = {
 
 const defaultProps = {
   action: null,
-  autoHideDuration: null,
+  autoHideDuration: 3000,
   bodyStyle: {},
   className: '',
   contentStyle: {},
   fireEvent: () => {},
+  n_clicks: 0,
   setProps: () => {},
   style: {},
 };
@@ -131,6 +138,8 @@ export default class SDSnackbar extends Component<Props, State> {
   };
 
   handleActionClick = () => {
+    console.log('handling click event');
+    if (this.props.setProps) this.props.setProps({n_clicks: this.props.n_clicks + 1});
     if (this.props.fireEvent) this.props.fireEvent({event: 'click'});
   };
 

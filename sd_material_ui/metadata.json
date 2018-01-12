@@ -1612,7 +1612,7 @@
           "name": "number"
         },
         "defaultValue": {
-          "value": "null",
+          "value": "3000",
           "computed": false
         }
       },
@@ -1704,6 +1704,20 @@
         "description": "The message to be displayed.\n\t(Note: If the message is an element or array, and the Snackbar may re-render while it is\n\tstill open, ensure that the same object remains as the message property if you want to avoid\n\tthe Snackbar hiding and showing again)",
         "flowType": {
           "name": "Node"
+        }
+      },
+      "n_clicks": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "An integer that represents the number of times that action button has been clicked on.",
+        "flowType": {
+          "name": "number"
+        },
+        "defaultValue": {
+          "value": "0",
+          "computed": false
         }
       },
       "open": {
