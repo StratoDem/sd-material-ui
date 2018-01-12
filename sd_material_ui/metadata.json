@@ -1710,14 +1710,10 @@
         "type": {
           "name": "bool"
         },
-        "required": false,
+        "required": true,
         "description": "Controls whether the Snackbar is opened or not.",
         "flowType": {
           "name": "boolean"
-        },
-        "defaultValue": {
-          "value": "false",
-          "computed": false
         }
       },
       "setProps": {
