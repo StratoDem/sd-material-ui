@@ -100,18 +100,15 @@ app.layout = html.Div([
 
     spacer,
 
-    sd_material_ui.SDDropDownMenu(id='input10', value=1),
+    # Test for SDDropDownMenu and SDMenuItem (single selection)
+    sd_material_ui.SDDropDownMenu(id='input10', value=1, children=[
+        sd_material_ui.SDMenuItem(id='input10-item1', value=1, checkable=True,
+                                  primaryText='Check me'),
+        sd_material_ui.SDMenuItem(id='input10-item2', value=2, primaryText='Item 2'),
+        sd_material_ui.SDMenuItem(id='input10-item3', value=3, primaryText='Item 3'),
+    ]),
     html.Div(id='output10', children=['Selected item appears here.']),
-
-    # # Test for SDDropDownMenu and SDMenuItem (single selection)
-    # sd_material_ui.SDDropDownMenu(id='input10', value=1, children=[
-    #     sd_material_ui.SDMenuItem(id='input10-item1', value=1, checkable=True,
-    #                               primaryText='Check me'),
-    #     sd_material_ui.SDMenuItem(id='input10-item2', value=2, primaryText='Item 2'),
-    #     sd_material_ui.SDMenuItem(id='input10-item3', value=3, primaryText='Item 3'),
-    # ]),
-    # html.Div(id='output10', children=['Selected item appears here.']),
-    # html.Div(id='output10-checked', children=['Is the menu item checked?']),
+    html.Div(id='output10-checked', children=['Is the menu item checked?']),
 ])
 
 
@@ -227,14 +224,14 @@ def use_toggle(switch):
     [dash.dependencies.Input('input10', 'value')])
 def dropdown_callback(value):
     return ['Selection is: {}'.format(value)]
-#
-#
-# # Callback for checked SDMenuItem
-# @app.callback(
-#     dash.dependencies.Output('output10-checked', 'children'),
-#     [dash.dependencies.Input('input10-item1', 'checked')])
-# def checked_item_callback(checked):
-#     return ['Menu item is checked: {}'.format(checked)]
+
+
+# Callback for checked SDMenuItem
+@app.callback(
+    dash.dependencies.Output('output10-checked', 'children'),
+    [dash.dependencies.Input('input10-item1', 'checked')])
+def checked_item_callback(checked):
+    return ['Menu item is checked: {}'.format(checked)]
 
 
 if __name__ == '__main__':
