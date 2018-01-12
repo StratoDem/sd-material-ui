@@ -102,8 +102,7 @@ app.layout = html.Div([
 
     # Test for SDDropDownMenu and SDMenuItem (single selection)
     sd_material_ui.SDDropDownMenu(id='input10', value=1, children=[
-        sd_material_ui.SDMenuItem(id='input10-item1', value=1, checkable=True,
-                                  primaryText='Check me'),
+        sd_material_ui.SDMenuItem(id='input10-item1', value=1, primaryText='Check me'),
         sd_material_ui.SDMenuItem(id='input10-item2', value=2, primaryText='Item 2'),
         sd_material_ui.SDMenuItem(id='input10-item3', value=3, primaryText='Item 3'),
     ]),

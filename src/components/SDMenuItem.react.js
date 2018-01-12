@@ -10,7 +10,6 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
 type Props = {
   anchorOrigin?: object,
-  checkable?: boolean,
   checked?: boolean,
   children?: Node,
   classes?: object,
@@ -38,11 +37,6 @@ const propTypes = {
    * vertical: [top, center, bottom].
    */
   anchorOrigin: PropTypes.objectOf(PropTypes.any),
-
-  /**
-   * Whether this item can be checked or not.
-   */
-  checkable: PropTypes.bool,
 
   /**
    * If true, a left check mark will be rendered.
@@ -132,7 +126,6 @@ const propTypes = {
 
 const defaultProps = {
   anchorOrigin: {},
-  checkable: false,
   checked: false,
   children: null,
   classes: {},
@@ -150,14 +143,9 @@ const defaultProps = {
   value: null,
 };
 
-type State = {
-  checked: boolean,
-};
-
-export default class SDMenuItem extends Component<Props, State> {
+export default class SDMenuItem extends Component<Props> {
   constructor(props: Props) {
     super(props);
-    this.state = {checked: props.checked};
   }
 
   // Removing this func made the check state update correctly (it was being called twice)
@@ -169,13 +157,11 @@ export default class SDMenuItem extends Component<Props, State> {
   // a possible alternative was to remove the call to changeChecked from inside handleClick,
   // but that not only didn't work, but stopped the Dash callback from functioning at all
 
-  // componentWillReceiveProps(nextProps: Props): void {
-  //   if (this.props.checkable) {
-  //     if (nextProps.checked !== null && nextProps.checked !== this.props.checked) {
-  //       this.changeChecked(nextProps.checked);
-  //     }
-  //   }
-  // }
+  componentWillReceiveProps(nextProps: Props): void {
+    if (nextProps.checked !== null && nextProps.checked !== this.props.checked) {
+      this.changeChecked(nextProps.checked);
+    }
+  }
 
   changeChecked = () => {
     const { setProps } = this.props;
@@ -184,12 +170,7 @@ export default class SDMenuItem extends Component<Props, State> {
       setProps({checked: !this.props.checked});
     }
 
-    this.setState((state: State) => ({checked: !this.state.checked}));
-  };
-
-  handleClick = (wasClicked: object) => {
     if (this.props.fireEvent) this.props.fireEvent({event: 'click'});
-    if (this.props.checkable) this.changeChecked(wasClicked);
   };
 
   render() {
@@ -202,7 +183,7 @@ export default class SDMenuItem extends Component<Props, State> {
         <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
           <MenuItem
             anchorOrigin={anchorOrigin}
-            checked={this.state.checked}
+            checked={this.props.checked}
             classes={classes}
             disabled={disabled}
             innerDivStyle={innerDivStyle}
@@ -210,7 +191,7 @@ export default class SDMenuItem extends Component<Props, State> {
             label={label}
             // menuItems={React.Children.toArray(menuItems)}
             menuItems={menuItems}
-            onClick={(wasItemClicked: object) => this.handleClick(wasItemClicked)}
+            onClick={(wasItemClicked: object) => this.changeChecked(wasItemClicked)}
             primaryText={primaryText}
             secondaryText={secondaryText}
             style={style}

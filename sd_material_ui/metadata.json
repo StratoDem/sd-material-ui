@@ -1638,21 +1638,6 @@
         "modifiers": [],
         "params": [],
         "returns": null
-      },
-      {
-        "name": "handleClick",
-        "docblock": null,
-        "modifiers": [],
-        "params": [
-          {
-            "name": "wasClicked",
-            "type": {
-              "name": "object",
-              "alias": "object"
-            }
-          }
-        ],
-        "returns": null
       }
     ],
     "props": {
@@ -1670,20 +1655,6 @@
         },
         "defaultValue": {
           "value": "{}",
-          "computed": false
-        }
-      },
-      "checkable": {
-        "type": {
-          "name": "bool"
-        },
-        "required": false,
-        "description": "Whether this item can be checked or not.",
-        "flowType": {
-          "name": "boolean"
-        },
-        "defaultValue": {
-          "value": "false",
           "computed": false
         }
       },
