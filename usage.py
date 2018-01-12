@@ -102,12 +102,12 @@ app.layout = html.Div([
 
     # Test for SDDropDownMenu and SDMenuItem (single selection)
     sd_material_ui.SDDropDownMenu(id='input10', value=1, children=[
-        sd_material_ui.SDMenuItem(id='input10-item1', value=1, primaryText='Check me'),
+        sd_material_ui.SDMenuItem(id='input10-item1', value=1, primaryText='Item 1'),
         sd_material_ui.SDMenuItem(id='input10-item2', value=2, primaryText='Item 2'),
         sd_material_ui.SDMenuItem(id='input10-item3', value=3, primaryText='Item 3'),
     ]),
     html.Div(id='output10', children=['Selected item appears here.']),
-    html.Div(id='output10-checked', children=['Is the menu item checked?']),
+    html.Div(id='output10-checked', children=['What menu items are checked?']),
 ])
 
 
@@ -225,12 +225,19 @@ def dropdown_callback(value):
     return ['Selection is: {}'.format(value)]
 
 
-# Callback for checked SDMenuItem
-@app.callback(
-    dash.dependencies.Output('output10-checked', 'children'),
-    [dash.dependencies.Input('input10-item1', 'checked')])
-def checked_item_callback(checked):
-    return ['Menu item is checked: {}'.format(checked)]
+# # Callback for checked SDMenuItem
+# @app.callback(
+#     dash.dependencies.Output('output10-checked', 'children'),
+#     [dash.dependencies.Input('input10-item1', 'checked'),
+#      dash.dependencies.Input('input10-item2', 'checked'),
+#      dash.dependencies.Input('input10-item3', 'checked')])
+# def checked_item_callback(item_1, item_2, item_3):
+#     return [
+#         html.P('What menu items are checked?'),
+#         html.P('Item 1: {}'.format('checked' if item_1 else '')),
+#         html.P('Item 2: {}'.format('checked' if item_2 else '')),
+#         html.P('Item 3: {}'.format('checked' if item_3 else '')),
+#     ]
 
 
 if __name__ == '__main__':
