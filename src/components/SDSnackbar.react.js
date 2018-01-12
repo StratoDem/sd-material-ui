@@ -16,8 +16,8 @@ type Props = {
   contentStyle?: object,
   fireEvent?: () => void,
   id: string,
-  message?: Node,
-  open?: boolean,
+  message: Node,
+  open: boolean,
   setProps?: (props: {open?: boolean}) => void,
   style?: object,
 };
@@ -66,12 +66,12 @@ const propTypes = {
    * 	still open, ensure that the same object remains as the message property if you want to avoid
    * 	the Snackbar hiding and showing again)
    */
-  message: PropTypes.node,
+  message: PropTypes.node.isRequired,
 
   /**
    * Controls whether the Snackbar is opened or not.
    */
-  open: PropTypes.bool,
+  open: PropTypes.bool.isRequired,
 
   /**
    * Dash callback to update props on the server
@@ -95,8 +95,6 @@ const defaultProps = {
   className: '',
   contentStyle: {},
   fireEvent: () => {},
-  message: null,
-  open: false,
   setProps: () => {},
   style: {},
 };
@@ -121,7 +119,7 @@ export default class SDSnackbar extends Component<Props, State> {
       setProps({open: true});
 
     this.setState({open: true});
-  }
+  };
 
   handleClose = () => {
     const { setProps } = this.props;
@@ -130,11 +128,11 @@ export default class SDSnackbar extends Component<Props, State> {
       setProps({open: false});
 
     this.setState({open: false});
-  }
+  };
 
   handleActionClick = () => {
     if (this.props.fireEvent) this.props.fireEvent({event: 'click'});
-  }
+  };
 
   render() {
     const { action, autoHideDuration, bodyStyle, className, contentStyle, id,
