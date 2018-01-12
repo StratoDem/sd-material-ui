@@ -217,7 +217,10 @@ def use_toggle(switch):
     dash.dependencies.Output('snackbar', 'open'),
     [dash.dependencies.Input('input10', 'n_clicks')])
 def open_snackbar(button_click: int):
-    return True
+    if button_click is not None and button_click > 0:
+        return True
+    else:
+        return False
 
 
 # Callback for SDSnackbar's action

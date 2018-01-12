@@ -59,4 +59,21 @@ describe('SDSnackbar', () => {
 
     expect(component.find(Snackbar).length).toBe(1);
   });
+
+  it('increments n_clicks', () => {
+    const mockProps = jest.fn();
+    const component = mount(
+      <SDSnackbar
+        id='test-id'
+        action='click me'
+        message='test message'
+        open={true}
+        n_clicks={1}
+        setProps={mockProps}
+      />
+    );
+
+    component.find('button').simulate('click');
+    expect(mockProps).toHaveBeenCalledWith({n_clicks: 2});
+  });
 });
