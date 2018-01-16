@@ -52,7 +52,12 @@ app.layout = html.Div([
     html.Div(children=[
         html.P(id='output4', children=['n_clicks value: '])
     ]),
-    sd_material_ui.SDRaisedButton(id='input4', label='Click me'),
+    html.Div(children=[
+        sd_material_ui.SDRaisedButton(id='input4',
+                                      label='Use',
+                                      primary=True,
+                                      buttonStyle=dict(width=50)),
+    ], style=dict(backgroundColor='#1D3153')),
 
     spacer,
 
