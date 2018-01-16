@@ -5,7 +5,7 @@ import SDRaisedButton from '../SDRaisedButton.react';
 describe('SDRaisedButton', () => {
   it('renders', () => {
     const component = shallow(
-      <SDRaisedButton id='test-id'>
+      <SDRaisedButton id='test-id' label='myButton'>
         children=<div>
           <p>Button text</p>
         </div>
@@ -26,7 +26,7 @@ describe('SDRaisedButton', () => {
 
   it('renders children when passed in', () => {
     const component = shallow(
-      <SDRaisedButton id='test-id'>
+      <SDRaisedButton id='test-id' label='myButton'>
         children=<div className='myDiv' />
       </SDRaisedButton>);
 
