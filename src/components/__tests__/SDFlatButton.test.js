@@ -5,7 +5,7 @@ import SDFlatButton from '../SDFlatButton.react';
 describe('SDFlatButton', () => {
   it('renders', () => {
     const component = shallow(
-      <SDFlatButton id='test-id'>
+      <SDFlatButton id='test-id' label='myButton'>
         children=<div>
           <p>Button text</p>
         </div>
@@ -26,7 +26,7 @@ describe('SDFlatButton', () => {
 
   it('renders children when passed in', () => {
     const component = shallow(
-      <SDFlatButton id='test-id'>
+      <SDFlatButton id='test-id' label='myButton'>
         children=<div className='myDiv' />
       </SDFlatButton>);
 
@@ -35,7 +35,7 @@ describe('SDFlatButton', () => {
 
   it('uses the styles provided', () => {
     const component = shallow(
-      <SDFlatButton id='test-id' backgroundColor='black' fullWidth={true}>
+      <SDFlatButton id='test-id' label='myButton' backgroundColor='black' fullWidth={true}>
         children=<div />
       </SDFlatButton>);
 
@@ -46,7 +46,7 @@ describe('SDFlatButton', () => {
   it('renders with no callbacks', () => {
     const blankFunc = () => { return null; };
     const component = shallow(
-      <SDFlatButton label='myButton' fireEvent={blankFunc} setProps={blankFunc} />);
+      <SDFlatButton id='test-id' label='myButton' fireEvent={blankFunc} setProps={blankFunc} />);
 
     expect(component).toBe.ok;
   });
@@ -54,7 +54,7 @@ describe('SDFlatButton', () => {
   it('increments n_clicks', () => {
     const mockProps = jest.fn();
     const component = shallow(
-      <SDFlatButton label='myButton' n_clicks={1} setProps={mockProps} />);
+      <SDFlatButton id='test-id' label='myButton' n_clicks={1} setProps={mockProps} />);
 
     component.find('FlatButton').simulate('click');
     expect(mockProps).toHaveBeenCalledWith({n_clicks: 2});

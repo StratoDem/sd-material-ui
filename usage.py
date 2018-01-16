@@ -52,7 +52,12 @@ app.layout = html.Div([
     html.Div(children=[
         html.P(id='output4', children=['n_clicks value: '])
     ]),
-    sd_material_ui.SDRaisedButton(id='input4', label='Click me'),
+    html.Div(children=[
+        sd_material_ui.SDRaisedButton(id='input4',
+                                      label='Use',
+                                      primary=True,
+                                      buttonStyle=dict(width=50)),
+    ], style=dict(backgroundColor='#1D3153')),
 
     spacer,
 
@@ -97,6 +102,12 @@ app.layout = html.Div([
             html.P('Flame off')
         ]),
      ], style=dict(width=150)),
+
+    spacer,
+
+    sd_material_ui.SDRaisedButton(id='input10', label='Marco'),
+    html.Div(id='output10', children=['Looking...']),
+    sd_material_ui.SDSnackbar(id='snackbar', open=False, message='Polo', action='Reveal'),
 
     spacer,
 
@@ -216,6 +227,28 @@ def use_toggle(switch):
         return ['Flame on!']
     else:
         return ['Flame off']
+
+
+# Callback for SDSnackbar
+@app.callback(
+    dash.dependencies.Output('snackbar', 'open'),
+    [dash.dependencies.Input('input10', 'n_clicks')])
+def open_snackbar(button_click: int):
+    if button_click is not None and button_click > 0:
+        return True
+    else:
+        return False
+
+
+# Callback for SDSnackbar's action
+@app.callback(
+    dash.dependencies.Output('output10', 'children'),
+    [dash.dependencies.Input('snackbar', 'n_clicks')])
+def click_snackbar(snackbar_click: str):
+    if snackbar_click is not None and snackbar_click > 0:
+        return ['Found you!']
+    else:
+        return ['Looking...']
 
 
 # Callback for SDDropdownMenu and SDMenuItem

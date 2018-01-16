@@ -1357,6 +1357,10 @@
         "description": "Color of button when mouse is not hovering over it.",
         "flowType": {
           "name": "string"
+        },
+        "defaultValue": {
+          "value": "''",
+          "computed": false
         }
       },
       "children": {
@@ -1367,6 +1371,10 @@
         "description": "This is what will be displayed inside the button.\nIf a label is specified, the text within the label prop will\nbe displayed. Otherwise, the component will expect children\nwhich will then be displayed. (In our example,\nwe are nesting an `<input type=\"file\" />` and a `span`\nthat acts as our label to be displayed.) This only\napplies to flat and raised buttons.",
         "flowType": {
           "name": "Node"
+        },
+        "defaultValue": {
+          "value": "null",
+          "computed": false
         }
       },
       "className": {
@@ -1377,22 +1385,11 @@
         "description": "The CSS class name of the root element.",
         "flowType": {
           "name": "string"
-        }
-      },
-      "containerElement": {
-        "type": {
-          "name": "union",
-          "value": [
-            {
-              "name": "string"
-            },
-            {
-              "name": "element"
-            }
-          ]
         },
-        "required": false,
-        "description": "The element to use as the container for the FlatButton. Either a string to\nuse a DOM element or a ReactElement. This is useful for wrapping the\nFlatButton in a custom Link component. If a ReactElement is given, ensure\nthat it passes all of its given props through to the underlying DOM\nelement and renders its children prop for proper integration."
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
       },
       "disableTouchRipple": {
         "type": {
@@ -1402,6 +1399,10 @@
         "description": "If true, the element's ripple effect will be disabled.",
         "flowType": {
           "name": "boolean"
+        },
+        "defaultValue": {
+          "value": "false",
+          "computed": false
         }
       },
       "disabled": {
@@ -1462,6 +1463,10 @@
         "description": "Color of button when mouse hovers over.",
         "flowType": {
           "name": "string"
+        },
+        "defaultValue": {
+          "value": "''",
+          "computed": false
         }
       },
       "href": {
@@ -1472,6 +1477,10 @@
         "description": "The URL to link to when the button is clicked.",
         "flowType": {
           "name": "string"
+        },
+        "defaultValue": {
+          "value": "''",
+          "computed": false
         }
       },
       "icon": {
@@ -1482,6 +1491,10 @@
         "description": "Use this property to display an icon.",
         "flowType": {
           "name": "Node"
+        },
+        "defaultValue": {
+          "value": "null",
+          "computed": false
         }
       },
       "id": {
@@ -1498,10 +1511,14 @@
         "type": {
           "name": "string"
         },
-        "required": false,
+        "required": true,
         "description": "Label for the button.",
         "flowType": {
           "name": "string"
+        },
+        "defaultValue": {
+          "value": "''",
+          "computed": false
         }
       },
       "labelPosition": {
@@ -1530,7 +1547,10 @@
       },
       "labelStyle": {
         "type": {
-          "name": "object"
+          "name": "objectOf",
+          "value": {
+            "name": "any"
+          }
         },
         "required": false,
         "description": "Override the inline-styles of the button's label element.",
@@ -1578,6 +1598,10 @@
         "description": "Color for the ripple after button is clicked.",
         "flowType": {
           "name": "string"
+        },
+        "defaultValue": {
+          "value": "''",
+          "computed": false
         }
       },
       "secondary": {
@@ -1618,12 +1642,19 @@
       },
       "style": {
         "type": {
-          "name": "object"
+          "name": "objectOf",
+          "value": {
+            "name": "any"
+          }
         },
         "required": false,
         "description": "Override the inline-styles of the root element.",
         "flowType": {
           "name": "Object"
+        },
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
         }
       }
     }
@@ -1912,16 +1943,27 @@
         "description": "Override the default background color for the button, but not the default disabled\nbackground color (use disabledBackgroundColor for this).",
         "flowType": {
           "name": "string"
+        },
+        "defaultValue": {
+          "value": "''",
+          "computed": false
         }
       },
       "buttonStyle": {
         "type": {
-          "name": "object"
+          "name": "objectOf",
+          "value": {
+            "name": "any"
+          }
         },
         "required": false,
         "description": "Override the inline-styles of the button element.",
         "flowType": {
           "name": "Object"
+        },
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
         }
       },
       "children": {
@@ -1946,24 +1988,10 @@
         "description": "The CSS class name of the root element.",
         "flowType": {
           "name": "string"
-        }
-      },
-      "containerElement": {
-        "type": {
-          "name": "union",
-          "value": [
-            {
-              "name": "string"
-            },
-            {
-              "name": "element"
-            }
-          ]
         },
-        "required": false,
-        "description": "The element to use as the container for the RaisedButton. Either a string to use a DOM element\nor a ReactElement. This is useful for wrapping the RaisedButton in a custom Link component.\nIf a ReactElement is given, ensure that it passes all of its given props through to the\nunderlying DOM element and renders its children prop for proper integration.",
-        "flowType": {
-          "name": "string"
+        "defaultValue": {
+          "value": "''",
+          "computed": false
         }
       },
       "disableTouchRipple": {
@@ -1974,6 +2002,10 @@
         "description": "If true, the element's ripple effect will be disabled.",
         "flowType": {
           "name": "boolean"
+        },
+        "defaultValue": {
+          "value": "false",
+          "computed": false
         }
       },
       "disabled": {
@@ -1998,6 +2030,10 @@
         "description": "Override the default background color for the button when it is disabled.",
         "flowType": {
           "name": "string"
+        },
+        "defaultValue": {
+          "value": "''",
+          "computed": false
         }
       },
       "disabledLabelColor": {
@@ -2008,6 +2044,10 @@
         "description": "The color of the button's label when the button is disabled.",
         "flowType": {
           "name": "string"
+        },
+        "defaultValue": {
+          "value": "''",
+          "computed": false
         }
       },
       "fireEvent": {
@@ -2054,6 +2094,10 @@
         "description": "The URL to link to when the button is clicked.",
         "flowType": {
           "name": "string"
+        },
+        "defaultValue": {
+          "value": "''",
+          "computed": false
         }
       },
       "icon": {
@@ -2064,6 +2108,10 @@
         "description": "Use this property to display an icon.",
         "flowType": {
           "name": "Node"
+        },
+        "defaultValue": {
+          "value": "null",
+          "computed": false
         }
       },
       "id": {
@@ -2080,14 +2128,10 @@
         "type": {
           "name": "string"
         },
-        "required": false,
+        "required": true,
         "description": "The label to be displayed within the button. If content is provided via the children prop,\nthat content will be displayed in addition to the label provided here.",
         "flowType": {
           "name": "string"
-        },
-        "defaultValue": {
-          "value": "''",
-          "computed": false
         }
       },
       "labelColor": {
@@ -2095,7 +2139,11 @@
           "name": "string"
         },
         "required": false,
-        "description": "The color of the button's label."
+        "description": "The color of the button's label.",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
       },
       "labelPosition": {
         "type": {
@@ -2123,12 +2171,19 @@
       },
       "labelStyle": {
         "type": {
-          "name": "object"
+          "name": "objectOf",
+          "value": {
+            "name": "any"
+          }
         },
         "required": false,
         "description": "Override the inline-styles of the button's label element.",
         "flowType": {
           "name": "Object"
+        },
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
         }
       },
       "n_clicks": {
@@ -2147,12 +2202,19 @@
       },
       "overlayStyle": {
         "type": {
-          "name": "object"
+          "name": "objectOf",
+          "value": {
+            "name": "any"
+          }
         },
         "required": false,
         "description": "Override the inline style of the button overlay.",
         "flowType": {
           "name": "Object"
+        },
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
         }
       },
       "primary": {
@@ -2171,10 +2233,17 @@
       },
       "rippleStyle": {
         "type": {
-          "name": "object"
+          "name": "objectOf",
+          "value": {
+            "name": "any"
+          }
         },
         "required": false,
-        "description": "Override the inline style of the ripple element."
+        "description": "Override the inline style of the ripple element.",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
       },
       "secondary": {
         "type": {
@@ -2214,12 +2283,19 @@
       },
       "style": {
         "type": {
-          "name": "object"
+          "name": "objectOf",
+          "value": {
+            "name": "any"
+          }
         },
         "required": false,
         "description": "Override the inline-styles of the root element.",
         "flowType": {
           "name": "Object"
+        },
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
         }
       },
       "rippleColor": {
@@ -2228,6 +2304,236 @@
         },
         "required": false,
         "description": ""
+      }
+    }
+  },
+  "src/components/SDSnackbar.react.js": {
+    "description": "",
+    "displayName": "SDSnackbar",
+    "methods": [
+      {
+        "name": "handleOpen",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "handleClose",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "handleActionClick",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      }
+    ],
+    "props": {
+      "action": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "The label for the action on the snackbar.",
+        "flowType": {
+          "name": "Node"
+        },
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "autoHideDuration": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "The number of milliseconds to wait before automatically dismissing. If no value is specified\nthe snackbar will dismiss normally. If a value is provided the snackbar can still be dismissed\nnormally. If a snackbar is dismissed before the timer expires, the timer will be cleared.",
+        "flowType": {
+          "name": "number"
+        },
+        "defaultValue": {
+          "value": "3000",
+          "computed": false
+        }
+      },
+      "bodyStyle": {
+        "type": {
+          "name": "objectOf",
+          "value": {
+            "name": "any"
+          }
+        },
+        "required": false,
+        "description": "Override the inline-styles of the body element.",
+        "flowType": {
+          "name": "object"
+        },
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "className": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The css class name of the root element.",
+        "flowType": {
+          "name": "string"
+        },
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "contentStyle": {
+        "type": {
+          "name": "objectOf",
+          "value": {
+            "name": "any"
+          }
+        },
+        "required": false,
+        "description": "Override the inline-styles of the content element.",
+        "flowType": {
+          "name": "object"
+        },
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "fireEvent": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "A callback for firing events to dash.",
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "() => void",
+          "signature": {
+            "arguments": [],
+            "return": {
+              "name": "void"
+            }
+          }
+        },
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      },
+      "id": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "The element's ID.",
+        "flowType": {
+          "name": "string"
+        }
+      },
+      "message": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "The message to be displayed.\n\t(Note: If the message is an element or array, and the Snackbar may re-render while it is\n\tstill open, ensure that the same object remains as the message property if you want to avoid\n\tthe Snackbar hiding and showing again)",
+        "flowType": {
+          "name": "Node"
+        }
+      },
+      "n_clicks": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "An integer that represents the number of times that action button has been clicked on.",
+        "flowType": {
+          "name": "number"
+        },
+        "defaultValue": {
+          "value": "0",
+          "computed": false
+        }
+      },
+      "open": {
+        "type": {
+          "name": "bool"
+        },
+        "required": true,
+        "description": "Controls whether the Snackbar is opened or not.",
+        "flowType": {
+          "name": "boolean"
+        }
+      },
+      "setProps": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Dash callback to update props on the server",
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "(props: {open?: boolean}) => void",
+          "signature": {
+            "arguments": [
+              {
+                "name": "props",
+                "type": {
+                  "name": "signature",
+                  "type": "object",
+                  "raw": "{open?: boolean}",
+                  "signature": {
+                    "properties": [
+                      {
+                        "key": "open",
+                        "value": {
+                          "name": "boolean",
+                          "required": false
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "return": {
+              "name": "void"
+            }
+          }
+        },
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      },
+      "style": {
+        "type": {
+          "name": "objectOf",
+          "value": {
+            "name": "any"
+          }
+        },
+        "required": false,
+        "description": "Override the inline-styles of the root element.",
+        "flowType": {
+          "name": "object"
+        },
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
       }
     }
   },
