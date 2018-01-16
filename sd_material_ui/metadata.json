@@ -984,21 +984,6 @@
           "computed": false
         }
       },
-      "containerElement": {
-        "type": {
-          "name": "union",
-          "value": [
-            {
-              "name": "string"
-            },
-            {
-              "name": "element"
-            }
-          ]
-        },
-        "required": false,
-        "description": "The element to use as the container for the FlatButton. Either a string to\nuse a DOM element or a ReactElement. This is useful for wrapping the\nFlatButton in a custom Link component. If a ReactElement is given, ensure\nthat it passes all of its given props through to the underlying DOM\nelement and renders its children prop for proper integration."
-      },
       "disableTouchRipple": {
         "type": {
           "name": "bool"

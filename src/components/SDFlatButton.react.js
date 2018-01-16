@@ -54,15 +54,6 @@ const propTypes = {
   className: PropTypes.string,
 
   /**
-   * The element to use as the container for the FlatButton. Either a string to
-   * use a DOM element or a ReactElement. This is useful for wrapping the
-   * FlatButton in a custom Link component. If a ReactElement is given, ensure
-   * that it passes all of its given props through to the underlying DOM
-   * element and renders its children prop for proper integration.
-   */
-  containerElement: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
-
-  /**
    * If true, the element's ripple effect will be disabled.
    */
   disableTouchRipple: PropTypes.bool,
@@ -181,7 +172,7 @@ export default class SDFlatButton extends Component<Props> {
   }
 
   render() {
-    const { backgroundColor, className, containerElement, disableTouchRipple, disabled,
+    const { backgroundColor, className, disableTouchRipple, disabled,
       fullWidth, hoverColor, href, icon, id, label, labelPosition, labelStyle,
       primary, rippleColor, secondary, style} = this.props;
 
@@ -192,7 +183,6 @@ export default class SDFlatButton extends Component<Props> {
             <FlatButton
               backgroundColor={backgroundColor}
               className={className}
-              containerElement={containerElement}
               disableTouchRipple={disableTouchRipple}
               disabled={disabled}
               fullWidth={fullWidth}
@@ -220,7 +210,6 @@ export default class SDFlatButton extends Component<Props> {
             <FlatButton
               backgroundColor={backgroundColor}
               className={className}
-              containerElement={containerElement}
               disableTouchRipple={disableTouchRipple}
               disabled={disabled}
               fullWidth={fullWidth}
