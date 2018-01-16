@@ -127,7 +127,7 @@ const defaultProps = {
   docked: true,
   open: false,
   openSecondary: false,
-  overlayClassName: {},
+  overlayClassName: '',
   overlayStyle: {},
   setProps: () => {},
   style: {},

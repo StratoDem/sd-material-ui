@@ -950,6 +950,10 @@
         "description": "Color of button when mouse is not hovering over it.",
         "flowType": {
           "name": "string"
+        },
+        "defaultValue": {
+          "value": "''",
+          "computed": false
         }
       },
       "children": {
@@ -960,6 +964,10 @@
         "description": "This is what will be displayed inside the button.\nIf a label is specified, the text within the label prop will\nbe displayed. Otherwise, the component will expect children\nwhich will then be displayed. (In our example,\nwe are nesting an `<input type=\"file\" />` and a `span`\nthat acts as our label to be displayed.) This only\napplies to flat and raised buttons.",
         "flowType": {
           "name": "Node"
+        },
+        "defaultValue": {
+          "value": "null",
+          "computed": false
         }
       },
       "className": {
@@ -970,22 +978,11 @@
         "description": "The CSS class name of the root element.",
         "flowType": {
           "name": "string"
-        }
-      },
-      "containerElement": {
-        "type": {
-          "name": "union",
-          "value": [
-            {
-              "name": "string"
-            },
-            {
-              "name": "element"
-            }
-          ]
         },
-        "required": false,
-        "description": "The element to use as the container for the FlatButton. Either a string to\nuse a DOM element or a ReactElement. This is useful for wrapping the\nFlatButton in a custom Link component. If a ReactElement is given, ensure\nthat it passes all of its given props through to the underlying DOM\nelement and renders its children prop for proper integration."
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
       },
       "disableTouchRipple": {
         "type": {
@@ -995,6 +992,10 @@
         "description": "If true, the element's ripple effect will be disabled.",
         "flowType": {
           "name": "boolean"
+        },
+        "defaultValue": {
+          "value": "false",
+          "computed": false
         }
       },
       "disabled": {
@@ -1055,6 +1056,10 @@
         "description": "Color of button when mouse hovers over.",
         "flowType": {
           "name": "string"
+        },
+        "defaultValue": {
+          "value": "''",
+          "computed": false
         }
       },
       "href": {
@@ -1065,6 +1070,10 @@
         "description": "The URL to link to when the button is clicked.",
         "flowType": {
           "name": "string"
+        },
+        "defaultValue": {
+          "value": "''",
+          "computed": false
         }
       },
       "icon": {
@@ -1075,6 +1084,10 @@
         "description": "Use this property to display an icon.",
         "flowType": {
           "name": "Node"
+        },
+        "defaultValue": {
+          "value": "null",
+          "computed": false
         }
       },
       "id": {
@@ -1095,6 +1108,10 @@
         "description": "Label for the button.",
         "flowType": {
           "name": "string"
+        },
+        "defaultValue": {
+          "value": "''",
+          "computed": false
         }
       },
       "labelPosition": {
@@ -1123,7 +1140,10 @@
       },
       "labelStyle": {
         "type": {
-          "name": "object"
+          "name": "objectOf",
+          "value": {
+            "name": "any"
+          }
         },
         "required": false,
         "description": "Override the inline-styles of the button's label element.",
@@ -1171,6 +1191,10 @@
         "description": "Color for the ripple after button is clicked.",
         "flowType": {
           "name": "string"
+        },
+        "defaultValue": {
+          "value": "''",
+          "computed": false
         }
       },
       "secondary": {
@@ -1211,12 +1235,19 @@
       },
       "style": {
         "type": {
-          "name": "object"
+          "name": "objectOf",
+          "value": {
+            "name": "any"
+          }
         },
         "required": false,
         "description": "Override the inline-styles of the root element.",
         "flowType": {
           "name": "Object"
+        },
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
         }
       }
     }
@@ -1242,16 +1273,27 @@
         "description": "Override the default background color for the button, but not the default disabled\nbackground color (use disabledBackgroundColor for this).",
         "flowType": {
           "name": "string"
+        },
+        "defaultValue": {
+          "value": "''",
+          "computed": false
         }
       },
       "buttonStyle": {
         "type": {
-          "name": "object"
+          "name": "objectOf",
+          "value": {
+            "name": "any"
+          }
         },
         "required": false,
         "description": "Override the inline-styles of the button element.",
         "flowType": {
           "name": "Object"
+        },
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
         }
       },
       "children": {
@@ -1276,24 +1318,10 @@
         "description": "The CSS class name of the root element.",
         "flowType": {
           "name": "string"
-        }
-      },
-      "containerElement": {
-        "type": {
-          "name": "union",
-          "value": [
-            {
-              "name": "string"
-            },
-            {
-              "name": "element"
-            }
-          ]
         },
-        "required": false,
-        "description": "The element to use as the container for the RaisedButton. Either a string to use a DOM element\nor a ReactElement. This is useful for wrapping the RaisedButton in a custom Link component.\nIf a ReactElement is given, ensure that it passes all of its given props through to the\nunderlying DOM element and renders its children prop for proper integration.",
-        "flowType": {
-          "name": "string"
+        "defaultValue": {
+          "value": "''",
+          "computed": false
         }
       },
       "disableTouchRipple": {
@@ -1304,6 +1332,10 @@
         "description": "If true, the element's ripple effect will be disabled.",
         "flowType": {
           "name": "boolean"
+        },
+        "defaultValue": {
+          "value": "false",
+          "computed": false
         }
       },
       "disabled": {
@@ -1328,6 +1360,10 @@
         "description": "Override the default background color for the button when it is disabled.",
         "flowType": {
           "name": "string"
+        },
+        "defaultValue": {
+          "value": "''",
+          "computed": false
         }
       },
       "disabledLabelColor": {
@@ -1338,6 +1374,10 @@
         "description": "The color of the button's label when the button is disabled.",
         "flowType": {
           "name": "string"
+        },
+        "defaultValue": {
+          "value": "''",
+          "computed": false
         }
       },
       "fireEvent": {
@@ -1384,6 +1424,10 @@
         "description": "The URL to link to when the button is clicked.",
         "flowType": {
           "name": "string"
+        },
+        "defaultValue": {
+          "value": "''",
+          "computed": false
         }
       },
       "icon": {
@@ -1394,6 +1438,10 @@
         "description": "Use this property to display an icon.",
         "flowType": {
           "name": "Node"
+        },
+        "defaultValue": {
+          "value": "null",
+          "computed": false
         }
       },
       "id": {
@@ -1425,7 +1473,11 @@
           "name": "string"
         },
         "required": false,
-        "description": "The color of the button's label."
+        "description": "The color of the button's label.",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
       },
       "labelPosition": {
         "type": {
@@ -1453,12 +1505,19 @@
       },
       "labelStyle": {
         "type": {
-          "name": "object"
+          "name": "objectOf",
+          "value": {
+            "name": "any"
+          }
         },
         "required": false,
         "description": "Override the inline-styles of the button's label element.",
         "flowType": {
           "name": "Object"
+        },
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
         }
       },
       "n_clicks": {
@@ -1477,12 +1536,19 @@
       },
       "overlayStyle": {
         "type": {
-          "name": "object"
+          "name": "objectOf",
+          "value": {
+            "name": "any"
+          }
         },
         "required": false,
         "description": "Override the inline style of the button overlay.",
         "flowType": {
           "name": "Object"
+        },
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
         }
       },
       "primary": {
@@ -1501,10 +1567,17 @@
       },
       "rippleStyle": {
         "type": {
-          "name": "object"
+          "name": "objectOf",
+          "value": {
+            "name": "any"
+          }
         },
         "required": false,
-        "description": "Override the inline style of the ripple element."
+        "description": "Override the inline style of the ripple element.",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
       },
       "secondary": {
         "type": {
@@ -1544,12 +1617,19 @@
       },
       "style": {
         "type": {
-          "name": "object"
+          "name": "objectOf",
+          "value": {
+            "name": "any"
+          }
         },
         "required": false,
         "description": "Override the inline-styles of the root element.",
         "flowType": {
           "name": "Object"
+        },
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
         }
       },
       "rippleColor": {

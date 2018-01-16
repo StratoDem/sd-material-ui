@@ -54,15 +54,6 @@ const propTypes = {
   className: PropTypes.string,
 
   /**
-   * The element to use as the container for the FlatButton. Either a string to
-   * use a DOM element or a ReactElement. This is useful for wrapping the
-   * FlatButton in a custom Link component. If a ReactElement is given, ensure
-   * that it passes all of its given props through to the underlying DOM
-   * element and renders its children prop for proper integration.
-   */
-  containerElement: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
-
-  /**
    * If true, the element's ripple effect will be disabled.
    */
   disableTouchRipple: PropTypes.bool,
@@ -98,7 +89,7 @@ const propTypes = {
   icon: PropTypes.node,
 
   /* The element's ID */
-  id: PropTypes.string,
+  id: PropTypes.string.isRequired,
 
   /**
    * Label for the button.
@@ -113,7 +104,7 @@ const propTypes = {
   /**
    * Override the inline-styles of the button's label element.
    */
-  labelStyle: PropTypes.object,
+  labelStyle: PropTypes.objectOf(PropTypes.any),
 
   /**
    * An integer that represents the number of times
@@ -144,19 +135,29 @@ const propTypes = {
   /**
    * Override the inline-styles of the root element.
    */
-  style: PropTypes.object,
+  style: PropTypes.objectOf(PropTypes.any),
 };
 
 const defaultProps = {
+  backgroundColor: '',
+  children: null,
+  className: '',
+  disableTouchRipple: false,
   disabled: false,
   fireEvent: () => {},
   fullWidth: false,
+  hoverColor: '',
+  href: '',
+  icon: null,
+  label: '',
   labelPosition: 'after',
   labelStyle: {},
   n_clicks: 0,
   primary: false,
+  rippleColor: '',
   secondary: false,
   setProps: () => {},
+  style: {},
 };
 
 export default class SDFlatButton extends Component<Props> {
@@ -171,7 +172,7 @@ export default class SDFlatButton extends Component<Props> {
   }
 
   render() {
-    const { backgroundColor, className, containerElement, disableTouchRipple, disabled,
+    const { backgroundColor, className, disableTouchRipple, disabled,
       fullWidth, hoverColor, href, icon, id, label, labelPosition, labelStyle,
       primary, rippleColor, secondary, style} = this.props;
 
@@ -182,7 +183,6 @@ export default class SDFlatButton extends Component<Props> {
             <FlatButton
               backgroundColor={backgroundColor}
               className={className}
-              containerElement={containerElement}
               disableTouchRipple={disableTouchRipple}
               disabled={disabled}
               fullWidth={fullWidth}
@@ -210,7 +210,6 @@ export default class SDFlatButton extends Component<Props> {
             <FlatButton
               backgroundColor={backgroundColor}
               className={className}
-              containerElement={containerElement}
               disableTouchRipple={disableTouchRipple}
               disabled={disabled}
               fullWidth={fullWidth}
