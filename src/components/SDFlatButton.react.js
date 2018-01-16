@@ -113,7 +113,7 @@ const propTypes = {
   /**
    * Override the inline-styles of the button's label element.
    */
-  labelStyle: PropTypes.object,
+  labelStyle: PropTypes.objectOf(PropTypes.any),
 
   /**
    * An integer that represents the number of times
@@ -144,7 +144,7 @@ const propTypes = {
   /**
    * Override the inline-styles of the root element.
    */
-  style: PropTypes.object,
+  style: PropTypes.objectOf(PropTypes.any),
 };
 
 const defaultProps = {

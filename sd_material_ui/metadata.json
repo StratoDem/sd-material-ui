@@ -1123,7 +1123,10 @@
       },
       "labelStyle": {
         "type": {
-          "name": "object"
+          "name": "objectOf",
+          "value": {
+            "name": "any"
+          }
         },
         "required": false,
         "description": "Override the inline-styles of the button's label element.",
@@ -1211,7 +1214,10 @@
       },
       "style": {
         "type": {
-          "name": "object"
+          "name": "objectOf",
+          "value": {
+            "name": "any"
+          }
         },
         "required": false,
         "description": "Override the inline-styles of the root element.",
