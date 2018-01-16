@@ -185,7 +185,7 @@ const defaultProps = {
   style: {},
   targetOrigin: {vertical: 'top', horizontal: 'left'},
   underlineStyle: {},
-  value: null,
+  value: 1,
 };
 
 export default class SDDropDownMenu extends Component<Props, State> {
@@ -194,29 +194,37 @@ export default class SDDropDownMenu extends Component<Props, State> {
     this.state = {value: this.props.value};
   }
 
-  componentWillReceiveProps(nextProps: Props): void {
-    if (nextProps.value !== null && nextProps.value !== this.props.value) {
-      this.handleChange({}, 0, nextProps.value);
-    }
-  }
+  // componentWillReceiveProps(nextProps: Props): void {
+  //   if (nextProps.value !== null && nextProps.value !== this.props.value) {
+  //     this.handleChange(nextProps.value);
+  //   }
+  // }
 
-  handleChange = (event: object, index: number, value: any) => {
+  handleChange = (option) => {
+    console.log(option);
     const { setProps } = this.props;
 
     if (typeof setProps === 'function')
-      setProps({value});
+      setProps({value: option.props.children.props.value});
 
-    this.setState({value});
+    this.setState({value: option.props.children.props.value});
 
     if (this.props.fireEvent) {
       this.props.fireEvent({event: 'change'});
     }
   };
 
+  updateSelections = (option) => {
+    return (
+      <div onClick={() => this.handleChange(option)}>{option}</div>
+    );
+  };
+
   render() {
     const { anchorOrigin, animated, autoWidth, className, disabled, iconButton,
       iconStyle, id, labelStyle, listStyle, maxHeight, menuItemStyle, menuStyle, multiple,
-      openImmediately, selectedMenuItemStyle, style, targetOrigin, underlineStyle} = this.props;
+      openImmediately, selectedMenuItemStyle, style, targetOrigin,
+      underlineStyle} = this.props;
 
     return (
       <div id={id}>
@@ -243,9 +251,7 @@ export default class SDDropDownMenu extends Component<Props, State> {
             underlineStyle={underlineStyle}
             value={this.state.value}
           >
-            <SDMenuItem id="test-id-1" value={1} primaryText="Test 1" />
-            <SDMenuItem id="test-id-2" value={1} primaryText="Test 2" />
-            <SDMenuItem id="test-id-3" value={1} primaryText="Test 3" />
+            {this.props.children.map(this.updateSelections)}
           </DropDownMenu>
         </MuiThemeProvider>
       </div>

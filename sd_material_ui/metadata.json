@@ -939,23 +939,20 @@
         "modifiers": [],
         "params": [
           {
-            "name": "event",
-            "type": {
-              "name": "object",
-              "alias": "object"
-            }
-          },
+            "name": "option",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "updateSelections",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
           {
-            "name": "index",
-            "type": {
-              "name": "number"
-            }
-          },
-          {
-            "name": "value",
-            "type": {
-              "name": "any"
-            }
+            "name": "option",
+            "type": null
           }
         ],
         "returns": null
@@ -1330,7 +1327,7 @@
           "name": "any"
         },
         "defaultValue": {
-          "value": "null",
+          "value": "1",
           "computed": false
         }
       }
@@ -1662,15 +1659,7 @@
   "src/components/SDMenuItem.react.js": {
     "description": "",
     "displayName": "SDMenuItem",
-    "methods": [
-      {
-        "name": "changeChecked",
-        "docblock": null,
-        "modifiers": [],
-        "params": [],
-        "returns": null
-      }
-    ],
+    "methods": [],
     "props": {
       "anchorOrigin": {
         "type": {
@@ -1689,20 +1678,6 @@
           "computed": false
         }
       },
-      "checked": {
-        "type": {
-          "name": "bool"
-        },
-        "required": false,
-        "description": "If true, a left check mark will be rendered.\nNote: A Dash callback must be listening for this prop otherwise the checkmarks will not work!",
-        "flowType": {
-          "name": "boolean"
-        },
-        "defaultValue": {
-          "value": "false",
-          "computed": false
-        }
-      },
       "children": {
         "type": {
           "name": "node"
@@ -1714,6 +1689,23 @@
         },
         "defaultValue": {
           "value": "null",
+          "computed": false
+        }
+      },
+      "classes": {
+        "type": {
+          "name": "objectOf",
+          "value": {
+            "name": "any"
+          }
+        },
+        "required": false,
+        "description": "Useful to extend the style applied to components.",
+        "flowType": {
+          "name": "object"
+        },
+        "defaultValue": {
+          "value": "{}",
           "computed": false
         }
       },
@@ -1912,9 +1904,6 @@
         },
         "required": false,
         "description": "The value of the menu item.",
-        "flowType": {
-          "name": "number"
-        },
         "defaultValue": {
           "value": "null",
           "computed": false
@@ -2132,6 +2121,10 @@
         "description": "The label to be displayed within the button. If content is provided via the children prop,\nthat content will be displayed in addition to the label provided here.",
         "flowType": {
           "name": "string"
+        },
+        "defaultValue": {
+          "value": "''",
+          "computed": false
         }
       },
       "labelColor": {

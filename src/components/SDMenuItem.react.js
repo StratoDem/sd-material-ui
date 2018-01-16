@@ -10,9 +10,9 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
 type Props = {
   anchorOrigin?: object,
-  checked?: boolean,
+  // checked?: boolean,
   children?: Node,
-  // classes?: object,
+  classes?: object,
   disabled?: boolean,
   fireEvent?: () => void,
   innerDivStyle?: object,
@@ -25,7 +25,7 @@ type Props = {
   setProps?: () => void,
   style?: object,
   targetOrigin?: object,
-  value?: number,
+  // value?: number,
 };
 
 const propTypes = {
@@ -38,21 +38,21 @@ const propTypes = {
    */
   anchorOrigin: PropTypes.objectOf(PropTypes.any),
 
-  /**
-   * If true, a left check mark will be rendered.
-   * Note: A Dash callback must be listening for this prop otherwise the checkmarks will not work!
-   */
-  checked: PropTypes.bool,
+  // /**
+  //  * If true, a left check mark will be rendered.
+  //  * Note: A Dash callback must be listening for this prop otherwise the checkmarks will not work!
+  //  */
+  // checked: PropTypes.bool,
 
   /**
    * Elements passed as children to the underlying menu item.
    */
   children: PropTypes.node,
 
-  // /**
-  //  * Useful to extend the style applied to components.
-  //  */
-  // classes: PropTypes.objectOf(PropTypes.any),
+  /**
+  * Useful to extend the style applied to components.
+  */
+  classes: PropTypes.objectOf(PropTypes.any),
 
   /**
    * Disables this menu item.
@@ -127,9 +127,9 @@ const propTypes = {
 
 const defaultProps = {
   anchorOrigin: {},
-  checked: false,
+  // checked: false,
   children: null,
-  // classes: {},
+  classes: {},
   disabled: false,
   fireEvent: () => {},
   innerDivStyle: {},
@@ -158,21 +158,21 @@ export default class SDMenuItem extends Component<Props> {
   // a possible alternative was to remove the call to changeChecked from inside handleClick,
   // but that not only didn't work, but stopped the Dash callback from functioning at all
 
-  componentWillReceiveProps(nextProps: Props): void {
-    if (nextProps.checked !== null && nextProps.checked !== this.props.checked) {
-      this.changeChecked(nextProps.checked);
-    }
-  }
+  // componentWillReceiveProps(nextProps: Props): void {
+  //   if (nextProps.checked !== null && nextProps.checked !== this.props.checked) {
+  //     this.changeChecked(nextProps.checked);
+  //   }
+  // }
 
-  changeChecked = () => {
-    const { setProps } = this.props;
-
-    if (typeof setProps === 'function') {
-      setProps({checked: !this.props.checked});
-    }
-
-    if (this.props.fireEvent) this.props.fireEvent({event: 'click'});
-  };
+  // changeChecked = () => {
+  //   const { setProps } = this.props;
+  //
+  //   if (typeof setProps === 'function') {
+  //     setProps({checked: !this.props.checked});
+  //   }
+  //
+  //   if (this.props.fireEvent) this.props.fireEvent({event: 'click'});
+  // };
 
   render() {
     const { anchorOrigin, classes, disabled, innerDivStyle, insetChildren,
@@ -184,15 +184,15 @@ export default class SDMenuItem extends Component<Props> {
         <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
           <MenuItem
             anchorOrigin={anchorOrigin}
-            checked={this.props.checked}
-            // classes={classes}
+            // checked={this.props.checked}
+            classes={classes}
             disabled={disabled}
             innerDivStyle={innerDivStyle}
             insetChildren={insetChildren}
             label={label}
             // menuItems={React.Children.toArray(menuItems)}
             menuItems={menuItems}
-            onClick={(wasItemClicked: object) => this.changeChecked(wasItemClicked)}
+            // onClick={(wasItemClicked: object) => this.changeChecked(wasItemClicked)}
             primaryText={primaryText}
             secondaryText={secondaryText}
             style={style}

@@ -112,14 +112,14 @@ app.layout = html.Div([
     spacer,
 
     # Test for SDDropDownMenu and SDMenuItem (single selection)
-    # sd_material_ui.SDDropDownMenu(id='input10', value=1, children=[
-    #     sd_material_ui.SDMenuItem(id='input10-item1', value=1, primaryText='Item 1'),
-    #     sd_material_ui.SDMenuItem(id='input10-item2', value=2, primaryText='Item 2'),
-    #     sd_material_ui.SDMenuItem(id='input10-item3', value=3, primaryText='Item 3'),
-    # ]),
-    sd_material_ui.SDDropDownMenu(id='input10', value=1),
-    html.Div(id='output10', children=['Selected item appears here.']),
-    html.Div(id='output10-checked', children=['What menu items are checked?']),
+    sd_material_ui.SDDropDownMenu(id='input11', value=1, children=[
+        sd_material_ui.SDMenuItem(id='input11-item1', value=1, primaryText='Item 1'),
+        sd_material_ui.SDMenuItem(id='input11-item2', value=2, primaryText='Item 2'),
+        sd_material_ui.SDMenuItem(id='input11-item3', value=3, primaryText='Item 3'),
+    ]),
+    # sd_material_ui.SDDropDownMenu(id='input11', value=1),
+    html.Div(id='output11', children=['Selected item appears here.']),
+    html.Div(id='output11-checked', children=['What menu items are checked?']),
 ])
 
 
@@ -253,18 +253,18 @@ def click_snackbar(snackbar_click: str):
 
 # Callback for SDDropdownMenu and SDMenuItem
 @app.callback(
-    dash.dependencies.Output('output10', 'children'),
-    [dash.dependencies.Input('input10', 'value')])
+    dash.dependencies.Output('output11', 'children'),
+    [dash.dependencies.Input('input11', 'value')])
 def dropdown_callback(value):
     return ['Selection is: {}'.format(value)]
 
 
 # # Callback for checked SDMenuItem
 # @app.callback(
-#     dash.dependencies.Output('output10-checked', 'children'),
-#     [dash.dependencies.Input('input10-item1', 'checked'),
-#      dash.dependencies.Input('input10-item2', 'checked'),
-#      dash.dependencies.Input('input10-item3', 'checked')])
+#     dash.dependencies.Output('output11-checked', 'children'),
+#     [dash.dependencies.Input('input11-item1', 'checked'),
+#      dash.dependencies.Input('input11-item2', 'checked'),
+#      dash.dependencies.Input('input11-item3', 'checked')])
 # def checked_item_callback(item_1, item_2, item_3):
 #     return [
 #         html.P('What menu items are checked?'),
