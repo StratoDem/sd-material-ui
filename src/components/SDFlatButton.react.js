@@ -20,7 +20,7 @@ type Props = {
   href?: string,
   icon?: Node,
   id?: string,
-  label?: string,
+  label: string,
   labelPosition?: string,
   labelStyle?: Object,
   n_clicks?: number,
@@ -94,7 +94,7 @@ const propTypes = {
   /**
    * Label for the button.
    */
-  label: PropTypes.string,
+  label: PropTypes.string.isRequired,
 
   /**
    * Place label before or after the passed children.

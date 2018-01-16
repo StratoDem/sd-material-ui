@@ -2,6 +2,10 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 1.6.1 - 2018-01-16
+### Changed
+Make label a default prop on both flat and raised buttons
+
 ## 1.6.0 - 2018-01-12
 ### Added
 - SDSnackbar

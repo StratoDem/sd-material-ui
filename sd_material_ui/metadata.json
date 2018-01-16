@@ -806,7 +806,7 @@
           "name": "string"
         },
         "defaultValue": {
-          "value": "{}",
+          "value": "''",
           "computed": false
         }
       },
@@ -1104,7 +1104,7 @@
         "type": {
           "name": "string"
         },
-        "required": false,
+        "required": true,
         "description": "Label for the button.",
         "flowType": {
           "name": "string"
@@ -1458,14 +1458,10 @@
         "type": {
           "name": "string"
         },
-        "required": false,
+        "required": true,
         "description": "The label to be displayed within the button. If content is provided via the children prop,\nthat content will be displayed in addition to the label provided here.",
         "flowType": {
           "name": "string"
-        },
-        "defaultValue": {
-          "value": "''",
-          "computed": false
         }
       },
       "labelColor": {

@@ -22,7 +22,7 @@ type Props = {
   href?: string,
   icon?: Node,
   id?: string,
-  label?: string,
+  label: string,
   labelPosition?: string,
   labelStyle?: Object,
   n_clicks?: number,
@@ -106,7 +106,7 @@ const propTypes = {
    * The label to be displayed within the button. If content is provided via the children prop,
    * that content will be displayed in addition to the label provided here.
    */
-  label: PropTypes.string,
+  label: PropTypes.string.isRequired,
 
   /**
    * The color of the button's label.
