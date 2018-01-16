@@ -12,7 +12,7 @@ type Props = {
   anchorOrigin?: object,
   checked?: boolean,
   children?: Node,
-  classes?: object,
+  // classes?: object,
   disabled?: boolean,
   fireEvent?: () => void,
   innerDivStyle?: object,
@@ -49,10 +49,10 @@ const propTypes = {
    */
   children: PropTypes.node,
 
-  /**
-   * Useful to extend the style applied to components.
-   */
-  classes: PropTypes.objectOf(PropTypes.any),
+  // /**
+  //  * Useful to extend the style applied to components.
+  //  */
+  // classes: PropTypes.objectOf(PropTypes.any),
 
   /**
    * Disables this menu item.
@@ -129,7 +129,7 @@ const defaultProps = {
   anchorOrigin: {},
   checked: false,
   children: null,
-  classes: {},
+  // classes: {},
   disabled: false,
   fireEvent: () => {},
   innerDivStyle: {},
@@ -185,7 +185,7 @@ export default class SDMenuItem extends Component<Props> {
           <MenuItem
             anchorOrigin={anchorOrigin}
             checked={this.props.checked}
-            classes={classes}
+            // classes={classes}
             disabled={disabled}
             innerDivStyle={innerDivStyle}
             insetChildren={insetChildren}

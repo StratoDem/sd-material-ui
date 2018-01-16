@@ -9,6 +9,8 @@ import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
+import SDMenuItem from './SDMenuItem.react';
+
 type Props = {
   anchorOrigin?: object, // ???
   animated?: boolean,
@@ -241,7 +243,9 @@ export default class SDDropDownMenu extends Component<Props, State> {
             underlineStyle={underlineStyle}
             value={this.state.value}
           >
-            {this.props.children}
+            <SDMenuItem id="test-id-1" value={1} primaryText="Test 1" />
+            <SDMenuItem id="test-id-2" value={1} primaryText="Test 2" />
+            <SDMenuItem id="test-id-3" value={1} primaryText="Test 3" />
           </DropDownMenu>
         </MuiThemeProvider>
       </div>

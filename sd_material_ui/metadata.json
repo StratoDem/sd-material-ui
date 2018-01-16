@@ -1686,23 +1686,6 @@
           "computed": false
         }
       },
-      "classes": {
-        "type": {
-          "name": "objectOf",
-          "value": {
-            "name": "any"
-          }
-        },
-        "required": false,
-        "description": "Useful to extend the style applied to components.",
-        "flowType": {
-          "name": "object"
-        },
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
       "disabled": {
         "type": {
           "name": "bool"
