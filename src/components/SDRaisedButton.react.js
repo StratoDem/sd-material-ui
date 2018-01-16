@@ -13,7 +13,6 @@ type Props = {
   buttonStyle?: Object,
   children?: Node,
   className?: string,
-  containerElement?: string,
   disableTouchRipple?: boolean,
   disabled?: boolean,
   disabledBackgroundColor?: string,
@@ -45,7 +44,7 @@ const propTypes = {
   /**
    * Override the inline-styles of the button element.
    */
-  buttonStyle: PropTypes.object,
+  buttonStyle: PropTypes.objectOf(PropTypes.any),
 
   /**
    * The content of the button. If a label is provided via the label prop, the text within the
@@ -57,14 +56,6 @@ const propTypes = {
    * The CSS class name of the root element.
    */
   className: PropTypes.string,
-
-  /**
-   * The element to use as the container for the RaisedButton. Either a string to use a DOM element
-   * or a ReactElement. This is useful for wrapping the RaisedButton in a custom Link component.
-   * If a ReactElement is given, ensure that it passes all of its given props through to the
-   * underlying DOM element and renders its children prop for proper integration.
-   */
-  containerElement: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
 
   /**
    * If true, the element's ripple effect will be disabled.
@@ -130,7 +121,7 @@ const propTypes = {
   /**
    * Override the inline-styles of the button's label element.
    */
-  labelStyle: PropTypes.object,
+  labelStyle: PropTypes.objectOf(PropTypes.any),
 
   /**
    * An integer that represents the number of times
@@ -141,7 +132,7 @@ const propTypes = {
   /**
    * Override the inline style of the button overlay.
    */
-  overlayStyle: PropTypes.object,
+  overlayStyle: PropTypes.objectOf(PropTypes.any),
 
   /**
    * If true, the button will use the theme's primary color.
@@ -151,7 +142,7 @@ const propTypes = {
   /**
    * Override the inline style of the ripple element.
    */
-  rippleStyle: PropTypes.object,
+  rippleStyle: PropTypes.objectOf(PropTypes.any),
 
   /**
    * If true, the button will use the theme's secondary color. If both secondary and primary are
@@ -165,19 +156,33 @@ const propTypes = {
   /**
    * Override the inline-styles of the root element.
    */
-  style: PropTypes.object,
+  style: PropTypes.objectOf(PropTypes.any),
 };
 
 const defaultProps = {
+  backgroundColor: '',
+  buttonStyle: {},
+  children: null,
+  className: '',
+  disableTouchRipple: false,
   disabled: false,
+  disabledBackgroundColor: '',
+  disabledLabelColor: '',
   fireEvent: () => {},
   fullWidth: false,
+  href: '',
+  icon: null,
+  labelColor: '',
   labelPosition: 'after',
+  labelStyle: {},
   n_clicks: 0,
+  label: '',
+  overlayStyle: {},
   primary: false,
+  rippleStyle: {},
   secondary: false,
   setProps: () => {},
-  children: null,
+  style: {},
 };
 
 export default class SDRaisedButton extends React.Component<Props> {
@@ -186,18 +191,16 @@ export default class SDRaisedButton extends React.Component<Props> {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  // TODO increment version number (if not done already) before making PR
-
   handleClick() {
     if (this.props.setProps) this.props.setProps({n_clicks: this.props.n_clicks + 1});
     if (this.props.fireEvent) this.props.fireEvent({event: 'click'});
   }
 
   render() {
-    const { backgroundColor, buttonStyle, className, containerElement, disabled,
+    const { backgroundColor, buttonStyle, className, disabled,
       disabledBackgroundColor, disabledLabelColor, disableTouchRipple, fullWidth, href,
-      icon, id, label, labelPosition, labelStyle, overlayStyle, primary, rippleColor, secondary,
-      style } = this.props;
+      icon, id, label, labelColor, labelPosition, labelStyle, overlayStyle, primary, rippleColor,
+      rippleStyle, secondary, style } = this.props;
 
     if (this.props.fireEvent || this.props.setProps) {
       return (
@@ -207,7 +210,6 @@ export default class SDRaisedButton extends React.Component<Props> {
               backgroundColor={backgroundColor}
               buttonStyle={buttonStyle}
               className={className}
-              containerElement={containerElement}
               disabled={disabled}
               disabledBackgroundColor={disabledBackgroundColor}
               disabledLabelColor={disabledLabelColor}
@@ -216,12 +218,14 @@ export default class SDRaisedButton extends React.Component<Props> {
               href={href}
               icon={icon}
               label={label}
+              labelColor={labelColor}
               labelPosition={labelPosition}
               labelStyle={labelStyle}
               onClick={this.handleClick}
               overlayStyle={overlayStyle}
               primary={primary}
               rippleColor={rippleColor}
+              rippleStyle={rippleStyle}
               secondary={secondary}
               style={style}
             >
@@ -237,7 +241,6 @@ export default class SDRaisedButton extends React.Component<Props> {
               backgroundColor={backgroundColor}
               buttonStyle={buttonStyle}
               className={className}
-              containerElement={containerElement}
               disabled={disabled}
               disabledBackgroundColor={disabledBackgroundColor}
               disabledLabelColor={disabledLabelColor}
@@ -246,11 +249,13 @@ export default class SDRaisedButton extends React.Component<Props> {
               href={href}
               icon={icon}
               label={label}
+              labelColor={labelColor}
               labelPosition={labelPosition}
               labelStyle={labelStyle}
               overlayStyle={overlayStyle}
               primary={primary}
               rippleColor={rippleColor}
+              rippleStyle={rippleStyle}
               secondary={secondary}
               style={style}
             >
