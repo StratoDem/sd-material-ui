@@ -950,6 +950,10 @@
         "description": "Color of button when mouse is not hovering over it.",
         "flowType": {
           "name": "string"
+        },
+        "defaultValue": {
+          "value": "''",
+          "computed": false
         }
       },
       "children": {
@@ -960,6 +964,10 @@
         "description": "This is what will be displayed inside the button.\nIf a label is specified, the text within the label prop will\nbe displayed. Otherwise, the component will expect children\nwhich will then be displayed. (In our example,\nwe are nesting an `<input type=\"file\" />` and a `span`\nthat acts as our label to be displayed.) This only\napplies to flat and raised buttons.",
         "flowType": {
           "name": "Node"
+        },
+        "defaultValue": {
+          "value": "null",
+          "computed": false
         }
       },
       "className": {
@@ -970,6 +978,10 @@
         "description": "The CSS class name of the root element.",
         "flowType": {
           "name": "string"
+        },
+        "defaultValue": {
+          "value": "''",
+          "computed": false
         }
       },
       "containerElement": {
@@ -995,6 +1007,10 @@
         "description": "If true, the element's ripple effect will be disabled.",
         "flowType": {
           "name": "boolean"
+        },
+        "defaultValue": {
+          "value": "false",
+          "computed": false
         }
       },
       "disabled": {
@@ -1055,6 +1071,10 @@
         "description": "Color of button when mouse hovers over.",
         "flowType": {
           "name": "string"
+        },
+        "defaultValue": {
+          "value": "''",
+          "computed": false
         }
       },
       "href": {
@@ -1065,6 +1085,10 @@
         "description": "The URL to link to when the button is clicked.",
         "flowType": {
           "name": "string"
+        },
+        "defaultValue": {
+          "value": "''",
+          "computed": false
         }
       },
       "icon": {
@@ -1075,6 +1099,10 @@
         "description": "Use this property to display an icon.",
         "flowType": {
           "name": "Node"
+        },
+        "defaultValue": {
+          "value": "null",
+          "computed": false
         }
       },
       "id": {
@@ -1095,6 +1123,10 @@
         "description": "Label for the button.",
         "flowType": {
           "name": "string"
+        },
+        "defaultValue": {
+          "value": "''",
+          "computed": false
         }
       },
       "labelPosition": {
@@ -1174,6 +1206,10 @@
         "description": "Color for the ripple after button is clicked.",
         "flowType": {
           "name": "string"
+        },
+        "defaultValue": {
+          "value": "''",
+          "computed": false
         }
       },
       "secondary": {
@@ -1223,6 +1259,10 @@
         "description": "Override the inline-styles of the root element.",
         "flowType": {
           "name": "Object"
+        },
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
         }
       }
     }

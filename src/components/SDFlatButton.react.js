@@ -98,7 +98,7 @@ const propTypes = {
   icon: PropTypes.node,
 
   /* The element's ID */
-  id: PropTypes.string,
+  id: PropTypes.string.isRequired,
 
   /**
    * Label for the button.
@@ -148,15 +148,25 @@ const propTypes = {
 };
 
 const defaultProps = {
+  backgroundColor: '',
+  children: null,
+  className: '',
+  disableTouchRipple: false,
   disabled: false,
   fireEvent: () => {},
   fullWidth: false,
+  hoverColor: '',
+  href: '',
+  icon: null,
+  label: '',
   labelPosition: 'after',
   labelStyle: {},
   n_clicks: 0,
   primary: false,
+  rippleColor: '',
   secondary: false,
   setProps: () => {},
+  style: {},
 };
 
 export default class SDFlatButton extends Component<Props> {
