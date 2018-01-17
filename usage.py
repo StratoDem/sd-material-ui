@@ -266,9 +266,10 @@ def click_snackbar(snackbar_click: str):
 # Callback for SDDropdownMenu and SDMenuItem
 @app.callback(
     dash.dependencies.Output('output11', 'children'),
-    [dash.dependencies.Input('input11', 'value')])
-def dropdown_callback(value):
-    return ['Selection is: {}'.format(value)]
+    [dash.dependencies.Input('input11', 'value')],
+    [dash.dependencies.State('input11', 'options')])
+def dropdown_callback(value, options):
+    return ['Selection is: {}, {}'.format(value, options[value - 1]['primaryText'])]
 
 
 # # Callback for checked SDMenuItem
