@@ -7,6 +7,7 @@ app = dash.Dash('')
 app.scripts.config.serve_locally = True
 
 spacer = html.Div(children=[], style=dict(height=20))
+final_spacer = html.Div(children=[], style=dict(height=400))
 
 app.layout = html.Div([
 
@@ -108,6 +109,24 @@ app.layout = html.Div([
     sd_material_ui.SDRaisedButton(id='input10', label='Marco'),
     html.Div(id='output10', children=['Looking...']),
     sd_material_ui.SDSnackbar(id='snackbar', open=False, message='Polo', action='Reveal'),
+
+    spacer,
+
+    # Test for SDDropDownMenu and SDMenuItem (single selection)
+    sd_material_ui.SDDropDownMenu(id='input11',
+                                  value=1,
+                                  options=[
+                                      dict(value=1, primaryText='Item 1', label='First choice!'),
+                                      dict(value=2, primaryText='Item 2'),
+                                      dict(value=3, primaryText='Item 3', disabled=True,
+                                           secondaryText='Disabled for now'),
+                                  ],
+                                  menuStyle=dict(width=200),
+                                  anchorOrigin=dict(vertical='bottom', horizontal='right'),
+                                  openImmediately=True),
+    html.Div(id='output11', children=['Selected item appears here.']),
+
+    final_spacer,
 ])
 
 
@@ -115,7 +134,7 @@ app.layout = html.Div([
 @app.callback(
     dash.dependencies.Output('output', 'children'),
     [dash.dependencies.Input('input', 'selectedIndex')])
-def display_output(value):
+def display_output(value: int):
     return 'You have entered {}'.format(value)
 
 
@@ -237,6 +256,15 @@ def click_snackbar(snackbar_click: str):
         return ['Found you!']
     else:
         return ['Looking...']
+
+
+# Callback for SDDropdownMenu and SDMenuItem
+@app.callback(
+    dash.dependencies.Output('output11', 'children'),
+    [dash.dependencies.Input('input11', 'value')],
+    [dash.dependencies.State('input11', 'options')])
+def dropdown_callback(value, options):
+    return ['Selection is: {}, {}'.format(value, options[value - 1]['primaryText'])]
 
 
 if __name__ == '__main__':

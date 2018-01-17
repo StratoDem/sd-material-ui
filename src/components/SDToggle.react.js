@@ -80,7 +80,7 @@ const propTypes = {
   rippleStyle: PropTypes.objectOf(PropTypes.any),
 
   /**
-   * Dash callback to update props on the server
+   * Dash callback to update props on the server.
    */
   setProps: PropTypes.func,
 

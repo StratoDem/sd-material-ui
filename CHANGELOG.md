@@ -2,6 +2,10 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 1.7.0 - 2018-01-17
+### Added
+- SDDropDownMenu
+
 ## 1.6.1 - 2018-01-16
 ### Changed
 Make label a default prop on both flat and raised buttons

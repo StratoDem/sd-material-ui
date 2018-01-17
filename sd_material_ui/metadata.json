@@ -832,7 +832,7 @@
           "name": "func"
         },
         "required": false,
-        "description": "",
+        "description": "Dash callback to update props on the server.",
         "flowType": {
           "name": "signature",
           "type": "function",
@@ -925,6 +925,580 @@
         "defaultValue": {
           "value": "2",
           "computed": false
+        }
+      }
+    }
+  },
+  "src/components/SDDropDownMenu.react.js": {
+    "description": "",
+    "displayName": "SDDropDownMenu",
+    "methods": [
+      {
+        "name": "handleChange",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "event",
+            "type": {
+              "name": "object",
+              "alias": "object"
+            }
+          },
+          {
+            "name": "index",
+            "type": {
+              "name": "number"
+            }
+          },
+          {
+            "name": "value",
+            "type": {
+              "name": "any"
+            }
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "buildMenuItem",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "item",
+            "type": {
+              "name": "signature",
+              "type": "object",
+              "raw": "{\n  checked?: boolean,\n  children?: Node,\n  disabled?: boolean,\n  label?: string,\n  primaryText: string,\n  secondaryText?: string,\n  style?: Object,\n  value: number,\n}",
+              "signature": {
+                "properties": [
+                  {
+                    "key": "checked",
+                    "value": {
+                      "name": "boolean",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "children",
+                    "value": {
+                      "name": "Node",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "disabled",
+                    "value": {
+                      "name": "boolean",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "label",
+                    "value": {
+                      "name": "string",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "primaryText",
+                    "value": {
+                      "name": "string",
+                      "required": true
+                    }
+                  },
+                  {
+                    "key": "secondaryText",
+                    "value": {
+                      "name": "string",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "style",
+                    "value": {
+                      "name": "Object",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "value",
+                    "value": {
+                      "name": "number",
+                      "required": true
+                    }
+                  }
+                ]
+              },
+              "alias": "SD_MENU_ITEM"
+            }
+          }
+        ],
+        "returns": null
+      }
+    ],
+    "props": {
+      "anchorOrigin": {
+        "type": {
+          "name": "objectOf",
+          "value": {
+            "name": "any"
+          }
+        },
+        "required": false,
+        "description": "This is the point on the anchor that the popover's targetOrigin will attach to.\nOptions: vertical: [top, center, bottom] horizontal: [left, middle, right].",
+        "flowType": {
+          "name": "object"
+        },
+        "defaultValue": {
+          "value": "{ vertical: 'top', horizontal: 'left'}",
+          "computed": false
+        }
+      },
+      "animated": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "If true, the popover will apply transitions when it gets added to the DOM.",
+        "flowType": {
+          "name": "boolean"
+        },
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        }
+      },
+      "autoWidth": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "The width will automatically be set according to the items inside the menu. To control\nthis width in css instead, set this prop to false.",
+        "flowType": {
+          "name": "boolean"
+        },
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        }
+      },
+      "className": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The css class name of the root element.",
+        "flowType": {
+          "name": "string"
+        },
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "disabled": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Disables the menu.",
+        "flowType": {
+          "name": "boolean"
+        },
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "fireEvent": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Dash-assigned callback that gets fired when the input changes.",
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "() => void",
+          "signature": {
+            "arguments": [],
+            "return": {
+              "name": "void"
+            }
+          }
+        },
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      },
+      "iconButton": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Overrides default SvgIcon dropdown arrow component.",
+        "flowType": {
+          "name": "Node"
+        },
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "iconStyle": {
+        "type": {
+          "name": "objectOf",
+          "value": {
+            "name": "any"
+          }
+        },
+        "required": false,
+        "description": "Overrides the styles of icon element.",
+        "flowType": {
+          "name": "object"
+        },
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "id": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "The element's ID.",
+        "flowType": {
+          "name": "string"
+        }
+      },
+      "labelStyle": {
+        "type": {
+          "name": "objectOf",
+          "value": {
+            "name": "any"
+          }
+        },
+        "required": false,
+        "description": "Overrides the styles of label when the DropDownMenu is inactive.",
+        "flowType": {
+          "name": "object"
+        },
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "listStyle": {
+        "type": {
+          "name": "objectOf",
+          "value": {
+            "name": "any"
+          }
+        },
+        "required": false,
+        "description": "The style object to use to override underlying list style.",
+        "flowType": {
+          "name": "object"
+        },
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "maxHeight": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "The maximum height of the Menu when it is displayed.",
+        "flowType": {
+          "name": "number"
+        },
+        "defaultValue": {
+          "value": "500",
+          "computed": false
+        }
+      },
+      "menuItemStyle": {
+        "type": {
+          "name": "objectOf",
+          "value": {
+            "name": "any"
+          }
+        },
+        "required": false,
+        "description": "Override the inline-styles of menu items.",
+        "flowType": {
+          "name": "object"
+        },
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "menuStyle": {
+        "type": {
+          "name": "objectOf",
+          "value": {
+            "name": "any"
+          }
+        },
+        "required": false,
+        "description": "Overrides the styles of Menu when the DropDownMenu is displayed.",
+        "flowType": {
+          "name": "object"
+        },
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "openImmediately": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Set to true to have the DropDownMenu automatically open on mount.",
+        "flowType": {
+          "name": "boolean"
+        },
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "options": {
+        "type": {
+          "name": "arrayOf",
+          "value": {
+            "name": "shape",
+            "value": {
+              "checked": {
+                "name": "bool",
+                "description": "If true, a left check mark will be rendered.",
+                "required": false
+              },
+              "children": {
+                "name": "node",
+                "description": "Elements passed as children to the underlying `ListItem`.",
+                "required": false
+              },
+              "disabled": {
+                "name": "bool",
+                "description": "If true, the menu item will be disabled.",
+                "required": false
+              },
+              "label": {
+                "name": "string",
+                "description": "The text to display in the dropdown menu when this item is selected (if not given,\nthe menu will use the primaryText).",
+                "required": false
+              },
+              "primaryText": {
+                "name": "string",
+                "description": "The text shown in the open menu and, if label is not given, also used to show the name\nof the selected item when the menu is closed.",
+                "required": true
+              },
+              "secondaryText": {
+                "name": "string",
+                "description": "Can be used to render secondary text within the menu item.",
+                "required": false
+              },
+              "style": {
+                "name": "objectOf",
+                "value": {
+                  "name": "any"
+                },
+                "description": "Override the inline-styles of the root element.",
+                "required": false
+              },
+              "value": {
+                "name": "number",
+                "description": "The value of the menu item.",
+                "required": true
+              }
+            }
+          }
+        },
+        "required": false,
+        "description": "Used to create the MenuItems to populate the Menu with. A Dash user passes in a list of dict\nitems, each one having at least a `value` and `primaryText`. If the 'label' is used,\nthat value will be used to render the representation of that item within the field.",
+        "flowType": {
+          "name": "Array",
+          "elements": [
+            {
+              "name": "signature",
+              "type": "object",
+              "raw": "{\n  checked?: boolean,\n  children?: Node,\n  disabled?: boolean,\n  label?: string,\n  primaryText: string,\n  secondaryText?: string,\n  style?: Object,\n  value: number,\n}",
+              "signature": {
+                "properties": [
+                  {
+                    "key": "checked",
+                    "value": {
+                      "name": "boolean",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "children",
+                    "value": {
+                      "name": "Node",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "disabled",
+                    "value": {
+                      "name": "boolean",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "label",
+                    "value": {
+                      "name": "string",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "primaryText",
+                    "value": {
+                      "name": "string",
+                      "required": true
+                    }
+                  },
+                  {
+                    "key": "secondaryText",
+                    "value": {
+                      "name": "string",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "style",
+                    "value": {
+                      "name": "Object",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "value",
+                    "value": {
+                      "name": "number",
+                      "required": true
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "raw": "Array<SD_MENU_ITEM>"
+        },
+        "defaultValue": {
+          "value": "[]",
+          "computed": false
+        }
+      },
+      "selectedMenuItemStyle": {
+        "type": {
+          "name": "objectOf",
+          "value": {
+            "name": "any"
+          }
+        },
+        "required": false,
+        "description": "Override the inline-styles of selected menu items.",
+        "flowType": {
+          "name": "object"
+        },
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "setProps": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Dash callback to update props on the server.",
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "() => void",
+          "signature": {
+            "arguments": [],
+            "return": {
+              "name": "void"
+            }
+          }
+        },
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      },
+      "style": {
+        "type": {
+          "name": "objectOf",
+          "value": {
+            "name": "any"
+          }
+        },
+        "required": false,
+        "description": "Override the inline-styles of the root element.",
+        "flowType": {
+          "name": "object"
+        },
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "targetOrigin": {
+        "type": {
+          "name": "objectOf",
+          "value": {
+            "name": "any"
+          }
+        },
+        "required": false,
+        "description": "This is the point on the popover which will attach to the anchor's origin.\nOptions: vertical: [top, center, bottom] horizontal: [left, middle, right].",
+        "flowType": {
+          "name": "object"
+        },
+        "defaultValue": {
+          "value": "{vertical: 'top', horizontal: 'left'}",
+          "computed": false
+        }
+      },
+      "underlineStyle": {
+        "type": {
+          "name": "objectOf",
+          "value": {
+            "name": "any"
+          }
+        },
+        "required": false,
+        "description": "Overrides the inline-styles of the underline.",
+        "flowType": {
+          "name": "object"
+        },
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "value": {
+        "type": {
+          "name": "number"
+        },
+        "required": true,
+        "description": "The value of the selected menu item.",
+        "flowType": {
+          "name": "number"
         }
       }
     }
@@ -1462,6 +2036,10 @@
         "description": "The label to be displayed within the button. If content is provided via the children prop,\nthat content will be displayed in addition to the label provided here.",
         "flowType": {
           "name": "string"
+        },
+        "defaultValue": {
+          "value": "''",
+          "computed": false
         }
       },
       "labelColor": {
@@ -2051,7 +2629,7 @@
           "name": "func"
         },
         "required": false,
-        "description": "Dash callback to update props on the server",
+        "description": "Dash callback to update props on the server.",
         "flowType": {
           "name": "signature",
           "type": "function",
