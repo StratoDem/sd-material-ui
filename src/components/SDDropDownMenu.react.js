@@ -210,16 +210,12 @@ export default class SDDropDownMenu extends Component<Props, State> {
   }
 
   handleChange = (event: object, index: number, value: any) => {
-    console.log('entered handleChange');
     const { setProps } = this.props;
 
     if (typeof setProps === 'function')
       setProps({value});
 
     this.setState({value});
-
-    console.log('fireEvent:');
-    console.log(this.props.fireEvent);
 
     if (this.props.fireEvent) {
       this.props.fireEvent({event: 'change'});
