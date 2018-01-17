@@ -10,8 +10,15 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
 type SD_MENU_ITEM = {
+  checked?: boolean,
+  children?: Node,
+  disabled?: boolean,
+  innerDivStyle?: Object,
+  insetChildren?: boolean,
   label?: string,
   primaryText: string,
+  secondaryText?: string,
+  style?: Object,
   value: number,
 }
 
@@ -130,8 +137,56 @@ const propTypes = {
    * that value will be used to render the representation of that item within the field.
    */
   options: PropTypes.arrayOf(PropTypes.shape({
+    /**
+     * If true, a left check mark will be rendered.
+     */
+    checked: PropTypes.bool,
+
+    /**
+     * Elements passed as children to the underlying `ListItem`.
+     */
+    children: PropTypes.node,
+
+    /**
+     * If true, the menu item will be disabled.
+     */
+    disabled: PropTypes.bool,
+
+    /**
+     * Override the inline-styles of the inner div.
+     */
+    innerDivStyle: PropTypes.objectOf(PropTypes.any),
+
+    /**
+     * If true, the children will be indented.
+     */
+    insetChildren: PropTypes.bool,
+
+    /**
+     * The text to display in the dropdown menu when this item is selected (if not given,
+     * the menu will use the primaryText).
+     */
     label: PropTypes.string,
+
+    /**
+     * The text shown in the open menu and, if label is not given, also used to show the name
+     * of the selected item when the menu is closed.
+     */
     primaryText: PropTypes.string.isRequired,
+
+    /**
+     * Can be used to render secondary text within the menu item.
+     */
+    secondaryText: PropTypes.string,
+
+    /**
+     * Override the inline-styles of the root element.
+     */
+    style: PropTypes.objectOf(PropTypes.any),
+
+    /**
+     * The value of the menu item.
+     */
     value: PropTypes.number.isRequired,
   })),
 
@@ -222,13 +277,26 @@ export default class SDDropDownMenu extends Component<Props, State> {
     }
   };
 
-  buildMenuItem = (item: SD_MENU_ITEM) => (
-    <MenuItem
-      label={item.label}
-      primaryText={item.primaryText}
-      value={item.value}
-    />
-  );
+  buildMenuItem = (item: SD_MENU_ITEM) => {
+    /**
+     * At this time, the menu item cannot support nested menu items
+     */
+    return (
+      <MenuItem
+        checked={item.checked}
+        disabled={item.disabled}
+        innerDivStyle={item.innerdiveStyle}
+        insetChildren={item.insetChildren}
+        label={item.label}
+        primaryText={item.primaryText}
+        secondaryText={item.secondaryText}
+        style={item.style}
+        value={item.value}
+      >
+        {item.children}
+      </MenuItem>
+    );
+  };
 
   render() {
     const { anchorOrigin, animated, autoWidth, className, disabled, iconButton,

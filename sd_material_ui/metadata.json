@@ -970,9 +970,44 @@
             "type": {
               "name": "signature",
               "type": "object",
-              "raw": "{\n  label?: string,\n  primaryText: string,\n  value: number,\n}",
+              "raw": "{\n  checked?: boolean,\n  children?: Node,\n  disabled?: boolean,\n  innerDivStyle?: Object,\n  insetChildren?: boolean,\n  label?: string,\n  primaryText: string,\n  secondaryText?: string,\n  style?: Object,\n  value: number,\n}",
               "signature": {
                 "properties": [
+                  {
+                    "key": "checked",
+                    "value": {
+                      "name": "boolean",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "children",
+                    "value": {
+                      "name": "Node",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "disabled",
+                    "value": {
+                      "name": "boolean",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "innerDivStyle",
+                    "value": {
+                      "name": "Object",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "insetChildren",
+                    "value": {
+                      "name": "boolean",
+                      "required": false
+                    }
+                  },
                   {
                     "key": "label",
                     "value": {
@@ -985,6 +1020,20 @@
                     "value": {
                       "name": "string",
                       "required": true
+                    }
+                  },
+                  {
+                    "key": "secondaryText",
+                    "value": {
+                      "name": "string",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "style",
+                    "value": {
+                      "name": "Object",
+                      "required": false
                     }
                   },
                   {
@@ -1256,16 +1305,60 @@
           "value": {
             "name": "shape",
             "value": {
+              "checked": {
+                "name": "bool",
+                "description": "If true, a left check mark will be rendered.",
+                "required": false
+              },
+              "children": {
+                "name": "node",
+                "description": "Elements passed as children to the underlying `ListItem`.",
+                "required": false
+              },
+              "disabled": {
+                "name": "bool",
+                "description": "If true, the menu item will be disabled.",
+                "required": false
+              },
+              "innerDivStyle": {
+                "name": "objectOf",
+                "value": {
+                  "name": "any"
+                },
+                "description": "Override the inline-styles of the inner div.",
+                "required": false
+              },
+              "insetChildren": {
+                "name": "bool",
+                "description": "If true, the children will be indented.",
+                "required": false
+              },
               "label": {
                 "name": "string",
+                "description": "The text to display in the dropdown menu when this item is selected (if not given,\nthe menu will use the primaryText).",
                 "required": false
               },
               "primaryText": {
                 "name": "string",
+                "description": "The text shown in the open menu and, if label is not given, also used to show the name\nof the selected item when the menu is closed.",
                 "required": true
+              },
+              "secondaryText": {
+                "name": "string",
+                "description": "Can be used to render secondary text within the menu item.",
+                "required": false
+              },
+              "style": {
+                "name": "objectOf",
+                "value": {
+                  "name": "any"
+                },
+                "description": "Override the inline-styles of the root element.",
+                "required": false
               },
               "value": {
                 "name": "number",
+                "description": "The value of the menu item.",
                 "required": true
               }
             }
@@ -1279,9 +1372,44 @@
             {
               "name": "signature",
               "type": "object",
-              "raw": "{\n  label?: string,\n  primaryText: string,\n  value: number,\n}",
+              "raw": "{\n  checked?: boolean,\n  children?: Node,\n  disabled?: boolean,\n  innerDivStyle?: Object,\n  insetChildren?: boolean,\n  label?: string,\n  primaryText: string,\n  secondaryText?: string,\n  style?: Object,\n  value: number,\n}",
               "signature": {
                 "properties": [
+                  {
+                    "key": "checked",
+                    "value": {
+                      "name": "boolean",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "children",
+                    "value": {
+                      "name": "Node",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "disabled",
+                    "value": {
+                      "name": "boolean",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "innerDivStyle",
+                    "value": {
+                      "name": "Object",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "insetChildren",
+                    "value": {
+                      "name": "boolean",
+                      "required": false
+                    }
+                  },
                   {
                     "key": "label",
                     "value": {
@@ -1294,6 +1422,20 @@
                     "value": {
                       "name": "string",
                       "required": true
+                    }
+                  },
+                  {
+                    "key": "secondaryText",
+                    "value": {
+                      "name": "string",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "style",
+                    "value": {
+                      "name": "Object",
+                      "required": false
                     }
                   },
                   {
