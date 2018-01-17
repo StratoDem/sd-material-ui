@@ -194,20 +194,19 @@ export default class SDDropDownMenu extends Component<Props, State> {
     this.state = {value: this.props.value};
   }
 
-  // componentWillReceiveProps(nextProps: Props): void {
-  //   if (nextProps.value !== null && nextProps.value !== this.props.value) {
-  //     this.handleChange(nextProps.value);
-  //   }
-  // }
+  componentWillReceiveProps(nextProps: Props): void {
+    if (nextProps.value !== null && nextProps.value !== this.props.value) {
+      this.handleChange(nextProps.value);
+    }
+  }
 
   handleChange = (option) => {
-    console.log(option);
     const { setProps } = this.props;
 
     if (typeof setProps === 'function')
-      setProps({value: option.props.children.props.value});
+      setProps({value: option});
 
-    this.setState({value: option.props.children.props.value});
+    this.setState({value: option});
 
     if (this.props.fireEvent) {
       this.props.fireEvent({event: 'change'});
@@ -215,10 +214,20 @@ export default class SDDropDownMenu extends Component<Props, State> {
   };
 
   updateSelections = (option) => {
+    console.log('in updateSelections');
+    console.log(option);
     return (
-      <div onClick={() => this.handleChange(option)}>{option}</div>
+      <div onClick={() => this.handleChange(option.props.children.props.value)}>
+        {option}
+      </div>
     );
   };
+
+  /** Notes:
+   * displayValue prop does not work to show the selected item on the dropdown
+   * open, whether state or prop, does not help me control whether the dropdown is open
+   * as a result, onClose does not seem to be useful here
+   */
 
   render() {
     const { anchorOrigin, animated, autoWidth, className, disabled, iconButton,
@@ -243,7 +252,7 @@ export default class SDDropDownMenu extends Component<Props, State> {
             menuItemStyle={menuItemStyle}
             menuStyle={menuStyle}
             multiple={multiple}
-            onChange={this.handleChange}
+            onChange={(selection) => this.showSelection}
             openImmediately={openImmediately}
             selectedMenuItemStyle={selectedMenuItemStyle}
             style={style}
