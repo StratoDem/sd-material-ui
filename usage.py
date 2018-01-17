@@ -129,7 +129,6 @@ app.layout = html.Div([
                                   openImmediately=True),
     # sd_material_ui.SDDropDownMenu(id='input11', value=1),
     html.Div(id='output11', children=['Selected item appears here.']),
-    html.Div(id='output11-checked', children=['What menu items are checked?']),
 
     final_spacer,
 ])
@@ -270,21 +269,6 @@ def click_snackbar(snackbar_click: str):
     [dash.dependencies.State('input11', 'options')])
 def dropdown_callback(value, options):
     return ['Selection is: {}, {}'.format(value, options[value - 1]['primaryText'])]
-
-
-# # Callback for checked SDMenuItem
-# @app.callback(
-#     dash.dependencies.Output('output11-checked', 'children'),
-#     [dash.dependencies.Input('input11-item1', 'checked'),
-#      dash.dependencies.Input('input11-item2', 'checked'),
-#      dash.dependencies.Input('input11-item3', 'checked')])
-# def checked_item_callback(item_1, item_2, item_3):
-#     return [
-#         html.P('What menu items are checked?'),
-#         html.P('Item 1: {}'.format('checked' if item_1 else '')),
-#         html.P('Item 2: {}'.format('checked' if item_2 else '')),
-#         html.P('Item 3: {}'.format('checked' if item_3 else '')),
-#     ]
 
 
 if __name__ == '__main__':

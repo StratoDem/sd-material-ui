@@ -1257,20 +1257,6 @@
           "computed": false
         }
       },
-      "multiple": {
-        "type": {
-          "name": "bool"
-        },
-        "required": false,
-        "description": "If true, value must be an array and the menu will support multiple selections.",
-        "flowType": {
-          "name": "boolean"
-        },
-        "defaultValue": {
-          "value": "false",
-          "computed": false
-        }
-      },
       "openImmediately": {
         "type": {
           "name": "bool"
