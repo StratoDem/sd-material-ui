@@ -9,13 +9,17 @@ import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
-import SDMenuItem from './SDMenuItem.react';
+type SD_MENU_ITEM = {
+  label?: string,
+  primaryText: string,
+  value: number,
+}
 
 type Props = {
   anchorOrigin?: object, // ???
   animated?: boolean,
   autoWidth?: boolean,
-  children?: Node,
+  children?: Array<SD_MENU_ITEM>,
   className?: string,
   disabled?: boolean,
   fireEvent?: () => void,
@@ -59,7 +63,11 @@ const propTypes = {
    * The MenuItems to populate the Menu with. If the MenuItems have the prop label that value will
    * be used to render the representation of that item within the field.
    */
-  children: PropTypes.node,
+  children: PropTypes.arrayOf(PropTypes.shape({
+    label: PropTypes.string,
+    primaryText: PropTypes.string.isRequired,
+    value: PropTypes.number.isRequired,
+  })),
 
   /**
    * The css class name of the root element.
@@ -167,7 +175,6 @@ const defaultProps = {
   anchorOrigin: { vertical: 'top', horizontal: 'left'},
   animated: true,
   autoWidth: true,
-  children: null,
   className: '',
   disabled: false,
   fireEvent: () => {},
@@ -196,38 +203,35 @@ export default class SDDropDownMenu extends Component<Props, State> {
 
   componentWillReceiveProps(nextProps: Props): void {
     if (nextProps.value !== null && nextProps.value !== this.props.value) {
-      this.handleChange(nextProps.value);
+      this.handleChange({}, 0, nextProps.value);
     }
   }
 
-  handleChange = (option) => {
+  handleChange = (event: object, index: number, value: any) => {
+    console.log('entered handleChange');
     const { setProps } = this.props;
 
     if (typeof setProps === 'function')
-      setProps({value: option});
+      setProps({value});
 
-    this.setState({value: option});
+    this.setState({value});
+
+    console.log('fireEvent:');
+    console.log(this.props.fireEvent);
 
     if (this.props.fireEvent) {
       this.props.fireEvent({event: 'change'});
     }
   };
 
-  updateSelections = (option) => {
-    console.log('in updateSelections');
-    console.log(option);
-    return (
-      <div onClick={() => this.handleChange(option.props.children.props.value)}>
-        {option}
-      </div>
-    );
-  };
-
-  /** Notes:
-   * displayValue prop does not work to show the selected item on the dropdown
-   * open, whether state or prop, does not help me control whether the dropdown is open
-   * as a result, onClose does not seem to be useful here
-   */
+  buildMenuItem = (item: SD_MENU_ITEM) => (
+    <MenuItem
+      label={item.label}
+      primaryText={item.primaryText}
+      value={item.value}
+      // onClick={this.handleChange}
+    />
+  );
 
   render() {
     const { anchorOrigin, animated, autoWidth, className, disabled, iconButton,
@@ -252,7 +256,7 @@ export default class SDDropDownMenu extends Component<Props, State> {
             menuItemStyle={menuItemStyle}
             menuStyle={menuStyle}
             multiple={multiple}
-            onChange={(selection) => this.showSelection}
+            onChange={this.handleChange}
             openImmediately={openImmediately}
             selectedMenuItemStyle={selectedMenuItemStyle}
             style={style}
@@ -260,7 +264,10 @@ export default class SDDropDownMenu extends Component<Props, State> {
             underlineStyle={underlineStyle}
             value={this.state.value}
           >
-            {this.props.children.map(this.updateSelections)}
+            {/*{this.props.children.map(this.buildMenuItem)}*/}
+            <MenuItem value={1} primaryText='item1'/>
+            <MenuItem value={2} primaryText='item2'/>
+            <MenuItem value={3} primaryText='item3'/>
           </DropDownMenu>
         </MuiThemeProvider>
       </div>
