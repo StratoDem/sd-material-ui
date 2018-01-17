@@ -35,7 +35,6 @@ type Props = {
   maxHeight?: number,
   menuItemStyle?: object,
   menuStyle?: object,
-  multiple?: boolean,
   openImmediately?: boolean,
   options?: Array<SD_MENU_ITEM>,
   selectedMenuItemStyle?: object,
@@ -118,11 +117,6 @@ const propTypes = {
    * Overrides the styles of Menu when the DropDownMenu is displayed.
    */
   menuStyle: PropTypes.objectOf(PropTypes.any),
-
-  /**
-   * If true, value must be an array and the menu will support multiple selections.
-   */
-  multiple: PropTypes.bool,
 
   /**
    * Set to true to have the DropDownMenu automatically open on mount.
@@ -229,7 +223,6 @@ const defaultProps = {
   maxHeight: 500,
   menuItemStyle: {},
   menuStyle: {},
-  multiple: false,
   openImmediately: false,
   options: [],
   selectedMenuItemStyle: {},
@@ -286,10 +279,9 @@ export default class SDDropDownMenu extends Component<Props, State> {
   };
 
   render() {
-    const { anchorOrigin, animated, autoWidth, className, disabled, iconButton,
-      iconStyle, id, labelStyle, listStyle, maxHeight, menuItemStyle, menuStyle, multiple,
-      openImmediately, selectedMenuItemStyle, style, targetOrigin,
-      underlineStyle} = this.props;
+    const { anchorOrigin, animated, autoWidth, className, disabled, iconButton, iconStyle, id,
+      labelStyle, listStyle, maxHeight, menuItemStyle, menuStyle, openImmediately,
+      selectedMenuItemStyle, style, targetOrigin, underlineStyle} = this.props;
 
     return (
       <div id={id}>
@@ -307,7 +299,6 @@ export default class SDDropDownMenu extends Component<Props, State> {
             maxHeight={maxHeight}
             menuItemStyle={menuItemStyle}
             menuStyle={menuStyle}
-            multiple={multiple}
             onChange={this.handleChange}
             openImmediately={openImmediately}
             selectedMenuItemStyle={selectedMenuItemStyle}
