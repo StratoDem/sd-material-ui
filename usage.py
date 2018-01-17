@@ -127,7 +127,6 @@ app.layout = html.Div([
                                   menuStyle=dict(width=200),
                                   anchorOrigin=dict(vertical='bottom', horizontal='right'),
                                   openImmediately=True),
-    # sd_material_ui.SDDropDownMenu(id='input11', value=1),
     html.Div(id='output11', children=['Selected item appears here.']),
 
     final_spacer,
