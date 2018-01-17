@@ -112,12 +112,12 @@ app.layout = html.Div([
     spacer,
 
     # Test for SDDropDownMenu and SDMenuItem (single selection)
-    # sd_material_ui.SDDropDownMenu(id='input11', value=1, children=[
-    #     dict(value=1, primaryText='Item 1'),
-    #     dict(value=2, primaryText='Item 2'),
-    #     dict(value=3, primaryText='Item 3'),
-    # ]),
-    sd_material_ui.SDDropDownMenu(id='input11', value=1),
+    sd_material_ui.SDDropDownMenu(id='input11', value=1, options=[
+        dict(value=1, primaryText='Item 1'),
+        dict(value=2, primaryText='Item 2'),
+        dict(value=3, primaryText='Item 3'),
+    ]),
+    # sd_material_ui.SDDropDownMenu(id='input11', value=1),
     html.Div(id='output11', children=['Selected item appears here.']),
     html.Div(id='output11-checked', children=['What menu items are checked?']),
 ])

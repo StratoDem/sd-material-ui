@@ -1049,7 +1049,7 @@
           "computed": false
         }
       },
-      "children": {
+      "options": {
         "type": {
           "name": "arrayOf",
           "value": {
@@ -1107,6 +1107,24 @@
             }
           ],
           "raw": "Array<SD_MENU_ITEM>"
+        },
+        "defaultValue": {
+          "value": "[]",
+          "computed": false
+        }
+      },
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "",
+        "flowType": {
+          "name": "Node"
+        },
+        "defaultValue": {
+          "value": "null",
+          "computed": false
         }
       },
       "className": {

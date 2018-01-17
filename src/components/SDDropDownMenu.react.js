@@ -19,7 +19,8 @@ type Props = {
   anchorOrigin?: object, // ???
   animated?: boolean,
   autoWidth?: boolean,
-  children?: Array<SD_MENU_ITEM>,
+  children?: Node,
+  options?: Array<SD_MENU_ITEM>,
   className?: string,
   disabled?: boolean,
   fireEvent?: () => void,
@@ -63,11 +64,13 @@ const propTypes = {
    * The MenuItems to populate the Menu with. If the MenuItems have the prop label that value will
    * be used to render the representation of that item within the field.
    */
-  children: PropTypes.arrayOf(PropTypes.shape({
+  options: PropTypes.arrayOf(PropTypes.shape({
     label: PropTypes.string,
     primaryText: PropTypes.string.isRequired,
     value: PropTypes.number.isRequired,
   })),
+
+  children: PropTypes.node,
 
   /**
    * The css class name of the root element.
@@ -175,6 +178,8 @@ const defaultProps = {
   anchorOrigin: { vertical: 'top', horizontal: 'left'},
   animated: true,
   autoWidth: true,
+  options: [],
+  children: null,
   className: '',
   disabled: false,
   fireEvent: () => {},
@@ -264,10 +269,7 @@ export default class SDDropDownMenu extends Component<Props, State> {
             underlineStyle={underlineStyle}
             value={this.state.value}
           >
-            {/*{this.props.children.map(this.buildMenuItem)}*/}
-            <MenuItem value={1} primaryText='item1'/>
-            <MenuItem value={2} primaryText='item2'/>
-            <MenuItem value={3} primaryText='item3'/>
+            {this.props.options.map(this.buildMenuItem)}
           </DropDownMenu>
         </MuiThemeProvider>
       </div>
