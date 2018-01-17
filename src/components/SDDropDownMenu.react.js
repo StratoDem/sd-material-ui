@@ -125,7 +125,8 @@ const propTypes = {
   openImmediately: PropTypes.bool,
 
   /**
-   * Used to create the MenuItems to populate the Menu with. If the MenuItems have the prop 'label'
+   * Used to create the MenuItems to populate the Menu with. A Dash user passes in a list of dict
+   * items, each one having at least a `value` and `primaryText`. If the 'label' is used,
    * that value will be used to render the representation of that item within the field.
    */
   options: PropTypes.arrayOf(PropTypes.shape({
