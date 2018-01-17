@@ -1493,24 +1493,12 @@
       },
       "value": {
         "type": {
-          "name": "union",
-          "value": [
-            {
-              "name": "number"
-            },
-            {
-              "name": "array"
-            }
-          ]
+          "name": "number"
         },
-        "required": false,
-        "description": "If multiple is true, an array of the values of the selected menu items. Otherwise, the value\nof the selected menu item. If provided, the menu will be a controlled component.",
+        "required": true,
+        "description": "The value of the selected menu item.",
         "flowType": {
-          "name": "any"
-        },
-        "defaultValue": {
-          "value": "1",
-          "computed": false
+          "name": "number"
         }
       }
     }

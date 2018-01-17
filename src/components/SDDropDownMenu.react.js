@@ -42,7 +42,7 @@ type Props = {
   style?: object,
   targetOrigin?: object,
   underlineStyle?: object,
-  value?: any,
+  value: number,
 };
 
 const propTypes = {
@@ -199,10 +199,9 @@ const propTypes = {
   underlineStyle: PropTypes.objectOf(PropTypes.any),
 
   /**
-   * If multiple is true, an array of the values of the selected menu items. Otherwise, the value
-   * of the selected menu item. If provided, the menu will be a controlled component.
+   * The value of the selected menu item.
    */
-  value: PropTypes.oneOfType([PropTypes.number, PropTypes.array]),
+  value: PropTypes.number.isRequired,
 };
 
 type State = {
@@ -230,7 +229,6 @@ const defaultProps = {
   style: {},
   targetOrigin: {vertical: 'top', horizontal: 'left'},
   underlineStyle: {},
-  value: 1,
 };
 
 export default class SDDropDownMenu extends Component<Props, State> {
