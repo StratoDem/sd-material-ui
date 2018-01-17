@@ -113,7 +113,7 @@ app.layout = html.Div([
 
     # Test for SDDropDownMenu and SDMenuItem (single selection)
     sd_material_ui.SDDropDownMenu(id='input11', value=1, options=[
-        dict(value=1, primaryText='Item 1'),
+        dict(value=1, primaryText='Item 1', label='First choice!'),
         dict(value=2, primaryText='Item 2'),
         dict(value=3, primaryText='Item 3'),
     ]),
