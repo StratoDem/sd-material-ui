@@ -256,25 +256,23 @@ export default class SDDropDownMenu extends Component<Props, State> {
     }
   };
 
-  buildMenuItem = (item: SD_MENU_ITEM) => {
+  buildMenuItem = (item: SD_MENU_ITEM) => (
     /**
      * At this time, the menu item cannot support nested menu items, and children passed to a
      * menu item will appear above the primaryText when the menu is open.
      */
-    return (
-      <MenuItem
-        checked={item.checked}
-        disabled={item.disabled}
-        label={item.label}
-        primaryText={item.primaryText}
-        secondaryText={item.secondaryText}
-        style={item.style}
-        value={item.value}
-      >
-        {item.children}
-      </MenuItem>
-    );
-  };
+    <MenuItem
+      checked={item.checked}
+      disabled={item.disabled}
+      label={item.label}
+      primaryText={item.primaryText}
+      secondaryText={item.secondaryText}
+      style={item.style}
+      value={item.value}
+    >
+      {item.children}
+    </MenuItem>
+  );
 
   render() {
     const { anchorOrigin, animated, autoWidth, className, disabled, iconButton, iconStyle, id,
