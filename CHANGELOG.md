@@ -2,9 +2,12 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## 1.7.0 - 2018-01-17
+## 1.7.2 - 2018-01-17
 ### Added
 - SDDropDownMenu
+
+### Changed
+- Versioning fix for 1.7.2 in deployment
 
 ## 1.6.1 - 2018-01-16
 ### Changed
