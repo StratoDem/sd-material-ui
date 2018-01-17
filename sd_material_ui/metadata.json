@@ -970,7 +970,7 @@
             "type": {
               "name": "signature",
               "type": "object",
-              "raw": "{\n  checked?: boolean,\n  children?: Node,\n  disabled?: boolean,\n  innerDivStyle?: Object,\n  insetChildren?: boolean,\n  label?: string,\n  primaryText: string,\n  secondaryText?: string,\n  style?: Object,\n  value: number,\n}",
+              "raw": "{\n  checked?: boolean,\n  children?: Node,\n  disabled?: boolean,\n  label?: string,\n  primaryText: string,\n  secondaryText?: string,\n  style?: Object,\n  value: number,\n}",
               "signature": {
                 "properties": [
                   {
@@ -989,20 +989,6 @@
                   },
                   {
                     "key": "disabled",
-                    "value": {
-                      "name": "boolean",
-                      "required": false
-                    }
-                  },
-                  {
-                    "key": "innerDivStyle",
-                    "value": {
-                      "name": "Object",
-                      "required": false
-                    }
-                  },
-                  {
-                    "key": "insetChildren",
                     "value": {
                       "name": "boolean",
                       "required": false
@@ -1320,19 +1306,6 @@
                 "description": "If true, the menu item will be disabled.",
                 "required": false
               },
-              "innerDivStyle": {
-                "name": "objectOf",
-                "value": {
-                  "name": "any"
-                },
-                "description": "Override the inline-styles of the inner div.",
-                "required": false
-              },
-              "insetChildren": {
-                "name": "bool",
-                "description": "If true, the children will be indented.",
-                "required": false
-              },
               "label": {
                 "name": "string",
                 "description": "The text to display in the dropdown menu when this item is selected (if not given,\nthe menu will use the primaryText).",
@@ -1372,7 +1345,7 @@
             {
               "name": "signature",
               "type": "object",
-              "raw": "{\n  checked?: boolean,\n  children?: Node,\n  disabled?: boolean,\n  innerDivStyle?: Object,\n  insetChildren?: boolean,\n  label?: string,\n  primaryText: string,\n  secondaryText?: string,\n  style?: Object,\n  value: number,\n}",
+              "raw": "{\n  checked?: boolean,\n  children?: Node,\n  disabled?: boolean,\n  label?: string,\n  primaryText: string,\n  secondaryText?: string,\n  style?: Object,\n  value: number,\n}",
               "signature": {
                 "properties": [
                   {
@@ -1391,20 +1364,6 @@
                   },
                   {
                     "key": "disabled",
-                    "value": {
-                      "name": "boolean",
-                      "required": false
-                    }
-                  },
-                  {
-                    "key": "innerDivStyle",
-                    "value": {
-                      "name": "Object",
-                      "required": false
-                    }
-                  },
-                  {
-                    "key": "insetChildren",
                     "value": {
                       "name": "boolean",
                       "required": false

@@ -13,8 +13,6 @@ type SD_MENU_ITEM = {
   checked?: boolean,
   children?: Node,
   disabled?: boolean,
-  innerDivStyle?: Object,
-  insetChildren?: boolean,
   label?: string,
   primaryText: string,
   secondaryText?: string,
@@ -153,16 +151,6 @@ const propTypes = {
     disabled: PropTypes.bool,
 
     /**
-     * Override the inline-styles of the inner div.
-     */
-    innerDivStyle: PropTypes.objectOf(PropTypes.any),
-
-    /**
-     * If true, the children will be indented.
-     */
-    insetChildren: PropTypes.bool,
-
-    /**
      * The text to display in the dropdown menu when this item is selected (if not given,
      * the menu will use the primaryText).
      */
@@ -279,14 +267,13 @@ export default class SDDropDownMenu extends Component<Props, State> {
 
   buildMenuItem = (item: SD_MENU_ITEM) => {
     /**
-     * At this time, the menu item cannot support nested menu items
+     * At this time, the menu item cannot support nested menu items, and children passed to a
+     * menu item will appear above the primaryText when the menu is open.
      */
     return (
       <MenuItem
         checked={item.checked}
         disabled={item.disabled}
-        innerDivStyle={item.innerdiveStyle}
-        insetChildren={item.insetChildren}
         label={item.label}
         primaryText={item.primaryText}
         secondaryText={item.secondaryText}
