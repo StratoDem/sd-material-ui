@@ -16,11 +16,9 @@ type SD_MENU_ITEM = {
 }
 
 type Props = {
-  anchorOrigin?: object, // ???
+  anchorOrigin?: object,
   animated?: boolean,
   autoWidth?: boolean,
-  children?: Node,
-  options?: Array<SD_MENU_ITEM>,
   className?: string,
   disabled?: boolean,
   fireEvent?: () => void,
@@ -34,10 +32,11 @@ type Props = {
   menuStyle?: object,
   multiple?: boolean,
   openImmediately?: boolean,
+  options?: Array<SD_MENU_ITEM>,
   selectedMenuItemStyle?: object,
   setProps?: () => void,
   style?: object,
-  targetOrigin?: object, // ???
+  targetOrigin?: object,
   underlineStyle?: object,
   value?: any,
 };
@@ -47,7 +46,7 @@ const propTypes = {
    * This is the point on the anchor that the popover's targetOrigin will attach to.
    * Options: vertical: [top, center, bottom] horizontal: [left, middle, right].
    */
-  anchorOrigin: PropTypes.objectOf(PropTypes.any), // ???
+  anchorOrigin: PropTypes.objectOf(PropTypes.any),
 
   /**
    * If true, the popover will apply transitions when it gets added to the DOM.
@@ -59,18 +58,6 @@ const propTypes = {
    * this width in css instead, set this prop to false.
    */
   autoWidth: PropTypes.bool,
-
-  /**
-   * The MenuItems to populate the Menu with. If the MenuItems have the prop label that value will
-   * be used to render the representation of that item within the field.
-   */
-  options: PropTypes.arrayOf(PropTypes.shape({
-    label: PropTypes.string,
-    primaryText: PropTypes.string.isRequired,
-    value: PropTypes.number.isRequired,
-  })),
-
-  children: PropTypes.node,
 
   /**
    * The css class name of the root element.
@@ -138,6 +125,16 @@ const propTypes = {
   openImmediately: PropTypes.bool,
 
   /**
+   * Used to create the MenuItems to populate the Menu with. If the MenuItems have the prop 'label'
+   * that value will be used to render the representation of that item within the field.
+   */
+  options: PropTypes.arrayOf(PropTypes.shape({
+    label: PropTypes.string,
+    primaryText: PropTypes.string.isRequired,
+    value: PropTypes.number.isRequired,
+  })),
+
+  /**
    * Override the inline-styles of selected menu items.
    */
   selectedMenuItemStyle: PropTypes.objectOf(PropTypes.any),
@@ -156,7 +153,7 @@ const propTypes = {
    * This is the point on the popover which will attach to the anchor's origin.
    * Options: vertical: [top, center, bottom] horizontal: [left, middle, right].
    */
-  targetOrigin: PropTypes.objectOf(PropTypes.any), // ???
+  targetOrigin: PropTypes.objectOf(PropTypes.any),
 
   /**
    * Overrides the inline-styles of the underline.
@@ -178,8 +175,6 @@ const defaultProps = {
   anchorOrigin: { vertical: 'top', horizontal: 'left'},
   animated: true,
   autoWidth: true,
-  options: [],
-  children: null,
   className: '',
   disabled: false,
   fireEvent: () => {},
@@ -192,6 +187,7 @@ const defaultProps = {
   menuStyle: {},
   multiple: false,
   openImmediately: false,
+  options: [],
   selectedMenuItemStyle: {},
   setProps: () => {},
   style: {},
@@ -234,7 +230,6 @@ export default class SDDropDownMenu extends Component<Props, State> {
       label={item.label}
       primaryText={item.primaryText}
       value={item.value}
-      // onClick={this.handleChange}
     />
   );
 

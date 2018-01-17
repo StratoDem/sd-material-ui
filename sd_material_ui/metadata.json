@@ -1049,84 +1049,6 @@
           "computed": false
         }
       },
-      "options": {
-        "type": {
-          "name": "arrayOf",
-          "value": {
-            "name": "shape",
-            "value": {
-              "label": {
-                "name": "string",
-                "required": false
-              },
-              "primaryText": {
-                "name": "string",
-                "required": true
-              },
-              "value": {
-                "name": "number",
-                "required": true
-              }
-            }
-          }
-        },
-        "required": false,
-        "description": "The MenuItems to populate the Menu with. If the MenuItems have the prop label that value will\nbe used to render the representation of that item within the field.",
-        "flowType": {
-          "name": "Array",
-          "elements": [
-            {
-              "name": "signature",
-              "type": "object",
-              "raw": "{\n  label?: string,\n  primaryText: string,\n  value: number,\n}",
-              "signature": {
-                "properties": [
-                  {
-                    "key": "label",
-                    "value": {
-                      "name": "string",
-                      "required": false
-                    }
-                  },
-                  {
-                    "key": "primaryText",
-                    "value": {
-                      "name": "string",
-                      "required": true
-                    }
-                  },
-                  {
-                    "key": "value",
-                    "value": {
-                      "name": "number",
-                      "required": true
-                    }
-                  }
-                ]
-              }
-            }
-          ],
-          "raw": "Array<SD_MENU_ITEM>"
-        },
-        "defaultValue": {
-          "value": "[]",
-          "computed": false
-        }
-      },
-      "children": {
-        "type": {
-          "name": "node"
-        },
-        "required": false,
-        "description": "",
-        "flowType": {
-          "name": "Node"
-        },
-        "defaultValue": {
-          "value": "null",
-          "computed": false
-        }
-      },
       "className": {
         "type": {
           "name": "string"
@@ -1325,6 +1247,70 @@
         },
         "defaultValue": {
           "value": "false",
+          "computed": false
+        }
+      },
+      "options": {
+        "type": {
+          "name": "arrayOf",
+          "value": {
+            "name": "shape",
+            "value": {
+              "label": {
+                "name": "string",
+                "required": false
+              },
+              "primaryText": {
+                "name": "string",
+                "required": true
+              },
+              "value": {
+                "name": "number",
+                "required": true
+              }
+            }
+          }
+        },
+        "required": false,
+        "description": "Used to create the MenuItems to populate the Menu with. If the MenuItems have the prop 'label'\nthat value will be used to render the representation of that item within the field.",
+        "flowType": {
+          "name": "Array",
+          "elements": [
+            {
+              "name": "signature",
+              "type": "object",
+              "raw": "{\n  label?: string,\n  primaryText: string,\n  value: number,\n}",
+              "signature": {
+                "properties": [
+                  {
+                    "key": "label",
+                    "value": {
+                      "name": "string",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "primaryText",
+                    "value": {
+                      "name": "string",
+                      "required": true
+                    }
+                  },
+                  {
+                    "key": "value",
+                    "value": {
+                      "name": "number",
+                      "required": true
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "raw": "Array<SD_MENU_ITEM>"
+        },
+        "defaultValue": {
+          "value": "[]",
           "computed": false
         }
       },
