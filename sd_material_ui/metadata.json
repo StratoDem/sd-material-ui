@@ -1904,6 +1904,9 @@
         },
         "required": false,
         "description": "The value of the menu item.",
+        "flowType": {
+          "name": "number"
+        },
         "defaultValue": {
           "value": "null",
           "computed": false

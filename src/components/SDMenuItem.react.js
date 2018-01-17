@@ -25,7 +25,7 @@ type Props = {
   setProps?: () => void,
   style?: object,
   targetOrigin?: object,
-  // value?: number,
+  value?: number,
 };
 
 const propTypes = {
