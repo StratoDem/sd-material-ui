@@ -17,7 +17,7 @@ type SD_MENU_ITEM = {
   primaryText: string,
   secondaryText?: string,
   style?: Object,
-  value: number,
+  value: any,
 }
 
 type Props = {
@@ -169,7 +169,7 @@ const propTypes = {
     /**
      * The value of the menu item.
      */
-    value: PropTypes.number.isRequired,
+    value: PropTypes.any.isRequired,
   })),
 
   /**
