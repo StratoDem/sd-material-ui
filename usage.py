@@ -114,11 +114,11 @@ app.layout = html.Div([
 
     # Test for SDDropDownMenu and SDMenuItem (single selection)
     sd_material_ui.SDDropDownMenu(id='input11',
-                                  value=1,
+                                  value=123,
                                   options=[
-                                      dict(value=1, primaryText='Item 1', label='First choice!'),
-                                      dict(value=2, primaryText='Item 2'),
-                                      dict(value=3, primaryText='Item 3', disabled=True,
+                                      dict(value='abc', primaryText='Item 1', label='First choice!'),
+                                      dict(value=123, primaryText='Item 2'),
+                                      dict(value={1: 'a'}, primaryText='Item 3', disabled=True,
                                            secondaryText='Disabled for now'),
                                   ],
                                   menuStyle=dict(width=200),
@@ -134,7 +134,7 @@ app.layout = html.Div([
 @app.callback(
     dash.dependencies.Output('output', 'children'),
     [dash.dependencies.Input('input', 'selectedIndex')])
-def display_output(value: int):
+def display_output(value):
     return 'You have entered {}'.format(value)
 
 
@@ -264,7 +264,10 @@ def click_snackbar(snackbar_click: str):
     [dash.dependencies.Input('input11', 'value')],
     [dash.dependencies.State('input11', 'options')])
 def dropdown_callback(value, options):
-    return ['Selection is: {}, {}'.format(value, options[value - 1]['primaryText'])]
+    for option in options:
+        if option['value'] == value:
+            text = option['primaryText']
+    return ['Selection is: {}, {}'.format(value, text)]
 
 
 if __name__ == '__main__':
