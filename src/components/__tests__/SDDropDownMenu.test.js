@@ -16,8 +16,8 @@ describe('SDDropDownMenu', () => {
   it('updates value based on selections', () => {
     const component = mount(
       <SDDropDownMenu id='test-id' value={1}>
-        <MenuItem id='test-id2' value={1} primaryText='Test text' />
-        <MenuItem id='test-id3' value={2} primaryText='Test text' />
+        <MenuItem value={1} primaryText='Test text' />
+        <MenuItem value={2} primaryText='Test text' />
       </SDDropDownMenu>
     );
 

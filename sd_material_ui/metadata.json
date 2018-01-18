@@ -970,7 +970,7 @@
             "type": {
               "name": "signature",
               "type": "object",
-              "raw": "{\n  checked?: boolean,\n  children?: Node,\n  disabled?: boolean,\n  label?: string,\n  primaryText: string,\n  secondaryText?: string,\n  style?: Object,\n  value: number,\n}",
+              "raw": "{\n  checked?: boolean,\n  children?: Node,\n  disabled?: boolean,\n  label?: string,\n  primaryText: string,\n  secondaryText?: string,\n  style?: Object,\n  value: any,\n}",
               "signature": {
                 "properties": [
                   {
@@ -1025,7 +1025,7 @@
                   {
                     "key": "value",
                     "value": {
-                      "name": "number",
+                      "name": "any",
                       "required": true
                     }
                   }
@@ -1316,7 +1316,7 @@
                 "required": false
               },
               "value": {
-                "name": "number",
+                "name": "any",
                 "description": "The value of the menu item.",
                 "required": true
               }
@@ -1331,7 +1331,7 @@
             {
               "name": "signature",
               "type": "object",
-              "raw": "{\n  checked?: boolean,\n  children?: Node,\n  disabled?: boolean,\n  label?: string,\n  primaryText: string,\n  secondaryText?: string,\n  style?: Object,\n  value: number,\n}",
+              "raw": "{\n  checked?: boolean,\n  children?: Node,\n  disabled?: boolean,\n  label?: string,\n  primaryText: string,\n  secondaryText?: string,\n  style?: Object,\n  value: any,\n}",
               "signature": {
                 "properties": [
                   {
@@ -1386,7 +1386,7 @@
                   {
                     "key": "value",
                     "value": {
-                      "name": "number",
+                      "name": "any",
                       "required": true
                     }
                   }
