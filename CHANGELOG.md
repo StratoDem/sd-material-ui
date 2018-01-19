@@ -2,6 +2,10 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 1.7.4 - 2018-01-19
+### Added
+- `customData` prop now available to menu items in SDDropDownMenu
+
 ## 1.7.3 - 2018-01-18
 ### Changed
 - Allow a menu item's value to be any type of data, not just `number`
