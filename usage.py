@@ -125,7 +125,7 @@ app.layout = html.Div([
                                                secondaryText='Disabled for now'),
                                       ],
                                       menuStyle=dict(width=200),  # controls style of the open menu
-                                      labelStyle=dict(color='white'),
+                                      labelStyle=dict(color='white', height=35),
                                       underlineStyle=dict(display='none'),
                                       autoWidth=False,
                                       style=dict(height=40, marginTop=-10),
