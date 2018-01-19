@@ -113,17 +113,27 @@ app.layout = html.Div([
     spacer,
 
     # Test for SDDropDownMenu and SDMenuItem (single selection)
-    sd_material_ui.SDDropDownMenu(id='input11',
-                                  value=123,
-                                  options=[
-                                      dict(value='abc', primaryText='Item 1', label='First choice!'),
-                                      dict(value=123, primaryText='Item 2'),
-                                      dict(value={1: 'a'}, primaryText='Item 3', disabled=True,
-                                           secondaryText='Disabled for now'),
-                                  ],
-                                  menuStyle=dict(width=200),
-                                  anchorOrigin=dict(vertical='bottom', horizontal='right'),
-                                  openImmediately=True),
+    html.Div(children=[
+        sd_material_ui.SDDropDownMenu(id='input11',
+                                      value=1,
+                                      options=[
+                                          dict(value=1, primaryText='Item 1',
+                                               label='First choice!', customData='Anything!'),
+                                          dict(value=2, primaryText='Item 2',
+                                               customData={'foo': 'bar'}),
+                                          dict(value=3, primaryText='Item 3', disabled=True,
+                                               secondaryText='Disabled for now'),
+                                      ],
+                                      menuStyle=dict(width=200),  # controls style of the open menu
+                                      labelStyle=dict(color='white'),
+                                      underlineStyle=dict(display='none'),
+                                      autoWidth=False,
+                                      style=dict(height=40, marginTop=-10),
+                                      iconStyle=dict(padding=0),
+                                      listStyle=dict(height=35),
+                                      selectedMenuItemStyle=dict(height=30),
+                                      anchorOrigin=dict(vertical='bottom', horizontal='right')),
+    ], style=dict(backgroundColor='#1D3153')),
     html.Div(id='output11', children=['Selected item appears here.']),
 
     final_spacer,
@@ -264,10 +274,7 @@ def click_snackbar(snackbar_click: str):
     [dash.dependencies.Input('input11', 'value')],
     [dash.dependencies.State('input11', 'options')])
 def dropdown_callback(value, options):
-    for option in options:
-        if option['value'] == value:
-            text = option['primaryText']
-    return ['Selection is: {}, {}'.format(value, text)]
+    return ['Selection is: {}, {}'.format(value, options[value - 1]['customData'])]
 
 
 if __name__ == '__main__':

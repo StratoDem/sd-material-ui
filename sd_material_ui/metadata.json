@@ -970,7 +970,7 @@
             "type": {
               "name": "signature",
               "type": "object",
-              "raw": "{\n  checked?: boolean,\n  children?: Node,\n  disabled?: boolean,\n  label?: string,\n  primaryText: string,\n  secondaryText?: string,\n  style?: Object,\n  value: any,\n}",
+              "raw": "{\n  checked?: boolean,\n  children?: Node,\n  customData: any,\n  disabled?: boolean,\n  label?: string,\n  primaryText: string,\n  secondaryText?: string,\n  style?: Object,\n  value: any,\n}",
               "signature": {
                 "properties": [
                   {
@@ -985,6 +985,13 @@
                     "value": {
                       "name": "Node",
                       "required": false
+                    }
+                  },
+                  {
+                    "key": "customData",
+                    "value": {
+                      "name": "any",
+                      "required": true
                     }
                   },
                   {
@@ -1287,6 +1294,11 @@
                 "description": "Elements passed as children to the underlying `ListItem`.",
                 "required": false
               },
+              "customData": {
+                "name": "any",
+                "description": "A field able to hold any additional data a Dash user may want to include with a menu item,\nbut does not want rendered on screen.",
+                "required": false
+              },
               "disabled": {
                 "name": "bool",
                 "description": "If true, the menu item will be disabled.",
@@ -1331,7 +1343,7 @@
             {
               "name": "signature",
               "type": "object",
-              "raw": "{\n  checked?: boolean,\n  children?: Node,\n  disabled?: boolean,\n  label?: string,\n  primaryText: string,\n  secondaryText?: string,\n  style?: Object,\n  value: any,\n}",
+              "raw": "{\n  checked?: boolean,\n  children?: Node,\n  customData: any,\n  disabled?: boolean,\n  label?: string,\n  primaryText: string,\n  secondaryText?: string,\n  style?: Object,\n  value: any,\n}",
               "signature": {
                 "properties": [
                   {
@@ -1346,6 +1358,13 @@
                     "value": {
                       "name": "Node",
                       "required": false
+                    }
+                  },
+                  {
+                    "key": "customData",
+                    "value": {
+                      "name": "any",
+                      "required": true
                     }
                   },
                   {
@@ -1493,12 +1512,12 @@
       },
       "value": {
         "type": {
-          "name": "number"
+          "name": "any"
         },
         "required": true,
         "description": "The value of the selected menu item.",
         "flowType": {
-          "name": "number"
+          "name": "any"
         }
       }
     }

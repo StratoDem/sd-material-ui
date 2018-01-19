@@ -12,6 +12,7 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 type SD_MENU_ITEM = {
   checked?: boolean,
   children?: Node,
+  customData: any,
   disabled?: boolean,
   label?: string,
   primaryText: string,
@@ -42,7 +43,7 @@ type Props = {
   style?: object,
   targetOrigin?: object,
   underlineStyle?: object,
-  value: number,
+  value: any,
 };
 
 const propTypes = {
@@ -140,6 +141,12 @@ const propTypes = {
     children: PropTypes.node,
 
     /**
+     * A field able to hold any additional data a Dash user may want to include with a menu item,
+     * but does not want rendered on screen.
+     */
+    customData: PropTypes.any,
+
+    /**
      * If true, the menu item will be disabled.
      */
     disabled: PropTypes.bool,
@@ -201,11 +208,11 @@ const propTypes = {
   /**
    * The value of the selected menu item.
    */
-  value: PropTypes.number.isRequired,
+  value: PropTypes.any.isRequired,
 };
 
 type State = {
-  value: number,
+  value: any,
 };
 
 const defaultProps = {
@@ -263,6 +270,7 @@ export default class SDDropDownMenu extends Component<Props, State> {
      */
     <MenuItem
       checked={item.checked}
+      customData={item.customData}
       disabled={item.disabled}
       label={item.label}
       primaryText={item.primaryText}
