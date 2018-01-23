@@ -222,7 +222,7 @@ const defaultProps = {
   className: '',
   disabled: false,
   fireEvent: () => {},
-  iconButton: null,
+  // iconButton: null,
   iconStyle: {},
   labelStyle: {},
   listStyle: {},

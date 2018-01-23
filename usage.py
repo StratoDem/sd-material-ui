@@ -71,7 +71,10 @@ app.layout = html.Div([
     spacer,
 
     # Test for SDDrawer (docked, secondary)
-    sd_material_ui.SDDrawer(id='output6', docked=True, openSecondary=True,
+    sd_material_ui.SDDrawer(id='output6',
+                            docked=True,
+                            openSecondary=True,
+                            style={'backgroundColor': '#444'},
                             children=[html.P(children='Drawer item')]),
     html.Div(id='input6', children=[
         html.P(children='Open or close the drawer (docked)')
@@ -129,7 +132,6 @@ app.layout = html.Div([
                                       underlineStyle=dict(display='none'),
                                       autoWidth=False,
                                       style=dict(height=40, marginTop=-10),
-                                      iconStyle=dict(padding=0),
                                       listStyle=dict(height=35),
                                       selectedMenuItemStyle=dict(height=30),
                                       anchorOrigin=dict(vertical='bottom', horizontal='right')),

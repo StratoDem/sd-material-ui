@@ -1149,10 +1149,6 @@
         "description": "Overrides default SvgIcon dropdown arrow component.",
         "flowType": {
           "name": "Node"
-        },
-        "defaultValue": {
-          "value": "null",
-          "computed": false
         }
       },
       "iconStyle": {
