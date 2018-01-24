@@ -2,6 +2,10 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 1.7.5 - 2018-01-23
+### Changed
+- Removed `null` default for SDDropDownMenu's `iconButton`, allowing the arrow to appear by default
+
 ## 1.7.4 - 2018-01-19
 ### Added
 - `customData` prop now available to menu items in SDDropDownMenu
