@@ -3,7 +3,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import Snackbar from 'material-ui/Snackbar';
+import { Snackbar as MuiSnackbar } from 'material-ui/Snackbar';
 import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
@@ -106,7 +106,7 @@ const defaultProps = {
   style: {},
 };
 
-export default class SDSnackbar extends Component<Props, State> {
+export default class Snackbar extends Component<Props, State> {
   constructor(props: Props) {
     super(props);
     this.state = {open: props.open};
@@ -151,7 +151,7 @@ export default class SDSnackbar extends Component<Props, State> {
       return (
         <div id={id}>
           <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
-            <Snackbar
+            <MuiSnackbar
               action={action}
               autoHideDuration={autoHideDuration}
               bodyStyle={bodyStyle}
@@ -170,7 +170,7 @@ export default class SDSnackbar extends Component<Props, State> {
       return (
         <div id={id}>
           <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
-            <Snackbar
+            <MuiSnackbar
               action={action}
               autoHideDuration={autoHideDuration}
               bodyStyle={bodyStyle}
@@ -188,5 +188,5 @@ export default class SDSnackbar extends Component<Props, State> {
   }
 }
 
-SDSnackbar.propTypes = propTypes;
-SDSnackbar.defaultProps = defaultProps;
+Snackbar.propTypes = propTypes;
+Snackbar.defaultProps = defaultProps;
