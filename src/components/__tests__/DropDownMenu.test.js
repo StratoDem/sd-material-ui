@@ -7,7 +7,7 @@ import DropDownMenu from '../DropDownMenu/DropDownMenu.react';
 describe('DropDownMenu', () => {
   it('renders', () => {
     const component = shallow(
-      <DropDownMenu id='test-id' />
+      <DropDownMenu id='test-id' value={1} />
     );
 
     expect(component.props().id).toEqual('test-id');
