@@ -3,7 +3,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import Toggle from 'material-ui/Toggle';
+import { Toggle as MuiToggle } from 'material-ui/Toggle';
 import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
@@ -138,7 +138,7 @@ const defaultProps = {
   trackSwitchedStyle: {},
 };
 
-export default class SDToggle extends Component<Props, State> {
+export default class Toggle extends Component<Props, State> {
   constructor(props: Props) {
     super(props);
     this.state = {switched: props.toggled};
@@ -169,7 +169,7 @@ export default class SDToggle extends Component<Props, State> {
       return (
         <div id={id}>
           <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
-            <Toggle
+            <MuiToggle
               disabled={disabled}
               elementStyle={elementStyle}
               iconStyle={iconStyle}
@@ -194,7 +194,7 @@ export default class SDToggle extends Component<Props, State> {
       return (
         <div id={id}>
           <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
-            <Toggle
+            <MuiToggle
               disabled={disabled}
               elementStyle={elementStyle}
               iconStyle={iconStyle}
@@ -219,5 +219,5 @@ export default class SDToggle extends Component<Props, State> {
   }
 }
 
-SDToggle.propTypes = propTypes;
-SDToggle.defaultProps = defaultProps;
+Toggle.propTypes = propTypes;
+Toggle.defaultProps = defaultProps;
