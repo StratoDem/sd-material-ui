@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
-import Snackbar from 'material-ui/Snackbar';
+import MuiSnackbar from 'material-ui/Snackbar';
 import Snackbar from '../Snackbar/Snackbar.react';
 
 describe('Snackbar', () => {

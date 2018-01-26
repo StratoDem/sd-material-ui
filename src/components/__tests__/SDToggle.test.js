@@ -1,6 +1,7 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
 import Toggle from '../Toggle/Toggle.react';
+import MuiToggle from 'material-ui/Toggle';
 
 describe('Toggle', () => {
   it('renders', () => {
@@ -28,7 +29,7 @@ describe('Toggle', () => {
       <Toggle id='test-id' />);
 
     expect(component.state('switched')).toEqual(false);
-    component.find('MuiToggle').props().onToggle({}, true);
+    component.find(MuiToggle).props().onToggle({}, true);
     expect(component.state('switched')).toEqual(true);
   });
 
@@ -37,7 +38,7 @@ describe('Toggle', () => {
       <Toggle id='test-id' setProps={null} fireEvent={null} />);
 
     expect(component.state('switched')).toEqual(false);
-    component.find('MuiToggle').props().onToggle({}, true);
+    component.find(MuiToggle).props().onToggle({}, true);
     expect(component.state('switched')).toEqual(true);
   });
 });

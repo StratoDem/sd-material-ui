@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Dialog from 'material-ui/Dialog';
+import MuiDialog from 'material-ui/Dialog';
 import Dialog from '../Dialog/Dialog.react';
 
 describe('Dialog', () => {

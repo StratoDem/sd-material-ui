@@ -2,6 +2,7 @@ import React from 'react';
 import { mount, shallow } from 'enzyme';
 import MenuItem from '../../../node_modules/material-ui/MenuItem';
 import DropDownMenu from '../DropDownMenu/DropDownMenu.react';
+import { DropDownMenu as MuiDropDownMenu } from 'material-ui/DropDownMenu';
 
 describe('DropDownMenu', () => {
   it('renders', () => {
@@ -22,7 +23,7 @@ describe('DropDownMenu', () => {
     );
 
     expect(component.state('value')).toEqual(1);
-    component.find('MuiDropDownMenu').props().onChange({}, 1, 2);
+    component.find(MuiDropDownMenu).props().onChange({}, 1, 2);
     expect(component.state('value')).toEqual(2);
   });
 });

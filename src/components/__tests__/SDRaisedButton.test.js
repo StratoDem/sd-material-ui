@@ -1,6 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import RaisedButton from '../RaisedButton/RaisedButton.react';
+import MuiRaisedButton from 'material-ui/RaisedButton';
 
 describe('RaisedButton', () => {
   it('renders', () => {
@@ -21,7 +22,7 @@ describe('RaisedButton', () => {
     const component = shallow(
       <RaisedButton id='test-id' label='myButton' fireEvent={clickCheck} />);
 
-    component.find('MuiRaisedButton').simulate('click');
+    component.find(MuiRaisedButton).simulate('click');
     expect(clickCheck.mock.calls.length).toEqual(1);
   });
 
@@ -39,7 +40,7 @@ describe('RaisedButton', () => {
     const component = shallow(
       <RaisedButton id='test-id' label='myButton' n_clicks={1} setProps={mockProps} />);
 
-    component.find('MuiRaisedButton').simulate('click');
+    component.find(MuiRaisedButton).simulate('click');
     expect(mockProps).toHaveBeenCalledWith({n_clicks: 2});
   });
 });

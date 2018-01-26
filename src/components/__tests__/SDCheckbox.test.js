@@ -1,6 +1,7 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
 import Checkbox from '../Checkbox/Checkbox.react';
+import MuiCheckbox from 'material-ui/Checkbox';
 
 
 describe('Checkbox', () => {
@@ -29,7 +30,7 @@ describe('Checkbox', () => {
       <Checkbox id='test-id' />);
 
     expect(component.state('checked')).toEqual(false);
-    component.find('MuiCheckbox').props().onCheck({}, true);
+    component.find(MuiCheckbox).props().onCheck({}, true);
     expect(component.state('checked')).toEqual(true);
   });
 
@@ -37,9 +38,8 @@ describe('Checkbox', () => {
     const component = shallow(
       <Checkbox id='test-id' setProps={null} fireEvent={null} />);
 
-    console.log(component.debug());
     expect(component.state('checked')).toEqual(false);
-    component.find('MuiCheckbox').props().onCheck({}, true);
+    component.find(MuiCheckbox).props().onCheck({}, true);
     expect(component.state('checked')).toEqual(true);
   });
 });

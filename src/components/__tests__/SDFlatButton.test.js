@@ -1,6 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import FlatButton from '../FlatButton/FlatButton.react';
+import MuiFlatButton from 'material-ui/FlatButton';
 
 describe('FlatButton', () => {
   it('renders', () => {
@@ -21,7 +22,7 @@ describe('FlatButton', () => {
     const component = shallow(
       <FlatButton id='test-id' label='myButton' fireEvent={clickCheck} />);
 
-    component.find('MuiFlatButton').simulate('click');
+    component.find(MuiFlatButton).simulate('click');
     expect(clickCheck.mock.calls.length).toEqual(1);
   });
 
@@ -40,8 +41,8 @@ describe('FlatButton', () => {
         children=<div />
       </FlatButton>);
 
-    expect(component.find('MuiFlatButton').props().backgroundColor).toEqual('black');
-    expect(component.find('MuiFlatButton').props().fullWidth).toEqual(true);
+    expect(component.find(MuiFlatButton).props().backgroundColor).toEqual('black');
+    expect(component.find(MuiFlatButton).props().fullWidth).toEqual(true);
   });
 
   it('renders with no callbacks', () => {
@@ -57,7 +58,7 @@ describe('FlatButton', () => {
     const component = shallow(
       <FlatButton id='test-id' label='myButton' n_clicks={1} setProps={mockProps} />);
 
-    component.find('MuiFlatButton').simulate('click');
+    component.find(MuiFlatButton).simulate('click');
     expect(mockProps).toHaveBeenCalledWith({n_clicks: 2});
   });
 });
