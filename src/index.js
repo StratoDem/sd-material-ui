@@ -1,12 +1,12 @@
-import BottomNavigation from './components/BottomNavigation.react';
-import SDCheckbox from './components/SDCheckbox.react';
-import SDDialog from './components/SDDialog.react';
-import SDDrawer from './components/SDDrawer.react';
-import SDDropDownMenu from './components/SDDropDownMenu.react';
-import SDFlatButton from './components/SDFlatButton.react';
-import SDSnackbar from './components/SDSnackbar.react';
-import SDRaisedButton from './components/SDRaisedButton.react';
-import SDToggle from './components/SDToggle.react';
+import BottomNavigation from './components/BottomNavigation/BottomNavigation.react';
+import SDCheckbox from './components/Checkbox/Checkbox.react';
+import SDDialog from './components/Dialog/Dialog.react';
+import SDDrawer from './components/Drawer/Drawer.react';
+import SDDropDownMenu from './components/DropDownMenu/DropDownMenu.react';
+import SDFlatButton from './components/FlatButton/FlatButton.react';
+import SDSnackbar from './components/Snackbar/Snackbar.react';
+import SDRaisedButton from './components/RaisedButton/RaisedButton.react';
+import SDToggle from './components/Toggle/Toggle.react';
 
 export {
   BottomNavigation,
