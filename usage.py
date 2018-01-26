@@ -25,7 +25,7 @@ app.layout = html.Div([
     spacer,
 
     # Test SDDialog (modal)
-    sd_material_ui.SDDialog(
+    sd_material_ui.Dialog(
         html.Div(children=[
             html.P('pathname'),
             html.P(id='closer', children='Close window'),
@@ -38,7 +38,7 @@ app.layout = html.Div([
     spacer,
 
     # Test SDDialog (non-modal)
-    sd_material_ui.SDDialog(
+    sd_material_ui.Dialog(
         html.Div(children=[
             html.P('Non-modal dialog'),
         ]),
@@ -54,7 +54,7 @@ app.layout = html.Div([
         html.P(id='output4', children=['n_clicks value: '])
     ]),
     html.Div(children=[
-        sd_material_ui.SDRaisedButton(id='input4',
+        sd_material_ui.RaisedButton(id='input4',
                                       label='Use',
                                       primary=True,
                                       buttonStyle=dict(width=50)),
@@ -66,12 +66,12 @@ app.layout = html.Div([
     html.Div(children=[
         html.P(id='output5', children=['n_clicks value: '])
     ]),
-    sd_material_ui.SDFlatButton(id='input5', label='Click me', backgroundColor='orange'),
+    sd_material_ui.FlatButton(id='input5', label='Click me', backgroundColor='orange'),
 
     spacer,
 
     # Test for SDDrawer (docked, secondary)
-    sd_material_ui.SDDrawer(id='output6',
+    sd_material_ui.Drawer(id='output6',
                             docked=True,
                             openSecondary=True,
                             style={'backgroundColor': '#444'},
@@ -83,7 +83,7 @@ app.layout = html.Div([
     spacer,
 
     # Test for SDDrawer (not docked)
-    sd_material_ui.SDDrawer(id='output7', docked=False, open=False, children=[
+    sd_material_ui.Drawer(id='output7', docked=False, open=False, children=[
         html.P(id='close-input7', children='Drawer item')]),
     html.Div(id='input7', children=[
         html.P(children='Open or close the drawer (not docked)')
@@ -95,13 +95,13 @@ app.layout = html.Div([
     html.Div(id='output8', children=[
         html.P('Box is not checked')
     ]),
-    sd_material_ui.SDCheckbox(id='input8', label='Check to change the text above.'),
+    sd_material_ui.Checkbox(id='input8', label='Check to change the text above.'),
 
     spacer,
 
     # Test for SDToggle
     html.Div(children=[
-        sd_material_ui.SDToggle(id='input9', label='Johnny?'),
+        sd_material_ui.Toggle(id='input9', label='Johnny?'),
         html.Div(id='output9', children=[
             html.P('Flame off')
         ]),
@@ -109,15 +109,15 @@ app.layout = html.Div([
 
     spacer,
 
-    sd_material_ui.SDRaisedButton(id='input10', label='Marco'),
+    sd_material_ui.RaisedButton(id='input10', label='Marco'),
     html.Div(id='output10', children=['Looking...']),
-    sd_material_ui.SDSnackbar(id='snackbar', open=False, message='Polo', action='Reveal'),
+    sd_material_ui.Snackbar(id='snackbar', open=False, message='Polo', action='Reveal'),
 
     spacer,
 
     # Test for SDDropDownMenu and SDMenuItem (single selection)
     html.Div(children=[
-        sd_material_ui.SDDropDownMenu(id='input11',
+        sd_material_ui.DropDownMenu(id='input11',
                                       value=1,
                                       options=[
                                           dict(value=1, primaryText='Item 1',
