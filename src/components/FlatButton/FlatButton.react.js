@@ -3,7 +3,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import FlatButton from 'material-ui/FlatButton';
+import { FlatButton as MuiFlatButton } from 'material-ui/FlatButton';
 import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
@@ -149,7 +149,6 @@ const defaultProps = {
   hoverColor: '',
   href: '',
   icon: null,
-  label: '',
   labelPosition: 'after',
   labelStyle: {},
   n_clicks: 0,
@@ -160,7 +159,7 @@ const defaultProps = {
   style: {},
 };
 
-export default class SDFlatButton extends Component<Props> {
+export default class FlatButton extends Component<Props> {
   constructor(props: Props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
@@ -180,7 +179,7 @@ export default class SDFlatButton extends Component<Props> {
       return (
         <div id={id}>
           <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
-            <FlatButton
+            <MuiFlatButton
               backgroundColor={backgroundColor}
               className={className}
               disableTouchRipple={disableTouchRipple}
@@ -199,15 +198,14 @@ export default class SDFlatButton extends Component<Props> {
               style={style}
             >
               {this.props.children}
-            </FlatButton>
+            </MuiFlatButton>
           </MuiThemeProvider>
         </div>);
-    }
-    else {
+    } else {
       return (
         <div id={id}>
           <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
-            <FlatButton
+            <MuiFlatButton
               backgroundColor={backgroundColor}
               className={className}
               disableTouchRipple={disableTouchRipple}
@@ -225,12 +223,12 @@ export default class SDFlatButton extends Component<Props> {
               style={style}
             >
               {this.props.children}
-            </FlatButton>
+            </MuiFlatButton>
           </MuiThemeProvider>
         </div>);
     }
   }
 }
 
-SDFlatButton.propTypes = propTypes;
-SDFlatButton.defaultProps = defaultProps;
+FlatButton.propTypes = propTypes;
+FlatButton.defaultProps = defaultProps;
