@@ -1,6 +1,7 @@
 import sd_material_ui
 import dash
 import dash_html_components as html
+import dash_core_components as dcc
 
 app = dash.Dash('')
 
@@ -24,7 +25,7 @@ app.layout = html.Div([
 
     spacer,
 
-    # Test SDDialog (modal)
+    # Test Dialog (modal)
     sd_material_ui.Dialog(
         html.Div(children=[
             html.P('pathname'),
@@ -33,11 +34,11 @@ app.layout = html.Div([
         id='output2',
         modal=True,
         open=False),
-    html.Div(id='input2', children=[html.P('Share the page (modal)')]),
+    html.Div(id='input2', children=[html.P('Example (modal)')]),
 
     spacer,
 
-    # Test SDDialog (non-modal)
+    # Test Dialog (non-modal)
     sd_material_ui.Dialog(
         html.Div(children=[
             html.P('Non-modal dialog'),
@@ -49,7 +50,7 @@ app.layout = html.Div([
 
     spacer,
 
-    # Test SDRaisedButton
+    # Test RaisedButton
     html.Div(children=[
         html.P(id='output4', children=['n_clicks value: '])
     ]),
@@ -62,7 +63,7 @@ app.layout = html.Div([
 
     spacer,
 
-    # Test SDFlatButton
+    # Test FlatButton
     html.Div(children=[
         html.P(id='output5', children=['n_clicks value: '])
     ]),
@@ -70,7 +71,7 @@ app.layout = html.Div([
 
     spacer,
 
-    # Test for SDDrawer (docked, secondary)
+    # Test for Drawer (docked, secondary)
     sd_material_ui.Drawer(id='output6',
                             docked=True,
                             openSecondary=True,
@@ -82,7 +83,7 @@ app.layout = html.Div([
 
     spacer,
 
-    # Test for SDDrawer (not docked)
+    # Test for Drawer (not docked)
     sd_material_ui.Drawer(id='output7', docked=False, open=False, children=[
         html.P(id='close-input7', children='Drawer item')]),
     html.Div(id='input7', children=[
@@ -91,7 +92,7 @@ app.layout = html.Div([
 
     spacer,
 
-    # Test for SDCheckbox
+    # Test for Checkbox
     html.Div(id='output8', children=[
         html.P('Box is not checked')
     ]),
@@ -99,7 +100,7 @@ app.layout = html.Div([
 
     spacer,
 
-    # Test for SDToggle
+    # Test for Toggle
     html.Div(children=[
         sd_material_ui.Toggle(id='input9', label='Johnny?'),
         html.Div(id='output9', children=[
@@ -109,13 +110,14 @@ app.layout = html.Div([
 
     spacer,
 
+    # Test for Snackbar
     sd_material_ui.RaisedButton(id='input10', label='Marco'),
     html.Div(id='output10', children=['Looking...']),
     sd_material_ui.Snackbar(id='snackbar', open=False, message='Polo', action='Reveal'),
 
     spacer,
 
-    # Test for SDDropDownMenu and SDMenuItem (single selection)
+    # Test for DropDownMenu and MenuItem (single selection)
     html.Div(children=[
         sd_material_ui.DropDownMenu(id='input11',
                                     value=1,
