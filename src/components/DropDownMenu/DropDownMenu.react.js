@@ -3,7 +3,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import DropDownMenu from 'material-ui/DropDownMenu';
+import { DropDownMenu as MuiDropDownMenu } from 'material-ui/DropDownMenu';
 import MenuItem from 'material-ui/MenuItem';
 import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -237,7 +237,7 @@ const defaultProps = {
   underlineStyle: {},
 };
 
-export default class SDDropDownMenu extends Component<Props, State> {
+export default class DropDownMenu extends Component<Props, State> {
   constructor(props: Props) {
     super(props);
     this.state = {value: this.props.value};
@@ -289,7 +289,7 @@ export default class SDDropDownMenu extends Component<Props, State> {
     return (
       <div id={id}>
         <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
-          <DropDownMenu
+          <MuiDropDownMenu
             anchorOrigin={anchorOrigin}
             animated={animated}
             autoWidth={autoWidth}
@@ -311,12 +311,12 @@ export default class SDDropDownMenu extends Component<Props, State> {
             value={this.state.value}
           >
             {this.props.options.map(this.buildMenuItem)}
-          </DropDownMenu>
+          </MuiDropDownMenu>
         </MuiThemeProvider>
       </div>
     );
   }
 }
 
-SDDropDownMenu.propTypes = propTypes;
-SDDropDownMenu.defaultProps = defaultProps;
+DropDownMenu.propTypes = propTypes;
+DropDownMenu.defaultProps = defaultProps;
