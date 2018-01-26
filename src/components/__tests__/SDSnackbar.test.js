@@ -1,21 +1,21 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
 import Snackbar from 'material-ui/Snackbar';
-import SDSnackbar from '../SDSnackbar.react';
+import Snackbar from '../Snackbar/Snackbar.react';
 
-describe('SDSnackbar', () => {
+describe('Snackbar', () => {
   it('renders', () => {
     const component = shallow(
-      <SDSnackbar id='test-id' open={false} message='test message' />
+      <Snackbar id='test-id' open={false} message='test message' />
     );
 
     expect(component.props().id).toEqual('test-id');
-    expect(component.find(Snackbar).length).toBe(1);
+    expect(component.find(MuiSnackbar).length).toBe(1);
   });
 
   it('opens and closes', () => {
     const component = shallow(
-      <SDSnackbar id='test-id' open={false} message='test message' />
+      <Snackbar id='test-id' open={false} message='test message' />
     );
 
     expect(component.state().open).toEqual(false);
@@ -27,7 +27,7 @@ describe('SDSnackbar', () => {
 
   it('closes automatically', () => {
     const component = shallow(
-      <SDSnackbar id='test-id' autoHideDuration={500} open={false} message='test message' />
+      <Snackbar id='test-id' autoHideDuration={500} open={false} message='test message' />
     );
 
     expect(component.state().open).toEqual(false);
@@ -39,7 +39,7 @@ describe('SDSnackbar', () => {
   it('fires events', () => {
     const mockFire = jest.fn();
     const component = mount(
-      <SDSnackbar
+      <Snackbar
         id='test-id'
         message='test message'
         open={true}
@@ -54,16 +54,16 @@ describe('SDSnackbar', () => {
 
   it('renders without fireEvent', () => {
     const component = shallow(
-      <SDSnackbar id='test-id' open={false} message='test message' fireEvent={null} />
+      <Snackbar id='test-id' open={false} message='test message' fireEvent={null} />
     );
 
-    expect(component.find(Snackbar).length).toBe(1);
+    expect(component.find(MuiSnackbar).length).toBe(1);
   });
 
   it('increments n_clicks', () => {
     const mockProps = jest.fn();
     const component = mount(
-      <SDSnackbar
+      <Snackbar
         id='test-id'
         action='click me'
         message='test message'

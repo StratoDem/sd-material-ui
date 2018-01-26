@@ -1,15 +1,15 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import SDDrawer from '../SDDrawer.react';
+import Drawer from '../Drawer/Drawer.react';
 
-describe('SDDrawer', () => {
+describe('Drawer', () => {
   it('renders', () => {
     const component = shallow(
-      <SDDrawer id='test-id'>
+      <Drawer id='test-id'>
         <div>
           <p>Item</p>
         </div>
-      </SDDrawer>);
+      </Drawer>);
 
     expect(component.props().id).toEqual('test-id');
     expect(component).toBe.ok;
@@ -17,11 +17,11 @@ describe('SDDrawer', () => {
 
     it('opens and closes (props.open)', () => {
     const component = shallow(
-      <SDDrawer id='test-id' open={false}>
+      <Drawer id='test-id' open={false}>
         <div>
           <p>Item</p>
         </div>
-      </SDDrawer>);
+      </Drawer>);
 
     expect(component.state('open')).toEqual(false);
     component.setProps({open: true});

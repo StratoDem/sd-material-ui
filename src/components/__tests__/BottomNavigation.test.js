@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 import {
   BottomNavigation as MUIBottomNavigation,
   BottomNavigationItem } from 'material-ui/BottomNavigation';
-import BottomNavigation from '../BottomNavigation.react';
+import BottomNavigation from '../BottomNavigation/BottomNavigation.react';
 
 describe('BottomNavigation', () => {
   it('renders', () => {

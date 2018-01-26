@@ -1,5 +1,5 @@
 {
-  "src/components/BottomNavigation.react.js": {
+  "src/components/BottomNavigation/BottomNavigation.react.js": {
     "description": "BottomNavigationItem is an item in a BottomNavigation component",
     "displayName": "BottomNavigation",
     "methods": [
@@ -285,9 +285,9 @@
       }
     }
   },
-  "src/components/SDCheckbox.react.js": {
+  "src/components/Checkbox/Checkbox.react.js": {
     "description": "",
-    "displayName": "SDCheckbox",
+    "displayName": "Checkbox",
     "methods": [
       {
         "name": "handleClick",
@@ -485,9 +485,9 @@
       }
     }
   },
-  "src/components/SDDialog.react.js": {
+  "src/components/Dialog/Dialog.react.js": {
     "description": "",
-    "displayName": "SDDialog",
+    "displayName": "Dialog",
     "methods": [
       {
         "name": "changeDialogOpenStatus",
@@ -651,9 +651,9 @@
       }
     }
   },
-  "src/components/SDDrawer.react.js": {
+  "src/components/Drawer/Drawer.react.js": {
     "description": "",
-    "displayName": "SDDrawer",
+    "displayName": "Drawer",
     "methods": [
       {
         "name": "changeDrawerStatus",
@@ -929,9 +929,9 @@
       }
     }
   },
-  "src/components/SDDropDownMenu.react.js": {
+  "src/components/DropDownMenu/DropDownMenu.react.js": {
     "description": "",
-    "displayName": "SDDropDownMenu",
+    "displayName": "DropDownMenu",
     "methods": [
       {
         "name": "handleChange",
@@ -1518,9 +1518,9 @@
       }
     }
   },
-  "src/components/SDFlatButton.react.js": {
+  "src/components/FlatButton/FlatButton.react.js": {
     "description": "",
-    "displayName": "SDFlatButton",
+    "displayName": "FlatButton",
     "methods": [
       {
         "name": "handleClick",
@@ -1697,10 +1697,6 @@
         "description": "Label for the button.",
         "flowType": {
           "name": "string"
-        },
-        "defaultValue": {
-          "value": "''",
-          "computed": false
         }
       },
       "labelPosition": {
@@ -1841,9 +1837,9 @@
       }
     }
   },
-  "src/components/SDRaisedButton.react.js": {
+  "src/components/RaisedButton/RaisedButton.react.js": {
     "description": "",
-    "displayName": "SDRaisedButton",
+    "displayName": "RaisedButton",
     "methods": [
       {
         "name": "handleClick",
@@ -2051,10 +2047,6 @@
         "description": "The label to be displayed within the button. If content is provided via the children prop,\nthat content will be displayed in addition to the label provided here.",
         "flowType": {
           "name": "string"
-        },
-        "defaultValue": {
-          "value": "''",
-          "computed": false
         }
       },
       "labelColor": {
@@ -2230,9 +2222,9 @@
       }
     }
   },
-  "src/components/SDSnackbar.react.js": {
+  "src/components/Snackbar/Snackbar.react.js": {
     "description": "",
-    "displayName": "SDSnackbar",
+    "displayName": "Snackbar",
     "methods": [
       {
         "name": "handleOpen",
@@ -2460,9 +2452,9 @@
       }
     }
   },
-  "src/components/SDToggle.react.js": {
+  "src/components/Toggle/Toggle.react.js": {
     "description": "",
-    "displayName": "SDToggle",
+    "displayName": "Toggle",
     "methods": [
       {
         "name": "handleToggle",
