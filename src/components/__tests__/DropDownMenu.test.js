@@ -1,8 +1,8 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
-import MenuItem from '../../../node_modules/material-ui/MenuItem';
-import DropDownMenu from '../DropDownMenu/DropDownMenu.react';
 import { DropDownMenu as MuiDropDownMenu } from 'material-ui/DropDownMenu';
+import MenuItem from 'material-ui/MenuItem';
+import DropDownMenu from '../DropDownMenu/DropDownMenu.react';
 
 describe('DropDownMenu', () => {
   it('renders', () => {
