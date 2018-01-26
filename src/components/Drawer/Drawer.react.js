@@ -3,7 +3,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import Drawer from 'material-ui/Drawer';
+import { Drawer as MuiDrawer } from 'material-ui/Drawer';
 import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
@@ -136,7 +136,7 @@ const defaultProps = {
   zDepth: 2,
 };
 
-export default class SDDrawer extends Component<Props, State> {
+export default class Drawer extends Component<Props, State> {
   constructor(props: Props) {
     super(props);
     this.state = {open: props.open};
@@ -165,7 +165,7 @@ export default class SDDrawer extends Component<Props, State> {
     return (
       <div id={id}>
         <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
-          <Drawer
+          <MuiDrawer
             className={className}
             containerClassName={containerclassName}
             containerStyle={containerStyle}
@@ -182,12 +182,12 @@ export default class SDDrawer extends Component<Props, State> {
             zDepth={zDepth}
           >
             {this.props.children}
-          </Drawer>
+          </MuiDrawer>
         </MuiThemeProvider>
       </div>
     );
   }
 }
 
-SDDrawer.propTypes = propTypes;
-SDDrawer.defaultProps = defaultProps;
+Drawer.propTypes = propTypes;
+Drawer.defaultProps = defaultProps;
