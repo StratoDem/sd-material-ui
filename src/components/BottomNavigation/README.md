@@ -19,4 +19,4 @@ the app or page. It can take the following props:
       ![](/../../../static/bottomnavigation-iconClassName.png)
 - `selectedIndex`: The initial selected index for the BottomNavigation
 - `selectedStyle`: Style to apply to the selected icon
-    ![](/../../../static/bottomnavigation-selectedStyle.png)
+    ![](bottomnavigation-selectedStyle.png)
