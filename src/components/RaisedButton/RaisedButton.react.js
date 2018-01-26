@@ -3,7 +3,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import RaisedButton from 'material-ui/RaisedButton';
+import { RaisedButton as MuiRaisedButton } from 'material-ui/RaisedButton';
 import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
@@ -176,7 +176,6 @@ const defaultProps = {
   labelPosition: 'after',
   labelStyle: {},
   n_clicks: 0,
-  label: '',
   overlayStyle: {},
   primary: false,
   rippleStyle: {},
@@ -185,7 +184,7 @@ const defaultProps = {
   style: {},
 };
 
-export default class SDRaisedButton extends React.Component<Props> {
+export default class RaisedButton extends React.Component<Props> {
   constructor(props: Props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
@@ -206,7 +205,7 @@ export default class SDRaisedButton extends React.Component<Props> {
       return (
         <div id={id}>
           <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
-            <RaisedButton
+            <MuiRaisedButton
               backgroundColor={backgroundColor}
               buttonStyle={buttonStyle}
               className={className}
@@ -230,14 +229,14 @@ export default class SDRaisedButton extends React.Component<Props> {
               style={style}
             >
               {this.props.children}
-            </RaisedButton>
+            </MuiRaisedButton>
           </MuiThemeProvider>
         </div>);
     } else {
       return (
         <div id={id}>
           <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
-            <RaisedButton
+            <MuiRaisedButton
               backgroundColor={backgroundColor}
               buttonStyle={buttonStyle}
               className={className}
@@ -260,12 +259,12 @@ export default class SDRaisedButton extends React.Component<Props> {
               style={style}
             >
               {this.props.children}
-            </RaisedButton>
+            </MuiRaisedButton>
           </MuiThemeProvider>
         </div>);
     }
   }
 }
 
-SDRaisedButton.propTypes = propTypes;
-SDRaisedButton.defaultProps = defaultProps;
+RaisedButton.propTypes = propTypes;
+RaisedButton.defaultProps = defaultProps;
