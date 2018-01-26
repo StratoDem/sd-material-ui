@@ -3,7 +3,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import Checkbox from 'material-ui/Checkbox';
+import { Checkbox as MuiCheckbox } from 'material-ui/Checkbox';
 import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
@@ -125,7 +125,7 @@ export default class SDCheckbox extends Component<Props, State> {
       return (
         <div id={id}>
           <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
-            <Checkbox
+            <MuiCheckbox
               checked={this.state.checked}
               disabled={disabled}
               iconStyle={iconStyle}
@@ -142,7 +142,7 @@ export default class SDCheckbox extends Component<Props, State> {
       return (
         <div id={id}>
           <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
-            <Checkbox
+            <MuiCheckbox
               checked={this.state.checked}
               disabled={disabled}
               iconStyle={iconStyle}
