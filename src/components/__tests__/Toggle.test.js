@@ -1,11 +1,12 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
-import SDToggle from '../SDToggle.react';
+import Toggle from '../Toggle/Toggle.react';
+import MuiToggle from 'material-ui/Toggle';
 
-describe('SDToggle', () => {
+describe('Toggle', () => {
   it('renders', () => {
     const component = shallow(
-      <SDToggle id='test-id' />
+      <Toggle id='test-id' />
     );
 
     expect(component.props().id).toEqual('test-id');
@@ -14,7 +15,7 @@ describe('SDToggle', () => {
 
   it('updates props correctly', () => {
     const component = shallow(
-      <SDToggle id='test-id' />);
+      <Toggle id='test-id' />);
 
     expect(component.state('switched')).toEqual(false);
     component.setProps({toggled: true});
@@ -25,19 +26,19 @@ describe('SDToggle', () => {
 
   it('handles click events', () => {
     const component = mount(
-      <SDToggle id='test-id' />);
+      <Toggle id='test-id' />);
 
     expect(component.state('switched')).toEqual(false);
-    component.find('Toggle').props().onToggle({}, true);
+    component.find(MuiToggle).props().onToggle({}, true);
     expect(component.state('switched')).toEqual(true);
   });
 
   it('sets state even without setProps/fireEvent', () => {
     const component = shallow(
-      <SDToggle id='test-id' setProps={null} fireEvent={null} />);
+      <Toggle id='test-id' setProps={null} fireEvent={null} />);
 
     expect(component.state('switched')).toEqual(false);
-    component.find('Toggle').props().onToggle({}, true);
+    component.find(MuiToggle).props().onToggle({}, true);
     expect(component.state('switched')).toEqual(true);
   });
 });

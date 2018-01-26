@@ -1,30 +1,30 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Dialog from 'material-ui/Dialog';
-import SDDialog from '../SDDialog.react';
+import MuiDialog from 'material-ui/Dialog';
+import Dialog from '../Dialog/Dialog.react';
 
-describe('SDDialog', () => {
+describe('Dialog', () => {
   it('renders', () => {
     const component = shallow(
-      <SDDialog id='test-id'>
+      <Dialog id='test-id'>
         <div>
           <p>Share this page:</p>
           <p>http://localhost</p>
         </div>
-      </SDDialog>
+      </Dialog>
     );
 
     expect(component.props().id).toEqual('test-id');
-    expect(component.find(Dialog).length).toBe(1);
+    expect(component.find(MuiDialog).length).toBe(1);
   });
 
   it('opens and closes', () => {
     const component = shallow(
-      <SDDialog id='test-id'>
+      <Dialog id='test-id'>
         <div>
           <p>Share this page:</p>
         </div>
-      </SDDialog>
+      </Dialog>
     );
 
     expect(component.state().open).toEqual(false);

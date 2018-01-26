@@ -1,24 +1,22 @@
 // @flow
 
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import RaisedButton from 'material-ui/RaisedButton';
+import MuiFlatButton from 'material-ui/FlatButton';
 import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
 type Props = {
   backgroundColor?: string,
-  buttonStyle?: Object,
   children?: Node,
   className?: string,
   disableTouchRipple?: boolean,
   disabled?: boolean,
-  disabledBackgroundColor?: string,
-  disabledLabelColor?: string,
   fireEvent?: () => void,
   fullWidth?: boolean,
+  hoverColor?: string,
   href?: string,
   icon?: Node,
   id?: string,
@@ -26,7 +24,6 @@ type Props = {
   labelPosition?: string,
   labelStyle?: Object,
   n_clicks?: number,
-  overlayStyle?: Object,
   primary?: boolean,
   rippleColor?: string,
   secondary?: boolean,
@@ -36,19 +33,18 @@ type Props = {
 
 const propTypes = {
   /**
-   * Override the default background color for the button, but not the default disabled
-   * background color (use disabledBackgroundColor for this).
+   * Color of button when mouse is not hovering over it.
    */
   backgroundColor: PropTypes.string,
 
   /**
-   * Override the inline-styles of the button element.
-   */
-  buttonStyle: PropTypes.objectOf(PropTypes.any),
-
-  /**
-   * The content of the button. If a label is provided via the label prop, the text within the
-   * label will be displayed in addition to the content provided here.
+   * This is what will be displayed inside the button.
+   * If a label is specified, the text within the label prop will
+   * be displayed. Otherwise, the component will expect children
+   * which will then be displayed. (In our example,
+   * we are nesting an `<input type="file" />` and a `span`
+   * that acts as our label to be displayed.) This only
+   * applies to flat and raised buttons.
    */
   children: PropTypes.node,
 
@@ -68,16 +64,6 @@ const propTypes = {
   disabled: PropTypes.bool,
 
   /**
-   * Override the default background color for the button when it is disabled.
-   */
-  disabledBackgroundColor: PropTypes.string,
-
-  /**
-   * The color of the button's label when the button is disabled.
-   */
-  disabledLabelColor: PropTypes.string,
-
-  /**
    * A callback for firing events to dash.
    */
   fireEvent: PropTypes.func,
@@ -86,6 +72,11 @@ const propTypes = {
    * If true, the button will take up the full width of its container.
    */
   fullWidth: PropTypes.bool,
+
+  /**
+   * Color of button when mouse hovers over.
+   */
+  hoverColor: PropTypes.string,
 
   /**
    * The URL to link to when the button is clicked.
@@ -97,24 +88,16 @@ const propTypes = {
    */
   icon: PropTypes.node,
 
-  /**
-   *  The element's ID
-   */
+  /* The element's ID */
   id: PropTypes.string.isRequired,
 
   /**
-   * The label to be displayed within the button. If content is provided via the children prop,
-   * that content will be displayed in addition to the label provided here.
+   * Label for the button.
    */
   label: PropTypes.string.isRequired,
 
   /**
-   * The color of the button's label.
-   */
-  labelColor: PropTypes.string,
-
-  /**
-   * The position of the button's label relative to the button's children.
+   * Place label before or after the passed children.
    */
   labelPosition: PropTypes.oneOf(['before', 'after']),
 
@@ -130,23 +113,19 @@ const propTypes = {
   n_clicks: PropTypes.number,
 
   /**
-   * Override the inline style of the button overlay.
-   */
-  overlayStyle: PropTypes.objectOf(PropTypes.any),
-
-  /**
-   * If true, the button will use the theme's primary color.
+   * If true, colors button according to
+   * primaryTextColor from the Theme.
    */
   primary: PropTypes.bool,
 
   /**
-   * Override the inline style of the ripple element.
+   * Color for the ripple after button is clicked.
    */
-  rippleStyle: PropTypes.objectOf(PropTypes.any),
+  rippleColor: PropTypes.string,
 
   /**
-   * If true, the button will use the theme's secondary color. If both secondary and primary are
-   * true, the button will use the theme's primary color.
+   * If true, colors button according to secondaryTextColor from the theme.
+   * The primary prop has precendent if set to true.
    */
   secondary: PropTypes.bool,
 
@@ -161,31 +140,26 @@ const propTypes = {
 
 const defaultProps = {
   backgroundColor: '',
-  buttonStyle: {},
   children: null,
   className: '',
   disableTouchRipple: false,
   disabled: false,
-  disabledBackgroundColor: '',
-  disabledLabelColor: '',
   fireEvent: () => {},
   fullWidth: false,
+  hoverColor: '',
   href: '',
   icon: null,
-  labelColor: '',
   labelPosition: 'after',
   labelStyle: {},
   n_clicks: 0,
-  label: '',
-  overlayStyle: {},
   primary: false,
-  rippleStyle: {},
+  rippleColor: '',
   secondary: false,
   setProps: () => {},
   style: {},
 };
 
-export default class SDRaisedButton extends React.Component<Props> {
+export default class FlatButton extends Component<Props> {
   constructor(props: Props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
@@ -197,75 +171,64 @@ export default class SDRaisedButton extends React.Component<Props> {
   }
 
   render() {
-    const { backgroundColor, buttonStyle, className, disabled,
-      disabledBackgroundColor, disabledLabelColor, disableTouchRipple, fullWidth, href,
-      icon, id, label, labelColor, labelPosition, labelStyle, overlayStyle, primary, rippleColor,
-      rippleStyle, secondary, style } = this.props;
+    const { backgroundColor, className, disableTouchRipple, disabled,
+      fullWidth, hoverColor, href, icon, id, label, labelPosition, labelStyle,
+      primary, rippleColor, secondary, style} = this.props;
 
     if (this.props.fireEvent || this.props.setProps) {
       return (
         <div id={id}>
           <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
-            <RaisedButton
+            <MuiFlatButton
               backgroundColor={backgroundColor}
-              buttonStyle={buttonStyle}
               className={className}
-              disabled={disabled}
-              disabledBackgroundColor={disabledBackgroundColor}
-              disabledLabelColor={disabledLabelColor}
               disableTouchRipple={disableTouchRipple}
+              disabled={disabled}
               fullWidth={fullWidth}
+              hoverColor={hoverColor}
               href={href}
               icon={icon}
               label={label}
-              labelColor={labelColor}
               labelPosition={labelPosition}
               labelStyle={labelStyle}
               onClick={this.handleClick}
-              overlayStyle={overlayStyle}
               primary={primary}
               rippleColor={rippleColor}
-              rippleStyle={rippleStyle}
               secondary={secondary}
               style={style}
             >
               {this.props.children}
-            </RaisedButton>
+            </MuiFlatButton>
           </MuiThemeProvider>
         </div>);
     } else {
       return (
         <div id={id}>
           <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
-            <RaisedButton
+            <MuiFlatButton
               backgroundColor={backgroundColor}
-              buttonStyle={buttonStyle}
               className={className}
-              disabled={disabled}
-              disabledBackgroundColor={disabledBackgroundColor}
-              disabledLabelColor={disabledLabelColor}
               disableTouchRipple={disableTouchRipple}
+              disabled={disabled}
               fullWidth={fullWidth}
+              hoverColor={hoverColor}
               href={href}
               icon={icon}
               label={label}
-              labelColor={labelColor}
               labelPosition={labelPosition}
               labelStyle={labelStyle}
-              overlayStyle={overlayStyle}
               primary={primary}
               rippleColor={rippleColor}
-              rippleStyle={rippleStyle}
               secondary={secondary}
               style={style}
             >
               {this.props.children}
-            </RaisedButton>
+            </MuiFlatButton>
           </MuiThemeProvider>
         </div>);
     }
   }
 }
 
-SDRaisedButton.propTypes = propTypes;
-SDRaisedButton.defaultProps = defaultProps;
+FlatButton.propTypes = propTypes;
+FlatButton.defaultProps = defaultProps;

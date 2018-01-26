@@ -1,13 +1,13 @@
 import React from 'react';
-import ReactTestUtils from 'react-dom/test-utils';
 import { mount, shallow } from 'enzyme';
-import SDCheckbox from '../SDCheckbox.react';
+import Checkbox from '../Checkbox/Checkbox.react';
+import MuiCheckbox from 'material-ui/Checkbox';
 
 
-describe('SDCheckbox', () => {
+describe('Checkbox', () => {
   it('renders', () => {
     const component = shallow(
-      <SDCheckbox id='test-id' />
+      <Checkbox id='test-id' />
     );
 
     expect(component.props().id).toEqual('test-id');
@@ -16,7 +16,7 @@ describe('SDCheckbox', () => {
 
   it('updates props correctly', () => {
     const component = shallow(
-      <SDCheckbox id='test-id' />);
+      <Checkbox id='test-id' />);
 
     expect(component.state('checked')).toEqual(false);
     component.setProps({checked: true});
@@ -27,19 +27,19 @@ describe('SDCheckbox', () => {
 
   it('handles click events', () => {
     const component = mount(
-      <SDCheckbox id='test-id' />);
+      <Checkbox id='test-id' />);
 
     expect(component.state('checked')).toEqual(false);
-    component.find('Checkbox').props().onCheck({}, true);
+    component.find(MuiCheckbox).props().onCheck({}, true);
     expect(component.state('checked')).toEqual(true);
   });
 
   it('sets state even without setProps/fireEvent', () => {
     const component = shallow(
-      <SDCheckbox id='test-id' setProps={null} fireEvent={null} />);
+      <Checkbox id='test-id' setProps={null} fireEvent={null} />);
 
     expect(component.state('checked')).toEqual(false);
-    component.find('Checkbox').props().onCheck({}, true);
+    component.find(MuiCheckbox).props().onCheck({}, true);
     expect(component.state('checked')).toEqual(true);
   });
 });

@@ -3,7 +3,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import Dialog from 'material-ui/Dialog';
+import MuiDialog from 'material-ui/Dialog';
 import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
@@ -61,7 +61,7 @@ const defaultProps = {
   setProps: () => {},
 };
 
-export default class SDDialog extends Component<Props, State> {
+export default class Dialog extends Component<Props, State> {
   constructor(props: Props) {
     super(props);
     this.state = {open: props.open};
@@ -88,7 +88,7 @@ export default class SDDialog extends Component<Props, State> {
     return (
       <div id={id} className="sd-dialog">
         <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
-          <Dialog
+          <MuiDialog
             actions={actions}
             className={className}
             modal={modal}
@@ -96,11 +96,11 @@ export default class SDDialog extends Component<Props, State> {
             onRequestClose={() => { this.changeDialogOpenStatus(false); }}
           >
             {this.props.children}
-          </Dialog>
+          </MuiDialog>
         </MuiThemeProvider>
       </div>);
   }
 }
 
-SDDialog.propTypes = propTypes;
-SDDialog.defaultProps = defaultProps;
+Dialog.propTypes = propTypes;
+Dialog.defaultProps = defaultProps;

@@ -1,12 +1,13 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
-import MenuItem from '../../../node_modules/material-ui/MenuItem';
-import SDDropDownMenu from '../SDDropDownMenu.react';
+import { DropDownMenu as MuiDropDownMenu } from 'material-ui/DropDownMenu';
+import MenuItem from 'material-ui/MenuItem';
+import DropDownMenu from '../DropDownMenu/DropDownMenu.react';
 
-describe('SDDropDownMenu', () => {
+describe('DropDownMenu', () => {
   it('renders', () => {
     const component = shallow(
-      <SDDropDownMenu id='test-id' />
+      <DropDownMenu id='test-id' value={1} />
     );
 
     expect(component.props().id).toEqual('test-id');
@@ -15,14 +16,14 @@ describe('SDDropDownMenu', () => {
 
   it('updates value based on selections', () => {
     const component = mount(
-      <SDDropDownMenu id='test-id' value={1}>
+      <DropDownMenu id='test-id' value={1}>
         <MenuItem value={1} primaryText='Test text' />
         <MenuItem value={2} primaryText='Test text' />
-      </SDDropDownMenu>
+      </DropDownMenu>
     );
 
     expect(component.state('value')).toEqual(1);
-    component.find('DropDownMenu').props().onChange({}, 1, 2);
+    component.find(MuiDropDownMenu).props().onChange({}, 1, 2);
     expect(component.state('value')).toEqual(2);
   });
 });
