@@ -96,7 +96,7 @@ const defaultProps = {
   style: {},
 };
 
-export default class SDCheckbox extends Component<Props, State> {
+export default class Checkbox extends Component<Props, State> {
   constructor(props: Props) {
     super(props);
     this.state = {checked: props.checked};
@@ -160,5 +160,5 @@ export default class SDCheckbox extends Component<Props, State> {
   }
 }
 
-SDCheckbox.propTypes = propTypes;
-SDCheckbox.defaultProps = defaultProps;
+Checkbox.propTypes = propTypes;
+Checkbox.defaultProps = defaultProps;
