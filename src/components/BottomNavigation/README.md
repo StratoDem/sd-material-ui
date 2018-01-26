@@ -16,7 +16,7 @@ the app or page. It can take the following props:
   - `targetId`: The ID of a component elsewhere in the app or page to jump to when this item is
   selected
   - `iconClassName`: A class that can be applied to the item `span`
-      ![](/../../../static/bottomnavigation-iconClassName.png)
+      [Example](/../../static/bottomnavigation-iconClassName.png)
 - `selectedIndex`: The initial selected index for the BottomNavigation
 - `selectedStyle`: Style to apply to the selected icon
     [Example](/../../static/bottomnavigation-selectedStyle.png)
