@@ -2,6 +2,11 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 2.0.0 - 2018-01-26
+### Changed
+- Renamed components
+- Moved all components into their own directories in preparation for adding individual READMEs
+
 ## 1.7.5 - 2018-01-23
 ### Changed
 - Removed `null` default for SDDropDownMenu's `iconButton`, allowing the arrow to appear by default
