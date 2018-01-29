@@ -1,5 +1,3 @@
 import Checkbox from './Checkbox.react';
 
-export {
-  Checkbox,
-};
+export default Checkbox;

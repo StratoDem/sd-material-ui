@@ -1,5 +1,3 @@
 import Snackbar from './Snackbar.react';
 
-export {
-  Snackbar,
-};
+export default Snackbar;

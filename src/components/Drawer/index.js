@@ -1,5 +1,3 @@
 import Drawer from './Drawer.react';
 
-export {
-  Drawer,
-};
+export default Drawer;

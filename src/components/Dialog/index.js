@@ -1,5 +1,3 @@
 import Dialog from './Dialog.react';
 
-export {
-  Dialog,
-};
+export default Dialog;

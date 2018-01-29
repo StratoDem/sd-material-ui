@@ -930,7 +930,7 @@
     }
   },
   "src/components/DropDownMenu/DropDownMenu.react.js": {
-    "description": "",
+    "description": "A Dash material-ui DropDownMenu component",
     "displayName": "DropDownMenu",
     "methods": [
       {
@@ -1056,7 +1056,57 @@
         "required": false,
         "description": "This is the point on the anchor that the popover's targetOrigin will attach to.\nOptions: vertical: [top, center, bottom] horizontal: [left, middle, right].",
         "flowType": {
-          "name": "object"
+          "name": "signature",
+          "type": "object",
+          "raw": "{\n  vertical?: 'top' | 'center' | 'bottom',\n  horizontal?: 'left' | 'middle' | 'right',\n}",
+          "signature": {
+            "properties": [
+              {
+                "key": "vertical",
+                "value": {
+                  "name": "union",
+                  "raw": "'top' | 'center' | 'bottom'",
+                  "elements": [
+                    {
+                      "name": "literal",
+                      "value": "'top'"
+                    },
+                    {
+                      "name": "literal",
+                      "value": "'center'"
+                    },
+                    {
+                      "name": "literal",
+                      "value": "'bottom'"
+                    }
+                  ],
+                  "required": false
+                }
+              },
+              {
+                "key": "horizontal",
+                "value": {
+                  "name": "union",
+                  "raw": "'left' | 'middle' | 'right'",
+                  "elements": [
+                    {
+                      "name": "literal",
+                      "value": "'left'"
+                    },
+                    {
+                      "name": "literal",
+                      "value": "'middle'"
+                    },
+                    {
+                      "name": "literal",
+                      "value": "'right'"
+                    }
+                  ],
+                  "required": false
+                }
+              }
+            ]
+          }
         },
         "defaultValue": {
           "value": "{ vertical: 'top', horizontal: 'left'}",
@@ -1161,7 +1211,7 @@
         "required": false,
         "description": "Overrides the styles of icon element.",
         "flowType": {
-          "name": "object"
+          "name": "Object"
         },
         "defaultValue": {
           "value": "{}",
@@ -1188,7 +1238,7 @@
         "required": false,
         "description": "Overrides the styles of label when the DropDownMenu is inactive.",
         "flowType": {
-          "name": "object"
+          "name": "Object"
         },
         "defaultValue": {
           "value": "{}",
@@ -1205,7 +1255,7 @@
         "required": false,
         "description": "The style object to use to override underlying list style.",
         "flowType": {
-          "name": "object"
+          "name": "Object"
         },
         "defaultValue": {
           "value": "{}",
@@ -1236,7 +1286,7 @@
         "required": false,
         "description": "Override the inline-styles of menu items.",
         "flowType": {
-          "name": "object"
+          "name": "Object"
         },
         "defaultValue": {
           "value": "{}",
@@ -1253,7 +1303,7 @@
         "required": false,
         "description": "Overrides the styles of Menu when the DropDownMenu is displayed.",
         "flowType": {
-          "name": "object"
+          "name": "Object"
         },
         "defaultValue": {
           "value": "{}",
@@ -1426,7 +1476,7 @@
         "required": false,
         "description": "Override the inline-styles of selected menu items.",
         "flowType": {
-          "name": "object"
+          "name": "Object"
         },
         "defaultValue": {
           "value": "{}",
@@ -1465,7 +1515,7 @@
         "required": false,
         "description": "Override the inline-styles of the root element.",
         "flowType": {
-          "name": "object"
+          "name": "Object"
         },
         "defaultValue": {
           "value": "{}",
@@ -1482,7 +1532,57 @@
         "required": false,
         "description": "This is the point on the popover which will attach to the anchor's origin.\nOptions: vertical: [top, center, bottom] horizontal: [left, middle, right].",
         "flowType": {
-          "name": "object"
+          "name": "signature",
+          "type": "object",
+          "raw": "{\n  vertical?: 'top' | 'center' | 'bottom',\n  horizontal?: 'left' | 'middle' | 'right',\n}",
+          "signature": {
+            "properties": [
+              {
+                "key": "vertical",
+                "value": {
+                  "name": "union",
+                  "raw": "'top' | 'center' | 'bottom'",
+                  "elements": [
+                    {
+                      "name": "literal",
+                      "value": "'top'"
+                    },
+                    {
+                      "name": "literal",
+                      "value": "'center'"
+                    },
+                    {
+                      "name": "literal",
+                      "value": "'bottom'"
+                    }
+                  ],
+                  "required": false
+                }
+              },
+              {
+                "key": "horizontal",
+                "value": {
+                  "name": "union",
+                  "raw": "'left' | 'middle' | 'right'",
+                  "elements": [
+                    {
+                      "name": "literal",
+                      "value": "'left'"
+                    },
+                    {
+                      "name": "literal",
+                      "value": "'middle'"
+                    },
+                    {
+                      "name": "literal",
+                      "value": "'right'"
+                    }
+                  ],
+                  "required": false
+                }
+              }
+            ]
+          }
         },
         "defaultValue": {
           "value": "{vertical: 'top', horizontal: 'left'}",
@@ -1499,7 +1599,7 @@
         "required": false,
         "description": "Overrides the inline-styles of the underline.",
         "flowType": {
-          "name": "object"
+          "name": "Object"
         },
         "defaultValue": {
           "value": "{}",

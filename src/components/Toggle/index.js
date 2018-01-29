@@ -1,5 +1,3 @@
 import Toggle from './Toggle.react';
 
-export {
-  Toggle,
-};
+export default Toggle;

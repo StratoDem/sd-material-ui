@@ -22,27 +22,68 @@ type SD_MENU_ITEM = {
 }
 
 type Props = {
-  anchorOrigin?: object,
+  /**
+   * This is the point on the anchor that the popover's targetOrigin will attach to.
+   * Options: vertical: [top, center, bottom] horizontal: [left, middle, right].
+   */
+  anchorOrigin?: {
+    vertical?: 'top' | 'center' | 'bottom',
+    horizontal?: 'left' | 'middle' | 'right',
+  },
+  /** If true, the popover will apply transitions when it gets added to the DOM. */
   animated?: boolean,
+  /**
+   * The width will automatically be set according to the items inside the menu. To control
+   * this width in css instead, set this prop to false.
+   */
   autoWidth?: boolean,
+  /** The css class name of the root element. */
   className?: string,
+  /** Disables the menu. */
   disabled?: boolean,
+  /** Dash-assigned callback that gets fired when the input changes. */
   fireEvent?: () => void,
+  /** Overrides default SvgIcon dropdown arrow component. */
   iconButton?: Node,
-  iconStyle?: object,
+  /** Overrides the styles of icon element. */
+  iconStyle?: Object,
+  /** The element's ID. */
   id: string,
-  labelStyle?: object,
-  listStyle?: object,
+  /** Overrides the styles of label when the DropDownMenu is inactive. */
+  labelStyle?: Object,
+  /** The style object to use to override underlying list style. */
+  listStyle?: Object,
+  /** The maximum height of the Menu when it is displayed. */
   maxHeight?: number,
-  menuItemStyle?: object,
-  menuStyle?: object,
+  /** Override the inline-styles of menu items. */
+  menuItemStyle?: Object,
+  /** Overrides the styles of Menu when the DropDownMenu is displayed. */
+  menuStyle?: Object,
+  /** Set to true to have the DropDownMenu automatically open on mount. */
   openImmediately?: boolean,
+  /**
+   * Used to create the MenuItems to populate the Menu with. A Dash user passes in a list of dict
+   * items, each one having at least a `value` and `primaryText`. If the 'label' is used,
+   * that value will be used to render the representation of that item within the field.
+   */
   options?: Array<SD_MENU_ITEM>,
-  selectedMenuItemStyle?: object,
+  /** Override the inline-styles of selected menu items. */
+  selectedMenuItemStyle?: Object,
+  /** Dash callback to update props on the server. */
   setProps?: () => void,
-  style?: object,
-  targetOrigin?: object,
-  underlineStyle?: object,
+  /** Override the inline-styles of the root element. */
+  style?: Object,
+  /**
+   * This is the point on the popover which will attach to the anchor's origin.
+   * Options: vertical: [top, center, bottom] horizontal: [left, middle, right].
+   */
+  targetOrigin?: {
+    vertical?: 'top' | 'center' | 'bottom',
+    horizontal?: 'left' | 'middle' | 'right',
+  },
+  /** Overrides the inline-styles of the underline. */
+  underlineStyle?: Object,
+  /** The value of the selected menu item. */
   value: any,
 };
 
@@ -237,6 +278,7 @@ const defaultProps = {
   underlineStyle: {},
 };
 
+/** A Dash material-ui DropDownMenu component */
 export default class DropDownMenu extends Component<Props, State> {
   constructor(props: Props) {
     super(props);
