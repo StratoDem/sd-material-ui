@@ -24,7 +24,7 @@ app.layout = html.Div([
 
     spacer,
 
-    # Test SDDialog (modal)
+    # Test Dialog (modal)
     sd_material_ui.Dialog(
         html.Div(children=[
             html.P('pathname'),
@@ -37,7 +37,7 @@ app.layout = html.Div([
 
     spacer,
 
-    # Test SDDialog (non-modal)
+    # Test Dialog (non-modal)
     sd_material_ui.Dialog(
         html.Div(children=[
             html.P('Non-modal dialog'),
@@ -49,7 +49,7 @@ app.layout = html.Div([
 
     spacer,
 
-    # Test SDRaisedButton
+    # Test RaisedButton
     html.Div(children=[
         html.P(id='output4', children=['n_clicks value: '])
     ]),
@@ -62,7 +62,7 @@ app.layout = html.Div([
 
     spacer,
 
-    # Test SDFlatButton
+    # Test FlatButton
     html.Div(children=[
         html.P(id='output5', children=['n_clicks value: '])
     ]),
@@ -70,7 +70,7 @@ app.layout = html.Div([
 
     spacer,
 
-    # Test for SDDrawer (docked, secondary)
+    # Test for Drawer (docked, secondary)
     sd_material_ui.Drawer(id='output6',
                             docked=True,
                             openSecondary=True,
@@ -82,7 +82,7 @@ app.layout = html.Div([
 
     spacer,
 
-    # Test for SDDrawer (not docked)
+    # Test for Drawer (not docked)
     sd_material_ui.Drawer(id='output7', docked=False, open=False, children=[
         html.P(id='close-input7', children='Drawer item')]),
     html.Div(id='input7', children=[
@@ -91,7 +91,7 @@ app.layout = html.Div([
 
     spacer,
 
-    # Test for SDCheckbox
+    # Test for Checkbox
     html.Div(id='output8', children=[
         html.P('Box is not checked')
     ]),
@@ -99,7 +99,7 @@ app.layout = html.Div([
 
     spacer,
 
-    # Test for SDToggle
+    # Test for Toggle
     html.Div(children=[
         sd_material_ui.Toggle(id='input9', label='Johnny?'),
         html.Div(id='output9', children=[
@@ -115,7 +115,7 @@ app.layout = html.Div([
 
     spacer,
 
-    # Test for SDDropDownMenu and SDMenuItem (single selection)
+    # Test for DropDownMenu and MenuItem (single selection)
     html.Div(children=[
         sd_material_ui.DropDownMenu(id='input11',
                                     value=1,
@@ -140,7 +140,13 @@ app.layout = html.Div([
 
     spacer,
 
-    sd_material_ui.List.List
+    # Test for List and ListItem
+    sd_material_ui.List(id='input12', children=[
+        sd_material_ui.ListItem(id='input12-1', primaryText='First item'),
+        sd_material_ui.ListItem(id='input12-2', primaryText='Second item'),
+        sd_material_ui.ListItem(id='input12-3', primaryText='Third item'),
+    ]),
+    html.Div(id='output12', children=['Selected list item is: ']),
 
     final_spacer,
 ])
@@ -154,7 +160,7 @@ def display_output(value):
     return 'You have entered {}'.format(value)
 
 
-# Callback for SDDialog (modal)
+# Callback for Dialog (modal)
 @app.callback(
     dash.dependencies.Output('output2', 'open'),
     [dash.dependencies.Input('input2', 'n_clicks'),
@@ -171,7 +177,7 @@ def show_modal_dialog(modal_click: int, close_button: int, open_state: bool):
         return False
 
 
-# Callback for SDDialog (non-modal)
+# Callback for Dialog (non-modal)
 @app.callback(
     dash.dependencies.Output('non-modal-output', 'open'),
     [dash.dependencies.Input('non-modal-input', 'n_clicks')],
@@ -184,7 +190,7 @@ def show_non_modal_dialog(non_modal_click: int, open_state: bool):
         return False
 
 
-# Callback for SDRaisedButton
+# Callback for RaisedButton
 @app.callback(
     dash.dependencies.Output('output4', 'children'),
     [dash.dependencies.Input('input4', 'n_clicks')])
@@ -195,7 +201,7 @@ def display_clicks_raised(n_clicks_raised: int):
         return ['n_clicks value: ']
 
 
-# Callback for SDFlatButton
+# Callback for FlatButton
 @app.callback(
     dash.dependencies.Output('output5', 'children'),
     [dash.dependencies.Input('input5', 'n_clicks')])
@@ -206,7 +212,7 @@ def display_clicks_flat(n_clicks_flat: int):
         return ['n_clicks value: ']
 
 
-# Callback for SDDrawer (docked, secondary)
+# Callback for Drawer (docked, secondary)
 @app.callback(
     dash.dependencies.Output('output6', 'open'),
     [dash.dependencies.Input('input6', 'n_clicks')],
@@ -216,7 +222,7 @@ def operate_drawer(button_click, drawer_state):
         return not drawer_state
 
 
-# Callback for SDDrawer (not docked)
+# Callback for Drawer (not docked)
 @app.callback(
     dash.dependencies.Output('output7', 'open'),
     [dash.dependencies.Input('input7', 'n_clicks'),
@@ -230,7 +236,7 @@ def operate_drawer(button_click, menu_item_click, drawer_state):
         return False
 
 
-# Callback for SDCheckbox
+# Callback for Checkbox
 @app.callback(
     dash.dependencies.Output('output8', 'children'),
     [dash.dependencies.Input('input8', 'checked')])
@@ -241,7 +247,7 @@ def use_clickbox(checkbox):
         return ['Box is unchecked']
 
 
-# Callback for SDToggle
+# Callback for Toggle
 @app.callback(
     dash.dependencies.Output('output9', 'children'),
     [dash.dependencies.Input('input9', 'toggled')])
@@ -252,7 +258,7 @@ def use_toggle(switch):
         return ['Flame off']
 
 
-# Callback for SDSnackbar
+# Callback for Snackbar
 @app.callback(
     dash.dependencies.Output('snackbar', 'open'),
     [dash.dependencies.Input('input10', 'n_clicks')])
@@ -263,7 +269,7 @@ def open_snackbar(button_click: int):
         return False
 
 
-# Callback for SDSnackbar's action
+# Callback for Snackbar's action
 @app.callback(
     dash.dependencies.Output('output10', 'children'),
     [dash.dependencies.Input('snackbar', 'n_clicks')])
@@ -274,13 +280,30 @@ def click_snackbar(snackbar_click: str):
         return ['Looking...']
 
 
-# Callback for SDDropdownMenu and SDMenuItem
+# Callback for DropdownMenu and MenuItem
 @app.callback(
     dash.dependencies.Output('output11', 'children'),
     [dash.dependencies.Input('input11', 'value')],
     [dash.dependencies.State('input11', 'options')])
 def dropdown_callback(value, options):
     return ['Selection is: {}, {}'.format(value, options[value - 1]['customData'])]
+
+
+# Callback for List and ListItem
+@app.callback(
+    dash.dependencies.Output('output12', 'children'),
+    [dash.dependencies.Input('input12-1', 'primaryText'),
+     dash.dependencies.Input('input12-2', 'primaryText'),
+     dash.dependencies.Input('input12-3', 'primaryText')])
+def list_items_callback(item1, item2, item3):
+    selected = ''
+    if item1:
+        selected = item1
+    elif item2:
+        selected = item2
+    elif item3:
+        selected = item3
+    return ['Selected list item is: {}'.format(selected)]
 
 
 if __name__ == '__main__':
