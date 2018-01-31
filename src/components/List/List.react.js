@@ -1,7 +1,7 @@
 // @flow
 
 import React, { Component } from 'react';
-import PropTyes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import { List as MuiList } from 'material-ui/List';
 import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
@@ -29,17 +29,17 @@ const propTypes = {
   /**
    * These are usually ListItems that are passed to be part of the list.
    */
-  children: PropTyes.node,
+  children: PropTypes.node,
 
   /**
    * This element's ID
    */
-  id: PropTyes.string.isRequired,
+  id: PropTypes.string.isRequired,
 
   /**
    * Override the inline-styles of the root element.
    */
-  style: PropTyes.object,
+  style: PropTypes.object,
 };
 
 const defaultProps = {
