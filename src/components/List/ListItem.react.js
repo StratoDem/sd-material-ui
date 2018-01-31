@@ -331,7 +331,7 @@ const defaultProps = {
   disabledKeyboardFocus: false,
   disabled: false,
   fireEvent: () => {},
-  hoverColor: '',  // remove default?
+  hoverColor: '', // remove default?
   initiallyOpen: false,
   innerDivStyle: {},
   insetChildren: false,
@@ -382,8 +382,8 @@ export default class ListItem extends Component<Props, State> {
   render() {
     const {
       autoGenerateNestedIndicator, containerElement, disabledKeyboardFocus, disabled,
-      hoverColor, initiallyOpen, innerDivStyle, insetChildren, isKeyboardFocused, leftAvatar,
-      leftCheckbox, leftIcon, nestedItems, nestedListStyle, primaryTogglesNestedList,
+      hoverColor, id, initiallyOpen, innerDivStyle, insetChildren, isKeyboardFocused, leftAvatar,
+      leftCheckbox, leftIcon, nestedItems, nestedListStyle, primaryText, primaryTogglesNestedList,
       rightAvatar, rightIcon, rightIconButton, rightToggle, secondaryText, secondaryTextLines,
       style } = this.props;
     return (
@@ -405,9 +405,8 @@ export default class ListItem extends Component<Props, State> {
             nestedItems={nestedItems}
             nestedListStyle={nestedListStyle}
             onClick={this.handleClick}
-            onKeyboardFocus={}
-            onNestedListToggle={}
             open={this.state.open}
+            primaryText={primaryText}
             primaryTogglesNestedList={primaryTogglesNestedList}
             rightAvatar={rightAvatar}
             rightIcon={rightIcon}
