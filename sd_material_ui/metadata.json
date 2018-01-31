@@ -1906,6 +1906,63 @@
         "modifiers": [],
         "params": [],
         "returns": null
+      },
+      {
+        "name": "buildNestedItem",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "item",
+            "type": {
+              "name": "signature",
+              "type": "object",
+              "raw": "{\n  componentType?: 'FlatButton' | 'RaisedButton' | 'ListItem',\n  buttonProps?: Object,\n  listItemProps?: Object,\n}",
+              "signature": {
+                "properties": [
+                  {
+                    "key": "componentType",
+                    "value": {
+                      "name": "union",
+                      "raw": "'FlatButton' | 'RaisedButton' | 'ListItem'",
+                      "elements": [
+                        {
+                          "name": "literal",
+                          "value": "'FlatButton'"
+                        },
+                        {
+                          "name": "literal",
+                          "value": "'RaisedButton'"
+                        },
+                        {
+                          "name": "literal",
+                          "value": "'ListItem'"
+                        }
+                      ],
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "buttonProps",
+                    "value": {
+                      "name": "Object",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "listItemProps",
+                    "value": {
+                      "name": "Object",
+                      "required": false
+                    }
+                  }
+                ]
+              },
+              "alias": "SD_NESTED_ITEM"
+            }
+          }
+        ],
+        "returns": null
       }
     ],
     "props": {
@@ -2147,7 +2204,55 @@
         "required": false,
         "description": "An array of ListItems to nest underneath the current ListItem.",
         "flowType": {
-          "name": "Array"
+          "name": "Array",
+          "elements": [
+            {
+              "name": "signature",
+              "type": "object",
+              "raw": "{\n  componentType?: 'FlatButton' | 'RaisedButton' | 'ListItem',\n  buttonProps?: Object,\n  listItemProps?: Object,\n}",
+              "signature": {
+                "properties": [
+                  {
+                    "key": "componentType",
+                    "value": {
+                      "name": "union",
+                      "raw": "'FlatButton' | 'RaisedButton' | 'ListItem'",
+                      "elements": [
+                        {
+                          "name": "literal",
+                          "value": "'FlatButton'"
+                        },
+                        {
+                          "name": "literal",
+                          "value": "'RaisedButton'"
+                        },
+                        {
+                          "name": "literal",
+                          "value": "'ListItem'"
+                        }
+                      ],
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "buttonProps",
+                    "value": {
+                      "name": "Object",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "listItemProps",
+                    "value": {
+                      "name": "Object",
+                      "required": false
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "raw": "Array<SD_NESTED_ITEM>"
         },
         "defaultValue": {
           "value": "[]",

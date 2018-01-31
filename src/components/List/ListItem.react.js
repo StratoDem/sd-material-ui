@@ -105,7 +105,7 @@ type Props = {
   /**
    * An array of ListItems to nest underneath the current ListItem.
    */
-  nestedItems?: Array,
+  nestedItems?: Array<SD_NESTED_ITEM>,
 
   /**
    * Override the inline-styles of the nested items' NestedList.
@@ -394,22 +394,86 @@ export default class ListItem extends Component<Props, State> {
      * a valid React component to pass in, but only allows buttons, or more list items.
      */
 
+    // TODO need to figure out closures here so only the local value is updated
+    // during a callback
+
+    handleButtonClick = () => {
+      if (this.props.setProps) this.props.setProps();
+      if (this.props.fireEvent) this.props.fireEvent({event: 'click'});
+    };
+
     if (item.componentType === 'FlatButton') {
       return (
         <FlatButton
-          {...item.buttonProps}
+          backgroundColor={item.buttonProps.backgroundColor}
+          className={item.buttonProps.className}
+          disabled={item.buttonProps.disabled}
+          fullWidth={item.buttonProps.fullWidth}
+          hoverColor={item.buttonProps.hoverColor}
+          href={item.buttonProps.href}
+          icon={item.buttonProps.icon}
+          id={item.buttonProps.id}
+          label={item.buttonProps.label}
+          labelPosition={item.buttonProps.labelPosition}
+          labelStyle={item.buttonProps.labelStyle}
+          n_clicks={item.buttonProps.n_clicks}
+          onClick={this.handleButtonClick}
+          primary={item.buttonProps.primary}
+          rippleColor={item.buttonProps.rippleColor}
+          secondary={item.buttonProps.secondary}
+          style={item.buttonProps.style}
         />
       );
     } else if (item.componentType === 'RaisedButton') {
       return (
         <RaisedButton
-          {...item.buttonProps}
+          backgroundColor={item.buttonProps.backgroundColor}
+          className={item.buttonProps.className}
+          disabled={item.buttonProps.disabled}
+          fullWidth={item.buttonProps.fullWidth}
+          hoverColor={item.buttonProps.hoverColor}
+          href={item.buttonProps.href}
+          icon={item.buttonProps.icon}
+          id={item.buttonProps.id}
+          label={item.buttonProps.label}
+          labelPosition={item.buttonProps.labelPosition}
+          labelStyle={item.buttonProps.labelStyle}
+          n_clicks={item.buttonProps.n_clicks}
+          onClick={this.handleButtonClick}
+          primary={item.buttonProps.primary}
+          rippleColor={item.buttonProps.rippleColor}
+          secondary={item.buttonProps.secondary}
+          style={item.buttonProps.style}
         />
       );
     } else {
       return (
         <MuiListItem
-          {...item.listItemProps}
+          autoGenerateNestedIndicator={item.listItemProps.autoGenerateNestedIndicator}
+          containerElement={item.listItemProps.containerElement}
+          disabledKeyboardFocus={item.listItemProps.disabledKeyboardFocus}
+          disabled={item.listItemProps.disabled}
+          hoverColor={item.listItemProps.hoverColor}
+          initiallyOpen={item.listItemProps.initiallyOpen}
+          innerDivStyle={item.listItemProps.innerDivStyle}
+          insetChildren={item.listItemProps.insetChildren}
+          isKeyboardFocused={item.listItemProps.isKeyboardFocused}
+          leftAvatar={item.listItemProps.leftAvatar}
+          leftCheckbox={item.listItemProps.leftCheckbox}
+          leftIcon={item.listItemProps.leftIcon}
+          nestedItems={item.listItemProps.nestedItems.map(this.buildNestedItem)}
+          nestedListStyle={item.listItemProps.nestedListStyle}
+          onClick={this.handleClick}
+          open={this.state.open}
+          primaryText={item.listItemProps.primaryText}
+          primaryTogglesNestedList={item.listItemProps.primaryTogglesNestedList}
+          rightAvatar={item.listItemProps.rightAvatar}
+          rightIcon={item.listItemProps.rightIcon}
+          rightIconButton={item.listItemProps.rightIconButton}
+          rightToggle={item.listItemProps.rightToggle}
+          secondaryText={item.listItemProps.secondaryText}
+          secondaryTextLines={item.listItemProps.secondaryTextLines}
+          style={item.listItemProps.style}
         />
       );
     }
@@ -419,7 +483,7 @@ export default class ListItem extends Component<Props, State> {
     const {
       autoGenerateNestedIndicator, containerElement, disabledKeyboardFocus, disabled,
       hoverColor, id, initiallyOpen, innerDivStyle, insetChildren, isKeyboardFocused, leftAvatar,
-      leftCheckbox, leftIcon, nestedItems, nestedListStyle, primaryText, primaryTogglesNestedList,
+      leftCheckbox, leftIcon, nestedListStyle, primaryText, primaryTogglesNestedList,
       rightAvatar, rightIcon, rightIconButton, rightToggle, secondaryText, secondaryTextLines,
       style } = this.props;
     return (

@@ -142,7 +142,13 @@ app.layout = html.Div([
 
     # Test for List and ListItem
     sd_material_ui.List(id='input12', children=[
-        sd_material_ui.ListItem(id='input12-1', primaryText='First item'),
+        sd_material_ui.ListItem(id='input12-1', primaryText='First item',
+                                nestedItems=[
+                                    dict(componentType='RaisedButton',
+                                         buttonProps=dict(
+                                             id='testme1',
+                                             label='please'
+                                         ))]),
         sd_material_ui.ListItem(id='input12-2', primaryText='Second item'),
         sd_material_ui.ListItem(id='input12-3', primaryText='Third item')
     ]),
