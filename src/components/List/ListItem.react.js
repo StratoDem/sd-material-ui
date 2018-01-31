@@ -209,7 +209,7 @@ const propTypes = {
   /**
    * The element's ID.
    */
-  id: PropTypes.string,
+  id: PropTypes.string.isRequired,
 
   /**
    * If true, the nested ListItems are initially displayed.
@@ -269,7 +269,7 @@ const propTypes = {
    * This is the block element that contains the primary text. If a string is passed in,
    * a div tag will be rendered.
    */
-  primaryText: PropTypes.node,
+  primaryText: PropTypes.node.isRequired,
 
   /**
    * If true, clicking or tapping the primary text of the ListItem toggles the nested list.
