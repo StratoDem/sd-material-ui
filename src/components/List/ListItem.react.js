@@ -3,10 +3,18 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+import FlatButton from 'material-ui/FlatButton';
+import RaisedButton from 'material-ui/RaisedButton';
 import { ListItem as MuiListItem } from 'material-ui/List';
 import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
+
+type SD_NESTED_ITEM = {
+  componentType?: 'FlatButton' | 'RaisedButton' | 'ListItem',
+  buttonProps?: Object,
+  listItemProps?: Object,
+}
 
 type Props = {
   /**
@@ -379,6 +387,34 @@ export default class ListItem extends Component<Props, State> {
     this.handleChange(!this.props.open);
   };
 
+  buildNestedItem = (item: SD_NESTED_ITEM) => {
+    /**
+     * At this time, the list item cannot support nested items, and children passed to an
+     * item will appear above the primaryText. To allow for nesting, this func will build
+     * a valid React component to pass in, but only allows buttons, or more list items.
+     */
+
+    if (item.componentType === 'FlatButton') {
+      return (
+        <FlatButton
+          {...item.buttonProps}
+        />
+      );
+    } else if (item.componentType === 'RaisedButton') {
+      return (
+        <RaisedButton
+          {...item.buttonProps}
+        />
+      );
+    } else {
+      return (
+        <MuiListItem
+          {...item.listItemProps}
+        />
+      );
+    }
+  };
+
   render() {
     const {
       autoGenerateNestedIndicator, containerElement, disabledKeyboardFocus, disabled,
@@ -402,7 +438,7 @@ export default class ListItem extends Component<Props, State> {
             leftAvatar={leftAvatar}
             leftCheckbox={leftCheckbox}
             leftIcon={leftIcon}
-            nestedItems={nestedItems}
+            nestedItems={this.props.nestedItems.map(this.buildNestedItem)}
             nestedListStyle={nestedListStyle}
             onClick={this.handleClick}
             open={this.state.open}
