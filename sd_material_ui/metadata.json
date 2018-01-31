@@ -1976,7 +1976,7 @@
             }
           }
         },
-        "required": true,
+        "required": false,
         "description": "Dash-assigned callback that gets fired when the input changes.",
         "defaultValue": {
           "value": "() => {}",
@@ -2218,7 +2218,7 @@
             }
           }
         },
-        "required": true,
+        "required": false,
         "description": "Dash callback to update props on the server.",
         "defaultValue": {
           "value": "() => {}",

@@ -43,7 +43,7 @@ type Props = {
   /**
    * Dash-assigned callback that gets fired when the input changes.
    */
-  fireEvent: () => void,
+  fireEvent?: () => void,
 
   /**
    * Override the hover background color.
@@ -156,7 +156,7 @@ type Props = {
   /**
    * Dash callback to update props on the server.
    */
-  setProps: () => void,
+  setProps?: () => void,
 
   /**
    * Override the inline-styles of the root element.
