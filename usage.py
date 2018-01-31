@@ -144,7 +144,7 @@ app.layout = html.Div([
     sd_material_ui.List(id='input12', children=[
         sd_material_ui.ListItem(id='input12-1', primaryText='First item'),
         sd_material_ui.ListItem(id='input12-2', primaryText='Second item'),
-        sd_material_ui.ListItem(id='input12-3', primaryText='Third item'),
+        sd_material_ui.ListItem(id='input12-3', primaryText='Third item')
     ]),
     html.Div(id='output12', children=['Selected list item is: ']),
 
@@ -294,7 +294,7 @@ def dropdown_callback(value, options):
     dash.dependencies.Output('output12', 'children'),
     [dash.dependencies.Input('input12-1', 'primaryText'),
      dash.dependencies.Input('input12-2', 'primaryText'),
-     dash.dependencies.Input('input12-3', 'primaryText')])
+     dash.dependencies.Input('input12-3', 'open')])
 def list_items_callback(item1, item2, item3):
     selected = ''
     if item1:
