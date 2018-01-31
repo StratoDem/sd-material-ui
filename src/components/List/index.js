@@ -1,5 +1,5 @@
-import List from 'List.react';
-import ListItem from 'List.react';
+import List from './List.react';
+import ListItem from './ListItem.react';
 
 export {
   List,

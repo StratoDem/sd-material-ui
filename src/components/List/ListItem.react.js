@@ -175,11 +175,11 @@ const defaultProps = {
   disabledKeyboardFocus: false,
   disabled: false,
   fireEvent: () => {},
-  hoverColor: '',
+  hoverColor: '',  // remove default?
   initiallyOpen: false,
   innerDivStyle: {},
   insetChildren: false,
-  isKeyboardFocused: false,
+  isKeyboardFocused: null,
   leftAvatar: null,
   leftCheckbox: null,
   leftIcon: null,
@@ -197,10 +197,10 @@ const defaultProps = {
   style: {},
 };
 
-expoprt default class ListItem extends Component<Props, State> {
+export default class ListItem extends Component<Props, State> {
   constructor(props: Props) {
     super(props);
-    this.state = {open: this.props.open}
+    this.state = {open: this.props.open};
   }
 
   componentWillReceiveProps(nextProps: Props): void {
@@ -216,6 +216,11 @@ expoprt default class ListItem extends Component<Props, State> {
       setProps({open});
 
     this.setState({open});
+  };
+
+  handleClick = () => {
+    if (this.props.fireEvent) this.props.fireEvent({event: 'click'});
+    this.handleChange(!this.props.open);
   };
 
   render() {
