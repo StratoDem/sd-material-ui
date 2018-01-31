@@ -31,11 +31,7 @@ const defaultProps = {
 };
 
 export default class List extends Component<Props> {
-  constructor(props:Props) {
-    super(props);
-  }
-
-  render () {
+  render() {
     const { id, style } = this.props;
 
     return (
