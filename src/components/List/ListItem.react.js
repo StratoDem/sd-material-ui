@@ -320,10 +320,6 @@ const propTypes = {
   style: PropTypes.object,
 };
 
-type State = {
-  open: boolean,
-};
-
 const defaultProps = {
   autoGenerateNestedIndicator: true,
   children: null,
@@ -351,6 +347,10 @@ const defaultProps = {
   secondaryTextLines: 1,
   setProps: () => {},
   style: {},
+};
+
+type State = {
+  open: boolean,
 };
 
 export default class ListItem extends Component<Props, State> {
