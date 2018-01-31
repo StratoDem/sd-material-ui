@@ -4,6 +4,8 @@ import Dialog from './components/Dialog/Dialog.react';
 import Drawer from './components/Drawer/Drawer.react';
 import DropDownMenu from './components/DropDownMenu/DropDownMenu.react';
 import FlatButton from './components/FlatButton/FlatButton.react';
+import List from './components/List/List.react';
+import ListItem from './components/List/ListItem.react';
 import Snackbar from './components/Snackbar/Snackbar.react';
 import RaisedButton from './components/RaisedButton/RaisedButton.react';
 import Toggle from './components/Toggle/Toggle.react';
@@ -15,6 +17,8 @@ export {
   Drawer,
   DropDownMenu,
   FlatButton,
+  List,
+  ListItem,
   Snackbar,
   RaisedButton,
   Toggle,

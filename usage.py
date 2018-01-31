@@ -138,6 +138,10 @@ app.layout = html.Div([
     ], style=dict(backgroundColor='#1D3153')),
     html.Div(id='output11', children=['Selected item appears here.']),
 
+    spacer,
+
+    sd_material_ui.List.List
+
     final_spacer,
 ])
 
