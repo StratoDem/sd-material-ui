@@ -65,4 +65,5 @@ export default class List extends Component<Props> {
   }
 }
 
+List.propTypes = propTypes;
 List.defaultProps = defaultProps;

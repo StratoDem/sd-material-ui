@@ -424,4 +424,5 @@ export default class ListItem extends Component<Props, State> {
   }
 }
 
+ListItem.propTypes = propTypes;
 ListItem.defaultProps = defaultProps;
