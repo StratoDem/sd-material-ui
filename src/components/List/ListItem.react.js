@@ -326,7 +326,7 @@ type State = {
 
 const defaultProps = {
   autoGenerateNestedIndicator: true,
-  children: [],
+  children: null,
   containerElement: 'span',
   disabledKeyboardFocus: false,
   disabled: false,

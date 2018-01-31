@@ -1849,7 +1849,7 @@
         "required": false,
         "description": "These are usually ListItems that are passed to be part of the list.",
         "defaultValue": {
-          "value": "[]",
+          "value": "null",
           "computed": false
         }
       },
@@ -1918,7 +1918,7 @@
         "required": false,
         "description": "Children passed into the ListItem.",
         "defaultValue": {
-          "value": "[]",
+          "value": "null",
           "computed": false
         }
       },
