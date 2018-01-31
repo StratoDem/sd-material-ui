@@ -25,6 +25,23 @@ type Props = {
   style?: Object,
 };
 
+type propTypes = {
+  /**
+   * These are usually ListItems that are passed to be part of the list.
+   */
+  children: PropTyes.node,
+
+  /**
+   * This element's ID
+   */
+  id: PropTyes.string.isRequired,
+
+  /**
+   * Override the inline-styles of the root element.
+   */
+  style: PropTyes.object,
+};
+
 const defaultProps = {
   children: [],
   style: {},

@@ -164,6 +164,162 @@ type Props = {
   style?: Object,
 };
 
+type propTypes = {
+  /**
+   * If true, generate a nested-list-indicator icon when nested list items are detected.
+   * Note that an indicator will not be created if a rightIcon or rightIconButton has been
+   * provided to the element.
+   */
+  autoGenerateNestedIndicator: PropTyes.bool,
+
+  /**
+   * Children passed into the ListItem.
+   */
+  children: PropTyes.node,
+
+  /**
+   * The element to use as the container for the ListItem. Either a string to use a DOM element
+   * or a ReactElement. This is useful for wrapping the ListItem in a custom Link component.
+   * If a ReactElement is given, ensure that it passes all of its given props through to the
+   * underlying DOM element and renders its children prop for proper integration.
+   */
+  containerElement: PropTyes.oneOfType([PropTyes.string, PropTyes.element]),
+
+  /**
+   * If true, the element will not be able to be focused by the keyboard.
+   */
+  disabledKeyboardFocus: PropTyes.bool,
+
+  /**
+   * If true, the element will not be clickable and will not display hover effects.
+   * This is automatically disabled if either leftCheckbox or rightToggle is set.
+   */
+  disabled: PropTyes.bool,
+
+  /**
+   * Dash-assigned callback that gets fired when the input changes.
+   */
+  fireEvent: PropTyes.func,
+
+  /**
+   * Override the hover background color.
+   */
+  hoverColor: PropTyes.string,
+
+  /**
+   * The element's ID.
+   */
+  id: PropTyes.string,
+
+  /**
+   * If true, the nested ListItems are initially displayed.
+   */
+  initiallyOpen: PropTyes.bool,
+
+  /**
+   * Override the inline-styles of the inner div element.
+   */
+  innerDivStyle: PropTyes.object,
+
+  /**
+   * If true, the children will be indented by 72px. This is useful if there is no left
+   * avatar or left icon.
+   */
+  insetChildren: PropTyes.bool,
+
+  /**
+   * Use to control if the list item should render as keyboard focused. If undefined (default),
+   * this will be automatically managed. If provided, it will change the component's style.
+   * Note that this will not change the actual focus - and should only be used when you want to
+   * simulate keyboard focus (eg. in a rich text input autocomplete).
+   */
+  isKeyboardFocused: PropTyes.bool,
+
+  /**
+   * This is the Avatar element to be displayed on the left side.
+   */
+  leftAvatar: PropTyes.element,
+
+  /**
+   * This is the Checkbox element to be displayed on the left side.
+   */
+  leftCheckbox: PropTyes.element,
+
+  /**
+   * This is the SvgIcon or FontIcon to be displayed on the left side.
+   */
+  leftIcon: PropTyes.element,
+
+  /**
+   * An array of ListItems to nest underneath the current ListItem.
+   */
+  nestedItems: PropTyes.array,
+
+  /**
+   * Override the inline-styles of the nested items' NestedList.
+   */
+  nestedListStyle: PropTyes.object,
+
+  /**
+   * Control toggle state of nested list.
+   */
+  open: PropTyes.bool,
+
+  /**
+   * This is the block element that contains the primary text. If a string is passed in,
+   * a div tag will be rendered.
+   */
+  primaryText: PropTyes.node,
+
+  /**
+   * If true, clicking or tapping the primary text of the ListItem toggles the nested list.
+   */
+  primaryTogglesNestedList: PropTyes.bool,
+
+  /**
+   * This is the Avatar element to be displayed on the right side.
+   */
+  rightAvatar: PropTyes.element,
+
+  /**
+   * This is the SvgIcon or FontIcon to be displayed on the right side.
+   */
+  rightIcon: PropTyes.element,
+
+  /**
+   * This is the IconButton to be displayed on the right side. Hovering over this button will
+   * remove the ListItem hover. Also, clicking on this button will not trigger a ripple on the
+   * ListItem; the event will be stopped and prevented from bubbling up to cause a ListItem click.
+   */
+  rightIconButton: PropTyes.element,
+
+  /**
+   * This is the Toggle element to display on the right side.
+   */
+  rightToggle: PropTyes.element,
+
+  /**
+   * This is the block element that contains the secondary text. If a string is passed in,
+   * a div tag will be rendered.
+   */
+  secondaryText: PropTyes.node,
+
+  /**
+   * Can be 1 or 2. This is the number of secondary text lines before ellipsis will show.
+   */
+  secondaryTextLines: PropTyes.oneOf([1, 2]),
+
+  /**
+   * Dash callback to update props on the server.
+   */
+  setProps: PropTyes.func,
+
+  /**
+   * Override the inline-styles of the root element.
+   */
+  style: PropTyes.object,
+};
+
 type State = {
   open: boolean,
 };
