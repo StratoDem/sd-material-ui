@@ -164,7 +164,7 @@ type Props = {
   style?: Object,
 };
 
-type propTypes = {
+const propTypes = {
   /**
    * If true, generate a nested-list-indicator icon when nested list items are detected.
    * Note that an indicator will not be created if a rightIcon or rightIconButton has been

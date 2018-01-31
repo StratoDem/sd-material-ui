@@ -25,7 +25,7 @@ type Props = {
   style?: Object,
 };
 
-type propTypes = {
+const propTypes = {
   /**
    * These are usually ListItems that are passed to be part of the list.
    */
