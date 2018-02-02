@@ -11,9 +11,23 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
 type SD_NESTED_ITEM = {
-  componentType?: 'FlatButton' | 'RaisedButton' | 'ListItem',
-  buttonProps?: Object,
-  listItemProps?: Object,
+  /**
+   * This will specify which type of allowed nested item will be constructed.
+   */
+  componentType: 'FlatButton' | 'RaisedButton' | 'ListItem',
+
+  /**
+   * This number will serve only as the index location of the nested item in its parent's
+   * 'nestedItems' prop. It must be 0-indexed, and increment by 1, with only unique numbers
+   * used for each nested object. Any nested items inside other nested items must start the
+   * index value at 0 again.
+   */
+  index: number,
+
+  /**
+   * A container to hold all of the props passed to this nested item.
+   */
+  nestedProps: Object,
 }
 
 type Props = {
@@ -389,13 +403,16 @@ export default class ListItem extends Component<Props, State> {
 
   buildNestedItem = (item: SD_NESTED_ITEM) => {
     /**
-     * At this time, the list item cannot support nested items, and children passed to an
-     * item will appear above the primaryText. To allow for nesting, this func will build
-     * a valid React component to pass in, but only allows buttons, or more list items.
+     * At this time, the list item cannot support nested items built in Dash, and children
+     * passed to an item will appear above the primaryText. To allow for nesting, this func
+     * will build a valid React component to pass in, but only allows buttons, or more list items.
      */
 
-    // TODO need to figure out closures here so only the local value is updated
-    // during a callback
+    // TODO need to figure out how to update only the local value during a callback
+    // closures?
+
+    // the following line does not work
+    // if (this.props.setProps) this.props.setProps({nestedItems[item.index]: ...item.nestedProps })
 
     handleButtonClick = () => {
       if (this.props.setProps) this.props.setProps();
@@ -405,75 +422,75 @@ export default class ListItem extends Component<Props, State> {
     if (item.componentType === 'FlatButton') {
       return (
         <FlatButton
-          backgroundColor={item.buttonProps.backgroundColor}
-          className={item.buttonProps.className}
-          disabled={item.buttonProps.disabled}
-          fullWidth={item.buttonProps.fullWidth}
-          hoverColor={item.buttonProps.hoverColor}
-          href={item.buttonProps.href}
-          icon={item.buttonProps.icon}
-          id={item.buttonProps.id}
-          label={item.buttonProps.label}
-          labelPosition={item.buttonProps.labelPosition}
-          labelStyle={item.buttonProps.labelStyle}
-          n_clicks={item.buttonProps.n_clicks}
+          backgroundColor={item.nestedProps.backgroundColor}
+          className={item.nestedProps.className}
+          disabled={item.nestedProps.disabled}
+          fullWidth={item.nestedProps.fullWidth}
+          hoverColor={item.nestedProps.hoverColor}
+          href={item.nestedProps.href}
+          icon={item.nestedProps.icon}
+          id={item.nestedProps.id}
+          label={item.nestedProps.label}
+          labelPosition={item.nestedProps.labelPosition}
+          labelStyle={item.nestedProps.labelStyle}
+          n_clicks={item.nestedProps.n_clicks}
           onClick={this.handleButtonClick}
-          primary={item.buttonProps.primary}
-          rippleColor={item.buttonProps.rippleColor}
-          secondary={item.buttonProps.secondary}
-          style={item.buttonProps.style}
+          primary={item.nestedProps.primary}
+          rippleColor={item.nestedProps.rippleColor}
+          secondary={item.nestedProps.secondary}
+          style={item.nestedProps.style}
         />
       );
     } else if (item.componentType === 'RaisedButton') {
       return (
         <RaisedButton
-          backgroundColor={item.buttonProps.backgroundColor}
-          className={item.buttonProps.className}
-          disabled={item.buttonProps.disabled}
-          fullWidth={item.buttonProps.fullWidth}
-          hoverColor={item.buttonProps.hoverColor}
-          href={item.buttonProps.href}
-          icon={item.buttonProps.icon}
-          id={item.buttonProps.id}
-          label={item.buttonProps.label}
-          labelPosition={item.buttonProps.labelPosition}
-          labelStyle={item.buttonProps.labelStyle}
-          n_clicks={item.buttonProps.n_clicks}
+          backgroundColor={item.nestedProps.backgroundColor}
+          className={item.nestedProps.className}
+          disabled={item.nestedProps.disabled}
+          fullWidth={item.nestedProps.fullWidth}
+          hoverColor={item.nestedProps.hoverColor}
+          href={item.nestedProps.href}
+          icon={item.nestedProps.icon}
+          id={item.nestedProps.id}
+          label={item.nestedProps.label}
+          labelPosition={item.nestedProps.labelPosition}
+          labelStyle={item.nestedProps.labelStyle}
+          n_clicks={item.nestedProps.n_clicks}
           onClick={this.handleButtonClick}
-          primary={item.buttonProps.primary}
-          rippleColor={item.buttonProps.rippleColor}
-          secondary={item.buttonProps.secondary}
-          style={item.buttonProps.style}
+          primary={item.nestedProps.primary}
+          rippleColor={item.nestedProps.rippleColor}
+          secondary={item.nestedProps.secondary}
+          style={item.nestedProps.style}
         />
       );
     } else {
       return (
         <MuiListItem
-          autoGenerateNestedIndicator={item.listItemProps.autoGenerateNestedIndicator}
-          containerElement={item.listItemProps.containerElement}
-          disabledKeyboardFocus={item.listItemProps.disabledKeyboardFocus}
-          disabled={item.listItemProps.disabled}
-          hoverColor={item.listItemProps.hoverColor}
-          initiallyOpen={item.listItemProps.initiallyOpen}
-          innerDivStyle={item.listItemProps.innerDivStyle}
-          insetChildren={item.listItemProps.insetChildren}
-          isKeyboardFocused={item.listItemProps.isKeyboardFocused}
-          leftAvatar={item.listItemProps.leftAvatar}
-          leftCheckbox={item.listItemProps.leftCheckbox}
-          leftIcon={item.listItemProps.leftIcon}
-          nestedItems={item.listItemProps.nestedItems.map(this.buildNestedItem)}
-          nestedListStyle={item.listItemProps.nestedListStyle}
+          autoGenerateNestedIndicator={item.nestedProps.autoGenerateNestedIndicator}
+          containerElement={item.nestedProps.containerElement}
+          disabledKeyboardFocus={item.nestedProps.disabledKeyboardFocus}
+          disabled={item.nestedProps.disabled}
+          hoverColor={item.nestedProps.hoverColor}
+          initiallyOpen={item.nestedProps.initiallyOpen}
+          innerDivStyle={item.nestedProps.innerDivStyle}
+          insetChildren={item.nestedProps.insetChildren}
+          isKeyboardFocused={item.nestedProps.isKeyboardFocused}
+          leftAvatar={item.nestedProps.leftAvatar}
+          leftCheckbox={item.nestedProps.leftCheckbox}
+          leftIcon={item.nestedProps.leftIcon}
+          nestedItems={item.nestedProps.nestedItems.map(this.buildNestedItem)}
+          nestedListStyle={item.nestedProps.nestedListStyle}
           onClick={this.handleClick}
           open={this.state.open}
-          primaryText={item.listItemProps.primaryText}
-          primaryTogglesNestedList={item.listItemProps.primaryTogglesNestedList}
-          rightAvatar={item.listItemProps.rightAvatar}
-          rightIcon={item.listItemProps.rightIcon}
-          rightIconButton={item.listItemProps.rightIconButton}
-          rightToggle={item.listItemProps.rightToggle}
-          secondaryText={item.listItemProps.secondaryText}
-          secondaryTextLines={item.listItemProps.secondaryTextLines}
-          style={item.listItemProps.style}
+          primaryText={item.nestedProps.primaryText}
+          primaryTogglesNestedList={item.nestedProps.primaryTogglesNestedList}
+          rightAvatar={item.nestedProps.rightAvatar}
+          rightIcon={item.nestedProps.rightIcon}
+          rightIconButton={item.nestedProps.rightIconButton}
+          rightToggle={item.nestedProps.rightToggle}
+          secondaryText={item.nestedProps.secondaryText}
+          secondaryTextLines={item.nestedProps.secondaryTextLines}
+          style={item.nestedProps.style}
         />
       );
     }
