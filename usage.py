@@ -280,4 +280,5 @@ def dropdown_callback(value, options):
 
 
 if __name__ == '__main__':
+    print(sd_material_ui.BottomNavigation.__doc__)
     app.run_server(debug=True)

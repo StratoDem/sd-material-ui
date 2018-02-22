@@ -1,5 +1,3 @@
 import BottomNavigation from './BottomNavigation.react';
 
-export {
-  BottomNavigation,
-};
+export default BottomNavigation;

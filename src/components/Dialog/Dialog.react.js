@@ -1,7 +1,6 @@
 // @flow
 
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 
 import MuiDialog from 'material-ui/Dialog';
 import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
@@ -9,43 +8,25 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
 type Props = {
-  id: string,
-  actions?: Node,
-  children?: Node,
-  className?: string,
-  modal?: boolean,
-  open?: boolean,
-  setProps?: (props: { modal?: boolean, open?: boolean }) => void,
-};
-
-const propTypes = {
   /** Dialog ID */
-  id: PropTypes.string.isRequired,
-
+  id: string,
   /** Actions component or list of components for the Dialog */
-  actions: PropTypes.oneOfType([PropTypes.node, PropTypes.arrayOf(PropTypes.node)]),
-
-  /**
-   * The css class name of the root element.
-   */
-  className: PropTypes.string,
-
-  /** Is the Dialog a modal (must click on an action to close the Dialog)? */
-  modal: PropTypes.bool,
-
+  actions?: Node | Array<Node>,
+  /** Children to render inside of the Dialog */
+  children?: Node,
+  /** CSS class name of the root element */
+  className?: string,
+  /** Is the Dialog a modal (must click on an action to close)? */
+  modal?: boolean,
   /** Is the dialog open?
- * IMPORTANT: When using this component in Dash, a listener must be set up (either as state or
- * an input) for this component's props.open value in order to achieve the desired behavior.
- * If such a listener is not in place, the non-modal version of this dialog will contaminate
- * other callbacks in the browser
- */
-  open: PropTypes.bool,
-
+   * IMPORTANT: When using this component in Dash, a listener must be set up (either as state or
+   * an input) for this component's props.open value in order to achieve the desired behavior.
+   * If such a listener is not in place, the non-modal version of this dialog will contaminate
+   * other callbacks in the browser
+   */
+  open?: boolean,
   /** Dash callback to update props on the server */
-  setProps: PropTypes.func,
-
-  /** children of the Dialog */
-  children: PropTypes.node,
+  setProps?: (props: { modal?: boolean, open?: boolean }) => void,
 };
 
 type State = {
@@ -102,5 +83,4 @@ export default class Dialog extends Component<Props, State> {
   }
 }
 
-Dialog.propTypes = propTypes;
 Dialog.defaultProps = defaultProps;
