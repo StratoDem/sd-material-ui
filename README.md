@@ -15,6 +15,9 @@ Dash wrappers around the excellent [`material-ui`](https://github.com/mui-org/ma
 - [x] [`Snackbar`](http://www.material-ui.com/#/components/snackbar)
 - [x] [`Toggle`](http://www.material-ui.com/#/components/toggle)
 
+## Examples
+![sd-material-ui examples](https://github.com/StratoDem/sd-material-ui/blob/8b1bf6587f7977c41be414e92ef594ec55768657/Peek%202018-02-22%2010-49.gif)
+
 ## Dash
 
 Go to this link to learn about [Dash][].
