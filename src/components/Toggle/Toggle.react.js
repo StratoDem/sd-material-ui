@@ -1,7 +1,6 @@
 // @flow
 
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 
 import MuiToggle from 'material-ui/Toggle';
 import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
@@ -9,110 +8,40 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
 type Props = {
+  /** Toggle disabled? */
   disabled?: boolean,
+  /** Override the inline style of the Toggle element */
   elementStyle?: Object,
+  /** Dash event handler for click events */
   fireEvent?: () => void,
+  /** Override the inline style of the Icon element */
   iconStyle?: Object,
+  /** Element ID */
   id: string,
+  /** Override the inline styles of the input element */
   inputStyle?: Object,
+  /** Label for toggle */
   label?: Node,
-  labelPosition?: string,
+  /** Where the label will be placed next to the toggle */
+  labelPosition?: 'left' | 'right',
+  /** Override the inline styles of the Toggle element label */
   labelStyle?: Object,
+  /** Override ripple style on click */
   rippleStyle?: Object,
+  /** Dash callback to update props */
   setProps?: () => void,
+  /** Override the inline styles of the root element */
   style?: Object,
+  /** Override style for thumb */
   thumbStyle?: Object,
+  /** Override the inline styles for thumb when the toggle switches */
   thumbSwitchedStyle?: Object,
+  /** Toggled on if true */
   toggled?: boolean,
+  /** Override the inline style for track */
   trackStyle?: Object,
+  /** Override the inline styles for track when the toggle switches */
   trackSwitchedStyle?: Object,
-};
-
-const propTypes = {
-  /**
-   * Will disable the toggle if true.
-   */
-  disabled: PropTypes.bool,
-
-  /**
-   * Overrides the inline-styles of the Toggle element.
-   */
-  elementStyle: PropTypes.objectOf(PropTypes.any),
-
-  /**
-   * A callback for firing events to dash.
-   */
-  fireEvent: PropTypes.func,
-
-  /**
-   * Overrides the inline-styles of the Icon element.
-   */
-  iconStyle: PropTypes.objectOf(PropTypes.any),
-
-  /**
-   * The element's ID
-   */
-  id: PropTypes.string.isRequired,
-
-  /**
-   * Overrides the inline-styles of the input element.
-   */
-  inputStyle: PropTypes.objectOf(PropTypes.any),
-
-  /**
-   * Label for toggle.
-   */
-  label: PropTypes.node,
-
-  /**
-   * Where the label will be placed next to the toggle.
-   */
-  labelPosition: PropTypes.string,
-
-  /**
-   * Overrides the inline-styles of the Toggle element label.
-   */
-  labelStyle: PropTypes.objectOf(PropTypes.any),
-
-  /**
-   * Override style of ripple.
-   */
-  rippleStyle: PropTypes.objectOf(PropTypes.any),
-
-  /**
-   * Dash callback to update props on the server.
-   */
-  setProps: PropTypes.func,
-
-  /**
-   * Override the inline-styles of the root element.
-   */
-  style: PropTypes.objectOf(PropTypes.any),
-
-  /**
-   * Override style for thumb.
-   */
-  thumbStyle: PropTypes.objectOf(PropTypes.any),
-
-  /**
-   * Override the inline styles for thumb when the toggle switch is toggled on.
-   */
-  thumbSwitchedStyle: PropTypes.objectOf(PropTypes.any),
-
-  /**
-   * Toggled if set to true.
-   */
-  toggled: PropTypes.bool,
-
-  /**
-   * Override style for track.
-   */
-  trackStyle: PropTypes.objectOf(PropTypes.any),
-
-  /**
-   * Override the inline styles for track when the toggle switch is toggled on.
-   */
-  trackSwitchedStyle: PropTypes.objectOf(PropTypes.any),
 };
 
 type State = {
@@ -190,34 +119,31 @@ export default class Toggle extends Component<Props, State> {
           </MuiThemeProvider>
         </div>
       );
-    } else {
-      return (
-        <div id={id}>
-          <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
-            <MuiToggle
-              disabled={disabled}
-              elementStyle={elementStyle}
-              iconStyle={iconStyle}
-              inputStyle={inputStyle}
-              label={label}
-              labelposition={labelPosition}
-              labelStyle={labelStyle}
-              onToggle={(event: object, isInputChecked: boolean) =>
-                this.setState({switched: isInputChecked})}
-              rippleStyle={rippleStyle}
-              style={style}
-              thumbStyle={thumbStyle}
-              thumbSwitchedStyle={thumbSwitchedStyle}
-              toggled={this.state.switched}
-              trackStyle={trackStyle}
-              trackSwitchedStyle={trackSwitchedStyle}
-            />
-          </MuiThemeProvider>
-        </div>
-      );
     }
+    return (
+      <div id={id}>
+        <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
+          <MuiToggle
+            disabled={disabled}
+            elementStyle={elementStyle}
+            iconStyle={iconStyle}
+            inputStyle={inputStyle}
+            label={label}
+            labelposition={labelPosition}
+            labelStyle={labelStyle}
+            onToggle={(event: object, isInputChecked: boolean) =>
+              this.setState({switched: isInputChecked})}
+            rippleStyle={rippleStyle}
+            style={style}
+            thumbStyle={thumbStyle}
+            thumbSwitchedStyle={thumbSwitchedStyle}
+            toggled={this.state.switched}
+            trackStyle={trackStyle}
+            trackSwitchedStyle={trackSwitchedStyle}
+          />
+        </MuiThemeProvider>
+      </div>);
   }
 }
 
-Toggle.propTypes = propTypes;
 Toggle.defaultProps = defaultProps;

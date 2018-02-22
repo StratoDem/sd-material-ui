@@ -1,5 +1,3 @@
 import RaisedButton from './RaisedButton.react';
 
-export {
-  RaisedButton,
-};
+export default RaisedButton;

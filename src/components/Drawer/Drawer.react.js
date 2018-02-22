@@ -1,7 +1,6 @@
 // @flow
 
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 
 import MuiDrawer from 'material-ui/Drawer';
 import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
@@ -9,110 +8,51 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
 type Props = {
+  /** The contents to render inside the Drawer */
   children?: Node,
+  /** The CSS class name of the root element */
   className?: string,
+  /** The CSS class name of the container element */
   containerclassName?: string,
+  /** Override the inline styles of the container element */
   containerStyle?: Object,
+  /** If true, swiping sideways when the Drawer is closed will not open it */
   disableSwipeToOpen?: boolean,
+  /** If true, the Drawer will be docked. In this state, the overlay won't show and clicking on a
+   * menu item will not close the Drawer. */
   docked?: boolean,
+  /** Component ID */
   id: string,
+  /** If true, the Drawer is opened. Whether true or false,
+   * this guarantees that the Drawer is a controlled component */
   open?: boolean,
+  /** If true, the Drawer is positioned to open from the opposite side */
   openSecondary?: boolean,
+  /** The CSS class name to add to the Overlay component that is rendered behind the Drawer */
   overlayClassName?: string,
+  /** Override the inline-styles of the Overlay component that is rendered behind the Drawer */
   overlayStyle?: Object,
+  /** Dash callback to update props */
   setProps?: () => void,
+  /** Override the inline styles of the root element */
   style?: Object,
-  swipeAreaWidth?: number,
-  width?: string | number,
-  zDepth?: number,
-}
-
-const propTypes = {
-  /**
-   * The contents of the Drawer
-   */
-  children: PropTypes.node,
-
-  /**
-   * The CSS class name of the root element.
-   */
-  className: PropTypes.string,
-
-  /**
-   * The CSS class name of the container element.
-   */
-  containerclassName: PropTypes.string,
-
-  /**
-   * Override the inline-styles of the container element.
-   */
-  containerStyle: PropTypes.objectOf(PropTypes.any),
-
-  /**
-   * If true, swiping sideways when the Drawer is closed will not open it.
-   */
-  disableSwipeToOpen: PropTypes.bool,
-
-  /**
-   * If true, the Drawer will be docked. In this state, the overlay won't show and clicking on a
-   * menu item will not close the Drawer.
-   */
-  docked: PropTypes.bool,
-
-  /**
-   *
-   */
-  id: PropTypes.string.isRequired,
-
-  /**
-   * If true, the Drawer is opened. Whether true or false, ensures that the drawer is a controlled
-   * component.
-   */
-  open: PropTypes.bool,
-
-  /**
-   * If true, the Drawer is positioned to open from the opposite side.
-   */
-  openSecondary: PropTypes.bool,
-
-  /**
-   * The CSS class name to add to the Overlay component that is rendered behind the Drawer.
-   */
-  overlayClassName: PropTypes.string,
-
-  /**
-   * Override the inline-styles of the Overlay component that is rendered behind the Drawer.
-   */
-  overlayStyle: PropTypes.objectOf(PropTypes.any),
-
-  /**
-   * Dash callback to update props on the server.
-   */
-  setProps: PropTypes.func,
-
-  /**
-   * Override the inline-styles of the root element.
-   */
-  style: PropTypes.objectOf(PropTypes.any),
-
   /**
    * The width of the left most (or right most) area in pixels where the Drawer can be swiped
    * open from. Setting this to null spans that area to the entire page (CAUTION! Setting this
    * property to null might cause issues with sliders and swipeable Tabs: use at your own risk).
    */
-  swipeAreaWidth: PropTypes.number,
-
+  swipeAreaWidth?: number,
   /**
    * The width of the Drawer in pixels or percentage in string format ex. 50% to fill half of the
    * window or 100% and so on. Defaults to using the values from theme.
    */
-  width: PropTypes.oneOf([PropTypes.string, PropTypes.number]),
-
+  width?: string | number,
   /**
    * The zDepth of the Drawer.
    */
-  zDepth: PropTypes.number,
-};
+  zDepth?: number,
+}
+
 
 type State = {
   open: boolean,
@@ -189,5 +129,4 @@ export default class Drawer extends Component<Props, State> {
   }
 }
 
-Drawer.propTypes = propTypes;
 Drawer.defaultProps = defaultProps;

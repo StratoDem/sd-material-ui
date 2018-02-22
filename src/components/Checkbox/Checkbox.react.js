@@ -1,7 +1,6 @@
 // @flow
 
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 
 import MuiCheckbox from 'material-ui/Checkbox';
 import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
@@ -9,74 +8,28 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
 type Props = {
+  /** Checkbox is checked if true */
   checked?: boolean,
+  /** Checkbox is disabled if true */
   disabled?: boolean,
+  /** A callback for firing events to dash */
   fireEvent?: () => void,
+  /** Overrides the inline-styles of the icon element */
   iconStyle?: Object,
+  /** The element's ID */
   id: string,
+  /** Overrides the inline styles of the input element */
   inputStyle?: Object,
+  /** The text label for the checkbox */
   label?: string,
-  labelPosition?: string,
+  /** Where the label will be placed next to the checkbox */
+  labelPosition?: 'left' | 'right',
+  /** Overrides the inline styles of the Checkbox element label */
   labelStyle?: Object,
+  /** Dash callback to update props on the server */
   setProps?: () => void,
+  /** Override the inline styles of the root element */
   style?: Object,
-};
-
-const propTypes = {
-  /**
-   * Checkbox is checked if true.
-   */
-  checked: PropTypes.bool,
-
-  /**
-   * Disabled if true.
-   */
-  disabled: PropTypes.bool,
-
-  /**
-   * A callback for firing events to dash.
-   */
-  fireEvent: PropTypes.func,
-
-  /**
-   * Overrides the inline-styles of the icon element.
-   */
-  iconStyle: PropTypes.objectOf(PropTypes.any),
-
-  /**
-   * The element's ID
-   */
-  id: PropTypes.string.isRequired,
-
-  /**
-   * Overrides the inline-styles of the input element.
-   */
-  inputStyle: PropTypes.objectOf(PropTypes.any),
-
-  /**
-   * The text label for the checkbox
-   */
-  label: PropTypes.string,
-
-  /**
-   * Where the label will be placed next to the checkbox.
-   */
-  labelPosition: PropTypes.string,
-
-  /**
-   * Overrides the inline-styles of the Checkbox element label.
-   */
-  labelStyle: PropTypes.objectOf(PropTypes.any),
-
-  /**
-   * Dash callback to update props on the server
-   */
-  setProps: PropTypes.func,
-
-  /**
-   * Override the inline-styles of the root element.
-   */
-  style: PropTypes.objectOf(PropTypes.any),
 };
 
 type State = {
@@ -138,27 +91,25 @@ export default class Checkbox extends Component<Props, State> {
             />
           </MuiThemeProvider>
         </div>);
-    } else {
-      return (
-        <div id={id}>
-          <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
-            <MuiCheckbox
-              checked={this.state.checked}
-              disabled={disabled}
-              iconStyle={iconStyle}
-              inputStyle={inputStyle}
-              label={label}
-              labelPosition={labelPosition}
-              labelStyle={labelStyle}
-              onCheck={(event: object, isInputChecked: boolean) =>
-                this.setState({checked: isInputChecked})}
-              style={style}
-            />
-          </MuiThemeProvider>
-        </div>);
     }
+    return (
+      <div id={id}>
+        <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
+          <MuiCheckbox
+            checked={this.state.checked}
+            disabled={disabled}
+            iconStyle={iconStyle}
+            inputStyle={inputStyle}
+            label={label}
+            labelPosition={labelPosition}
+            labelStyle={labelStyle}
+            onCheck={(event: object, isInputChecked: boolean) =>
+              this.setState({checked: isInputChecked})}
+            style={style}
+          />
+        </MuiThemeProvider>
+      </div>);
   }
 }
 
-Checkbox.propTypes = propTypes;
 Checkbox.defaultProps = defaultProps;

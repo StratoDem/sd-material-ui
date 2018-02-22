@@ -1,12 +1,12 @@
-import BottomNavigation from './components/BottomNavigation/BottomNavigation.react';
-import Checkbox from './components/Checkbox/Checkbox.react';
-import Dialog from './components/Dialog/Dialog.react';
-import Drawer from './components/Drawer/Drawer.react';
-import DropDownMenu from './components/DropDownMenu/DropDownMenu.react';
-import FlatButton from './components/FlatButton/FlatButton.react';
-import Snackbar from './components/Snackbar/Snackbar.react';
-import RaisedButton from './components/RaisedButton/RaisedButton.react';
-import Toggle from './components/Toggle/Toggle.react';
+import BottomNavigation from './components/BottomNavigation';
+import Checkbox from './components/Checkbox';
+import Dialog from './components/Dialog';
+import Drawer from './components/Drawer';
+import DropDownMenu from './components/DropDownMenu';
+import FlatButton from './components/FlatButton';
+import Snackbar from './components/Snackbar';
+import RaisedButton from './components/RaisedButton';
+import Toggle from './components/Toggle';
 
 export {
   BottomNavigation,

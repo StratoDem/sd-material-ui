@@ -1,7 +1,6 @@
 // @flow
 
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 
 import {
   BottomNavigationItem,
@@ -12,66 +11,49 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
 type T_NAV_ITEM = {
+  /** Label to use for the navigation item */
   label: string,
-  icon: Element | string,
+  /** Icon to display for the navigation item */
+  icon: Node | string,
+  /** Value for the navigation item */
   value: string | number,
+  /** ID of component to jump to when this option is selected */
   targetId?: string,
+  /** Class to apply to the icon span */
   iconClassName?: string,
 }
 type Props = {
-  navItems: Array<T_NAV_ITEM>,
-
-  setProps?: (props: { selectedIndex: number }) => void,
-  selectedIndex?: number,
-  selectedStyle?: Object,
-};
-type State = {
-  selectedIndex: number,
-};
-
-const propTypes = {
-  /**
-   * The ID used to identify this compnent in Dash callbacks
-   */
-  id: PropTypes.string.isRequired,
-
+  /** The ID used to identify this component in Dash callbacks */
+  id: string,
   /** Array of navigation item props to pass to BottomNavigationItem */
-  navItems: PropTypes.arrayOf(PropTypes.shape({
-    label: PropTypes.string,
-    icon: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
-    value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-    /** ID of component to jump to when this option is selected */
-    targetId: PropTypes.string,
-    /** Class to apply to the icon span */
-    iconClassName: PropTypes.string,
-  })).isRequired,
-
+  navItems: Array<T_NAV_ITEM>,
   /** Initial selected index for the BottomNavigation */
-  selectedIndex: PropTypes.number,
-
+  selectedIndex?: number,
   /** Style to apply to the selected icon */
-  selectedStyle: PropTypes.objectOf(PropTypes.any),
+  selectedStyle?: Object,
 
   /**
    * Dash-assigned callback that should be called whenever any of the
    * properties change
    */
-  setProps: PropTypes.func.isRequired,
+  setProps?: (props: { selectedIndex: number }) => void,
+};
+type State = {
+  selectedIndex: number,
+};
+
+const defaultProps = {
+  selectedIndex: 0,
+  setProps: () => {},
+  selectedStyle: {},
 };
 
 /**
  * BottomNavigationItem is an item in a BottomNavigation component
  */
-export default class BottomNavigation extends React.Component<Props, State> {
+export default class BottomNavigation extends Component<Props, State> {
   props: Props;
   state: State;
-
-  static defaultProps = {
-    selectedIndex: 0,
-    setProps: () => {
-    },
-    selectedStyle: {},
-  };
 
   constructor(props: Props) {
     super(props);
@@ -116,7 +98,7 @@ export default class BottomNavigation extends React.Component<Props, State> {
         label={navItem.label}
         icon={navItemIcon}
         onClick={() => {
-          this.setState({selectedIndex});
+          this.setState({selectedIndex: selectedIndex});
 
           if (typeof navItem.targetId === 'string') {
             const targetElement = document.getElementById(navItem.targetId);
@@ -124,7 +106,7 @@ export default class BottomNavigation extends React.Component<Props, State> {
           }
 
           if (typeof this.props.setProps === 'function')
-            this.props.setProps({selectedIndex});
+            this.props.setProps({selectedIndex: selectedIndex});
         }}
       />);
   };
@@ -145,4 +127,4 @@ export default class BottomNavigation extends React.Component<Props, State> {
   }
 }
 
-BottomNavigation.propTypes = propTypes;
+BottomNavigation.defaultProps = defaultProps;
