@@ -6,10 +6,14 @@ Dash wrappers around the excellent [`material-ui`](https://github.com/mui-org/ma
 
 ## Material-UI components ported to Dash
 - [x] [`BottomNavigation`](http://www.material-ui.com/#/components/bottom-navigation)
+- [x] [`Checkbox`](http://www.material-ui.com/#/components/checkbox)
 - [x] [`FlatButton`](http://www.material-ui.com/#/components/flat-button)
 - [x] [`RaisedButton`](http://www.material-ui.com/#/components/raised-button)
 - [x] [`Dialog`](http://www.material-ui.com/#/components/dialog)
-- [ ] Drawer
+- [x] [`DropDownMenu`](http://www.material-ui.com/#/components/dropdown-menu)
+- [x] [`Drawer`](http://www.material-ui.com/#/components/drawer)
+- [x] [`Snackbar`](http://www.material-ui.com/#/components/snackbar)
+- [x] [`Toggle`](http://www.material-ui.com/#/components/toggle)
 
 ## Dash
 
