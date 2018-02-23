@@ -102,6 +102,8 @@ type Props = {
   underlineStyle?: Object,
   /** The value of the selected menu item. */
   value: any,
+  /** Component id */
+  id?: string,
 };
 
 type State = {

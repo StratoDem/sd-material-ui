@@ -2,6 +2,10 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 2.1.2 - 2018-02-22
+### Changed
+- Add `id` as a prop to `DropDownMenu`
+
 ## 2.1.1 - 2018-02-22
 ### Changed
 - Updated README and added example

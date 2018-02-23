@@ -1016,7 +1016,7 @@
         "flowType": {
           "name": "string"
         },
-        "required": true,
+        "required": false,
         "description": "The element's ID."
       },
       "labelStyle": {
