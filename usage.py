@@ -51,7 +51,7 @@ app.layout = html.Div([
 
     # Test SDRaisedButton
     html.Div(children=[
-        html.P(id='output4', children=['n_clicks value: '])
+        html.P(id='output4', children=['n_clicks value: . n_clicks_previous value: '])
     ]),
     html.Div(children=[
         sd_material_ui.RaisedButton(id='input4',
@@ -64,9 +64,15 @@ app.layout = html.Div([
 
     # Test SDFlatButton
     html.Div(children=[
-        html.P(id='output5', children=['n_clicks value: '])
+        html.P(id='output5', children=['n_clicks value: . n_clicks_previous value: '])
     ]),
     sd_material_ui.FlatButton(id='input5', label='Click me', backgroundColor='orange'),
+
+    # Test buttons together to see which was clicked
+    html.Div(children=[
+        html.P(id='output4-5', children=['Which button was clicked? ']),
+        html.P(id='output4-5-b', children=['Clicked values for flat () and raised () buttons'])
+    ]),
 
     spacer,
 
@@ -183,10 +189,12 @@ def show_non_modal_dialog(non_modal_click: int, open_state: bool):
 # Callback for SDRaisedButton
 @app.callback(
     dash.dependencies.Output('output4', 'children'),
-    [dash.dependencies.Input('input4', 'n_clicks')])
-def display_clicks_raised(n_clicks_raised: int):
+    [dash.dependencies.Input('input4', 'n_clicks')],
+    [dash.dependencies.State('input4', 'n_clicks_previous')])
+def display_clicks_raised(n_clicks_raised: int, n_clicks_raised_prev: int):
     if n_clicks_raised:
-        return ['n_clicks value: {}'.format(n_clicks_raised)]
+        return ['n_clicks value: {}. n_clicks_previous value: {}'.format(n_clicks_raised,
+                                                                         n_clicks_raised_prev)]
     else:
         return ['n_clicks value: ']
 
@@ -194,12 +202,49 @@ def display_clicks_raised(n_clicks_raised: int):
 # Callback for SDFlatButton
 @app.callback(
     dash.dependencies.Output('output5', 'children'),
-    [dash.dependencies.Input('input5', 'n_clicks')])
-def display_clicks_flat(n_clicks_flat: int):
+    [dash.dependencies.Input('input5', 'n_clicks')],
+    [dash.dependencies.State('input5', 'n_clicks_previous')])
+def display_clicks_flat(n_clicks_flat: int, n_clicks_flat_prev: int):
     if n_clicks_flat:
-        return ['n_clicks value: {}'.format(n_clicks_flat)]
+        return ['n_clicks value: {}. n_clicks_prev value: {}'.format(n_clicks_flat,
+                                                                     n_clicks_flat_prev)]
     else:
         return ['n_clicks value: ']
+
+
+# Callback for combined button test
+@app.callback(
+    dash.dependencies.Output('output4-5', 'children'),
+    [dash.dependencies.Input('input4', 'n_clicks'),
+     dash.dependencies.Input('input5', 'n_clicks')],
+    [dash.dependencies.State('input4', 'n_clicks_previous'),
+     dash.dependencies.State('input5', 'n_clicks_previous')])
+def determine_button_callback(raised_n_clicks: int, flat_n_clicks: int,
+                              raised_n_clicks_prev: int, flat_n_clicks_prev: int) -> list:
+
+    if raised_n_clicks > raised_n_clicks_prev:
+        return ['Which button was clicked? Raised button']
+    elif raised_n_clicks and not raised_n_clicks_prev:
+        return ['Which button was clicked? Raised button']
+    elif flat_n_clicks > flat_n_clicks_prev:
+        return ['Which button was clicked? Flat button']
+    elif flat_n_clicks and not flat_n_clicks_prev:
+        return ['Which button was clicked? Flat button']
+    else:
+        return ['Which button was clicked? ']
+
+
+# Callback for combined button test secondary
+@app.callback(
+    dash.dependencies.Output('output4-5-b', 'children'),
+    [dash.dependencies.Input('input4', 'n_clicks'),
+     dash.dependencies.Input('input5', 'n_clicks')],
+    [dash.dependencies.State('input4', 'n_clicks_previous'),
+     dash.dependencies.State('input5', 'n_clicks_previous')])
+def determine_button_callback(raised_n_clicks: int, flat_n_clicks: int,
+                              raised_n_clicks_prev: int, flat_n_clicks_prev: int) -> list:
+    return ['Clicked values for flat ({}-{}) and raised ({}-{}) buttons'.format(
+        flat_n_clicks, flat_n_clicks_prev, raised_n_clicks, raised_n_clicks_prev)]
 
 
 # Callback for SDDrawer (docked, secondary)
@@ -280,5 +325,4 @@ def dropdown_callback(value, options):
 
 
 if __name__ == '__main__':
-    print(sd_material_ui.BottomNavigation.__doc__)
     app.run_server(debug=True)
