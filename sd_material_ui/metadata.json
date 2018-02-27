@@ -1482,6 +1482,17 @@
           "computed": false
         }
       },
+      "n_clicks_previous": {
+        "flowType": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "An integer that represents the previous number of times this element has been clicked",
+        "defaultValue": {
+          "value": "0",
+          "computed": false
+        }
+      },
       "primary": {
         "flowType": {
           "name": "boolean"
@@ -1764,6 +1775,17 @@
         },
         "required": false,
         "description": "An integer that represents the number of times this element has been clicked",
+        "defaultValue": {
+          "value": "0",
+          "computed": false
+        }
+      },
+      "n_clicks_previous": {
+        "flowType": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "An integer that represents the previous number of times this element has been clicked",
         "defaultValue": {
           "value": "0",
           "computed": false

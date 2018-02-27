@@ -53,6 +53,8 @@ type Props = {
   labelStyle?: Object,
   /** An integer that represents the number of times this element has been clicked */
   n_clicks?: number,
+  /** An integer that represents the previous number of times this element has been clicked */
+  n_clicks_previous?: number,
   /** Override the inline style of the button overlay */
   overlayStyle?: Object,
   /** If true, the button will use the theme's primary color */
@@ -89,6 +91,7 @@ const defaultProps = {
   labelPosition: 'after',
   labelStyle: {},
   n_clicks: 0,
+  n_clicks_previous: 0,
   overlayStyle: {},
   primary: false,
   rippleStyle: {},
@@ -106,6 +109,7 @@ export default class RaisedButton extends React.Component<Props> {
   handleClick() {
     if (this.props.setProps) this.props.setProps({n_clicks: this.props.n_clicks + 1});
     if (this.props.fireEvent) this.props.fireEvent({event: 'click'});
+    if (this.props.setProps) this.props.setProps({n_clicks_previous: this.props.n_clicks + 1});
   }
 
   render() {
