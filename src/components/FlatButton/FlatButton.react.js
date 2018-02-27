@@ -46,6 +46,8 @@ type Props = {
   labelStyle?: Object,
   /** An integer that represents the number fo times that this element has been clicked */
   n_clicks?: number,
+  /** An integer that represents the previous number of times this element has been clicked */
+  n_clicks_previous?: number,
   /** If true, colors button according to primaryTextColor from the MuiTheme */
   primary?: boolean,
   /** Color for the ripple when the button is clicked */
@@ -75,6 +77,7 @@ const defaultProps = {
   labelPosition: 'after',
   labelStyle: {},
   n_clicks: 0,
+  n_clicks_previous: 0,
   primary: false,
   rippleColor: '',
   secondary: false,
@@ -91,6 +94,7 @@ export default class FlatButton extends Component<Props> {
   handleClick() {
     if (this.props.setProps) this.props.setProps({n_clicks: this.props.n_clicks + 1});
     if (this.props.fireEvent) this.props.fireEvent({event: 'click'});
+    if (this.props.setProps) this.props.setProps({n_clicks_previous: this.props.n_clicks + 1});
   }
 
   render() {

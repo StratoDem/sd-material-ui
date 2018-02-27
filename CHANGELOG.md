@@ -2,6 +2,11 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 2.2.0 - 2018-02-27
+### Added
+- Add `n_clicks_previous` prop to Flat and Raised buttons
+- Add new tests in `usage.py` to demonstrate behavior of new prop
+
 ## 2.1.2 - 2018-02-22
 ### Changed
 - Add `id` as a prop to `DropDownMenu`
