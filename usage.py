@@ -221,14 +221,13 @@ def display_clicks_flat(n_clicks_flat: int, n_clicks_flat_prev: int):
      dash.dependencies.State('input5', 'n_clicks_previous')])
 def determine_button_callback(raised_n_clicks: int, flat_n_clicks: int,
                               raised_n_clicks_prev: int, flat_n_clicks_prev: int) -> list:
-
-    if raised_n_clicks > raised_n_clicks_prev:
+    if raised_n_clicks is not None and not raised_n_clicks_prev:
         return ['Which button was clicked? Raised button']
-    elif raised_n_clicks and not raised_n_clicks_prev:
+    elif flat_n_clicks is not None and not flat_n_clicks_prev:
+        return ['Which button was clicked? Flat button']
+    elif raised_n_clicks > raised_n_clicks_prev:
         return ['Which button was clicked? Raised button']
     elif flat_n_clicks > flat_n_clicks_prev:
-        return ['Which button was clicked? Flat button']
-    elif flat_n_clicks and not flat_n_clicks_prev:
         return ['Which button was clicked? Flat button']
     else:
         return ['Which button was clicked? ']
