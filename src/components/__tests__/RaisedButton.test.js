@@ -50,6 +50,6 @@ describe('RaisedButton', () => {
       <RaisedButton id='test-id' label='myButton' n_clicks_previous={1} setProps={mockProps} />);
 
     component.find(MuiRaisedButton).simulate('click');
-    expect(mockProps).toHaveBeenCalledWith({n_clicks: 2});
+    expect(mockProps).toHaveBeenCalledWith({n_clicks_previous: 2});
   });
 });
