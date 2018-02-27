@@ -47,7 +47,7 @@ describe('RaisedButton', () => {
   it('increments n_clicks_previous', () => {
     const mockProps = jest.fn();
     const component = shallow(
-      <RaisedButton id='test-id' label='myButton' n_clicks_previous={1} setProps={mockProps} />);
+      <RaisedButton id='test-id' label='myButton' n_clicks={1} n_clicks_previous={1} setProps={mockProps} />);
 
     component.find(MuiRaisedButton).simulate('click');
     expect(mockProps).toHaveBeenCalledWith({n_clicks_previous: 2});

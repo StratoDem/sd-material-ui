@@ -61,4 +61,13 @@ describe('FlatButton', () => {
     component.find(MuiFlatButton).simulate('click');
     expect(mockProps).toHaveBeenCalledWith({n_clicks: 2});
   });
+
+  it('increments n_clicks_previous', () => {
+    const mockProps = jest.fn();
+    const component = shallow(
+      <FlatButton id='test-id' label='myButton' n_clicks={1} n_clicks_previous={1} setProps={mockProps} />);
+
+    component.find(MuiFlatButton).simulate('click');
+    expect(mockProps).toHaveBeenCalledWith({n_clicks_previous: 2});
+  });
 });
