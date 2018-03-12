@@ -62,6 +62,11 @@ app.layout = html.Div([
 
     spacer,
 
+    #Test SDDivider
+    sd_material_ui.Divider(),
+
+    spacer,
+
     # Test SDFlatButton
     html.Div(children=[
         html.P(id='output5', children=['n_clicks value: . n_clicks_previous value: '])
