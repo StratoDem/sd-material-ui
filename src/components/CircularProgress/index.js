@@ -1,3 +1,3 @@
-import CircularProgress from "./CircularProgress.react.js";
+import CircularProgress from './CircularProgress.react.js';
 
 export default CircularProgress;

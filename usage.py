@@ -33,6 +33,11 @@ app.layout = html.Div([
 
     spacer,
 
+    # Test SDCircularProgress
+    sd_material_ui.CircularProgress(mode='indeterminate'),
+
+    spacer,
+
     # Test SDDialog (modal)
     sd_material_ui.Dialog(
         html.Div(children=[

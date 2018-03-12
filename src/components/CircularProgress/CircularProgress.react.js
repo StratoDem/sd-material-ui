@@ -1,6 +1,8 @@
+// @flow
+
 import React, { Component } from 'react';
 
-import MUICircularProgress from 'material_ui/CircularProgress';
+import MUICircularProgress from 'material-ui/CircularProgress';
 import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
@@ -21,8 +23,34 @@ type Props = {
 };
 
 const defaultProps = {
-  color: {},
+  color: '#00BCD4',
   innerStyle: {},
+  // mode: 'indeterminate',
   size: 40,
+  style: {},
+  thickness: 3.5,
+};
 
+export default class CircularProgress extends Component<Props> {
+  props: Props;
+
+  render() {
+    const {color, innerStyle, mode, size, style, thickness} = this.props;
+
+    return (
+      <div>
+        <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
+          <MUICircularProgress
+            color={color}
+            innerStyle={innerStyle}
+            mode={mode}
+            size={size}
+            style={style}
+            thickness={thickness}
+          />
+        </MuiThemeProvider>
+      </div>);
+  }
 }
+
+CircularProgress.defaultProps = defaultProps;
