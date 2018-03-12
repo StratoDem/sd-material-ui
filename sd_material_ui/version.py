@@ -9,4 +9,4 @@ Notes :
 December 28, 2017
 """
 
-__version__ = '2.2.0'
+__version__ = '2.3.1'

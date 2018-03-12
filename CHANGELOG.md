@@ -2,6 +2,10 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 2.3.1 - 2018-03-13
+### Fixes
+- Fixes versioning issue with `version.py`
+
 ## 2.3.0 - 2018-03-12
 ### Added
 - Add Divider component
