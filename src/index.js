@@ -1,6 +1,7 @@
 import BottomNavigation from './components/BottomNavigation';
 import Checkbox from './components/Checkbox';
 import Dialog from './components/Dialog';
+import Divider from './components/Divider';
 import Drawer from './components/Drawer';
 import DropDownMenu from './components/DropDownMenu';
 import FlatButton from './components/FlatButton';
@@ -12,6 +13,7 @@ export {
   BottomNavigation,
   Checkbox,
   Dialog,
+  Divider,
   Drawer,
   DropDownMenu,
   FlatButton,

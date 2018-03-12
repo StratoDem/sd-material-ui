@@ -542,6 +542,35 @@
       }
     }
   },
+  "src/components/Divider/Divider.react.js": {
+    "description": "",
+    "displayName": "Divider",
+    "methods": [],
+    "props": {
+      "inset": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "If true, the Divider will be indented",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "style": {
+        "flowType": {
+          "name": "Object"
+        },
+        "required": false,
+        "description": "Override the inline-styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      }
+    }
+  },
   "src/components/Drawer/Drawer.react.js": {
     "description": "",
     "displayName": "Drawer",
