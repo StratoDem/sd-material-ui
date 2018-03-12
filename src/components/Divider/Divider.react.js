@@ -2,36 +2,30 @@
 
 import React, { Component } from 'react';
 
-import {
-  MUIDivider,
-} from 'material-ui/Divider';
+import MUIDivider from 'material-ui/Divider';
 import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
 type Props = {
   /** If true, the Divider will be indented */
-  inset?: bool,
+  inset?: boolean,
   /** Override the inline-styles of the root element */
   style?: Object,
 };
 
 const defaultProps = {
-  inset: False,
+  inset: false,
   style: {},
 };
 
 export default class Divider extends Component<Props> {
   props: Props;
 
-  constructor(props: Props) {
-    super(props);
-  }
-
   render() {
     const {inset, style} = this.props;
 
-    return(
+    return (
       <div>
         <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
           <MUIDivider
@@ -44,5 +38,4 @@ export default class Divider extends Component<Props> {
 }
 
 Divider.defaultProps = defaultProps;
-
 

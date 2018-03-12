@@ -554,8 +554,8 @@
         "required": false,
         "description": "If true, the Divider will be indented",
         "defaultValue": {
-          "value": "False",
-          "computed": true
+          "value": "false",
+          "computed": false
         }
       },
       "style": {

@@ -24,6 +24,15 @@ app.layout = html.Div([
 
     spacer,
 
+    # Test SDDivider
+    sd_material_ui.Divider(),
+
+    spacer,
+
+    sd_material_ui.Divider(inset=True),
+
+    spacer,
+
     # Test SDDialog (modal)
     sd_material_ui.Dialog(
         html.Div(children=[
@@ -59,11 +68,6 @@ app.layout = html.Div([
                                       primary=True,
                                       buttonStyle=dict(width=50)),
     ], style=dict(backgroundColor='#1D3153')),
-
-    spacer,
-
-    #Test SDDivider
-    sd_material_ui.Divider(),
 
     spacer,
 
