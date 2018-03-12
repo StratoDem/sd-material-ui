@@ -2,9 +2,13 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## 2.3.0 - 2018-03-12
+## 2.4.0 - 2018-03-12
 ### Added
 - Add Divider component
+
+## 2.3.0 - 2018-03-12
+### Changed
+- nothing (skipped version 2.3.0)
 
 ## 2.2.0 - 2018-02-27
 ### Added
