@@ -393,6 +393,76 @@
       }
     }
   },
+  "src/components/CircularProgress/CircularProgress.react.js": {
+    "description": "",
+    "displayName": "CircularProgress",
+    "methods": [],
+    "props": {
+      "color": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Override the progress's color",
+        "defaultValue": {
+          "value": "'#00BCD4'",
+          "computed": false
+        }
+      },
+      "innerStyle": {
+        "flowType": {
+          "name": "Object"
+        },
+        "required": false,
+        "description": "Style for inner wrapper div",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "mode": {
+        "flowType": {
+          "name": "literal",
+          "value": "'indeterminate'"
+        },
+        "required": true,
+        "description": "The mode of show your progress, for now, will always be indeterminate"
+      },
+      "size": {
+        "flowType": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "The diameter of the progress in pixels",
+        "defaultValue": {
+          "value": "40",
+          "computed": false
+        }
+      },
+      "style": {
+        "flowType": {
+          "name": "Object"
+        },
+        "required": false,
+        "description": "Override the inline-style of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "thickness": {
+        "flowType": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Stroke width in pixels",
+        "defaultValue": {
+          "value": "3.5",
+          "computed": false
+        }
+      }
+    }
+  },
   "src/components/Dialog/Dialog.react.js": {
     "description": "",
     "displayName": "Dialog",
@@ -537,6 +607,35 @@
         "description": "Dash callback to update props on the server",
         "defaultValue": {
           "value": "() => {}",
+          "computed": false
+        }
+      }
+    }
+  },
+  "src/components/Divider/Divider.react.js": {
+    "description": "",
+    "displayName": "Divider",
+    "methods": [],
+    "props": {
+      "inset": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "If true, the Divider will be indented",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "style": {
+        "flowType": {
+          "name": "Object"
+        },
+        "required": false,
+        "description": "Override the inline-styles of the root element",
+        "defaultValue": {
+          "value": "{}",
           "computed": false
         }
       }

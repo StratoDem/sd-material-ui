@@ -34,7 +34,11 @@ app.layout = html.Div([
     spacer,
 
     # Test SDCircularProgress
-    sd_material_ui.CircularProgress(mode='indeterminate'),
+    sd_material_ui.CircularProgress(mode='indeterminate'), # can only use indeterminate mode
+
+    spacer,
+
+    sd_material_ui.CircularProgress(mode='indeterminate', size=100, thickness=14),
 
     spacer,
 
@@ -235,7 +239,9 @@ def display_clicks_flat(n_clicks_flat: int, n_clicks_flat_prev: int):
      dash.dependencies.State('input5', 'n_clicks_previous')])
 def determine_button_callback(raised_n_clicks: int, flat_n_clicks: int,
                               raised_n_clicks_prev: int, flat_n_clicks_prev: int) -> list:
-    if raised_n_clicks is not None and not raised_n_clicks_prev:
+    if raised_n_clicks is None and flat_n_clicks is None:
+        return ['Which button was clicked?']
+    elif raised_n_clicks is not None and not raised_n_clicks_prev:
         return ['Which button was clicked? Raised button']
     elif flat_n_clicks is not None and not flat_n_clicks_prev:
         return ['Which button was clicked? Flat button']

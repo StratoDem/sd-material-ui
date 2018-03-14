@@ -25,7 +25,6 @@ type Props = {
 const defaultProps = {
   color: '#00BCD4',
   innerStyle: {},
-  // mode: 'indeterminate',
   size: 40,
   style: {},
   thickness: 3.5,
