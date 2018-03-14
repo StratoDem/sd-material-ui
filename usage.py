@@ -86,6 +86,12 @@ app.layout = html.Div([
     ]),
     sd_material_ui.FlatButton(id='input5', label='Click me', backgroundColor='orange'),
 
+    # Test SDIconButton
+    html.Div(children=[
+        html.P(id='output12', children=['n_clicks value: . n_clicks_previous value: '])
+    ]),
+    sd_material_ui.IconButton(id='input12',)
+
     # Test buttons together to see which was clicked
     html.Div(children=[
         html.P(id='output4-5', children=['Which button was clicked? ']),

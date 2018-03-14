@@ -6,6 +6,7 @@ import Divider from './components/Divider';
 import Drawer from './components/Drawer';
 import DropDownMenu from './components/DropDownMenu';
 import FlatButton from './components/FlatButton';
+import IconButton from './components/IconButton';
 import Snackbar from './components/Snackbar';
 import RaisedButton from './components/RaisedButton';
 import Toggle from './components/Toggle';
@@ -19,6 +20,7 @@ export {
   Drawer,
   DropDownMenu,
   FlatButton,
+  IconButton,
   Snackbar,
   RaisedButton,
   Toggle,

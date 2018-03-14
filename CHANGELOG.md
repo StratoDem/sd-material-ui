@@ -7,7 +7,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Add CircularProgress Component
 
 ### Changed
-- Change usage.py button test to avoid NoneType Erro
+- Change usage.py button test to avoid NoneType Error
 
 ## 2.3.1 - 2018-03-13
 ### Fixes
