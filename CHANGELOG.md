@@ -2,6 +2,13 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 2.4.0 - 2018-03-14
+### Added
+- Add CircularProgress Component
+
+### Changed
+- Change usage.py button test to avoid NoneType Error
+
 ## 2.3.0 - 2018-03-12
 ### Added
 - Add Divider component
