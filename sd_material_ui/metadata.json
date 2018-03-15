@@ -1657,6 +1657,68 @@
       }
     }
   },
+  "src/components/FontIcon/FontIcon.react.js": {
+    "description": "",
+    "displayName": "FontIcon",
+    "methods": [],
+    "props": {
+      "color": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "font color of the font icon;\nIf not specified, this component will default\nto muiTheme.palette.textColor",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "className": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "defines specific icon when using custom icon font\nor defines font when using public icon font",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "hoverColor": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "icon color when the mouse hovers over the icon",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "iconFont": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "defines specific icon when using public icon font",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "style": {
+        "flowType": {
+          "name": "Object"
+        },
+        "required": false,
+        "description": "override inline-styles of root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      }
+    }
+  },
   "src/components/IconButton/IconButton.react.js": {
     "description": "",
     "displayName": "IconButton",
