@@ -90,12 +90,17 @@ app.layout = html.Div([
     html.Div(children=[
         html.P(id='output12', children=['n_clicks value: . n_clicks_previous value: '])
     ]),
-    sd_material_ui.IconButton(id='input12',)
+    sd_material_ui.IconButton(id='input12', children=['help'],
+                              iconStyle={'color':'orange', 'width': 48, 'height': 48},
+                              tooltip='click for more information', touch=True,
+                              tooltipPosition='bottom-right'),
 
     # Test buttons together to see which was clicked
     html.Div(children=[
-        html.P(id='output4-5', children=['Which button was clicked? ']),
-        html.P(id='output4-5-b', children=['Clicked values for flat () and raised () buttons'])
+        html.P(id='output4-5-12',
+               children=['Which button was clicked? ']),
+        html.P(id='output4-5-12-b',
+               children=['Clicked values for flat () and raised () and icon () buttons'])
     ]),
 
     spacer,
@@ -236,40 +241,64 @@ def display_clicks_flat(n_clicks_flat: int, n_clicks_flat_prev: int):
         return ['n_clicks value: ']
 
 
+# Callback for SDIconButton
+@app.callback(
+    dash.dependencies.Output('output12', 'children'),
+    [dash.dependencies.Input('input12', 'n_clicks')],
+    [dash.dependencies.State('input12', 'n_clicks_previous')])
+def display_clicks_icon(n_clicks_icon: int, n_clicks_icon_prev: int):
+    if n_clicks_icon:
+        return ['n_clicks value: {}. n_clicks_prev value: {}'.format(n_clicks_icon,
+                                                                     n_clicks_icon_prev)]
+    else:
+        return ['n_clicks value: ']
+
+
 # Callback for combined button test
 @app.callback(
-    dash.dependencies.Output('output4-5', 'children'),
+    dash.dependencies.Output('output4-5-12', 'children'),
     [dash.dependencies.Input('input4', 'n_clicks'),
-     dash.dependencies.Input('input5', 'n_clicks')],
+     dash.dependencies.Input('input5', 'n_clicks'),
+     dash.dependencies.Input('input12', 'n_clicks')],
     [dash.dependencies.State('input4', 'n_clicks_previous'),
-     dash.dependencies.State('input5', 'n_clicks_previous')])
-def determine_button_callback(raised_n_clicks: int, flat_n_clicks: int,
-                              raised_n_clicks_prev: int, flat_n_clicks_prev: int) -> list:
-    if raised_n_clicks is None and flat_n_clicks is None:
+     dash.dependencies.State('input5', 'n_clicks_previous'),
+     dash.dependencies.State('input12', 'n_clicks_previous')])
+def determine_button_callback(raised_n_clicks: int, flat_n_clicks: int, icon_n_clicks: int,
+                              raised_n_clicks_prev: int, flat_n_clicks_prev: int,
+                              icon_n_clicks_prev: int) -> list:
+    if raised_n_clicks is None and flat_n_clicks is None and icon_n_clicks is None:
         return ['Which button was clicked?']
     elif raised_n_clicks is not None and not raised_n_clicks_prev:
         return ['Which button was clicked? Raised button']
     elif flat_n_clicks is not None and not flat_n_clicks_prev:
         return ['Which button was clicked? Flat button']
+    elif icon_n_clicks is not None and not icon_n_clicks_prev:
+        return ['Which button was clicked? Icon button']
     elif raised_n_clicks > raised_n_clicks_prev:
         return ['Which button was clicked? Raised button']
     elif flat_n_clicks > flat_n_clicks_prev:
         return ['Which button was clicked? Flat button']
+    elif icon_n_clicks > icon_n_clicks_prev:
+        return ['Which button was clicked? Icon button']
     else:
         return ['Which button was clicked? ']
 
 
 # Callback for combined button test secondary
 @app.callback(
-    dash.dependencies.Output('output4-5-b', 'children'),
+    dash.dependencies.Output('output4-5-12-b', 'children'),
     [dash.dependencies.Input('input4', 'n_clicks'),
-     dash.dependencies.Input('input5', 'n_clicks')],
+     dash.dependencies.Input('input5', 'n_clicks'),
+     dash.dependencies.Input('input12', 'n_clicks')],
     [dash.dependencies.State('input4', 'n_clicks_previous'),
-     dash.dependencies.State('input5', 'n_clicks_previous')])
-def determine_button_callback(raised_n_clicks: int, flat_n_clicks: int,
-                              raised_n_clicks_prev: int, flat_n_clicks_prev: int) -> list:
-    return ['Clicked values for flat ({}-{}) and raised ({}-{}) buttons'.format(
-        flat_n_clicks, flat_n_clicks_prev, raised_n_clicks, raised_n_clicks_prev)]
+     dash.dependencies.State('input5', 'n_clicks_previous'),
+     dash.dependencies.State('input12', 'n_clicks_previous')])
+def determine_button_callback(raised_n_clicks: int, flat_n_clicks: int, icon_n_clicks: int,
+                              raised_n_clicks_prev: int, flat_n_clicks_prev: int,
+                              icon_n_clicks_prev: int) -> list:
+    return ['Clicked values for flat ({}-{}) and raised ({}-{}) and icon ({}-{}) buttons'.format(
+        flat_n_clicks, flat_n_clicks_prev, raised_n_clicks,
+        raised_n_clicks_prev, icon_n_clicks, icon_n_clicks_prev)]
 
 
 # Callback for SDDrawer (docked, secondary)

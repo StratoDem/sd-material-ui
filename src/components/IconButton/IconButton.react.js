@@ -2,13 +2,15 @@
 
 import React, { Component } from 'react';
 
-import MuiIconButton from 'material-ui/FlatButton';
+import MuiIconButton from 'material-ui/IconButton';
 import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
 type Props = {
-  /** Can be used to pass a FontIcon element as the icon for the button */
+  /** Used to pass a FontIcon element as the icon for the button
+   * See method 3 at http://www.material-ui.com/#/components/icon-button
+   */
   children?: Node,
   /** The CSS class name of the root element */
   className?: string,
@@ -61,7 +63,7 @@ const defaultProps = {
   fireEvent: () => {},
   hoveredStyle: {},
   href: '',
-  iconClassName: '',
+  iconClassName: 'material-icons',
   iconStyle: {},
   n_clicks: 0,
   n_clicks_previous: 0,
