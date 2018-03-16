@@ -1,5 +1,6 @@
 import BottomNavigation from './components/BottomNavigation';
 import Checkbox from './components/Checkbox';
+import CircularProgress from './components/CircularProgress';
 import Dialog from './components/Dialog';
 import Divider from './components/Divider';
 import Drawer from './components/Drawer';
@@ -12,6 +13,7 @@ import Toggle from './components/Toggle';
 export {
   BottomNavigation,
   Checkbox,
+  CircularProgress,
   Dialog,
   Divider,
   Drawer,
