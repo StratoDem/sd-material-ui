@@ -4,15 +4,6 @@ import dash_html_components as html
 
 app = dash.Dash('')
 
-external_css = ["https://fonts.googleapis.com/icon?family=Material+Icons",
-
-                # importing local css
-                'icon.css'
-                ]
-
-for css in external_css:
-    app.css.append_css({"external_url": css})
-
 app.scripts.config.serve_locally = True
 
 spacer = html.Div(children=[], style=dict(height=20))
@@ -52,11 +43,7 @@ app.layout = html.Div([
     spacer,
 
     # Test FontIcon
-    sd_material_ui.FontIcon(className="muidocs-icon-custom-github"),
-
-    spacer,
-
-    sd_material_ui.FontIcon(className="material-icons", iconFont="settings"),
+    sd_material_ui.FontIcon(className="material-icons", iconName="settings", hoverColor='blue'), # only works for public icons
 
     spacer,
 
@@ -112,6 +99,7 @@ app.layout = html.Div([
                               iconStyle={'color':'orange', 'width': 48, 'height': 48},
                               tooltip='click for more information', touch=True,
                               tooltipPosition='bottom-right'),
+
 
     # Test buttons together to see which was clicked
     html.Div(children=[

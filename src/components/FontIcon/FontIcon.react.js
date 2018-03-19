@@ -20,7 +20,7 @@ type Props = {
   /** icon color when the mouse hovers over the icon */
   hoverColor?: string,
   /** defines specific icon when using public icon font */
-  iconFont?: string,
+  iconName?: string,
   /** override inline-styles of root element */
   style?: Object,
 };
@@ -29,7 +29,7 @@ const defaultProps = {
   color: '',
   className: '',
   hoverColor: '',
-  iconFont: '',
+  iconName: '',
   style: {},
 };
 
@@ -37,7 +37,7 @@ export default class FontIcon extends Component<Props> {
   props: Props;
 
   render() {
-    const {color, className, hoverColor, iconFont, style} = this.props;
+    const {color, className, hoverColor, iconName, style} = this.props;
 
     return (
       <div>
@@ -47,8 +47,8 @@ export default class FontIcon extends Component<Props> {
             className={className}
             hoverColor={hoverColor}
             style={style}
-            >
-            {this.props.iconFont}
+          >
+            {this.props.iconName}
           </MUIFontIcon>
         </MuiThemeProvider>
       </div>
