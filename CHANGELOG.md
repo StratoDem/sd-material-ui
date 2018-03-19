@@ -2,6 +2,13 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 2.6.0 - 2018-03-19
+### Added
+- Add FontIcon Component
+
+### Changed
+- change `IconButton.react.js` documentation to notify user that FontIcon cannot be passed as param
+
 ## 2.5.0 - 2018-03-15
 ### Added
 - Add IconButton Component
