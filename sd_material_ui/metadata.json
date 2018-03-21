@@ -1,4 +1,256 @@
 {
+  "src/components/AutoComplete/AutoComplete.react.js": {
+    "description": "",
+    "displayName": "AutoComplete",
+    "methods": [],
+    "props": {
+      "anchorOrigin": {
+        "flowType": {
+          "name": "unknown"
+        },
+        "required": false,
+        "description": "Location of the anchor for the auto complete",
+        "defaultValue": {
+          "value": "{vertical: 'bottom', horizontal: 'left',}",
+          "computed": false
+        }
+      },
+      "animated": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "If ture, auto complete is animated as it is toggled",
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        }
+      },
+      "dataSource": {
+        "flowType": {
+          "name": "Array"
+        },
+        "required": false,
+        "description": "Array of strings or nodes used to populate the list",
+        "defaultValue": {
+          "value": "[]",
+          "computed": false
+        }
+      },
+      "dataSourceConfig": {
+        "flowType": {
+          "name": "Object"
+        },
+        "required": false,
+        "description": "Config for objects list dataSource",
+        "defaultValue": {
+          "value": "{text: 'text', value: 'value',}",
+          "computed": false
+        }
+      },
+      "disableFocusRipple": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Disables focus ripple when true",
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        }
+      },
+      "errorStyle": {
+        "flowType": {
+          "name": "Object"
+        },
+        "required": false,
+        "description": "Override style prop for error",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "errorText": {
+        "flowType": {
+          "name": "Node"
+        },
+        "required": false,
+        "description": "The error content to display",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "floatingLabelText": {
+        "flowType": {
+          "name": "Node"
+        },
+        "required": false,
+        "description": "The content to use for adding floating label element",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "fullWidth": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "If true, field receives the property width: 100%",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "hintText": {
+        "flowType": {
+          "name": "Node"
+        },
+        "required": false,
+        "description": "The hint content to display",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "id": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "Autocomplete ID"
+      },
+      "listStyle": {
+        "flowType": {
+          "name": "Object"
+        },
+        "required": false,
+        "description": "Override style for list",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "maxSearchResults": {
+        "flowType": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "The max number of search results to be shown. By default it shows\nall the items which matches filter"
+      },
+      "menuCloseDelay": {
+        "flowType": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Delay for closing time of the menu",
+        "defaultValue": {
+          "value": "300",
+          "computed": false
+        }
+      },
+      "menuProps": {
+        "flowType": {
+          "name": "Object"
+        },
+        "required": false,
+        "description": "Props to be passed to menu",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "menuStyle": {
+        "flowType": {
+          "name": "Object"
+        },
+        "required": false,
+        "description": "Override style for menu",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "open": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Auto complete menu is open if true",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "openOnFocus": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "If true, the list item is showed when a focus event triggers",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "popoverProps": {
+        "flowType": {
+          "name": "Object"
+        },
+        "required": false,
+        "description": "Props to be passed to popover",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "searchText": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Text being input to auto complete",
+        "defaultValue": {
+          "value": "\"\"",
+          "computed": false
+        }
+      },
+      "style": {
+        "flowType": {
+          "name": "Object"
+        },
+        "required": false,
+        "description": "Override the inline-styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "targetOrigin": {
+        "flowType": {
+          "name": "unknown"
+        },
+        "required": false,
+        "description": "Origin for location of target",
+        "defaultValue": {
+          "value": "{vertical: 'top', horizontal: 'left',}",
+          "computed": false
+        }
+      },
+      "textFieldStyle": {
+        "flowType": {
+          "name": "Object"
+        },
+        "required": false,
+        "description": "Override the inline-styles of AutoComplete's TextField element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      }
+    }
+  },
   "src/components/BottomNavigation/BottomNavigation.react.js": {
     "description": "BottomNavigationItem is an item in a BottomNavigation component",
     "displayName": "BottomNavigation",
