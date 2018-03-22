@@ -1,3 +1,4 @@
+import AutoComplete from './components/AutoComplete';
 import BottomNavigation from './components/BottomNavigation';
 import Checkbox from './components/Checkbox';
 import CircularProgress from './components/CircularProgress';
@@ -13,6 +14,7 @@ import RaisedButton from './components/RaisedButton';
 import Toggle from './components/Toggle';
 
 export {
+  AutoComplete,
   BottomNavigation,
   Checkbox,
   CircularProgress,

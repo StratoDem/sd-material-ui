@@ -9,8 +9,11 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
 type Props = {
   /** Location of the anchor for the auto complete */
-  anchorOrigin?: propTypes.origin,
-  /** If ture, auto complete is animated as it is toggled */
+  anchorOrigin?: {
+    vertical?: 'top' | 'center' | 'bottom',
+    horizontal?: 'left' | 'middle' | 'right',
+  },
+  /** If true, auto complete is animated as it is toggled */
   animated?: boolean,
   /** Array of strings or nodes used to populate the list */
   dataSource?: Array,
@@ -22,6 +25,7 @@ type Props = {
   errorStyle?: Object,
   /** The error content to display */
   errorText?: Node,
+  // filter?: function,
   /** The content to use for adding floating label element */
   floatingLabelText?: Node,
   /** If true, field receives the property width: 100% */
@@ -52,7 +56,10 @@ type Props = {
   /** Override the inline-styles of the root element */
   style?: Object,
   /** Origin for location of target */
-  targetOrigin?: propTypes.origin,
+  targetOrigin?: {
+    vertical?: 'top' | 'center' | 'bottom',
+    horizontal?: 'left' | 'middle' | 'right',
+  },
   /** Override the inline-styles of AutoComplete's TextField element */
   textFieldStyle?: Object,
 };
@@ -81,47 +88,71 @@ const defaultProps = {
   textFieldStyle: {},
 };
 
-export default class AutoComplete extends Component<Props, State> {
-  props: Props;
+export default class AutoComplete extends Component<Props> {
+  // props: Props;
+
+  state = {
+    dataSource: [],
+  };
+
+  handleUpdateInput = (value) => {
+    this.setState({
+      dataSource: [
+        value,
+        value + value,
+        value + value + value,
+      ],
+    });
+  };
 
   render() {
-    const { id, anchorOrigin, animated, dataSource, dataSourceConfig,
-      disableFocusRipple, errorStyle, errorText, floatingLabelText,
-      hintText, listStyle, maxSearchResults, menuCloseDelay, menuProps,
-      menuStyle, open, openOnFocus, popoverProps, searchText, style,
-      targetOrigin, textFieldStyle} = this.props;
-
     return (
-      <div id={id}>
-        <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
-          <MuiAutoComplete
-            anchorOrigin={anchorOrigin}
-            animate={animated}
-            dataSource={dataSource}
-            dataSourceConfig={dataSourceConfig}
-            disableFocusRipple={disableFocusRipple}
-            errorStyle={errorStyle}
-            errorText={errorText}
-            filter={AutoComplete.caseInsensitiveFilter}
-            floatingLabelText={floatingLabelText}
-            hintText={hintText}
-            listStyle={listStyle}
-            maxSearchResults={maxSearchResults}
-            menuCloseDelay={menuCloseDelay}
-            menuProps={menuProps}
-            menuStyle={menuStyle}
-            open={open}
-            openOnFocus={openOnFocus}
-            popoverProps={popoverProps}
-            searchText={searchText}
-            style={style}
-            targetOrigin={targetOrigin}
-            textFieldStyle={textFieldStyle}
-          >
-          </MuiAutoComplete>
-        </MuiThemeProvider>
+      <div>
+        <MuiAutoComplete
+          hintText="Type anything"
+          dataSource={this.state.dataSource}
+          onUpdateInput={this.handleUpdateInput}
+        />
       </div>);
   }
+
+  // render() {
+  //   const { id, anchorOrigin, animated, dataSource, dataSourceConfig,
+  //     disableFocusRipple, errorStyle, errorText, floatingLabelText,
+  //     hintText, listStyle, maxSearchResults, menuCloseDelay, menuProps,
+  //     menuStyle, open, openOnFocus, popoverProps, searchText, style,
+  //     targetOrigin, textFieldStyle} = this.props;
+  //
+  //   return (
+  //     <div id={id}>
+  //       <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
+  //         <MuiAutoComplete
+  //           anchorOrigin={anchorOrigin}
+  //           animated={animated}
+  //           dataSource={dataSource}
+  //           dataSourceConfig={dataSourceConfig}
+  //           disableFocusRipple={disableFocusRipple}
+  //           errorStyle={errorStyle}
+  //           errorText={errorText}
+  //           filter={AutoComplete.caseInsensitiveFilter}
+  //           floatingLabelText={floatingLabelText}
+  //           hintText={hintText}
+  //           listStyle={listStyle}
+  //           maxSearchResults={maxSearchResults}
+  //           menuCloseDelay={menuCloseDelay}
+  //           menuProps={menuProps}
+  //           menuStyle={menuStyle}
+  //           open={open}
+  //           openOnFocus={openOnFocus}
+  //           popoverProps={popoverProps}
+  //           searchText={searchText}
+  //           style={style}
+  //           targetOrigin={targetOrigin}
+  //           textFieldStyle={textFieldStyle}
+  //         />
+  //       </MuiThemeProvider>
+  //     </div>);
+  // }
 }
 
 AutoComplete.defaultProps = defaultProps;

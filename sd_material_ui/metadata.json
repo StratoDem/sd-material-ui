@@ -2,11 +2,74 @@
   "src/components/AutoComplete/AutoComplete.react.js": {
     "description": "",
     "displayName": "AutoComplete",
-    "methods": [],
+    "methods": [
+      {
+        "name": "handleUpdateInput",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "value",
+            "type": null
+          }
+        ],
+        "returns": null
+      }
+    ],
     "props": {
       "anchorOrigin": {
         "flowType": {
-          "name": "unknown"
+          "name": "signature",
+          "type": "object",
+          "raw": "{\n  vertical?: 'top' | 'center' | 'bottom',\n  horizontal?: 'left' | 'middle' | 'right',\n}",
+          "signature": {
+            "properties": [
+              {
+                "key": "vertical",
+                "value": {
+                  "name": "union",
+                  "raw": "'top' | 'center' | 'bottom'",
+                  "elements": [
+                    {
+                      "name": "literal",
+                      "value": "'top'"
+                    },
+                    {
+                      "name": "literal",
+                      "value": "'center'"
+                    },
+                    {
+                      "name": "literal",
+                      "value": "'bottom'"
+                    }
+                  ],
+                  "required": false
+                }
+              },
+              {
+                "key": "horizontal",
+                "value": {
+                  "name": "union",
+                  "raw": "'left' | 'middle' | 'right'",
+                  "elements": [
+                    {
+                      "name": "literal",
+                      "value": "'left'"
+                    },
+                    {
+                      "name": "literal",
+                      "value": "'middle'"
+                    },
+                    {
+                      "name": "literal",
+                      "value": "'right'"
+                    }
+                  ],
+                  "required": false
+                }
+              }
+            ]
+          }
         },
         "required": false,
         "description": "Location of the anchor for the auto complete",
@@ -229,7 +292,57 @@
       },
       "targetOrigin": {
         "flowType": {
-          "name": "unknown"
+          "name": "signature",
+          "type": "object",
+          "raw": "{\n  vertical?: 'top' | 'center' | 'bottom',\n  horizontal?: 'left' | 'middle' | 'right',\n}",
+          "signature": {
+            "properties": [
+              {
+                "key": "vertical",
+                "value": {
+                  "name": "union",
+                  "raw": "'top' | 'center' | 'bottom'",
+                  "elements": [
+                    {
+                      "name": "literal",
+                      "value": "'top'"
+                    },
+                    {
+                      "name": "literal",
+                      "value": "'center'"
+                    },
+                    {
+                      "name": "literal",
+                      "value": "'bottom'"
+                    }
+                  ],
+                  "required": false
+                }
+              },
+              {
+                "key": "horizontal",
+                "value": {
+                  "name": "union",
+                  "raw": "'left' | 'middle' | 'right'",
+                  "elements": [
+                    {
+                      "name": "literal",
+                      "value": "'left'"
+                    },
+                    {
+                      "name": "literal",
+                      "value": "'middle'"
+                    },
+                    {
+                      "name": "literal",
+                      "value": "'right'"
+                    }
+                  ],
+                  "required": false
+                }
+              }
+            ]
+          }
         },
         "required": false,
         "description": "Origin for location of target",
