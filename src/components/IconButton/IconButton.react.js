@@ -10,7 +10,8 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 type Props = {
   /** Used to pass a FontIcon element as the icon for the button
    * See method 3 at http://www.material-ui.com/#/components/icon-button
-   */
+   * Note: currently unable to pass in FontIcon component as child, you will need
+   * to use method 3 at the above link */
   children?: Node,
   /** The CSS class name of the root element */
   className?: string,

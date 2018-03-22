@@ -42,6 +42,11 @@ app.layout = html.Div([
 
     spacer,
 
+    # Test FontIcon
+    sd_material_ui.FontIcon(className="material-icons", iconName="settings", hoverColor='blue'), # only works for public icons
+
+    spacer,
+
     # Test SDDialog (modal)
     sd_material_ui.Dialog(
         html.Div(children=[
@@ -94,6 +99,7 @@ app.layout = html.Div([
                               iconStyle={'color':'orange', 'width': 48, 'height': 48},
                               tooltip='click for more information', touch=True,
                               tooltipPosition='bottom-right'),
+
 
     # Test buttons together to see which was clicked
     html.Div(children=[

@@ -1657,6 +1657,68 @@
       }
     }
   },
+  "src/components/FontIcon/FontIcon.react.js": {
+    "description": "",
+    "displayName": "FontIcon",
+    "methods": [],
+    "props": {
+      "color": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "font color of the font icon;\nIf not specified, this component will default\nto muiTheme.palette.textColor",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "className": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "defines specific icon when using custom icon font\nor defines font when using public icon font",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "hoverColor": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "icon color when the mouse hovers over the icon",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "iconName": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "defines specific icon when using public icon font",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "style": {
+        "flowType": {
+          "name": "Object"
+        },
+        "required": false,
+        "description": "override inline-styles of root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      }
+    }
+  },
   "src/components/IconButton/IconButton.react.js": {
     "description": "",
     "displayName": "IconButton",
@@ -1675,7 +1737,7 @@
           "name": "Node"
         },
         "required": false,
-        "description": "Used to pass a FontIcon element as the icon for the button\nSee method 3 at http://www.material-ui.com/#/components/icon-button",
+        "description": "Used to pass a FontIcon element as the icon for the button\nSee method 3 at http://www.material-ui.com/#/components/icon-button\nNote: currently unable to pass in FontIcon component as child, you will need\nto use method 3 at the above link",
         "defaultValue": {
           "value": "null",
           "computed": false
