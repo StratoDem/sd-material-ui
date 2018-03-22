@@ -16,7 +16,7 @@ type Props = {
   /** If true, auto complete is animated as it is toggled */
   animated?: boolean,
   /** Array of strings or nodes used to populate the list */
-  dataSource?: Array,
+  dataSource?: Array<any>,
   /** Config for objects list dataSource */
   dataSourceConfig?: Object,
   /** Disables focus ripple when true */
@@ -25,7 +25,7 @@ type Props = {
   errorStyle?: Object,
   /** The error content to display */
   errorText?: Node,
-  // filter?: function,
+  filter?: string,
   /** The content to use for adding floating label element */
   floatingLabelText?: Node,
   /** If true, field receives the property width: 100% */
@@ -52,7 +52,6 @@ type Props = {
   /** Props to be passed to popover */
   popoverProps?: Object,
   /** Text being input to auto complete */
-  searchText?: string,
   /** Override the inline-styles of the root element */
   style?: Object,
   /** Origin for location of target */
@@ -65,13 +64,14 @@ type Props = {
 };
 
 const defaultProps = {
-  anchorOrigin: {vertical: 'bottom', horizontal: 'left',},
+  anchorOrigin: {vertical: 'bottom', horizontal: 'left'},
   animated: true,
   dataSource: [],
-  dataSourceConfig: {text: 'text', value: 'value',},
+  dataSourceConfig: {text: 'text', value: 'value'},
   disableFocusRipple: true,
   errorStyle: {},
   errorText: null,
+  filter: "defaultFilter",
   floatingLabelText: null,
   fullWidth: false,
   hintText: null,
@@ -82,77 +82,61 @@ const defaultProps = {
   open: false,
   openOnFocus: false,
   popoverProps: {},
-  searchText: "",
   style: {},
-  targetOrigin: {vertical: 'top', horizontal: 'left',},
+  targetOrigin: {vertical: 'top', horizontal: 'left'},
   textFieldStyle: {},
 };
 
 export default class AutoComplete extends Component<Props> {
-  // props: Props;
+  constructor(props: Props) {
+    super(props);
+  }
 
-  state = {
-    dataSource: [],
-  };
-
-  handleUpdateInput = (value) => {
-    this.setState({
-      dataSource: [
-        value,
-        value + value,
-        value + value + value,
-      ],
-    });
+  const mapFilterToFunc = {
+    "caseInsensitiveFilter": AutoComplete.caseInsensitiveFilter,
+    "fuzzyFilter": AutoComplete.fuzzyFilter,
+    "defaultFilter": AutoComplete.defaultFilter,
+    "caseSensitiveFilter": AutoComplete.caseSensitiveFilter,
+    "levenshteinDistanceFilter": AutoComplete.levenshteinDistanceFilter,
+    "noFilter": AutoComplete.noFilter,
   };
 
   render() {
+    const { id, anchorOrigin, animated, dataSource, dataSourceConfig,
+      disableFocusRipple, errorStyle, errorText, filter, floatingLabelText,
+      hintText, listStyle, maxSearchResults, menuCloseDelay, menuProps,
+      menuStyle, open, openOnFocus, popoverProps, style,
+      targetOrigin, textFieldStyle} = this.props;
+
     return (
-      <div>
-        <MuiAutoComplete
-          hintText="Type anything"
-          dataSource={this.state.dataSource}
-          onUpdateInput={this.handleUpdateInput}
-        />
+      <div id={id}>
+        <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
+          <MuiAutoComplete
+            anchorOrigin={anchorOrigin}
+            animated={animated}
+            dataSource={dataSource}
+            dataSourceConfig={dataSourceConfig}
+            disableFocusRipple={disableFocusRipple}
+            errorStyle={errorStyle}
+            errorText={errorText}
+            filter={this.mapFilterToFunc[filter]}
+            floatingLabelText={floatingLabelText}
+            hintText={hintText}
+            listStyle={listStyle}
+            maxSearchResults={maxSearchResults}
+            menuCloseDelay={menuCloseDelay}
+            menuProps={menuProps}
+            menuStyle={menuStyle}
+            open={open}
+            openOnFocus={openOnFocus}
+            popoverProps={popoverProps}
+            style={style}
+            targetOrigin={targetOrigin}
+            textFieldStyle={textFieldStyle}
+          />
+        </MuiThemeProvider>
       </div>);
   }
-
-  // render() {
-  //   const { id, anchorOrigin, animated, dataSource, dataSourceConfig,
-  //     disableFocusRipple, errorStyle, errorText, floatingLabelText,
-  //     hintText, listStyle, maxSearchResults, menuCloseDelay, menuProps,
-  //     menuStyle, open, openOnFocus, popoverProps, searchText, style,
-  //     targetOrigin, textFieldStyle} = this.props;
-  //
-  //   return (
-  //     <div id={id}>
-  //       <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
-  //         <MuiAutoComplete
-  //           anchorOrigin={anchorOrigin}
-  //           animated={animated}
-  //           dataSource={dataSource}
-  //           dataSourceConfig={dataSourceConfig}
-  //           disableFocusRipple={disableFocusRipple}
-  //           errorStyle={errorStyle}
-  //           errorText={errorText}
-  //           filter={AutoComplete.caseInsensitiveFilter}
-  //           floatingLabelText={floatingLabelText}
-  //           hintText={hintText}
-  //           listStyle={listStyle}
-  //           maxSearchResults={maxSearchResults}
-  //           menuCloseDelay={menuCloseDelay}
-  //           menuProps={menuProps}
-  //           menuStyle={menuStyle}
-  //           open={open}
-  //           openOnFocus={openOnFocus}
-  //           popoverProps={popoverProps}
-  //           searchText={searchText}
-  //           style={style}
-  //           targetOrigin={targetOrigin}
-  //           textFieldStyle={textFieldStyle}
-  //         />
-  //       </MuiThemeProvider>
-  //     </div>);
-  // }
 }
 
 AutoComplete.defaultProps = defaultProps;

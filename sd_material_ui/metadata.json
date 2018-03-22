@@ -2,20 +2,7 @@
   "src/components/AutoComplete/AutoComplete.react.js": {
     "description": "",
     "displayName": "AutoComplete",
-    "methods": [
-      {
-        "name": "handleUpdateInput",
-        "docblock": null,
-        "modifiers": [],
-        "params": [
-          {
-            "name": "value",
-            "type": null
-          }
-        ],
-        "returns": null
-      }
-    ],
+    "methods": [],
     "props": {
       "anchorOrigin": {
         "flowType": {
@@ -74,7 +61,7 @@
         "required": false,
         "description": "Location of the anchor for the auto complete",
         "defaultValue": {
-          "value": "{vertical: 'bottom', horizontal: 'left',}",
+          "value": "{vertical: 'bottom', horizontal: 'left'}",
           "computed": false
         }
       },
@@ -83,7 +70,7 @@
           "name": "boolean"
         },
         "required": false,
-        "description": "If ture, auto complete is animated as it is toggled",
+        "description": "If true, auto complete is animated as it is toggled",
         "defaultValue": {
           "value": "true",
           "computed": false
@@ -91,7 +78,13 @@
       },
       "dataSource": {
         "flowType": {
-          "name": "Array"
+          "name": "Array",
+          "elements": [
+            {
+              "name": "any"
+            }
+          ],
+          "raw": "Array<any>"
         },
         "required": false,
         "description": "Array of strings or nodes used to populate the list",
@@ -107,7 +100,7 @@
         "required": false,
         "description": "Config for objects list dataSource",
         "defaultValue": {
-          "value": "{text: 'text', value: 'value',}",
+          "value": "{text: 'text', value: 'value'}",
           "computed": false
         }
       },
@@ -141,6 +134,17 @@
         "description": "The error content to display",
         "defaultValue": {
           "value": "null",
+          "computed": false
+        }
+      },
+      "filter": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "\"AutoComplete.caseInsensitiveFilter\"",
           "computed": false
         }
       },
@@ -268,17 +272,6 @@
           "computed": false
         }
       },
-      "searchText": {
-        "flowType": {
-          "name": "string"
-        },
-        "required": false,
-        "description": "Text being input to auto complete",
-        "defaultValue": {
-          "value": "\"\"",
-          "computed": false
-        }
-      },
       "style": {
         "flowType": {
           "name": "Object"
@@ -347,7 +340,7 @@
         "required": false,
         "description": "Origin for location of target",
         "defaultValue": {
-          "value": "{vertical: 'top', horizontal: 'left',}",
+          "value": "{vertical: 'top', horizontal: 'left'}",
           "computed": false
         }
       },

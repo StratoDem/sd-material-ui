@@ -156,6 +156,12 @@ app.layout = html.Div([
 
     spacer,
 
+    #Test for SDAutoComplete
+    sd_material_ui.AutoComplete(id='autocompletethingy', floatingLabelText="Type here",
+                                dataSource=['orange','red','blue', 'peach'], filter="fuzzyFilter"),
+
+    spacer,
+
     # Test for SDDropDownMenu and SDMenuItem (single selection)
     html.Div(children=[
         sd_material_ui.DropDownMenu(id='input11',
