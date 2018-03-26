@@ -7,6 +7,8 @@ import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
+import _ from 'lodash';
+
 type Props = {
   /** Location of the anchor for the auto complete */
   anchorOrigin?: {
@@ -15,6 +17,8 @@ type Props = {
   },
   /** If true, auto complete is animated as it is toggled */
   animated?: boolean,
+  /** Dash callback delay in ms - default is 500 ms */
+  dashCallbackDelay?: number,
   /** Array of strings or nodes used to populate the list */
   dataSource?: Array<any>,
   /** Config for objects list dataSource */
@@ -57,6 +61,7 @@ type Props = {
   openOnFocus?: boolean,
   /** Props to be passed to popover */
   popoverProps?: Object,
+  /** Text being input to auto complete */
   searchText?: string,
   /** Dash callback to update props on the server. */
   setProps?: () => void,
@@ -78,6 +83,7 @@ type State = {
 const defaultProps = {
   anchorOrigin: {vertical: 'bottom', horizontal: 'left'},
   animated: true,
+  dashCallbackDelay: 500,
   dataSource: [],
   dataSourceConfig: {text: 'text', value: 'value'},
   disableFocusRipple: true,
@@ -106,6 +112,7 @@ export default class AutoComplete extends Component<Props, State> {
   constructor(props: Props) {
     super(props);
     this.state = {searchText: this.props.searchText};
+    this.updateTextProps = _.debounce(this._updateTextProps, this.props.dashCallbackDelay);
   }
 
   componentWillReceiveProps(nextProps: Props): void {
@@ -115,18 +122,24 @@ export default class AutoComplete extends Component<Props, State> {
   }
 
   handleChange = (searchText: string, dataSource: Array, params: Object) => {
+
+    this.updateTextProps(searchText);
+
+    this.setState({searchText});
+  };
+
+  _updateTextProps = (searchText: string) => {
+    console.log(`I'm here${searchText}`);
+
     const { setProps } = this.props;
 
     if (typeof setProps === 'function')
       setProps({searchText});
 
-    this.setState({searchText});
-
     if (this.props.fireEvent) {
       this.props.fireEvent({event: 'change'});
     }
-  };
-
+  }
 
   render() {
     const mapFilterToFunc = {
@@ -163,7 +176,8 @@ export default class AutoComplete extends Component<Props, State> {
             menuCloseDelay={menuCloseDelay}
             menuProps={menuProps}
             menuStyle={menuStyle}
-            onUpdateInput={(searchText: string, dataSource: Array, params: Object) => this.handleChange(searchText, dataSource, params)}
+            onUpdateInput={(searchText: string, dataSource: Array, params: Object) =>
+              this.handleChange(searchText, dataSource, params)}
             open={open}
             openOnFocus={openOnFocus}
             popoverProps={popoverProps}

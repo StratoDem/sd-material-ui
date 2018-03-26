@@ -30,6 +30,20 @@
           }
         ],
         "returns": null
+      },
+      {
+        "name": "_updateTextProps",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "searchText",
+            "type": {
+              "name": "string"
+            }
+          }
+        ],
+        "returns": null
       }
     ],
     "props": {
@@ -102,6 +116,17 @@
         "description": "If true, auto complete is animated as it is toggled",
         "defaultValue": {
           "value": "true",
+          "computed": false
+        }
+      },
+      "dashCallbackDelay": {
+        "flowType": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Dash callback delay in ms - default is 500 ms",
+        "defaultValue": {
+          "value": "500",
           "computed": false
         }
       },
@@ -352,7 +377,7 @@
           "name": "string"
         },
         "required": false,
-        "description": "",
+        "description": "Text being input to auto complete",
         "defaultValue": {
           "value": "\"\"",
           "computed": false

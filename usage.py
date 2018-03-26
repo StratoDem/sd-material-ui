@@ -163,15 +163,15 @@ app.layout = html.Div([
     sd_material_ui.AutoComplete(id='input13',
                                 anchorOrigin={'vertical': 'center', 'horizontal': 'middle'},
                                 animated=True,
+                                dashCallbackDelay=3000,
                                 dataSource=['orange','red','blue', 'peach'],
-                                menuCloseDelay=10000,
                                 fullWidth=True,
                                 floatingLabelText="Type here",
                                 filter='fuzzyFilter',),
 
     spacer,
 
-    html.Div(id='output13', children=['Selected item appears here.']),
+    html.Div(id='output13', children=['Selected item appears here (should take 3 seconds to show up).']),
 
     spacer,
 
@@ -405,7 +405,7 @@ def dropdown_callback(value, options):
     dash.dependencies.Output('output13', 'children'),
     [dash.dependencies.Input('input13', 'searchText')])
 def autocomplete_callback(searchText: str):
-    return ['Selection is: {}'.format(searchText)]
+    return ['Selection is (should take 3 seconds to show up) : {}'.format(searchText)]
 
 
 if __name__ == '__main__':
