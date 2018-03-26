@@ -25,7 +25,13 @@ type Props = {
   errorStyle?: Object,
   /** The error content to display */
   errorText?: Node,
-  filter?: string,
+  /** String name for filter to be applied to user input.
+   * will later be mapped to function
+   */
+  filter?: 'caseInsensitiveFilter' | 'caseSensitiveFilter' | 'defaultFilter' |
+    'fuzzyFilter' | 'levenshteinDistanceFilter' | 'noFilter',
+  /** Dash-assigned callback that gets fired when the input changes. */
+  fireEvent?: () => void,
   /** The content to use for adding floating label element */
   floatingLabelText?: Node,
   /** If true, field receives the property width: 100% */
@@ -51,7 +57,9 @@ type Props = {
   openOnFocus?: boolean,
   /** Props to be passed to popover */
   popoverProps?: Object,
-  /** Text being input to auto complete */
+  searchText?: string,
+  /** Dash callback to update props on the server. */
+  setProps?: () => void,
   /** Override the inline-styles of the root element */
   style?: Object,
   /** Origin for location of target */
@@ -63,6 +71,10 @@ type Props = {
   textFieldStyle?: Object,
 };
 
+type State = {
+  searchText: string,
+}
+
 const defaultProps = {
   anchorOrigin: {vertical: 'bottom', horizontal: 'left'},
   animated: true,
@@ -72,6 +84,7 @@ const defaultProps = {
   errorStyle: {},
   errorText: null,
   filter: "defaultFilter",
+  fireEvent: () => {},
   floatingLabelText: null,
   fullWidth: false,
   hintText: null,
@@ -82,26 +95,49 @@ const defaultProps = {
   open: false,
   openOnFocus: false,
   popoverProps: {},
+  searchText: "",
+  setProps: () => {},
   style: {},
   targetOrigin: {vertical: 'top', horizontal: 'left'},
   textFieldStyle: {},
 };
 
-export default class AutoComplete extends Component<Props> {
+export default class AutoComplete extends Component<Props, State> {
   constructor(props: Props) {
     super(props);
+    this.state = {searchText: this.props.searchText};
   }
 
-  const mapFilterToFunc = {
-    "caseInsensitiveFilter": AutoComplete.caseInsensitiveFilter,
-    "fuzzyFilter": AutoComplete.fuzzyFilter,
-    "defaultFilter": AutoComplete.defaultFilter,
-    "caseSensitiveFilter": AutoComplete.caseSensitiveFilter,
-    "levenshteinDistanceFilter": AutoComplete.levenshteinDistanceFilter,
-    "noFilter": AutoComplete.noFilter,
+  componentWillReceiveProps(nextProps: Props): void {
+    if (nextProps.searchText !== null && nextProps.searchText !== this.props.searchText) {
+      this.handleChange(nextProps.searchText, this.props.dataSource, {});
+    }
+  }
+
+  handleChange = (searchText: string, dataSource: Array, params: Object) => {
+    const { setProps } = this.props;
+
+    if (typeof setProps === 'function')
+      setProps({searchText});
+
+    this.setState({searchText});
+
+    if (this.props.fireEvent) {
+      this.props.fireEvent({event: 'change'});
+    }
   };
 
+
   render() {
+    const mapFilterToFunc = {
+      'caseInsensitiveFilter': MuiAutoComplete.caseInsensitiveFilter,
+      'caseSensitiveFilter': MuiAutoComplete.caseSensitiveFilter,
+      'defaultFilter': MuiAutoComplete.defaultFilter,
+      'fuzzyFilter': MuiAutoComplete.fuzzyFilter,
+      'levenshteinDistanceFilter': MuiAutoComplete.levenshteinDistanceFilter,
+      'noFilter': MuiAutoComplete.noFilter,
+    };
+
     const { id, anchorOrigin, animated, dataSource, dataSourceConfig,
       disableFocusRipple, errorStyle, errorText, filter, floatingLabelText,
       hintText, listStyle, maxSearchResults, menuCloseDelay, menuProps,
@@ -119,7 +155,7 @@ export default class AutoComplete extends Component<Props> {
             disableFocusRipple={disableFocusRipple}
             errorStyle={errorStyle}
             errorText={errorText}
-            filter={this.mapFilterToFunc[filter]}
+            filter={mapFilterToFunc[filter]}
             floatingLabelText={floatingLabelText}
             hintText={hintText}
             listStyle={listStyle}
@@ -127,9 +163,11 @@ export default class AutoComplete extends Component<Props> {
             menuCloseDelay={menuCloseDelay}
             menuProps={menuProps}
             menuStyle={menuStyle}
+            onUpdateInput={(searchText: string, dataSource: Array, params: Object) => this.handleChange(searchText, dataSource, params)}
             open={open}
             openOnFocus={openOnFocus}
             popoverProps={popoverProps}
+            searchText={this.state.searchText}
             style={style}
             targetOrigin={targetOrigin}
             textFieldStyle={textFieldStyle}

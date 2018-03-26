@@ -2,7 +2,36 @@
   "src/components/AutoComplete/AutoComplete.react.js": {
     "description": "",
     "displayName": "AutoComplete",
-    "methods": [],
+    "methods": [
+      {
+        "name": "handleChange",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "searchText",
+            "type": {
+              "name": "string"
+            }
+          },
+          {
+            "name": "dataSource",
+            "type": {
+              "name": "Array",
+              "alias": "Array"
+            }
+          },
+          {
+            "name": "params",
+            "type": {
+              "name": "Object",
+              "alias": "Object"
+            }
+          }
+        ],
+        "returns": null
+      }
+    ],
     "props": {
       "anchorOrigin": {
         "flowType": {
@@ -139,12 +168,58 @@
       },
       "filter": {
         "flowType": {
-          "name": "string"
+          "name": "union",
+          "raw": "'caseInsensitiveFilter' | 'caseSensitiveFilter' | 'defaultFilter' |\n  'fuzzyFilter' | 'levenshteinDistanceFilter' | 'noFilter'",
+          "elements": [
+            {
+              "name": "literal",
+              "value": "'caseInsensitiveFilter'"
+            },
+            {
+              "name": "literal",
+              "value": "'caseSensitiveFilter'"
+            },
+            {
+              "name": "literal",
+              "value": "'defaultFilter'"
+            },
+            {
+              "name": "literal",
+              "value": "'fuzzyFilter'"
+            },
+            {
+              "name": "literal",
+              "value": "'levenshteinDistanceFilter'"
+            },
+            {
+              "name": "literal",
+              "value": "'noFilter'"
+            }
+          ]
         },
         "required": false,
-        "description": "",
+        "description": "String name for filter to be applied to user input.\nwill later be mapped to function",
         "defaultValue": {
-          "value": "\"AutoComplete.caseInsensitiveFilter\"",
+          "value": "\"defaultFilter\"",
+          "computed": false
+        }
+      },
+      "fireEvent": {
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "() => void",
+          "signature": {
+            "arguments": [],
+            "return": {
+              "name": "void"
+            }
+          }
+        },
+        "required": false,
+        "description": "Dash-assigned callback that gets fired when the input changes.",
+        "defaultValue": {
+          "value": "() => {}",
           "computed": false
         }
       },
@@ -269,6 +344,36 @@
         "description": "Props to be passed to popover",
         "defaultValue": {
           "value": "{}",
+          "computed": false
+        }
+      },
+      "searchText": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "\"\"",
+          "computed": false
+        }
+      },
+      "setProps": {
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "() => void",
+          "signature": {
+            "arguments": [],
+            "return": {
+              "name": "void"
+            }
+          }
+        },
+        "required": false,
+        "description": "Dash callback to update props on the server.",
+        "defaultValue": {
+          "value": "() => {}",
           "computed": false
         }
       },
