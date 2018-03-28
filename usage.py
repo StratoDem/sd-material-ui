@@ -143,6 +143,11 @@ app.layout = html.Div([
 
     spacer,
 
+    # Test for SDRadioButton
+    sd_material_ui.RadioButton(value='light', label='Simple'),
+
+    spacer,
+
     # Test for SDToggle
     html.Div(children=[
         sd_material_ui.Toggle(id='input9', label='Johnny?'),
@@ -159,7 +164,7 @@ app.layout = html.Div([
 
     spacer,
 
-    #Test for SDAutoComplete
+    # Test for SDAutoComplete
     sd_material_ui.AutoComplete(id='input13',
                                 anchorOrigin={'vertical': 'center', 'horizontal': 'middle'},
                                 animated=True,

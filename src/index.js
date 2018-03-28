@@ -10,6 +10,8 @@ import FlatButton from './components/FlatButton';
 import FontIcon from './components/FontIcon';
 import IconButton from './components/IconButton';
 import Snackbar from './components/Snackbar';
+import RadioButton from './components/RadioButton';
+import RadioButtonGroup from './components/RadioButton';
 import RaisedButton from './components/RaisedButton';
 import Toggle from './components/Toggle';
 
@@ -26,6 +28,8 @@ export {
   FontIcon,
   IconButton,
   Snackbar,
+  RadioButton,
+  RadioButtonGroup,
   RaisedButton,
   Toggle,
 };

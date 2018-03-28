@@ -2432,6 +2432,90 @@
       }
     }
   },
+  "src/components/RadioButton/RadioButton.react.js": {
+    "description": "",
+    "displayName": "RadioButton",
+    "methods": [],
+    "props": {
+      "disabled": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "If true, the radio button is disabled",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "iconStyle": {
+        "flowType": {
+          "name": "Object"
+        },
+        "required": false,
+        "description": "Override the inline-styles of the icon element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "inputStyle": {
+        "flowType": {
+          "name": "Object"
+        },
+        "required": false,
+        "description": "Override the inline-styles of the input element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "label": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Label to appear next to button",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "labelStyle": {
+        "flowType": {
+          "name": "Object"
+        },
+        "required": false,
+        "description": "Override the inline-styles of the label element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "style": {
+        "flowType": {
+          "name": "Object"
+        },
+        "required": false,
+        "description": "Override the inline-styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "value": {
+        "flowType": {
+          "name": "any"
+        },
+        "required": false,
+        "description": "value of the the radio button",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      }
+    }
+  },
   "src/components/RaisedButton/RaisedButton.react.js": {
     "description": "",
     "displayName": "RaisedButton",
