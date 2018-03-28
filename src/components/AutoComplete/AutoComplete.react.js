@@ -108,6 +108,15 @@ const defaultProps = {
   textFieldStyle: {},
 };
 
+const mapFilterToFunc = {
+  'caseInsensitiveFilter': MuiAutoComplete.caseInsensitiveFilter,
+  'caseSensitiveFilter': MuiAutoComplete.caseSensitiveFilter,
+  'defaultFilter': MuiAutoComplete.defaultFilter,
+  'fuzzyFilter': MuiAutoComplete.fuzzyFilter,
+  'levenshteinDistanceFilter': MuiAutoComplete.levenshteinDistanceFilter,
+  'noFilter': MuiAutoComplete.noFilter,
+};
+
 export default class AutoComplete extends Component<Props, State> {
   constructor(props: Props) {
     super(props);
@@ -156,16 +165,7 @@ export default class AutoComplete extends Component<Props, State> {
     if (this.props.fireEvent) {
       this.props.fireEvent({event: 'change'});
     }
-  }
-
-  const mapFilterToFunc = {
-      'caseInsensitiveFilter': MuiAutoComplete.caseInsensitiveFilter,
-      'caseSensitiveFilter': MuiAutoComplete.caseSensitiveFilter,
-      'defaultFilter': MuiAutoComplete.defaultFilter,
-      'fuzzyFilter': MuiAutoComplete.fuzzyFilter,
-      'levenshteinDistanceFilter': MuiAutoComplete.levenshteinDistanceFilter,
-      'noFilter': MuiAutoComplete.noFilter,
-    };
+  };
 
   render() {
 
@@ -186,7 +186,7 @@ export default class AutoComplete extends Component<Props, State> {
             disableFocusRipple={disableFocusRipple}
             errorStyle={errorStyle}
             errorText={errorText}
-            filter={this.mapFilterToFunc[filter]}
+            filter={mapFilterToFunc[filter]}
             floatingLabelText={floatingLabelText}
             hintText={hintText}
             listStyle={listStyle}

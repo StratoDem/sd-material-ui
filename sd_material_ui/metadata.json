@@ -5,17 +5,19 @@
     "methods": [
       {
         "name": "handleChange",
-        "docblock": null,
+        "docblock": "calls function to fire callback and updates searchText in state\n@param searchText\n@param dataSource\n@param params",
         "modifiers": [],
         "params": [
           {
             "name": "searchText",
+            "description": null,
             "type": {
               "name": "string"
             }
           },
           {
             "name": "dataSource",
+            "description": null,
             "type": {
               "name": "Array",
               "alias": "Array"
@@ -23,27 +25,31 @@
           },
           {
             "name": "params",
+            "description": null,
             "type": {
               "name": "Object",
               "alias": "Object"
             }
           }
         ],
-        "returns": null
+        "returns": null,
+        "description": "calls function to fire callback and updates searchText in state"
       },
       {
         "name": "_updateTextProps",
-        "docblock": null,
+        "docblock": "executes setProps function with searchText to update searchText in props;\nfires Dash callback event\n@param searchText\n@private",
         "modifiers": [],
         "params": [
           {
             "name": "searchText",
+            "description": null,
             "type": {
               "name": "string"
             }
           }
         ],
-        "returns": null
+        "returns": null,
+        "description": "executes setProps function with searchText to update searchText in props;\nfires Dash callback event"
       }
     ],
     "props": {
