@@ -109,12 +109,12 @@ const defaultProps = {
 };
 
 const mapFilterToFunc = {
-  'caseInsensitiveFilter': MuiAutoComplete.caseInsensitiveFilter,
-  'caseSensitiveFilter': MuiAutoComplete.caseSensitiveFilter,
-  'defaultFilter': MuiAutoComplete.defaultFilter,
-  'fuzzyFilter': MuiAutoComplete.fuzzyFilter,
-  'levenshteinDistanceFilter': MuiAutoComplete.levenshteinDistanceFilter,
-  'noFilter': MuiAutoComplete.noFilter,
+  caseInsensitiveFilter: MuiAutoComplete.caseInsensitiveFilter,
+  caseSensitiveFilter: MuiAutoComplete.caseSensitiveFilter,
+  defaultFilter: MuiAutoComplete.defaultFilter,
+  fuzzyFilter: MuiAutoComplete.fuzzyFilter,
+  levenshteinDistanceFilter: MuiAutoComplete.levenshteinDistanceFilter,
+  noFilter: MuiAutoComplete.noFilter,
 };
 
 export default class AutoComplete extends Component<Props, State> {
@@ -143,7 +143,6 @@ export default class AutoComplete extends Component<Props, State> {
    * @param params
    */
   handleChange = (searchText: string, dataSource: Array, params: Object) => {
-
     this.updateTextProps(searchText);
 
     this.setState({searchText});
@@ -156,7 +155,6 @@ export default class AutoComplete extends Component<Props, State> {
    * @private
    */
   _updateTextProps = (searchText: string) => {
-
     const { setProps } = this.props;
 
     if (typeof setProps === 'function')

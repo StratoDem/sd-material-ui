@@ -1,7 +1,9 @@
 import React from 'react';
+import sinon from 'sinon';
 import { mount, shallow } from 'enzyme';
 import MuiAutoComplete from 'material-ui/AutoComplete';
 import AutoComplete from '../AutoComplete/AutoComplete.react';
+
 
 describe('AutoComplete', () => {
   it('renders', () => {
@@ -66,5 +68,40 @@ describe('AutoComplete', () => {
         .find(MuiAutoComplete)
         .props().style)
       .toEqual({padding: 20});
+  })
+
+  it('fires callback event when searchText changes', () => {
+    var clock = sinon.useFakeTimers();
+    const fakeFireEvent = jest.fn();
+    const component = mount(
+      <AutoComplete id='test-id-4' fireEvent={fakeFireEvent} dashCallbackDelay={300}/>);
+
+    component.find(MuiAutoComplete).props().onUpdateInput('blue',[],{});
+
+    clock.tick(component.props().dashCallbackDelay);
+
+    expect(fakeFireEvent.mock.calls.length).toEqual(1);
+  });
+
+  it('applies appropriate filter', () => {
+    const component = shallow(
+      <AutoComplete
+        dataSource={['Harry', 'Hermione', 'Ron', 'Luna', 'Neville', 'Ginny']}
+        filter={'caseInsensitiveFilter'}
+      />);
+
+    expect(
+      component
+        .find(MuiAutoComplete)
+        .props().filter)
+      .toEqual(MuiAutoComplete.caseInsensitiveFilter);
+  });
+
+  it('renders with no callblacks', () => {
+    const blankFunc = () => { return null; };
+    const component = shallow(
+      <AutoComplete fireEvent={blankFunc} />);
+
+    expect(component).toBe.ok;
   })
 });
