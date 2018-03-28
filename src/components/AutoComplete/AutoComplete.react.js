@@ -112,15 +112,27 @@ export default class AutoComplete extends Component<Props, State> {
   constructor(props: Props) {
     super(props);
     this.state = {searchText: this.props.searchText};
+    /** _.debounce used to provide delay in callback to avoid firing callback every
+     * time user input changes - waits this.props.dashCallbackDelay ms to fire callback */
     this.updateTextProps = _.debounce(this._updateTextProps, this.props.dashCallbackDelay);
   }
 
+  /**
+   * detects change in state (user-inputted search text) and fires callback event
+   * @param nextProps
+   */
   componentWillReceiveProps(nextProps: Props): void {
     if (nextProps.searchText !== null && nextProps.searchText !== this.props.searchText) {
       this.handleChange(nextProps.searchText, this.props.dataSource, {});
     }
   }
 
+  /**
+   * calls function to fire callback and updates searchText in state
+   * @param searchText
+   * @param dataSource
+   * @param params
+   */
   handleChange = (searchText: string, dataSource: Array, params: Object) => {
 
     this.updateTextProps(searchText);
@@ -128,8 +140,13 @@ export default class AutoComplete extends Component<Props, State> {
     this.setState({searchText});
   };
 
+  /**
+   * executes setProps function with searchText to update searchText in props;
+   * fires Dash callback event
+   * @param searchText
+   * @private
+   */
   _updateTextProps = (searchText: string) => {
-    console.log(`I'm here${searchText}`);
 
     const { setProps } = this.props;
 
@@ -141,8 +158,7 @@ export default class AutoComplete extends Component<Props, State> {
     }
   }
 
-  render() {
-    const mapFilterToFunc = {
+  const mapFilterToFunc = {
       'caseInsensitiveFilter': MuiAutoComplete.caseInsensitiveFilter,
       'caseSensitiveFilter': MuiAutoComplete.caseSensitiveFilter,
       'defaultFilter': MuiAutoComplete.defaultFilter,
@@ -150,6 +166,8 @@ export default class AutoComplete extends Component<Props, State> {
       'levenshteinDistanceFilter': MuiAutoComplete.levenshteinDistanceFilter,
       'noFilter': MuiAutoComplete.noFilter,
     };
+
+  render() {
 
     const { id, anchorOrigin, animated, dataSource, dataSourceConfig,
       disableFocusRipple, errorStyle, errorText, filter, floatingLabelText,
@@ -168,7 +186,7 @@ export default class AutoComplete extends Component<Props, State> {
             disableFocusRipple={disableFocusRipple}
             errorStyle={errorStyle}
             errorText={errorText}
-            filter={mapFilterToFunc[filter]}
+            filter={this.mapFilterToFunc[filter]}
             floatingLabelText={floatingLabelText}
             hintText={hintText}
             listStyle={listStyle}
