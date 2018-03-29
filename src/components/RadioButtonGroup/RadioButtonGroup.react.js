@@ -3,7 +3,6 @@
 import React, { Component } from 'react';
 
 import { RadioButtonGroup as MuiRadioButtonGroup, RadioButton } from 'material-ui/RadioButton';
-// import RadioButton from 'material-ui/RadioButton';
 import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
@@ -26,8 +25,6 @@ type SD_RADIO_BUTTON = {
 };
 
 type Props = {
-  /** should be used to pass RadioButton components */
-  children?: Node,
   /** the css class name of the root element */
   className?: string,
   /** the value property of the radio button that will
@@ -61,7 +58,6 @@ type State = {
 };
 
 const defaultProps = {
-  children: null,
   className: '',
   defaultSelected: '',
   fireEvent: () => {},
@@ -72,18 +68,27 @@ const defaultProps = {
   valueSelected: '',
 };
 
+/** A Dash material-ui RadioButtonGroup component */
 export default class RadioButtonGroup extends Component<Props, State> {
   constructor(props: Props) {
     super(props);
     this.state = {valueSelected: this.props.valueSelected};
   }
-
+  /**
+   * detects change in state (user-chosen selected radio btn) and fires callback event
+   * @param nextProps
+   */
   componentWillReceiveProps(nextProps: Props): void {
     if (nextProps.valueSelected !== null && nextProps.valueSelected !== this.props.valueSelected) {
       this.handleChange({}, nextProps.valueSelected);
     }
   }
 
+  /**
+   * calls function to fire callback and updates valueSelected in state
+   * @param event
+   * @param valueSelected
+   */
   handleChange = (event: Object, valueSelected: undefined) => {
     const { setProps } = this.props;
 

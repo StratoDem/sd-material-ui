@@ -1,9 +1,7 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
 import { RadioButtonGroup as MuiRadioButtonGroup } from 'material-ui/RadioButton';
-import RadioButton from 'material-ui/RadioButton';
 import RadioButtonGroup from '../RadioButtonGroup/RadioButtonGroup.react';
-import MuiAutoComplete from "material-ui/AutoComplete/index";
 
 describe('RadioButtonGroup', () => {
   it('renders', () => {
@@ -104,5 +102,26 @@ describe('RadioButtonGroup', () => {
     expect(component).toBe.ok;
   })
 
+  it('radio btn children use styles provided', () => {
+    const component = shallow(
+      <RadioButtonGroup
+        id={'test-id'}
+        name={'test-component'}
+        options={[
+          {value: 'first-val', label: 'first value', style: {padding: 20}},
+          {value: 'second-val', label: 'second value', style: {padding: 50}},
+        ]}
+      />);
 
+    expect(
+      component
+        .find(MuiRadioButtonGroup)
+        .props().children[0].props.style)
+      .toEqual({padding: 20});
+    expect(
+      component
+        .find(MuiRadioButtonGroup)
+        .props().children[1].props.style)
+      .toEqual({padding: 50});
+  })
 });

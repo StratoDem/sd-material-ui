@@ -2438,101 +2438,18 @@
       }
     }
   },
-  "src/components/RadioButton/RadioButton.react.js": {
-    "description": "",
-    "displayName": "RadioButton",
-    "methods": [],
-    "props": {
-      "disabled": {
-        "flowType": {
-          "name": "boolean"
-        },
-        "required": false,
-        "description": "If true, the radio button is disabled",
-        "defaultValue": {
-          "value": "false",
-          "computed": false
-        }
-      },
-      "iconStyle": {
-        "flowType": {
-          "name": "Object"
-        },
-        "required": false,
-        "description": "Override the inline-styles of the icon element",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "inputStyle": {
-        "flowType": {
-          "name": "Object"
-        },
-        "required": false,
-        "description": "Override the inline-styles of the input element",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "label": {
-        "flowType": {
-          "name": "string"
-        },
-        "required": false,
-        "description": "Label to appear next to button",
-        "defaultValue": {
-          "value": "''",
-          "computed": false
-        }
-      },
-      "labelStyle": {
-        "flowType": {
-          "name": "Object"
-        },
-        "required": false,
-        "description": "Override the inline-styles of the label element",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "style": {
-        "flowType": {
-          "name": "Object"
-        },
-        "required": false,
-        "description": "Override the inline-styles of the root element",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "value": {
-        "flowType": {
-          "name": "any"
-        },
-        "required": false,
-        "description": "value of the the radio button",
-        "defaultValue": {
-          "value": "''",
-          "computed": false
-        }
-      }
-    }
-  },
   "src/components/RadioButtonGroup/RadioButtonGroup.react.js": {
-    "description": "",
+    "description": "A Dash material-ui RadioButtonGroup component",
     "displayName": "RadioButtonGroup",
     "methods": [
       {
         "name": "handleChange",
-        "docblock": null,
+        "docblock": "calls function to fire callback and updates valueSelected in state\n@param event\n@param valueSelected",
         "modifiers": [],
         "params": [
           {
             "name": "event",
+            "description": null,
             "type": {
               "name": "Object",
               "alias": "Object"
@@ -2540,13 +2457,15 @@
           },
           {
             "name": "valueSelected",
+            "description": null,
             "type": {
               "name": "undefined",
               "alias": "undefined"
             }
           }
         ],
-        "returns": null
+        "returns": null,
+        "description": "calls function to fire callback and updates valueSelected in state"
       },
       {
         "name": "buildRadioButton",
@@ -2620,17 +2539,6 @@
       }
     ],
     "props": {
-      "children": {
-        "flowType": {
-          "name": "Node"
-        },
-        "required": false,
-        "description": "should be used to pass RadioButton components",
-        "defaultValue": {
-          "value": "null",
-          "computed": false
-        }
-      },
       "className": {
         "flowType": {
           "name": "string"
