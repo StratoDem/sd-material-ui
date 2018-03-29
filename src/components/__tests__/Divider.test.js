@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Divider from '../Divider/Divider.react';
 import MuiDivider from 'material-ui/Divider';
+import Divider from '../Divider/Divider.react';
 
 describe('Divider', () => {
   it('renders', () => {
@@ -9,6 +9,7 @@ describe('Divider', () => {
       <Divider
         inset={false}
       />);
+
     expect(component).toBe.ok;
   });
 

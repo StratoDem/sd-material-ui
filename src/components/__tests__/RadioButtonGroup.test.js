@@ -2,6 +2,7 @@ import React from 'react';
 import { mount, shallow } from 'enzyme';
 import { RadioButtonGroup as MuiRadioButtonGroup } from 'material-ui/RadioButton';
 import RadioButtonGroup from '../RadioButtonGroup/RadioButtonGroup.react';
+import RadioButton from 'material-ui/RadioButton';
 
 describe('RadioButtonGroup', () => {
   it('renders', () => {
@@ -116,12 +117,12 @@ describe('RadioButtonGroup', () => {
     expect(
       component
         .find(MuiRadioButtonGroup)
-        .props().children[0].props.style)
+        .props().children[0].style)
       .toEqual({padding: 20});
     expect(
       component
         .find(MuiRadioButtonGroup)
-        .props().children[1].props.style)
+        .props().children[1].style)
       .toEqual({padding: 50});
   })
 });
