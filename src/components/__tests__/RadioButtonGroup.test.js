@@ -31,4 +31,48 @@ describe('RadioButtonGroup', () => {
     component.find(MuiRadioButtonGroup).props().onChange({}, 'second-val');
     expect(component.state('valueSelected')).toEqual('second-val');
   });
+
+  it('uses the styles provided', () => {
+    const component = shallow(
+      <RadioButtonGroup
+        id={'test-id'}
+        className={'test-class'}
+        defaultSelected={'first-val'}
+        labelPosition={'left'}
+        name={'test-component'}
+        options={[
+          {value: 'first-val', label: 'first value'},
+          {value: 'second-val', label: 'second value'},
+        ]}
+        style={{padding: 20}}
+      />);
+
+    expect(
+      component
+        .find(MuiRadioButtonGroup)
+        .props().className)
+      .toEqual('test-class');
+    expect(
+      component
+        .find(MuiRadioButtonGroup)
+        .props().defaultSelected)
+      .toEqual('first-val');
+    expect(
+      component
+        .find(MuiRadioButtonGroup)
+        .props().labelPosition)
+      .toEqual('left');
+    expect(
+      component
+        .find(MuiRadioButtonGroup)
+        .props().name)
+      .toEqual('test-component');
+    expect(
+      component
+        .find(MuiRadioButtonGroup)
+        .props().style)
+      .toEqual({padding: 20});
+  })
+
+
 });
