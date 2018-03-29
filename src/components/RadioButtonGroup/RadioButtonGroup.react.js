@@ -2,8 +2,8 @@
 
 import React, { Component } from 'react';
 
-import { RadioButtonGroup as MuiRadioButtonGroup } from 'material-ui/RadioButton';
-import RadioButton from 'material-ui/RadioButton';
+import { RadioButtonGroup as MuiRadioButtonGroup, RadioButton } from 'material-ui/RadioButton';
+// import RadioButton from 'material-ui/RadioButton';
 import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';

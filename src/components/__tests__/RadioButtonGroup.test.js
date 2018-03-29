@@ -3,6 +3,7 @@ import { mount, shallow } from 'enzyme';
 import { RadioButtonGroup as MuiRadioButtonGroup } from 'material-ui/RadioButton';
 import RadioButton from 'material-ui/RadioButton';
 import RadioButtonGroup from '../RadioButtonGroup/RadioButtonGroup.react';
+import MuiAutoComplete from "material-ui/AutoComplete/index";
 
 describe('RadioButtonGroup', () => {
   it('renders', () => {
@@ -72,6 +73,35 @@ describe('RadioButtonGroup', () => {
         .find(MuiRadioButtonGroup)
         .props().style)
       .toEqual({padding: 20});
+  })
+
+  it('fires callback event when valueSelected changes', () => {
+    const fakeFireEvent = jest.fn();
+    const component = mount(
+      <RadioButtonGroup
+        id='test-id'
+        name='test-component'
+        fireEvent={fakeFireEvent}
+        options={[
+          {value: 'first-val', label: 'first value'},
+          {value: 'second-val', label: 'second value'},
+        ]}
+      />);
+
+    component.find(MuiRadioButtonGroup).props().onChange({},'second-val');
+
+    expect(fakeFireEvent.mock.calls.length).toEqual(1);
+  });
+
+  it('renders with no callblacks', () => {
+    const blankFunc = () => { return null; };
+    const component = shallow(
+      <RadioButtonGroup
+        id={'test-id'}
+        name={'test-component'}
+        fireEvent={blankFunc} />);
+
+    expect(component).toBe.ok;
   })
 
 
