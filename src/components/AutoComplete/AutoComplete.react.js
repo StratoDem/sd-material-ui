@@ -108,29 +108,53 @@ const defaultProps = {
   textFieldStyle: {},
 };
 
+const mapFilterToFunc = {
+  caseInsensitiveFilter: MuiAutoComplete.caseInsensitiveFilter,
+  caseSensitiveFilter: MuiAutoComplete.caseSensitiveFilter,
+  defaultFilter: MuiAutoComplete.defaultFilter,
+  fuzzyFilter: MuiAutoComplete.fuzzyFilter,
+  levenshteinDistanceFilter: MuiAutoComplete.levenshteinDistanceFilter,
+  noFilter: MuiAutoComplete.noFilter,
+};
+
 export default class AutoComplete extends Component<Props, State> {
   constructor(props: Props) {
     super(props);
     this.state = {searchText: this.props.searchText};
+    /** _.debounce used to provide delay in callback to avoid firing callback every
+     * time user input changes - waits this.props.dashCallbackDelay ms to fire callback */
     this.updateTextProps = _.debounce(this._updateTextProps, this.props.dashCallbackDelay);
   }
 
+  /**
+   * detects change in state (user-inputted search text) and fires callback event
+   * @param nextProps
+   */
   componentWillReceiveProps(nextProps: Props): void {
     if (nextProps.searchText !== null && nextProps.searchText !== this.props.searchText) {
       this.handleChange(nextProps.searchText, this.props.dataSource, {});
     }
   }
 
+  /**
+   * calls function to fire callback and updates searchText in state
+   * @param searchText
+   * @param dataSource
+   * @param params
+   */
   handleChange = (searchText: string, dataSource: Array, params: Object) => {
-
     this.updateTextProps(searchText);
 
     this.setState({searchText});
   };
 
+  /**
+   * executes setProps function with searchText to update searchText in props;
+   * fires Dash callback event
+   * @param searchText
+   * @private
+   */
   _updateTextProps = (searchText: string) => {
-    console.log(`I'm here${searchText}`);
-
     const { setProps } = this.props;
 
     if (typeof setProps === 'function')
@@ -139,17 +163,9 @@ export default class AutoComplete extends Component<Props, State> {
     if (this.props.fireEvent) {
       this.props.fireEvent({event: 'change'});
     }
-  }
+  };
 
   render() {
-    const mapFilterToFunc = {
-      'caseInsensitiveFilter': MuiAutoComplete.caseInsensitiveFilter,
-      'caseSensitiveFilter': MuiAutoComplete.caseSensitiveFilter,
-      'defaultFilter': MuiAutoComplete.defaultFilter,
-      'fuzzyFilter': MuiAutoComplete.fuzzyFilter,
-      'levenshteinDistanceFilter': MuiAutoComplete.levenshteinDistanceFilter,
-      'noFilter': MuiAutoComplete.noFilter,
-    };
 
     const { id, anchorOrigin, animated, dataSource, dataSourceConfig,
       disableFocusRipple, errorStyle, errorText, filter, floatingLabelText,

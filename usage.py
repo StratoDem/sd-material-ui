@@ -184,7 +184,7 @@ app.layout = html.Div([
                                 dataSource=['orange','red','blue', 'peach'],
                                 fullWidth=True,
                                 floatingLabelText="Type here",
-                                filter='fuzzyFilter',),
+                                filter='caseSensitiveFilter',),
 
     spacer,
 
