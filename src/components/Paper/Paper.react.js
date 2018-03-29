@@ -33,6 +33,7 @@ const defaultProps = {
   zDepth: 1,
 };
 
+/** A Dash material-ui Paper component */
 export default class Paper extends Component<Props> {
   props: Props;
 
