@@ -38,7 +38,7 @@ export default class RadioButton extends Component<Props> {
   props: Props;
 
   render() {
-    const {disabled, iconStyle, inputStyle, label, labelStyle, style, value}= this.props;
+    const {disabled, iconStyle, inputStyle, label, labelStyle, style, value} = this.props;
 
     return (
       <div>

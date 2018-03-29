@@ -143,8 +143,20 @@ app.layout = html.Div([
 
     spacer,
 
-    # Test for SDRadioButton
-    sd_material_ui.RadioButton(value='light', label='Simple'),
+    # Test for SDRadioButtonGroup
+    sd_material_ui.RadioButtonGroup(id='input14',
+                                    name='test',
+                                    defaultSelected='option3',
+                                    options=[
+                                        dict(value='option1', label='option 1'),
+                                        dict(value='option2', label='option 2'),
+                                        dict(value='option3', label='option 3'),
+                                    ],
+                                    ),
+
+    spacer,
+
+    html.Div(id='output14', children=['Selected item appears here.']),
 
     spacer,
 
@@ -412,6 +424,12 @@ def dropdown_callback(value, options):
 def autocomplete_callback(searchText: str):
     return ['Selection is (should take 3 seconds to show up) : {}'.format(searchText)]
 
+# Callback for SDRadioButtonGroup
+@app.callback(
+    dash.dependencies.Output('output14', 'children'),
+    [dash.dependencies.Input('input14', 'valueSelected')])
+def radiobuttongroup_callback(valueSelected):
+    return ['Selection is: {}'.format(valueSelected)]
 
 if __name__ == '__main__':
     app.run_server(debug=True)
