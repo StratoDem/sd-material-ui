@@ -227,6 +227,11 @@ app.layout = html.Div([
 
     spacer,
 
+    # Test for SDPopover
+    sd_material_ui.Popover(id='input15'),
+
+    spacer,
+
     # Test for SDDropDownMenu and SDMenuItem (single selection)
     html.Div(children=[
         sd_material_ui.DropDownMenu(id='input11',

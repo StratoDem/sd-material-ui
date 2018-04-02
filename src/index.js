@@ -10,6 +10,7 @@ import FlatButton from './components/FlatButton';
 import FontIcon from './components/FontIcon';
 import IconButton from './components/IconButton';
 import Paper from './components/Paper';
+import Popover from './components/Popover';
 import Snackbar from './components/Snackbar';
 import Subheader from './components/Subheader';
 import RadioButtonGroup from './components/RadioButtonGroup';
@@ -29,6 +30,7 @@ export {
   FontIcon,
   IconButton,
   Paper,
+  Popover,
   Snackbar,
   Subheader,
   RadioButtonGroup,
