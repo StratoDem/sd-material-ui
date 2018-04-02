@@ -36,6 +36,15 @@ app.layout = html.Div([
 
     spacer,
 
+    # Test SDSubheader
+    sd_material_ui.Subheader(children=['This is a subheader']),
+
+    spacer,
+
+    sd_material_ui.Subheader(children=['This is a subheader with an inset'], inset=True),
+
+    spacer,
+
     # Test SDPaper
     sd_material_ui.Paper(zDepth=5,
                          circle=True,
