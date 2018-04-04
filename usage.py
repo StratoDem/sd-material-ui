@@ -228,7 +228,7 @@ app.layout = html.Div([
     spacer,
 
     # Test for SDPopover
-    sd_material_ui.Popover(id='input15'),
+    sd_material_ui.Popover(),
 
     spacer,
 
