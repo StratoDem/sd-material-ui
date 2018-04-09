@@ -9,6 +9,7 @@ import DropDownMenu from './components/DropDownMenu';
 import FlatButton from './components/FlatButton';
 import FontIcon from './components/FontIcon';
 import IconButton from './components/IconButton';
+import Paper from './components/Paper';
 import Snackbar from './components/Snackbar';
 import RadioButtonGroup from './components/RadioButtonGroup';
 import RaisedButton from './components/RaisedButton';
@@ -26,6 +27,7 @@ export {
   FlatButton,
   FontIcon,
   IconButton,
+  Paper,
   Snackbar,
   RadioButtonGroup,
   RaisedButton,

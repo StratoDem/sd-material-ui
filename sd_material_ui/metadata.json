@@ -2438,6 +2438,79 @@
       }
     }
   },
+  "src/components/Paper/Paper.react.js": {
+    "description": "",
+    "displayName": "Paper",
+    "methods": [],
+    "props": {
+      "children": {
+        "flowType": {
+          "name": "Node"
+        },
+        "required": false,
+        "description": "Children passed int othe paper element",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "circle": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Set ot true to generate a circular paper container",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "rounded": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "By default, the paper container will have a border radius.\nSet this to false to generate a container with sharp corners.",
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        }
+      },
+      "style": {
+        "flowType": {
+          "name": "Object"
+        },
+        "required": false,
+        "description": "Override the inline-styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "transitionEnabled": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Set to false to disable CSS transitions for the paper element",
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        }
+      },
+      "zDepth": {
+        "flowType": {
+          "name": "unknown"
+        },
+        "required": false,
+        "description": "This number represents the zDepth of the paper shadow",
+        "defaultValue": {
+          "value": "1",
+          "computed": false
+        }
+      }
+    }
+  },
   "src/components/RadioButtonGroup/RadioButtonGroup.react.js": {
     "description": "A Dash material-ui RadioButtonGroup component",
     "displayName": "RadioButtonGroup",

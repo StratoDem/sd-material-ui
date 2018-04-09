@@ -2,6 +2,10 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 2.9.0 - 2018-03-29
+### Added
+- Add Paper Component
+
 ## 2.8.0 - 2018-04-09
 ### Added
 - Add RadioButtonGroup Component

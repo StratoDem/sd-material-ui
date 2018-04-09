@@ -36,6 +36,32 @@ app.layout = html.Div([
 
     spacer,
 
+    # Test SDPaper
+    sd_material_ui.Paper(zDepth=5,
+                         circle=True,
+                         style=dict(height=100,
+                                    width=100,
+                                    margin=20,
+                                    textAlign='center',
+                                    display='inline-block',),
+                         ),
+
+    spacer,
+
+    sd_material_ui.Paper(children=[sd_material_ui.FontIcon(className='material-icons',
+                                                           iconName='help',
+                                                           color='green',)],
+                         zDepth=4,
+                         rounded=False,
+                         style=dict(height=100,
+                                    width=100,
+                                    margin=20,
+                                    textAlign='center',
+                                    display='inline-block', ),
+                         ),
+
+    spacer,
+
     # Test SDCircularProgress
     sd_material_ui.CircularProgress(mode='indeterminate'), # can only use indeterminate mode
 
