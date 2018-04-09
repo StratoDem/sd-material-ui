@@ -1,4 +1,498 @@
 {
+  "src/components/AutoComplete/AutoComplete.react.js": {
+    "description": "",
+    "displayName": "AutoComplete",
+    "methods": [
+      {
+        "name": "handleChange",
+        "docblock": "calls function to fire callback and updates searchText in state\n@param searchText\n@param dataSource\n@param params",
+        "modifiers": [],
+        "params": [
+          {
+            "name": "searchText",
+            "description": null,
+            "type": {
+              "name": "string"
+            }
+          },
+          {
+            "name": "dataSource",
+            "description": null,
+            "type": {
+              "name": "Array",
+              "alias": "Array"
+            }
+          },
+          {
+            "name": "params",
+            "description": null,
+            "type": {
+              "name": "Object",
+              "alias": "Object"
+            }
+          }
+        ],
+        "returns": null,
+        "description": "calls function to fire callback and updates searchText in state"
+      },
+      {
+        "name": "_updateTextProps",
+        "docblock": "executes setProps function with searchText to update searchText in props;\nfires Dash callback event\n@param searchText\n@private",
+        "modifiers": [],
+        "params": [
+          {
+            "name": "searchText",
+            "description": null,
+            "type": {
+              "name": "string"
+            }
+          }
+        ],
+        "returns": null,
+        "description": "executes setProps function with searchText to update searchText in props;\nfires Dash callback event"
+      }
+    ],
+    "props": {
+      "anchorOrigin": {
+        "flowType": {
+          "name": "signature",
+          "type": "object",
+          "raw": "{\n  vertical?: 'top' | 'center' | 'bottom',\n  horizontal?: 'left' | 'middle' | 'right',\n}",
+          "signature": {
+            "properties": [
+              {
+                "key": "vertical",
+                "value": {
+                  "name": "union",
+                  "raw": "'top' | 'center' | 'bottom'",
+                  "elements": [
+                    {
+                      "name": "literal",
+                      "value": "'top'"
+                    },
+                    {
+                      "name": "literal",
+                      "value": "'center'"
+                    },
+                    {
+                      "name": "literal",
+                      "value": "'bottom'"
+                    }
+                  ],
+                  "required": false
+                }
+              },
+              {
+                "key": "horizontal",
+                "value": {
+                  "name": "union",
+                  "raw": "'left' | 'middle' | 'right'",
+                  "elements": [
+                    {
+                      "name": "literal",
+                      "value": "'left'"
+                    },
+                    {
+                      "name": "literal",
+                      "value": "'middle'"
+                    },
+                    {
+                      "name": "literal",
+                      "value": "'right'"
+                    }
+                  ],
+                  "required": false
+                }
+              }
+            ]
+          }
+        },
+        "required": false,
+        "description": "Location of the anchor for the auto complete",
+        "defaultValue": {
+          "value": "{vertical: 'bottom', horizontal: 'left'}",
+          "computed": false
+        }
+      },
+      "animated": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "If true, auto complete is animated as it is toggled",
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        }
+      },
+      "dashCallbackDelay": {
+        "flowType": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Dash callback delay in ms - default is 500 ms",
+        "defaultValue": {
+          "value": "500",
+          "computed": false
+        }
+      },
+      "dataSource": {
+        "flowType": {
+          "name": "Array",
+          "elements": [
+            {
+              "name": "any"
+            }
+          ],
+          "raw": "Array<any>"
+        },
+        "required": false,
+        "description": "Array of strings or nodes used to populate the list",
+        "defaultValue": {
+          "value": "[]",
+          "computed": false
+        }
+      },
+      "dataSourceConfig": {
+        "flowType": {
+          "name": "Object"
+        },
+        "required": false,
+        "description": "Config for objects list dataSource",
+        "defaultValue": {
+          "value": "{text: 'text', value: 'value'}",
+          "computed": false
+        }
+      },
+      "disableFocusRipple": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Disables focus ripple when true",
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        }
+      },
+      "errorStyle": {
+        "flowType": {
+          "name": "Object"
+        },
+        "required": false,
+        "description": "Override style prop for error",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "errorText": {
+        "flowType": {
+          "name": "Node"
+        },
+        "required": false,
+        "description": "The error content to display",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "filter": {
+        "flowType": {
+          "name": "union",
+          "raw": "'caseInsensitiveFilter' | 'caseSensitiveFilter' | 'defaultFilter' |\n  'fuzzyFilter' | 'levenshteinDistanceFilter' | 'noFilter'",
+          "elements": [
+            {
+              "name": "literal",
+              "value": "'caseInsensitiveFilter'"
+            },
+            {
+              "name": "literal",
+              "value": "'caseSensitiveFilter'"
+            },
+            {
+              "name": "literal",
+              "value": "'defaultFilter'"
+            },
+            {
+              "name": "literal",
+              "value": "'fuzzyFilter'"
+            },
+            {
+              "name": "literal",
+              "value": "'levenshteinDistanceFilter'"
+            },
+            {
+              "name": "literal",
+              "value": "'noFilter'"
+            }
+          ]
+        },
+        "required": false,
+        "description": "String name for filter to be applied to user input.\nwill later be mapped to function",
+        "defaultValue": {
+          "value": "\"defaultFilter\"",
+          "computed": false
+        }
+      },
+      "fireEvent": {
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "() => void",
+          "signature": {
+            "arguments": [],
+            "return": {
+              "name": "void"
+            }
+          }
+        },
+        "required": false,
+        "description": "Dash-assigned callback that gets fired when the input changes.",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      },
+      "floatingLabelText": {
+        "flowType": {
+          "name": "Node"
+        },
+        "required": false,
+        "description": "The content to use for adding floating label element",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "fullWidth": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "If true, field receives the property width: 100%",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "hintText": {
+        "flowType": {
+          "name": "Node"
+        },
+        "required": false,
+        "description": "The hint content to display",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "id": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "Autocomplete ID"
+      },
+      "listStyle": {
+        "flowType": {
+          "name": "Object"
+        },
+        "required": false,
+        "description": "Override style for list",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "maxSearchResults": {
+        "flowType": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "The max number of search results to be shown. By default it shows\nall the items which matches filter"
+      },
+      "menuCloseDelay": {
+        "flowType": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Delay for closing time of the menu",
+        "defaultValue": {
+          "value": "300",
+          "computed": false
+        }
+      },
+      "menuProps": {
+        "flowType": {
+          "name": "Object"
+        },
+        "required": false,
+        "description": "Props to be passed to menu",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "menuStyle": {
+        "flowType": {
+          "name": "Object"
+        },
+        "required": false,
+        "description": "Override style for menu",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "open": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Auto complete menu is open if true",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "openOnFocus": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "If true, the list item is showed when a focus event triggers",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "popoverProps": {
+        "flowType": {
+          "name": "Object"
+        },
+        "required": false,
+        "description": "Props to be passed to popover",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "searchText": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Text being input to auto complete",
+        "defaultValue": {
+          "value": "\"\"",
+          "computed": false
+        }
+      },
+      "setProps": {
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "() => void",
+          "signature": {
+            "arguments": [],
+            "return": {
+              "name": "void"
+            }
+          }
+        },
+        "required": false,
+        "description": "Dash callback to update props on the server.",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      },
+      "style": {
+        "flowType": {
+          "name": "Object"
+        },
+        "required": false,
+        "description": "Override the inline-styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "targetOrigin": {
+        "flowType": {
+          "name": "signature",
+          "type": "object",
+          "raw": "{\n  vertical?: 'top' | 'center' | 'bottom',\n  horizontal?: 'left' | 'middle' | 'right',\n}",
+          "signature": {
+            "properties": [
+              {
+                "key": "vertical",
+                "value": {
+                  "name": "union",
+                  "raw": "'top' | 'center' | 'bottom'",
+                  "elements": [
+                    {
+                      "name": "literal",
+                      "value": "'top'"
+                    },
+                    {
+                      "name": "literal",
+                      "value": "'center'"
+                    },
+                    {
+                      "name": "literal",
+                      "value": "'bottom'"
+                    }
+                  ],
+                  "required": false
+                }
+              },
+              {
+                "key": "horizontal",
+                "value": {
+                  "name": "union",
+                  "raw": "'left' | 'middle' | 'right'",
+                  "elements": [
+                    {
+                      "name": "literal",
+                      "value": "'left'"
+                    },
+                    {
+                      "name": "literal",
+                      "value": "'middle'"
+                    },
+                    {
+                      "name": "literal",
+                      "value": "'right'"
+                    }
+                  ],
+                  "required": false
+                }
+              }
+            ]
+          }
+        },
+        "required": false,
+        "description": "Origin for location of target",
+        "defaultValue": {
+          "value": "{vertical: 'top', horizontal: 'left'}",
+          "computed": false
+        }
+      },
+      "textFieldStyle": {
+        "flowType": {
+          "name": "Object"
+        },
+        "required": false,
+        "description": "Override the inline-styles of AutoComplete's TextField element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      }
+    }
+  },
   "src/components/BottomNavigation/BottomNavigation.react.js": {
     "description": "BottomNavigationItem is an item in a BottomNavigation component",
     "displayName": "BottomNavigation",

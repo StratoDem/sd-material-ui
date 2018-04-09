@@ -9,6 +9,9 @@ app.scripts.config.serve_locally = True
 spacer = html.Div(children=[], style=dict(height=20))
 final_spacer = html.Div(children=[], style=dict(height=400))
 
+
+
+# Callback for BottomNavigation
 app.layout = html.Div([
 
     # Test BottomNavigation
@@ -156,6 +159,22 @@ app.layout = html.Div([
 
     spacer,
 
+    #Test for SDAutoComplete
+    sd_material_ui.AutoComplete(id='input13',
+                                anchorOrigin={'vertical': 'center', 'horizontal': 'middle'},
+                                animated=True,
+                                dashCallbackDelay=3000,
+                                dataSource=['orange','red','blue', 'peach'],
+                                fullWidth=True,
+                                floatingLabelText="Type here",
+                                filter='caseSensitiveFilter',),
+
+    spacer,
+
+    html.Div(id='output13', children=['Selected item appears here (should take 3 seconds to show up).']),
+
+    spacer,
+
     # Test for SDDropDownMenu and SDMenuItem (single selection)
     html.Div(children=[
         sd_material_ui.DropDownMenu(id='input11',
@@ -181,9 +200,6 @@ app.layout = html.Div([
 
     final_spacer,
 ])
-
-
-# Callback for BottomNavigation
 @app.callback(
     dash.dependencies.Output('output', 'children'),
     [dash.dependencies.Input('input', 'selectedIndex')])
@@ -382,6 +398,14 @@ def click_snackbar(snackbar_click: str):
     [dash.dependencies.State('input11', 'options')])
 def dropdown_callback(value, options):
     return ['Selection is: {}, {}'.format(value, options[value - 1]['customData'])]
+
+
+# Callback for SDAutoComplete
+@app.callback(
+    dash.dependencies.Output('output13', 'children'),
+    [dash.dependencies.Input('input13', 'searchText')])
+def autocomplete_callback(searchText: str):
+    return ['Selection is (should take 3 seconds to show up) : {}'.format(searchText)]
 
 
 if __name__ == '__main__':
