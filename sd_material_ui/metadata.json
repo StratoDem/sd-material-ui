@@ -2438,6 +2438,304 @@
       }
     }
   },
+  "src/components/RadioButtonGroup/RadioButtonGroup.react.js": {
+    "description": "A Dash material-ui RadioButtonGroup component",
+    "displayName": "RadioButtonGroup",
+    "methods": [
+      {
+        "name": "handleChange",
+        "docblock": "calls function to fire callback and updates valueSelected in state\n@param event\n@param valueSelected",
+        "modifiers": [],
+        "params": [
+          {
+            "name": "event",
+            "description": null,
+            "type": {
+              "name": "Object",
+              "alias": "Object"
+            }
+          },
+          {
+            "name": "valueSelected",
+            "description": null,
+            "type": {
+              "name": "undefined",
+              "alias": "undefined"
+            }
+          }
+        ],
+        "returns": null,
+        "description": "calls function to fire callback and updates valueSelected in state"
+      },
+      {
+        "name": "buildRadioButton",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "item",
+            "type": {
+              "name": "signature",
+              "type": "object",
+              "raw": "{\n  /** If true, the radio button is disabled */\n  disabled?: boolean,\n  /** Override the inline-styles of the icon element */\n  iconStyle?: Object,\n  /** Override the inline-styles of the input element */\n  inputStyle?: Object,\n  /** Label to appear next to button */\n  label?: string,\n  /** Override the inline-styles of the label element */\n  labelStyle?: Object,\n  /** Override the inline-styles of the root element */\n  style?: Object,\n  /** value of the the radio button */\n  value?: any,\n}",
+              "signature": {
+                "properties": [
+                  {
+                    "key": "disabled",
+                    "value": {
+                      "name": "boolean",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "iconStyle",
+                    "value": {
+                      "name": "Object",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "inputStyle",
+                    "value": {
+                      "name": "Object",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "label",
+                    "value": {
+                      "name": "string",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "labelStyle",
+                    "value": {
+                      "name": "Object",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "style",
+                    "value": {
+                      "name": "Object",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "value",
+                    "value": {
+                      "name": "any",
+                      "required": false
+                    }
+                  }
+                ]
+              },
+              "alias": "SD_RADIO_BUTTON"
+            }
+          }
+        ],
+        "returns": null
+      }
+    ],
+    "props": {
+      "className": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "the css class name of the root element",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "defaultSelected": {
+        "flowType": {
+          "name": "any"
+        },
+        "required": false,
+        "description": "the value property of the radio button that will\nbe selected by default",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "fireEvent": {
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "() => void",
+          "signature": {
+            "arguments": [],
+            "return": {
+              "name": "void"
+            }
+          }
+        },
+        "required": false,
+        "description": "a callback for firng events to dash",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      },
+      "id": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "the element's ID"
+      },
+      "labelPosition": {
+        "flowType": {
+          "name": "union",
+          "raw": "'left' | 'right'",
+          "elements": [
+            {
+              "name": "literal",
+              "value": "'left'"
+            },
+            {
+              "name": "literal",
+              "value": "'right'"
+            }
+          ]
+        },
+        "required": false,
+        "description": "where the label will be placed for all child radio buttons;\ntakes precedence over labelPosition property of the RadioButton elements",
+        "defaultValue": {
+          "value": "'right'",
+          "computed": false
+        }
+      },
+      "name": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "the name that will be applied to all child radio buttons"
+      },
+      "options": {
+        "flowType": {
+          "name": "Array",
+          "elements": [
+            {
+              "name": "signature",
+              "type": "object",
+              "raw": "{\n  /** If true, the radio button is disabled */\n  disabled?: boolean,\n  /** Override the inline-styles of the icon element */\n  iconStyle?: Object,\n  /** Override the inline-styles of the input element */\n  inputStyle?: Object,\n  /** Label to appear next to button */\n  label?: string,\n  /** Override the inline-styles of the label element */\n  labelStyle?: Object,\n  /** Override the inline-styles of the root element */\n  style?: Object,\n  /** value of the the radio button */\n  value?: any,\n}",
+              "signature": {
+                "properties": [
+                  {
+                    "key": "disabled",
+                    "value": {
+                      "name": "boolean",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "iconStyle",
+                    "value": {
+                      "name": "Object",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "inputStyle",
+                    "value": {
+                      "name": "Object",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "label",
+                    "value": {
+                      "name": "string",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "labelStyle",
+                    "value": {
+                      "name": "Object",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "style",
+                    "value": {
+                      "name": "Object",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "value",
+                    "value": {
+                      "name": "any",
+                      "required": false
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "raw": "Array<SD_RADIO_BUTTON>"
+        },
+        "required": false,
+        "description": "used to create the RadioButtons to populate the RadioButtonGroup with. A Dash user passes in a\nlist of dict items, each one having at least a `value` and `label`. If that value is selected,\nvalueSelected will be updated",
+        "defaultValue": {
+          "value": "[]",
+          "computed": false
+        }
+      },
+      "setProps": {
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "() => void",
+          "signature": {
+            "arguments": [],
+            "return": {
+              "name": "void"
+            }
+          }
+        },
+        "required": false,
+        "description": "dash callback to update props on the server",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      },
+      "style": {
+        "flowType": {
+          "name": "signature",
+          "type": "object",
+          "raw": "{}",
+          "signature": {
+            "properties": []
+          }
+        },
+        "required": false,
+        "description": "override the inline-styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "valueSelected": {
+        "flowType": {
+          "name": "any"
+        },
+        "required": false,
+        "description": "value of the currently selected radio button",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      }
+    }
+  },
   "src/components/RaisedButton/RaisedButton.react.js": {
     "description": "",
     "displayName": "RaisedButton",

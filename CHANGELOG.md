@@ -2,6 +2,14 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 2.8.0 - 2018-04-09
+### Added
+- Add RadioButtonGroup Component
+
+## 2.7.1 - 2018-03-26
+### Fixes
+- Fixes `package.json` and `version.py` mismatch
+
 ## 2.7.0 - 2018-03-26
 ### Added
 - Add AutoComplete Component
