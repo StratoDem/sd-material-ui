@@ -2,11 +2,11 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## 2.10.0 - 2018-04-02
+## 2.10.0 - 2018-04-09
 ### Added
 - Add Subheader Component
 
-## 2.9.0 - 2018-03-29
+## 2.9.0 - 2018-04-09
 ### Added
 - Add Paper Component
 
