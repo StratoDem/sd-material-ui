@@ -5,14 +5,21 @@ StratoDem Analytics Dash implementation of material-ui components.
 Dash wrappers around the excellent [`material-ui`](https://github.com/mui-org/material-ui) package
 
 ## Material-UI components ported to Dash
+- [x] [`AutoComplete`](http://www.material-ui.com/#/components/auto-complete)
 - [x] [`BottomNavigation`](http://www.material-ui.com/#/components/bottom-navigation)
 - [x] [`Checkbox`](http://www.material-ui.com/#/components/checkbox)
-- [x] [`FlatButton`](http://www.material-ui.com/#/components/flat-button)
-- [x] [`RaisedButton`](http://www.material-ui.com/#/components/raised-button)
+- [x] [`CircularProgress`](http://www.material-ui.com/#/components/circular-progress)
 - [x] [`Dialog`](http://www.material-ui.com/#/components/dialog)
-- [x] [`DropDownMenu`](http://www.material-ui.com/#/components/dropdown-menu)
+- [x] [`Divider`](http://www.material-ui.com/#/components/divider)
 - [x] [`Drawer`](http://www.material-ui.com/#/components/drawer)
+- [x] [`DropDownMenu`](http://www.material-ui.com/#/components/dropdown-menu)
+- [x] [`FlatButton`](http://www.material-ui.com/#/components/flat-button)
+- [x] [`FontIcon`](http://www.material-ui.com/#/components/font-icon)
+- [x] [`IconButton`](http://www.material-ui.com/#/components/icon-button)
+- [x] [`Paper`](http://www.material-ui.com/#/components/paper)
+- [x] [`RaisedButton`](http://www.material-ui.com/#/components/raised-button)
 - [x] [`Snackbar`](http://www.material-ui.com/#/components/snackbar)
+- [x] [`Subheader`](http://www.material-ui.com/#/components/subheader)
 - [x] [`Toggle`](http://www.material-ui.com/#/components/toggle)
 
 ## Examples
@@ -46,6 +53,11 @@ Run `usage.py` in the virtual environment
 $ source venv/bin/activate
 $ python usage.py
 ```
+
+### Contributors
+[@mjclawar](https://github.com/mjclawar)
+[@coralvanda](https://github.com/coralvanda)
+[@SreejaKeesara](https://github.com/SreejaKeesara)
 
 [Dash]: https://github.com/plotly/dash
 [dash-components-archetype]: https://github.com/plotly/dash-components-archetype
