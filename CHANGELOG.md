@@ -2,6 +2,10 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 2.10.1 - 2018-04-09
+### Fixes
+- Fixes `package.json` and `version.py` mismatch
+
 ## 2.10.0 - 2018-04-09
 ### Added
 - Add Subheader Component
