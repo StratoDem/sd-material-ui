@@ -2439,7 +2439,7 @@
     }
   },
   "src/components/Paper/Paper.react.js": {
-    "description": "",
+    "description": "A Dash material-ui Paper component",
     "displayName": "Paper",
     "methods": [],
     "props": {
@@ -3303,6 +3303,46 @@
         },
         "required": false,
         "description": "Override the inline styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      }
+    }
+  },
+  "src/components/Subheader/Subheader.react.js": {
+    "description": "",
+    "displayName": "Subheader",
+    "methods": [],
+    "props": {
+      "children": {
+        "flowType": {
+          "name": "Node"
+        },
+        "required": false,
+        "description": "Node that will be placed inside the Subheader",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "inset": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "If true, the Subheader will be indented",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "style": {
+        "flowType": {
+          "name": "Object"
+        },
+        "required": false,
+        "description": "Override the inline-styles of the root element",
         "defaultValue": {
           "value": "{}",
           "computed": false
