@@ -2,6 +2,27 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 2.11.0 - 2018-04-19
+### Added
+- Adds `containerClosedClassName` prop to `Drawer` which applies additional
+classes to the drawer when it is closed to allow for custom styling (like offsets or transitions)
+
+### Changed
+- :mega: **BREAKING** Changes `containerclassName` prop to `containerClassName` in `Drawer` to match `material-ui` prop naming format.
+
+Example
+```python
+# This has 'my-test-class my-closed-class' as the class name when closed
+# and 'my-test-class' as the class name when open
+sd_material_ui.Drawer(
+    open=False,
+    containerClassName='my-test-class',
+    containerClosedClassName='my-closed-class')
+```
+
+### Fixes
+- Adds `id` prop to `FontIcon`
+
 ## 2.10.1 - 2018-04-09
 ### Fixes
 - Fixes `package.json` and `version.py` mismatch

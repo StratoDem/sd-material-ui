@@ -1,6 +1,6 @@
 // @flow
 
-import React, { Component } from 'react';
+import React from 'react';
 
 import MUIFontIcon from 'material-ui/FontIcon';
 import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
@@ -8,6 +8,8 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
 type Props = {
+  /** id for the component */
+  id?: string,
   /** font color of the font icon;
    * If not specified, this component will default
    * to muiTheme.palette.textColor
@@ -26,6 +28,7 @@ type Props = {
 };
 
 const defaultProps = {
+  id: '',
   color: '',
   className: '',
   hoverColor: '',
@@ -33,20 +36,18 @@ const defaultProps = {
   style: {},
 };
 
-export default class FontIcon extends Component<Props> {
+export default class FontIcon extends React.Component<Props> {
   props: Props;
 
   render() {
-    const {color, className, hoverColor, iconName, style} = this.props;
-
     return (
-      <div>
+      <div id={this.props.id}>
         <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
           <MUIFontIcon
-            color={color}
-            className={className}
-            hoverColor={hoverColor}
-            style={style}
+            color={this.props.color}
+            className={this.props.className}
+            hoverColor={this.props.hoverColor}
+            style={this.props.style}
           >
             {this.props.iconName}
           </MUIFontIcon>

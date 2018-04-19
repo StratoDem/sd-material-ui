@@ -1,14 +1,15 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import FontIcon from '../FontIcon/FontIcon.react';
 import MuiFontIcon from 'material-ui/FontIcon';
+import FontIcon from '../FontIcon/FontIcon.react';
+
 
 describe('FontIcon', () => {
   it ('renders', () => {
     const component = shallow(
       <FontIcon
-        className={'material-icons'}
-        iconName={'home'}
+        className="material-icons"
+        iconName="home"
       />);
     expect(component).toBe.ok;
   });
@@ -16,11 +17,11 @@ describe('FontIcon', () => {
   it('uses the styles provided', () => {
     const component = shallow(
       <FontIcon
-        className={'material-icons'}
-        iconName={'settings'}
+        className="material-icons"
+        iconName="settings"
         style={{padding: 20}}
-        color={'black'}
-        hoverColor={'green'}
+        color="black"
+        hoverColor="green"
       />);
 
     expect(
