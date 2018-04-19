@@ -1177,12 +1177,23 @@
           "computed": false
         }
       },
-      "containerclassName": {
+      "containerClassName": {
         "flowType": {
           "name": "string"
         },
         "required": false,
         "description": "The CSS class name of the container element",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "containerClosedClassName": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The CSS class name to add to the container element when it is closed",
         "defaultValue": {
           "value": "''",
           "computed": false
@@ -2156,6 +2167,17 @@
     "displayName": "FontIcon",
     "methods": [],
     "props": {
+      "id": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "id for the component",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
       "color": {
         "flowType": {
           "name": "string"

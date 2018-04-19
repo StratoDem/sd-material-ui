@@ -2,6 +2,10 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 2.11.1 - 2014-04-19
+### Fixes
+- Updates `metadata.json` for new props in `v2.11.0`
+
 ## 2.11.0 - 2018-04-19
 ### Added
 - Adds `containerClosedClassName` prop to `Drawer` which applies additional
