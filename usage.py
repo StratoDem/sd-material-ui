@@ -212,18 +212,44 @@ app.layout = html.Div([
     spacer,
 
     # Test for SDAutoComplete
-    sd_material_ui.AutoComplete(id='input13',
-                                anchorOrigin={'vertical': 'center', 'horizontal': 'middle'},
-                                animated=True,
-                                dashCallbackDelay=3000,
-                                dataSource=['orange','red','blue', 'peach'],
-                                fullWidth=True,
-                                floatingLabelText="Type here",
-                                filter='caseSensitiveFilter',),
+    sd_material_ui.AutoComplete(
+        id='input13',
+        anchorOrigin={'vertical': 'center', 'horizontal': 'middle'},
+        animated=True,
+        dashCallbackDelay=3000,
+        dataSource=['orange', 'red', 'blue', 'peach'],
+        fullWidth=True,
+        floatingLabelText="Type here",
+        filter='caseSensitiveFilter',),
 
     spacer,
 
     html.Div(id='output13', children=['Selected item appears here (should take 3 seconds to show up).']),
+
+    spacer,
+
+    # Test for SDAutoComplete with exactMatch
+    sd_material_ui.AutoComplete(
+        id='input-autocomplete-exactmatch',
+        anchorOrigin={'vertical': 'center', 'horizontal': 'middle'},
+        animated=True,
+        exactMatch=True,
+        dashCallbackDelay=3000,
+        dataSource=[
+            dict(label='pink', value=0),
+            dict(label='magenta', value=1),
+            dict(label='aqua', value={'testKey': 'testVal'}),
+            dict(label='aquamarine', value=3),
+        ],
+        fullWidth=True,
+        floatingLabelText="Type here",
+        filter='caseSensitiveFilter',),
+
+    spacer,
+
+    html.Div(
+        id='output-autocomplete-exactmatch',
+        children=['Selected index appears here.']),
 
     spacer,
 
@@ -459,12 +485,22 @@ def dropdown_callback(value, options):
 def autocomplete_callback(searchText: str):
     return ['Selection is (should take 3 seconds to show up) : {}'.format(searchText)]
 
+
+# Callback for SDAutoComplete
+@app.callback(
+    dash.dependencies.Output('output-autocomplete-exactmatch', 'children'),
+    [dash.dependencies.Input('input-autocomplete-exactmatch', 'searchValue')])
+def autocomplete_callback(searchValue: int):
+    return ['Selection is {}'.format(searchValue)]
+
+
 # Callback for SDRadioButtonGroup
 @app.callback(
     dash.dependencies.Output('output14', 'children'),
     [dash.dependencies.Input('input14', 'valueSelected')])
 def radiobuttongroup_callback(valueSelected):
     return ['Selection is: {}'.format(valueSelected)]
+
 
 if __name__ == '__main__':
     app.run_server(debug=True)

@@ -19,7 +19,11 @@ type Props = {
   animated?: boolean,
   /** Dash callback delay in ms - default is 500 ms */
   dashCallbackDelay?: number,
-  /** Array of strings or nodes used to populate the list */
+  /**
+   * Array of strings or nodes used to populate the list
+   * Alternatively, an Array of Objects with a structure like
+   * {label: 'My label to render', value: 'My value to ship on match'}
+   */
   dataSource?: Array<any>,
   /** Config for objects list dataSource */
   dataSourceConfig?: Object,
@@ -29,6 +33,8 @@ type Props = {
   errorStyle?: Object,
   /** The error content to display */
   errorText?: Node,
+  /** Should the search text have to match exactly to update props server side? */
+  exactMatch?: boolean,
   /** String name for filter to be applied to user input.
    * will later be mapped to function
    */
@@ -63,6 +69,10 @@ type Props = {
   popoverProps?: Object,
   /** Text being input to auto complete */
   searchText?: string,
+  /** Value in the dataSource found by using searchText
+   * NOTE exactMatch must be true for this to work
+   */
+  searchValue?: any,
   /** Dash callback to update props on the server. */
   setProps?: () => void,
   /** Override the inline-styles of the root element */
@@ -78,6 +88,7 @@ type Props = {
 
 type State = {
   searchText: string,
+  dataSourceRender: Array<string>,
 }
 
 const defaultProps = {
@@ -89,6 +100,7 @@ const defaultProps = {
   disableFocusRipple: true,
   errorStyle: {},
   errorText: null,
+  exactMatch: false,
   filter: "defaultFilter",
   fireEvent: () => {},
   floatingLabelText: null,
@@ -106,6 +118,7 @@ const defaultProps = {
   style: {},
   targetOrigin: {vertical: 'top', horizontal: 'left'},
   textFieldStyle: {},
+  searchValue: null,
 };
 
 const mapFilterToFunc = {
@@ -120,7 +133,12 @@ const mapFilterToFunc = {
 export default class AutoComplete extends Component<Props, State> {
   constructor(props: Props) {
     super(props);
-    this.state = {searchText: this.props.searchText};
+    this.state = {
+      searchText: this.props.searchText,
+      dataSourceRender: this.props.exactMatch
+        ? this.props.dataSource.map(d => d.label)
+        : this.props.dataSource,
+    };
     /** _.debounce used to provide delay in callback to avoid firing callback every
      * time user input changes - waits this.props.dashCallbackDelay ms to fire callback */
     this.updateTextProps = _.debounce(this._updateTextProps, this.props.dashCallbackDelay);
@@ -134,6 +152,12 @@ export default class AutoComplete extends Component<Props, State> {
     if (nextProps.searchText !== null && nextProps.searchText !== this.props.searchText) {
       this.handleChange(nextProps.searchText, this.props.dataSource, {});
     }
+    if (this.props.dataSource !== nextProps.dataSource)
+      this.setState({
+        dataSourceRender: nextProps.exactMatch
+          ? nextProps.dataSource.map(d => d.label)
+          : nextProps.dataSource,
+      });
   }
 
   /**
@@ -143,8 +167,16 @@ export default class AutoComplete extends Component<Props, State> {
    * @param params
    */
   handleChange = (searchText: string, dataSource: Array, params: Object) => {
-    this.updateTextProps(searchText);
+    if (this.props.exactMatch) {
+      // If we are looking for an exact match, then we want to update searchValue to pass
+      // back data to the server at that index from the dataSource
+      const filteredData = dataSource.filter(entry => entry.label === searchText);
+      if (filteredData.length > 0 && typeof this.props.setProps === 'function')
+        this.props.setProps({searchValue: filteredData[0].value});
+    }
 
+    // Always want to handle searchText updates
+    this.updateTextProps(searchText);
     this.setState({searchText});
   };
 
@@ -167,7 +199,7 @@ export default class AutoComplete extends Component<Props, State> {
 
   render() {
 
-    const { id, anchorOrigin, animated, dataSource, dataSourceConfig,
+    const { id, anchorOrigin, animated, dataSourceConfig,
       disableFocusRipple, errorStyle, errorText, filter, floatingLabelText,
       hintText, listStyle, maxSearchResults, menuCloseDelay, menuProps,
       menuStyle, open, openOnFocus, popoverProps, style,
@@ -179,7 +211,7 @@ export default class AutoComplete extends Component<Props, State> {
           <MuiAutoComplete
             anchorOrigin={anchorOrigin}
             animated={animated}
-            dataSource={dataSource}
+            dataSource={this.state.dataSourceRender}
             dataSourceConfig={dataSourceConfig}
             disableFocusRipple={disableFocusRipple}
             errorStyle={errorStyle}

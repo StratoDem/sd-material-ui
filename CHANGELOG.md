@@ -2,6 +2,32 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 2.12.0 - 2014-04-19
+### Changed
+- Adds functionality to `AutoComplete` component to allow for sending back `value` instead of `searchText`
+
+Example
+```python
+# SDAutoComplete with exactMatch
+# This ships back 1 when the user types in 'magenta' exactly
+# This ships back {'testKey': 'testVal'} when the user types in 'aqua' exactly
+sd_material_ui.AutoComplete(
+    id='input-autocomplete-exactmatch',
+    anchorOrigin={'vertical': 'center', 'horizontal': 'middle'},
+    animated=True,
+    exactMatch=True,
+    dashCallbackDelay=3000,
+    dataSource=[
+        dict(label='pink', value=0),
+        dict(label='magenta', value=1),
+        dict(label='aqua', value={'testKey': 'testVal'}),
+        dict(label='aquamarine', value=3),
+    ],
+    fullWidth=True,
+    floatingLabelText="Type here",
+    filter='caseSensitiveFilter')
+```
+
 ## 2.11.1 - 2014-04-19
 ### Fixes
 - Updates `metadata.json` for new props in `v2.11.0`

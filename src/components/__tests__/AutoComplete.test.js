@@ -103,5 +103,24 @@ describe('AutoComplete', () => {
       <AutoComplete fireEvent={blankFunc} />);
 
     expect(component).toBe.ok;
-  })
+  });
+
+  it('handles exactMatch with an array of objects', () => {
+    const setProps = jest.fn();
+    const component = shallow(
+      <AutoComplete
+        id="my-id"
+        dataSource={[
+          {label: 'test1', value: 3},
+          {label: 'test2', value: 4},
+          {label: 'test3', value: {wowAnObject: 'test'}},
+        ]}
+        exactMatch
+        setProps={setProps}
+      />);
+
+    component.setProps({searchText: 'test2'});
+    expect(setProps.mock.calls[0][0]).toEqual({searchValue: 4});
+    expect(component.state('searchText')).toBe('test2');
+  });
 });

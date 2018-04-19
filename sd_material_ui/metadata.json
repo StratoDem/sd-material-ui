@@ -147,7 +147,7 @@
           "raw": "Array<any>"
         },
         "required": false,
-        "description": "Array of strings or nodes used to populate the list",
+        "description": "Array of strings or nodes used to populate the list\nAlternatively, an Array of Objects with a structure like\n{label: 'My label to render', value: 'My value to ship on match'}",
         "defaultValue": {
           "value": "[]",
           "computed": false
@@ -194,6 +194,17 @@
         "description": "The error content to display",
         "defaultValue": {
           "value": "null",
+          "computed": false
+        }
+      },
+      "exactMatch": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Should the search text have to match exactly to update props server side?",
+        "defaultValue": {
+          "value": "false",
           "computed": false
         }
       },
@@ -386,6 +397,17 @@
         "description": "Text being input to auto complete",
         "defaultValue": {
           "value": "\"\"",
+          "computed": false
+        }
+      },
+      "searchValue": {
+        "flowType": {
+          "name": "any"
+        },
+        "required": false,
+        "description": "Value in the dataSource found by using searchText\nNOTE exactMatch must be true for this to work",
+        "defaultValue": {
+          "value": "null",
           "computed": false
         }
       },
