@@ -743,6 +743,332 @@
       }
     }
   },
+  "src/components/Card/Card.react.js": {
+    "description": "",
+    "displayName": "Card",
+    "methods": [],
+    "props": {
+      "children": {
+        "flowType": {
+          "name": "Node"
+        },
+        "required": false,
+        "description": "Can be used to render elements inside the Card.",
+        "defaultValue": {
+          "value": "[]",
+          "computed": false
+        }
+      },
+      "className": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The CSS class name of the root element",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "containerStyle": {
+        "flowType": {
+          "name": "Object"
+        },
+        "required": false,
+        "description": "Override the inline-styles of the container element.",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "expandable": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "If true, this card component is expandable.",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "_expanded": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Set to null to keep the component uncontrolled.",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "initiallyExpanded": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Whether this card is initially expanded.",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "style": {
+        "flowType": {
+          "name": "Object"
+        },
+        "required": false,
+        "description": "Override the inline-styles of the root element.",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "showExpandableButton": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "If true, this card component will include a button to expand the card.",
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        }
+      },
+      "headerActAsExpander": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "If true, a click on this card component expands the card.",
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        }
+      },
+      "headerAvatar": {
+        "flowType": {
+          "name": "Node"
+        },
+        "required": false,
+        "description": "This is the Avatar element to be displayed on the Card Header. If avatar is an Avatar or\nother element, it will be rendered. If avatar is a string, it will be used as the image src\nfor an Avatar.",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "headerStyle": {
+        "flowType": {
+          "name": "Object"
+        },
+        "required": false,
+        "description": "Override the inline-styles of the root element.",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "headerSubtitle": {
+        "flowType": {
+          "name": "Node"
+        },
+        "required": false,
+        "description": "Can be used to render a subtitle in Card Header.",
+        "defaultValue": {
+          "value": "[]",
+          "computed": false
+        }
+      },
+      "headerSubtitleColor": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Override the subtitle color.",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "headerSubtitleStyle": {
+        "flowType": {
+          "name": "Object"
+        },
+        "required": false,
+        "description": "Override the inline-styles of the subtitle.",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "headerTextStyle": {
+        "flowType": {
+          "name": "Object"
+        },
+        "required": false,
+        "description": "Override the inline-styles of the text.",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "headerTitle": {
+        "flowType": {
+          "name": "Node"
+        },
+        "required": false,
+        "description": "Can be used to render a title in Card Header.",
+        "defaultValue": {
+          "value": "[]",
+          "computed": false
+        }
+      },
+      "headerTitleColor": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Override the title color.",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "headerTitleStyle": {
+        "flowType": {
+          "name": "Object"
+        },
+        "required": false,
+        "description": "Override the inline-styles of the title.",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "titleExpandable": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "If true, this card component is expandable.",
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        }
+      },
+      "titleStyle": {
+        "flowType": {
+          "name": "Object"
+        },
+        "required": false,
+        "description": "Override the inline-styles of the root element.",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "titleSubtitle": {
+        "flowType": {
+          "name": "Node"
+        },
+        "required": false,
+        "description": "Can be used to render a subtitle in the Card Title.",
+        "defaultValue": {
+          "value": "[]",
+          "computed": false
+        }
+      },
+      "titleSubtitleColor": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Override the subtitle color.",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "titleSubtitleStyle": {
+        "flowType": {
+          "name": "Object"
+        },
+        "required": false,
+        "description": "Override the inline-styles of the subtitle.",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "titleTitle": {
+        "flowType": {
+          "name": "Node"
+        },
+        "required": false,
+        "description": "Can be used to render a title in the Card Title.",
+        "defaultValue": {
+          "value": "[]",
+          "computed": false
+        }
+      },
+      "titleColor": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Override the title color.",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "titleTitleStyle": {
+        "flowType": {
+          "name": "Object"
+        },
+        "required": false,
+        "description": "Override the inline-styles of the title.",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "textExpandable": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "If true, this card component is expandable.",
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        }
+      },
+      "textColor": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Override the CardText color.",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "textStyle": {
+        "flowType": {
+          "name": "Object"
+        },
+        "required": false,
+        "description": "Override the inline-styles of the root element.",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      }
+    }
+  },
   "src/components/Checkbox/Checkbox.react.js": {
     "description": "",
     "displayName": "Checkbox",

@@ -1,5 +1,6 @@
 import AutoComplete from './components/AutoComplete';
 import BottomNavigation from './components/BottomNavigation';
+import Card from './components/Card';
 import Checkbox from './components/Checkbox';
 import CircularProgress from './components/CircularProgress';
 import Dialog from './components/Dialog';
@@ -19,6 +20,7 @@ import Toggle from './components/Toggle';
 export {
   AutoComplete,
   BottomNavigation,
+  Card,
   Checkbox,
   CircularProgress,
   Dialog,
