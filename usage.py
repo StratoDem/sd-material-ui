@@ -276,6 +276,21 @@ app.layout = html.Div([
     ], style=dict(backgroundColor='#1D3153')),
     html.Div(id='output11', children=['Selected item appears here.']),
 
+    spacer,
+
+    sd_material_ui.Card(
+        id='output12',
+        expandable=True,
+        expanded=False,
+        initiallyExpanded=False,
+        headerTitle='Test card header',
+        headerSubtitle='Test subtitle',
+        titleTitle='Card content header',
+        textChildrenAfterMedia=[
+            'Content goes in here!'
+        ]
+    ),
+
     final_spacer,
 ])
 @app.callback(

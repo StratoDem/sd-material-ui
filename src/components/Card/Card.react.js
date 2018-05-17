@@ -119,7 +119,7 @@ const defaultProps = {
   headerChildren: [],
   headerStyle: {},
   headerSubtitle: [],
-  headerSubtitlColor: '',
+  headerSubtitleColor: '',
   headerSubtitleStyle: {},
   headerTextStyle: {},
   headerTitle: [],
@@ -193,6 +193,7 @@ export default class Card extends Component<Props, State> {
             expandable={expandable}
             expanded={this.state.expanded}
             initialyExpanded={initiallyExpanded}
+            onExpandChange={this.handleExpandChange}
             style={style}
           >
             {this.props.children}
