@@ -16,19 +16,27 @@ type Props = {
   /** Override the inline-styles of the container element. */
   containerStyle?: Object,
   /** If true, this card component is expandable. */
-  expandable: boolean,
-  /** Whether this card is expanded. */
-  expanded: boolean,
+  expandable?: boolean,
+  /** Whether this card is expanded.
+   * If true or false the component is controlled. if null the component is uncontrolled.
+   */
+  expanded?: boolean,
   /** Component ID */
   id: string,
   /** Whether this card is initially expanded. */
   initiallyExpanded?: boolean,
-  /** Dash callback to update props */
-  setProps?: () => void,
+  // /** Dash callback to update props */
+  // setProps?: () => void,
   /** Override the inline-styles of the root element. */
   style?: Object,
+  /** */
+  showExpandableButton?: boolean,
 
   // Card header properties
+  /**
+   * If true, a click on this card component expands the card.
+   */
+  headerActAsExpander?: boolean,
   /** This is the Avatar element to be displayed on the Card Header. If avatar is an Avatar or
    * other element, it will be rendered. If avatar is a string, it will be used as the image src
    * for an Avatar. */
@@ -55,6 +63,8 @@ type Props = {
   // Card media properties
   /** Can be used to render elements inside the Card Media. */
   mediaChildren?: Node,
+  /** If true, this card component is expandable. */
+  mediaExpandable?: boolean,
   /** Override the inline-styles of the Card Media. */
   mediaMediaStyle?: Object,
   /** Can be used to render overlay element in Card Media. */
@@ -73,6 +83,10 @@ type Props = {
   textChildrenBeforeMedia?: Node,
   /** Override the CardText color. */
   textColorBeforeMedia?: string,
+  /** If true, this card component is expandable. */
+  textExpandableBeforeMedia?: boolean,
+  /** If true, this card component is expandable. */
+  textExpandableAfterMedia?: boolean,
   /** Override the inline-styles of the root element. */
   textStyleBeforeMedia?: Object,
   /** Can be used to render elements inside the Card Text. */
@@ -85,6 +99,8 @@ type Props = {
   // Card title properties
   /** Can be used to render elements inside the Card Title. */
   titleChildren?: Node,
+  /** If true, this card component is expandable. */
+  titleExpandable?: boolean,
   /** Override the inline-styles of the root element. */
   titleStyle?: Object,
   /** Can be used to render a subtitle in the Card Title. */
@@ -101,21 +117,24 @@ type Props = {
   titleTitleStyle?: Object,
 }
 
-type State ={
-  expanded: boolean,
-};
+// type State ={
+//   expanded: boolean,
+// };
 
 const defaultProps = {
   // Card props
   children: [],
   className: '',
   containerStyle: {},
+  expanded: null,
   initiallyExpanded: false,
-  setProps: () => {},
+  // setProps: () => {},
   style: {},
+  showExpandableButton: true,
 
   // Card header props
   headerAvatar: [],
+  headerActAsExpander: true,
   headerChildren: [],
   headerStyle: {},
   headerSubtitle: [],
@@ -128,6 +147,7 @@ const defaultProps = {
 
   // Card media props
   mediaChildren: [],
+  mediaExpandable: true,
   mediaMediaStyle: {},
   mediaOverlay: [],
   mediaOverlayContainerStyle: {},
@@ -139,12 +159,15 @@ const defaultProps = {
   textChildrenBeforeMedia: [],
   textColorBeforeMedia: '',
   textStyleBeforeMedia: {},
+  textExpandableBeforeMedia: true,
+  textExpandableAfterMedia: true,
   textChildrenAfterMedia: [],
   textColorAfterMedia: '',
   textStyleAfterMedia: {},
 
   // Card title props
   titleChildren: [],
+  titleExpandable: true,
   titleStyle: {},
   titleSubtitle: [],
   titleSubtitleColor: '',
@@ -155,34 +178,36 @@ const defaultProps = {
 };
 
 export default class Card extends Component<Props, State> {
-  constructor(props: Props) {
-    super(props);
-    this.state = {expanded: props.expanded};
-  }
+  // constructor(props: Props) {
+  //   super(props);
+  //   this.state = {expanded: props.expanded};
+  // }
 
-  componentWillReceiveProps(nextProps: Props): void {
-    if (nextProps.expanded !== null && nextProps.expanded !== this.props.expanded) {
-      this.handleExpandChange(nextProps.expanded);
-    }
-  }
-
-  handleExpandChange = (expanded: boolean) => {
-    const { setProps } = this.props;
-
-    if (typeof setProps === 'function')
-      setProps({expanded});
-
-    this.setState({expanded});
-  };
+  // componentWillReceiveProps(nextProps: Props): void {
+  //   if (nextProps.expanded !== null && nextProps.expanded !== this.props.expanded) {
+  //     this.handleExpandChange(nextProps.expanded);
+  //   }
+  // }
+  //
+  // handleExpandChange = (expanded: boolean) => {
+  //   const { setProps } = this.props;
+  //
+  //   if (typeof setProps === 'function')
+  //     setProps({expanded});
+  //
+  //   this.setState({expanded});
+  // };
 
   render() {
-    const { className, containerStyle, expandable, id, initiallyExpanded, style,
-      headerAvatar, headerStyle, headerSubtitle, headerSubtitleColor, headerSubtitleStyle,
-      headerTextStyle, headerTitle, headerTitleColor, headerTitleStyle, mediaMediaStyle,
-      mediaOverlay, mediaOverlayContainerStyle, mediaContentStyle, mediaOverlayStyle, mediaStyle,
+    const { className, containerStyle, expandable, id, initiallyExpanded, style, expanded,
+      showExpandableButton, headerAvatar, headerActAsExpander, headerStyle, headerSubtitle,
+      headerSubtitleColor,
+      headerSubtitleStyle, headerTextStyle, headerTitle, headerTitleColor, headerTitleStyle,
+      mediaMediaStyle, mediaExpandable, mediaOverlay, mediaOverlayContainerStyle, mediaContentStyle,
+      mediaOverlayStyle, mediaStyle, textExpandableBeforeMedia, textExpandableAfterMedia,
       textColorBeforeMedia, textStyleBeforeMedia, textColorAfterMedia, textStyleAfterMedia,
       titleStyle, titleSubtitle, titleSubtitleColor, titleSubtitleStyle, titleTitle, titleColor,
-      titleTitleStyle} = this.props;
+      titleTitleStyle, titleExpandable} = this.props;
 
     return (
       <div id={id}>
@@ -191,18 +216,21 @@ export default class Card extends Component<Props, State> {
             className={className}
             containerStyle={containerStyle}
             expandable={expandable}
-            expanded={this.state.expanded}
+            expanded={expanded}
             initialyExpanded={initiallyExpanded}
             onExpandChange={this.handleExpandChange}
             style={style}
+            showExpandableButton={showExpandableButton}
           >
             {this.props.children}
             <CardHeader
               avatar={headerAvatar}
+              actAsExpander={headerActAsExpander}
               style={headerStyle}
               subtitle={headerSubtitle}
               subtitleColor={headerSubtitleColor}
               subtitleStyle={headerSubtitleStyle}
+              showExpandableButton={showExpandableButton}
               textStyle={headerTextStyle}
               title={headerTitle}
               titleColor={headerTitleColor}
@@ -211,6 +239,7 @@ export default class Card extends Component<Props, State> {
               {this.props.headerChildren}
             </CardHeader>
             <CardText
+              expandable={textExpandableBeforeMedia}
               textColor={textColorBeforeMedia}
               textStyle={textStyleBeforeMedia}
             >
@@ -218,6 +247,7 @@ export default class Card extends Component<Props, State> {
             </CardText>
             <CardMedia
               mediaStyle={mediaMediaStyle}
+              expandable={mediaExpandable}
               overlay={mediaOverlay}
               overlayContainerStyle={mediaOverlayContainerStyle}
               contentStyle={mediaContentStyle}
@@ -227,6 +257,7 @@ export default class Card extends Component<Props, State> {
               {this.props.mediaChildren}
             </CardMedia>
             <CardTitle
+              expandable={titleExpandable}
               style={titleStyle}
               subtitle={titleSubtitle}
               subtitleColor={titleSubtitleColor}
@@ -238,6 +269,7 @@ export default class Card extends Component<Props, State> {
               {this.props.titleChildren}
             </CardTitle>
             <CardText
+              expandable={textExpandableAfterMedia}
               textColor={textColorAfterMedia}
               textStyle={textStyleAfterMedia}
             >

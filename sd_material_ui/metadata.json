@@ -746,22 +746,7 @@
   "src/components/Card/Card.react.js": {
     "description": "",
     "displayName": "Card",
-    "methods": [
-      {
-        "name": "handleExpandChange",
-        "docblock": null,
-        "modifiers": [],
-        "params": [
-          {
-            "name": "expanded",
-            "type": {
-              "name": "boolean"
-            }
-          }
-        ],
-        "returns": null
-      }
-    ],
+    "methods": [],
     "props": {
       "children": {
         "flowType": {
@@ -800,15 +785,19 @@
         "flowType": {
           "name": "boolean"
         },
-        "required": true,
+        "required": false,
         "description": "If true, this card component is expandable."
       },
       "expanded": {
         "flowType": {
           "name": "boolean"
         },
-        "required": true,
-        "description": "Whether this card is expanded."
+        "required": false,
+        "description": "Whether this card is expanded.\nIf true or false the component is controlled. if null the component is uncontrolled.",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
       },
       "id": {
         "flowType": {
@@ -828,25 +817,6 @@
           "computed": false
         }
       },
-      "setProps": {
-        "flowType": {
-          "name": "signature",
-          "type": "function",
-          "raw": "() => void",
-          "signature": {
-            "arguments": [],
-            "return": {
-              "name": "void"
-            }
-          }
-        },
-        "required": false,
-        "description": "Dash callback to update props",
-        "defaultValue": {
-          "value": "() => {}",
-          "computed": false
-        }
-      },
       "style": {
         "flowType": {
           "name": "Object"
@@ -855,6 +825,28 @@
         "description": "Override the inline-styles of the root element.",
         "defaultValue": {
           "value": "{}",
+          "computed": false
+        }
+      },
+      "showExpandableButton": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        }
+      },
+      "headerActAsExpander": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "If true, a click on this card component expands the card.",
+        "defaultValue": {
+          "value": "true",
           "computed": false
         }
       },
@@ -979,6 +971,17 @@
           "computed": false
         }
       },
+      "mediaExpandable": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "If true, this card component is expandable.",
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        }
+      },
       "mediaMediaStyle": {
         "flowType": {
           "name": "Object"
@@ -1067,6 +1070,28 @@
           "computed": false
         }
       },
+      "textExpandableBeforeMedia": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "If true, this card component is expandable.",
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        }
+      },
+      "textExpandableAfterMedia": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "If true, this card component is expandable.",
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        }
+      },
       "textStyleBeforeMedia": {
         "flowType": {
           "name": "Object"
@@ -1119,6 +1144,17 @@
         "description": "Can be used to render elements inside the Card Title.",
         "defaultValue": {
           "value": "[]",
+          "computed": false
+        }
+      },
+      "titleExpandable": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "If true, this card component is expandable.",
+        "defaultValue": {
+          "value": "true",
           "computed": false
         }
       },
