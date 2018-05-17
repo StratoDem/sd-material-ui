@@ -7,10 +7,100 @@ import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
+type NESTED_CARD = {
+  // Card properties
+  /** The CSS class name of the root element */
+  nestedClassName?: string,
+  /** Override the inline-styles of the container element. */
+  nestedContainerStyle?: Object,
+  /** If true, this card component is expandable. */
+  nestedExpandable?: boolean,
+  /** Whether this card is expanded.
+   * If true or false the component is controlled. if null the component is uncontrolled.
+   */
+  nestedExpanded?: boolean,
+  /** Whether this card is initially expanded. */
+  nestedInitiallyExpanded?: boolean,
+  /** Override the inline-styles of the root element. */
+  nestedStyle?: Object,
+  /** */
+  nestedShowExpandableButton?: boolean,
+
+  // Card header properties
+  /**
+   * If true, a click on this card component expands the card.
+   */
+  nestedHeaderActAsExpander?: boolean,
+  /** This is the Avatar element to be displayed on the Card Header. If avatar is an Avatar or
+   * other element, it will be rendered. If avatar is a string, it will be used as the image src
+   * for an Avatar. */
+  nestedHeaderAvatar?: Node,
+  /** Override the inline-styles of the root element. */
+  nestedHeaderStyle?: Object,
+  /** Can be used to render a subtitle in Card Header. */
+  nestedHeaderSubtitle?: Node,
+  /** Override the subtitle color. */
+  nestedHeaderSubtitleColor?: string,
+  /** Override the inline-styles of the subtitle. */
+  nestedHeaderSubtitleStyle?: Object,
+  /** Override the inline-styles of the text. */
+  nestedHeaderTextStyle?: Object,
+  /** Can be used to render a title in Card Header. */
+  nestedHeaderTitle?: Node,
+  /** Override the title color. */
+  nestedHeaderTitleColor?: string,
+  /** Override the inline-styles of the title. */
+  nestedHeaderTitleStyle?: Object,
+
+  // Card media properties
+  /** Can be used to render elements inside the Card Media. */
+  nestedMediaChildren?: any,
+  /** If true, this card component is expandable. */
+  nestedMediaExpandable?: boolean,
+  /** Override the inline-styles of the Card Media. */
+  nestedMediaMediaStyle?: Object,
+  /** Can be used to render overlay element in Card Media. */
+  nestedMediaOverlay?: Node,
+  /** Override the inline-styles of the overlay container. */
+  nestedMediaOverlayContainerStyle?: Object,
+  /** Override the inline-styles of the overlay content. */
+  nestedMediaContentStyle?: Object,
+  /** Override the inline-styles of the overlay element. */
+  nestedMediaOverlayStyle?: Object,
+  /** Override the inline-styles of the root element. */
+  nestedMediaStyle?: Object,
+
+  // Card text properties
+  /** If true, this card component is expandable. */
+  nestedTextExpandableAfterMedia?: boolean,
+  /** Override the CardText color. */
+  nestedTextColorAfterMedia?: string,
+  /** Override the inline-styles of the root element. */
+  nestedTextStyleAfterMedia?: Object,
+
+  // Card title properties
+  /** Can be used to render elements inside the Card Title. */
+  nestedTitleChildren?: Node,
+  /** If true, this card component is expandable. */
+  nestedTitleExpandable?: boolean,
+  /** Override the inline-styles of the root element. */
+  nestedTitleStyle?: Object,
+  /** Can be used to render a subtitle in the Card Title. */
+  nestedTitleSubtitle?: Node,
+  /** Override the subtitle color. */
+  nestedTitleSubtitleColor?: string,
+  /** Override the inline-styles of the subtitle. */
+  nestedTitleSubtitleStyle?: Object,
+  /** Can be used to render a title in the Card Title. */
+  nestedTitleTitle?: Node,
+  /** Override the title color. */
+  nestedTitleColor?: string,
+  /** Override the inline-styles of the title. */
+  nestedTitleTitleStyle?: Object,
+}
+
 type Props = {
   // Card properties
-  /** Can be used to render elements inside the Card. */
-  children?: Node,
   /** The CSS class name of the root element */
   className?: string,
   /** Override the inline-styles of the container element. */
@@ -21,12 +111,10 @@ type Props = {
    * If true or false the component is controlled. if null the component is uncontrolled.
    */
   expanded?: boolean,
-  /** Component ID */
-  id: string,
   /** Whether this card is initially expanded. */
   initiallyExpanded?: boolean,
-  // /** Dash callback to update props */
-  // setProps?: () => void,
+  /** The information to build cards nested inside the parent card. */
+  nestedCards?: Array<NESTED_CARD>,
   /** Override the inline-styles of the root element. */
   style?: Object,
   /** */
@@ -62,7 +150,7 @@ type Props = {
 
   // Card media properties
   /** Can be used to render elements inside the Card Media. */
-  mediaChildren?: Node,
+  mediaChildren?: any,
   /** If true, this card component is expandable. */
   mediaExpandable?: boolean,
   /** Override the inline-styles of the Card Media. */
@@ -123,14 +211,15 @@ type Props = {
 
 const defaultProps = {
   // Card props
-  children: [],
   className: '',
   containerStyle: {},
   expanded: null,
+  nestedExpanded: null,
   initiallyExpanded: false,
-  // setProps: () => {},
+  nestedCards: [],
   style: {},
   showExpandableButton: true,
+  nestedShowExpandableButton: true,
 
   // Card header props
   headerAvatar: [],
@@ -178,30 +267,40 @@ const defaultProps = {
 };
 
 export default class Card extends Component<Props, State> {
-  // constructor(props: Props) {
-  //   super(props);
-  //   this.state = {expanded: props.expanded};
-  // }
+  buildNestedCards = (nestedCard: NESTED_CARD) => {
+    const {nestedExpandable, nestedExpanded, nestedInitialyExpanded,
+    nestedHeaderActAsExpander, nestedHeaderSubtitle, nestedShowExpandableButton,
+    nestedHeaderTitle, nestedMediaExpandable, nestedTitleExpandable,
+    nestedTitleTitle} = this.props;
 
-  // componentWillReceiveProps(nextProps: Props): void {
-  //   if (nextProps.expanded !== null && nextProps.expanded !== this.props.expanded) {
-  //     this.handleExpandChange(nextProps.expanded);
-  //   }
-  // }
-  //
-  // handleExpandChange = (expanded: boolean) => {
-  //   const { setProps } = this.props;
-  //
-  //   if (typeof setProps === 'function')
-  //     setProps({expanded});
-  //
-  //   this.setState({expanded});
-  // };
+    return (<MuiCard
+        expandable={nestedExpandable}
+        expanded={nestedExpanded}
+        initialyExpanded={nestedInitialyExpanded}
+      >
+        <CardHeader
+          actAsExpander={nestedHeaderActAsExpander}
+          subtitle={nestedHeaderSubtitle}
+          showExpandableButton={nestedShowExpandableButton}
+          title={nestedHeaderTitle}
+        />
+        <CardMedia
+          expandable={nestedMediaExpandable}
+        >
+          {this.props.nestedMediaChildren}
+        </CardMedia>
+        <CardTitle
+          expandable={nestedTitleExpandable}
+          title={nestedTitleTitle}
+        />
+      </MuiCard>
+    );
+  };
 
   render() {
-    const { className, containerStyle, expandable, id, initiallyExpanded, style, expanded,
+    const { className, containerStyle, expandable, initiallyExpanded, style, expanded,
       showExpandableButton, headerAvatar, headerActAsExpander, headerStyle, headerSubtitle,
-      headerSubtitleColor,
+      headerSubtitleColor, nestedCards,
       headerSubtitleStyle, headerTextStyle, headerTitle, headerTitleColor, headerTitleStyle,
       mediaMediaStyle, mediaExpandable, mediaOverlay, mediaOverlayContainerStyle, mediaContentStyle,
       mediaOverlayStyle, mediaStyle, textExpandableBeforeMedia, textExpandableAfterMedia,
@@ -210,7 +309,7 @@ export default class Card extends Component<Props, State> {
       titleTitleStyle, titleExpandable} = this.props;
 
     return (
-      <div id={id}>
+      <div>
         <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
           <MuiCard
             className={className}
@@ -222,7 +321,6 @@ export default class Card extends Component<Props, State> {
             style={style}
             showExpandableButton={showExpandableButton}
           >
-            {this.props.children}
             <CardHeader
               avatar={headerAvatar}
               actAsExpander={headerActAsExpander}
@@ -275,6 +373,9 @@ export default class Card extends Component<Props, State> {
             >
               {this.props.textChildrenAfterMedia}
             </CardText>
+            {
+              nestedCards.map(this.buildNestedCards)
+            }
           </MuiCard>
         </MuiThemeProvider>
       </div>
