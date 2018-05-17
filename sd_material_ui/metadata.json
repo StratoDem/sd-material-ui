@@ -746,19 +746,219 @@
   "src/components/Card/Card.react.js": {
     "description": "",
     "displayName": "Card",
-    "methods": [],
+    "methods": [
+      {
+        "name": "buildNestedCards",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "nestedCard",
+            "type": {
+              "name": "signature",
+              "type": "object",
+              "raw": "{\n  // Card properties\n  nestedChildren?: node,\n  /** The CSS class name of the root element */\n  nestedClassName?: string,\n  /** Override the inline-styles of the container element. */\n  nestedContainerStyle?: Object,\n  /** If true, this card component is expandable. */\n  nestedExpandable?: boolean,\n  /** Whether this card is expanded.\n   * If true or false the component is controlled. if null the component is uncontrolled.\n   */\n  nestedExpanded?: boolean,\n  /** Whether this card is initially expanded. */\n  nestedInitiallyExpanded?: boolean,\n  /** Override the inline-styles of the root element. */\n  nestedStyle?: Object,\n  /** */\n  nestedShowExpandableButton?: boolean,\n\n  // Card header properties\n  /**\n   * If true, a click on this card component expands the card.\n   */\n  nestedHeaderActAsExpander?: boolean,\n  /** This is the Avatar element to be displayed on the Card Header. If avatar is an Avatar or\n   * other element, it will be rendered. If avatar is a string, it will be used as the image src\n   * for an Avatar. */\n  nestedHeaderAvatar?: Node,\n  /** Override the inline-styles of the root element. */\n  nestedHeaderStyle?: Object,\n  /** Can be used to render a subtitle in Card Header. */\n  nestedHeaderSubtitle?: Node,\n  /** Override the subtitle color. */\n  nestedHeaderSubtitleColor?: string,\n  /** Override the inline-styles of the subtitle. */\n  nestedHeaderSubtitleStyle?: Object,\n  /** Override the inline-styles of the text. */\n  nestedHeaderTextStyle?: Object,\n  /** Can be used to render a title in Card Header. */\n  nestedHeaderTitle?: Node,\n  /** Override the title color. */\n  nestedHeaderTitleColor?: string,\n  /** Override the inline-styles of the title. */\n  nestedHeaderTitleStyle?: Object,\n  /** If true, this card component is expandable. */\n  nestedTextExpandable?: boolean,\n\n  // Card title properties\n  /** If true, this card component is expandable. */\n  nestedTitleExpandable?: boolean,\n  /** Override the inline-styles of the root element. */\n  nestedTitleStyle?: Object,\n  /** Can be used to render a subtitle in the Card Title. */\n  nestedTitleSubtitle?: Node,\n  /** Override the subtitle color. */\n  nestedTitleSubtitleColor?: string,\n  /** Override the inline-styles of the subtitle. */\n  nestedTitleSubtitleStyle?: Object,\n  /** Can be used to render a title in the Card Title. */\n  nestedTitleTitle?: Node,\n  /** Override the title color. */\n  nestedTitleColor?: string,\n  /** Override the inline-styles of the title. */\n  nestedTitleTitleStyle?: Object,\n}",
+              "signature": {
+                "properties": [
+                  {
+                    "key": "nestedChildren",
+                    "value": {
+                      "name": "node",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "nestedClassName",
+                    "value": {
+                      "name": "string",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "nestedContainerStyle",
+                    "value": {
+                      "name": "Object",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "nestedExpandable",
+                    "value": {
+                      "name": "boolean",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "nestedExpanded",
+                    "value": {
+                      "name": "boolean",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "nestedInitiallyExpanded",
+                    "value": {
+                      "name": "boolean",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "nestedStyle",
+                    "value": {
+                      "name": "Object",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "nestedShowExpandableButton",
+                    "value": {
+                      "name": "boolean",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "nestedHeaderActAsExpander",
+                    "value": {
+                      "name": "boolean",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "nestedHeaderAvatar",
+                    "value": {
+                      "name": "Node",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "nestedHeaderStyle",
+                    "value": {
+                      "name": "Object",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "nestedHeaderSubtitle",
+                    "value": {
+                      "name": "Node",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "nestedHeaderSubtitleColor",
+                    "value": {
+                      "name": "string",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "nestedHeaderSubtitleStyle",
+                    "value": {
+                      "name": "Object",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "nestedHeaderTextStyle",
+                    "value": {
+                      "name": "Object",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "nestedHeaderTitle",
+                    "value": {
+                      "name": "Node",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "nestedHeaderTitleColor",
+                    "value": {
+                      "name": "string",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "nestedHeaderTitleStyle",
+                    "value": {
+                      "name": "Object",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "nestedTextExpandable",
+                    "value": {
+                      "name": "boolean",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "nestedTitleExpandable",
+                    "value": {
+                      "name": "boolean",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "nestedTitleStyle",
+                    "value": {
+                      "name": "Object",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "nestedTitleSubtitle",
+                    "value": {
+                      "name": "Node",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "nestedTitleSubtitleColor",
+                    "value": {
+                      "name": "string",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "nestedTitleSubtitleStyle",
+                    "value": {
+                      "name": "Object",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "nestedTitleTitle",
+                    "value": {
+                      "name": "Node",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "nestedTitleColor",
+                    "value": {
+                      "name": "string",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "nestedTitleTitleStyle",
+                    "value": {
+                      "name": "Object",
+                      "required": false
+                    }
+                  }
+                ]
+              },
+              "alias": "NESTED_CARD"
+            }
+          }
+        ],
+        "returns": null
+      }
+    ],
     "props": {
-      "children": {
-        "flowType": {
-          "name": "Node"
-        },
-        "required": false,
-        "description": "Can be used to render elements inside the Card.",
-        "defaultValue": {
-          "value": "[]",
-          "computed": false
-        }
-      },
       "className": {
         "flowType": {
           "name": "string"
@@ -799,13 +999,6 @@
           "computed": false
         }
       },
-      "id": {
-        "flowType": {
-          "name": "string"
-        },
-        "required": true,
-        "description": "Component ID"
-      },
       "initiallyExpanded": {
         "flowType": {
           "name": "boolean"
@@ -814,6 +1007,218 @@
         "description": "Whether this card is initially expanded.",
         "defaultValue": {
           "value": "false",
+          "computed": false
+        }
+      },
+      "nestedCards": {
+        "flowType": {
+          "name": "Array",
+          "elements": [
+            {
+              "name": "signature",
+              "type": "object",
+              "raw": "{\n  // Card properties\n  nestedChildren?: node,\n  /** The CSS class name of the root element */\n  nestedClassName?: string,\n  /** Override the inline-styles of the container element. */\n  nestedContainerStyle?: Object,\n  /** If true, this card component is expandable. */\n  nestedExpandable?: boolean,\n  /** Whether this card is expanded.\n   * If true or false the component is controlled. if null the component is uncontrolled.\n   */\n  nestedExpanded?: boolean,\n  /** Whether this card is initially expanded. */\n  nestedInitiallyExpanded?: boolean,\n  /** Override the inline-styles of the root element. */\n  nestedStyle?: Object,\n  /** */\n  nestedShowExpandableButton?: boolean,\n\n  // Card header properties\n  /**\n   * If true, a click on this card component expands the card.\n   */\n  nestedHeaderActAsExpander?: boolean,\n  /** This is the Avatar element to be displayed on the Card Header. If avatar is an Avatar or\n   * other element, it will be rendered. If avatar is a string, it will be used as the image src\n   * for an Avatar. */\n  nestedHeaderAvatar?: Node,\n  /** Override the inline-styles of the root element. */\n  nestedHeaderStyle?: Object,\n  /** Can be used to render a subtitle in Card Header. */\n  nestedHeaderSubtitle?: Node,\n  /** Override the subtitle color. */\n  nestedHeaderSubtitleColor?: string,\n  /** Override the inline-styles of the subtitle. */\n  nestedHeaderSubtitleStyle?: Object,\n  /** Override the inline-styles of the text. */\n  nestedHeaderTextStyle?: Object,\n  /** Can be used to render a title in Card Header. */\n  nestedHeaderTitle?: Node,\n  /** Override the title color. */\n  nestedHeaderTitleColor?: string,\n  /** Override the inline-styles of the title. */\n  nestedHeaderTitleStyle?: Object,\n  /** If true, this card component is expandable. */\n  nestedTextExpandable?: boolean,\n\n  // Card title properties\n  /** If true, this card component is expandable. */\n  nestedTitleExpandable?: boolean,\n  /** Override the inline-styles of the root element. */\n  nestedTitleStyle?: Object,\n  /** Can be used to render a subtitle in the Card Title. */\n  nestedTitleSubtitle?: Node,\n  /** Override the subtitle color. */\n  nestedTitleSubtitleColor?: string,\n  /** Override the inline-styles of the subtitle. */\n  nestedTitleSubtitleStyle?: Object,\n  /** Can be used to render a title in the Card Title. */\n  nestedTitleTitle?: Node,\n  /** Override the title color. */\n  nestedTitleColor?: string,\n  /** Override the inline-styles of the title. */\n  nestedTitleTitleStyle?: Object,\n}",
+              "signature": {
+                "properties": [
+                  {
+                    "key": "nestedChildren",
+                    "value": {
+                      "name": "node",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "nestedClassName",
+                    "value": {
+                      "name": "string",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "nestedContainerStyle",
+                    "value": {
+                      "name": "Object",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "nestedExpandable",
+                    "value": {
+                      "name": "boolean",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "nestedExpanded",
+                    "value": {
+                      "name": "boolean",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "nestedInitiallyExpanded",
+                    "value": {
+                      "name": "boolean",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "nestedStyle",
+                    "value": {
+                      "name": "Object",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "nestedShowExpandableButton",
+                    "value": {
+                      "name": "boolean",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "nestedHeaderActAsExpander",
+                    "value": {
+                      "name": "boolean",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "nestedHeaderAvatar",
+                    "value": {
+                      "name": "Node",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "nestedHeaderStyle",
+                    "value": {
+                      "name": "Object",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "nestedHeaderSubtitle",
+                    "value": {
+                      "name": "Node",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "nestedHeaderSubtitleColor",
+                    "value": {
+                      "name": "string",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "nestedHeaderSubtitleStyle",
+                    "value": {
+                      "name": "Object",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "nestedHeaderTextStyle",
+                    "value": {
+                      "name": "Object",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "nestedHeaderTitle",
+                    "value": {
+                      "name": "Node",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "nestedHeaderTitleColor",
+                    "value": {
+                      "name": "string",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "nestedHeaderTitleStyle",
+                    "value": {
+                      "name": "Object",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "nestedTextExpandable",
+                    "value": {
+                      "name": "boolean",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "nestedTitleExpandable",
+                    "value": {
+                      "name": "boolean",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "nestedTitleStyle",
+                    "value": {
+                      "name": "Object",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "nestedTitleSubtitle",
+                    "value": {
+                      "name": "Node",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "nestedTitleSubtitleColor",
+                    "value": {
+                      "name": "string",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "nestedTitleSubtitleStyle",
+                    "value": {
+                      "name": "Object",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "nestedTitleTitle",
+                    "value": {
+                      "name": "Node",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "nestedTitleColor",
+                    "value": {
+                      "name": "string",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "nestedTitleTitleStyle",
+                    "value": {
+                      "name": "Object",
+                      "required": false
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "raw": "Array<NESTED_CARD>"
+        },
+        "required": false,
+        "description": "The information to build cards nested inside the parent card.",
+        "defaultValue": {
+          "value": "[]",
           "computed": false
         }
       },
@@ -856,17 +1261,6 @@
         },
         "required": false,
         "description": "This is the Avatar element to be displayed on the Card Header. If avatar is an Avatar or\nother element, it will be rendered. If avatar is a string, it will be used as the image src\nfor an Avatar.",
-        "defaultValue": {
-          "value": "[]",
-          "computed": false
-        }
-      },
-      "headerChildren": {
-        "flowType": {
-          "name": "Node"
-        },
-        "required": false,
-        "description": "Can be used to render elements inside the Card Header.",
         "defaultValue": {
           "value": "[]",
           "computed": false
@@ -960,18 +1354,7 @@
           "computed": false
         }
       },
-      "mediaChildren": {
-        "flowType": {
-          "name": "Node"
-        },
-        "required": false,
-        "description": "Can be used to render elements inside the Card Media.",
-        "defaultValue": {
-          "value": "[]",
-          "computed": false
-        }
-      },
-      "mediaExpandable": {
+      "textExpandable": {
         "flowType": {
           "name": "boolean"
         },
@@ -982,84 +1365,7 @@
           "computed": false
         }
       },
-      "mediaMediaStyle": {
-        "flowType": {
-          "name": "Object"
-        },
-        "required": false,
-        "description": "Override the inline-styles of the Card Media.",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "mediaOverlay": {
-        "flowType": {
-          "name": "Node"
-        },
-        "required": false,
-        "description": "Can be used to render overlay element in Card Media.",
-        "defaultValue": {
-          "value": "[]",
-          "computed": false
-        }
-      },
-      "mediaOverlayContainerStyle": {
-        "flowType": {
-          "name": "Object"
-        },
-        "required": false,
-        "description": "Override the inline-styles of the overlay container.",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "mediaContentStyle": {
-        "flowType": {
-          "name": "Object"
-        },
-        "required": false,
-        "description": "Override the inline-styles of the overlay content.",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "mediaOverlayStyle": {
-        "flowType": {
-          "name": "Object"
-        },
-        "required": false,
-        "description": "Override the inline-styles of the overlay element.",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "mediaStyle": {
-        "flowType": {
-          "name": "Object"
-        },
-        "required": false,
-        "description": "Override the inline-styles of the root element.",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "textChildrenBeforeMedia": {
-        "flowType": {
-          "name": "Node"
-        },
-        "required": false,
-        "description": "Can be used to render elements inside the Card Text.",
-        "defaultValue": {
-          "value": "[]",
-          "computed": false
-        }
-      },
-      "textColorBeforeMedia": {
+      "textColor": {
         "flowType": {
           "name": "string"
         },
@@ -1070,29 +1376,7 @@
           "computed": false
         }
       },
-      "textExpandableBeforeMedia": {
-        "flowType": {
-          "name": "boolean"
-        },
-        "required": false,
-        "description": "If true, this card component is expandable.",
-        "defaultValue": {
-          "value": "true",
-          "computed": false
-        }
-      },
-      "textExpandableAfterMedia": {
-        "flowType": {
-          "name": "boolean"
-        },
-        "required": false,
-        "description": "If true, this card component is expandable.",
-        "defaultValue": {
-          "value": "true",
-          "computed": false
-        }
-      },
-      "textStyleBeforeMedia": {
+      "textStyle": {
         "flowType": {
           "name": "Object"
         },
@@ -1100,50 +1384,6 @@
         "description": "Override the inline-styles of the root element.",
         "defaultValue": {
           "value": "{}",
-          "computed": false
-        }
-      },
-      "textChildrenAfterMedia": {
-        "flowType": {
-          "name": "Node"
-        },
-        "required": false,
-        "description": "Can be used to render elements inside the Card Text.",
-        "defaultValue": {
-          "value": "[]",
-          "computed": false
-        }
-      },
-      "textColorAfterMedia": {
-        "flowType": {
-          "name": "string"
-        },
-        "required": false,
-        "description": "Override the CardText color.",
-        "defaultValue": {
-          "value": "''",
-          "computed": false
-        }
-      },
-      "textStyleAfterMedia": {
-        "flowType": {
-          "name": "Object"
-        },
-        "required": false,
-        "description": "Override the inline-styles of the root element.",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "titleChildren": {
-        "flowType": {
-          "name": "Node"
-        },
-        "required": false,
-        "description": "Can be used to render elements inside the Card Title.",
-        "defaultValue": {
-          "value": "[]",
           "computed": false
         }
       },

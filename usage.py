@@ -284,9 +284,19 @@ app.layout = html.Div([
         headerSubtitle='Test subtitle',
         titleExpandable=True,
         titleTitle='Card content header',
-        textExpandableAfterMedia=True,
-        textChildrenAfterMedia=[
-            'Content'
+        textExpandable=True,
+        nestedCards=[
+            dict(nestedExpanded=False,
+                 nestedInitiallyExpanded=False,
+                 nestedHeaderActAsExpander=True,
+                 nestedHeaderTitle='Nested header title',
+                 nestedShowExpandableButton=True,
+                 nestedTitleExpandable=True,
+                 nestedTitleTitle='Nested title',
+                 nestedTextExpandable=True,
+                 nestedChildren=[
+                     'Almost there'
+                 ]),
         ]
     ),
 
