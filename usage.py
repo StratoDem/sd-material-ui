@@ -279,24 +279,22 @@ app.layout = html.Div([
     spacer,
 
     sd_material_ui.Card(
-        id='output12',
         initiallyExpanded=False,
         headerTitle='Test card header',
         headerSubtitle='Test subtitle',
         titleExpandable=True,
         titleTitle='Card content header',
         textExpandableAfterMedia=True,
-        textChildrenAfterMedia=[
+        children=[
             sd_material_ui.Card(
-                id='output12-a',
                 initiallyExpanded=False,
                 headerTitle='Test card header',
                 headerSubtitle='Test subtitle',
                 titleExpandable=True,
                 titleTitle='Card content header',
                 textExpandableAfterMedia=True,
-                textChildrenAfterMedia=[
-                    'Content goes in here!'
+                children=[
+                    html.P('YAY')
                 ]
             ),
         ]

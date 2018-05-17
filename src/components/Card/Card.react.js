@@ -2,7 +2,7 @@
 
 import React, { Component } from 'react';
 
-import { Card as MuiCard, CardHeader, CardMedia, CardTitle, CardText } from 'material-ui/Card';
+import { Card as MuiCard, CardHeader, CardTitle, CardText } from 'material-ui/Card';
 import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
@@ -21,8 +21,6 @@ type Props = {
    * If true or false the component is controlled. if null the component is uncontrolled.
    */
   expanded?: boolean,
-  /** Component ID */
-  id: string,
   /** Whether this card is initially expanded. */
   initiallyExpanded?: boolean,
   // /** Dash callback to update props */
@@ -60,37 +58,9 @@ type Props = {
   /** Override the inline-styles of the title. */
   headerTitleStyle?: Object,
 
-  // Card media properties
-  /** Can be used to render elements inside the Card Media. */
-  mediaChildren?: Node,
-  /** If true, this card component is expandable. */
-  mediaExpandable?: boolean,
-  /** Override the inline-styles of the Card Media. */
-  mediaMediaStyle?: Object,
-  /** Can be used to render overlay element in Card Media. */
-  mediaOverlay?: Node,
-  /** Override the inline-styles of the overlay container. */
-  mediaOverlayContainerStyle?: Object,
-  /** Override the inline-styles of the overlay content. */
-  mediaContentStyle?: Object,
-  /** Override the inline-styles of the overlay element. */
-  mediaOverlayStyle?: Object,
-  /** Override the inline-styles of the root element. */
-  mediaStyle?: Object,
-
   // Card text properties
-  /** Can be used to render elements inside the Card Text. */
-  textChildrenBeforeMedia?: Node,
-  /** Override the CardText color. */
-  textColorBeforeMedia?: string,
-  /** If true, this card component is expandable. */
-  textExpandableBeforeMedia?: boolean,
   /** If true, this card component is expandable. */
   textExpandableAfterMedia?: boolean,
-  /** Override the inline-styles of the root element. */
-  textStyleBeforeMedia?: Object,
-  /** Can be used to render elements inside the Card Text. */
-  textChildrenAfterMedia?: Node,
   /** Override the CardText color. */
   textColorAfterMedia?: string,
   /** Override the inline-styles of the root element. */
@@ -117,10 +87,6 @@ type Props = {
   titleTitleStyle?: Object,
 }
 
-// type State ={
-//   expanded: boolean,
-// };
-
 const defaultProps = {
   // Card props
   children: [],
@@ -145,23 +111,8 @@ const defaultProps = {
   headerTitleColor: '',
   headerTitleStyle: {},
 
-  // Card media props
-  mediaChildren: [],
-  mediaExpandable: true,
-  mediaMediaStyle: {},
-  mediaOverlay: [],
-  mediaOverlayContainerStyle: {},
-  mediaContentStyle: {},
-  mediaOverlayStyle: {},
-  mediaStyle: {},
-
   // Card text props
-  textChildrenBeforeMedia: [],
-  textColorBeforeMedia: '',
-  textStyleBeforeMedia: {},
-  textExpandableBeforeMedia: true,
   textExpandableAfterMedia: true,
-  textChildrenAfterMedia: [],
   textColorAfterMedia: '',
   textStyleAfterMedia: {},
 
@@ -178,39 +129,17 @@ const defaultProps = {
 };
 
 export default class Card extends Component<Props, State> {
-  // constructor(props: Props) {
-  //   super(props);
-  //   this.state = {expanded: props.expanded};
-  // }
-
-  // componentWillReceiveProps(nextProps: Props): void {
-  //   if (nextProps.expanded !== null && nextProps.expanded !== this.props.expanded) {
-  //     this.handleExpandChange(nextProps.expanded);
-  //   }
-  // }
-  //
-  // handleExpandChange = (expanded: boolean) => {
-  //   const { setProps } = this.props;
-  //
-  //   if (typeof setProps === 'function')
-  //     setProps({expanded});
-  //
-  //   this.setState({expanded});
-  // };
-
   render() {
-    const { className, containerStyle, expandable, id, initiallyExpanded, style, expanded,
+    const { className, containerStyle, expandable, initiallyExpanded, style, expanded,
       showExpandableButton, headerAvatar, headerActAsExpander, headerStyle, headerSubtitle,
       headerSubtitleColor,
       headerSubtitleStyle, headerTextStyle, headerTitle, headerTitleColor, headerTitleStyle,
-      mediaMediaStyle, mediaExpandable, mediaOverlay, mediaOverlayContainerStyle, mediaContentStyle,
-      mediaOverlayStyle, mediaStyle, textExpandableBeforeMedia, textExpandableAfterMedia,
-      textColorBeforeMedia, textStyleBeforeMedia, textColorAfterMedia, textStyleAfterMedia,
+      textExpandableAfterMedia, textColorAfterMedia, textStyleAfterMedia,
       titleStyle, titleSubtitle, titleSubtitleColor, titleSubtitleStyle, titleTitle, titleColor,
       titleTitleStyle, titleExpandable} = this.props;
 
     return (
-      <div id={id}>
+      <div>
         <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
           <MuiCard
             className={className}
@@ -222,7 +151,6 @@ export default class Card extends Component<Props, State> {
             style={style}
             showExpandableButton={showExpandableButton}
           >
-            {this.props.children}
             <CardHeader
               avatar={headerAvatar}
               actAsExpander={headerActAsExpander}
@@ -238,24 +166,6 @@ export default class Card extends Component<Props, State> {
             >
               {this.props.headerChildren}
             </CardHeader>
-            <CardText
-              expandable={textExpandableBeforeMedia}
-              textColor={textColorBeforeMedia}
-              textStyle={textStyleBeforeMedia}
-            >
-              {this.props.textChildrenBeforeMedia}
-            </CardText>
-            <CardMedia
-              mediaStyle={mediaMediaStyle}
-              expandable={mediaExpandable}
-              overlay={mediaOverlay}
-              overlayContainerStyle={mediaOverlayContainerStyle}
-              contentStyle={mediaContentStyle}
-              overlayStyle={mediaOverlayStyle}
-              style={mediaStyle}
-            >
-              {this.props.mediaChildren}
-            </CardMedia>
             <CardTitle
               expandable={titleExpandable}
               style={titleStyle}
@@ -273,7 +183,7 @@ export default class Card extends Component<Props, State> {
               textColor={textColorAfterMedia}
               textStyle={textStyleAfterMedia}
             >
-              {this.props.textChildrenAfterMedia}
+              {this.props.children}
             </CardText>
           </MuiCard>
         </MuiThemeProvider>
