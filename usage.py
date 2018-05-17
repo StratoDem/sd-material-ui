@@ -288,10 +288,10 @@ app.layout = html.Div([
         children=[
             sd_material_ui.Card(
                 initiallyExpanded=False,
-                headerTitle='Test card header',
-                headerSubtitle='Test subtitle',
+                headerTitle='Inner card header',
+                headerSubtitle='Inner subtitle',
                 titleExpandable=True,
-                titleTitle='Card content header',
+                titleTitle='Inner card',
                 textExpandableAfterMedia=True,
                 children=[
                     html.P('YAY')
