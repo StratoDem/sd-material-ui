@@ -139,7 +139,7 @@ export default class Card extends Component<Props> {
             containerStyle={containerStyle}
             expandable={expandable}
             expanded={_expanded}
-            initialyExpanded={initiallyExpanded}
+            initiallyExpanded={initiallyExpanded}
             style={style}
           >
             <CardHeader
