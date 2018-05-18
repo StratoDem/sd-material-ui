@@ -2,6 +2,15 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 2.13.1 - 2018-05-18
+### Fixes
+- Updates prop names internally in `CardText` for `style` and `color` to allow `textColor` and `textStyle` props to actually change `CardText` subcomponent
+
+### Added
+- Adds `id` and `headerIconStyle` props to `CardComponent`:
+  - `id` as a `string` to allow for callbacks assigned to the card
+  - `headerIconStyle` to allow for styling the icon in the `CardHeader` subcomponent
+
 ## 2.13.0 - 2018-05-17
 ### Added
 - Adds uncontrolled Card component

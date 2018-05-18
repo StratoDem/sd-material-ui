@@ -748,6 +748,17 @@
     "displayName": "Card",
     "methods": [],
     "props": {
+      "id": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "ID for Card",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
       "children": {
         "flowType": {
           "name": "Node"
@@ -941,6 +952,17 @@
         },
         "required": false,
         "description": "Override the inline-styles of the title.",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "headerIconStyle": {
+        "flowType": {
+          "name": "Object"
+        },
+        "required": false,
+        "description": "",
         "defaultValue": {
           "value": "{}",
           "computed": false
