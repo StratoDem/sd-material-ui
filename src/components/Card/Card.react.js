@@ -9,6 +9,8 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
 type Props = {
   // Card properties
+  /** ID for Card */
+  id?: string,
   /** Can be used to render elements inside the Card. */
   children?: Node,
   /** The CSS class name of the root element */
@@ -49,6 +51,8 @@ type Props = {
   headerTitleColor?: string,
   /** Override the inline-styles of the title. */
   headerTitleStyle?: Object,
+  /* Override the iconStyle of the Icon Button. */
+  headerIconStyle?: Object,
 
   // Card title properties
   /** If true, this card component is expandable. */
@@ -79,6 +83,7 @@ type Props = {
 
 const defaultProps = {
   // Card props
+  id: '',
   children: [],
   className: '',
   containerStyle: {},
@@ -99,6 +104,7 @@ const defaultProps = {
   headerTitle: [],
   headerTitleColor: '',
   headerTitleStyle: {},
+  headerIconStyle: {},
 
   // Card title props
   titleExpandable: true,
@@ -118,15 +124,15 @@ const defaultProps = {
 
 export default class Card extends Component<Props> {
   render() {
-    const { className, containerStyle, expandable, _expanded, initiallyExpanded, style,
+    const { id, className, containerStyle, expandable, _expanded, initiallyExpanded, style,
       showExpandableButton, headerAvatar, headerActAsExpander, headerStyle, headerSubtitle,
       headerSubtitleColor, headerSubtitleStyle, headerTextStyle, headerTitle, headerTitleColor,
       headerTitleStyle, textExpandable, textColor, textStyle, titleStyle, titleSubtitle,
-      titleSubtitleColor, titleSubtitleStyle, titleTitle, titleColor,
+      headerIconStyle, titleSubtitleColor, titleSubtitleStyle, titleTitle, titleColor,
       titleTitleStyle, titleExpandable} = this.props;
 
     return (
-      <div>
+      <div id={id}>
         <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
           <MuiCard
             className={className}
@@ -148,6 +154,7 @@ export default class Card extends Component<Props> {
               title={headerTitle}
               titleColor={headerTitleColor}
               titleStyle={headerTitleStyle}
+              iconStyle={headerIconStyle}
             />
             <CardTitle
               expandable={titleExpandable}
@@ -161,8 +168,8 @@ export default class Card extends Component<Props> {
             />
             <CardText
               expandable={textExpandable}
-              textColor={textColor}
-              textStyle={textStyle}
+              color={textColor}
+              style={textStyle}
             >
               {this.props.children}
             </CardText>
