@@ -300,8 +300,37 @@ app.layout = html.Div([
         ]
     ),
 
+    spacer,
+
+    sd_material_ui.Questions(
+        id='questions-id',
+        questionSectionProps=[
+            dict(
+                headerTitle='Test title',
+                questionProps=[
+                    dict(
+                        questionText='How do I do something?',
+                        questionType='Tag my question',
+                        answerPrompt='Ask the question',
+                        value='this-is-a-new-value'),
+                ])
+        ],
+        value='',
+    ),
+
+    html.Div(id='question-output-id', children=''),
+
     final_spacer,
 ])
+
+
+@app.callback(
+    dash.dependencies.Output('question-output-id', 'children'),
+    [dash.dependencies.Input('questions-id', 'value')])
+def update_questions_output(value):
+    return value
+
+
 @app.callback(
     dash.dependencies.Output('output', 'children'),
     [dash.dependencies.Input('input', 'selectedIndex')])

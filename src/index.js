@@ -17,6 +17,8 @@ import RadioButtonGroup from './components/RadioButtonGroup';
 import RaisedButton from './components/RaisedButton';
 import Toggle from './components/Toggle';
 
+import Questions from './components/__special/Questions';
+
 export {
   AutoComplete,
   BottomNavigation,
@@ -36,4 +38,7 @@ export {
   RadioButtonGroup,
   RaisedButton,
   Toggle,
+
+  // Custom components
+  Questions,
 };
