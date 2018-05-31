@@ -3742,6 +3742,154 @@
       }
     }
   },
+  "src/components/Tabs/Tabs.react.js": {
+    "description": "",
+    "displayName": "Tabs",
+    "methods": [],
+    "props": {
+      "id": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Element ID",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "className": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "CSS class name of the root element",
+        "defaultValue": {
+          "value": "undefined",
+          "computed": true
+        }
+      },
+      "contentContainerClassName": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "CSS class name of the content's container",
+        "defaultValue": {
+          "value": "undefined",
+          "computed": true
+        }
+      },
+      "children": {
+        "flowType": {
+          "name": "Node"
+        },
+        "required": false,
+        "description": "Pass Tab components as children",
+        "defaultValue": {
+          "value": "[]",
+          "computed": false
+        }
+      },
+      "contentContainerStyle": {
+        "flowType": {
+          "name": "Object"
+        },
+        "required": false,
+        "description": "Override the inline-styles of the content's container",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "initialSelectedIndex": {
+        "flowType": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Specify the initial visible tab index",
+        "defaultValue": {
+          "value": "0",
+          "computed": false
+        }
+      },
+      "inkBarStyle": {
+        "flowType": {
+          "name": "Object"
+        },
+        "required": false,
+        "description": "Override the inline-styles of the InkBar",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "inkBarContainerStyle": {
+        "flowType": {
+          "name": "Object"
+        },
+        "required": false,
+        "description": "Override the inline-styles of the InkBar container",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "style": {
+        "flowType": {
+          "name": "Object"
+        },
+        "required": false,
+        "description": "Override the inline-styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "tabItemContainerStyle": {
+        "flowType": {
+          "name": "Object"
+        },
+        "required": false,
+        "description": "Override the inline-styles of tab-labels container",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "tabTemplateStyle": {
+        "flowType": {
+          "name": "Object"
+        },
+        "required": false,
+        "description": "Override the inline-styles of the tab template"
+      },
+      "value": {
+        "flowType": {
+          "name": "any"
+        },
+        "required": false,
+        "description": "Makes Tabs controllable and selects the tab whose value prop matches this prop",
+        "defaultValue": {
+          "value": "undefined",
+          "computed": true
+        }
+      },
+      "tabPropsArray": {
+        "flowType": {
+          "name": "Array",
+          "elements": [
+            {
+              "name": "Object"
+            }
+          ],
+          "raw": "Array<Object>"
+        },
+        "required": true,
+        "description": ""
+      }
+    }
+  },
   "src/components/Toggle/Toggle.react.js": {
     "description": "",
     "displayName": "Toggle",

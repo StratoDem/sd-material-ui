@@ -1,6 +1,7 @@
 import sd_material_ui
 import dash
 import dash_html_components as html
+import time
 
 app = dash.Dash('')
 
@@ -319,6 +320,20 @@ app.layout = html.Div([
     ),
 
     html.Div(id='question-output-id', children=''),
+    html.Div(id='question-output-id2', children=''),
+
+    spacer,
+
+    sd_material_ui.Tabs(
+        children=[
+            html.Div('Tab 1'),
+            html.Div('Tab 2'),
+        ],
+        tabPropsArray=[
+            {'label': 'Tab 1 label'},
+            {'label': 'Tab 2 label'},
+        ]
+    ),
 
     final_spacer,
 ])
@@ -326,9 +341,25 @@ app.layout = html.Div([
 
 @app.callback(
     dash.dependencies.Output('question-output-id', 'children'),
-    [dash.dependencies.Input('questions-id', 'value')])
-def update_questions_output(value):
-    return value
+    [
+        dash.dependencies.Input('questions-id', 'value'),
+        dash.dependencies.Input('questions-id', 'n_clicks'),
+     ],
+    [dash.dependencies.State('questions-id', 'n_clicks_previous')])
+def update_questions_output(value, n_clicks, n_clicks_previous):
+    time.sleep(5)
+    return '{} {} {}'.format(value, n_clicks, n_clicks_previous)
+
+
+@app.callback(
+    dash.dependencies.Output('question-output-id2', 'children'),
+    [
+        dash.dependencies.Input('questions-id', 'value'),
+        dash.dependencies.Input('questions-id', 'n_clicks'),
+     ],
+    [dash.dependencies.State('questions-id', 'n_clicks_previous')])
+def update_questions_output(value, n_clicks, n_clicks_previous):
+    return '{} {} {}'.format(value, n_clicks, n_clicks_previous)
 
 
 @app.callback(

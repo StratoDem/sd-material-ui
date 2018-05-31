@@ -16,7 +16,7 @@ import Subheader from './components/Subheader';
 import RadioButtonGroup from './components/RadioButtonGroup';
 import RaisedButton from './components/RaisedButton';
 import Toggle from './components/Toggle';
-
+import { Tabs } from './components/Tabs';
 import Questions from './components/__special/Questions';
 
 export {
@@ -37,6 +37,7 @@ export {
   Subheader,
   RadioButtonGroup,
   RaisedButton,
+  Tabs,
   Toggle,
 
   // Custom components
