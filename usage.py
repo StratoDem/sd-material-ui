@@ -322,6 +322,19 @@ app.layout = html.Div([
     html.Div(id='question-output-id', children=''),
     html.Div(id='question-output-id2', children=''),
 
+    spacer,
+
+    sd_material_ui.Tabs(
+        children=[
+            html.Div('Tab 1'),
+            html.Div('Tab 2'),
+        ],
+        tabPropsArray=[
+            {'label': 'Tab 1 label'},
+            {'label': 'Tab 2 label'},
+        ]
+    ),
+
     final_spacer,
 ])
 

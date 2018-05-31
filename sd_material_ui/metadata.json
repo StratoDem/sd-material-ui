@@ -3742,86 +3742,6 @@
       }
     }
   },
-  "src/components/Tabs/Tab.react.js": {
-    "description": "",
-    "displayName": "Tab",
-    "methods": [],
-    "props": {
-      "id": {
-        "flowType": {
-          "name": "string"
-        },
-        "required": true,
-        "description": "Element ID"
-      },
-      "buttonStyle": {
-        "flowType": {
-          "name": "Object"
-        },
-        "required": false,
-        "description": "Override the inline-styles of the button element",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "className": {
-        "flowType": {
-          "name": "string"
-        },
-        "required": false,
-        "description": "The css class name of the root element",
-        "defaultValue": {
-          "value": "undefined",
-          "computed": true
-        }
-      },
-      "iconClassName": {
-        "flowType": {
-          "name": "string"
-        },
-        "required": false,
-        "description": "Icon class name to use for the FontIcon in the tab",
-        "defaultValue": {
-          "value": "undefined",
-          "computed": true
-        }
-      },
-      "label": {
-        "flowType": {
-          "name": "string"
-        },
-        "required": false,
-        "description": "Text value of the tab item",
-        "defaultValue": {
-          "value": "undefined",
-          "computed": true
-        }
-      },
-      "style": {
-        "flowType": {
-          "name": "Object"
-        },
-        "required": false,
-        "description": "Override the inline-styles of the root element",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "value": {
-        "flowType": {
-          "name": "any"
-        },
-        "required": false,
-        "description": "If value prop passed to Tabs component, this value prop is also required.\nIt assigns a value to the tab so that it can be selected by the Tabs",
-        "defaultValue": {
-          "value": "undefined",
-          "computed": true
-        }
-      }
-    }
-  },
   "src/components/Tabs/Tabs.react.js": {
     "description": "",
     "displayName": "Tabs",
@@ -3831,8 +3751,12 @@
         "flowType": {
           "name": "string"
         },
-        "required": true,
-        "description": "Element ID"
+        "required": false,
+        "description": "Element ID",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
       },
       "className": {
         "flowType": {
@@ -3860,8 +3784,12 @@
         "flowType": {
           "name": "Node"
         },
-        "required": true,
-        "description": "Pass Tab components as children"
+        "required": false,
+        "description": "Pass Tab components as children",
+        "defaultValue": {
+          "value": "[]",
+          "computed": false
+        }
       },
       "contentContainerStyle": {
         "flowType": {
@@ -3946,6 +3874,19 @@
           "value": "undefined",
           "computed": true
         }
+      },
+      "tabPropsArray": {
+        "flowType": {
+          "name": "Array",
+          "elements": [
+            {
+              "name": "Object"
+            }
+          ],
+          "raw": "Array<Object>"
+        },
+        "required": true,
+        "description": ""
       }
     }
   },

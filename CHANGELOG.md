@@ -2,6 +2,28 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 2.14.0 - 2018-05-31
+### Added
+- `Tabs`, which takes mainly `children` and `tabPropsArray`. `children` and `tabPropsArray` must be `Array`s of the same length, which are rendered as `Tab` components.
+This structure is necessary since Dash currently only passes along React components through the `children` prop, and using `Tab` directly was not rendering correctly.
+Any of the standard props from `Tab` can be passed along through `tabPropsArray`.
+
+```python
+# Renders two tabs with the children lined up with the tabs props
+import sd_material_ui
+
+sd_material_ui.Tabs(
+    children=[
+        html.Div('Tab 1'),
+        html.Div('Tab 2'),
+    ],
+    tabPropsArray=[
+        {'label': 'Tab 1 label'},
+        {'label': 'Tab 2 label'},
+    ]
+)
+```
+
 ## 2.13.3 - 2018-05-22
 ### Added
 - Adds `Questions` component for special use case

@@ -2,20 +2,20 @@
 
 import React, { Component } from 'react';
 
-import MuiTabs from 'material-ui/Tabs';
+import { Tabs as MuiTabs, Tab as MuiTab } from 'material-ui/Tabs';
 import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
 type Props = {
   /** Element ID */
-  id: string,
+  id?: string,
   /** CSS class name of the root element */
   className?: string,
   /** CSS class name of the content's container */
   contentContainerClassName?: string,
   /** Pass Tab components as children */
-  children: Node,
+  children?: Node,
   /** Override the inline-styles of the content's container */
   contentContainerStyle?: Object,
   /** Specify the initial visible tab index */
@@ -32,12 +32,17 @@ type Props = {
   tabTemplateStyle?: Object,
   /** Makes Tabs controllable and selects the tab whose value prop matches this prop */
   value?: any,
+
+  /** */
+  tabPropsArray: Array<Object>,
 };
 
 type State = {
 };
 
 const defaultProps = {
+  children: [],
+  id: '',
   className: undefined,
   contentContainerClassName: undefined,
   contentContainerStyle: {},
@@ -51,13 +56,14 @@ const defaultProps = {
 
 export default class Tabs extends Component<Props, State> {
   render() {
-    const { id, children, ...otherProps } = this.props;
+    const { id, children, tabPropsArray, ...otherProps } = this.props;
 
     return (
       <div id={id}>
         <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
           <MuiTabs {...otherProps}>
-            {children}
+            {this.props.children.map((child, idx) =>
+              <MuiTab {...tabPropsArray[idx]}>{child}</MuiTab>)}
           </MuiTabs>
         </MuiThemeProvider>
       </div>);
