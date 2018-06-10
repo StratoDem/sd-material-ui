@@ -4362,5 +4362,215 @@
         }
       }
     }
+  },
+  "src/components/__special/QuestionsTabs.js": {
+    "description": "",
+    "displayName": "QuestionsTabs",
+    "methods": [
+      {
+        "name": "handleClick",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "questionValue",
+            "type": {
+              "name": "string"
+            }
+          }
+        ],
+        "returns": null
+      }
+    ],
+    "props": {
+      "id": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "Component ID"
+      },
+      "questionSectionProps": {
+        "flowType": {
+          "name": "Array",
+          "elements": [
+            {
+              "name": "signature",
+              "type": "object",
+              "raw": "{\n  questionProps: Array<QuestionProps>,\n  headerTitle: string,\n  clickHandler: (value: string) => void,\n}",
+              "signature": {
+                "properties": [
+                  {
+                    "key": "questionProps",
+                    "value": {
+                      "name": "Array",
+                      "elements": [
+                        {
+                          "name": "signature",
+                          "type": "object",
+                          "raw": "{\n  questionText: string,\n  value: string,\n  clickHandler: (value: string) => void,\n}",
+                          "signature": {
+                            "properties": [
+                              {
+                                "key": "questionText",
+                                "value": {
+                                  "name": "string",
+                                  "required": true
+                                }
+                              },
+                              {
+                                "key": "value",
+                                "value": {
+                                  "name": "string",
+                                  "required": true
+                                }
+                              },
+                              {
+                                "key": "clickHandler",
+                                "value": {
+                                  "name": "signature",
+                                  "type": "function",
+                                  "raw": "(value: string) => void",
+                                  "signature": {
+                                    "arguments": [
+                                      {
+                                        "name": "value",
+                                        "type": {
+                                          "name": "string"
+                                        }
+                                      }
+                                    ],
+                                    "return": {
+                                      "name": "void"
+                                    }
+                                  },
+                                  "required": true
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "raw": "Array<QuestionProps>",
+                      "required": true
+                    }
+                  },
+                  {
+                    "key": "headerTitle",
+                    "value": {
+                      "name": "string",
+                      "required": true
+                    }
+                  },
+                  {
+                    "key": "clickHandler",
+                    "value": {
+                      "name": "signature",
+                      "type": "function",
+                      "raw": "(value: string) => void",
+                      "signature": {
+                        "arguments": [
+                          {
+                            "name": "value",
+                            "type": {
+                              "name": "string"
+                            }
+                          }
+                        ],
+                        "return": {
+                          "name": "void"
+                        }
+                      },
+                      "required": true
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "raw": "Array<QuestionSectionProps>"
+        },
+        "required": true,
+        "description": "Array of props for each QuestionSection"
+      },
+      "n_clicks": {
+        "flowType": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Number of clicks by the user on the Questions component",
+        "defaultValue": {
+          "value": "0",
+          "computed": false
+        }
+      },
+      "n_clicks_previous": {
+        "flowType": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "The previous number of clicks from the Questions component",
+        "defaultValue": {
+          "value": "0",
+          "computed": false
+        }
+      },
+      "value": {
+        "flowType": {
+          "name": "any"
+        },
+        "required": true,
+        "description": "The value currently selected by clicking on a question answer prompt"
+      },
+      "tabsProps": {
+        "flowType": {
+          "name": "Object"
+        },
+        "required": false,
+        "description": "Tabs props",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "setProps": {
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "() => void",
+          "signature": {
+            "arguments": [],
+            "return": {
+              "name": "void"
+            }
+          }
+        },
+        "required": false,
+        "description": "Dash callback to update props",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      },
+      "fireEvent": {
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "() => void",
+          "signature": {
+            "arguments": [],
+            "return": {
+              "name": "void"
+            }
+          }
+        },
+        "required": false,
+        "description": "Dash callback to trigger an event handler",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      }
+    }
   }
 }

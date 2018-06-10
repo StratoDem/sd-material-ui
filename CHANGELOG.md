@@ -2,6 +2,10 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 2.14.1 - 2018-06-10
+### Added
+- Adds `QuestionTabs` component for tabs version of `Questions` (internal)
+
 ## 2.14.0 - 2018-05-31
 ### Added
 - `Tabs`, which takes mainly `children` and `tabPropsArray`. `children` and `tabPropsArray` must be `Array`s of the same length, which are rendered as `Tab` components.

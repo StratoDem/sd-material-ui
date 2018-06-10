@@ -18,6 +18,7 @@ import RaisedButton from './components/RaisedButton';
 import Toggle from './components/Toggle';
 import { Tabs } from './components/Tabs';
 import Questions from './components/__special/Questions';
+import QuestionsTabs from './components/__special/QuestionsTabs';
 
 export {
   AutoComplete,
@@ -42,4 +43,5 @@ export {
 
   // Custom components
   Questions,
+  QuestionsTabs,
 };

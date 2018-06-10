@@ -324,6 +324,32 @@ app.layout = html.Div([
 
     spacer,
 
+    sd_material_ui.QuestionsTabs(
+        id='questions-tabs-id',
+        questionSectionProps=[
+            dict(
+                headerTitle='Test title tab 1',
+                questionProps=[
+                    dict(
+                        questionText='How do I do something?',
+                        value='this-is-a-new-value'),
+                ]),
+            dict(
+                headerTitle='Test title tab 2',
+                questionProps=[
+                    dict(
+                        questionText='How do I do something else?',
+                        value='this-is-a-second-value'),
+                ]),
+        ],
+        value='',
+    ),
+
+    html.Div(id='question-output-id3', children=''),
+    html.Div(id='question-output-id4', children=''),
+
+    spacer,
+
     sd_material_ui.Tabs(
         children=[
             html.Div('Tab 1'),
@@ -358,6 +384,28 @@ def update_questions_output(value, n_clicks, n_clicks_previous):
         dash.dependencies.Input('questions-id', 'n_clicks'),
      ],
     [dash.dependencies.State('questions-id', 'n_clicks_previous')])
+def update_questions_output(value, n_clicks, n_clicks_previous):
+    return '{} {} {}'.format(value, n_clicks, n_clicks_previous)
+
+
+@app.callback(
+    dash.dependencies.Output('question-output-id3', 'children'),
+    [
+        dash.dependencies.Input('questions-tabs-id', 'value'),
+        dash.dependencies.Input('questions-tabs-id', 'n_clicks'),
+     ],
+    [dash.dependencies.State('questions-tabs-id', 'n_clicks_previous')])
+def update_questions_output(value, n_clicks, n_clicks_previous):
+    return '{} {} {}'.format(value, n_clicks, n_clicks_previous)
+
+
+@app.callback(
+    dash.dependencies.Output('question-output-id4', 'children'),
+    [
+        dash.dependencies.Input('questions-tabs-id', 'value'),
+        dash.dependencies.Input('questions-tabs-id', 'n_clicks'),
+     ],
+    [dash.dependencies.State('questions-tabs-id', 'n_clicks_previous')])
 def update_questions_output(value, n_clicks, n_clicks_previous):
     return '{} {} {}'.format(value, n_clicks, n_clicks_previous)
 
