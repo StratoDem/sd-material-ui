@@ -368,7 +368,7 @@ app.layout = html.Div([
         dashCallbackDelay=250,
         dataSource=[],
         searchEndpointAPI='/my-search',
-        searchJSONStructure={'version': 1},
+        searchJSONStructure={'version': 1, 'extra-args': {'more-fields': 'my-token-here'}},
         fullWidth=True,
         floatingLabelText="Type here"),
     html.Div('', id='output-autocomplete-search'),
@@ -655,7 +655,7 @@ def radiobuttongroup_callback(valueSelected):
 
 
 @app.server.route('/my-search', methods=['POST'])
-def handle_search():
+def black_box_search_engine():
     search_term = flask.request.get_json().get('searchTerm')
 
     assert isinstance(search_term, str)
@@ -663,7 +663,7 @@ def handle_search():
     return flask.jsonify({
         'dataSource': [
             {'label': search_term, 'value': 'val 1'},
-            {'label': 'val 2', 'value': 'val 2'},
+            {'label': 'val 2', 'value': {'a-dict-key': 'a value'}},
             {'label': 'val 3', 'value': 'val 3'},
             {'label': 'val 4', 'value': 'val 4'},
         ]})
