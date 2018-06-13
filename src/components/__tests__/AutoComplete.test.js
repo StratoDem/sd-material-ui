@@ -121,5 +121,6 @@ describe('AutoComplete', () => {
 
     component.setProps({searchText: 'test2'});
     expect(setProps.mock.calls[0][0]).toEqual({searchValue: 4});
+    expect(component.state('searchText')).toBe('test2');
   });
 });

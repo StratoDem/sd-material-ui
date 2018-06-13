@@ -185,6 +185,7 @@ export default class AutoComplete extends Component<Props, State> {
 
     // Always want to handle searchText updates
     this.updateTextProps(searchText);
+    this.setState({searchText});
   };
 
   /**
@@ -258,6 +259,7 @@ export default class AutoComplete extends Component<Props, State> {
             style={style}
             targetOrigin={targetOrigin}
             textFieldStyle={textFieldStyle}
+            searchText={this.state.searchText}
           />
         </MuiThemeProvider>
       </div>);
