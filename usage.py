@@ -1,5 +1,6 @@
 import sd_material_ui
 import dash
+import flask
 import dash_html_components as html
 import time
 
@@ -9,7 +10,6 @@ app.scripts.config.serve_locally = True
 
 spacer = html.Div(children=[], style=dict(height=20))
 final_spacer = html.Div(children=[], style=dict(height=400))
-
 
 
 # Callback for BottomNavigation
@@ -244,7 +244,7 @@ app.layout = html.Div([
         ],
         fullWidth=True,
         floatingLabelText="Type here",
-        filter='caseSensitiveFilter',),
+        filter='caseSensitiveFilter'),
 
     spacer,
 
@@ -360,6 +360,18 @@ app.layout = html.Div([
             {'label': 'Tab 2 label'},
         ]
     ),
+
+    sd_material_ui.AutoComplete(
+        id='input-autocomplete-search',
+        animated=False,
+        exactMatch=True,
+        dashCallbackDelay=250,
+        dataSource=[],
+        searchEndpointAPI='/my-search',
+        searchJSONStructure={'version': 1, 'extra-args': {'more-fields': 'my-token-here'}},
+        fullWidth=True,
+        floatingLabelText="Type here"),
+    html.Div('', id='output-autocomplete-search'),
 
     final_spacer,
 ])
@@ -626,12 +638,35 @@ def autocomplete_callback(searchValue: int):
     return ['Selection is {}'.format(searchValue)]
 
 
+# Callback for SDAutoComplete
+@app.callback(
+    dash.dependencies.Output('output-autocomplete-search', 'children'),
+    [dash.dependencies.Input('input-autocomplete-search', 'searchValue')])
+def autocomplete_callback(searchValue: int):
+    return ['Selection is {}'.format(searchValue)]
+
+
 # Callback for SDRadioButtonGroup
 @app.callback(
     dash.dependencies.Output('output14', 'children'),
     [dash.dependencies.Input('input14', 'valueSelected')])
 def radiobuttongroup_callback(valueSelected):
     return ['Selection is: {}'.format(valueSelected)]
+
+
+@app.server.route('/my-search', methods=['POST'])
+def black_box_search_engine():
+    search_term = flask.request.get_json().get('searchTerm')
+
+    assert isinstance(search_term, str)
+
+    return flask.jsonify({
+        'dataSource': [
+            {'label': search_term, 'value': 'val 1'},
+            {'label': 'val 2', 'value': {'a-dict-key': 'a value'}},
+            {'label': 'val 3', 'value': 'val 3'},
+            {'label': 'val 4', 'value': 'val 4'},
+        ]})
 
 
 if __name__ == '__main__':
