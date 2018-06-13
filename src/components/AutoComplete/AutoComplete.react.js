@@ -84,6 +84,10 @@ type Props = {
   },
   /** Override the inline-styles of AutoComplete's TextField element */
   textFieldStyle?: Object,
+  /** If defined, the AutoComplete component hits this URL to search instead of string matching */
+  searchEndpointAPI?: string,
+  /** General JSON structure to send to the server */
+  searchJSONStructure?: Object,
 };
 
 type State = {
@@ -96,7 +100,7 @@ const defaultProps = {
   animated: true,
   dashCallbackDelay: 500,
   dataSource: [],
-  dataSourceConfig: {text: 'text', value: 'value'},
+  dataSourceConfig: {text: 'label', value: 'value'},
   disableFocusRipple: true,
   errorStyle: {},
   errorText: null,
@@ -119,6 +123,8 @@ const defaultProps = {
   targetOrigin: {vertical: 'top', horizontal: 'left'},
   textFieldStyle: {},
   searchValue: null,
+  searchEndpointAPI: undefined,
+  searchJSONStructure: {},
 };
 
 const mapFilterToFunc = {
@@ -153,12 +159,14 @@ export default class AutoComplete extends Component<Props, State> {
       this.handleChange(nextProps.searchText, this.props.dataSource, {});
     }
     if (this.props.dataSource !== nextProps.dataSource)
-      this.setState({
-        dataSourceRender: nextProps.exactMatch
-          ? nextProps.dataSource.map(d => d.label)
-          : nextProps.dataSource,
-      });
+      this.setState({dataSourceRender: this.getDataSource(nextProps)});
   }
+
+  getDataSource = (props: Props): Array<any> => {
+    if (props.exactMatch)
+      return props.dataSource.map(d => d.label);
+    return props.dataSource;
+  };
 
   /**
    * calls function to fire callback and updates searchText in state
@@ -177,7 +185,6 @@ export default class AutoComplete extends Component<Props, State> {
 
     // Always want to handle searchText updates
     this.updateTextProps(searchText);
-    this.setState({searchText});
   };
 
   /**
@@ -192,13 +199,28 @@ export default class AutoComplete extends Component<Props, State> {
     if (typeof setProps === 'function')
       setProps({searchText});
 
+    if (typeof this.props.searchEndpointAPI !== 'undefined')
+      fetch(this.props.searchEndpointAPI, {
+        body: JSON.stringify({...this.props.searchJSONStructure, searchTerm: searchText}),
+        cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+        credentials: 'same-origin', // include, same-origin, *omit
+        headers: {
+          'content-type': 'application/json',
+        },
+        method: 'POST', // *GET, POST, PUT, DELETE, etc.
+        mode: 'cors', // no-cors, cors, *same-origin
+        redirect: 'follow', // manual, *follow, error
+        referrer: 'client', // *client, no-referrer
+      }).then(response => response.json()).then((response: {dataSource: Array<any>}) => {
+        this.setState({dataSourceRender: response.dataSource});
+      });
+
     if (this.props.fireEvent) {
       this.props.fireEvent({event: 'change'});
     }
   };
 
   render() {
-
     const { id, anchorOrigin, animated, dataSourceConfig,
       disableFocusRipple, errorStyle, errorText, filter, floatingLabelText,
       hintText, listStyle, maxSearchResults, menuCloseDelay, menuProps,
@@ -216,7 +238,11 @@ export default class AutoComplete extends Component<Props, State> {
             disableFocusRipple={disableFocusRipple}
             errorStyle={errorStyle}
             errorText={errorText}
-            filter={mapFilterToFunc[filter]}
+            filter={
+              typeof this.props.searchEndpointAPI === 'undefined'
+                ? mapFilterToFunc[filter]
+                : () => true
+            }
             floatingLabelText={floatingLabelText}
             hintText={hintText}
             listStyle={listStyle}
@@ -229,7 +255,6 @@ export default class AutoComplete extends Component<Props, State> {
             open={open}
             openOnFocus={openOnFocus}
             popoverProps={popoverProps}
-            searchText={this.state.searchText}
             style={style}
             targetOrigin={targetOrigin}
             textFieldStyle={textFieldStyle}

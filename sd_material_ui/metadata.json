@@ -4,6 +4,403 @@
     "displayName": "AutoComplete",
     "methods": [
       {
+        "name": "getDataSource",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "props",
+            "type": {
+              "name": "signature",
+              "type": "object",
+              "raw": "{\n  /** Location of the anchor for the auto complete */\n  anchorOrigin?: {\n    vertical?: 'top' | 'center' | 'bottom',\n    horizontal?: 'left' | 'middle' | 'right',\n  },\n  /** If true, auto complete is animated as it is toggled */\n  animated?: boolean,\n  /** Dash callback delay in ms - default is 500 ms */\n  dashCallbackDelay?: number,\n  /**\n   * Array of strings or nodes used to populate the list\n   * Alternatively, an Array of Objects with a structure like\n   * {label: 'My label to render', value: 'My value to ship on match'}\n   */\n  dataSource?: Array<any>,\n  /** Config for objects list dataSource */\n  dataSourceConfig?: Object,\n  /** Disables focus ripple when true */\n  disableFocusRipple?: boolean,\n  /** Override style prop for error */\n  errorStyle?: Object,\n  /** The error content to display */\n  errorText?: Node,\n  /** Should the search text have to match exactly to update props server side? */\n  exactMatch?: boolean,\n  /** String name for filter to be applied to user input.\n   * will later be mapped to function\n   */\n  filter?: 'caseInsensitiveFilter' | 'caseSensitiveFilter' | 'defaultFilter' |\n    'fuzzyFilter' | 'levenshteinDistanceFilter' | 'noFilter',\n  /** Dash-assigned callback that gets fired when the input changes. */\n  fireEvent?: () => void,\n  /** The content to use for adding floating label element */\n  floatingLabelText?: Node,\n  /** If true, field receives the property width: 100% */\n  fullWidth?: boolean,\n  /** The hint content to display */\n  hintText?: Node,\n  /** Autocomplete ID */\n  id: string,\n  /** Override style for list */\n  listStyle?: Object,\n  /** The max number of search results to be shown. By default it shows\n   * all the items which matches filter */\n  maxSearchResults?: number,\n  /** Delay for closing time of the menu */\n  menuCloseDelay?: number,\n  /** Props to be passed to menu */\n  menuProps?: Object,\n  /** Override style for menu */\n  menuStyle?: Object,\n  /** Auto complete menu is open if true */\n  open?: boolean,\n  /** If true, the list item is showed when a focus event triggers */\n  openOnFocus?: boolean,\n  /** Props to be passed to popover */\n  popoverProps?: Object,\n  /** Text being input to auto complete */\n  searchText?: string,\n  /** Value in the dataSource found by using searchText\n   * NOTE exactMatch must be true for this to work\n   */\n  searchValue?: any,\n  /** Dash callback to update props on the server. */\n  setProps?: () => void,\n  /** Override the inline-styles of the root element */\n  style?: Object,\n  /** Origin for location of target */\n  targetOrigin?: {\n    vertical?: 'top' | 'center' | 'bottom',\n    horizontal?: 'left' | 'middle' | 'right',\n  },\n  /** Override the inline-styles of AutoComplete's TextField element */\n  textFieldStyle?: Object,\n  /** If defined, the AutoComplete component hits this URL to search instead of string matching */\n  searchEndpointAPI?: string,\n  /** General JSON structure to send to the server */\n  searchJSONStructure?: Object,\n}",
+              "signature": {
+                "properties": [
+                  {
+                    "key": "anchorOrigin",
+                    "value": {
+                      "name": "signature",
+                      "type": "object",
+                      "raw": "{\n  vertical?: 'top' | 'center' | 'bottom',\n  horizontal?: 'left' | 'middle' | 'right',\n}",
+                      "signature": {
+                        "properties": [
+                          {
+                            "key": "vertical",
+                            "value": {
+                              "name": "union",
+                              "raw": "'top' | 'center' | 'bottom'",
+                              "elements": [
+                                {
+                                  "name": "literal",
+                                  "value": "'top'"
+                                },
+                                {
+                                  "name": "literal",
+                                  "value": "'center'"
+                                },
+                                {
+                                  "name": "literal",
+                                  "value": "'bottom'"
+                                }
+                              ],
+                              "required": false
+                            }
+                          },
+                          {
+                            "key": "horizontal",
+                            "value": {
+                              "name": "union",
+                              "raw": "'left' | 'middle' | 'right'",
+                              "elements": [
+                                {
+                                  "name": "literal",
+                                  "value": "'left'"
+                                },
+                                {
+                                  "name": "literal",
+                                  "value": "'middle'"
+                                },
+                                {
+                                  "name": "literal",
+                                  "value": "'right'"
+                                }
+                              ],
+                              "required": false
+                            }
+                          }
+                        ]
+                      },
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "animated",
+                    "value": {
+                      "name": "boolean",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "dashCallbackDelay",
+                    "value": {
+                      "name": "number",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "dataSource",
+                    "value": {
+                      "name": "Array",
+                      "elements": [
+                        {
+                          "name": "any"
+                        }
+                      ],
+                      "raw": "Array<any>",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "dataSourceConfig",
+                    "value": {
+                      "name": "Object",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "disableFocusRipple",
+                    "value": {
+                      "name": "boolean",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "errorStyle",
+                    "value": {
+                      "name": "Object",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "errorText",
+                    "value": {
+                      "name": "Node",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "exactMatch",
+                    "value": {
+                      "name": "boolean",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "filter",
+                    "value": {
+                      "name": "union",
+                      "raw": "'caseInsensitiveFilter' | 'caseSensitiveFilter' | 'defaultFilter' |\n  'fuzzyFilter' | 'levenshteinDistanceFilter' | 'noFilter'",
+                      "elements": [
+                        {
+                          "name": "literal",
+                          "value": "'caseInsensitiveFilter'"
+                        },
+                        {
+                          "name": "literal",
+                          "value": "'caseSensitiveFilter'"
+                        },
+                        {
+                          "name": "literal",
+                          "value": "'defaultFilter'"
+                        },
+                        {
+                          "name": "literal",
+                          "value": "'fuzzyFilter'"
+                        },
+                        {
+                          "name": "literal",
+                          "value": "'levenshteinDistanceFilter'"
+                        },
+                        {
+                          "name": "literal",
+                          "value": "'noFilter'"
+                        }
+                      ],
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "fireEvent",
+                    "value": {
+                      "name": "signature",
+                      "type": "function",
+                      "raw": "() => void",
+                      "signature": {
+                        "arguments": [],
+                        "return": {
+                          "name": "void"
+                        }
+                      },
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "floatingLabelText",
+                    "value": {
+                      "name": "Node",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "fullWidth",
+                    "value": {
+                      "name": "boolean",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "hintText",
+                    "value": {
+                      "name": "Node",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "id",
+                    "value": {
+                      "name": "string",
+                      "required": true
+                    }
+                  },
+                  {
+                    "key": "listStyle",
+                    "value": {
+                      "name": "Object",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "maxSearchResults",
+                    "value": {
+                      "name": "number",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "menuCloseDelay",
+                    "value": {
+                      "name": "number",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "menuProps",
+                    "value": {
+                      "name": "Object",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "menuStyle",
+                    "value": {
+                      "name": "Object",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "open",
+                    "value": {
+                      "name": "boolean",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "openOnFocus",
+                    "value": {
+                      "name": "boolean",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "popoverProps",
+                    "value": {
+                      "name": "Object",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "searchText",
+                    "value": {
+                      "name": "string",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "searchValue",
+                    "value": {
+                      "name": "any",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "setProps",
+                    "value": {
+                      "name": "signature",
+                      "type": "function",
+                      "raw": "() => void",
+                      "signature": {
+                        "arguments": [],
+                        "return": {
+                          "name": "void"
+                        }
+                      },
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "style",
+                    "value": {
+                      "name": "Object",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "targetOrigin",
+                    "value": {
+                      "name": "signature",
+                      "type": "object",
+                      "raw": "{\n  vertical?: 'top' | 'center' | 'bottom',\n  horizontal?: 'left' | 'middle' | 'right',\n}",
+                      "signature": {
+                        "properties": [
+                          {
+                            "key": "vertical",
+                            "value": {
+                              "name": "union",
+                              "raw": "'top' | 'center' | 'bottom'",
+                              "elements": [
+                                {
+                                  "name": "literal",
+                                  "value": "'top'"
+                                },
+                                {
+                                  "name": "literal",
+                                  "value": "'center'"
+                                },
+                                {
+                                  "name": "literal",
+                                  "value": "'bottom'"
+                                }
+                              ],
+                              "required": false
+                            }
+                          },
+                          {
+                            "key": "horizontal",
+                            "value": {
+                              "name": "union",
+                              "raw": "'left' | 'middle' | 'right'",
+                              "elements": [
+                                {
+                                  "name": "literal",
+                                  "value": "'left'"
+                                },
+                                {
+                                  "name": "literal",
+                                  "value": "'middle'"
+                                },
+                                {
+                                  "name": "literal",
+                                  "value": "'right'"
+                                }
+                              ],
+                              "required": false
+                            }
+                          }
+                        ]
+                      },
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "textFieldStyle",
+                    "value": {
+                      "name": "Object",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "searchEndpointAPI",
+                    "value": {
+                      "name": "string",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "searchJSONStructure",
+                    "value": {
+                      "name": "Object",
+                      "required": false
+                    }
+                  }
+                ]
+              },
+              "alias": "Props"
+            }
+          }
+        ],
+        "returns": {
+          "type": {
+            "name": "Array",
+            "elements": [
+              {
+                "name": "any"
+              }
+            ],
+            "raw": "Array<any>"
+          }
+        }
+      },
+      {
         "name": "handleChange",
         "docblock": "calls function to fire callback and updates searchText in state\n@param searchText\n@param dataSource\n@param params",
         "modifiers": [],
@@ -160,7 +557,7 @@
         "required": false,
         "description": "Config for objects list dataSource",
         "defaultValue": {
-          "value": "{text: 'text', value: 'value'}",
+          "value": "{text: 'label', value: 'value'}",
           "computed": false
         }
       },
@@ -508,6 +905,28 @@
         },
         "required": false,
         "description": "Override the inline-styles of AutoComplete's TextField element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "searchEndpointAPI": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "If defined, the AutoComplete component hits this URL to search instead of string matching",
+        "defaultValue": {
+          "value": "undefined",
+          "computed": true
+        }
+      },
+      "searchJSONStructure": {
+        "flowType": {
+          "name": "Object"
+        },
+        "required": false,
+        "description": "General JSON structure to send to the server",
         "defaultValue": {
           "value": "{}",
           "computed": false
