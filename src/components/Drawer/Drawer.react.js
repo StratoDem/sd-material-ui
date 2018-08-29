@@ -13,7 +13,9 @@ type Props = {
   /** The CSS class name of the root element */
   className?: string,
   /** The CSS class name of the container element */
-  containerclassName?: string,
+  containerClassName?: string,
+  /** The CSS class name to add to the container element when it is closed */
+  containerClosedClassName?: string,
   /** Override the inline styles of the container element */
   containerStyle?: Object,
   /** If true, swiping sideways when the Drawer is closed will not open it */
@@ -61,7 +63,8 @@ type State = {
 const defaultProps = {
   children: [],
   className: '',
-  containerclassName: '',
+  containerClassName: '',
+  containerClosedClassName: '',
   containerStyle: {},
   disableSwipeToOpen: false,
   docked: true,
@@ -98,16 +101,19 @@ export default class Drawer extends Component<Props, State> {
   };
 
   render() {
-    const { className, containerclassName, containerStyle, disableSwipeToOpen, docked, id,
+    const { className, containerClassName, containerStyle, disableSwipeToOpen, docked, id,
       openSecondary, overlayClassName, overlayStyle, style, swipeAreaWidth, width,
-      zDepth } = this.props;
+      containerClosedClassName, zDepth } = this.props;
 
     return (
       <div id={id}>
         <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
           <MuiDrawer
             className={className}
-            containerClassName={containerclassName}
+            containerClassName={
+              this.state.open
+                ? containerClassName
+                : `${containerClassName} ${containerClosedClassName}`}
             containerStyle={containerStyle}
             disableSwipeToOpen={disableSwipeToOpen}
             docked={docked}

@@ -1,5 +1,6 @@
 import AutoComplete from './components/AutoComplete';
 import BottomNavigation from './components/BottomNavigation';
+import Card from './components/Card';
 import Checkbox from './components/Checkbox';
 import CircularProgress from './components/CircularProgress';
 import Dialog from './components/Dialog';
@@ -16,10 +17,14 @@ import Subheader from './components/Subheader';
 import RadioButtonGroup from './components/RadioButtonGroup';
 import RaisedButton from './components/RaisedButton';
 import Toggle from './components/Toggle';
+import { Tabs } from './components/Tabs';
+import Questions from './components/__special/Questions';
+import QuestionsTabs from './components/__special/QuestionsTabs';
 
 export {
   AutoComplete,
   BottomNavigation,
+  Card,
   Checkbox,
   CircularProgress,
   Dialog,
@@ -35,5 +40,10 @@ export {
   Subheader,
   RadioButtonGroup,
   RaisedButton,
+  Tabs,
   Toggle,
+
+  // Custom components
+  Questions,
+  QuestionsTabs,
 };

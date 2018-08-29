@@ -4,6 +4,403 @@
     "displayName": "AutoComplete",
     "methods": [
       {
+        "name": "getDataSource",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "props",
+            "type": {
+              "name": "signature",
+              "type": "object",
+              "raw": "{\n  /** Location of the anchor for the auto complete */\n  anchorOrigin?: {\n    vertical?: 'top' | 'center' | 'bottom',\n    horizontal?: 'left' | 'middle' | 'right',\n  },\n  /** If true, auto complete is animated as it is toggled */\n  animated?: boolean,\n  /** Dash callback delay in ms - default is 500 ms */\n  dashCallbackDelay?: number,\n  /**\n   * Array of strings or nodes used to populate the list\n   * Alternatively, an Array of Objects with a structure like\n   * {label: 'My label to render', value: 'My value to ship on match'}\n   */\n  dataSource?: Array<any>,\n  /** Config for objects list dataSource */\n  dataSourceConfig?: Object,\n  /** Disables focus ripple when true */\n  disableFocusRipple?: boolean,\n  /** Override style prop for error */\n  errorStyle?: Object,\n  /** The error content to display */\n  errorText?: Node,\n  /** Should the search text have to match exactly to update props server side? */\n  exactMatch?: boolean,\n  /** String name for filter to be applied to user input.\n   * will later be mapped to function\n   */\n  filter?: 'caseInsensitiveFilter' | 'caseSensitiveFilter' | 'defaultFilter' |\n    'fuzzyFilter' | 'levenshteinDistanceFilter' | 'noFilter',\n  /** Dash-assigned callback that gets fired when the input changes. */\n  fireEvent?: () => void,\n  /** The content to use for adding floating label element */\n  floatingLabelText?: Node,\n  /** If true, field receives the property width: 100% */\n  fullWidth?: boolean,\n  /** The hint content to display */\n  hintText?: Node,\n  /** Autocomplete ID */\n  id: string,\n  /** Override style for list */\n  listStyle?: Object,\n  /** The max number of search results to be shown. By default it shows\n   * all the items which matches filter */\n  maxSearchResults?: number,\n  /** Delay for closing time of the menu */\n  menuCloseDelay?: number,\n  /** Props to be passed to menu */\n  menuProps?: Object,\n  /** Override style for menu */\n  menuStyle?: Object,\n  /** Auto complete menu is open if true */\n  open?: boolean,\n  /** If true, the list item is showed when a focus event triggers */\n  openOnFocus?: boolean,\n  /** Props to be passed to popover */\n  popoverProps?: Object,\n  /** Text being input to auto complete */\n  searchText?: string,\n  /** Value in the dataSource found by using searchText\n   * NOTE exactMatch must be true for this to work\n   */\n  searchValue?: any,\n  /** Dash callback to update props on the server. */\n  setProps?: () => void,\n  /** Override the inline-styles of the root element */\n  style?: Object,\n  /** Origin for location of target */\n  targetOrigin?: {\n    vertical?: 'top' | 'center' | 'bottom',\n    horizontal?: 'left' | 'middle' | 'right',\n  },\n  /** Override the inline-styles of AutoComplete's TextField element */\n  textFieldStyle?: Object,\n  /** If defined, the AutoComplete component hits this URL to search instead of string matching */\n  searchEndpointAPI?: string,\n  /** General JSON structure to send to the server */\n  searchJSONStructure?: Object,\n}",
+              "signature": {
+                "properties": [
+                  {
+                    "key": "anchorOrigin",
+                    "value": {
+                      "name": "signature",
+                      "type": "object",
+                      "raw": "{\n  vertical?: 'top' | 'center' | 'bottom',\n  horizontal?: 'left' | 'middle' | 'right',\n}",
+                      "signature": {
+                        "properties": [
+                          {
+                            "key": "vertical",
+                            "value": {
+                              "name": "union",
+                              "raw": "'top' | 'center' | 'bottom'",
+                              "elements": [
+                                {
+                                  "name": "literal",
+                                  "value": "'top'"
+                                },
+                                {
+                                  "name": "literal",
+                                  "value": "'center'"
+                                },
+                                {
+                                  "name": "literal",
+                                  "value": "'bottom'"
+                                }
+                              ],
+                              "required": false
+                            }
+                          },
+                          {
+                            "key": "horizontal",
+                            "value": {
+                              "name": "union",
+                              "raw": "'left' | 'middle' | 'right'",
+                              "elements": [
+                                {
+                                  "name": "literal",
+                                  "value": "'left'"
+                                },
+                                {
+                                  "name": "literal",
+                                  "value": "'middle'"
+                                },
+                                {
+                                  "name": "literal",
+                                  "value": "'right'"
+                                }
+                              ],
+                              "required": false
+                            }
+                          }
+                        ]
+                      },
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "animated",
+                    "value": {
+                      "name": "boolean",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "dashCallbackDelay",
+                    "value": {
+                      "name": "number",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "dataSource",
+                    "value": {
+                      "name": "Array",
+                      "elements": [
+                        {
+                          "name": "any"
+                        }
+                      ],
+                      "raw": "Array<any>",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "dataSourceConfig",
+                    "value": {
+                      "name": "Object",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "disableFocusRipple",
+                    "value": {
+                      "name": "boolean",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "errorStyle",
+                    "value": {
+                      "name": "Object",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "errorText",
+                    "value": {
+                      "name": "Node",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "exactMatch",
+                    "value": {
+                      "name": "boolean",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "filter",
+                    "value": {
+                      "name": "union",
+                      "raw": "'caseInsensitiveFilter' | 'caseSensitiveFilter' | 'defaultFilter' |\n  'fuzzyFilter' | 'levenshteinDistanceFilter' | 'noFilter'",
+                      "elements": [
+                        {
+                          "name": "literal",
+                          "value": "'caseInsensitiveFilter'"
+                        },
+                        {
+                          "name": "literal",
+                          "value": "'caseSensitiveFilter'"
+                        },
+                        {
+                          "name": "literal",
+                          "value": "'defaultFilter'"
+                        },
+                        {
+                          "name": "literal",
+                          "value": "'fuzzyFilter'"
+                        },
+                        {
+                          "name": "literal",
+                          "value": "'levenshteinDistanceFilter'"
+                        },
+                        {
+                          "name": "literal",
+                          "value": "'noFilter'"
+                        }
+                      ],
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "fireEvent",
+                    "value": {
+                      "name": "signature",
+                      "type": "function",
+                      "raw": "() => void",
+                      "signature": {
+                        "arguments": [],
+                        "return": {
+                          "name": "void"
+                        }
+                      },
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "floatingLabelText",
+                    "value": {
+                      "name": "Node",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "fullWidth",
+                    "value": {
+                      "name": "boolean",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "hintText",
+                    "value": {
+                      "name": "Node",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "id",
+                    "value": {
+                      "name": "string",
+                      "required": true
+                    }
+                  },
+                  {
+                    "key": "listStyle",
+                    "value": {
+                      "name": "Object",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "maxSearchResults",
+                    "value": {
+                      "name": "number",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "menuCloseDelay",
+                    "value": {
+                      "name": "number",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "menuProps",
+                    "value": {
+                      "name": "Object",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "menuStyle",
+                    "value": {
+                      "name": "Object",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "open",
+                    "value": {
+                      "name": "boolean",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "openOnFocus",
+                    "value": {
+                      "name": "boolean",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "popoverProps",
+                    "value": {
+                      "name": "Object",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "searchText",
+                    "value": {
+                      "name": "string",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "searchValue",
+                    "value": {
+                      "name": "any",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "setProps",
+                    "value": {
+                      "name": "signature",
+                      "type": "function",
+                      "raw": "() => void",
+                      "signature": {
+                        "arguments": [],
+                        "return": {
+                          "name": "void"
+                        }
+                      },
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "style",
+                    "value": {
+                      "name": "Object",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "targetOrigin",
+                    "value": {
+                      "name": "signature",
+                      "type": "object",
+                      "raw": "{\n  vertical?: 'top' | 'center' | 'bottom',\n  horizontal?: 'left' | 'middle' | 'right',\n}",
+                      "signature": {
+                        "properties": [
+                          {
+                            "key": "vertical",
+                            "value": {
+                              "name": "union",
+                              "raw": "'top' | 'center' | 'bottom'",
+                              "elements": [
+                                {
+                                  "name": "literal",
+                                  "value": "'top'"
+                                },
+                                {
+                                  "name": "literal",
+                                  "value": "'center'"
+                                },
+                                {
+                                  "name": "literal",
+                                  "value": "'bottom'"
+                                }
+                              ],
+                              "required": false
+                            }
+                          },
+                          {
+                            "key": "horizontal",
+                            "value": {
+                              "name": "union",
+                              "raw": "'left' | 'middle' | 'right'",
+                              "elements": [
+                                {
+                                  "name": "literal",
+                                  "value": "'left'"
+                                },
+                                {
+                                  "name": "literal",
+                                  "value": "'middle'"
+                                },
+                                {
+                                  "name": "literal",
+                                  "value": "'right'"
+                                }
+                              ],
+                              "required": false
+                            }
+                          }
+                        ]
+                      },
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "textFieldStyle",
+                    "value": {
+                      "name": "Object",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "searchEndpointAPI",
+                    "value": {
+                      "name": "string",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "searchJSONStructure",
+                    "value": {
+                      "name": "Object",
+                      "required": false
+                    }
+                  }
+                ]
+              },
+              "alias": "Props"
+            }
+          }
+        ],
+        "returns": {
+          "type": {
+            "name": "Array",
+            "elements": [
+              {
+                "name": "any"
+              }
+            ],
+            "raw": "Array<any>"
+          }
+        }
+      },
+      {
         "name": "handleChange",
         "docblock": "calls function to fire callback and updates searchText in state\n@param searchText\n@param dataSource\n@param params",
         "modifiers": [],
@@ -147,7 +544,7 @@
           "raw": "Array<any>"
         },
         "required": false,
-        "description": "Array of strings or nodes used to populate the list",
+        "description": "Array of strings or nodes used to populate the list\nAlternatively, an Array of Objects with a structure like\n{label: 'My label to render', value: 'My value to ship on match'}",
         "defaultValue": {
           "value": "[]",
           "computed": false
@@ -160,7 +557,7 @@
         "required": false,
         "description": "Config for objects list dataSource",
         "defaultValue": {
-          "value": "{text: 'text', value: 'value'}",
+          "value": "{text: 'label', value: 'value'}",
           "computed": false
         }
       },
@@ -194,6 +591,17 @@
         "description": "The error content to display",
         "defaultValue": {
           "value": "null",
+          "computed": false
+        }
+      },
+      "exactMatch": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Should the search text have to match exactly to update props server side?",
+        "defaultValue": {
+          "value": "false",
           "computed": false
         }
       },
@@ -389,6 +797,17 @@
           "computed": false
         }
       },
+      "searchValue": {
+        "flowType": {
+          "name": "any"
+        },
+        "required": false,
+        "description": "Value in the dataSource found by using searchText\nNOTE exactMatch must be true for this to work",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
       "setProps": {
         "flowType": {
           "name": "signature",
@@ -486,6 +905,28 @@
         },
         "required": false,
         "description": "Override the inline-styles of AutoComplete's TextField element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "searchEndpointAPI": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "If defined, the AutoComplete component hits this URL to search instead of string matching",
+        "defaultValue": {
+          "value": "undefined",
+          "computed": true
+        }
+      },
+      "searchJSONStructure": {
+        "flowType": {
+          "name": "Object"
+        },
+        "required": false,
+        "description": "General JSON structure to send to the server",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -716,6 +1157,354 @@
         "description": "Dash-assigned callback that should be called whenever any of the\nproperties change",
         "defaultValue": {
           "value": "() => {}",
+          "computed": false
+        }
+      }
+    }
+  },
+  "src/components/Card/Card.react.js": {
+    "description": "",
+    "displayName": "Card",
+    "methods": [],
+    "props": {
+      "id": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "ID for Card",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "children": {
+        "flowType": {
+          "name": "Node"
+        },
+        "required": false,
+        "description": "Can be used to render elements inside the Card.",
+        "defaultValue": {
+          "value": "[]",
+          "computed": false
+        }
+      },
+      "className": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The CSS class name of the root element",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "containerStyle": {
+        "flowType": {
+          "name": "Object"
+        },
+        "required": false,
+        "description": "Override the inline-styles of the container element.",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "expandable": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "If true, this card component is expandable.",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "_expanded": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Set to null to keep the component uncontrolled.",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "initiallyExpanded": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Whether this card is initially expanded.",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "style": {
+        "flowType": {
+          "name": "Object"
+        },
+        "required": false,
+        "description": "Override the inline-styles of the root element.",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "showExpandableButton": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "If true, this card component will include a button to expand the card.",
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        }
+      },
+      "headerActAsExpander": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "If true, a click on this card component expands the card.",
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        }
+      },
+      "headerAvatar": {
+        "flowType": {
+          "name": "Node"
+        },
+        "required": false,
+        "description": "This is the Avatar element to be displayed on the Card Header. If avatar is an Avatar or\nother element, it will be rendered. If avatar is a string, it will be used as the image src\nfor an Avatar.",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "headerStyle": {
+        "flowType": {
+          "name": "Object"
+        },
+        "required": false,
+        "description": "Override the inline-styles of the root element.",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "headerSubtitle": {
+        "flowType": {
+          "name": "Node"
+        },
+        "required": false,
+        "description": "Can be used to render a subtitle in Card Header.",
+        "defaultValue": {
+          "value": "[]",
+          "computed": false
+        }
+      },
+      "headerSubtitleColor": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Override the subtitle color.",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "headerSubtitleStyle": {
+        "flowType": {
+          "name": "Object"
+        },
+        "required": false,
+        "description": "Override the inline-styles of the subtitle.",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "headerTextStyle": {
+        "flowType": {
+          "name": "Object"
+        },
+        "required": false,
+        "description": "Override the inline-styles of the text.",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "headerTitle": {
+        "flowType": {
+          "name": "Node"
+        },
+        "required": false,
+        "description": "Can be used to render a title in Card Header.",
+        "defaultValue": {
+          "value": "[]",
+          "computed": false
+        }
+      },
+      "headerTitleColor": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Override the title color.",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "headerTitleStyle": {
+        "flowType": {
+          "name": "Object"
+        },
+        "required": false,
+        "description": "Override the inline-styles of the title.",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "headerIconStyle": {
+        "flowType": {
+          "name": "Object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "titleExpandable": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "If true, this card component is expandable.",
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        }
+      },
+      "titleStyle": {
+        "flowType": {
+          "name": "Object"
+        },
+        "required": false,
+        "description": "Override the inline-styles of the root element.",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "titleSubtitle": {
+        "flowType": {
+          "name": "Node"
+        },
+        "required": false,
+        "description": "Can be used to render a subtitle in the Card Title.",
+        "defaultValue": {
+          "value": "[]",
+          "computed": false
+        }
+      },
+      "titleSubtitleColor": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Override the subtitle color.",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "titleSubtitleStyle": {
+        "flowType": {
+          "name": "Object"
+        },
+        "required": false,
+        "description": "Override the inline-styles of the subtitle.",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "titleTitle": {
+        "flowType": {
+          "name": "Node"
+        },
+        "required": false,
+        "description": "Can be used to render a title in the Card Title.",
+        "defaultValue": {
+          "value": "[]",
+          "computed": false
+        }
+      },
+      "titleColor": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Override the title color.",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "titleTitleStyle": {
+        "flowType": {
+          "name": "Object"
+        },
+        "required": false,
+        "description": "Override the inline-styles of the title.",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "textExpandable": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "If true, this card component is expandable.",
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        }
+      },
+      "textColor": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Override the CardText color.",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "textStyle": {
+        "flowType": {
+          "name": "Object"
+        },
+        "required": false,
+        "description": "Override the inline-styles of the root element.",
+        "defaultValue": {
+          "value": "{}",
           "computed": false
         }
       }
@@ -1177,12 +1966,23 @@
           "computed": false
         }
       },
-      "containerclassName": {
+      "containerClassName": {
         "flowType": {
           "name": "string"
         },
         "required": false,
         "description": "The CSS class name of the container element",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "containerClosedClassName": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The CSS class name to add to the container element when it is closed",
         "defaultValue": {
           "value": "''",
           "computed": false
@@ -2156,6 +2956,17 @@
     "displayName": "FontIcon",
     "methods": [],
     "props": {
+      "id": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "id for the component",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
       "color": {
         "flowType": {
           "name": "string"
@@ -2504,274 +3315,6 @@
         },
         "required": false,
         "description": "This number represents the zDepth of the paper shadow",
-        "defaultValue": {
-          "value": "1",
-          "computed": false
-        }
-      }
-    }
-  },
-  "src/components/Popover/Popover.react.js": {
-    "description": "",
-    "displayName": "Popover",
-    "methods": [
-      {
-        "name": "handleClick",
-        "docblock": null,
-        "modifiers": [],
-        "params": [
-          {
-            "name": "event",
-            "type": null
-          }
-        ],
-        "returns": null
-      },
-      {
-        "name": "handleRequestClose",
-        "docblock": null,
-        "modifiers": [],
-        "params": [],
-        "returns": null
-      }
-    ],
-    "props": {
-      "anchorOrigin": {
-        "flowType": {
-          "name": "signature",
-          "type": "object",
-          "raw": "{\n  vertical?: 'top' | 'center' | 'bottom',\n  horizontal?: 'left' | 'middle' | 'right',\n}",
-          "signature": {
-            "properties": [
-              {
-                "key": "vertical",
-                "value": {
-                  "name": "union",
-                  "raw": "'top' | 'center' | 'bottom'",
-                  "elements": [
-                    {
-                      "name": "literal",
-                      "value": "'top'"
-                    },
-                    {
-                      "name": "literal",
-                      "value": "'center'"
-                    },
-                    {
-                      "name": "literal",
-                      "value": "'bottom'"
-                    }
-                  ],
-                  "required": false
-                }
-              },
-              {
-                "key": "horizontal",
-                "value": {
-                  "name": "union",
-                  "raw": "'left' | 'middle' | 'right'",
-                  "elements": [
-                    {
-                      "name": "literal",
-                      "value": "'left'"
-                    },
-                    {
-                      "name": "literal",
-                      "value": "'middle'"
-                    },
-                    {
-                      "name": "literal",
-                      "value": "'right'"
-                    }
-                  ],
-                  "required": false
-                }
-              }
-            ]
-          }
-        },
-        "required": false,
-        "description": "This is the point on the anchor where the popover's targetOrigin will attach to.\nOptions: vertical: [top, center, bottom] horizontal: [left, middle, right].",
-        "defaultValue": {
-          "value": "{vertical: 'bottom', horizontal: 'left'}",
-          "computed": false
-        }
-      },
-      "animated": {
-        "flowType": {
-          "name": "boolean"
-        },
-        "required": false,
-        "description": "If true, the popover will apply transitions when it is added to the DOM.",
-        "defaultValue": {
-          "value": "true",
-          "computed": false
-        }
-      },
-      "autoCloseWhenOffScreen": {
-        "flowType": {
-          "name": "boolean"
-        },
-        "required": false,
-        "description": "If true, the popover will hide when the anchor is scrolled off the screen",
-        "defaultValue": {
-          "value": "true",
-          "computed": false
-        }
-      },
-      "canAutoPosition": {
-        "flowType": {
-          "name": "boolean"
-        },
-        "required": false,
-        "description": "If true, the popover (potentially) ignores targetOrigin and anchorOrigin to make itself fit\non screen, which is useful for mobile devices.",
-        "defaultValue": {
-          "value": "true",
-          "computed": false
-        }
-      },
-      "children": {
-        "flowType": {
-          "name": "Node"
-        },
-        "required": false,
-        "description": "The content of the popover",
-        "defaultValue": {
-          "value": "null",
-          "computed": false
-        }
-      },
-      "className": {
-        "flowType": {
-          "name": "string"
-        },
-        "required": false,
-        "description": "The CSS class name of the root element",
-        "defaultValue": {
-          "value": "''",
-          "computed": false
-        }
-      },
-      "open": {
-        "flowType": {
-          "name": "boolean"
-        },
-        "required": false,
-        "description": "If true, the popover is visible.",
-        "defaultValue": {
-          "value": "false",
-          "computed": false
-        }
-      },
-      "scrollableContainer": {
-        "flowType": {
-          "name": "union",
-          "raw": "Object | string",
-          "elements": [
-            {
-              "name": "Object"
-            },
-            {
-              "name": "string"
-            }
-          ]
-        },
-        "required": false,
-        "description": "Represents the parent scrollable container. It can be an element or a string like window.",
-        "defaultValue": {
-          "value": "'window'",
-          "computed": false
-        }
-      },
-      "style": {
-        "flowType": {
-          "name": "Object"
-        },
-        "required": false,
-        "description": "Override the inline-styles of the root element.",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "targetOrigin": {
-        "flowType": {
-          "name": "signature",
-          "type": "object",
-          "raw": "{\n  vertical?: 'top' | 'center' | 'bottom',\n  horizontal?: 'left' | 'middle' | 'right',\n}",
-          "signature": {
-            "properties": [
-              {
-                "key": "vertical",
-                "value": {
-                  "name": "union",
-                  "raw": "'top' | 'center' | 'bottom'",
-                  "elements": [
-                    {
-                      "name": "literal",
-                      "value": "'top'"
-                    },
-                    {
-                      "name": "literal",
-                      "value": "'center'"
-                    },
-                    {
-                      "name": "literal",
-                      "value": "'bottom'"
-                    }
-                  ],
-                  "required": false
-                }
-              },
-              {
-                "key": "horizontal",
-                "value": {
-                  "name": "union",
-                  "raw": "'left' | 'middle' | 'right'",
-                  "elements": [
-                    {
-                      "name": "literal",
-                      "value": "'left'"
-                    },
-                    {
-                      "name": "literal",
-                      "value": "'middle'"
-                    },
-                    {
-                      "name": "literal",
-                      "value": "'right'"
-                    }
-                  ],
-                  "required": false
-                }
-              }
-            ]
-          }
-        },
-        "required": false,
-        "description": "This is the point on the popover which will attach to the anchor's origin.\nOptions: vertical: [top, center, bottom] horizontal: [left, middle, right].",
-        "defaultValue": {
-          "value": "{vertical: 'top', horizontal: 'left'}",
-          "computed": false
-        }
-      },
-      "useLayerForClickAway": {
-        "flowType": {
-          "name": "boolean"
-        },
-        "required": false,
-        "description": "If true, the popover will render on top of an invisible layer, which will prevent clicks\nto the underlying elements, and trigger an onRequestClose('clickAway') call.",
-        "defaultValue": {
-          "value": "true",
-          "computed": false
-        }
-      },
-      "zDepth": {
-        "flowType": {
-          "name": "unknown"
-        },
-        "required": false,
-        "description": "The zDepth of the popover.",
         "defaultValue": {
           "value": "1",
           "computed": false
@@ -3618,6 +4161,154 @@
       }
     }
   },
+  "src/components/Tabs/Tabs.react.js": {
+    "description": "",
+    "displayName": "Tabs",
+    "methods": [],
+    "props": {
+      "id": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Element ID",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "className": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "CSS class name of the root element",
+        "defaultValue": {
+          "value": "undefined",
+          "computed": true
+        }
+      },
+      "contentContainerClassName": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "CSS class name of the content's container",
+        "defaultValue": {
+          "value": "undefined",
+          "computed": true
+        }
+      },
+      "children": {
+        "flowType": {
+          "name": "Node"
+        },
+        "required": false,
+        "description": "Pass Tab components as children",
+        "defaultValue": {
+          "value": "[]",
+          "computed": false
+        }
+      },
+      "contentContainerStyle": {
+        "flowType": {
+          "name": "Object"
+        },
+        "required": false,
+        "description": "Override the inline-styles of the content's container",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "initialSelectedIndex": {
+        "flowType": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Specify the initial visible tab index",
+        "defaultValue": {
+          "value": "0",
+          "computed": false
+        }
+      },
+      "inkBarStyle": {
+        "flowType": {
+          "name": "Object"
+        },
+        "required": false,
+        "description": "Override the inline-styles of the InkBar",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "inkBarContainerStyle": {
+        "flowType": {
+          "name": "Object"
+        },
+        "required": false,
+        "description": "Override the inline-styles of the InkBar container",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "style": {
+        "flowType": {
+          "name": "Object"
+        },
+        "required": false,
+        "description": "Override the inline-styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "tabItemContainerStyle": {
+        "flowType": {
+          "name": "Object"
+        },
+        "required": false,
+        "description": "Override the inline-styles of tab-labels container",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "tabTemplateStyle": {
+        "flowType": {
+          "name": "Object"
+        },
+        "required": false,
+        "description": "Override the inline-styles of the tab template"
+      },
+      "value": {
+        "flowType": {
+          "name": "any"
+        },
+        "required": false,
+        "description": "Makes Tabs controllable and selects the tab whose value prop matches this prop",
+        "defaultValue": {
+          "value": "undefined",
+          "computed": true
+        }
+      },
+      "tabPropsArray": {
+        "flowType": {
+          "name": "Array",
+          "elements": [
+            {
+              "name": "Object"
+            }
+          ],
+          "raw": "Array<Object>"
+        },
+        "required": true,
+        "description": ""
+      }
+    }
+  },
   "src/components/Toggle/Toggle.react.js": {
     "description": "",
     "displayName": "Toggle",
@@ -3845,6 +4536,457 @@
         "description": "Override the inline styles for track when the toggle switches",
         "defaultValue": {
           "value": "{}",
+          "computed": false
+        }
+      }
+    }
+  },
+  "src/components/__special/Questions.js": {
+    "description": "",
+    "displayName": "Questions",
+    "methods": [
+      {
+        "name": "handleClick",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "questionValue",
+            "type": {
+              "name": "string"
+            }
+          }
+        ],
+        "returns": null
+      }
+    ],
+    "props": {
+      "id": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "Component ID"
+      },
+      "questionSectionProps": {
+        "flowType": {
+          "name": "Array",
+          "elements": [
+            {
+              "name": "signature",
+              "type": "object",
+              "raw": "{\n  questionProps: Array<QuestionProps>,\n  headerTitle: string,\n  titleStyle?: Object,\n  headerTitleStyle?: Object,\n  headerIconStyle?: Object,\n  initiallyExpanded: boolean,\n  clickHandler: (value: string) => void,\n}",
+              "signature": {
+                "properties": [
+                  {
+                    "key": "questionProps",
+                    "value": {
+                      "name": "Array",
+                      "elements": [
+                        {
+                          "name": "signature",
+                          "type": "object",
+                          "raw": "{\n  questionType: string,\n  questionText: string,\n  answerPrompt: string,\n  value: string,\n  clickHandler: (value: string) => void,\n}",
+                          "signature": {
+                            "properties": [
+                              {
+                                "key": "questionType",
+                                "value": {
+                                  "name": "string",
+                                  "required": true
+                                }
+                              },
+                              {
+                                "key": "questionText",
+                                "value": {
+                                  "name": "string",
+                                  "required": true
+                                }
+                              },
+                              {
+                                "key": "answerPrompt",
+                                "value": {
+                                  "name": "string",
+                                  "required": true
+                                }
+                              },
+                              {
+                                "key": "value",
+                                "value": {
+                                  "name": "string",
+                                  "required": true
+                                }
+                              },
+                              {
+                                "key": "clickHandler",
+                                "value": {
+                                  "name": "signature",
+                                  "type": "function",
+                                  "raw": "(value: string) => void",
+                                  "signature": {
+                                    "arguments": [
+                                      {
+                                        "name": "value",
+                                        "type": {
+                                          "name": "string"
+                                        }
+                                      }
+                                    ],
+                                    "return": {
+                                      "name": "void"
+                                    }
+                                  },
+                                  "required": true
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "raw": "Array<QuestionProps>",
+                      "required": true
+                    }
+                  },
+                  {
+                    "key": "headerTitle",
+                    "value": {
+                      "name": "string",
+                      "required": true
+                    }
+                  },
+                  {
+                    "key": "titleStyle",
+                    "value": {
+                      "name": "Object",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "headerTitleStyle",
+                    "value": {
+                      "name": "Object",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "headerIconStyle",
+                    "value": {
+                      "name": "Object",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "initiallyExpanded",
+                    "value": {
+                      "name": "boolean",
+                      "required": true
+                    }
+                  },
+                  {
+                    "key": "clickHandler",
+                    "value": {
+                      "name": "signature",
+                      "type": "function",
+                      "raw": "(value: string) => void",
+                      "signature": {
+                        "arguments": [
+                          {
+                            "name": "value",
+                            "type": {
+                              "name": "string"
+                            }
+                          }
+                        ],
+                        "return": {
+                          "name": "void"
+                        }
+                      },
+                      "required": true
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "raw": "Array<QuestionSectionProps>"
+        },
+        "required": true,
+        "description": "Array of props for each QuestionSection"
+      },
+      "n_clicks": {
+        "flowType": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Number of clicks by the user on the Questions component",
+        "defaultValue": {
+          "value": "0",
+          "computed": false
+        }
+      },
+      "n_clicks_previous": {
+        "flowType": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "The previous number of clicks from the Questions component",
+        "defaultValue": {
+          "value": "0",
+          "computed": false
+        }
+      },
+      "value": {
+        "flowType": {
+          "name": "any"
+        },
+        "required": true,
+        "description": "The value currently selected by clicking on a question answer prompt"
+      },
+      "setProps": {
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "() => void",
+          "signature": {
+            "arguments": [],
+            "return": {
+              "name": "void"
+            }
+          }
+        },
+        "required": false,
+        "description": "Dash callback to update props",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      },
+      "fireEvent": {
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "() => void",
+          "signature": {
+            "arguments": [],
+            "return": {
+              "name": "void"
+            }
+          }
+        },
+        "required": false,
+        "description": "Dash callback to trigger an event handler",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      }
+    }
+  },
+  "src/components/__special/QuestionsTabs.js": {
+    "description": "",
+    "displayName": "QuestionsTabs",
+    "methods": [
+      {
+        "name": "handleClick",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "questionValue",
+            "type": {
+              "name": "string"
+            }
+          }
+        ],
+        "returns": null
+      }
+    ],
+    "props": {
+      "id": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "Component ID"
+      },
+      "questionSectionProps": {
+        "flowType": {
+          "name": "Array",
+          "elements": [
+            {
+              "name": "signature",
+              "type": "object",
+              "raw": "{\n  questionProps: Array<QuestionProps>,\n  headerTitle: string,\n  clickHandler: (value: string) => void,\n}",
+              "signature": {
+                "properties": [
+                  {
+                    "key": "questionProps",
+                    "value": {
+                      "name": "Array",
+                      "elements": [
+                        {
+                          "name": "signature",
+                          "type": "object",
+                          "raw": "{\n  questionText: string,\n  value: string,\n  clickHandler: (value: string) => void,\n}",
+                          "signature": {
+                            "properties": [
+                              {
+                                "key": "questionText",
+                                "value": {
+                                  "name": "string",
+                                  "required": true
+                                }
+                              },
+                              {
+                                "key": "value",
+                                "value": {
+                                  "name": "string",
+                                  "required": true
+                                }
+                              },
+                              {
+                                "key": "clickHandler",
+                                "value": {
+                                  "name": "signature",
+                                  "type": "function",
+                                  "raw": "(value: string) => void",
+                                  "signature": {
+                                    "arguments": [
+                                      {
+                                        "name": "value",
+                                        "type": {
+                                          "name": "string"
+                                        }
+                                      }
+                                    ],
+                                    "return": {
+                                      "name": "void"
+                                    }
+                                  },
+                                  "required": true
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "raw": "Array<QuestionProps>",
+                      "required": true
+                    }
+                  },
+                  {
+                    "key": "headerTitle",
+                    "value": {
+                      "name": "string",
+                      "required": true
+                    }
+                  },
+                  {
+                    "key": "clickHandler",
+                    "value": {
+                      "name": "signature",
+                      "type": "function",
+                      "raw": "(value: string) => void",
+                      "signature": {
+                        "arguments": [
+                          {
+                            "name": "value",
+                            "type": {
+                              "name": "string"
+                            }
+                          }
+                        ],
+                        "return": {
+                          "name": "void"
+                        }
+                      },
+                      "required": true
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "raw": "Array<QuestionSectionProps>"
+        },
+        "required": true,
+        "description": "Array of props for each QuestionSection"
+      },
+      "n_clicks": {
+        "flowType": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Number of clicks by the user on the Questions component",
+        "defaultValue": {
+          "value": "0",
+          "computed": false
+        }
+      },
+      "n_clicks_previous": {
+        "flowType": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "The previous number of clicks from the Questions component",
+        "defaultValue": {
+          "value": "0",
+          "computed": false
+        }
+      },
+      "value": {
+        "flowType": {
+          "name": "any"
+        },
+        "required": true,
+        "description": "The value currently selected by clicking on a question answer prompt"
+      },
+      "tabsProps": {
+        "flowType": {
+          "name": "Object"
+        },
+        "required": false,
+        "description": "Tabs props",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "setProps": {
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "() => void",
+          "signature": {
+            "arguments": [],
+            "return": {
+              "name": "void"
+            }
+          }
+        },
+        "required": false,
+        "description": "Dash callback to update props",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      },
+      "fireEvent": {
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "() => void",
+          "signature": {
+            "arguments": [],
+            "return": {
+              "name": "void"
+            }
+          }
+        },
+        "required": false,
+        "description": "Dash callback to trigger an event handler",
+        "defaultValue": {
+          "value": "() => {}",
           "computed": false
         }
       }

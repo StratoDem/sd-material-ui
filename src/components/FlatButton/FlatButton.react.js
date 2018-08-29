@@ -1,7 +1,6 @@
 // @flow
 
-import React, { Component } from 'react';
-
+import React from 'react';
 import MuiFlatButton from 'material-ui/FlatButton';
 import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -85,7 +84,7 @@ const defaultProps = {
   style: {},
 };
 
-export default class FlatButton extends Component<Props> {
+export default class FlatButton extends React.Component<Props> {
   constructor(props: Props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);

@@ -1,7 +1,6 @@
 // @flow
 
-import React, { Component } from 'react';
-
+import React from 'react';
 import MuiIconButton from 'material-ui/IconButton';
 import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -76,7 +75,7 @@ const defaultProps = {
   touch: false,
 };
 
-export default class IconButton extends Component<Props> {
+export default class IconButton extends React.Component<Props> {
   constructor(props: Props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);

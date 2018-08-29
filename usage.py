@@ -1,6 +1,8 @@
 import sd_material_ui
 import dash
+import flask
 import dash_html_components as html
+import time
 
 app = dash.Dash('')
 
@@ -8,7 +10,6 @@ app.scripts.config.serve_locally = True
 
 spacer = html.Div(children=[], style=dict(height=20))
 final_spacer = html.Div(children=[], style=dict(height=400))
-
 
 
 # Callback for BottomNavigation
@@ -212,18 +213,44 @@ app.layout = html.Div([
     spacer,
 
     # Test for SDAutoComplete
-    sd_material_ui.AutoComplete(id='input13',
-                                anchorOrigin={'vertical': 'center', 'horizontal': 'middle'},
-                                animated=True,
-                                dashCallbackDelay=3000,
-                                dataSource=['orange','red','blue', 'peach'],
-                                fullWidth=True,
-                                floatingLabelText="Type here",
-                                filter='caseSensitiveFilter',),
+    sd_material_ui.AutoComplete(
+        id='input13',
+        anchorOrigin={'vertical': 'center', 'horizontal': 'middle'},
+        animated=True,
+        dashCallbackDelay=3000,
+        dataSource=['orange', 'red', 'blue', 'peach'],
+        fullWidth=True,
+        floatingLabelText="Type here",
+        filter='caseSensitiveFilter',),
 
     spacer,
 
     html.Div(id='output13', children=['Selected item appears here (should take 3 seconds to show up).']),
+
+    spacer,
+
+    # Test for SDAutoComplete with exactMatch
+    sd_material_ui.AutoComplete(
+        id='input-autocomplete-exactmatch',
+        anchorOrigin={'vertical': 'center', 'horizontal': 'middle'},
+        animated=True,
+        exactMatch=True,
+        dashCallbackDelay=3000,
+        dataSource=[
+            dict(label='pink', value=0),
+            dict(label='magenta', value=1),
+            dict(label='aqua', value={'testKey': 'testVal'}),
+            dict(label='aquamarine', value=3),
+        ],
+        fullWidth=True,
+        floatingLabelText="Type here",
+        filter='caseSensitiveFilter'),
+
+    spacer,
+
+    html.Div(
+        id='output-autocomplete-exactmatch',
+        children=['Selected index appears here.']),
 
     spacer,
 
@@ -255,8 +282,151 @@ app.layout = html.Div([
     ], style=dict(backgroundColor='#1D3153')),
     html.Div(id='output11', children=['Selected item appears here.']),
 
+    spacer,
+
+    sd_material_ui.Card(
+        initiallyExpanded=False,
+        headerTitle='Test card header',
+        headerSubtitle='Test subtitle',
+        titleExpandable=True,
+        titleTitle='Card content header',
+        textExpandable=True,
+        children=[
+            sd_material_ui.Card(
+                initiallyExpanded=False,
+                headerTitle='Inner card header',
+                headerSubtitle='Inner subtitle',
+                titleExpandable=True,
+                titleTitle='Inner card',
+                textExpandable=True,
+                children=[
+                    html.P('YAY')
+                ]
+            ),
+        ]
+    ),
+
+    spacer,
+
+    sd_material_ui.Questions(
+        id='questions-id',
+        questionSectionProps=[
+            dict(
+                headerTitle='Test title',
+                questionProps=[
+                    dict(
+                        questionText='How do I do something?',
+                        questionType='Tag my question',
+                        answerPrompt='Ask the question',
+                        value='this-is-a-new-value'),
+                ])
+        ],
+        value='',
+    ),
+
+    html.Div(id='question-output-id', children=''),
+    html.Div(id='question-output-id2', children=''),
+
+    spacer,
+
+    sd_material_ui.QuestionsTabs(
+        id='questions-tabs-id',
+        questionSectionProps=[
+            dict(
+                headerTitle='Test title tab 1',
+                questionProps=[
+                    dict(
+                        questionText='How do I do something?',
+                        value='this-is-a-new-value'),
+                ]),
+            dict(
+                headerTitle='Test title tab 2',
+                questionProps=[
+                    dict(
+                        questionText='How do I do something else?',
+                        value='this-is-a-second-value'),
+                ]),
+        ],
+        value='',
+    ),
+
+    html.Div(id='question-output-id3', children=''),
+    html.Div(id='question-output-id4', children=''),
+
+    spacer,
+
+    sd_material_ui.Tabs(
+        children=[
+            html.Div('Tab 1'),
+            html.Div('Tab 2'),
+        ],
+        tabPropsArray=[
+            {'label': 'Tab 1 label'},
+            {'label': 'Tab 2 label'},
+        ]
+    ),
+
+    sd_material_ui.AutoComplete(
+        id='input-autocomplete-search',
+        animated=False,
+        exactMatch=True,
+        dashCallbackDelay=250,
+        dataSource=[],
+        searchEndpointAPI='/my-search',
+        searchJSONStructure={'version': 1, 'extra-args': {'more-fields': 'my-token-here'}},
+        fullWidth=True,
+        floatingLabelText="Type here"),
+    html.Div('', id='output-autocomplete-search'),
+
     final_spacer,
 ])
+
+
+@app.callback(
+    dash.dependencies.Output('question-output-id', 'children'),
+    [
+        dash.dependencies.Input('questions-id', 'value'),
+        dash.dependencies.Input('questions-id', 'n_clicks'),
+     ],
+    [dash.dependencies.State('questions-id', 'n_clicks_previous')])
+def update_questions_output(value, n_clicks, n_clicks_previous):
+    time.sleep(5)
+    return '{} {} {}'.format(value, n_clicks, n_clicks_previous)
+
+
+@app.callback(
+    dash.dependencies.Output('question-output-id2', 'children'),
+    [
+        dash.dependencies.Input('questions-id', 'value'),
+        dash.dependencies.Input('questions-id', 'n_clicks'),
+     ],
+    [dash.dependencies.State('questions-id', 'n_clicks_previous')])
+def update_questions_output(value, n_clicks, n_clicks_previous):
+    return '{} {} {}'.format(value, n_clicks, n_clicks_previous)
+
+
+@app.callback(
+    dash.dependencies.Output('question-output-id3', 'children'),
+    [
+        dash.dependencies.Input('questions-tabs-id', 'value'),
+        dash.dependencies.Input('questions-tabs-id', 'n_clicks'),
+     ],
+    [dash.dependencies.State('questions-tabs-id', 'n_clicks_previous')])
+def update_questions_output(value, n_clicks, n_clicks_previous):
+    return '{} {} {}'.format(value, n_clicks, n_clicks_previous)
+
+
+@app.callback(
+    dash.dependencies.Output('question-output-id4', 'children'),
+    [
+        dash.dependencies.Input('questions-tabs-id', 'value'),
+        dash.dependencies.Input('questions-tabs-id', 'n_clicks'),
+     ],
+    [dash.dependencies.State('questions-tabs-id', 'n_clicks_previous')])
+def update_questions_output(value, n_clicks, n_clicks_previous):
+    return '{} {} {}'.format(value, n_clicks, n_clicks_previous)
+
+
 @app.callback(
     dash.dependencies.Output('output', 'children'),
     [dash.dependencies.Input('input', 'selectedIndex')])
@@ -464,12 +634,45 @@ def dropdown_callback(value, options):
 def autocomplete_callback(searchText: str):
     return ['Selection is (should take 3 seconds to show up) : {}'.format(searchText)]
 
+
+# Callback for SDAutoComplete
+@app.callback(
+    dash.dependencies.Output('output-autocomplete-exactmatch', 'children'),
+    [dash.dependencies.Input('input-autocomplete-exactmatch', 'searchValue')])
+def autocomplete_callback(searchValue: int):
+    return ['Selection is {}'.format(searchValue)]
+
+
+# Callback for SDAutoComplete
+@app.callback(
+    dash.dependencies.Output('output-autocomplete-search', 'children'),
+    [dash.dependencies.Input('input-autocomplete-search', 'searchValue')])
+def autocomplete_callback(searchValue: int):
+    return ['Selection is {}'.format(searchValue)]
+
+
 # Callback for SDRadioButtonGroup
 @app.callback(
     dash.dependencies.Output('output14', 'children'),
     [dash.dependencies.Input('input14', 'valueSelected')])
 def radiobuttongroup_callback(valueSelected):
     return ['Selection is: {}'.format(valueSelected)]
+
+
+@app.server.route('/my-search', methods=['POST'])
+def black_box_search_engine():
+    search_term = flask.request.get_json().get('searchTerm')
+
+    assert isinstance(search_term, str)
+
+    return flask.jsonify({
+        'dataSource': [
+            {'label': search_term, 'value': 'val 1'},
+            {'label': 'val 2', 'value': {'a-dict-key': 'a value'}},
+            {'label': 'val 3', 'value': 'val 3'},
+            {'label': 'val 4', 'value': 'val 4'},
+        ]})
+
 
 if __name__ == '__main__':
     app.run_server(debug=True)

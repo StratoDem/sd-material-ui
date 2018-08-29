@@ -2,17 +2,127 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## 2.10.0 - 2018-04-02
+## 2.15.0 - 2018-06-13
+### Added
+- Adds `searchEndpointAPI` prop to `AutoComplete` to allow for external searching https://github.com/StratoDem/sd-material-ui/issues/76
+
+## 2.14.1 - 2018-06-10
+### Added
+- Adds `QuestionTabs` component for tabs version of `Questions` (internal)
+
+## 2.14.0 - 2018-05-31
+### Added
+- `Tabs`, which takes mainly `children` and `tabPropsArray`. `children` and `tabPropsArray` must be `Array`s of the same length, which are rendered as `Tab` components.
+This structure is necessary since Dash currently only passes along React components through the `children` prop, and using `Tab` directly was not rendering correctly.
+Any of the standard props from `Tab` can be passed along through `tabPropsArray`.
+
+```python
+# Renders two tabs with the children lined up with the tabs props
+import sd_material_ui
+
+sd_material_ui.Tabs(
+    children=[
+        html.Div('Tab 1'),
+        html.Div('Tab 2'),
+    ],
+    tabPropsArray=[
+        {'label': 'Tab 1 label'},
+        {'label': 'Tab 2 label'},
+    ]
+)
+```
+
+## 2.13.3 - 2018-05-22
+### Added
+- Adds `Questions` component for special use case
+
+##2.13.2 - 2018-05-18
+### Fixes
+- Updates prop names internally in `Card` from `initialyExpanded` to `initiallyExpanded` to fix syntax (spelling) error
+
+## 2.13.1 - 2018-05-18
+### Fixes
+- Updates prop names internally in `CardText` for `style` and `color` to allow `textColor` and `textStyle` props to actually change `CardText` subcomponent
+
+### Added
+- Adds `id` and `headerIconStyle` props to `CardComponent`:
+  - `id` as a `string` to allow for callbacks assigned to the card
+  - `headerIconStyle` to allow for styling the icon in the `CardHeader` subcomponent
+
+## 2.13.0 - 2018-05-17
+### Added
+- Adds uncontrolled Card component
+
+## 2.12.0 - 2018-04-19
+### Changed
+- Adds functionality to `AutoComplete` component to allow for sending back `value` instead of `searchText`
+
+Example
+```python
+# SDAutoComplete with exactMatch
+# This ships back 1 when the user types in 'magenta' exactly
+# This ships back {'testKey': 'testVal'} when the user types in 'aqua' exactly
+sd_material_ui.AutoComplete(
+    id='input-autocomplete-exactmatch',
+    anchorOrigin={'vertical': 'center', 'horizontal': 'middle'},
+    animated=True,
+    exactMatch=True,
+    dashCallbackDelay=3000,
+    dataSource=[
+        dict(label='pink', value=0),
+        dict(label='magenta', value=1),
+        dict(label='aqua', value={'testKey': 'testVal'}),
+        dict(label='aquamarine', value=3),
+    ],
+    fullWidth=True,
+    floatingLabelText="Type here",
+    filter='caseSensitiveFilter')
+```
+
+## 2.11.1 - 2018-04-19
+### Fixes
+- Updates `metadata.json` for new props in `v2.11.0`
+
+## 2.11.0 - 2018-04-19
+### Added
+- Adds `containerClosedClassName` prop to `Drawer` which applies additional
+classes to the drawer when it is closed to allow for custom styling (like offsets or transitions)
+
+### Changed
+- :mega: **BREAKING** Changes `containerclassName` prop to `containerClassName` in `Drawer` to match `material-ui` prop naming format.
+
+Example
+```python
+# This has 'my-test-class my-closed-class' as the class name when closed
+# and 'my-test-class' as the class name when open
+sd_material_ui.Drawer(
+    open=False,
+    containerClassName='my-test-class',
+    containerClosedClassName='my-closed-class')
+```
+
+### Fixes
+- Adds `id` prop to `FontIcon`
+
+## 2.10.1 - 2018-04-09
+### Fixes
+- Fixes `package.json` and `version.py` mismatch
+
+## 2.10.0 - 2018-04-09
 ### Added
 - Add Subheader Component
 
-## 2.9.0 - 2018-03-29
+## 2.9.0 - 2018-04-09
 ### Added
 - Add Paper Component
 
-## 2.8.0 - 2018-03-29
+## 2.8.0 - 2018-04-09
 ### Added
 - Add RadioButtonGroup Component
+
+## 2.7.1 - 2018-03-26
+### Fixes
+- Fixes `package.json` and `version.py` mismatch
 
 ## 2.7.0 - 2018-03-26
 ### Added
