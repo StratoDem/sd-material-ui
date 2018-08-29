@@ -171,14 +171,6 @@ app.layout = html.Div([
 
     spacer,
 
-    # Test for SDCheckbox
-    html.Div(id='output8', children=[
-        html.P('Box is not checked')
-    ]),
-    sd_material_ui.Checkbox(id='input8', label='Check to change the text above.'),
-
-    spacer,
-
     # Test for SDRadioButtonGroup
     sd_material_ui.RadioButtonGroup(id='input14',
                                     name='test',
@@ -260,6 +252,11 @@ app.layout = html.Div([
         children=html.Div(children=[
             html.P('This is the popover'),
             html.P('With some children inside'),
+            # Test for SDCheckbox
+            html.Div(id='output8', children=[
+                html.P('Box is not checked')
+            ]),
+            sd_material_ui.Checkbox(id='input8', label='Check to change the text above.'),
         ])
     ),
 
