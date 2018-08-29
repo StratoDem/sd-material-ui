@@ -56,6 +56,7 @@ type Props = {
 
 type State = {
   open: boolean,
+  anchorEl: Object,
 };
 
 const defaultProps = {
