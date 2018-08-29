@@ -3,8 +3,6 @@
 import React, { Component } from 'react';
 import { Popover as MuiPopover } from 'material-ui/Popover';
 
-import Menu from 'material-ui/Menu';
-import MenuItem from 'material-ui/MenuItem';
 import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
 
@@ -80,10 +78,7 @@ const defaultProps = {
 export default class Popover extends Component<Props, State> {
   constructor(props) {
     super(props);
-
-    this.state = {
-      open: false,
-    };
+    this.state = {open: props.open};
   }
 
   handleClick = (event) => {
@@ -102,32 +97,48 @@ export default class Popover extends Component<Props, State> {
     });
   };
 
-  buildButton = (type: string) => {
-    if (type === 'flat') {
-      return (
-        <FlatButton
-          onClick={this.handleClick}
-          label="Click Me!"
-        />);
-    }
-    else {
-      return(
-        <RaisedButton
-          onClick={this.handleClick}
-          label="Click Me!"
-        />);
-    }
-  };
-
   render() {
     const { anchorOrigin, animated, autoCloseWhenOffScreen, canAutoPosition, className,
       scrollableContainer, style, targetOrigin, useLayerForClickAway, zDepth} = this.props;
 
+    if (this.props.buttonType === 'flat') {
+      return (
+        <div>
+          <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
+            <div>
+              <FlatButton
+                onClick={this.handleClick}
+                label={this.props.buttonLabel !== '' ? this.props.buttonLabel : "Click Me!"}
+              />);
+              <MuiPopover
+                anchorEl={this.state.anchorEl}
+                anchorOrigin={anchorOrigin}
+                animated={animated}
+                autoCloseWhenOffScreen={autoCloseWhenOffScreen}
+                canAutoPosition={canAutoPosition}
+                className={className}
+                onRequestClose={this.handleRequestClose}
+                open={this.state.open}
+                scrollableContainer={scrollableContainer}
+                style={style}
+                targetOrigin={targetOrigin}
+                useLayerForClickAway={useLayerForClickAway}
+                zDepth={zDepth}
+              >
+                {this.props.children}
+              </MuiPopover>
+            </div>
+          </MuiThemeProvider>
+        </div>);
+    }
     return (
       <div>
         <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
           <div>
-
+            <RaisedButton
+              onClick={this.handleClick}
+              label={this.props.buttonLabel !== '' ? this.props.buttonLabel : "Click Me!"}
+            />
             <MuiPopover
               anchorEl={this.state.anchorEl}
               anchorOrigin={anchorOrigin}
@@ -143,16 +154,12 @@ export default class Popover extends Component<Props, State> {
               useLayerForClickAway={useLayerForClickAway}
               zDepth={zDepth}
             >
-              <Menu>
-                <MenuItem primaryText="Refresh" />
-                <MenuItem primaryText="Help" />
-                <MenuItem primaryText="Settings" />
-                <MenuItem primaryText="Sign Out" />
-              </Menu>
+              {this.props.children}
             </MuiPopover>
           </div>
         </MuiThemeProvider>
-      </div>);
+      </div>
+    );
   }
 }
 
