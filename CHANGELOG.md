@@ -2,6 +2,10 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 2.16.0 - 2018-08-30
+### Added
+- Adds `Popover` as an uncontrolled component which can render other components as children
+
 ## 2.15.0 - 2018-06-13
 ### Added
 - Adds `searchEndpointAPI` prop to `AutoComplete` to allow for external searching https://github.com/StratoDem/sd-material-ui/issues/76
