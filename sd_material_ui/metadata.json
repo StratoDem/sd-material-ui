@@ -5246,7 +5246,7 @@
         "flowType": {
           "name": "Object"
         },
-        "required": true,
+        "required": false,
         "description": "Tabs props",
         "defaultValue": {
           "value": "{}",
