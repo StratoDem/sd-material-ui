@@ -75,7 +75,7 @@ export default class Toggle extends Component<Props, State> {
 
   componentWillReceiveProps(nextProps: Props): void {
     if (nextProps.toggled !== null && nextProps.toggled !== this.props.toggled)
-      this.handleToggle(nextProps.toggled);
+      this.setState({switched: nextProps.toggled});
   }
 
   handleToggle = (toggled: boolean) => {

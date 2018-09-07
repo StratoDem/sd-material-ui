@@ -67,8 +67,7 @@ export default class Snackbar extends Component<Props, State> {
 
   componentWillReceiveProps(nextProps: Props): void {
     if (nextProps.open !== null && nextProps.open !== this.props.open) {
-      if (nextProps.open === true) this.handleOpen();
-      if (nextProps.open === false) this.handleClose();
+      this.setState({open: nextProps.open});
     }
   }
 

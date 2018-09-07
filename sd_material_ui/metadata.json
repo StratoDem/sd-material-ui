@@ -3444,7 +3444,7 @@
       "buttonType": {
         "flowType": {
           "name": "union",
-          "raw": "'flat' | 'raised'",
+          "raw": "'flat' | 'raised' | 'icon'",
           "elements": [
             {
               "name": "literal",
@@ -3453,13 +3453,39 @@
             {
               "name": "literal",
               "value": "'raised'"
+            },
+            {
+              "name": "literal",
+              "value": "'icon'"
             }
           ]
         },
         "required": false,
-        "description": "For Dash use - user can anchor the popover to flat or raised button",
+        "description": "For Dash use - user can anchor the popover to flat, icon, or raised button",
         "defaultValue": {
           "value": "'raised'",
+          "computed": false
+        }
+      },
+      "buttonIcon": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "For Dash use - specify what icon to use when using an icon button",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "buttonStyle": {
+        "flowType": {
+          "name": "Object"
+        },
+        "required": false,
+        "description": "For Dash use - specify the styles for the button",
+        "defaultValue": {
+          "value": "{}",
           "computed": false
         }
       },
@@ -5246,7 +5272,7 @@
         "flowType": {
           "name": "Object"
         },
-        "required": false,
+        "required": true,
         "description": "Tabs props",
         "defaultValue": {
           "value": "{}",
