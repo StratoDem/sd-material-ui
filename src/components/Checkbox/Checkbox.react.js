@@ -57,7 +57,7 @@ export default class Checkbox extends Component<Props, State> {
 
   componentWillReceiveProps(nextProps: Props): void {
     if (nextProps.checked !== null && nextProps.checked !== this.props.checked)
-      this.handleClick(nextProps.checked);
+      this.setState({checked: nextProps.checked});
   }
 
   handleClick = (checked: boolean) => {
@@ -68,7 +68,8 @@ export default class Checkbox extends Component<Props, State> {
 
     this.setState({checked});
 
-    if (this.props.fireEvent) this.props.fireEvent({event: 'click'});
+    if (this.props.fireEvent)
+      this.props.fireEvent({event: 'click'});
   };
 
   render() {

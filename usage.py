@@ -171,14 +171,6 @@ app.layout = html.Div([
 
     spacer,
 
-    # Test for SDCheckbox
-    html.Div(id='output8', children=[
-        html.P('Box is not checked')
-    ]),
-    sd_material_ui.Checkbox(id='input8', label='Check to change the text above.'),
-
-    spacer,
-
     # Test for SDRadioButtonGroup
     sd_material_ui.RadioButtonGroup(id='input14',
                                     name='test',
@@ -198,17 +190,7 @@ app.layout = html.Div([
 
     # Test for SDToggle
     html.Div(children=[
-        sd_material_ui.Toggle(
-            id='input9',
-            label='Johnny?',
-            iconStyle=dict(height=16, lineHeight=16, width=36),
-            labelStyle=dict(fontWeight=300, fontSize=14, lineHeight=16),
-            thumbStyle=dict(height=16, width=16),
-            thumbSwitchedStyle=dict(height=16, width=16),
-            trackStyle=dict(height=9, width=36),
-            trackSwitchedStyle=dict(height=9, width=36),
-            style=dict(height=16, lineHeight=16),
-        ),
+        sd_material_ui.Toggle(id='input9', label='Johnny?'),
         html.Div(id='output9', children=[
             html.P('Flame off')
         ]),
@@ -264,6 +246,22 @@ app.layout = html.Div([
 
     spacer,
 
+    # Test for SDPopover
+    sd_material_ui.Popover(
+        buttonLabel='Open up',
+        children=html.Div(children=[
+            html.P('This is the popover'),
+            html.P('With some children inside'),
+            # Test for SDCheckbox
+            html.Div(id='output8', children=[
+                html.P('Box is not checked')
+            ]),
+            sd_material_ui.Checkbox(id='input8', label='Check to change the text above.'),
+        ])
+    ),
+
+    spacer,
+
     # Test for SDDropDownMenu and SDMenuItem (single selection)
     html.Div(children=[
         sd_material_ui.DropDownMenu(id='input11',
@@ -313,27 +311,27 @@ app.layout = html.Div([
 
     spacer,
 
-    # sd_material_ui.Questions(
-    #     id='questions-id',
-    #     questionSectionProps=[
-    #         dict(
-    #             headerTitle='Test title',
-    #             questionProps=[
-    #                 dict(
-    #                     questionText='How do I do something?',
-    #                     questionType='Tag my question',
-    #                     answerPrompt='Ask the question',
-    #                     value='this-is-a-new-value'),
-    #             ])
-    #     ],
-    #     value='',
-    # ),
-    #
-    # html.Div(id='question-output-id', children=''),
-    # html.Div(id='question-output-id2', children=''),
-    #
-    # spacer,
-    #
+    sd_material_ui.Questions(
+        id='questions-id',
+        questionSectionProps=[
+            dict(
+                headerTitle='Test title',
+                questionProps=[
+                    dict(
+                        questionText='How do I do something?',
+                        questionType='Tag my question',
+                        answerPrompt='Ask the question',
+                        value='this-is-a-new-value'),
+                ])
+        ],
+        value='',
+    ),
+
+    html.Div(id='question-output-id', children=''),
+    html.Div(id='question-output-id2', children=''),
+
+    spacer,
+
     # sd_material_ui.QuestionsTabs(
     #     id='questions-tabs-id',
     #     questionSectionProps=[
@@ -357,9 +355,9 @@ app.layout = html.Div([
     #
     # html.Div(id='question-output-id3', children=''),
     # html.Div(id='question-output-id4', children=''),
-
-    spacer,
-
+    #
+    # spacer,
+    #
     # sd_material_ui.Tabs(
     #     children=[
     #         html.Div('Tab 1'),
@@ -387,27 +385,27 @@ app.layout = html.Div([
 ])
 
 
-# @app.callback(
-#     dash.dependencies.Output('question-output-id', 'children'),
-#     [
-#         dash.dependencies.Input('questions-id', 'value'),
-#         dash.dependencies.Input('questions-id', 'n_clicks'),
-#      ],
-#     [dash.dependencies.State('questions-id', 'n_clicks_previous')])
-# def update_questions_output(value, n_clicks, n_clicks_previous):
-#     time.sleep(5)
-#     return '{} {} {}'.format(value, n_clicks, n_clicks_previous)
-#
-#
-# @app.callback(
-#     dash.dependencies.Output('question-output-id2', 'children'),
-#     [
-#         dash.dependencies.Input('questions-id', 'value'),
-#         dash.dependencies.Input('questions-id', 'n_clicks'),
-#      ],
-#     [dash.dependencies.State('questions-id', 'n_clicks_previous')])
-# def update_questions_output(value, n_clicks, n_clicks_previous):
-#     return '{} {} {}'.format(value, n_clicks, n_clicks_previous)
+@app.callback(
+    dash.dependencies.Output('question-output-id', 'children'),
+    [
+        dash.dependencies.Input('questions-id', 'value'),
+        dash.dependencies.Input('questions-id', 'n_clicks'),
+     ],
+    [dash.dependencies.State('questions-id', 'n_clicks_previous')])
+def update_questions_output(value, n_clicks, n_clicks_previous):
+    time.sleep(5)
+    return '{} {} {}'.format(value, n_clicks, n_clicks_previous)
+
+
+@app.callback(
+    dash.dependencies.Output('question-output-id2', 'children'),
+    [
+        dash.dependencies.Input('questions-id', 'value'),
+        dash.dependencies.Input('questions-id', 'n_clicks'),
+     ],
+    [dash.dependencies.State('questions-id', 'n_clicks_previous')])
+def update_questions_output(value, n_clicks, n_clicks_previous):
+    return '{} {} {}'.format(value, n_clicks, n_clicks_previous)
 
 
 # @app.callback(
