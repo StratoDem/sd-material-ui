@@ -134,7 +134,8 @@ app.layout = html.Div([
     html.Div(children=[
         html.P(id='output12', children=['n_clicks value: . n_clicks_previous value: '])
     ]),
-    sd_material_ui.IconButton(id='input12', children=['help'],
+    sd_material_ui.IconButton(id='input12',
+                              iconClassName='glyphicon glyphicon-cog',
                               iconStyle={'color':'orange', 'width': 48, 'height': 48},
                               tooltip='click for more information', touch=True,
                               tooltipPosition='bottom-right'),
@@ -678,4 +679,5 @@ def black_box_search_engine():
 
 
 if __name__ == '__main__':
+    app.css.append_css({'external_url': 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'})
     app.run_server(debug=True)
