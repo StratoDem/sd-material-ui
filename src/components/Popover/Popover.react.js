@@ -170,38 +170,37 @@ export default class Popover extends Component<Props, State> {
             </div>
           </MuiThemeProvider>
         </div>);
-    } else {
-      return (
-        <div>
-          <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
-            <div>
-              <RaisedButton
-                onClick={this.handleClick}
-                label={this.props.buttonLabel !== '' ? this.props.buttonLabel : "Click Me!"}
-                style={this.props.buttonStyle}
-              />
-              <MuiPopover
-                anchorEl={this.state.anchorEl}
-                anchorOrigin={anchorOrigin}
-                animated={animated}
-                autoCloseWhenOffScreen={autoCloseWhenOffScreen}
-                canAutoPosition={canAutoPosition}
-                className={className}
-                onRequestClose={this.handleRequestClose}
-                open={this.state.open}
-                scrollableContainer={scrollableContainer}
-                style={style}
-                targetOrigin={targetOrigin}
-                useLayerForClickAway={useLayerForClickAway}
-                zDepth={zDepth}
-              >
-                {this.props.children}
-              </MuiPopover>
-            </div>
-          </MuiThemeProvider>
-        </div>
-      );
     }
+    return (
+      <div>
+        <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
+          <div>
+            <RaisedButton
+              onClick={this.handleClick}
+              label={this.props.buttonLabel !== '' ? this.props.buttonLabel : "Click Me!"}
+              style={this.props.buttonStyle}
+            />
+            <MuiPopover
+              anchorEl={this.state.anchorEl}
+              anchorOrigin={anchorOrigin}
+              animated={animated}
+              autoCloseWhenOffScreen={autoCloseWhenOffScreen}
+              canAutoPosition={canAutoPosition}
+              className={className}
+              onRequestClose={this.handleRequestClose}
+              open={this.state.open}
+              scrollableContainer={scrollableContainer}
+              style={style}
+              targetOrigin={targetOrigin}
+              useLayerForClickAway={useLayerForClickAway}
+              zDepth={zDepth}
+            >
+              {this.props.children}
+            </MuiPopover>
+          </div>
+        </MuiThemeProvider>
+      </div>
+    );
   }
 }
 
