@@ -2,6 +2,10 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 2.16.3 - 2018-09-07
+### Fixes
+- v2.16.2 did not have correct bundle published on npm
+
 ## 2.16.2 - 2018-09-07
 ### Changes
 - Changes the `Popover` to allow an `icon` button option
