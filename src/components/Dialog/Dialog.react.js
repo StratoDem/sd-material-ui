@@ -50,7 +50,7 @@ export default class Dialog extends Component<Props, State> {
 
   componentWillReceiveProps(nextProps: Props): void {
     if (nextProps.open !== this.state.open)
-      this.changeDialogOpenStatus(nextProps.open);
+      this.setState({open: nextProps.open});
   }
 
   changeDialogOpenStatus = (open: boolean): void => {

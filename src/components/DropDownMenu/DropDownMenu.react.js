@@ -141,7 +141,7 @@ export default class DropDownMenu extends Component<Props, State> {
 
   componentWillReceiveProps(nextProps: Props): void {
     if (nextProps.value !== null && nextProps.value !== this.props.value) {
-      this.handleChange({}, 0, nextProps.value);
+      this.setState({value: nextProps.value});
     }
   }
 

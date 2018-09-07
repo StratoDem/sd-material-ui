@@ -2,6 +2,21 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 2.16.2 - 2018-09-07
+### Changes
+- Changes the `Popover` to allow an `icon` button option
+- Changes the `Popover` to allow styles for the button to be passed in using `buttonStyle`
+- Removes some unnecessary characters that were appearing after the button
+
+### Fixes
+- Fixes items similar to https://github.com/StratoDem/sd-material-ui/issues/79 in the following components:
+  - `Dialog`
+  - `Drawer`
+  - `DropDownMenu`
+  - `RadioButtonGroup`
+  - `Snackbar`
+  - `Toggle`
+
 ## 2.16.1 - 2018-09-05
 ### Fixes
 - Fixes https://github.com/StratoDem/sd-material-ui/issues/79 where `Checkbox` callback was firing twice to the server on a click event

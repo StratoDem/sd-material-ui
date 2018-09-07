@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import { Popover as MuiPopover } from 'material-ui/Popover';
 
 import FlatButton from 'material-ui/FlatButton';
+import IconButton from 'material-ui/IconButton';
 import RaisedButton from 'material-ui/RaisedButton';
 
 import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
@@ -24,8 +25,12 @@ type Props = {
   autoCloseWhenOffScreen?: boolean,
   /** For Dash use - user can assign label to button */
   buttonLabel?: string,
-  /** For Dash use - user can anchor the popover to flat or raised button */
-  buttonType?: 'flat' | 'raised',
+  /** For Dash use - user can anchor the popover to flat, icon, or raised button */
+  buttonType?: 'flat' | 'raised' | 'icon',
+  /** For Dash use - specify what icon to use when using an icon button */
+  buttonIcon?: string,
+  /** For Dash use - specify the styles for the button */
+  buttonStyle?: Object,
   /** If true, the popover (potentially) ignores targetOrigin and anchorOrigin to make itself fit
    * on screen, which is useful for mobile devices. */
   canAutoPosition?: boolean,
@@ -65,6 +70,8 @@ const defaultProps = {
   autoCloseWhenOffScreen: true,
   buttonLabel: '',
   buttonType: 'raised',
+  buttonIcon: '',
+  buttonStyle: {},
   canAutoPosition: true,
   children: null,
   className: '',
@@ -110,7 +117,39 @@ export default class Popover extends Component<Props, State> {
               <FlatButton
                 onClick={this.handleClick}
                 label={this.props.buttonLabel !== '' ? this.props.buttonLabel : "Click Me!"}
-              />);
+                style={this.props.buttonStyle}
+              />
+              <MuiPopover
+                anchorEl={this.state.anchorEl}
+                anchorOrigin={anchorOrigin}
+                animated={animated}
+                autoCloseWhenOffScreen={autoCloseWhenOffScreen}
+                canAutoPosition={canAutoPosition}
+                className={className}
+                onRequestClose={this.handleRequestClose}
+                open={this.state.open}
+                scrollableContainer={scrollableContainer}
+                style={style}
+                targetOrigin={targetOrigin}
+                useLayerForClickAway={useLayerForClickAway}
+                zDepth={zDepth}
+              >
+                {this.props.children}
+              </MuiPopover>
+            </div>
+          </MuiThemeProvider>
+        </div>);
+    } else if (this.props.buttonType === 'icon') {
+      return (
+        <div>
+          <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
+            <div>
+              <IconButton
+                onClick={this.handleClick}
+                iconClassName={this.props.buttonIcon}
+                label={this.props.buttonIcon !== '' ? '' : this.props.buttonLabel}
+                style={this.props.buttonStyle}
+              />
               <MuiPopover
                 anchorEl={this.state.anchorEl}
                 anchorOrigin={anchorOrigin}
@@ -139,6 +178,7 @@ export default class Popover extends Component<Props, State> {
             <RaisedButton
               onClick={this.handleClick}
               label={this.props.buttonLabel !== '' ? this.props.buttonLabel : "Click Me!"}
+              style={this.props.buttonStyle}
             />
             <MuiPopover
               anchorEl={this.state.anchorEl}

@@ -80,7 +80,7 @@ export default class RadioButtonGroup extends Component<Props, State> {
    */
   componentWillReceiveProps(nextProps: Props): void {
     if (nextProps.valueSelected !== null && nextProps.valueSelected !== this.props.valueSelected) {
-      this.handleChange({}, nextProps.valueSelected);
+      this.setState({valueSelected: nextProps.valueSelected});
     }
   }
 
