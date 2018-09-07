@@ -250,6 +250,9 @@ app.layout = html.Div([
     # Test for SDPopover
     sd_material_ui.Popover(
         buttonLabel='Open up',
+        buttonType='icon',
+        buttonIcon='glyphicon glyphicon-cog',
+        buttonStyle=dict(background='red'),
         children=html.Div(children=[
             html.P('This is the popover'),
             html.P('With some children inside'),
