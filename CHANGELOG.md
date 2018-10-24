@@ -2,6 +2,10 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 2.16.4 2018-10-24
+### Fixes
+- Handles `Snackbar` opening more than once with no callback listening to the `Snackbar` (https://github.com/StratoDem/sd-material-ui/issues/85)
+
 ## 2.16.3 - 2018-09-07
 ### Fixes
 - v2.16.2 did not have correct bundle published on npm

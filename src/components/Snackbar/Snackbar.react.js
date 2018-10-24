@@ -66,9 +66,8 @@ export default class Snackbar extends Component<Props, State> {
   }
 
   componentWillReceiveProps(nextProps: Props): void {
-    if (nextProps.open !== null && nextProps.open !== this.props.open) {
+    if (nextProps.open !== null)
       this.setState({open: nextProps.open});
-    }
   }
 
   handleOpen = () => {
@@ -90,7 +89,6 @@ export default class Snackbar extends Component<Props, State> {
   };
 
   handleActionClick = () => {
-    console.log('handling click event');
     if (this.props.setProps) this.props.setProps({n_clicks: this.props.n_clicks + 1});
     if (this.props.fireEvent) this.props.fireEvent({event: 'click'});
   };
