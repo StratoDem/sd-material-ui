@@ -391,9 +391,10 @@ app.layout = html.Div([
         id='input-stepper',
         activeStep=0,
         stepTextList=['Step 1', 'Step 2', 'Step 3'],
-        stepContentList=['just a whole mess of text',
-                         'test with other things later',
-                         'this is enough for now'],
+        stepImageList=['/home/eric/Projects/sd-material-ui/Peek 2018-02-22 10-49.gif',
+                       '/home/eric/Projects/sd-material-ui/Peek 2018-02-22 10-49.gif',
+                       '/home/eric/Projects/sd-material-ui/Peek 2018-02-22 10-49.gif'],
+        stepImageAltTextList=['alt1', 'alt2', 'alt3'],
         children=[
             sd_material_ui.Step(
                 id='step-0',
@@ -720,6 +721,36 @@ def update_step_1_callback(active_step: int):
     [dash.dependencies.Input('input-stepper', 'activeStep')])
 def update_step_2_callback(active_step: int):
     if active_step > 2:
+        return True
+    return False
+
+
+# Callback for step 0 active
+@app.callback(
+    dash.dependencies.Output('step-0', 'active'),
+    [dash.dependencies.Input('input-stepper', 'activeStep')])
+def update_step_0_callback(active_step: int):
+    if active_step == 0:
+        return True
+    return False
+
+
+# Callback for step 1 active
+@app.callback(
+    dash.dependencies.Output('step-1', 'active'),
+    [dash.dependencies.Input('input-stepper', 'activeStep')])
+def update_step_1_callback(active_step: int):
+    if active_step == 1:
+        return True
+    return False
+
+
+# Callback for step 2 active
+@app.callback(
+    dash.dependencies.Output('step-2', 'active'),
+    [dash.dependencies.Input('input-stepper', 'activeStep')])
+def update_step_2_callback(active_step: int):
+    if active_step == 2:
         return True
     return False
 
