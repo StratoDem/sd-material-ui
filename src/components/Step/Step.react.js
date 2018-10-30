@@ -2,17 +2,13 @@
 
 import React, { Component } from 'react';
 
-import { Step as MuiStep, StepContent, StepLabel } from 'material-ui/Stepper';
+import { Step as MuiStep, StepLabel } from 'material-ui/Stepper';
 import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
 type Props = {
-  /** Sets the step as active. Is passed to child components */
-  active?: boolean,
-  /** Should be Step sub-components such as StepLabel */
-  children?: Node,
-  /** Mark the step as completed. Is passed to child components */
+  /** Mark the step as completed */
   completed?: boolean,
   /** Step ID */
   id: string,
@@ -29,11 +25,10 @@ type State = {
 };
 
 const defaultProps = {
-  active: false,
-  children: [],
   completed: false,
   setProps: () => {},
   stepLabelText: '',
+  style: {},
 };
 
 export default class Step extends Component<Props, State> {
@@ -45,25 +40,22 @@ export default class Step extends Component<Props, State> {
   componentWillReceiveProps(nextProps: Props): void {
     if (nextProps.completed !== this.state.completed)
       this.setState({completed: nextProps.completed});
-    if (this.props.setProps) this.props.setProps({completed: nextProps.completed});
+    if (this.props.setProps)
+      this.props.setProps({completed: nextProps.completed});
   }
 
   render() {
-    const { id, style } = this.props;
+    const { id, stepLabelText, style } = this.props;
 
     return (
       <div id={id}>
         <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
           <MuiStep
-            active={this.props.active}
-            completed={this.props.completed}
+            completed={this.state.completed}
           >
             <StepLabel style={style}>
-              {this.props.stepLabelText}
+              {stepLabelText}
             </StepLabel>
-            <StepContent>
-              {this.props.children}
-            </StepContent>
           </MuiStep>
         </MuiThemeProvider>
       </div>

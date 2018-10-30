@@ -385,6 +385,28 @@ app.layout = html.Div([
         floatingLabelText="Type here"),
     html.Div('', id='output-autocomplete-search'),
 
+    spacer,
+
+    sd_material_ui.Stepper(
+        id='input-stepper',
+        activeStep=0,
+        stepTextList=['Step 1', 'Step 2', 'Step 3'],
+        stepContentList=['just a whole mess of text',
+                         'test with other things later',
+                         'this is enough for now'],
+        children=[
+            sd_material_ui.Step(
+                id='step-0',
+            ),
+            sd_material_ui.Step(
+                id='step-1',
+            ),
+            sd_material_ui.Step(
+                id='step-2',
+            ),
+        ],
+    ),
+
     final_spacer,
 ])
 
@@ -664,6 +686,36 @@ def autocomplete_callback(searchValue: int):
     [dash.dependencies.Input('input14', 'valueSelected')])
 def radiobuttongroup_callback(valueSelected):
     return ['Selection is: {}'.format(valueSelected)]
+
+
+# Callback for step 0
+@app.callback(
+    dash.dependencies.Output('step-0', 'completed'),
+    [dash.dependencies.Input('input-stepper', 'activeStep')])
+def update_step_0_callback(active_step: int):
+    if active_step == 0:
+        return True
+    return False
+
+
+# Callback for step 1
+@app.callback(
+    dash.dependencies.Output('step-1', 'completed'),
+    [dash.dependencies.Input('input-stepper', 'activeStep')])
+def update_step_1_callback(active_step: int):
+    if active_step == 1:
+        return True
+    return False
+
+
+# Callback for step 2
+@app.callback(
+    dash.dependencies.Output('step-2', 'completed'),
+    [dash.dependencies.Input('input-stepper', 'activeStep')])
+def update_step_2_callback(active_step: int):
+    if active_step == 2:
+        return True
+    return False
 
 
 @app.server.route('/my-search', methods=['POST'])
