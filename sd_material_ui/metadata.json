@@ -4802,18 +4802,35 @@
           "computed": false
         }
       },
-      "stepContentList": {
+      "stepImageList": {
         "flowType": {
           "name": "Array",
           "elements": [
             {
-              "name": "Node"
+              "name": "string"
             }
           ],
-          "raw": "Array<Node>"
+          "raw": "Array<string>"
         },
         "required": false,
-        "description": "A list of content to display when each step is active",
+        "description": "A list of image paths to display when each step is active",
+        "defaultValue": {
+          "value": "[]",
+          "computed": false
+        }
+      },
+      "stepImageAltTextList": {
+        "flowType": {
+          "name": "Array",
+          "elements": [
+            {
+              "name": "string"
+            }
+          ],
+          "raw": "Array<string>"
+        },
+        "required": false,
+        "description": "",
         "defaultValue": {
           "value": "[]",
           "computed": false

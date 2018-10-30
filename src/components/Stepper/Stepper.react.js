@@ -34,8 +34,9 @@ type Props = {
   orientation?: 'horizontal' | 'vertical',
   /** Dash callback to update props on the server */
   setProps?: (props: {stepIndex?: number}) => void,
-  /** A list of content to display when each step is active */
-  stepContentList?: Array<Node>,
+  /** A list of image paths to display when each step is active */
+  stepImageList?: Array<string>,
+  stepImageAltTextList?: Array<string>,
   /** The text that should be associated with each step */
   stepTextList?: Array<string>,
   /** Override the inline-style of the root element */
@@ -59,7 +60,8 @@ const defaultProps = {
   nextButtonStyle: {},
   orientation: 'horizontal',
   setProps: () => {},
-  stepContentList: [],
+  stepImageList: [],
+  stepImageAltTextList: [],
   stepTextList: [],
   style: {},
 };
@@ -98,7 +100,10 @@ export default class Stepper extends Component<Props, State> {
 
   getStepText = (stepIndex: number) => this.props.stepTextList[stepIndex];
 
-  getStepContent = (stepIndex: number) => this.props.stepContentList[stepIndex];
+  getStepContent = (stepIndex: number) => (<img
+    src={this.props.stepImageList[stepIndex]}
+    alt={this.props.stepImageAltTextList[stepIndex]}
+  />);
 
   resetSteps = () => {
     this.setState({stepIndex: 0, finished: false});
