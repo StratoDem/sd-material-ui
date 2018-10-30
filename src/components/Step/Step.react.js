@@ -24,13 +24,13 @@ type Props = {
   style?: Object,
 };
 
-const State = {
+type State = {
   completed: boolean,
 };
 
 const defaultProps = {
   active: false,
-  children: null,
+  children: [],
   completed: false,
   setProps: () => {},
   stepLabelText: '',

@@ -14,7 +14,7 @@ type Props = {
   /** Set the active step (zero based index). This will enable Step control helpers */
   activeStep?: number,
   /** Should be two or more <Step /> components */
-  children: Node,
+  children?: Node,
   /** CSS class name of the root element */
   className?: string,
   /** The text that will be made into a link to click after finishing the stepper */
@@ -34,6 +34,8 @@ type Props = {
   orientation?: 'horizontal' | 'vertical',
   /** Dash callback to update props on the server */
   setProps?: (props: {stepIndex?: number}) => void,
+  /** The text that should be associated with each step */
+  stepTextList?: Array<string>,
   /** Override the inline-style of the root element */
   style?: Object,
 };
@@ -45,6 +47,7 @@ type State = {
 
 const defaultProps = {
   activeStep: 0,
+  children: [],
   className: '',
   finished: false,
   finishedTextLink: 'Click here',
@@ -54,7 +57,7 @@ const defaultProps = {
   linear: true,
   orientation: 'horizontal',
   setProps: () => {},
-  stepIndex: 0,
+  stepTextList: [],
   style: {},
 };
 
@@ -81,57 +84,60 @@ export default class Stepper extends Component<Props, State> {
     const {stepIndex} = this.state;
     if (stepIndex > 0) {
       this.setState({stepIndex: stepIndex - 1});
+      if (this.props.setProps) this.props.setProps({activeStep: stepIndex - 1});
+      if (this.props.fireEvent) this.props.fireEvent({event: 'click'});
     }
-    if (this.props.setProps) this.props.setProps({activeStep: stepIndex - 1});
-    if (this.props.fireEvent) this.props.fireEvent({event: 'click'});
   };
+
+  getStepText = (stepIndex: number) => this.props.stepTextList[stepIndex];
 
   render() {
     const { id, className, finishedStyle, linear, orientation, style } = this.props;
-    const { finished, stepIndex } = this.state;
 
     return (
       <div id={id} className={className} style={style}>
         <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
-          <MuiStepper
-            activeStep={stepIndex}
-            linear={linear}
-            orientation={orientation}
-          >
-            {this.props.children}
-          </MuiStepper>
-          {finished ? (
-            <p style={finishedStyle}>
-              <a
-                href="#"
-                onClick={(event) => {
-                  event.preventDefault();
-                  this.setState({stepIndex: 0, finished: false});
-                }}
-              >
-                {this.props.finishedTextLink}
-              </a> {this.props.finishedTextRemainder}
-            </p>
-          ) : (
-            <div>
-              <p>
-                Get step content?
+          <div>
+            <MuiStepper
+              activeStep={this.state.stepIndex}
+              linear={linear}
+              orientation={orientation}
+            >
+              {this.props.children}
+            </MuiStepper>
+            {this.state.finished ? (
+              <p style={finishedStyle}>
+                <a
+                  href="#"
+                  onClick={(event) => {
+                    event.preventDefault();
+                    this.setState({stepIndex: 0, finished: false});
+                  }}
+                >
+                  {this.props.finishedTextLink}
+                </a> {this.props.finishedTextRemainder}
               </p>
-              <div style={{marginTop: 14}}>
-                <FlatButton
-                  label="Back"
-                  disabled={stepIndex === 0}
-                  onClick={this.handlePrev}
-                  style={{marginRight: 12}}
-                />
-                <RaisedButton
-                  label={stepIndex === this.props.children.length ? 'Finish' : 'Next'}
-                  primary={true}
-                  onClick={this.handleNext}
-                />
+            ) : (
+              <div>
+                <p>
+                  {this.getStepText(this.state.stepIndex)}
+                </p>
+                <div style={{marginTop: 14}}>
+                  <FlatButton
+                    label="Back"
+                    disabled={this.state.stepIndex === 0}
+                    onClick={this.handlePrev}
+                    style={{marginRight: 12}}
+                  />
+                  <RaisedButton
+                    label={this.state.stepIndex === this.props.children.length ? 'Finish' : 'Next'}
+                    primary={true}
+                    onClick={this.handleNext}
+                  />
+                </div>
               </div>
-            </div>
-          )}
+            )}
+          </div>
         </MuiThemeProvider>
       </div>
     );
