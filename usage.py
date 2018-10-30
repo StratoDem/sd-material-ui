@@ -397,12 +397,18 @@ app.layout = html.Div([
         children=[
             sd_material_ui.Step(
                 id='step-0',
+                icon=1,
+                stepLabelText='step 1',
             ),
             sd_material_ui.Step(
                 id='step-1',
+                icon=2,
+                stepLabelText='step 2',
             ),
             sd_material_ui.Step(
                 id='step-2',
+                icon=3,
+                stepLabelText='step 3',
             ),
         ],
     ),
@@ -693,7 +699,7 @@ def radiobuttongroup_callback(valueSelected):
     dash.dependencies.Output('step-0', 'completed'),
     [dash.dependencies.Input('input-stepper', 'activeStep')])
 def update_step_0_callback(active_step: int):
-    if active_step == 0:
+    if active_step > 0:
         return True
     return False
 
@@ -703,7 +709,7 @@ def update_step_0_callback(active_step: int):
     dash.dependencies.Output('step-1', 'completed'),
     [dash.dependencies.Input('input-stepper', 'activeStep')])
 def update_step_1_callback(active_step: int):
-    if active_step == 1:
+    if active_step > 1:
         return True
     return False
 
@@ -713,7 +719,7 @@ def update_step_1_callback(active_step: int):
     dash.dependencies.Output('step-2', 'completed'),
     [dash.dependencies.Input('input-stepper', 'activeStep')])
 def update_step_2_callback(active_step: int):
-    if active_step == 2:
+    if active_step > 2:
         return True
     return False
 

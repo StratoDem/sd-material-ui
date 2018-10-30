@@ -13,10 +13,13 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 type Props = {
   /** Set the active step (zero based index). This will enable Step control helpers */
   activeStep?: number,
+  /** The style for the back button */
+  backButtonStyle?: Object,
   /** Should be two or more <Step /> components */
   children?: Node,
   /** CSS class name of the root element */
   className?: string,
+  finishedButtonStyle?: Object,
   /** The text to display on the final button when all steps have been completed */
   finishedText?: string,
   /** Dash event handler for click events */
@@ -25,6 +28,8 @@ type Props = {
   id: string,
   /** If set to true, the Stepper will assist in controlling steps for linear flow */
   linear?: boolean,
+  /** The style for the next button */
+  nextButtonStyle?: Object,
   /** The stepper orientation (layout flow direction) */
   orientation?: 'horizontal' | 'vertical',
   /** Dash callback to update props on the server */
@@ -44,11 +49,14 @@ type State = {
 
 const defaultProps = {
   activeStep: 0,
+  backButtonStyle: {marginRight: 12},
   children: [],
   className: '',
+  finishedButtonStyle: {},
   finishedText: 'Click here to view again',
   fireEvent: () => {},
   linear: true,
+  nextButtonStyle: {},
   orientation: 'horizontal',
   setProps: () => {},
   stepContentList: [],
@@ -92,8 +100,15 @@ export default class Stepper extends Component<Props, State> {
 
   getStepContent = (stepIndex: number) => this.props.stepContentList[stepIndex];
 
+  resetSteps = () => {
+    this.setState({stepIndex: 0, finished: false});
+    if (this.props.setProps) this.props.setProps({activeStep: 0});
+    if (this.props.fireEvent) this.props.fireEvent({event: 'click'});
+  };
+
   render() {
-    const { id, className, finishedText, linear, orientation, style } = this.props;
+    const { id, backButtonStyle, className, finishedButtonStyle, finishedText, linear,
+      nextButtonStyle, orientation, style } = this.props;
 
     return (
       <div id={id} className={className} style={style}>
@@ -109,7 +124,8 @@ export default class Stepper extends Component<Props, State> {
             {this.state.finished ? (
               <RaisedButton
                 label={finishedText}
-                onClick={() => this.setState({stepIndex: 0, finished: false})}
+                onClick={this.resetSteps}
+                style={finishedButtonStyle}
               />
             ) : (
               <div>
@@ -122,11 +138,13 @@ export default class Stepper extends Component<Props, State> {
                     label="Back"
                     disabled={this.state.stepIndex === 0}
                     onClick={this.handlePrev}
-                    style={{marginRight: 12}}
+                    style={backButtonStyle}
                   />
                   <RaisedButton
-                    label={this.state.stepIndex === this.props.children.length ? 'Finish' : 'Next'}
+                    label={this.state.stepIndex >= this.props.children.length ? 'Finish' : 'Next'}
+                    primary={true}
                     onClick={this.handleNext}
+                    style={nextButtonStyle}
                   />
                 </div>
               </div>

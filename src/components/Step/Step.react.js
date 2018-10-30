@@ -8,10 +8,13 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
 type Props = {
+  /** Sets the step as active */
+  active?: boolean,
   /** Mark the step as completed */
   completed?: boolean,
   /** Step ID */
   id: string,
+  icon?: string | number,
   /** Dash callback to update props on the server */
   setProps?: (props: { active?: boolean, completed?: boolean }) => void,
   /** The text to display for this step */
@@ -21,11 +24,14 @@ type Props = {
 };
 
 type State = {
+  active: boolean,
   completed: boolean,
 };
 
 const defaultProps = {
+  active: false,
   completed: false,
+  icon: '',
   setProps: () => {},
   stepLabelText: '',
   style: {},
@@ -34,26 +40,36 @@ const defaultProps = {
 export default class Step extends Component<Props, State> {
   constructor(props: Props) {
     super(props);
-    this.state = {completed: this.props.completed};
+    this.state = {
+      active: this.props.active,
+      completed: this.props.completed,
+    };
   }
 
   componentWillReceiveProps(nextProps: Props): void {
-    if (nextProps.completed !== this.state.completed)
+    if (nextProps.completed !== this.state.completed) {
       this.setState({completed: nextProps.completed});
-    if (this.props.setProps)
-      this.props.setProps({completed: nextProps.completed});
+      if (this.props.setProps)
+        this.props.setProps({completed: nextProps.completed});
+    }
+    if (nextProps.active !== this.state.active) {
+      this.setState({active: nextProps.active});
+      if (this.props.setProps)
+        this.props.setProps({active: nextProps.active});
+    }
   }
 
   render() {
-    const { id, stepLabelText, style } = this.props;
+    const { id, icon, stepLabelText, style } = this.props;
 
     return (
       <div id={id}>
         <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
           <MuiStep
+            active={this.state.active}
             completed={this.state.completed}
           >
-            <StepLabel style={style}>
+            <StepLabel style={style} icon={icon}>
               {stepLabelText}
             </StepLabel>
           </MuiStep>
