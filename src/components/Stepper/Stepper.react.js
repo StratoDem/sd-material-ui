@@ -114,6 +114,7 @@ export default class Stepper extends Component<Props, State> {
       <div id={id} className={className} style={style}>
         <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
           <div>
+            {this.getStepContent(this.state.stepIndex)}
             <MuiStepper
               activeStep={this.state.stepIndex}
               linear={linear}
@@ -132,7 +133,6 @@ export default class Stepper extends Component<Props, State> {
                 <p>
                   {this.getStepText(this.state.stepIndex)}
                 </p>
-                {this.getStepContent(this.state.stepIndex)}
                 <div style={{marginTop: 14}}>
                   <FlatButton
                     label="Back"
