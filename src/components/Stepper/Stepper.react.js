@@ -88,7 +88,7 @@ export default class Stepper extends Component<Props, State> {
 
     this.setState({
       stepIndex: increased,
-      finished: stepIndex >= this.props.children.length,
+      finished: increased >= this.props.children.length,
     });
     if (this.props.setProps) this.props.setProps({activeStep: increased});
     if (this.props.fireEvent) this.props.fireEvent({event: 'click'});
@@ -153,7 +153,7 @@ export default class Stepper extends Component<Props, State> {
                     style={backButtonStyle}
                   />
                   <RaisedButton
-                    label={this.state.stepIndex >= this.props.children.length ? 'Finish' : 'Next'}
+                    label={this.state.stepIndex >= this.props.children.length - 1 ? 'Finish' : 'Next'}
                     primary={true}
                     onClick={this.handleNext}
                     style={nextButtonStyle}
