@@ -4448,6 +4448,345 @@
       }
     }
   },
+  "src/components/Step/Step.react.js": {
+    "description": "",
+    "displayName": "Step",
+    "methods": [],
+    "props": {
+      "active": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Sets the step as active",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "completed": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Mark the step as completed",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "id": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "Step ID"
+      },
+      "icon": {
+        "flowType": {
+          "name": "union",
+          "raw": "string | number",
+          "elements": [
+            {
+              "name": "string"
+            },
+            {
+              "name": "number"
+            }
+          ]
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "setProps": {
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "(props: { active?: boolean, completed?: boolean }) => void",
+          "signature": {
+            "arguments": [
+              {
+                "name": "props",
+                "type": {
+                  "name": "signature",
+                  "type": "object",
+                  "raw": "{ active?: boolean, completed?: boolean }",
+                  "signature": {
+                    "properties": [
+                      {
+                        "key": "active",
+                        "value": {
+                          "name": "boolean",
+                          "required": false
+                        }
+                      },
+                      {
+                        "key": "completed",
+                        "value": {
+                          "name": "boolean",
+                          "required": false
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "return": {
+              "name": "void"
+            }
+          }
+        },
+        "required": false,
+        "description": "Dash callback to update props on the server",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      },
+      "stepLabelText": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The text to display for this step",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "style": {
+        "flowType": {
+          "name": "Object"
+        },
+        "required": false,
+        "description": "Override the inline-style of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      }
+    }
+  },
+  "src/components/Stepper/Stepper.react.js": {
+    "description": "",
+    "displayName": "Stepper",
+    "methods": [
+      {
+        "name": "handleNext",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "handlePrev",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "resetSteps",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      }
+    ],
+    "props": {
+      "activeStep": {
+        "flowType": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Set the active step (zero based index). This will enable Step control helpers",
+        "defaultValue": {
+          "value": "0",
+          "computed": false
+        }
+      },
+      "backButtonStyle": {
+        "flowType": {
+          "name": "Object"
+        },
+        "required": false,
+        "description": "The style for the back button",
+        "defaultValue": {
+          "value": "{marginRight: 12}",
+          "computed": false
+        }
+      },
+      "children": {
+        "flowType": {
+          "name": "Node"
+        },
+        "required": false,
+        "description": "Should be two or more <Step /> components",
+        "defaultValue": {
+          "value": "[]",
+          "computed": false
+        }
+      },
+      "className": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "CSS class name of the root element",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "finishedButtonStyle": {
+        "flowType": {
+          "name": "Object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "finishedText": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The text to display on the final button when all steps have been completed",
+        "defaultValue": {
+          "value": "'Click here to view again'",
+          "computed": false
+        }
+      },
+      "fireEvent": {
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "() => void",
+          "signature": {
+            "arguments": [],
+            "return": {
+              "name": "void"
+            }
+          }
+        },
+        "required": false,
+        "description": "Dash event handler for click events",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      },
+      "id": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "Dash ID"
+      },
+      "linear": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "If set to true, the Stepper will assist in controlling steps for linear flow",
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        }
+      },
+      "nextButtonStyle": {
+        "flowType": {
+          "name": "Object"
+        },
+        "required": false,
+        "description": "The style for the next button",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "orientation": {
+        "flowType": {
+          "name": "union",
+          "raw": "'horizontal' | 'vertical'",
+          "elements": [
+            {
+              "name": "literal",
+              "value": "'horizontal'"
+            },
+            {
+              "name": "literal",
+              "value": "'vertical'"
+            }
+          ]
+        },
+        "required": false,
+        "description": "The stepper orientation (layout flow direction)",
+        "defaultValue": {
+          "value": "'horizontal'",
+          "computed": false
+        }
+      },
+      "setProps": {
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "(props: {stepIndex?: number}) => void",
+          "signature": {
+            "arguments": [
+              {
+                "name": "props",
+                "type": {
+                  "name": "signature",
+                  "type": "object",
+                  "raw": "{stepIndex?: number}",
+                  "signature": {
+                    "properties": [
+                      {
+                        "key": "stepIndex",
+                        "value": {
+                          "name": "number",
+                          "required": false
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "return": {
+              "name": "void"
+            }
+          }
+        },
+        "required": false,
+        "description": "Dash callback to update props on the server",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      },
+      "style": {
+        "flowType": {
+          "name": "Object"
+        },
+        "required": false,
+        "description": "Override the inline-style of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      }
+    }
+  },
   "src/components/Subheader/Subheader.react.js": {
     "description": "",
     "displayName": "Subheader",
@@ -5272,7 +5611,7 @@
         "flowType": {
           "name": "Object"
         },
-        "required": false,
+        "required": true,
         "description": "Tabs props",
         "defaultValue": {
           "value": "{}",

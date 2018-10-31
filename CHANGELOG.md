@@ -2,6 +2,11 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 2.17.0 2018-10-31
+### Adds
+- Adds a `Step` component
+- Adds a `Stepper` component to control progress through `Step`s
+
 ## 2.16.4 2018-10-24
 ### Fixes
 - Handles `Snackbar` opening more than once with no callback listening to the `Snackbar` (https://github.com/StratoDem/sd-material-ui/issues/85)
