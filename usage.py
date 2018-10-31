@@ -391,9 +391,9 @@ app.layout = html.Div([
         id='input-stepper',
         activeStep=0,
         stepTextList=['Step 1', 'Step 2', 'Step 3'],
-        stepImageList=['/home/eric/Projects/sd-material-ui/Peek 2018-02-22 10-49.gif',
-                       '/home/eric/Projects/sd-material-ui/Peek 2018-02-22 10-49.gif',
-                       '/home/eric/Projects/sd-material-ui/Peek 2018-02-22 10-49.gif'],
+        stepImageList=['https://placekitten.com/600/400',
+                       'https://placekitten.com/500/500',
+                       'https://placekitten.com/400/300'],
         stepImageAltTextList=['alt1', 'alt2', 'alt3'],
         children=[
             sd_material_ui.Step(
