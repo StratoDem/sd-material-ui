@@ -1,9 +1,7 @@
 import React from 'react';
-import { mount, shallow } from 'enzyme';
-import { Step as MuiStep } from 'material-ui/Stepper';
+import { shallow } from 'enzyme';
 import { StepLabel as MuiStepLabel } from 'material-ui/Stepper';
 import Step from '../Step/Step.react';
-import Stepper from '../Stepper/Stepper.react';
 
 describe('Step', () => {
   it('renders', () => {
