@@ -390,43 +390,6 @@ app.layout = html.Div([
     sd_material_ui.Stepper(
         id='input-stepper',
         activeStep=0,
-        stepTextList=[
-            'Doggo ipsum puggorino lotsa pats much ruin diet what a nice floof doggorino aqua '
-            'doggo, snoot long woofer blep dat tungg tho. Heckin good boys and girls doge corgo, '
-            'heckin good boys and girls. many pats doing me a frighten floofs. Length boy yapper '
-            'long water shoob yapper corgo boof bork, puggorino blop bork long bois. Porgo '
-            'adorable doggo he made many woofs boof thicc borkdrive shibe, tungg shoob puggo what '
-            'a nice floof. Doggorino many pats blep woofer heckin, puggo boofers you are doing me '
-            'a frighten. He made many woofs many pats long bois dat tungg tho you are doing me the '
-            'shock doggorino, doing me a frighten blep heckin heckin angery woofer. you are doing '
-            'me a frighten boof floofs. Pupperino floofs you are doing me a frighten blop, long '
-            'water shoob. Pupperino borkf puggo lotsa pats extremely cuuuuuute dat tungg tho, '
-            'clouds wow very biscit shoob heckin angery woofer. Doing me a frighten borkf doggo, '
-            'boofers.',
-            'fat boi shoob what a nice floof. Super chub doggo long doggo adorable doggo you are '
-            'doin me a concern noodle horse, shoober long woofer I am bekom fat adorable doggo '
-            'long doggo doggo, floofs smol you are doing me the shock mlem.  Doggo heckin good '
-            'boys yapper, porgo. Sub woofer such treat mlem corgo puggorino h*ck, noodle horse '
-            'floofs long bois big ol pupper. Puggorino you are doin me a concern sub woofer the '
-            'neighborhood pupper doge waggy wags, thicc waggy wags you are doing me the shock. '
-            'Shoober stop it fren extremely cuuuuuute big ol the neighborhood pupper, yapper ruff. '
-            'Extremely cuuuuuute I am bekom fat pupperino tungg fluffer corgo shibe, tungg big ol '
-            'pupper length boy lotsa pats. Tungg ur givin me a spook snoot h*ck, very taste wow. '
-            'Snoot heck sub woofer thicc pats bork, vvv heckin long doggo. thicc maximum borkdrive '
-            'lotsa pats.  Pupperino boofers the neighborhood pupper waggy wags, borkf wow such '
-            'tempt.',
-            'You are doin me a concern puggorino I am bekom fat blop wow such tempt, wow very '
-            'biscit such treat he made many woofs. H*ck borking doggo big ol doge clouds aqua '
-            'doggo, super chub lotsa pats sub woofer you are doin me a concern. Doing me a '
-            'frighten vvv most angery pupper I have ever seen wrinkler blep, smol you are doin '
-            'me a concern. Fat boi fluffer tungg waggy wags most angery pupper I have ever seen, '
-            'heckin angery woofer very taste wow. Dat tungg tho pupper heckin aqua doggo corgo '
-            'such treat pupperino bork, lotsa pats fluffer porgo you are doing me a frighten '
-            'clouds.'],
-        stepImageList=['https://placekitten.com/600/400',
-                       'https://placekitten.com/500/500',
-                       'https://placekitten.com/400/300'],
-        stepImageAltTextList=['alt1', 'alt2', 'alt3'],
         children=[
             sd_material_ui.Step(
                 id='step-0',

@@ -34,18 +34,6 @@ type Props = {
   orientation?: 'horizontal' | 'vertical',
   /** Dash callback to update props on the server */
   setProps?: (props: {stepIndex?: number}) => void,
-  /** A list of image paths to display when each step is active. Number of items in the array must
-   * exactly match the number of children, or the component will break
-   */
-  stepImageList?: Array<string>,
-  /** A list of alt text to display in place of images. Number of items in the array must exactly
-   * match the number of items in stepImageList or the component will break
-   */
-  stepImageAltTextList?: Array<string>,
-  /** The text that should be associated with each step. Number of items in the array must exactly
-   * match the number of children, or the component will break
-   */
-  stepTextList?: Array<string>,
   /** Override the inline-style of the root element */
   style?: Object,
 };
@@ -67,9 +55,6 @@ const defaultProps = {
   nextButtonStyle: {},
   orientation: 'horizontal',
   setProps: () => {},
-  stepImageList: [],
-  stepImageAltTextList: [],
-  stepTextList: [],
   style: {},
 };
 
@@ -105,13 +90,6 @@ export default class Stepper extends Component<Props, State> {
     }
   };
 
-  getStepText = (stepIndex: number) => this.props.stepTextList[stepIndex];
-
-  getStepContent = (stepIndex: number) => (<img
-    src={this.props.stepImageList[stepIndex]}
-    alt={this.props.stepImageAltTextList[stepIndex]}
-  />);
-
   resetSteps = () => {
     this.setState({stepIndex: 0, finished: false});
     if (this.props.setProps) this.props.setProps({activeStep: 0});
@@ -126,7 +104,6 @@ export default class Stepper extends Component<Props, State> {
       <div id={id} className={className} style={style}>
         <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
           <div>
-            {this.getStepContent(this.state.stepIndex)}
             <MuiStepper
               activeStep={this.state.stepIndex}
               linear={linear}
@@ -142,9 +119,6 @@ export default class Stepper extends Component<Props, State> {
               />
             ) : (
               <div>
-                <p>
-                  {this.getStepText(this.state.stepIndex)}
-                </p>
                 <div style={{marginTop: 14}}>
                   <FlatButton
                     label="Back"

@@ -4591,34 +4591,6 @@
         "returns": null
       },
       {
-        "name": "getStepText",
-        "docblock": null,
-        "modifiers": [],
-        "params": [
-          {
-            "name": "stepIndex",
-            "type": {
-              "name": "number"
-            }
-          }
-        ],
-        "returns": null
-      },
-      {
-        "name": "getStepContent",
-        "docblock": null,
-        "modifiers": [],
-        "params": [
-          {
-            "name": "stepIndex",
-            "type": {
-              "name": "number"
-            }
-          }
-        ],
-        "returns": null
-      },
-      {
         "name": "resetSteps",
         "docblock": null,
         "modifiers": [],
@@ -4799,57 +4771,6 @@
         "description": "Dash callback to update props on the server",
         "defaultValue": {
           "value": "() => {}",
-          "computed": false
-        }
-      },
-      "stepImageList": {
-        "flowType": {
-          "name": "Array",
-          "elements": [
-            {
-              "name": "string"
-            }
-          ],
-          "raw": "Array<string>"
-        },
-        "required": false,
-        "description": "A list of image paths to display when each step is active. Number of items in the array must\nexactly match the number of children, or the component will break",
-        "defaultValue": {
-          "value": "[]",
-          "computed": false
-        }
-      },
-      "stepImageAltTextList": {
-        "flowType": {
-          "name": "Array",
-          "elements": [
-            {
-              "name": "string"
-            }
-          ],
-          "raw": "Array<string>"
-        },
-        "required": false,
-        "description": "A list of alt text to display in place of images. Number of items in the array must exactly\nmatch the number of items in stepImageList or the component will break",
-        "defaultValue": {
-          "value": "[]",
-          "computed": false
-        }
-      },
-      "stepTextList": {
-        "flowType": {
-          "name": "Array",
-          "elements": [
-            {
-              "name": "string"
-            }
-          ],
-          "raw": "Array<string>"
-        },
-        "required": false,
-        "description": "The text that should be associated with each step. Number of items in the array must exactly\nmatch the number of children, or the component will break",
-        "defaultValue": {
-          "value": "[]",
           "computed": false
         }
       },
