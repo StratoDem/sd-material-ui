@@ -393,6 +393,8 @@ app.layout = html.Div([
         stepCount=4,
     ),
 
+    html.Div('', id='output-stepper'),
+
     final_spacer,
 ])
 
@@ -672,6 +674,14 @@ def autocomplete_callback(searchValue: int):
     [dash.dependencies.Input('input14', 'valueSelected')])
 def radiobuttongroup_callback(valueSelected):
     return ['Selection is: {}'.format(valueSelected)]
+
+
+# Callback for Stepper
+@app.callback(
+    dash.dependencies.Output('output-stepper', 'children'),
+    [dash.dependencies.Input('input-stepper', 'activeStep')])
+def stepper_callback(activeStep: int):
+    return 'Current step number is {}'.format(activeStep)
 
 
 @app.server.route('/my-search', methods=['POST'])
