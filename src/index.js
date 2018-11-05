@@ -16,7 +16,6 @@ import Snackbar from './components/Snackbar';
 import Subheader from './components/Subheader';
 import RadioButtonGroup from './components/RadioButtonGroup';
 import RaisedButton from './components/RaisedButton';
-import Step from './components/Step';
 import Stepper from './components/Stepper';
 import Toggle from './components/Toggle';
 import { Tabs } from './components/Tabs';
@@ -42,7 +41,6 @@ export {
   Subheader,
   RadioButtonGroup,
   RaisedButton,
-  Step,
   Stepper,
   Tabs,
   Toggle,
