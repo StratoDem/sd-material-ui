@@ -17,7 +17,7 @@ type Props = {
   backButtonStyle?: Object,
   /** CSS class name of the root element */
   className?: string,
-  /** The style for the button displayed after all steps have been finished*/
+  /** The style for the button displayed after all steps have been finished */
   finishedButtonStyle?: Object,
   /** The text to display on the final button when all steps have been completed */
   finishedText?: string,
