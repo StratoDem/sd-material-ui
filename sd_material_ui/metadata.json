@@ -4448,130 +4448,6 @@
       }
     }
   },
-  "src/components/Step/Step.react.js": {
-    "description": "",
-    "displayName": "Step",
-    "methods": [],
-    "props": {
-      "active": {
-        "flowType": {
-          "name": "boolean"
-        },
-        "required": false,
-        "description": "Sets the step as active",
-        "defaultValue": {
-          "value": "false",
-          "computed": false
-        }
-      },
-      "completed": {
-        "flowType": {
-          "name": "boolean"
-        },
-        "required": false,
-        "description": "Mark the step as completed",
-        "defaultValue": {
-          "value": "false",
-          "computed": false
-        }
-      },
-      "id": {
-        "flowType": {
-          "name": "string"
-        },
-        "required": true,
-        "description": "Step ID"
-      },
-      "icon": {
-        "flowType": {
-          "name": "union",
-          "raw": "string | number",
-          "elements": [
-            {
-              "name": "string"
-            },
-            {
-              "name": "number"
-            }
-          ]
-        },
-        "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "''",
-          "computed": false
-        }
-      },
-      "setProps": {
-        "flowType": {
-          "name": "signature",
-          "type": "function",
-          "raw": "(props: { active?: boolean, completed?: boolean }) => void",
-          "signature": {
-            "arguments": [
-              {
-                "name": "props",
-                "type": {
-                  "name": "signature",
-                  "type": "object",
-                  "raw": "{ active?: boolean, completed?: boolean }",
-                  "signature": {
-                    "properties": [
-                      {
-                        "key": "active",
-                        "value": {
-                          "name": "boolean",
-                          "required": false
-                        }
-                      },
-                      {
-                        "key": "completed",
-                        "value": {
-                          "name": "boolean",
-                          "required": false
-                        }
-                      }
-                    ]
-                  }
-                }
-              }
-            ],
-            "return": {
-              "name": "void"
-            }
-          }
-        },
-        "required": false,
-        "description": "Dash callback to update props on the server",
-        "defaultValue": {
-          "value": "() => {}",
-          "computed": false
-        }
-      },
-      "stepLabelText": {
-        "flowType": {
-          "name": "string"
-        },
-        "required": false,
-        "description": "The text to display for this step",
-        "defaultValue": {
-          "value": "''",
-          "computed": false
-        }
-      },
-      "style": {
-        "flowType": {
-          "name": "Object"
-        },
-        "required": false,
-        "description": "Override the inline-style of the root element",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      }
-    }
-  },
   "src/components/Stepper/Stepper.react.js": {
     "description": "",
     "displayName": "Stepper",
@@ -4595,6 +4471,20 @@
         "docblock": null,
         "modifiers": [],
         "params": [],
+        "returns": null
+      },
+      {
+        "name": "createSteps",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "stepCount",
+            "type": {
+              "name": "number"
+            }
+          }
+        ],
         "returns": null
       }
     ],
@@ -4621,17 +4511,6 @@
           "computed": false
         }
       },
-      "children": {
-        "flowType": {
-          "name": "Node"
-        },
-        "required": false,
-        "description": "Should be two or more <Step /> components",
-        "defaultValue": {
-          "value": "[]",
-          "computed": false
-        }
-      },
       "className": {
         "flowType": {
           "name": "string"
@@ -4648,7 +4527,7 @@
           "name": "Object"
         },
         "required": false,
-        "description": "",
+        "description": "The style for the button displayed after all steps have been finished",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -4771,6 +4650,34 @@
         "description": "Dash callback to update props on the server",
         "defaultValue": {
           "value": "() => {}",
+          "computed": false
+        }
+      },
+      "stepCount": {
+        "flowType": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "The number of steps that this component will contain",
+        "defaultValue": {
+          "value": "3",
+          "computed": false
+        }
+      },
+      "stepLabels": {
+        "flowType": {
+          "name": "Array",
+          "elements": [
+            {
+              "name": "string"
+            }
+          ],
+          "raw": "Array<string>"
+        },
+        "required": false,
+        "description": "The text labels that will be shown next to each step number. The length of this array must\nmatch the total number of steps",
+        "defaultValue": {
+          "value": "['Step 1', 'Step 2', 'Step 3']",
           "computed": false
         }
       },
@@ -5611,7 +5518,7 @@
         "flowType": {
           "name": "Object"
         },
-        "required": true,
+        "required": false,
         "description": "Tabs props",
         "defaultValue": {
           "value": "{}",

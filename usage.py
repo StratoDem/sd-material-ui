@@ -390,24 +390,11 @@ app.layout = html.Div([
     sd_material_ui.Stepper(
         id='input-stepper',
         activeStep=0,
-        children=[
-            sd_material_ui.Step(
-                id='step-0',
-                icon=1,
-                stepLabelText='step 1',
-            ),
-            sd_material_ui.Step(
-                id='step-1',
-                icon=2,
-                stepLabelText='step 2',
-            ),
-            sd_material_ui.Step(
-                id='step-2',
-                icon=3,
-                stepLabelText='step 3',
-            ),
-        ],
+        stepCount=4,
+        stepLabels=['Step', 'right', 'this', 'way']
     ),
+
+    html.Div('', id='output-stepper'),
 
     final_spacer,
 ])
@@ -690,64 +677,12 @@ def radiobuttongroup_callback(valueSelected):
     return ['Selection is: {}'.format(valueSelected)]
 
 
-# Callback for step 0
+# Callback for Stepper
 @app.callback(
-    dash.dependencies.Output('step-0', 'completed'),
+    dash.dependencies.Output('output-stepper', 'children'),
     [dash.dependencies.Input('input-stepper', 'activeStep')])
-def update_step_0_callback(active_step: int):
-    if active_step > 0:
-        return True
-    return False
-
-
-# Callback for step 1
-@app.callback(
-    dash.dependencies.Output('step-1', 'completed'),
-    [dash.dependencies.Input('input-stepper', 'activeStep')])
-def update_step_1_callback(active_step: int):
-    if active_step > 1:
-        return True
-    return False
-
-
-# Callback for step 2
-@app.callback(
-    dash.dependencies.Output('step-2', 'completed'),
-    [dash.dependencies.Input('input-stepper', 'activeStep')])
-def update_step_2_callback(active_step: int):
-    if active_step > 2:
-        return True
-    return False
-
-
-# Callback for step 0 active
-@app.callback(
-    dash.dependencies.Output('step-0', 'active'),
-    [dash.dependencies.Input('input-stepper', 'activeStep')])
-def update_step_0_callback(active_step: int):
-    if active_step == 0:
-        return True
-    return False
-
-
-# Callback for step 1 active
-@app.callback(
-    dash.dependencies.Output('step-1', 'active'),
-    [dash.dependencies.Input('input-stepper', 'activeStep')])
-def update_step_1_callback(active_step: int):
-    if active_step == 1:
-        return True
-    return False
-
-
-# Callback for step 2 active
-@app.callback(
-    dash.dependencies.Output('step-2', 'active'),
-    [dash.dependencies.Input('input-stepper', 'activeStep')])
-def update_step_2_callback(active_step: int):
-    if active_step == 2:
-        return True
-    return False
+def stepper_callback(activeStep: int):
+    return 'Current step number is {}'.format(activeStep)
 
 
 @app.server.route('/my-search', methods=['POST'])

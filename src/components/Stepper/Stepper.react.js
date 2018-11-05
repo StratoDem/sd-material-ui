@@ -2,7 +2,7 @@
 
 import React, { Component } from 'react';
 
-import { Stepper as MuiStepper } from 'material-ui/Stepper';
+import {Step, StepLabel, Stepper as MuiStepper} from 'material-ui/Stepper';
 import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
 
@@ -15,10 +15,9 @@ type Props = {
   activeStep?: number,
   /** The style for the back button */
   backButtonStyle?: Object,
-  /** Should be two or more <Step /> components */
-  children?: Node,
   /** CSS class name of the root element */
   className?: string,
+  /** The style for the button displayed after all steps have been finished */
   finishedButtonStyle?: Object,
   /** The text to display on the final button when all steps have been completed */
   finishedText?: string,
@@ -34,6 +33,12 @@ type Props = {
   orientation?: 'horizontal' | 'vertical',
   /** Dash callback to update props on the server */
   setProps?: (props: {stepIndex?: number}) => void,
+  /** The number of steps that this component will contain */
+  stepCount?: number,
+  /** The text labels that will be shown next to each step number. The length of this array must
+   * match the total number of steps
+   */
+  stepLabels?: Array<string>,
   /** Override the inline-style of the root element */
   style?: Object,
 };
@@ -46,7 +51,6 @@ type State = {
 const defaultProps = {
   activeStep: 0,
   backButtonStyle: {marginRight: 12},
-  children: [],
   className: '',
   finishedButtonStyle: {},
   finishedText: 'Click here to view again',
@@ -55,6 +59,8 @@ const defaultProps = {
   nextButtonStyle: {},
   orientation: 'horizontal',
   setProps: () => {},
+  stepCount: 3,
+  stepLabels: ['Step 1', 'Step 2', 'Step 3'],
   style: {},
 };
 
@@ -73,7 +79,7 @@ export default class Stepper extends Component<Props, State> {
 
     this.setState({
       stepIndex: increased,
-      finished: increased >= this.props.children.length,
+      finished: increased >= this.props.stepCount,
     });
     if (this.props.setProps) this.props.setProps({activeStep: increased});
     if (this.props.fireEvent) this.props.fireEvent({event: 'click'});
@@ -96,9 +102,19 @@ export default class Stepper extends Component<Props, State> {
     if (this.props.fireEvent) this.props.fireEvent({event: 'click'});
   };
 
+  createSteps = (stepCount: number) => {
+    const steps = [];
+
+    for (let i = 0; i < stepCount; i += 1) {
+      steps.push(<Step><StepLabel>{this.props.stepLabels[i]}</StepLabel></Step>);
+    }
+
+    return steps;
+  };
+
   render() {
     const { id, backButtonStyle, className, finishedButtonStyle, finishedText, linear,
-      nextButtonStyle, orientation, style } = this.props;
+      nextButtonStyle, orientation, stepCount, style } = this.props;
 
     return (
       <div id={id} className={className} style={style}>
@@ -109,7 +125,7 @@ export default class Stepper extends Component<Props, State> {
               linear={linear}
               orientation={orientation}
             >
-              {this.props.children}
+              {this.createSteps(stepCount)}
             </MuiStepper>
             {this.state.finished ? (
               <RaisedButton
@@ -127,7 +143,7 @@ export default class Stepper extends Component<Props, State> {
                     style={backButtonStyle}
                   />
                   <RaisedButton
-                    label={this.state.stepIndex >= this.props.children.length - 1 ? 'Finish' : 'Next'}
+                    label={this.state.stepIndex >= stepCount - 1 ? 'Finish' : 'Next'}
                     primary={true}
                     onClick={this.handleNext}
                     style={nextButtonStyle}

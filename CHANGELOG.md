@@ -2,6 +2,10 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 3.0.0 2018-11-05
+### Changes
+- Changes the `Stepper` component to uncontrolled, so callbacks are not needed for each `Step`. This changes BREAKS existing uses of the `Stepper` component
+
 ## 2.17.0 2018-10-31
 ### Adds
 - Adds a `Step` component
