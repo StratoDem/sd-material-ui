@@ -4527,7 +4527,7 @@
           "name": "Object"
         },
         "required": false,
-        "description": "",
+        "description": "The style for the button displayed after all steps have been finished",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -4658,7 +4658,7 @@
           "name": "number"
         },
         "required": false,
-        "description": "",
+        "description": "The number of steps that this component will contain",
         "defaultValue": {
           "value": "3",
           "computed": false
