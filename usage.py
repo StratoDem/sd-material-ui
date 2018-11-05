@@ -390,6 +390,7 @@ app.layout = html.Div([
     sd_material_ui.Stepper(
         id='input-stepper',
         activeStep=0,
+        stepCount=4,
     ),
 
     final_spacer,

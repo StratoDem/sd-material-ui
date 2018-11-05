@@ -4472,6 +4472,20 @@
         "modifiers": [],
         "params": [],
         "returns": null
+      },
+      {
+        "name": "createSteps",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "stepCount",
+            "type": {
+              "name": "number"
+            }
+          }
+        ],
+        "returns": null
       }
     ],
     "props": {
@@ -4636,6 +4650,17 @@
         "description": "Dash callback to update props on the server",
         "defaultValue": {
           "value": "() => {}",
+          "computed": false
+        }
+      },
+      "stepCount": {
+        "flowType": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "3",
           "computed": false
         }
       },
