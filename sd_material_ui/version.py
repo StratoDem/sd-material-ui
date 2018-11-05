@@ -9,4 +9,4 @@ Notes :
 December 28, 2017
 """
 
-__version__ = '2.17.0'
+__version__ = '3.0.0'
