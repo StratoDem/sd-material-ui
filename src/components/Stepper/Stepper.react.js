@@ -2,7 +2,7 @@
 
 import React, { Component } from 'react';
 
-import { Stepper as MuiStepper } from 'material-ui/Stepper';
+import {Step as MuiStep, StepLabel, Stepper as MuiStepper} from 'material-ui/Stepper';
 import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
 
@@ -16,7 +16,7 @@ type Props = {
   /** The style for the back button */
   backButtonStyle?: Object,
   /** Should be two or more <Step /> components */
-  children?: Node,
+  children: Node,
   /** CSS class name of the root element */
   className?: string,
   finishedButtonStyle?: Object,
@@ -46,7 +46,6 @@ type State = {
 const defaultProps = {
   activeStep: 0,
   backButtonStyle: {marginRight: 12},
-  children: [],
   className: '',
   finishedButtonStyle: {},
   finishedText: 'Click here to view again',
@@ -57,6 +56,23 @@ const defaultProps = {
   setProps: () => {},
   style: {},
 };
+
+const EnhancedStep = ({
+  id,
+  icon,
+  stepLabelText,
+  style,
+}) => (
+  <div id={id}>
+    <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
+      <MuiStep>
+        <StepLabel style={style} icon={icon}>
+          {stepLabelText}
+        </StepLabel>
+      </MuiStep>
+    </MuiThemeProvider>
+  </div>
+);
 
 export default class Stepper extends Component<Props, State> {
   constructor(props: Props) {
@@ -97,8 +113,16 @@ export default class Stepper extends Component<Props, State> {
   };
 
   render() {
-    const { id, backButtonStyle, className, finishedButtonStyle, finishedText, linear,
+    const { id, backButtonStyle, children, className, finishedButtonStyle, finishedText, linear,
       nextButtonStyle, orientation, style } = this.props;
+    const EnhancedSteps = children.map(child => (
+      <EnhancedStep
+        id={child.id}
+        icon={child.icon}
+        stepLabelText={child.stepLabelText}
+        style={child.style}
+      />
+    ));
 
     return (
       <div id={id} className={className} style={style}>
@@ -109,7 +133,7 @@ export default class Stepper extends Component<Props, State> {
               linear={linear}
               orientation={orientation}
             >
-              {this.props.children}
+              {EnhancedSteps}
             </MuiStepper>
             {this.state.finished ? (
               <RaisedButton
