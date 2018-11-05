@@ -10,21 +10,11 @@ import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
-type STEP_ITEM = {
-  icon: string | number,
-  /** The text to display for this step */
-  stepLabelText: string,
-  /** Override the inline-style of the root element */
-  style?: Object,
-};
-
 type Props = {
   /** Set the active step (zero based index). This will enable Step control helpers */
   activeStep?: number,
   /** The style for the back button */
   backButtonStyle?: Object,
-  /** Should be two or more <Step /> components */
-  children?: Array<STEP_ITEM>,
   /** CSS class name of the root element */
   className?: string,
   finishedButtonStyle?: Object,
@@ -54,7 +44,6 @@ type State = {
 const defaultProps = {
   activeStep: 0,
   backButtonStyle: {marginRight: 12},
-  children: [],
   className: '',
   finishedButtonStyle: {},
   finishedText: 'Click here to view again',
@@ -81,7 +70,7 @@ export default class Stepper extends Component<Props, State> {
 
     this.setState({
       stepIndex: increased,
-      finished: increased >= this.props.children.length,
+      finished: increased >= 3,
     });
     if (this.props.setProps) this.props.setProps({activeStep: increased});
     if (this.props.fireEvent) this.props.fireEvent({event: 'click'});
@@ -117,13 +106,15 @@ export default class Stepper extends Component<Props, State> {
               linear={linear}
               orientation={orientation}
             >
-              {this.props.children.map(child => (
-                <Step>
-                  <StepLabel style={child.style} icon={child.icon}>
-                    {child.stepLabelText}
-                  </StepLabel>
-                </Step>
-              ))}
+              <Step>
+                <StepLabel>step 1</StepLabel>
+              </Step>
+              <Step>
+                <StepLabel>step 2</StepLabel>
+              </Step>
+              <Step>
+                <StepLabel>step 3</StepLabel>
+              </Step>
             </MuiStepper>
             {this.state.finished ? (
               <RaisedButton
@@ -141,7 +132,7 @@ export default class Stepper extends Component<Props, State> {
                     style={backButtonStyle}
                   />
                   <RaisedButton
-                    label={this.state.stepIndex >= this.props.children.length - 1 ? 'Finish' : 'Next'}
+                    label={this.state.stepIndex >= 2 ? 'Finish' : 'Next'}
                     primary={true}
                     onClick={this.handleNext}
                     style={nextButtonStyle}

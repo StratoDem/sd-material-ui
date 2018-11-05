@@ -4497,59 +4497,6 @@
           "computed": false
         }
       },
-      "children": {
-        "flowType": {
-          "name": "Array",
-          "elements": [
-            {
-              "name": "signature",
-              "type": "object",
-              "raw": "{\n  icon: string | number,\n  /** The text to display for this step */\n  stepLabelText: string,\n  /** Override the inline-style of the root element */\n  style?: Object,\n}",
-              "signature": {
-                "properties": [
-                  {
-                    "key": "icon",
-                    "value": {
-                      "name": "union",
-                      "raw": "string | number",
-                      "elements": [
-                        {
-                          "name": "string"
-                        },
-                        {
-                          "name": "number"
-                        }
-                      ],
-                      "required": true
-                    }
-                  },
-                  {
-                    "key": "stepLabelText",
-                    "value": {
-                      "name": "string",
-                      "required": true
-                    }
-                  },
-                  {
-                    "key": "style",
-                    "value": {
-                      "name": "Object",
-                      "required": false
-                    }
-                  }
-                ]
-              }
-            }
-          ],
-          "raw": "Array<STEP_ITEM>"
-        },
-        "required": false,
-        "description": "Should be two or more <Step /> components",
-        "defaultValue": {
-          "value": "[]",
-          "computed": false
-        }
-      },
       "className": {
         "flowType": {
           "name": "string"

@@ -390,11 +390,6 @@ app.layout = html.Div([
     sd_material_ui.Stepper(
         id='input-stepper',
         activeStep=0,
-        children=[
-            dict(icon=1, stepLabelText='step 1'),
-            dict(icon=2, stepLabelText='step 2'),
-            dict(icon=3, stepLabelText='step 3'),
-        ],
     ),
 
     final_spacer,
