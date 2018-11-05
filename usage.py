@@ -391,6 +391,7 @@ app.layout = html.Div([
         id='input-stepper',
         activeStep=0,
         stepCount=4,
+        stepLabels=['Step', 'right', 'this', 'way']
     ),
 
     html.Div('', id='output-stepper'),

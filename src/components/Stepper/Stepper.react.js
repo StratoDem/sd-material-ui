@@ -35,6 +35,10 @@ type Props = {
   setProps?: (props: {stepIndex?: number}) => void,
   /** The number of steps that this component will contain */
   stepCount?: number,
+  /** The text labels that will be shown next to each step number. The length of this array must
+   * match the total number of steps
+   */
+  stepLabels?: Array<string>,
   /** Override the inline-style of the root element */
   style?: Object,
 };
@@ -56,6 +60,7 @@ const defaultProps = {
   orientation: 'horizontal',
   setProps: () => {},
   stepCount: 3,
+  stepLabels: ['Step 1', 'Step 2', 'Step 3'],
   style: {},
 };
 
@@ -101,7 +106,7 @@ export default class Stepper extends Component<Props, State> {
     const steps = [];
 
     for (let i = 0; i < stepCount; i += 1) {
-      steps.push(<Step><StepLabel>Step {(i + 1).toString()}</StepLabel></Step>);
+      steps.push(<Step><StepLabel>{this.props.stepLabels[i]}</StepLabel></Step>);
     }
 
     return steps;

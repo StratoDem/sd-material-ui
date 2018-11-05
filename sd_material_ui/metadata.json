@@ -4664,6 +4664,23 @@
           "computed": false
         }
       },
+      "stepLabels": {
+        "flowType": {
+          "name": "Array",
+          "elements": [
+            {
+              "name": "string"
+            }
+          ],
+          "raw": "Array<string>"
+        },
+        "required": false,
+        "description": "The text labels that will be shown next to each step number. The length of this array must\nmatch the total number of steps",
+        "defaultValue": {
+          "value": "['Step 1', 'Step 2', 'Step 3']",
+          "computed": false
+        }
+      },
       "style": {
         "flowType": {
           "name": "Object"
