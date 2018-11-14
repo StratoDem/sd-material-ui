@@ -16,9 +16,15 @@ type Props = {
   children?: Node,
   /** CSS class name of the root element */
   className?: string,
-  /** Is the Dialog a modal (must click on an action to close)? */
+  /** Is the Dialog a modal (must click on an action to close)?
+   *
+   * NOTE: If the Dialog is created with modal=False, the callback that controls opening and closing
+   * the Dialog should include the component's open value as a state, and check whether it is either
+   * already open or closed before attempting to open or close it. See comments for the open prop.
+   */
   modal?: boolean,
   /** Is the dialog open?
+   *
    * IMPORTANT: When using this component in Dash, a listener must be set up (either as state or
    * an input) for this component's props.open value in order to achieve the desired behavior.
    * If such a listener is not in place, the non-modal version of this dialog will contaminate
