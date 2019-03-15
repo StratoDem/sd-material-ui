@@ -86,7 +86,7 @@ export default class Drawer extends Component<Props, State> {
   }
 
   componentWillReceiveProps(nextProps: Props): void {
-    if (nextProps.open !== null && nextProps.open !== this.props.open) {
+    if (nextProps.open !== null) {
       this.setState({open: nextProps.open});
     }
   }
