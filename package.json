@@ -38,7 +38,7 @@
   },
   "devDependencies": {
     "@stratodem/js-archetype": "1.10.0",
-    "compression-webpack-plugin": "1.1.11",
+    "compression-webpack-plugin": "1.1.12",
     "dash-components-archetype-dev": "0.2.11",
     "dezalgo": "1.0.3",
     "enzyme": "3.3.0",
