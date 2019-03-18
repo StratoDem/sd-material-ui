@@ -2,6 +2,10 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 3.0.2 2018-03-15
+### Fixes
+- Fixes a problem where the `open` prop was not always correctly set for the `Drawer` component
+
 ## 3.0.1 2018-11-14
 ### Adds
 - Adds additional documentation to the Dialog component regarding potentially confusing behavior
