@@ -46,7 +46,7 @@
     "enzyme-to-json": "3.3.3",
     "flow-bin": "0.93.0",
     "git-labelmaker": "0.9.0",
-    "jest": "22.4.3",
+    "jest": "22.4.4",
     "react": "15.6.2",
     "react-dom": "15.6.2",
     "react-test-renderer": "15.6.2"
