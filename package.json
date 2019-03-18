@@ -25,7 +25,7 @@
   },
   "dependencies": {
     "babel-loader": "^7.1.2",
-    "builder": "^3.2.2",
+    "builder": "^4.0.0",
     "copyfiles": "^1.2.0",
     "dash-components-archetype": "^0.2.11",
     "eslint": "^4.19.1",
