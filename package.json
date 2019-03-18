@@ -33,7 +33,7 @@
     "material-ui": "^0.20.0",
     "npm": "^5.2.0",
     "prop-types": "^15.6.0",
-    "sinon": "^4.4.10",
+    "sinon": "^7.0.0",
     "webpack": "^3.8.1"
   },
   "devDependencies": {
