@@ -24,7 +24,7 @@
     "uninstall-local": "pip uninstall sd-material-ui -y"
   },
   "dependencies": {
-    "babel-loader": "^7.1.2",
+    "babel-loader": "^8.0.0",
     "builder": "^3.2.2",
     "copyfiles": "^1.2.0",
     "dash-components-archetype": "^0.2.11",
