@@ -1,6 +1,6 @@
 {
-  "src/components/AutoComplete/AutoComplete.react.js": {
-    "description": "",
+  "src/lib/components/AutoComplete.react.js": {
+    "description": "Material UI AutoComplete component",
     "displayName": "AutoComplete",
     "methods": [
       {
@@ -934,7 +934,7 @@
       }
     }
   },
-  "src/components/BottomNavigation/BottomNavigation.react.js": {
+  "src/lib/components/BottomNavigation.react.js": {
     "description": "BottomNavigationItem is an item in a BottomNavigation component",
     "displayName": "BottomNavigation",
     "methods": [
@@ -1162,8 +1162,8 @@
       }
     }
   },
-  "src/components/Card/Card.react.js": {
-    "description": "",
+  "src/lib/components/Card.react.js": {
+    "description": "Material UI Card component",
     "displayName": "Card",
     "methods": [],
     "props": {
@@ -1222,7 +1222,7 @@
           "computed": false
         }
       },
-      "_expanded": {
+      "expanded": {
         "flowType": {
           "name": "boolean"
         },
@@ -1510,8 +1510,8 @@
       }
     }
   },
-  "src/components/Checkbox/Checkbox.react.js": {
-    "description": "",
+  "src/lib/components/Checkbox.react.js": {
+    "description": "Material UI Checkbox component",
     "displayName": "Checkbox",
     "methods": [
       {
@@ -1676,8 +1676,8 @@
       }
     }
   },
-  "src/components/CircularProgress/CircularProgress.react.js": {
-    "description": "",
+  "src/lib/components/CircularProgress.react.js": {
+    "description": "Material UI CircularProgress component",
     "displayName": "CircularProgress",
     "methods": [],
     "props": {
@@ -1746,8 +1746,8 @@
       }
     }
   },
-  "src/components/Dialog/Dialog.react.js": {
-    "description": "",
+  "src/lib/components/Dialog.react.js": {
+    "description": "Material UI Dialog component",
     "displayName": "Dialog",
     "methods": [
       {
@@ -1895,8 +1895,8 @@
       }
     }
   },
-  "src/components/Divider/Divider.react.js": {
-    "description": "",
+  "src/lib/components/Divider.react.js": {
+    "description": "Material UI Divider component",
     "displayName": "Divider",
     "methods": [],
     "props": {
@@ -1924,8 +1924,8 @@
       }
     }
   },
-  "src/components/Drawer/Drawer.react.js": {
-    "description": "",
+  "src/lib/components/Drawer.react.js": {
+    "description": "Material UI Drawer component",
     "displayName": "Drawer",
     "methods": [
       {
@@ -2146,7 +2146,7 @@
       }
     }
   },
-  "src/components/DropDownMenu/DropDownMenu.react.js": {
+  "src/lib/components/DropDownMenu.react.js": {
     "description": "A Dash material-ui DropDownMenu component",
     "displayName": "DropDownMenu",
     "methods": [
@@ -2686,8 +2686,8 @@
       }
     }
   },
-  "src/components/FlatButton/FlatButton.react.js": {
-    "description": "",
+  "src/lib/components/FlatButton.react.js": {
+    "description": "Material UI FlatButton component",
     "displayName": "FlatButton",
     "methods": [
       {
@@ -2951,8 +2951,8 @@
       }
     }
   },
-  "src/components/FontIcon/FontIcon.react.js": {
-    "description": "",
+  "src/lib/components/FontIcon.react.js": {
+    "description": "Material UI FontIcon component",
     "displayName": "FontIcon",
     "methods": [],
     "props": {
@@ -3024,8 +3024,8 @@
       }
     }
   },
-  "src/components/IconButton/IconButton.react.js": {
-    "description": "",
+  "src/lib/components/IconButton.react.js": {
+    "description": "Material UI IconButton component",
     "displayName": "IconButton",
     "methods": [
       {
@@ -3249,7 +3249,7 @@
       }
     }
   },
-  "src/components/Paper/Paper.react.js": {
+  "src/lib/components/Paper.react.js": {
     "description": "A Dash material-ui Paper component",
     "displayName": "Paper",
     "methods": [],
@@ -3322,8 +3322,8 @@
       }
     }
   },
-  "src/components/Popover/Popover.react.js": {
-    "description": "",
+  "src/lib/components/Popover.react.js": {
+    "description": "Material UI Popover component",
     "displayName": "Popover",
     "methods": [
       {
@@ -3649,7 +3649,458 @@
       }
     }
   },
-  "src/components/RadioButtonGroup/RadioButtonGroup.react.js": {
+  "src/lib/components/Questions.react.js": {
+    "description": "Questions wrapper copmonent",
+    "displayName": "QuestionsReact",
+    "methods": [
+      {
+        "name": "handleClick",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "questionValue",
+            "type": {
+              "name": "string"
+            }
+          }
+        ],
+        "returns": null
+      }
+    ],
+    "props": {
+      "id": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "Component ID"
+      },
+      "questionSectionProps": {
+        "flowType": {
+          "name": "Array",
+          "elements": [
+            {
+              "name": "signature",
+              "type": "object",
+              "raw": "{\n  questionProps: Array<QuestionProps>,\n  headerTitle: string,\n  titleStyle?: Object,\n  headerTitleStyle?: Object,\n  headerIconStyle?: Object,\n  initiallyExpanded: boolean,\n  clickHandler: (value: string) => void,\n}",
+              "signature": {
+                "properties": [
+                  {
+                    "key": "questionProps",
+                    "value": {
+                      "name": "Array",
+                      "elements": [
+                        {
+                          "name": "signature",
+                          "type": "object",
+                          "raw": "{\n  questionType: string,\n  questionText: string,\n  answerPrompt: string,\n  value: string,\n  clickHandler: (value: string) => void,\n}",
+                          "signature": {
+                            "properties": [
+                              {
+                                "key": "questionType",
+                                "value": {
+                                  "name": "string",
+                                  "required": true
+                                }
+                              },
+                              {
+                                "key": "questionText",
+                                "value": {
+                                  "name": "string",
+                                  "required": true
+                                }
+                              },
+                              {
+                                "key": "answerPrompt",
+                                "value": {
+                                  "name": "string",
+                                  "required": true
+                                }
+                              },
+                              {
+                                "key": "value",
+                                "value": {
+                                  "name": "string",
+                                  "required": true
+                                }
+                              },
+                              {
+                                "key": "clickHandler",
+                                "value": {
+                                  "name": "signature",
+                                  "type": "function",
+                                  "raw": "(value: string) => void",
+                                  "signature": {
+                                    "arguments": [
+                                      {
+                                        "name": "value",
+                                        "type": {
+                                          "name": "string"
+                                        }
+                                      }
+                                    ],
+                                    "return": {
+                                      "name": "void"
+                                    }
+                                  },
+                                  "required": true
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "raw": "Array<QuestionProps>",
+                      "required": true
+                    }
+                  },
+                  {
+                    "key": "headerTitle",
+                    "value": {
+                      "name": "string",
+                      "required": true
+                    }
+                  },
+                  {
+                    "key": "titleStyle",
+                    "value": {
+                      "name": "Object",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "headerTitleStyle",
+                    "value": {
+                      "name": "Object",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "headerIconStyle",
+                    "value": {
+                      "name": "Object",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "initiallyExpanded",
+                    "value": {
+                      "name": "boolean",
+                      "required": true
+                    }
+                  },
+                  {
+                    "key": "clickHandler",
+                    "value": {
+                      "name": "signature",
+                      "type": "function",
+                      "raw": "(value: string) => void",
+                      "signature": {
+                        "arguments": [
+                          {
+                            "name": "value",
+                            "type": {
+                              "name": "string"
+                            }
+                          }
+                        ],
+                        "return": {
+                          "name": "void"
+                        }
+                      },
+                      "required": true
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "raw": "Array<QuestionSectionProps>"
+        },
+        "required": true,
+        "description": "Array of props for each QuestionSection"
+      },
+      "n_clicks": {
+        "flowType": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Number of clicks by the user on the Questions component",
+        "defaultValue": {
+          "value": "0",
+          "computed": false
+        }
+      },
+      "n_clicks_previous": {
+        "flowType": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "The previous number of clicks from the Questions component",
+        "defaultValue": {
+          "value": "0",
+          "computed": false
+        }
+      },
+      "value": {
+        "flowType": {
+          "name": "any"
+        },
+        "required": true,
+        "description": "The value currently selected by clicking on a question answer prompt"
+      },
+      "setProps": {
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "() => void",
+          "signature": {
+            "arguments": [],
+            "return": {
+              "name": "void"
+            }
+          }
+        },
+        "required": false,
+        "description": "Dash callback to update props",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      },
+      "fireEvent": {
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "() => void",
+          "signature": {
+            "arguments": [],
+            "return": {
+              "name": "void"
+            }
+          }
+        },
+        "required": false,
+        "description": "Dash callback to trigger an event handler",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      }
+    }
+  },
+  "src/lib/components/QuestionsTabs.react.js": {
+    "description": "",
+    "displayName": "QuestionsTabsReact",
+    "methods": [
+      {
+        "name": "handleClick",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "questionValue",
+            "type": {
+              "name": "string"
+            }
+          }
+        ],
+        "returns": null
+      }
+    ],
+    "props": {
+      "id": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "Component ID"
+      },
+      "questionSectionProps": {
+        "flowType": {
+          "name": "Array",
+          "elements": [
+            {
+              "name": "signature",
+              "type": "object",
+              "raw": "{\n  questionProps: Array<QuestionProps>,\n  headerTitle: string,\n  clickHandler: (value: string) => void,\n}",
+              "signature": {
+                "properties": [
+                  {
+                    "key": "questionProps",
+                    "value": {
+                      "name": "Array",
+                      "elements": [
+                        {
+                          "name": "signature",
+                          "type": "object",
+                          "raw": "{\n  questionText: string,\n  value: string,\n  clickHandler: (value: string) => void,\n}",
+                          "signature": {
+                            "properties": [
+                              {
+                                "key": "questionText",
+                                "value": {
+                                  "name": "string",
+                                  "required": true
+                                }
+                              },
+                              {
+                                "key": "value",
+                                "value": {
+                                  "name": "string",
+                                  "required": true
+                                }
+                              },
+                              {
+                                "key": "clickHandler",
+                                "value": {
+                                  "name": "signature",
+                                  "type": "function",
+                                  "raw": "(value: string) => void",
+                                  "signature": {
+                                    "arguments": [
+                                      {
+                                        "name": "value",
+                                        "type": {
+                                          "name": "string"
+                                        }
+                                      }
+                                    ],
+                                    "return": {
+                                      "name": "void"
+                                    }
+                                  },
+                                  "required": true
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "raw": "Array<QuestionProps>",
+                      "required": true
+                    }
+                  },
+                  {
+                    "key": "headerTitle",
+                    "value": {
+                      "name": "string",
+                      "required": true
+                    }
+                  },
+                  {
+                    "key": "clickHandler",
+                    "value": {
+                      "name": "signature",
+                      "type": "function",
+                      "raw": "(value: string) => void",
+                      "signature": {
+                        "arguments": [
+                          {
+                            "name": "value",
+                            "type": {
+                              "name": "string"
+                            }
+                          }
+                        ],
+                        "return": {
+                          "name": "void"
+                        }
+                      },
+                      "required": true
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "raw": "Array<QuestionSectionProps>"
+        },
+        "required": true,
+        "description": "Array of props for each QuestionSection"
+      },
+      "n_clicks": {
+        "flowType": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Number of clicks by the user on the Questions component",
+        "defaultValue": {
+          "value": "0",
+          "computed": false
+        }
+      },
+      "n_clicks_previous": {
+        "flowType": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "The previous number of clicks from the Questions component",
+        "defaultValue": {
+          "value": "0",
+          "computed": false
+        }
+      },
+      "value": {
+        "flowType": {
+          "name": "any"
+        },
+        "required": true,
+        "description": "The value currently selected by clicking on a question answer prompt"
+      },
+      "tabsProps": {
+        "flowType": {
+          "name": "Object"
+        },
+        "required": false,
+        "description": "Tabs props",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "setProps": {
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "() => void",
+          "signature": {
+            "arguments": [],
+            "return": {
+              "name": "void"
+            }
+          }
+        },
+        "required": false,
+        "description": "Dash callback to update props",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      },
+      "fireEvent": {
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "() => void",
+          "signature": {
+            "arguments": [],
+            "return": {
+              "name": "void"
+            }
+          }
+        },
+        "required": false,
+        "description": "Dash callback to trigger an event handler",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      }
+    }
+  },
+  "src/lib/components/RadioButtonGroup.react.js": {
     "description": "A Dash material-ui RadioButtonGroup component",
     "displayName": "RadioButtonGroup",
     "methods": [
@@ -3947,7 +4398,7 @@
       }
     }
   },
-  "src/components/RaisedButton/RaisedButton.react.js": {
+  "src/lib/components/RaisedButton.react.js": {
     "description": "",
     "displayName": "RaisedButton",
     "methods": [
@@ -4263,8 +4714,8 @@
       }
     }
   },
-  "src/components/Snackbar/Snackbar.react.js": {
-    "description": "",
+  "src/lib/components/Snackbar.react.js": {
+    "description": "Material UI Snackbar component",
     "displayName": "Snackbar",
     "methods": [
       {
@@ -4448,8 +4899,8 @@
       }
     }
   },
-  "src/components/Stepper/Stepper.react.js": {
-    "description": "",
+  "src/lib/components/Stepper.react.js": {
+    "description": "Material UI Stepper component",
     "displayName": "Stepper",
     "methods": [
       {
@@ -4694,8 +5145,8 @@
       }
     }
   },
-  "src/components/Subheader/Subheader.react.js": {
-    "description": "",
+  "src/lib/components/Subheader.react.js": {
+    "description": "Material UI Subheader component",
     "displayName": "Subheader",
     "methods": [],
     "props": {
@@ -4734,8 +5185,8 @@
       }
     }
   },
-  "src/components/Tabs/Tabs.react.js": {
-    "description": "",
+  "src/lib/components/Tabs.react.js": {
+    "description": "Material UI Tabs component",
     "displayName": "Tabs",
     "methods": [],
     "props": {
@@ -4882,8 +5333,8 @@
       }
     }
   },
-  "src/components/Toggle/Toggle.react.js": {
-    "description": "",
+  "src/lib/components/Toggle.react.js": {
+    "description": "Material UI Toggle component",
     "displayName": "Toggle",
     "methods": [
       {
@@ -5109,457 +5560,6 @@
         "description": "Override the inline styles for track when the toggle switches",
         "defaultValue": {
           "value": "{}",
-          "computed": false
-        }
-      }
-    }
-  },
-  "src/components/__special/Questions.js": {
-    "description": "",
-    "displayName": "Questions",
-    "methods": [
-      {
-        "name": "handleClick",
-        "docblock": null,
-        "modifiers": [],
-        "params": [
-          {
-            "name": "questionValue",
-            "type": {
-              "name": "string"
-            }
-          }
-        ],
-        "returns": null
-      }
-    ],
-    "props": {
-      "id": {
-        "flowType": {
-          "name": "string"
-        },
-        "required": true,
-        "description": "Component ID"
-      },
-      "questionSectionProps": {
-        "flowType": {
-          "name": "Array",
-          "elements": [
-            {
-              "name": "signature",
-              "type": "object",
-              "raw": "{\n  questionProps: Array<QuestionProps>,\n  headerTitle: string,\n  titleStyle?: Object,\n  headerTitleStyle?: Object,\n  headerIconStyle?: Object,\n  initiallyExpanded: boolean,\n  clickHandler: (value: string) => void,\n}",
-              "signature": {
-                "properties": [
-                  {
-                    "key": "questionProps",
-                    "value": {
-                      "name": "Array",
-                      "elements": [
-                        {
-                          "name": "signature",
-                          "type": "object",
-                          "raw": "{\n  questionType: string,\n  questionText: string,\n  answerPrompt: string,\n  value: string,\n  clickHandler: (value: string) => void,\n}",
-                          "signature": {
-                            "properties": [
-                              {
-                                "key": "questionType",
-                                "value": {
-                                  "name": "string",
-                                  "required": true
-                                }
-                              },
-                              {
-                                "key": "questionText",
-                                "value": {
-                                  "name": "string",
-                                  "required": true
-                                }
-                              },
-                              {
-                                "key": "answerPrompt",
-                                "value": {
-                                  "name": "string",
-                                  "required": true
-                                }
-                              },
-                              {
-                                "key": "value",
-                                "value": {
-                                  "name": "string",
-                                  "required": true
-                                }
-                              },
-                              {
-                                "key": "clickHandler",
-                                "value": {
-                                  "name": "signature",
-                                  "type": "function",
-                                  "raw": "(value: string) => void",
-                                  "signature": {
-                                    "arguments": [
-                                      {
-                                        "name": "value",
-                                        "type": {
-                                          "name": "string"
-                                        }
-                                      }
-                                    ],
-                                    "return": {
-                                      "name": "void"
-                                    }
-                                  },
-                                  "required": true
-                                }
-                              }
-                            ]
-                          }
-                        }
-                      ],
-                      "raw": "Array<QuestionProps>",
-                      "required": true
-                    }
-                  },
-                  {
-                    "key": "headerTitle",
-                    "value": {
-                      "name": "string",
-                      "required": true
-                    }
-                  },
-                  {
-                    "key": "titleStyle",
-                    "value": {
-                      "name": "Object",
-                      "required": false
-                    }
-                  },
-                  {
-                    "key": "headerTitleStyle",
-                    "value": {
-                      "name": "Object",
-                      "required": false
-                    }
-                  },
-                  {
-                    "key": "headerIconStyle",
-                    "value": {
-                      "name": "Object",
-                      "required": false
-                    }
-                  },
-                  {
-                    "key": "initiallyExpanded",
-                    "value": {
-                      "name": "boolean",
-                      "required": true
-                    }
-                  },
-                  {
-                    "key": "clickHandler",
-                    "value": {
-                      "name": "signature",
-                      "type": "function",
-                      "raw": "(value: string) => void",
-                      "signature": {
-                        "arguments": [
-                          {
-                            "name": "value",
-                            "type": {
-                              "name": "string"
-                            }
-                          }
-                        ],
-                        "return": {
-                          "name": "void"
-                        }
-                      },
-                      "required": true
-                    }
-                  }
-                ]
-              }
-            }
-          ],
-          "raw": "Array<QuestionSectionProps>"
-        },
-        "required": true,
-        "description": "Array of props for each QuestionSection"
-      },
-      "n_clicks": {
-        "flowType": {
-          "name": "number"
-        },
-        "required": false,
-        "description": "Number of clicks by the user on the Questions component",
-        "defaultValue": {
-          "value": "0",
-          "computed": false
-        }
-      },
-      "n_clicks_previous": {
-        "flowType": {
-          "name": "number"
-        },
-        "required": false,
-        "description": "The previous number of clicks from the Questions component",
-        "defaultValue": {
-          "value": "0",
-          "computed": false
-        }
-      },
-      "value": {
-        "flowType": {
-          "name": "any"
-        },
-        "required": true,
-        "description": "The value currently selected by clicking on a question answer prompt"
-      },
-      "setProps": {
-        "flowType": {
-          "name": "signature",
-          "type": "function",
-          "raw": "() => void",
-          "signature": {
-            "arguments": [],
-            "return": {
-              "name": "void"
-            }
-          }
-        },
-        "required": false,
-        "description": "Dash callback to update props",
-        "defaultValue": {
-          "value": "() => {}",
-          "computed": false
-        }
-      },
-      "fireEvent": {
-        "flowType": {
-          "name": "signature",
-          "type": "function",
-          "raw": "() => void",
-          "signature": {
-            "arguments": [],
-            "return": {
-              "name": "void"
-            }
-          }
-        },
-        "required": false,
-        "description": "Dash callback to trigger an event handler",
-        "defaultValue": {
-          "value": "() => {}",
-          "computed": false
-        }
-      }
-    }
-  },
-  "src/components/__special/QuestionsTabs.js": {
-    "description": "",
-    "displayName": "QuestionsTabs",
-    "methods": [
-      {
-        "name": "handleClick",
-        "docblock": null,
-        "modifiers": [],
-        "params": [
-          {
-            "name": "questionValue",
-            "type": {
-              "name": "string"
-            }
-          }
-        ],
-        "returns": null
-      }
-    ],
-    "props": {
-      "id": {
-        "flowType": {
-          "name": "string"
-        },
-        "required": true,
-        "description": "Component ID"
-      },
-      "questionSectionProps": {
-        "flowType": {
-          "name": "Array",
-          "elements": [
-            {
-              "name": "signature",
-              "type": "object",
-              "raw": "{\n  questionProps: Array<QuestionProps>,\n  headerTitle: string,\n  clickHandler: (value: string) => void,\n}",
-              "signature": {
-                "properties": [
-                  {
-                    "key": "questionProps",
-                    "value": {
-                      "name": "Array",
-                      "elements": [
-                        {
-                          "name": "signature",
-                          "type": "object",
-                          "raw": "{\n  questionText: string,\n  value: string,\n  clickHandler: (value: string) => void,\n}",
-                          "signature": {
-                            "properties": [
-                              {
-                                "key": "questionText",
-                                "value": {
-                                  "name": "string",
-                                  "required": true
-                                }
-                              },
-                              {
-                                "key": "value",
-                                "value": {
-                                  "name": "string",
-                                  "required": true
-                                }
-                              },
-                              {
-                                "key": "clickHandler",
-                                "value": {
-                                  "name": "signature",
-                                  "type": "function",
-                                  "raw": "(value: string) => void",
-                                  "signature": {
-                                    "arguments": [
-                                      {
-                                        "name": "value",
-                                        "type": {
-                                          "name": "string"
-                                        }
-                                      }
-                                    ],
-                                    "return": {
-                                      "name": "void"
-                                    }
-                                  },
-                                  "required": true
-                                }
-                              }
-                            ]
-                          }
-                        }
-                      ],
-                      "raw": "Array<QuestionProps>",
-                      "required": true
-                    }
-                  },
-                  {
-                    "key": "headerTitle",
-                    "value": {
-                      "name": "string",
-                      "required": true
-                    }
-                  },
-                  {
-                    "key": "clickHandler",
-                    "value": {
-                      "name": "signature",
-                      "type": "function",
-                      "raw": "(value: string) => void",
-                      "signature": {
-                        "arguments": [
-                          {
-                            "name": "value",
-                            "type": {
-                              "name": "string"
-                            }
-                          }
-                        ],
-                        "return": {
-                          "name": "void"
-                        }
-                      },
-                      "required": true
-                    }
-                  }
-                ]
-              }
-            }
-          ],
-          "raw": "Array<QuestionSectionProps>"
-        },
-        "required": true,
-        "description": "Array of props for each QuestionSection"
-      },
-      "n_clicks": {
-        "flowType": {
-          "name": "number"
-        },
-        "required": false,
-        "description": "Number of clicks by the user on the Questions component",
-        "defaultValue": {
-          "value": "0",
-          "computed": false
-        }
-      },
-      "n_clicks_previous": {
-        "flowType": {
-          "name": "number"
-        },
-        "required": false,
-        "description": "The previous number of clicks from the Questions component",
-        "defaultValue": {
-          "value": "0",
-          "computed": false
-        }
-      },
-      "value": {
-        "flowType": {
-          "name": "any"
-        },
-        "required": true,
-        "description": "The value currently selected by clicking on a question answer prompt"
-      },
-      "tabsProps": {
-        "flowType": {
-          "name": "Object"
-        },
-        "required": false,
-        "description": "Tabs props",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "setProps": {
-        "flowType": {
-          "name": "signature",
-          "type": "function",
-          "raw": "() => void",
-          "signature": {
-            "arguments": [],
-            "return": {
-              "name": "void"
-            }
-          }
-        },
-        "required": false,
-        "description": "Dash callback to update props",
-        "defaultValue": {
-          "value": "() => {}",
-          "computed": false
-        }
-      },
-      "fireEvent": {
-        "flowType": {
-          "name": "signature",
-          "type": "function",
-          "raw": "() => void",
-          "signature": {
-            "arguments": [],
-            "return": {
-              "name": "void"
-            }
-          }
-        },
-        "required": false,
-        "description": "Dash callback to trigger an event handler",
-        "defaultValue": {
-          "value": "() => {}",
           "computed": false
         }
       }

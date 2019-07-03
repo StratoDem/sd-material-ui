@@ -1,0 +1,84 @@
+{
+  "name": "sd-material-ui",
+  "version": "3.1.0",
+  "description": "material-ui components for Dash",
+  "main": "build/index.js",
+  "scripts": {
+    "start": "webpack-serve ./webpack.serve.config.js --open",
+    "validate-init": "python _validate_init.py",
+    "prepublish": "npm run validate-init",
+    "build:js-dev": "webpack --mode development",
+    "build:js": "webpack --mode production",
+    "build:py": "dash-generate-components ./src/lib/components sd_material_ui",
+    "build:py-activated": "(. venv/bin/activate || venv\\scripts\\activate && npm run build:py)",
+    "build:all": "npm run build:js && npm run build:js-dev && npm run build:py",
+    "build:all-activated": "(. venv/bin/activate || venv\\scripts\\activate && npm run build:all)"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/StratoDem/sd-material-ui.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/StratoDem/sd-material-ui/issues"
+  },
+  "homepage": "https://github.com/StratoDem/sd-material-ui",
+  "dependencies": {
+    "material-ui": "^0.20.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.4",
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@babel/plugin-transform-runtime": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "@babel/preset-flow": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-eslint": "^8.2.6",
+    "babel-loader": "^8.0.5",
+    "copyfiles": "^2.0.0",
+    "css-loader": "^0.28.11",
+    "eslint": "^4.19.1",
+    "eslint-config-prettier": "^2.10.0",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-react": "^7.12.4",
+    "flow-bin": "^0.98.0",
+    "node-sass": "^4.12.0",
+    "npm": "^6.1.0",
+    "react": "^16.8.6",
+    "react-docgen": "^2.20.1",
+    "react-dom": "^16.8.6",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.21.0",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.1",
+    "webpack-serve": "^1.0.2"
+  },
+  "jest": {
+    "modulePaths": [
+      "<rootDir>/src/js"
+    ],
+    "moduleFileExtensions": [
+      "js"
+    ],
+    "moduleDirectories": [
+      "node_modules"
+    ],
+    "moduleNameMapper": {
+      "\\.(css|less)$": "identity-obj-proxy",
+      "\\.(gif|ttf|eot|svg)$": "<rootDir>/__mocks__/fileMock.js"
+    },
+    "testRegex": "\\.test\\.js$",
+    "setupFiles": [
+      "raf/polyfill",
+      "<rootDir>test/_test-env.js"
+    ],
+    "collectCoverage": true,
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
+  },
+  "engines": {
+    "node": ">=8.11.0",
+    "npm": ">=6.1.0"
+  }
+}

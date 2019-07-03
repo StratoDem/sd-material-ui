@@ -2,6 +2,10 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 3.1.0 2019-07-03
+### Changes
+- Internal: Upgrades package structure to newest [dash-component-boilerplate](https://github.com/plotly/dash-component-boilerplate)
+
 ## 3.0.2 2018-03-15
 ### Fixes
 - Fixes a problem where the `open` prop was not always correctly set for the `Drawer` component
