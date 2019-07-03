@@ -1,6 +1,6 @@
 {
   "name": "sd-material-ui",
-  "version": "3.0.2",
+  "version": "3.1.0",
   "description": "material-ui components for Dash",
   "main": "build/index.js",
   "scripts": {
