@@ -1,8 +1,19 @@
 {
   "name": "sd-material-ui",
   "version": "3.0.2",
-  "description": "StratoDem Analytics Dash implementation of material-ui components",
-  "main": "lib/index.js",
+  "description": "material-ui components for Dash",
+  "main": "build/index.js",
+  "scripts": {
+    "start": "webpack-serve ./webpack.serve.config.js --open",
+    "validate-init": "python _validate_init.py",
+    "prepublish": "npm run validate-init",
+    "build:js-dev": "webpack --mode development",
+    "build:js": "webpack --mode production",
+    "build:py": "dash-generate-components ./src/lib/components sd_material_ui",
+    "build:py-activated": "(. venv/bin/activate || venv\\scripts\\activate && npm run build:py)",
+    "build:all": "npm run build:js && npm run build:js-dev && npm run build:py",
+    "build:all-activated": "(. venv/bin/activate || venv\\scripts\\activate && npm run build:all)"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/StratoDem/sd-material-ui.git"
@@ -12,44 +23,35 @@
     "url": "https://github.com/StratoDem/sd-material-ui/issues"
   },
   "homepage": "https://github.com/StratoDem/sd-material-ui",
-  "scripts": {
-    "extract-metadata": "mkdirp lib && react-docgen --pretty -e index.js -o lib/metadata.json src/components && node -e \"const fs = require('fs'); const path = require('path'); const m = JSON.parse(fs.readFileSync('./lib/metadata.json')); const r = {}; Object.keys(m).forEach(k => r[k.split(path.sep).join('/')] = m[k]); fs.writeFileSync('./lib/metadata.json', JSON.stringify(r, '\t', 2));\"",
-    "build-dist": "builder run clean-lib && builder run extract-metadata && webpack --config=config/webpack.config.dev.js --display-error-details",
-    "build-dist-production": "builder run clean-lib && builder run extract-metadata && webpack -p --config=config/webpack.config.dist.js",
-    "copy-lib": "copyfiles -u 1 lib/* sd_material_ui",
-    "install-local": "npm run copy-lib && venv/bin/python setup.py install",
-    "prepublish": "npm test && npm run build-dist-production && npm run copy-lib",
-    "start": "npm run build-dist && npm run copy-lib",
-    "test": "jest --verbose",
-    "uninstall-local": "pip uninstall sd-material-ui -y"
-  },
   "dependencies": {
-    "babel-loader": "^7.1.2",
-    "builder": "^3.2.2",
-    "copyfiles": "^1.2.0",
-    "dash-components-archetype": "^0.2.11",
-    "eslint": "^4.19.1",
-    "ify-loader": "^1.1.0",
-    "material-ui": "^0.20.0",
-    "npm": "^5.2.0",
-    "prop-types": "^15.6.0",
-    "sinon": "^4.4.10",
-    "webpack": "^3.8.1"
+    "material-ui": "^0.20.0"
   },
   "devDependencies": {
-    "@stratodem/js-archetype": "1.10.0",
-    "compression-webpack-plugin": "1.1.11",
-    "dash-components-archetype-dev": "0.2.11",
-    "dezalgo": "1.0.3",
-    "enzyme": "3.3.0",
-    "enzyme-adapter-react-15": "1.0.5",
-    "enzyme-to-json": "3.3.3",
-    "flow-bin": "0.93.0",
-    "git-labelmaker": "0.9.0",
-    "jest": "22.4.3",
-    "react": "15.6.2",
-    "react-dom": "15.6.2",
-    "react-test-renderer": "15.6.2"
+    "@babel/core": "^7.4.4",
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@babel/plugin-transform-runtime": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "@babel/preset-flow": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-eslint": "^8.2.6",
+    "babel-loader": "^8.0.5",
+    "copyfiles": "^2.0.0",
+    "css-loader": "^0.28.11",
+    "eslint": "^4.19.1",
+    "eslint-config-prettier": "^2.10.0",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-react": "^7.12.4",
+    "flow-bin": "^0.98.0",
+    "node-sass": "^4.12.0",
+    "npm": "^6.1.0",
+    "react": "^16.8.6",
+    "react-docgen": "^2.20.1",
+    "react-dom": "^16.8.6",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.21.0",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.1",
+    "webpack-serve": "^1.0.2"
   },
   "jest": {
     "modulePaths": [
@@ -74,5 +76,9 @@
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
     ]
+  },
+  "engines": {
+    "node": ">=8.11.0",
+    "npm": ">=6.1.0"
   }
 }

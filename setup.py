@@ -1,14 +1,20 @@
+import json
+import os
 from setuptools import setup
 
-exec (open('sd_material_ui/version.py').read())
+
+with open(os.path.join('sd_material_ui', 'package.json')) as f:
+    package = json.load(f)
+
+package_name = package["name"].replace(" ", "_").replace("-", "_")
 
 setup(
-    name='sd_material_ui',
-    version=__version__,
-    author='StratoDem',
-    packages=['sd_material_ui'],
+    name=package_name,
+    version=package["version"],
+    author=package['author'],
+    packages=[package_name],
     include_package_data=True,
-    license='MIT',
-    description='StratoDem Analytics Dash implementation of material-ui components',
+    license=package['license'],
+    description=package['description'] if 'description' in package else package_name,
     install_requires=[]
 )
