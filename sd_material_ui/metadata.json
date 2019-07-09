@@ -410,7 +410,8 @@
             "description": null,
             "type": {
               "name": "string"
-            }
+            },
+            "optional": false
           },
           {
             "name": "dataSource",
@@ -418,7 +419,8 @@
             "type": {
               "name": "Array",
               "alias": "Array"
-            }
+            },
+            "optional": false
           },
           {
             "name": "params",
@@ -426,7 +428,8 @@
             "type": {
               "name": "Object",
               "alias": "Object"
-            }
+            },
+            "optional": false
           }
         ],
         "returns": null,
@@ -442,7 +445,8 @@
             "description": null,
             "type": {
               "name": "string"
-            }
+            },
+            "optional": false
           }
         ],
         "returns": null,
@@ -451,6 +455,7 @@
     ],
     "props": {
       "anchorOrigin": {
+        "required": false,
         "flowType": {
           "name": "signature",
           "type": "object",
@@ -504,7 +509,6 @@
             ]
           }
         },
-        "required": false,
         "description": "Location of the anchor for the auto complete",
         "defaultValue": {
           "value": "{vertical: 'bottom', horizontal: 'left'}",
@@ -512,10 +516,10 @@
         }
       },
       "animated": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "If true, auto complete is animated as it is toggled",
         "defaultValue": {
           "value": "true",
@@ -523,10 +527,10 @@
         }
       },
       "dashCallbackDelay": {
+        "required": false,
         "flowType": {
           "name": "number"
         },
-        "required": false,
         "description": "Dash callback delay in ms - default is 500 ms",
         "defaultValue": {
           "value": "500",
@@ -534,6 +538,7 @@
         }
       },
       "dataSource": {
+        "required": false,
         "flowType": {
           "name": "Array",
           "elements": [
@@ -543,7 +548,6 @@
           ],
           "raw": "Array<any>"
         },
-        "required": false,
         "description": "Array of strings or nodes used to populate the list\nAlternatively, an Array of Objects with a structure like\n{label: 'My label to render', value: 'My value to ship on match'}",
         "defaultValue": {
           "value": "[]",
@@ -551,10 +555,10 @@
         }
       },
       "dataSourceConfig": {
+        "required": false,
         "flowType": {
           "name": "Object"
         },
-        "required": false,
         "description": "Config for objects list dataSource",
         "defaultValue": {
           "value": "{text: 'label', value: 'value'}",
@@ -562,10 +566,10 @@
         }
       },
       "disableFocusRipple": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "Disables focus ripple when true",
         "defaultValue": {
           "value": "true",
@@ -573,10 +577,10 @@
         }
       },
       "errorStyle": {
+        "required": false,
         "flowType": {
           "name": "Object"
         },
-        "required": false,
         "description": "Override style prop for error",
         "defaultValue": {
           "value": "{}",
@@ -584,10 +588,10 @@
         }
       },
       "errorText": {
+        "required": false,
         "flowType": {
           "name": "Node"
         },
-        "required": false,
         "description": "The error content to display",
         "defaultValue": {
           "value": "null",
@@ -595,10 +599,10 @@
         }
       },
       "exactMatch": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "Should the search text have to match exactly to update props server side?",
         "defaultValue": {
           "value": "false",
@@ -606,6 +610,7 @@
         }
       },
       "filter": {
+        "required": false,
         "flowType": {
           "name": "union",
           "raw": "'caseInsensitiveFilter' | 'caseSensitiveFilter' | 'defaultFilter' |\n  'fuzzyFilter' | 'levenshteinDistanceFilter' | 'noFilter'",
@@ -636,7 +641,6 @@
             }
           ]
         },
-        "required": false,
         "description": "String name for filter to be applied to user input.\nwill later be mapped to function",
         "defaultValue": {
           "value": "\"defaultFilter\"",
@@ -644,6 +648,7 @@
         }
       },
       "fireEvent": {
+        "required": false,
         "flowType": {
           "name": "signature",
           "type": "function",
@@ -655,7 +660,6 @@
             }
           }
         },
-        "required": false,
         "description": "Dash-assigned callback that gets fired when the input changes.",
         "defaultValue": {
           "value": "() => {}",
@@ -663,10 +667,10 @@
         }
       },
       "floatingLabelText": {
+        "required": false,
         "flowType": {
           "name": "Node"
         },
-        "required": false,
         "description": "The content to use for adding floating label element",
         "defaultValue": {
           "value": "null",
@@ -674,10 +678,10 @@
         }
       },
       "fullWidth": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "If true, field receives the property width: 100%",
         "defaultValue": {
           "value": "false",
@@ -685,10 +689,10 @@
         }
       },
       "hintText": {
+        "required": false,
         "flowType": {
           "name": "Node"
         },
-        "required": false,
         "description": "The hint content to display",
         "defaultValue": {
           "value": "null",
@@ -696,17 +700,17 @@
         }
       },
       "id": {
+        "required": true,
         "flowType": {
           "name": "string"
         },
-        "required": true,
         "description": "Autocomplete ID"
       },
       "listStyle": {
+        "required": false,
         "flowType": {
           "name": "Object"
         },
-        "required": false,
         "description": "Override style for list",
         "defaultValue": {
           "value": "{}",
@@ -714,17 +718,17 @@
         }
       },
       "maxSearchResults": {
+        "required": false,
         "flowType": {
           "name": "number"
         },
-        "required": false,
         "description": "The max number of search results to be shown. By default it shows\nall the items which matches filter"
       },
       "menuCloseDelay": {
+        "required": false,
         "flowType": {
           "name": "number"
         },
-        "required": false,
         "description": "Delay for closing time of the menu",
         "defaultValue": {
           "value": "300",
@@ -732,10 +736,10 @@
         }
       },
       "menuProps": {
+        "required": false,
         "flowType": {
           "name": "Object"
         },
-        "required": false,
         "description": "Props to be passed to menu",
         "defaultValue": {
           "value": "{}",
@@ -743,10 +747,10 @@
         }
       },
       "menuStyle": {
+        "required": false,
         "flowType": {
           "name": "Object"
         },
-        "required": false,
         "description": "Override style for menu",
         "defaultValue": {
           "value": "{}",
@@ -754,10 +758,10 @@
         }
       },
       "open": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "Auto complete menu is open if true",
         "defaultValue": {
           "value": "false",
@@ -765,10 +769,10 @@
         }
       },
       "openOnFocus": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "If true, the list item is showed when a focus event triggers",
         "defaultValue": {
           "value": "false",
@@ -776,10 +780,10 @@
         }
       },
       "popoverProps": {
+        "required": false,
         "flowType": {
           "name": "Object"
         },
-        "required": false,
         "description": "Props to be passed to popover",
         "defaultValue": {
           "value": "{}",
@@ -787,10 +791,10 @@
         }
       },
       "searchText": {
+        "required": false,
         "flowType": {
           "name": "string"
         },
-        "required": false,
         "description": "Text being input to auto complete",
         "defaultValue": {
           "value": "\"\"",
@@ -798,10 +802,10 @@
         }
       },
       "searchValue": {
+        "required": false,
         "flowType": {
           "name": "any"
         },
-        "required": false,
         "description": "Value in the dataSource found by using searchText\nNOTE exactMatch must be true for this to work",
         "defaultValue": {
           "value": "null",
@@ -809,6 +813,7 @@
         }
       },
       "setProps": {
+        "required": false,
         "flowType": {
           "name": "signature",
           "type": "function",
@@ -820,7 +825,6 @@
             }
           }
         },
-        "required": false,
         "description": "Dash callback to update props on the server.",
         "defaultValue": {
           "value": "() => {}",
@@ -828,10 +832,10 @@
         }
       },
       "style": {
+        "required": false,
         "flowType": {
           "name": "Object"
         },
-        "required": false,
         "description": "Override the inline-styles of the root element",
         "defaultValue": {
           "value": "{}",
@@ -839,6 +843,7 @@
         }
       },
       "targetOrigin": {
+        "required": false,
         "flowType": {
           "name": "signature",
           "type": "object",
@@ -892,7 +897,6 @@
             ]
           }
         },
-        "required": false,
         "description": "Origin for location of target",
         "defaultValue": {
           "value": "{vertical: 'top', horizontal: 'left'}",
@@ -900,10 +904,10 @@
         }
       },
       "textFieldStyle": {
+        "required": false,
         "flowType": {
           "name": "Object"
         },
-        "required": false,
         "description": "Override the inline-styles of AutoComplete's TextField element",
         "defaultValue": {
           "value": "{}",
@@ -911,10 +915,10 @@
         }
       },
       "searchEndpointAPI": {
+        "required": false,
         "flowType": {
           "name": "string"
         },
-        "required": false,
         "description": "If defined, the AutoComplete component hits this URL to search instead of string matching",
         "defaultValue": {
           "value": "undefined",
@@ -922,10 +926,10 @@
         }
       },
       "searchJSONStructure": {
+        "required": false,
         "flowType": {
           "name": "Object"
         },
-        "required": false,
         "description": "General JSON structure to send to the server",
         "defaultValue": {
           "value": "{}",
@@ -1021,13 +1025,14 @@
     ],
     "props": {
       "id": {
+        "required": true,
         "flowType": {
           "name": "string"
         },
-        "required": true,
         "description": "The ID used to identify this component in Dash callbacks"
       },
       "navItems": {
+        "required": true,
         "flowType": {
           "name": "Array",
           "elements": [
@@ -1096,14 +1101,13 @@
           ],
           "raw": "Array<T_NAV_ITEM>"
         },
-        "required": true,
         "description": "Array of navigation item props to pass to BottomNavigationItem"
       },
       "selectedIndex": {
+        "required": false,
         "flowType": {
           "name": "number"
         },
-        "required": false,
         "description": "Initial selected index for the BottomNavigation",
         "defaultValue": {
           "value": "0",
@@ -1111,10 +1115,10 @@
         }
       },
       "selectedStyle": {
+        "required": false,
         "flowType": {
           "name": "Object"
         },
-        "required": false,
         "description": "Style to apply to the selected icon",
         "defaultValue": {
           "value": "{}",
@@ -1122,6 +1126,7 @@
         }
       },
       "setProps": {
+        "required": false,
         "flowType": {
           "name": "signature",
           "type": "function",
@@ -1153,7 +1158,6 @@
             }
           }
         },
-        "required": false,
         "description": "Dash-assigned callback that should be called whenever any of the\nproperties change",
         "defaultValue": {
           "value": "() => {}",
@@ -1168,10 +1172,10 @@
     "methods": [],
     "props": {
       "id": {
+        "required": false,
         "flowType": {
           "name": "string"
         },
-        "required": false,
         "description": "ID for Card",
         "defaultValue": {
           "value": "''",
@@ -1179,10 +1183,10 @@
         }
       },
       "children": {
+        "required": false,
         "flowType": {
           "name": "Node"
         },
-        "required": false,
         "description": "Can be used to render elements inside the Card.",
         "defaultValue": {
           "value": "[]",
@@ -1190,10 +1194,10 @@
         }
       },
       "className": {
+        "required": false,
         "flowType": {
           "name": "string"
         },
-        "required": false,
         "description": "The CSS class name of the root element",
         "defaultValue": {
           "value": "''",
@@ -1201,10 +1205,10 @@
         }
       },
       "containerStyle": {
+        "required": false,
         "flowType": {
           "name": "Object"
         },
-        "required": false,
         "description": "Override the inline-styles of the container element.",
         "defaultValue": {
           "value": "{}",
@@ -1212,10 +1216,10 @@
         }
       },
       "expandable": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "If true, this card component is expandable.",
         "defaultValue": {
           "value": "false",
@@ -1223,10 +1227,10 @@
         }
       },
       "expanded": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "Set to null to keep the component uncontrolled.",
         "defaultValue": {
           "value": "null",
@@ -1234,10 +1238,10 @@
         }
       },
       "initiallyExpanded": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "Whether this card is initially expanded.",
         "defaultValue": {
           "value": "false",
@@ -1245,10 +1249,10 @@
         }
       },
       "style": {
+        "required": false,
         "flowType": {
           "name": "Object"
         },
-        "required": false,
         "description": "Override the inline-styles of the root element.",
         "defaultValue": {
           "value": "{}",
@@ -1256,10 +1260,10 @@
         }
       },
       "showExpandableButton": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "If true, this card component will include a button to expand the card.",
         "defaultValue": {
           "value": "true",
@@ -1267,10 +1271,10 @@
         }
       },
       "headerActAsExpander": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "If true, a click on this card component expands the card.",
         "defaultValue": {
           "value": "true",
@@ -1278,10 +1282,10 @@
         }
       },
       "headerAvatar": {
+        "required": false,
         "flowType": {
           "name": "Node"
         },
-        "required": false,
         "description": "This is the Avatar element to be displayed on the Card Header. If avatar is an Avatar or\nother element, it will be rendered. If avatar is a string, it will be used as the image src\nfor an Avatar.",
         "defaultValue": {
           "value": "null",
@@ -1289,10 +1293,10 @@
         }
       },
       "headerStyle": {
+        "required": false,
         "flowType": {
           "name": "Object"
         },
-        "required": false,
         "description": "Override the inline-styles of the root element.",
         "defaultValue": {
           "value": "{}",
@@ -1300,10 +1304,10 @@
         }
       },
       "headerSubtitle": {
+        "required": false,
         "flowType": {
           "name": "Node"
         },
-        "required": false,
         "description": "Can be used to render a subtitle in Card Header.",
         "defaultValue": {
           "value": "[]",
@@ -1311,10 +1315,10 @@
         }
       },
       "headerSubtitleColor": {
+        "required": false,
         "flowType": {
           "name": "string"
         },
-        "required": false,
         "description": "Override the subtitle color.",
         "defaultValue": {
           "value": "''",
@@ -1322,10 +1326,10 @@
         }
       },
       "headerSubtitleStyle": {
+        "required": false,
         "flowType": {
           "name": "Object"
         },
-        "required": false,
         "description": "Override the inline-styles of the subtitle.",
         "defaultValue": {
           "value": "{}",
@@ -1333,10 +1337,10 @@
         }
       },
       "headerTextStyle": {
+        "required": false,
         "flowType": {
           "name": "Object"
         },
-        "required": false,
         "description": "Override the inline-styles of the text.",
         "defaultValue": {
           "value": "{}",
@@ -1344,10 +1348,10 @@
         }
       },
       "headerTitle": {
+        "required": false,
         "flowType": {
           "name": "Node"
         },
-        "required": false,
         "description": "Can be used to render a title in Card Header.",
         "defaultValue": {
           "value": "[]",
@@ -1355,10 +1359,10 @@
         }
       },
       "headerTitleColor": {
+        "required": false,
         "flowType": {
           "name": "string"
         },
-        "required": false,
         "description": "Override the title color.",
         "defaultValue": {
           "value": "''",
@@ -1366,10 +1370,10 @@
         }
       },
       "headerTitleStyle": {
+        "required": false,
         "flowType": {
           "name": "Object"
         },
-        "required": false,
         "description": "Override the inline-styles of the title.",
         "defaultValue": {
           "value": "{}",
@@ -1377,10 +1381,10 @@
         }
       },
       "headerIconStyle": {
+        "required": false,
         "flowType": {
           "name": "Object"
         },
-        "required": false,
         "description": "",
         "defaultValue": {
           "value": "{}",
@@ -1388,10 +1392,10 @@
         }
       },
       "titleExpandable": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "If true, this card component is expandable.",
         "defaultValue": {
           "value": "true",
@@ -1399,10 +1403,10 @@
         }
       },
       "titleStyle": {
+        "required": false,
         "flowType": {
           "name": "Object"
         },
-        "required": false,
         "description": "Override the inline-styles of the root element.",
         "defaultValue": {
           "value": "{}",
@@ -1410,10 +1414,10 @@
         }
       },
       "titleSubtitle": {
+        "required": false,
         "flowType": {
           "name": "Node"
         },
-        "required": false,
         "description": "Can be used to render a subtitle in the Card Title.",
         "defaultValue": {
           "value": "[]",
@@ -1421,10 +1425,10 @@
         }
       },
       "titleSubtitleColor": {
+        "required": false,
         "flowType": {
           "name": "string"
         },
-        "required": false,
         "description": "Override the subtitle color.",
         "defaultValue": {
           "value": "''",
@@ -1432,10 +1436,10 @@
         }
       },
       "titleSubtitleStyle": {
+        "required": false,
         "flowType": {
           "name": "Object"
         },
-        "required": false,
         "description": "Override the inline-styles of the subtitle.",
         "defaultValue": {
           "value": "{}",
@@ -1443,10 +1447,10 @@
         }
       },
       "titleTitle": {
+        "required": false,
         "flowType": {
           "name": "Node"
         },
-        "required": false,
         "description": "Can be used to render a title in the Card Title.",
         "defaultValue": {
           "value": "[]",
@@ -1454,10 +1458,10 @@
         }
       },
       "titleColor": {
+        "required": false,
         "flowType": {
           "name": "string"
         },
-        "required": false,
         "description": "Override the title color.",
         "defaultValue": {
           "value": "''",
@@ -1465,10 +1469,10 @@
         }
       },
       "titleTitleStyle": {
+        "required": false,
         "flowType": {
           "name": "Object"
         },
-        "required": false,
         "description": "Override the inline-styles of the title.",
         "defaultValue": {
           "value": "{}",
@@ -1476,10 +1480,10 @@
         }
       },
       "textExpandable": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "If true, this card component is expandable.",
         "defaultValue": {
           "value": "true",
@@ -1487,10 +1491,10 @@
         }
       },
       "textColor": {
+        "required": false,
         "flowType": {
           "name": "string"
         },
-        "required": false,
         "description": "Override the CardText color.",
         "defaultValue": {
           "value": "''",
@@ -1498,10 +1502,10 @@
         }
       },
       "textStyle": {
+        "required": false,
         "flowType": {
           "name": "Object"
         },
-        "required": false,
         "description": "Override the inline-styles of the root element.",
         "defaultValue": {
           "value": "{}",
@@ -1531,10 +1535,10 @@
     ],
     "props": {
       "checked": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "Checkbox is checked if true",
         "defaultValue": {
           "value": "false",
@@ -1542,10 +1546,10 @@
         }
       },
       "disabled": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "Checkbox is disabled if true",
         "defaultValue": {
           "value": "false",
@@ -1553,6 +1557,7 @@
         }
       },
       "fireEvent": {
+        "required": false,
         "flowType": {
           "name": "signature",
           "type": "function",
@@ -1564,7 +1569,6 @@
             }
           }
         },
-        "required": false,
         "description": "A callback for firing events to dash",
         "defaultValue": {
           "value": "() => {}",
@@ -1572,10 +1576,10 @@
         }
       },
       "iconStyle": {
+        "required": false,
         "flowType": {
           "name": "Object"
         },
-        "required": false,
         "description": "Overrides the inline-styles of the icon element",
         "defaultValue": {
           "value": "{}",
@@ -1583,17 +1587,17 @@
         }
       },
       "id": {
+        "required": true,
         "flowType": {
           "name": "string"
         },
-        "required": true,
         "description": "The element's ID"
       },
       "inputStyle": {
+        "required": false,
         "flowType": {
           "name": "Object"
         },
-        "required": false,
         "description": "Overrides the inline styles of the input element",
         "defaultValue": {
           "value": "{}",
@@ -1601,10 +1605,10 @@
         }
       },
       "label": {
+        "required": false,
         "flowType": {
           "name": "string"
         },
-        "required": false,
         "description": "The text label for the checkbox",
         "defaultValue": {
           "value": "''",
@@ -1612,6 +1616,7 @@
         }
       },
       "labelPosition": {
+        "required": false,
         "flowType": {
           "name": "union",
           "raw": "'left' | 'right'",
@@ -1626,7 +1631,6 @@
             }
           ]
         },
-        "required": false,
         "description": "Where the label will be placed next to the checkbox",
         "defaultValue": {
           "value": "'right'",
@@ -1634,10 +1638,10 @@
         }
       },
       "labelStyle": {
+        "required": false,
         "flowType": {
           "name": "Object"
         },
-        "required": false,
         "description": "Overrides the inline styles of the Checkbox element label",
         "defaultValue": {
           "value": "{}",
@@ -1645,6 +1649,7 @@
         }
       },
       "setProps": {
+        "required": false,
         "flowType": {
           "name": "signature",
           "type": "function",
@@ -1656,7 +1661,6 @@
             }
           }
         },
-        "required": false,
         "description": "Dash callback to update props on the server",
         "defaultValue": {
           "value": "() => {}",
@@ -1664,10 +1668,10 @@
         }
       },
       "style": {
+        "required": false,
         "flowType": {
           "name": "Object"
         },
-        "required": false,
         "description": "Override the inline styles of the root element",
         "defaultValue": {
           "value": "{}",
@@ -1682,10 +1686,10 @@
     "methods": [],
     "props": {
       "color": {
+        "required": false,
         "flowType": {
           "name": "string"
         },
-        "required": false,
         "description": "Override the progress's color",
         "defaultValue": {
           "value": "'#00BCD4'",
@@ -1693,10 +1697,10 @@
         }
       },
       "innerStyle": {
+        "required": false,
         "flowType": {
           "name": "Object"
         },
-        "required": false,
         "description": "Style for inner wrapper div",
         "defaultValue": {
           "value": "{}",
@@ -1704,18 +1708,18 @@
         }
       },
       "mode": {
+        "required": true,
         "flowType": {
           "name": "literal",
           "value": "'indeterminate'"
         },
-        "required": true,
         "description": "The mode of show your progress, for now, will always be indeterminate"
       },
       "size": {
+        "required": false,
         "flowType": {
           "name": "number"
         },
-        "required": false,
         "description": "The diameter of the progress in pixels",
         "defaultValue": {
           "value": "40",
@@ -1723,10 +1727,10 @@
         }
       },
       "style": {
+        "required": false,
         "flowType": {
           "name": "Object"
         },
-        "required": false,
         "description": "Override the inline-style of the root element",
         "defaultValue": {
           "value": "{}",
@@ -1734,10 +1738,10 @@
         }
       },
       "thickness": {
+        "required": false,
         "flowType": {
           "name": "number"
         },
-        "required": false,
         "description": "Stroke width in pixels",
         "defaultValue": {
           "value": "3.5",
@@ -1771,13 +1775,14 @@
     ],
     "props": {
       "id": {
+        "required": true,
         "flowType": {
           "name": "string"
         },
-        "required": true,
         "description": "Dialog ID"
       },
       "actions": {
+        "required": false,
         "flowType": {
           "name": "union",
           "raw": "Node | Array<Node>",
@@ -1796,7 +1801,6 @@
             }
           ]
         },
-        "required": false,
         "description": "Actions component or list of components for the Dialog",
         "defaultValue": {
           "value": "null",
@@ -1804,10 +1808,10 @@
         }
       },
       "children": {
+        "required": false,
         "flowType": {
           "name": "Node"
         },
-        "required": false,
         "description": "Children to render inside of the Dialog",
         "defaultValue": {
           "value": "null",
@@ -1815,10 +1819,10 @@
         }
       },
       "className": {
+        "required": false,
         "flowType": {
           "name": "string"
         },
-        "required": false,
         "description": "CSS class name of the root element",
         "defaultValue": {
           "value": "''",
@@ -1826,10 +1830,10 @@
         }
       },
       "modal": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "Is the Dialog a modal (must click on an action to close)?\n\nNOTE: If the Dialog is created with modal=False, the callback that controls opening and closing\nthe Dialog should include the component's open value as a state, and check whether it is either\nalready open or closed before attempting to open or close it. See comments for the open prop.",
         "defaultValue": {
           "value": "false",
@@ -1837,10 +1841,10 @@
         }
       },
       "open": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "Is the dialog open?\n\nIMPORTANT: When using this component in Dash, a listener must be set up (either as state or\nan input) for this component's props.open value in order to achieve the desired behavior.\nIf such a listener is not in place, the non-modal version of this dialog will contaminate\nother callbacks in the browser",
         "defaultValue": {
           "value": "false",
@@ -1848,6 +1852,7 @@
         }
       },
       "setProps": {
+        "required": false,
         "flowType": {
           "name": "signature",
           "type": "function",
@@ -1886,7 +1891,6 @@
             }
           }
         },
-        "required": false,
         "description": "Dash callback to update props on the server",
         "defaultValue": {
           "value": "() => {}",
@@ -1901,10 +1905,10 @@
     "methods": [],
     "props": {
       "inset": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "If true, the Divider will be indented",
         "defaultValue": {
           "value": "false",
@@ -1912,10 +1916,10 @@
         }
       },
       "style": {
+        "required": false,
         "flowType": {
           "name": "Object"
         },
-        "required": false,
         "description": "Override the inline-styles of the root element",
         "defaultValue": {
           "value": "{}",
@@ -1945,10 +1949,10 @@
     ],
     "props": {
       "children": {
+        "required": false,
         "flowType": {
           "name": "Node"
         },
-        "required": false,
         "description": "The contents to render inside the Drawer",
         "defaultValue": {
           "value": "[]",
@@ -1956,10 +1960,10 @@
         }
       },
       "className": {
+        "required": false,
         "flowType": {
           "name": "string"
         },
-        "required": false,
         "description": "The CSS class name of the root element",
         "defaultValue": {
           "value": "''",
@@ -1967,10 +1971,10 @@
         }
       },
       "containerClassName": {
+        "required": false,
         "flowType": {
           "name": "string"
         },
-        "required": false,
         "description": "The CSS class name of the container element",
         "defaultValue": {
           "value": "''",
@@ -1978,10 +1982,10 @@
         }
       },
       "containerClosedClassName": {
+        "required": false,
         "flowType": {
           "name": "string"
         },
-        "required": false,
         "description": "The CSS class name to add to the container element when it is closed",
         "defaultValue": {
           "value": "''",
@@ -1989,10 +1993,10 @@
         }
       },
       "containerStyle": {
+        "required": false,
         "flowType": {
           "name": "Object"
         },
-        "required": false,
         "description": "Override the inline styles of the container element",
         "defaultValue": {
           "value": "{}",
@@ -2000,10 +2004,10 @@
         }
       },
       "disableSwipeToOpen": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "If true, swiping sideways when the Drawer is closed will not open it",
         "defaultValue": {
           "value": "false",
@@ -2011,10 +2015,10 @@
         }
       },
       "docked": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "If true, the Drawer will be docked. In this state, the overlay won't show and clicking on a\nmenu item will not close the Drawer.",
         "defaultValue": {
           "value": "true",
@@ -2022,17 +2026,17 @@
         }
       },
       "id": {
+        "required": true,
         "flowType": {
           "name": "string"
         },
-        "required": true,
         "description": "Component ID"
       },
       "open": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "If true, the Drawer is opened. Whether true or false,\nthis guarantees that the Drawer is a controlled component",
         "defaultValue": {
           "value": "false",
@@ -2040,10 +2044,10 @@
         }
       },
       "openSecondary": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "If true, the Drawer is positioned to open from the opposite side",
         "defaultValue": {
           "value": "false",
@@ -2051,10 +2055,10 @@
         }
       },
       "overlayClassName": {
+        "required": false,
         "flowType": {
           "name": "string"
         },
-        "required": false,
         "description": "The CSS class name to add to the Overlay component that is rendered behind the Drawer",
         "defaultValue": {
           "value": "''",
@@ -2062,10 +2066,10 @@
         }
       },
       "overlayStyle": {
+        "required": false,
         "flowType": {
           "name": "Object"
         },
-        "required": false,
         "description": "Override the inline-styles of the Overlay component that is rendered behind the Drawer",
         "defaultValue": {
           "value": "{}",
@@ -2073,6 +2077,7 @@
         }
       },
       "setProps": {
+        "required": false,
         "flowType": {
           "name": "signature",
           "type": "function",
@@ -2084,7 +2089,6 @@
             }
           }
         },
-        "required": false,
         "description": "Dash callback to update props",
         "defaultValue": {
           "value": "() => {}",
@@ -2092,10 +2096,10 @@
         }
       },
       "style": {
+        "required": false,
         "flowType": {
           "name": "Object"
         },
-        "required": false,
         "description": "Override the inline styles of the root element",
         "defaultValue": {
           "value": "{}",
@@ -2103,10 +2107,10 @@
         }
       },
       "swipeAreaWidth": {
+        "required": false,
         "flowType": {
           "name": "number"
         },
-        "required": false,
         "description": "The width of the left most (or right most) area in pixels where the Drawer can be swiped\nopen from. Setting this to null spans that area to the entire page (CAUTION! Setting this\nproperty to null might cause issues with sliders and swipeable Tabs: use at your own risk).",
         "defaultValue": {
           "value": "30",
@@ -2114,6 +2118,7 @@
         }
       },
       "width": {
+        "required": false,
         "flowType": {
           "name": "union",
           "raw": "string | number",
@@ -2126,7 +2131,6 @@
             }
           ]
         },
-        "required": false,
         "description": "The width of the Drawer in pixels or percentage in string format ex. 50% to fill half of the\nwindow or 100% and so on. Defaults to using the values from theme.",
         "defaultValue": {
           "value": "null",
@@ -2134,10 +2138,10 @@
         }
       },
       "zDepth": {
+        "required": false,
         "flowType": {
           "name": "number"
         },
-        "required": false,
         "description": "The zDepth of the Drawer.",
         "defaultValue": {
           "value": "2",
@@ -2264,6 +2268,7 @@
     ],
     "props": {
       "anchorOrigin": {
+        "required": false,
         "flowType": {
           "name": "signature",
           "type": "object",
@@ -2317,7 +2322,6 @@
             ]
           }
         },
-        "required": false,
         "description": "This is the point on the anchor that the popover's targetOrigin will attach to.\nOptions: vertical: [top, center, bottom] horizontal: [left, middle, right].",
         "defaultValue": {
           "value": "{ vertical: 'top', horizontal: 'left'}",
@@ -2325,10 +2329,10 @@
         }
       },
       "animated": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "If true, the popover will apply transitions when it gets added to the DOM.",
         "defaultValue": {
           "value": "true",
@@ -2336,10 +2340,10 @@
         }
       },
       "autoWidth": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "The width will automatically be set according to the items inside the menu. To control\nthis width in css instead, set this prop to false.",
         "defaultValue": {
           "value": "true",
@@ -2347,10 +2351,10 @@
         }
       },
       "className": {
+        "required": false,
         "flowType": {
           "name": "string"
         },
-        "required": false,
         "description": "The css class name of the root element.",
         "defaultValue": {
           "value": "''",
@@ -2358,10 +2362,10 @@
         }
       },
       "disabled": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "Disables the menu.",
         "defaultValue": {
           "value": "false",
@@ -2369,6 +2373,7 @@
         }
       },
       "fireEvent": {
+        "required": false,
         "flowType": {
           "name": "signature",
           "type": "function",
@@ -2380,7 +2385,6 @@
             }
           }
         },
-        "required": false,
         "description": "Dash-assigned callback that gets fired when the input changes.",
         "defaultValue": {
           "value": "() => {}",
@@ -2388,17 +2392,17 @@
         }
       },
       "iconButton": {
+        "required": false,
         "flowType": {
           "name": "Node"
         },
-        "required": false,
         "description": "Overrides default SvgIcon dropdown arrow component."
       },
       "iconStyle": {
+        "required": false,
         "flowType": {
           "name": "Object"
         },
-        "required": false,
         "description": "Overrides the styles of icon element.",
         "defaultValue": {
           "value": "{}",
@@ -2406,17 +2410,17 @@
         }
       },
       "id": {
+        "required": false,
         "flowType": {
           "name": "string"
         },
-        "required": false,
         "description": "The element's ID."
       },
       "labelStyle": {
+        "required": false,
         "flowType": {
           "name": "Object"
         },
-        "required": false,
         "description": "Overrides the styles of label when the DropDownMenu is inactive.",
         "defaultValue": {
           "value": "{}",
@@ -2424,10 +2428,10 @@
         }
       },
       "listStyle": {
+        "required": false,
         "flowType": {
           "name": "Object"
         },
-        "required": false,
         "description": "The style object to use to override underlying list style.",
         "defaultValue": {
           "value": "{}",
@@ -2435,10 +2439,10 @@
         }
       },
       "maxHeight": {
+        "required": false,
         "flowType": {
           "name": "number"
         },
-        "required": false,
         "description": "The maximum height of the Menu when it is displayed.",
         "defaultValue": {
           "value": "500",
@@ -2446,10 +2450,10 @@
         }
       },
       "menuItemStyle": {
+        "required": false,
         "flowType": {
           "name": "Object"
         },
-        "required": false,
         "description": "Override the inline-styles of menu items.",
         "defaultValue": {
           "value": "{}",
@@ -2457,10 +2461,10 @@
         }
       },
       "menuStyle": {
+        "required": false,
         "flowType": {
           "name": "Object"
         },
-        "required": false,
         "description": "Overrides the styles of Menu when the DropDownMenu is displayed.",
         "defaultValue": {
           "value": "{}",
@@ -2468,10 +2472,10 @@
         }
       },
       "openImmediately": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "Set to true to have the DropDownMenu automatically open on mount.",
         "defaultValue": {
           "value": "false",
@@ -2479,6 +2483,7 @@
         }
       },
       "options": {
+        "required": false,
         "flowType": {
           "name": "Array",
           "elements": [
@@ -2557,7 +2562,6 @@
           ],
           "raw": "Array<SD_MENU_ITEM>"
         },
-        "required": false,
         "description": "Used to create the MenuItems to populate the Menu with. A Dash user passes in a list of dict\nitems, each one having at least a `value` and `primaryText`. If the 'label' is used,\nthat value will be used to render the representation of that item within the field.",
         "defaultValue": {
           "value": "[]",
@@ -2565,10 +2569,10 @@
         }
       },
       "selectedMenuItemStyle": {
+        "required": false,
         "flowType": {
           "name": "Object"
         },
-        "required": false,
         "description": "Override the inline-styles of selected menu items.",
         "defaultValue": {
           "value": "{}",
@@ -2576,6 +2580,7 @@
         }
       },
       "setProps": {
+        "required": false,
         "flowType": {
           "name": "signature",
           "type": "function",
@@ -2587,7 +2592,6 @@
             }
           }
         },
-        "required": false,
         "description": "Dash callback to update props on the server.",
         "defaultValue": {
           "value": "() => {}",
@@ -2595,10 +2599,10 @@
         }
       },
       "style": {
+        "required": false,
         "flowType": {
           "name": "Object"
         },
-        "required": false,
         "description": "Override the inline-styles of the root element.",
         "defaultValue": {
           "value": "{}",
@@ -2606,6 +2610,7 @@
         }
       },
       "targetOrigin": {
+        "required": false,
         "flowType": {
           "name": "signature",
           "type": "object",
@@ -2659,7 +2664,6 @@
             ]
           }
         },
-        "required": false,
         "description": "This is the point on the popover which will attach to the anchor's origin.\nOptions: vertical: [top, center, bottom] horizontal: [left, middle, right].",
         "defaultValue": {
           "value": "{vertical: 'top', horizontal: 'left'}",
@@ -2667,10 +2671,10 @@
         }
       },
       "underlineStyle": {
+        "required": false,
         "flowType": {
           "name": "Object"
         },
-        "required": false,
         "description": "Overrides the inline-styles of the underline.",
         "defaultValue": {
           "value": "{}",
@@ -2678,10 +2682,10 @@
         }
       },
       "value": {
+        "required": true,
         "flowType": {
           "name": "any"
         },
-        "required": true,
         "description": "The value of the selected menu item."
       }
     }
@@ -2700,10 +2704,10 @@
     ],
     "props": {
       "backgroundColor": {
+        "required": false,
         "flowType": {
           "name": "string"
         },
-        "required": false,
         "description": "Button color when *no* hover event is triggered",
         "defaultValue": {
           "value": "''",
@@ -2711,10 +2715,10 @@
         }
       },
       "children": {
+        "required": false,
         "flowType": {
           "name": "Node"
         },
-        "required": false,
         "description": "This is what will be displayed inside the button.\nIf a label is specified, the text within the label prop will\nbe displayed. Otherwise, the component will expect children\nwhich will then be displayed. (In our example,\nwe are nesting an `<input type=\"file\" />` and a `span`\nthat acts as our label to be displayed.) This only\napplies to flat and raised buttons.",
         "defaultValue": {
           "value": "null",
@@ -2722,10 +2726,10 @@
         }
       },
       "className": {
+        "required": false,
         "flowType": {
           "name": "string"
         },
-        "required": false,
         "description": "CSS class name of the root element",
         "defaultValue": {
           "value": "''",
@@ -2733,10 +2737,10 @@
         }
       },
       "disableTouchRipple": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "If true, the element's ripple effect will be disabled",
         "defaultValue": {
           "value": "false",
@@ -2744,10 +2748,10 @@
         }
       },
       "disabled": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "Disable the button?",
         "defaultValue": {
           "value": "false",
@@ -2755,6 +2759,7 @@
         }
       },
       "fireEvent": {
+        "required": false,
         "flowType": {
           "name": "signature",
           "type": "function",
@@ -2766,7 +2771,6 @@
             }
           }
         },
-        "required": false,
         "description": "Dash callback to trigger an event handler",
         "defaultValue": {
           "value": "() => {}",
@@ -2774,10 +2778,10 @@
         }
       },
       "fullWidth": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "If true, the button will take up the full width of its container",
         "defaultValue": {
           "value": "false",
@@ -2785,10 +2789,10 @@
         }
       },
       "hoverColor": {
+        "required": false,
         "flowType": {
           "name": "string"
         },
-        "required": false,
         "description": "Color of button when mouse hovers over",
         "defaultValue": {
           "value": "''",
@@ -2796,10 +2800,10 @@
         }
       },
       "href": {
+        "required": false,
         "flowType": {
           "name": "string"
         },
-        "required": false,
         "description": "The URL to link to when the button is clicked",
         "defaultValue": {
           "value": "''",
@@ -2807,10 +2811,10 @@
         }
       },
       "icon": {
+        "required": false,
         "flowType": {
           "name": "Node"
         },
-        "required": false,
         "description": "Use this property to display an icon",
         "defaultValue": {
           "value": "null",
@@ -2818,20 +2822,21 @@
         }
       },
       "id": {
+        "required": false,
         "flowType": {
           "name": "string"
         },
-        "required": false,
         "description": "Element ID"
       },
       "label": {
+        "required": true,
         "flowType": {
           "name": "string"
         },
-        "required": true,
         "description": "Label for the button"
       },
       "labelPosition": {
+        "required": false,
         "flowType": {
           "name": "union",
           "raw": "'before' | 'after'",
@@ -2846,7 +2851,6 @@
             }
           ]
         },
-        "required": false,
         "description": "Place label before or after the passed children",
         "defaultValue": {
           "value": "'after'",
@@ -2854,10 +2858,10 @@
         }
       },
       "labelStyle": {
+        "required": false,
         "flowType": {
           "name": "Object"
         },
-        "required": false,
         "description": "Override the inline styles of the button's label element",
         "defaultValue": {
           "value": "{}",
@@ -2865,10 +2869,10 @@
         }
       },
       "n_clicks": {
+        "required": false,
         "flowType": {
           "name": "number"
         },
-        "required": false,
         "description": "An integer that represents the number fo times that this element has been clicked",
         "defaultValue": {
           "value": "0",
@@ -2876,10 +2880,10 @@
         }
       },
       "n_clicks_previous": {
+        "required": false,
         "flowType": {
           "name": "number"
         },
-        "required": false,
         "description": "An integer that represents the previous number of times this element has been clicked",
         "defaultValue": {
           "value": "0",
@@ -2887,10 +2891,10 @@
         }
       },
       "primary": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "If true, colors button according to primaryTextColor from the MuiTheme",
         "defaultValue": {
           "value": "false",
@@ -2898,10 +2902,10 @@
         }
       },
       "rippleColor": {
+        "required": false,
         "flowType": {
           "name": "string"
         },
-        "required": false,
         "description": "Color for the ripple when the button is clicked",
         "defaultValue": {
           "value": "''",
@@ -2909,10 +2913,10 @@
         }
       },
       "secondary": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "If true, colors button according to secondaryTextColor from the theme.\nThe primary prop has precendent if set to true.",
         "defaultValue": {
           "value": "false",
@@ -2920,6 +2924,7 @@
         }
       },
       "setProps": {
+        "required": false,
         "flowType": {
           "name": "signature",
           "type": "function",
@@ -2931,7 +2936,6 @@
             }
           }
         },
-        "required": false,
         "description": "Dash callback to update props",
         "defaultValue": {
           "value": "() => {}",
@@ -2939,10 +2943,10 @@
         }
       },
       "style": {
+        "required": false,
         "flowType": {
           "name": "Object"
         },
-        "required": false,
         "description": "Override the inline styles of the root element",
         "defaultValue": {
           "value": "{}",
@@ -2957,10 +2961,10 @@
     "methods": [],
     "props": {
       "id": {
+        "required": false,
         "flowType": {
           "name": "string"
         },
-        "required": false,
         "description": "id for the component",
         "defaultValue": {
           "value": "''",
@@ -2968,10 +2972,10 @@
         }
       },
       "color": {
+        "required": false,
         "flowType": {
           "name": "string"
         },
-        "required": false,
         "description": "font color of the font icon;\nIf not specified, this component will default\nto muiTheme.palette.textColor",
         "defaultValue": {
           "value": "''",
@@ -2979,10 +2983,10 @@
         }
       },
       "className": {
+        "required": false,
         "flowType": {
           "name": "string"
         },
-        "required": false,
         "description": "defines specific icon when using custom icon font\nor defines font when using public icon font",
         "defaultValue": {
           "value": "''",
@@ -2990,10 +2994,10 @@
         }
       },
       "hoverColor": {
+        "required": false,
         "flowType": {
           "name": "string"
         },
-        "required": false,
         "description": "icon color when the mouse hovers over the icon",
         "defaultValue": {
           "value": "''",
@@ -3001,10 +3005,10 @@
         }
       },
       "iconName": {
+        "required": false,
         "flowType": {
           "name": "string"
         },
-        "required": false,
         "description": "defines specific icon when using public icon font",
         "defaultValue": {
           "value": "''",
@@ -3012,10 +3016,10 @@
         }
       },
       "style": {
+        "required": false,
         "flowType": {
           "name": "Object"
         },
-        "required": false,
         "description": "override inline-styles of root element",
         "defaultValue": {
           "value": "{}",
@@ -3038,10 +3042,10 @@
     ],
     "props": {
       "children": {
+        "required": false,
         "flowType": {
           "name": "Node"
         },
-        "required": false,
         "description": "Used to pass a FontIcon element as the icon for the button\nSee method 3 at http://www.material-ui.com/#/components/icon-button\nNote: currently unable to pass in FontIcon component as child, you will need\nto use method 3 at the above link",
         "defaultValue": {
           "value": "null",
@@ -3049,10 +3053,10 @@
         }
       },
       "className": {
+        "required": false,
         "flowType": {
           "name": "string"
         },
-        "required": false,
         "description": "The CSS class name of the root element",
         "defaultValue": {
           "value": "''",
@@ -3060,10 +3064,10 @@
         }
       },
       "disableTouchRipple": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "If true, the element's ripple effect will be disabled",
         "defaultValue": {
           "value": "false",
@@ -3071,10 +3075,10 @@
         }
       },
       "disabled": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "Disable the button?",
         "defaultValue": {
           "value": "false",
@@ -3082,6 +3086,7 @@
         }
       },
       "fireEvent": {
+        "required": false,
         "flowType": {
           "name": "signature",
           "type": "function",
@@ -3093,7 +3098,6 @@
             }
           }
         },
-        "required": false,
         "description": "Dash callback to trigger an event handler",
         "defaultValue": {
           "value": "() => {}",
@@ -3101,10 +3105,10 @@
         }
       },
       "hoveredStyle": {
+        "required": false,
         "flowType": {
           "name": "Object"
         },
-        "required": false,
         "description": "Override the inline-styles of the root element when the component is hovered",
         "defaultValue": {
           "value": "{}",
@@ -3112,10 +3116,10 @@
         }
       },
       "href": {
+        "required": false,
         "flowType": {
           "name": "string"
         },
-        "required": false,
         "description": "The URL to link to when the button is clicked",
         "defaultValue": {
           "value": "''",
@@ -3123,10 +3127,10 @@
         }
       },
       "iconClassName": {
+        "required": false,
         "flowType": {
           "name": "string"
         },
-        "required": false,
         "description": "The CSS class name of the icon. Used for setting the icon with a stylesheet",
         "defaultValue": {
           "value": "'material-icons'",
@@ -3134,10 +3138,10 @@
         }
       },
       "iconStyle": {
+        "required": false,
         "flowType": {
           "name": "Object"
         },
-        "required": false,
         "description": "Override the inline-styles of the icon element.\nNote: you can specify iconHoverColor as a String inside this object.",
         "defaultValue": {
           "value": "{}",
@@ -3145,17 +3149,17 @@
         }
       },
       "id": {
+        "required": false,
         "flowType": {
           "name": "string"
         },
-        "required": false,
         "description": "Element ID"
       },
       "n_clicks": {
+        "required": false,
         "flowType": {
           "name": "number"
         },
-        "required": false,
         "description": "An integer that represents the number fo times that this element has been clicked",
         "defaultValue": {
           "value": "0",
@@ -3163,10 +3167,10 @@
         }
       },
       "n_clicks_previous": {
+        "required": false,
         "flowType": {
           "name": "number"
         },
-        "required": false,
         "description": "An integer that represents the previous number of times this element has been clicked",
         "defaultValue": {
           "value": "0",
@@ -3174,6 +3178,7 @@
         }
       },
       "setProps": {
+        "required": false,
         "flowType": {
           "name": "signature",
           "type": "function",
@@ -3185,7 +3190,6 @@
             }
           }
         },
-        "required": false,
         "description": "Dash callback to update props",
         "defaultValue": {
           "value": "() => {}",
@@ -3193,10 +3197,10 @@
         }
       },
       "style": {
+        "required": false,
         "flowType": {
           "name": "Object"
         },
-        "required": false,
         "description": "Override the inline-styles of the root element.",
         "defaultValue": {
           "value": "{}",
@@ -3204,10 +3208,10 @@
         }
       },
       "tooltip": {
+        "required": false,
         "flowType": {
           "name": "Node"
         },
-        "required": false,
         "description": "The text to supply to the element's tooltip",
         "defaultValue": {
           "value": "''",
@@ -3215,10 +3219,10 @@
         }
       },
       "tooltipPosition": {
-        "flowType": {
-          "name": "unknown"
-        },
         "required": false,
+        "flowType": {
+          "name": "propTypes.cornersAndCenter"
+        },
         "description": "The vertical and horizontal positions, respectively, of the element's tooltip.\nPossible values are: \"bottom-center\", \"top-center\", \"bottom-right\", \"top-right\",\n\"bottom-left\", and \"top-left\".",
         "defaultValue": {
           "value": "'bottom-center'",
@@ -3226,10 +3230,10 @@
         }
       },
       "tooltipStyles": {
+        "required": false,
         "flowType": {
           "name": "Object"
         },
-        "required": false,
         "description": "Override the inline-styles of the tooltip element",
         "defaultValue": {
           "value": "{}",
@@ -3237,10 +3241,10 @@
         }
       },
       "touch": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "If true, increase the tooltip element's size.\nUseful for increasing tooltip readability on mobile devices.",
         "defaultValue": {
           "value": "false",
@@ -3255,10 +3259,10 @@
     "methods": [],
     "props": {
       "children": {
+        "required": false,
         "flowType": {
           "name": "Node"
         },
-        "required": false,
         "description": "Children passed int othe paper element",
         "defaultValue": {
           "value": "null",
@@ -3266,10 +3270,10 @@
         }
       },
       "circle": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "Set ot true to generate a circular paper container",
         "defaultValue": {
           "value": "false",
@@ -3277,10 +3281,10 @@
         }
       },
       "rounded": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "By default, the paper container will have a border radius.\nSet this to false to generate a container with sharp corners.",
         "defaultValue": {
           "value": "true",
@@ -3288,10 +3292,10 @@
         }
       },
       "style": {
+        "required": false,
         "flowType": {
           "name": "Object"
         },
-        "required": false,
         "description": "Override the inline-styles of the root element",
         "defaultValue": {
           "value": "{}",
@@ -3299,10 +3303,10 @@
         }
       },
       "transitionEnabled": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "Set to false to disable CSS transitions for the paper element",
         "defaultValue": {
           "value": "true",
@@ -3310,10 +3314,10 @@
         }
       },
       "zDepth": {
-        "flowType": {
-          "name": "unknown"
-        },
         "required": false,
+        "flowType": {
+          "name": "propTypes.zDepth"
+        },
         "description": "This number represents the zDepth of the paper shadow",
         "defaultValue": {
           "value": "1",
@@ -3348,6 +3352,7 @@
     ],
     "props": {
       "anchorOrigin": {
+        "required": false,
         "flowType": {
           "name": "signature",
           "type": "object",
@@ -3401,7 +3406,6 @@
             ]
           }
         },
-        "required": false,
         "description": "This is the point on the anchor where the popover's targetOrigin will attach to.\nOptions: vertical: [top, center, bottom] horizontal: [left, middle, right].",
         "defaultValue": {
           "value": "{vertical: 'bottom', horizontal: 'left'}",
@@ -3409,10 +3413,10 @@
         }
       },
       "animated": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "If true, the popover will apply transitions when it is added to the DOM.",
         "defaultValue": {
           "value": "true",
@@ -3420,10 +3424,10 @@
         }
       },
       "autoCloseWhenOffScreen": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "If true, the popover will hide when the anchor is scrolled off the screen",
         "defaultValue": {
           "value": "true",
@@ -3431,10 +3435,10 @@
         }
       },
       "buttonLabel": {
+        "required": false,
         "flowType": {
           "name": "string"
         },
-        "required": false,
         "description": "For Dash use - user can assign label to button",
         "defaultValue": {
           "value": "''",
@@ -3442,6 +3446,7 @@
         }
       },
       "buttonType": {
+        "required": false,
         "flowType": {
           "name": "union",
           "raw": "'flat' | 'raised' | 'icon'",
@@ -3460,7 +3465,6 @@
             }
           ]
         },
-        "required": false,
         "description": "For Dash use - user can anchor the popover to flat, icon, or raised button",
         "defaultValue": {
           "value": "'raised'",
@@ -3468,10 +3472,10 @@
         }
       },
       "buttonIcon": {
+        "required": false,
         "flowType": {
           "name": "string"
         },
-        "required": false,
         "description": "For Dash use - specify what icon to use when using an icon button",
         "defaultValue": {
           "value": "''",
@@ -3479,10 +3483,10 @@
         }
       },
       "buttonStyle": {
+        "required": false,
         "flowType": {
           "name": "Object"
         },
-        "required": false,
         "description": "For Dash use - specify the styles for the button",
         "defaultValue": {
           "value": "{}",
@@ -3490,10 +3494,10 @@
         }
       },
       "canAutoPosition": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "If true, the popover (potentially) ignores targetOrigin and anchorOrigin to make itself fit\non screen, which is useful for mobile devices.",
         "defaultValue": {
           "value": "true",
@@ -3501,10 +3505,10 @@
         }
       },
       "children": {
+        "required": false,
         "flowType": {
           "name": "Node"
         },
-        "required": false,
         "description": "The content of the popover",
         "defaultValue": {
           "value": "null",
@@ -3512,10 +3516,10 @@
         }
       },
       "className": {
+        "required": false,
         "flowType": {
           "name": "string"
         },
-        "required": false,
         "description": "The CSS class name of the root element",
         "defaultValue": {
           "value": "''",
@@ -3523,10 +3527,10 @@
         }
       },
       "open": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "If true, the popover is visible.",
         "defaultValue": {
           "value": "false",
@@ -3534,6 +3538,7 @@
         }
       },
       "scrollableContainer": {
+        "required": false,
         "flowType": {
           "name": "union",
           "raw": "Object | string",
@@ -3546,7 +3551,6 @@
             }
           ]
         },
-        "required": false,
         "description": "Represents the parent scrollable container. It can be an element or a string like window.",
         "defaultValue": {
           "value": "'window'",
@@ -3554,10 +3558,10 @@
         }
       },
       "style": {
+        "required": false,
         "flowType": {
           "name": "Object"
         },
-        "required": false,
         "description": "Override the inline-styles of the root element.",
         "defaultValue": {
           "value": "{}",
@@ -3565,6 +3569,7 @@
         }
       },
       "targetOrigin": {
+        "required": false,
         "flowType": {
           "name": "signature",
           "type": "object",
@@ -3618,7 +3623,6 @@
             ]
           }
         },
-        "required": false,
         "description": "This is the point on the popover which will attach to the anchor's origin.\nOptions: vertical: [top, center, bottom] horizontal: [left, middle, right].",
         "defaultValue": {
           "value": "{vertical: 'top', horizontal: 'left'}",
@@ -3626,10 +3630,10 @@
         }
       },
       "useLayerForClickAway": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "If true, the popover will render on top of an invisible layer, which will prevent clicks\nto the underlying elements, and trigger an onRequestClose('clickAway') call.",
         "defaultValue": {
           "value": "true",
@@ -3637,10 +3641,10 @@
         }
       },
       "zDepth": {
-        "flowType": {
-          "name": "unknown"
-        },
         "required": false,
+        "flowType": {
+          "name": "propTypes.zDepth"
+        },
         "description": "The zDepth of the popover.",
         "defaultValue": {
           "value": "1",
@@ -3670,13 +3674,14 @@
     ],
     "props": {
       "id": {
+        "required": true,
         "flowType": {
           "name": "string"
         },
-        "required": true,
         "description": "Component ID"
       },
       "questionSectionProps": {
+        "required": true,
         "flowType": {
           "name": "Array",
           "elements": [
@@ -3818,14 +3823,13 @@
           ],
           "raw": "Array<QuestionSectionProps>"
         },
-        "required": true,
         "description": "Array of props for each QuestionSection"
       },
       "n_clicks": {
+        "required": false,
         "flowType": {
           "name": "number"
         },
-        "required": false,
         "description": "Number of clicks by the user on the Questions component",
         "defaultValue": {
           "value": "0",
@@ -3833,10 +3837,10 @@
         }
       },
       "n_clicks_previous": {
+        "required": false,
         "flowType": {
           "name": "number"
         },
-        "required": false,
         "description": "The previous number of clicks from the Questions component",
         "defaultValue": {
           "value": "0",
@@ -3844,13 +3848,14 @@
         }
       },
       "value": {
+        "required": true,
         "flowType": {
           "name": "any"
         },
-        "required": true,
         "description": "The value currently selected by clicking on a question answer prompt"
       },
       "setProps": {
+        "required": false,
         "flowType": {
           "name": "signature",
           "type": "function",
@@ -3862,7 +3867,6 @@
             }
           }
         },
-        "required": false,
         "description": "Dash callback to update props",
         "defaultValue": {
           "value": "() => {}",
@@ -3870,6 +3874,7 @@
         }
       },
       "fireEvent": {
+        "required": false,
         "flowType": {
           "name": "signature",
           "type": "function",
@@ -3881,7 +3886,6 @@
             }
           }
         },
-        "required": false,
         "description": "Dash callback to trigger an event handler",
         "defaultValue": {
           "value": "() => {}",
@@ -3911,13 +3915,14 @@
     ],
     "props": {
       "id": {
+        "required": true,
         "flowType": {
           "name": "string"
         },
-        "required": true,
         "description": "Component ID"
       },
       "questionSectionProps": {
+        "required": true,
         "flowType": {
           "name": "Array",
           "elements": [
@@ -4017,14 +4022,13 @@
           ],
           "raw": "Array<QuestionSectionProps>"
         },
-        "required": true,
         "description": "Array of props for each QuestionSection"
       },
       "n_clicks": {
+        "required": false,
         "flowType": {
           "name": "number"
         },
-        "required": false,
         "description": "Number of clicks by the user on the Questions component",
         "defaultValue": {
           "value": "0",
@@ -4032,10 +4036,10 @@
         }
       },
       "n_clicks_previous": {
+        "required": false,
         "flowType": {
           "name": "number"
         },
-        "required": false,
         "description": "The previous number of clicks from the Questions component",
         "defaultValue": {
           "value": "0",
@@ -4043,17 +4047,17 @@
         }
       },
       "value": {
+        "required": true,
         "flowType": {
           "name": "any"
         },
-        "required": true,
         "description": "The value currently selected by clicking on a question answer prompt"
       },
       "tabsProps": {
+        "required": false,
         "flowType": {
           "name": "Object"
         },
-        "required": false,
         "description": "Tabs props",
         "defaultValue": {
           "value": "{}",
@@ -4061,6 +4065,7 @@
         }
       },
       "setProps": {
+        "required": false,
         "flowType": {
           "name": "signature",
           "type": "function",
@@ -4072,7 +4077,6 @@
             }
           }
         },
-        "required": false,
         "description": "Dash callback to update props",
         "defaultValue": {
           "value": "() => {}",
@@ -4080,6 +4084,7 @@
         }
       },
       "fireEvent": {
+        "required": false,
         "flowType": {
           "name": "signature",
           "type": "function",
@@ -4091,7 +4096,6 @@
             }
           }
         },
-        "required": false,
         "description": "Dash callback to trigger an event handler",
         "defaultValue": {
           "value": "() => {}",
@@ -4115,7 +4119,8 @@
             "type": {
               "name": "Object",
               "alias": "Object"
-            }
+            },
+            "optional": false
           },
           {
             "name": "valueSelected",
@@ -4123,7 +4128,8 @@
             "type": {
               "name": "undefined",
               "alias": "undefined"
-            }
+            },
+            "optional": false
           }
         ],
         "returns": null,
@@ -4202,10 +4208,10 @@
     ],
     "props": {
       "className": {
+        "required": false,
         "flowType": {
           "name": "string"
         },
-        "required": false,
         "description": "the css class name of the root element",
         "defaultValue": {
           "value": "''",
@@ -4213,10 +4219,10 @@
         }
       },
       "defaultSelected": {
+        "required": false,
         "flowType": {
           "name": "any"
         },
-        "required": false,
         "description": "the value property of the radio button that will\nbe selected by default",
         "defaultValue": {
           "value": "''",
@@ -4224,6 +4230,7 @@
         }
       },
       "fireEvent": {
+        "required": false,
         "flowType": {
           "name": "signature",
           "type": "function",
@@ -4235,7 +4242,6 @@
             }
           }
         },
-        "required": false,
         "description": "a callback for firng events to dash",
         "defaultValue": {
           "value": "() => {}",
@@ -4243,13 +4249,14 @@
         }
       },
       "id": {
+        "required": true,
         "flowType": {
           "name": "string"
         },
-        "required": true,
         "description": "the element's ID"
       },
       "labelPosition": {
+        "required": false,
         "flowType": {
           "name": "union",
           "raw": "'left' | 'right'",
@@ -4264,7 +4271,6 @@
             }
           ]
         },
-        "required": false,
         "description": "where the label will be placed for all child radio buttons;\ntakes precedence over labelPosition property of the RadioButton elements",
         "defaultValue": {
           "value": "'right'",
@@ -4272,13 +4278,14 @@
         }
       },
       "name": {
+        "required": true,
         "flowType": {
           "name": "string"
         },
-        "required": true,
         "description": "the name that will be applied to all child radio buttons"
       },
       "options": {
+        "required": false,
         "flowType": {
           "name": "Array",
           "elements": [
@@ -4343,7 +4350,6 @@
           ],
           "raw": "Array<SD_RADIO_BUTTON>"
         },
-        "required": false,
         "description": "used to create the RadioButtons to populate the RadioButtonGroup with. A Dash user passes in a\nlist of dict items, each one having at least a `value` and `label`. If that value is selected,\nvalueSelected will be updated",
         "defaultValue": {
           "value": "[]",
@@ -4351,6 +4357,7 @@
         }
       },
       "setProps": {
+        "required": false,
         "flowType": {
           "name": "signature",
           "type": "function",
@@ -4362,7 +4369,6 @@
             }
           }
         },
-        "required": false,
         "description": "dash callback to update props on the server",
         "defaultValue": {
           "value": "() => {}",
@@ -4370,6 +4376,7 @@
         }
       },
       "style": {
+        "required": false,
         "flowType": {
           "name": "signature",
           "type": "object",
@@ -4378,7 +4385,6 @@
             "properties": []
           }
         },
-        "required": false,
         "description": "override the inline-styles of the root element",
         "defaultValue": {
           "value": "{}",
@@ -4386,10 +4392,10 @@
         }
       },
       "valueSelected": {
+        "required": false,
         "flowType": {
           "name": "any"
         },
-        "required": false,
         "description": "value of the currently selected radio button",
         "defaultValue": {
           "value": "''",
@@ -4412,10 +4418,10 @@
     ],
     "props": {
       "backgroundColor": {
+        "required": false,
         "flowType": {
           "name": "string"
         },
-        "required": false,
         "description": "Override the default background color for the button, but not the default disabled\nbackground color (use disabledBackgroundColor for this).",
         "defaultValue": {
           "value": "''",
@@ -4423,10 +4429,10 @@
         }
       },
       "buttonStyle": {
+        "required": false,
         "flowType": {
           "name": "Object"
         },
-        "required": false,
         "description": "Override the inline styles of the button element.",
         "defaultValue": {
           "value": "{}",
@@ -4434,10 +4440,10 @@
         }
       },
       "children": {
+        "required": false,
         "flowType": {
           "name": "Node"
         },
-        "required": false,
         "description": "The content of the button. If a label is provided via the label prop, the text within the\nlabel will be displayed in addition to the content provided here.",
         "defaultValue": {
           "value": "null",
@@ -4445,10 +4451,10 @@
         }
       },
       "className": {
+        "required": false,
         "flowType": {
           "name": "string"
         },
-        "required": false,
         "description": "CSS class name of the root element",
         "defaultValue": {
           "value": "''",
@@ -4456,10 +4462,10 @@
         }
       },
       "disableTouchRipple": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "If true, the element's ripple effect will be disabled",
         "defaultValue": {
           "value": "false",
@@ -4467,10 +4473,10 @@
         }
       },
       "disabled": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "Button is disabled?",
         "defaultValue": {
           "value": "false",
@@ -4478,10 +4484,10 @@
         }
       },
       "disabledBackgroundColor": {
+        "required": false,
         "flowType": {
           "name": "string"
         },
-        "required": false,
         "description": "Override the default background for the disabled button",
         "defaultValue": {
           "value": "''",
@@ -4489,10 +4495,10 @@
         }
       },
       "disabledLabelColor": {
+        "required": false,
         "flowType": {
           "name": "string"
         },
-        "required": false,
         "description": "Override the default label color for the disabled button",
         "defaultValue": {
           "value": "''",
@@ -4500,6 +4506,7 @@
         }
       },
       "fireEvent": {
+        "required": false,
         "flowType": {
           "name": "signature",
           "type": "function",
@@ -4511,7 +4518,6 @@
             }
           }
         },
-        "required": false,
         "description": "Dash event handler for click events",
         "defaultValue": {
           "value": "() => {}",
@@ -4519,10 +4525,10 @@
         }
       },
       "fullWidth": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "If true, the button will take up the full width of its container",
         "defaultValue": {
           "value": "false",
@@ -4530,10 +4536,10 @@
         }
       },
       "href": {
+        "required": false,
         "flowType": {
           "name": "string"
         },
-        "required": false,
         "description": "The URL to link to when the button is clicked",
         "defaultValue": {
           "value": "''",
@@ -4541,10 +4547,10 @@
         }
       },
       "icon": {
+        "required": false,
         "flowType": {
           "name": "Node"
         },
-        "required": false,
         "description": "Use this property to display an icon",
         "defaultValue": {
           "value": "null",
@@ -4552,24 +4558,24 @@
         }
       },
       "id": {
+        "required": false,
         "flowType": {
           "name": "string"
         },
-        "required": false,
         "description": "Element ID"
       },
       "label": {
+        "required": true,
         "flowType": {
           "name": "string"
         },
-        "required": true,
         "description": "The label to be displayed within the button. If content is provided via the children prop,\nthat content will be displayed in addition to the label provided here."
       },
       "labelColor": {
+        "required": false,
         "flowType": {
           "name": "string"
         },
-        "required": false,
         "description": "Color of the button's label",
         "defaultValue": {
           "value": "''",
@@ -4577,6 +4583,7 @@
         }
       },
       "labelPosition": {
+        "required": false,
         "flowType": {
           "name": "union",
           "raw": "'before' | 'after'",
@@ -4591,7 +4598,6 @@
             }
           ]
         },
-        "required": false,
         "description": "The position of the button's label relative to its children",
         "defaultValue": {
           "value": "'after'",
@@ -4599,10 +4605,10 @@
         }
       },
       "labelStyle": {
+        "required": false,
         "flowType": {
           "name": "Object"
         },
-        "required": false,
         "description": "Override the inline styles of the label element",
         "defaultValue": {
           "value": "{}",
@@ -4610,10 +4616,10 @@
         }
       },
       "n_clicks": {
+        "required": false,
         "flowType": {
           "name": "number"
         },
-        "required": false,
         "description": "An integer that represents the number of times this element has been clicked",
         "defaultValue": {
           "value": "0",
@@ -4621,10 +4627,10 @@
         }
       },
       "n_clicks_previous": {
+        "required": false,
         "flowType": {
           "name": "number"
         },
-        "required": false,
         "description": "An integer that represents the previous number of times this element has been clicked",
         "defaultValue": {
           "value": "0",
@@ -4632,10 +4638,10 @@
         }
       },
       "overlayStyle": {
+        "required": false,
         "flowType": {
           "name": "Object"
         },
-        "required": false,
         "description": "Override the inline style of the button overlay",
         "defaultValue": {
           "value": "{}",
@@ -4643,10 +4649,10 @@
         }
       },
       "primary": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "If true, the button will use the theme's primary color",
         "defaultValue": {
           "value": "false",
@@ -4654,17 +4660,17 @@
         }
       },
       "rippleColor": {
+        "required": false,
         "flowType": {
           "name": "string"
         },
-        "required": false,
         "description": "Color of the ripple on click"
       },
       "rippleStyle": {
+        "required": false,
         "flowType": {
           "name": "Object"
         },
-        "required": false,
         "description": "Override the inline style of the ripple element",
         "defaultValue": {
           "value": "{}",
@@ -4672,10 +4678,10 @@
         }
       },
       "secondary": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "If true, the button will use the theme's secondary color. If both secondary and primary are\ntrue, the button will use the theme's primary color.",
         "defaultValue": {
           "value": "false",
@@ -4683,6 +4689,7 @@
         }
       },
       "setProps": {
+        "required": false,
         "flowType": {
           "name": "signature",
           "type": "function",
@@ -4694,7 +4701,6 @@
             }
           }
         },
-        "required": false,
         "description": "Dash callback to update props on the server",
         "defaultValue": {
           "value": "() => {}",
@@ -4702,10 +4708,10 @@
         }
       },
       "style": {
+        "required": false,
         "flowType": {
           "name": "Object"
         },
-        "required": false,
         "description": "Override the inline styles of the root element",
         "defaultValue": {
           "value": "{}",
@@ -4742,10 +4748,10 @@
     ],
     "props": {
       "action": {
+        "required": false,
         "flowType": {
           "name": "Node"
         },
-        "required": false,
         "description": "Label for the action on the snackbar",
         "defaultValue": {
           "value": "null",
@@ -4753,10 +4759,10 @@
         }
       },
       "autoHideDuration": {
+        "required": false,
         "flowType": {
           "name": "number"
         },
-        "required": false,
         "description": "The number of milliseconds to wait before automatically dismissing. If no value is specified\nthe snackbar will dismiss normally. If a value is provided the snackbar can still be dismissed\nnormally. If a snackbar is dismissed before the timer expires, the timer will be cleared.",
         "defaultValue": {
           "value": "3000",
@@ -4764,10 +4770,10 @@
         }
       },
       "bodyStyle": {
+        "required": false,
         "flowType": {
           "name": "object"
         },
-        "required": false,
         "description": "Override the inline styles of the body element",
         "defaultValue": {
           "value": "{}",
@@ -4775,10 +4781,10 @@
         }
       },
       "className": {
+        "required": false,
         "flowType": {
           "name": "string"
         },
-        "required": false,
         "description": "CSS class name of the root element",
         "defaultValue": {
           "value": "''",
@@ -4786,10 +4792,10 @@
         }
       },
       "contentStyle": {
+        "required": false,
         "flowType": {
           "name": "object"
         },
-        "required": false,
         "description": "Override the inline styles of the content element",
         "defaultValue": {
           "value": "{}",
@@ -4797,6 +4803,7 @@
         }
       },
       "fireEvent": {
+        "required": false,
         "flowType": {
           "name": "signature",
           "type": "function",
@@ -4808,7 +4815,6 @@
             }
           }
         },
-        "required": false,
         "description": "Dash event handler for click events",
         "defaultValue": {
           "value": "() => {}",
@@ -4816,24 +4822,24 @@
         }
       },
       "id": {
+        "required": true,
         "flowType": {
           "name": "string"
         },
-        "required": true,
         "description": "The element's ID"
       },
       "message": {
+        "required": true,
         "flowType": {
           "name": "Node"
         },
-        "required": true,
         "description": "The message to be displayed.\n(Note: If the message is an element or array, and the Snackbar may re-render while it is\nstill open, ensure that the same object remains as the message property if you want to avoid\nthe Snackbar hiding and showing again)"
       },
       "n_clicks": {
+        "required": false,
         "flowType": {
           "name": "number"
         },
-        "required": false,
         "description": "An integer that represents the number of times that action button has been clicked",
         "defaultValue": {
           "value": "0",
@@ -4841,13 +4847,14 @@
         }
       },
       "open": {
+        "required": true,
         "flowType": {
           "name": "boolean"
         },
-        "required": true,
         "description": "Controls whether the Snackbar is opened or not"
       },
       "setProps": {
+        "required": false,
         "flowType": {
           "name": "signature",
           "type": "function",
@@ -4879,7 +4886,6 @@
             }
           }
         },
-        "required": false,
         "description": "Dash callback to update props on the server",
         "defaultValue": {
           "value": "() => {}",
@@ -4887,10 +4893,10 @@
         }
       },
       "style": {
+        "required": false,
         "flowType": {
           "name": "object"
         },
-        "required": false,
         "description": "Override the inline styles of the root element",
         "defaultValue": {
           "value": "{}",
@@ -4941,10 +4947,10 @@
     ],
     "props": {
       "activeStep": {
+        "required": false,
         "flowType": {
           "name": "number"
         },
-        "required": false,
         "description": "Set the active step (zero based index). This will enable Step control helpers",
         "defaultValue": {
           "value": "0",
@@ -4952,10 +4958,10 @@
         }
       },
       "backButtonStyle": {
+        "required": false,
         "flowType": {
           "name": "Object"
         },
-        "required": false,
         "description": "The style for the back button",
         "defaultValue": {
           "value": "{marginRight: 12}",
@@ -4963,10 +4969,10 @@
         }
       },
       "className": {
+        "required": false,
         "flowType": {
           "name": "string"
         },
-        "required": false,
         "description": "CSS class name of the root element",
         "defaultValue": {
           "value": "''",
@@ -4974,10 +4980,10 @@
         }
       },
       "finishedButtonStyle": {
+        "required": false,
         "flowType": {
           "name": "Object"
         },
-        "required": false,
         "description": "The style for the button displayed after all steps have been finished",
         "defaultValue": {
           "value": "{}",
@@ -4985,10 +4991,10 @@
         }
       },
       "finishedText": {
+        "required": false,
         "flowType": {
           "name": "string"
         },
-        "required": false,
         "description": "The text to display on the final button when all steps have been completed",
         "defaultValue": {
           "value": "'Click here to view again'",
@@ -4996,6 +5002,7 @@
         }
       },
       "fireEvent": {
+        "required": false,
         "flowType": {
           "name": "signature",
           "type": "function",
@@ -5007,7 +5014,6 @@
             }
           }
         },
-        "required": false,
         "description": "Dash event handler for click events",
         "defaultValue": {
           "value": "() => {}",
@@ -5015,17 +5021,17 @@
         }
       },
       "id": {
+        "required": true,
         "flowType": {
           "name": "string"
         },
-        "required": true,
         "description": "Dash ID"
       },
       "linear": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "If set to true, the Stepper will assist in controlling steps for linear flow",
         "defaultValue": {
           "value": "true",
@@ -5033,10 +5039,10 @@
         }
       },
       "nextButtonStyle": {
+        "required": false,
         "flowType": {
           "name": "Object"
         },
-        "required": false,
         "description": "The style for the next button",
         "defaultValue": {
           "value": "{}",
@@ -5044,6 +5050,7 @@
         }
       },
       "orientation": {
+        "required": false,
         "flowType": {
           "name": "union",
           "raw": "'horizontal' | 'vertical'",
@@ -5058,7 +5065,6 @@
             }
           ]
         },
-        "required": false,
         "description": "The stepper orientation (layout flow direction)",
         "defaultValue": {
           "value": "'horizontal'",
@@ -5066,6 +5072,7 @@
         }
       },
       "setProps": {
+        "required": false,
         "flowType": {
           "name": "signature",
           "type": "function",
@@ -5097,7 +5104,6 @@
             }
           }
         },
-        "required": false,
         "description": "Dash callback to update props on the server",
         "defaultValue": {
           "value": "() => {}",
@@ -5105,10 +5111,10 @@
         }
       },
       "stepCount": {
+        "required": false,
         "flowType": {
           "name": "number"
         },
-        "required": false,
         "description": "The number of steps that this component will contain",
         "defaultValue": {
           "value": "3",
@@ -5116,6 +5122,7 @@
         }
       },
       "stepLabels": {
+        "required": false,
         "flowType": {
           "name": "Array",
           "elements": [
@@ -5125,7 +5132,6 @@
           ],
           "raw": "Array<string>"
         },
-        "required": false,
         "description": "The text labels that will be shown next to each step number. The length of this array must\nmatch the total number of steps",
         "defaultValue": {
           "value": "['Step 1', 'Step 2', 'Step 3']",
@@ -5133,10 +5139,10 @@
         }
       },
       "style": {
+        "required": false,
         "flowType": {
           "name": "Object"
         },
-        "required": false,
         "description": "Override the inline-style of the root element",
         "defaultValue": {
           "value": "{}",
@@ -5151,10 +5157,10 @@
     "methods": [],
     "props": {
       "children": {
+        "required": false,
         "flowType": {
           "name": "Node"
         },
-        "required": false,
         "description": "Node that will be placed inside the Subheader",
         "defaultValue": {
           "value": "null",
@@ -5162,10 +5168,10 @@
         }
       },
       "inset": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "If true, the Subheader will be indented",
         "defaultValue": {
           "value": "false",
@@ -5173,10 +5179,10 @@
         }
       },
       "style": {
+        "required": false,
         "flowType": {
           "name": "Object"
         },
-        "required": false,
         "description": "Override the inline-styles of the root element",
         "defaultValue": {
           "value": "{}",
@@ -5191,10 +5197,10 @@
     "methods": [],
     "props": {
       "id": {
+        "required": false,
         "flowType": {
           "name": "string"
         },
-        "required": false,
         "description": "Element ID",
         "defaultValue": {
           "value": "''",
@@ -5202,10 +5208,10 @@
         }
       },
       "className": {
+        "required": false,
         "flowType": {
           "name": "string"
         },
-        "required": false,
         "description": "CSS class name of the root element",
         "defaultValue": {
           "value": "undefined",
@@ -5213,10 +5219,10 @@
         }
       },
       "contentContainerClassName": {
+        "required": false,
         "flowType": {
           "name": "string"
         },
-        "required": false,
         "description": "CSS class name of the content's container",
         "defaultValue": {
           "value": "undefined",
@@ -5224,10 +5230,10 @@
         }
       },
       "children": {
+        "required": false,
         "flowType": {
           "name": "Node"
         },
-        "required": false,
         "description": "Pass Tab components as children",
         "defaultValue": {
           "value": "[]",
@@ -5235,10 +5241,10 @@
         }
       },
       "contentContainerStyle": {
+        "required": false,
         "flowType": {
           "name": "Object"
         },
-        "required": false,
         "description": "Override the inline-styles of the content's container",
         "defaultValue": {
           "value": "{}",
@@ -5246,10 +5252,10 @@
         }
       },
       "initialSelectedIndex": {
+        "required": false,
         "flowType": {
           "name": "number"
         },
-        "required": false,
         "description": "Specify the initial visible tab index",
         "defaultValue": {
           "value": "0",
@@ -5257,10 +5263,10 @@
         }
       },
       "inkBarStyle": {
+        "required": false,
         "flowType": {
           "name": "Object"
         },
-        "required": false,
         "description": "Override the inline-styles of the InkBar",
         "defaultValue": {
           "value": "{}",
@@ -5268,10 +5274,10 @@
         }
       },
       "inkBarContainerStyle": {
+        "required": false,
         "flowType": {
           "name": "Object"
         },
-        "required": false,
         "description": "Override the inline-styles of the InkBar container",
         "defaultValue": {
           "value": "{}",
@@ -5279,10 +5285,10 @@
         }
       },
       "style": {
+        "required": false,
         "flowType": {
           "name": "Object"
         },
-        "required": false,
         "description": "Override the inline-styles of the root element",
         "defaultValue": {
           "value": "{}",
@@ -5290,10 +5296,10 @@
         }
       },
       "tabItemContainerStyle": {
+        "required": false,
         "flowType": {
           "name": "Object"
         },
-        "required": false,
         "description": "Override the inline-styles of tab-labels container",
         "defaultValue": {
           "value": "{}",
@@ -5301,17 +5307,17 @@
         }
       },
       "tabTemplateStyle": {
+        "required": false,
         "flowType": {
           "name": "Object"
         },
-        "required": false,
         "description": "Override the inline-styles of the tab template"
       },
       "value": {
+        "required": false,
         "flowType": {
           "name": "any"
         },
-        "required": false,
         "description": "Makes Tabs controllable and selects the tab whose value prop matches this prop",
         "defaultValue": {
           "value": "undefined",
@@ -5319,6 +5325,7 @@
         }
       },
       "tabPropsArray": {
+        "required": true,
         "flowType": {
           "name": "Array",
           "elements": [
@@ -5328,7 +5335,6 @@
           ],
           "raw": "Array<Object>"
         },
-        "required": true,
         "description": ""
       }
     }
@@ -5354,10 +5360,10 @@
     ],
     "props": {
       "disabled": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "Toggle disabled?",
         "defaultValue": {
           "value": "false",
@@ -5365,10 +5371,10 @@
         }
       },
       "elementStyle": {
+        "required": false,
         "flowType": {
           "name": "Object"
         },
-        "required": false,
         "description": "Override the inline style of the Toggle element",
         "defaultValue": {
           "value": "{}",
@@ -5376,6 +5382,7 @@
         }
       },
       "fireEvent": {
+        "required": false,
         "flowType": {
           "name": "signature",
           "type": "function",
@@ -5387,7 +5394,6 @@
             }
           }
         },
-        "required": false,
         "description": "Dash event handler for click events",
         "defaultValue": {
           "value": "() => {}",
@@ -5395,10 +5401,10 @@
         }
       },
       "iconStyle": {
+        "required": false,
         "flowType": {
           "name": "Object"
         },
-        "required": false,
         "description": "Override the inline style of the Icon element",
         "defaultValue": {
           "value": "{}",
@@ -5406,17 +5412,17 @@
         }
       },
       "id": {
+        "required": true,
         "flowType": {
           "name": "string"
         },
-        "required": true,
         "description": "Element ID"
       },
       "inputStyle": {
+        "required": false,
         "flowType": {
           "name": "Object"
         },
-        "required": false,
         "description": "Override the inline styles of the input element",
         "defaultValue": {
           "value": "{}",
@@ -5424,10 +5430,10 @@
         }
       },
       "label": {
+        "required": false,
         "flowType": {
           "name": "Node"
         },
-        "required": false,
         "description": "Label for toggle",
         "defaultValue": {
           "value": "''",
@@ -5435,6 +5441,7 @@
         }
       },
       "labelPosition": {
+        "required": false,
         "flowType": {
           "name": "union",
           "raw": "'left' | 'right'",
@@ -5449,7 +5456,6 @@
             }
           ]
         },
-        "required": false,
         "description": "Where the label will be placed next to the toggle",
         "defaultValue": {
           "value": "'left'",
@@ -5457,10 +5463,10 @@
         }
       },
       "labelStyle": {
+        "required": false,
         "flowType": {
           "name": "Object"
         },
-        "required": false,
         "description": "Override the inline styles of the Toggle element label",
         "defaultValue": {
           "value": "{}",
@@ -5468,10 +5474,10 @@
         }
       },
       "rippleStyle": {
+        "required": false,
         "flowType": {
           "name": "Object"
         },
-        "required": false,
         "description": "Override ripple style on click",
         "defaultValue": {
           "value": "{}",
@@ -5479,6 +5485,7 @@
         }
       },
       "setProps": {
+        "required": false,
         "flowType": {
           "name": "signature",
           "type": "function",
@@ -5490,7 +5497,6 @@
             }
           }
         },
-        "required": false,
         "description": "Dash callback to update props",
         "defaultValue": {
           "value": "() => {}",
@@ -5498,10 +5504,10 @@
         }
       },
       "style": {
+        "required": false,
         "flowType": {
           "name": "Object"
         },
-        "required": false,
         "description": "Override the inline styles of the root element",
         "defaultValue": {
           "value": "{}",
@@ -5509,10 +5515,10 @@
         }
       },
       "thumbStyle": {
+        "required": false,
         "flowType": {
           "name": "Object"
         },
-        "required": false,
         "description": "Override style for thumb",
         "defaultValue": {
           "value": "{}",
@@ -5520,10 +5526,10 @@
         }
       },
       "thumbSwitchedStyle": {
+        "required": false,
         "flowType": {
           "name": "Object"
         },
-        "required": false,
         "description": "Override the inline styles for thumb when the toggle switches",
         "defaultValue": {
           "value": "{}",
@@ -5531,10 +5537,10 @@
         }
       },
       "toggled": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "Toggled on if true",
         "defaultValue": {
           "value": "false",
@@ -5542,10 +5548,10 @@
         }
       },
       "trackStyle": {
+        "required": false,
         "flowType": {
           "name": "Object"
         },
-        "required": false,
         "description": "Override the inline style for track",
         "defaultValue": {
           "value": "{}",
@@ -5553,10 +5559,10 @@
         }
       },
       "trackSwitchedStyle": {
+        "required": false,
         "flowType": {
           "name": "Object"
         },
-        "required": false,
         "description": "Override the inline styles for track when the toggle switches",
         "defaultValue": {
           "value": "{}",

@@ -2,6 +2,16 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 3.1.1 2019-07-09
+### Changes
+- Internal updates:
+    - `@babel/preset-env` to `v7.5.2` [#134](https://github.com/StratoDem/sd-material-ui/pull/134)
+    - `webpack` to `v4.35.3` [#133](https://github.com/StratoDem/sd-material-ui/pull/133)
+    - `babel` to `v7.5.0` [#132](https://github.com/StratoDem/sd-material-ui/pull/132)
+    - `webpack-serve` to `v3` [#131](https://github.com/StratoDem/sd-material-ui/pull/131)
+    - `react-docgen` to `v4` [#130](https://github.com/StratoDem/sd-material-ui/pull/130)
+    - `eslint` to `v6` [#128](https://github.com/StratoDem/sd-material-ui/pull/128)
+
 ## 3.1.0 2019-07-03
 ### Changes
 - Internal: Upgrades package structure to newest [dash-component-boilerplate](https://github.com/plotly/dash-component-boilerplate)
