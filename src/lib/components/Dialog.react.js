@@ -31,6 +31,20 @@ type Props = {
    * other callbacks in the browser
    */
   open?: boolean,
+  /** If set to true, the body content of the Dialog will be scrollable. */
+  autoScrollBodyContent?: boolean,
+  /** The className to add to the actions container's root element. */
+  actionsContainerClassName?: string,
+  /** The className to add to the content's root element under the title. */
+  bodyClassName?: string,
+  /** The className to add to the content container */
+  contentClassName?: string,
+  /** The className to add to the Overlay component rendered behind the Dialog */
+  overlayClassName?: string,
+  /** CSS class name of the Paper element */
+  paperClassName?: string,
+  /** The className to add to the title's root container element */
+  titleClassName?: string,
   /** Dash callback to update props on the server */
   setProps?: (props: { modal?: boolean, open?: boolean }) => void,
 };
@@ -46,6 +60,13 @@ const defaultProps = {
   open: false,
   modal: false,
   setProps: () => {},
+  actionsContainerClassName: null,
+  bodyClassName: null,
+  contentClassName: null,
+  overlayClassName: null,
+  paperClassName: null,
+  titleClassName: null,
+  autoScrollBodyContent: false,
 };
 
 /** Material UI Dialog component */
@@ -71,7 +92,17 @@ export default class Dialog extends Component<Props, State> {
   };
 
   render() {
-    const { id, className, modal, actions } = this.props;
+    const {
+      id,
+      className,
+      modal,
+      actions,
+      actionsContainerClassName,
+      bodyClassName,
+      contentClassName,
+      overlayClassName,
+      paperClassName,
+      titleClassName } = this.props;
 
     return (
       <div id={id} className="sd-dialog">
@@ -79,6 +110,12 @@ export default class Dialog extends Component<Props, State> {
           <MuiDialog
             actions={actions}
             className={className}
+            actionsContainerClassName={actionsContainerClassName}
+            bodyClassName={bodyClassName}
+            contentClassName={contentClassName}
+            overlayClassName={overlayClassName}
+            paperClassName={paperClassName}
+            titleClassName={titleClassName}
             modal={modal}
             open={this.state.open}
             onRequestClose={() => { this.changeDialogOpenStatus(false); }}
