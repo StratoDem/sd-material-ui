@@ -1851,6 +1851,83 @@
           "computed": false
         }
       },
+      "autoScrollBodyContent": {
+        "required": false,
+        "flowType": {
+          "name": "boolean"
+        },
+        "description": "If set to true, the body content of the Dialog will be scrollable.",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "actionsContainerClassName": {
+        "required": false,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "The className to add to the actions container's root element.",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "bodyClassName": {
+        "required": false,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "The className to add to the content's root element under the title.",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "contentClassName": {
+        "required": false,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "The className to add to the content container",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "overlayClassName": {
+        "required": false,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "The className to add to the Overlay component rendered behind the Dialog",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "paperClassName": {
+        "required": false,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "CSS class name of the Paper element",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "titleClassName": {
+        "required": false,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "The className to add to the title's root container element",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
       "setProps": {
         "required": false,
         "flowType": {
