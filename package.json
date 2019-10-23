@@ -45,7 +45,7 @@
     "flow-bin": "0.103.0",
     "node-sass": "4.12.0",
     "npm": "6.10.1",
-    "react": "16.8.6",
+    "react": "16.11.0",
     "react-docgen": "4.1.1",
     "react-dom": "16.8.6",
     "sass-loader": "7.1.0",
