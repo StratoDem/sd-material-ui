@@ -18,16 +18,22 @@ Keyword arguments:
 - inkBarContainerStyle (dict; optional): Override the inline-styles of the InkBar container
 - style (dict; optional): Override the inline-styles of the root element
 - tabItemContainerStyle (dict; optional): Override the inline-styles of tab-labels container
+- tabPropsArray (list; required): The values that will be passed to the individual Tab components inside Tabs. Allowed values:
+   buttonStyle: Object
+   className: string
+   icon: Node
+   label: Node
+   style: Object
+   value: any
 - tabTemplateStyle (dict; optional): Override the inline-styles of the tab template
-- value (bool | number | str | dict | list; optional): Makes Tabs controllable and selects the tab whose value prop matches this prop
-- tabPropsArray (list; required)"""
+- value (bool | number | str | dict | list; optional): Makes Tabs controllable and selects the tab whose value prop matches this prop"""
     @_explicitize_args
-    def __init__(self, children=None, id=Component.UNDEFINED, className=Component.UNDEFINED, contentContainerClassName=Component.UNDEFINED, contentContainerStyle=Component.UNDEFINED, initialSelectedIndex=Component.UNDEFINED, inkBarStyle=Component.UNDEFINED, inkBarContainerStyle=Component.UNDEFINED, style=Component.UNDEFINED, tabItemContainerStyle=Component.UNDEFINED, tabTemplateStyle=Component.UNDEFINED, value=Component.UNDEFINED, tabPropsArray=Component.REQUIRED, **kwargs):
-        self._prop_names = ['children', 'id', 'className', 'contentContainerClassName', 'contentContainerStyle', 'initialSelectedIndex', 'inkBarStyle', 'inkBarContainerStyle', 'style', 'tabItemContainerStyle', 'tabTemplateStyle', 'value', 'tabPropsArray']
+    def __init__(self, children=None, id=Component.UNDEFINED, className=Component.UNDEFINED, contentContainerClassName=Component.UNDEFINED, contentContainerStyle=Component.UNDEFINED, fireEvent=Component.UNDEFINED, initialSelectedIndex=Component.UNDEFINED, inkBarStyle=Component.UNDEFINED, inkBarContainerStyle=Component.UNDEFINED, style=Component.UNDEFINED, tabItemContainerStyle=Component.UNDEFINED, tabPropsArray=Component.REQUIRED, tabTemplateStyle=Component.UNDEFINED, value=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['children', 'id', 'className', 'contentContainerClassName', 'contentContainerStyle', 'initialSelectedIndex', 'inkBarStyle', 'inkBarContainerStyle', 'style', 'tabItemContainerStyle', 'tabPropsArray', 'tabTemplateStyle', 'value']
         self._type = 'Tabs'
         self._namespace = 'sd_material_ui'
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['children', 'id', 'className', 'contentContainerClassName', 'contentContainerStyle', 'initialSelectedIndex', 'inkBarStyle', 'inkBarContainerStyle', 'style', 'tabItemContainerStyle', 'tabTemplateStyle', 'value', 'tabPropsArray']
+        self.available_properties = ['children', 'id', 'className', 'contentContainerClassName', 'contentContainerStyle', 'initialSelectedIndex', 'inkBarStyle', 'inkBarContainerStyle', 'style', 'tabItemContainerStyle', 'tabPropsArray', 'tabTemplateStyle', 'value']
         self.available_wildcard_properties =            []
 
         _explicit_args = kwargs.pop('_explicit_args')

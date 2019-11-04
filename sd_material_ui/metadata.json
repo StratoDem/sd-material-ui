@@ -5271,7 +5271,35 @@
   "src/lib/components/Tabs.react.js": {
     "description": "Material UI Tabs component",
     "displayName": "Tabs",
-    "methods": [],
+    "methods": [
+      {
+        "name": "handleChange",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "event",
+            "type": {
+              "name": "object",
+              "alias": "object"
+            }
+          },
+          {
+            "name": "index",
+            "type": {
+              "name": "number"
+            }
+          },
+          {
+            "name": "obj",
+            "type": {
+              "name": "any"
+            }
+          }
+        ],
+        "returns": null
+      }
+    ],
     "props": {
       "id": {
         "required": false,
@@ -5328,6 +5356,25 @@
           "computed": false
         }
       },
+      "fireEvent": {
+        "required": false,
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "() => void",
+          "signature": {
+            "arguments": [],
+            "return": {
+              "name": "void"
+            }
+          }
+        },
+        "description": "Dash-assigned callback that gets fired when the input changes.",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      },
       "initialSelectedIndex": {
         "required": false,
         "flowType": {
@@ -5361,6 +5408,52 @@
           "computed": false
         }
       },
+      "setProps": {
+        "required": false,
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "(props: { modal?: boolean, open?: boolean }) => void",
+          "signature": {
+            "arguments": [
+              {
+                "name": "props",
+                "type": {
+                  "name": "signature",
+                  "type": "object",
+                  "raw": "{ modal?: boolean, open?: boolean }",
+                  "signature": {
+                    "properties": [
+                      {
+                        "key": "modal",
+                        "value": {
+                          "name": "boolean",
+                          "required": false
+                        }
+                      },
+                      {
+                        "key": "open",
+                        "value": {
+                          "name": "boolean",
+                          "required": false
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "return": {
+              "name": "void"
+            }
+          }
+        },
+        "description": "Dash callback to update props on the server",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      },
       "style": {
         "required": false,
         "flowType": {
@@ -5383,6 +5476,19 @@
           "computed": false
         }
       },
+      "tabPropsArray": {
+        "required": true,
+        "flowType": {
+          "name": "Array",
+          "elements": [
+            {
+              "name": "Object"
+            }
+          ],
+          "raw": "Array<Object>"
+        },
+        "description": "The values that will be passed to the individual Tab components inside Tabs. Allowed values:\n   buttonStyle: Object\n   className: string\n   icon: Node\n   label: Node\n   style: Object\n   value: any"
+      },
       "tabTemplateStyle": {
         "required": false,
         "flowType": {
@@ -5400,19 +5506,6 @@
           "value": "undefined",
           "computed": true
         }
-      },
-      "tabPropsArray": {
-        "required": true,
-        "flowType": {
-          "name": "Array",
-          "elements": [
-            {
-              "name": "Object"
-            }
-          ],
-          "raw": "Array<Object>"
-        },
-        "description": ""
       }
     }
   },
