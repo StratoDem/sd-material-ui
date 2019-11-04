@@ -362,16 +362,21 @@ app.layout = html.Div([
     #
     # spacer,
     #
-    # sd_material_ui.Tabs(
-    #     children=[
-    #         html.Div('Tab 1'),
-    #         html.Div('Tab 2'),
-    #     ],
-    #     tabPropsArray=[
-    #         {'label': 'Tab 1 label'},
-    #         {'label': 'Tab 2 label'},
-    #     ]
-    # ),
+    sd_material_ui.Tabs(
+        value='tab-1',
+        id='tab-input',
+        children=[
+            html.Div('Tab 1'),
+            html.Div('Tab 2'),
+        ],
+        tabPropsArray=[
+            {'label': 'Tab 1 label', 'value': 'tab-1'},
+            {'label': 'Tab 2 label', 'value': 'tab-2'},
+        ]
+    ),
+    html.Div(id='tab-output', children=[]),
+
+    spacer,
 
     sd_material_ui.AutoComplete(
         id='input-autocomplete-search',
@@ -443,6 +448,13 @@ def update_questions_output(value, n_clicks, n_clicks_previous):
 #     [dash.dependencies.State('questions-tabs-id', 'n_clicks_previous')])
 # def update_questions_output(value, n_clicks, n_clicks_previous):
 #     return '{} {} {}'.format(value, n_clicks, n_clicks_previous)
+
+
+@app.callback(
+    dash.dependencies.Output('tab-output', 'children'),
+    [dash.dependencies.Input('tab-input', 'value')])
+def show_selected_tab_value(value):
+    return 'Selected tab: {}'.format(value)
 
 
 @app.callback(
