@@ -2,6 +2,13 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 3.2.0 2019-11-04
+### Adds
+- Adds `value` prop to `Tabs` component. Add a `value` to the component initialization and a `value` key and value pair for each tab to the `tabPropsArray` to make the component expose the `value` for use in callbacks. Existing behavior should not change.
+
+### Related issues:
+- [235](https://github.com/StratoDem/sd-material-ui/issues/235)
+
 ## 3.1.2 2019-07-10
 ### Adds
 - Adds `*ClassName` props to `Dialog` component for more styling control
