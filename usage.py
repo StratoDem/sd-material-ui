@@ -88,9 +88,14 @@ app.layout = html.Div([
 
     # Test SDDialog (modal)
     sd_material_ui.Dialog(
-        html.Div(children=html.P('pathname'), ),
+        [html.P('pathname'),
+         html.P('Item 1'),
+         html.P('Item 2'),
+         html.P('Item 3'),
+         html.P('Item 4')],
         id='output2',
         open=True),
+    html.Button('Open Dialog', id='input2'),
 
     spacer,
     #
@@ -457,21 +462,18 @@ def display_output(value):
     return 'You have entered {}'.format(value)
 
 
-# # Callback for SDDialog (modal)
-# @app.callback(
-#     dash.dependencies.Output('output2', 'open'),
-#     [dash.dependencies.Input('input2', 'n_clicks'),
-#      dash.dependencies.Input('closer', 'n_clicks')],
-#     [dash.dependencies.State('output2', 'open')])
-# def show_modal_dialog(modal_click: int, close_button: int, open_state: bool):
-#     if modal_click and modal_click > 0:
-#         if not open_state:
-#             return True
-#     elif close_button:
-#         if open_state:
-#             return False
-#     else:
-#         return False
+# Callback for SDDialog
+@app.callback(
+    dash.dependencies.Output('output2', 'open'),
+   [dash.dependencies.Input('input2', 'n_clicks')],
+    [dash.dependencies.State('output2', 'open')])
+def show_dialog(open_click: int, open_state: bool):
+    if open_click and open_click > 0:
+        if not open_state:
+            return True
+    else:
+        return False
+    return open_state
 
 
 # Callback for SDDialog (non-modal)

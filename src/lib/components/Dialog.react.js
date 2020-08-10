@@ -2,7 +2,7 @@
 
 import React, { Component } from 'react';
 
-import MuiDialog from 'material-ui/Dialog';
+import MuiDialog from '@material-ui/core/Dialog';
 import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
@@ -14,6 +14,8 @@ type Props = {
   /** Dialog ID */
   id: string,
   /** Actions component or list of components for the Dialog */
+  actions?: Node | Array<Node>,
+  /** Children to render inside of the Dialog */
   children?: Node,
   /** CSS class name of the root element */
   className?: string,
@@ -26,21 +28,21 @@ type Props = {
    */
   open?: boolean,
   /** If set to true, the body content of the Dialog will be scrollable. */
-  // autoScrollBodyContent?: boolean,
-  // /** The className to add to the actions container's root element. */
-  // actionsContainerClassName?: string,
-  // /** The className to add to the content's root element under the title. */
-  // bodyClassName?: string,
-  // /** The className to add to the content container */
-  // contentClassName?: string,
-  // /** The className to add to the Overlay component rendered behind the Dialog */
-  // overlayClassName?: string,
-  // /** CSS class name of the Paper element */
-  // paperClassName?: string,
-  // /** The className to add to the title's root container element */
-  // titleClassName?: string,
-  // /** Dash callback to update props on the server */
-  setProps?: (props: {open?: boolean}) => void,
+  autoScrollBodyContent?: boolean,
+  /** The className to add to the actions container's root element. */
+  actionsContainerClassName?: string,
+  /** The className to add to the content's root element under the title. */
+  bodyClassName?: string,
+  /** The className to add to the content container */
+  contentClassName?: string,
+  /** The className to add to the Overlay component rendered behind the Dialog */
+  overlayClassName?: string,
+  /** CSS class name of the Paper element */
+  paperClassName?: string,
+  /** The className to add to the title's root container element */
+  titleClassName?: string,
+  /** Dash callback to update props on the server */
+  setProps?: (props: { modal?: boolean, open?: boolean }) => void,
 };
 
 type State = {
@@ -48,10 +50,18 @@ type State = {
 };
 
 const defaultProps = {
+  actions: null,
   children: null,
   className: '',
   open: false,
   setProps: () => {},
+  actionsContainerClassName: null,
+  bodyClassName: null,
+  contentClassName: null,
+  overlayClassName: null,
+  paperClassName: null,
+  titleClassName: null,
+  autoScrollBodyContent: false,
 };
 
 /** Material UI Dialog component */
@@ -67,6 +77,7 @@ export default class Dialog extends Component<Props, State> {
     if (typeof setProps === 'function') {
       setProps({open});
     }
+
     this.setState({open});
   };
 
@@ -78,18 +89,47 @@ export default class Dialog extends Component<Props, State> {
     this.changeDialogOpenStatus(false)
   }
 
+  UNSAFE_componentWillReceiveProps = (nextProps: Props, nextContent: *): void => {
+    if (nextProps.open !== this.state.open)
+      this.setState({open: nextProps.open});
+  }
+
   render() {
+    const {
+      id,
+      className,
+      actions,
+      actionsContainerClassName,
+      bodyClassName,
+      contentClassName,
+      overlayClassName,
+      paperClassName,
+      titleClassName } = this.props;
+
     return (
-      <div id={this.props.id}>
+      <div id={id} className="sd-dialog">
         <CssBaseline/>
         <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
-          <MuiDialog aria-labelledby="simple-dialog-title" open={this.state.open}>
-            <div>
+          <MuiDialog aria-labelledby="simple-dialog-title"
+                     open={this.state.open}
+                     scroll="body"
+                     fullWidth={true}
+                     onClose={this.closeDialog}
+                     actions={actions}
+                     className={className}
+                     actionsContainerClassName={actionsContainerClassName}
+                     bodyClassName={bodyClassName}
+                     contentClassName={contentClassName}
+                     overlayClassName={overlayClassName}
+                     paperClassName={paperClassName}
+                     titleClassName={titleClassName}>
+            <div style={{"margin": "14px"}}>
               <IconButton
                 color="inherit"
                 onClick={this.closeDialog}
-                edge="end"
-                style={{"float": "right"}}
+                style={{"float": "right",
+                        "margin-top": "-16px",
+                        "margin-right": "-12px",}}
               >
                 <CloseIcon/>
               </IconButton>
@@ -97,8 +137,6 @@ export default class Dialog extends Component<Props, State> {
             </div>
           </MuiDialog>
         </MuiThemeProvider>
-        <button onClick={this.openDialog}>Open Dialog</button>
-
       </div>
   );
   }
