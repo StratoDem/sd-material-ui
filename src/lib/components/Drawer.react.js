@@ -3,10 +3,6 @@
 import React, { Component } from 'react';
 import Drawer from '@material-ui/core/Drawer';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
-import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 
 type Props = {
   anchor: str,
@@ -38,44 +34,22 @@ const defaultProps = {
   setProps: () => {},
 };
 
-export default class LeftDrawer extends Component<Props> {
+export default class SD_Drawer extends Component<Props> {
   constructor(props: Props) {
     super(props);
     this.state = {open: props.open};
   }
 
-  changeOpenStatus = (open: boolean): void => {
-    const { setProps } = this.props;
-
-    if (typeof setProps === 'function') {
-      setProps({open});
-    }
-
-    this.setState({open});
-  };
-
-  handleDrawerOpen = () => {
-    this.changeOpenStatus(true);
-  };
-
-  handleDrawerClose = () => {
-    this.changeOpenStatus(false);
-  };
+  UNSAFE_componentWillReceiveProps(nextProps: Props, nextContext: *): void {
+    if (nextProps.open !== this.state.open)
+      this.setState({open: nextProps.open});
+  }
 
   render() {
     const {id, anchor, className} = this.props;
 
     return (
       <div id={id}>
-        <CssBaseline/>
-        <IconButton
-          color="inherit"
-          aria-label="open drawer"
-          onClick={this.handleDrawerOpen}
-          edge="start"
-        >
-          <MenuIcon/>
-        </IconButton>
         <Drawer
           anchor={anchor}
           className={className}
@@ -83,11 +57,6 @@ export default class LeftDrawer extends Component<Props> {
           open={this.state.open}
         >
           <div>
-            <div>
-              <IconButton onClick={this.handleDrawerClose}>
-                <ChevronLeftIcon />
-              </IconButton>
-            </div>
             {this.props.children}
           </div>
         </Drawer>
@@ -96,4 +65,4 @@ export default class LeftDrawer extends Component<Props> {
   }
 }
 
-LeftDrawer.defaultProps = defaultProps;
+SD_Drawer.defaultProps = defaultProps;

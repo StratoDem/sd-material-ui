@@ -2007,41 +2007,8 @@
   },
   "src/lib/components/Drawer.react.js": {
     "description": "",
-    "displayName": "LeftDrawer",
-    "methods": [
-      {
-        "name": "changeOpenStatus",
-        "docblock": null,
-        "modifiers": [],
-        "params": [
-          {
-            "name": "open",
-            "type": {
-              "name": "boolean"
-            }
-          }
-        ],
-        "returns": {
-          "type": {
-            "name": "void"
-          }
-        }
-      },
-      {
-        "name": "handleDrawerOpen",
-        "docblock": null,
-        "modifiers": [],
-        "params": [],
-        "returns": null
-      },
-      {
-        "name": "handleDrawerClose",
-        "docblock": null,
-        "modifiers": [],
-        "params": [],
-        "returns": null
-      }
-    ],
+    "displayName": "SD_Drawer",
+    "methods": [],
     "props": {
       "anchor": {
         "required": false,
