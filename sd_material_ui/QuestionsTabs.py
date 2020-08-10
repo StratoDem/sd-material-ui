@@ -10,8 +10,8 @@ class QuestionsTabs(Component):
 Keyword arguments:
 - id (string; required): Component ID
 - questionSectionProps (list; required): Array of props for each QuestionSection
-- n_clicks (number; optional): Number of clicks by the user on the Questions component
-- n_clicks_previous (number; optional): The previous number of clicks from the Questions component
+- n_clicks (number; default 0): Number of clicks by the user on the Questions component
+- n_clicks_previous (number; default 0): The previous number of clicks from the Questions component
 - value (bool | number | str | dict | list; required): The value currently selected by clicking on a question answer prompt
 - tabsProps (dict; optional): Tabs props"""
     @_explicitize_args

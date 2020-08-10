@@ -2006,11 +2006,11 @@
     }
   },
   "src/lib/components/Drawer.react.js": {
-    "description": "Material UI Drawer component",
-    "displayName": "Drawer",
+    "description": "",
+    "displayName": "LeftDrawer",
     "methods": [
       {
-        "name": "changeDrawerStatus",
+        "name": "changeOpenStatus",
         "docblock": null,
         "modifiers": [],
         "params": [
@@ -2021,18 +2021,43 @@
             }
           }
         ],
+        "returns": {
+          "type": {
+            "name": "void"
+          }
+        }
+      },
+      {
+        "name": "handleDrawerOpen",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "handleDrawerClose",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
         "returns": null
       }
     ],
     "props": {
+      "id": {
+        "required": true,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "Dialog ID"
+      },
       "children": {
         "required": false,
         "flowType": {
           "name": "Node"
         },
-        "description": "The contents to render inside the Drawer",
+        "description": "Children to render inside of the Dialog",
         "defaultValue": {
-          "value": "[]",
+          "value": "null",
           "computed": false
         }
       },
@@ -2041,115 +2066,20 @@
         "flowType": {
           "name": "string"
         },
-        "description": "The CSS class name of the root element",
+        "description": "CSS class name of the root element",
         "defaultValue": {
           "value": "''",
           "computed": false
         }
-      },
-      "containerClassName": {
-        "required": false,
-        "flowType": {
-          "name": "string"
-        },
-        "description": "The CSS class name of the container element",
-        "defaultValue": {
-          "value": "''",
-          "computed": false
-        }
-      },
-      "containerClosedClassName": {
-        "required": false,
-        "flowType": {
-          "name": "string"
-        },
-        "description": "The CSS class name to add to the container element when it is closed",
-        "defaultValue": {
-          "value": "''",
-          "computed": false
-        }
-      },
-      "containerStyle": {
-        "required": false,
-        "flowType": {
-          "name": "Object"
-        },
-        "description": "Override the inline styles of the container element",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "disableSwipeToOpen": {
-        "required": false,
-        "flowType": {
-          "name": "boolean"
-        },
-        "description": "If true, swiping sideways when the Drawer is closed will not open it",
-        "defaultValue": {
-          "value": "false",
-          "computed": false
-        }
-      },
-      "docked": {
-        "required": false,
-        "flowType": {
-          "name": "boolean"
-        },
-        "description": "If true, the Drawer will be docked. In this state, the overlay won't show and clicking on a\nmenu item will not close the Drawer.",
-        "defaultValue": {
-          "value": "true",
-          "computed": false
-        }
-      },
-      "id": {
-        "required": true,
-        "flowType": {
-          "name": "string"
-        },
-        "description": "Component ID"
       },
       "open": {
         "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "description": "If true, the Drawer is opened. Whether true or false,\nthis guarantees that the Drawer is a controlled component",
+        "description": "Is the drawer open?\n\nIMPORTANT: When using this component in Dash, a listener must be set up (either as state or\nan input) for this component's props.open value in order to achieve the desired behavior.",
         "defaultValue": {
           "value": "false",
-          "computed": false
-        }
-      },
-      "openSecondary": {
-        "required": false,
-        "flowType": {
-          "name": "boolean"
-        },
-        "description": "If true, the Drawer is positioned to open from the opposite side",
-        "defaultValue": {
-          "value": "false",
-          "computed": false
-        }
-      },
-      "overlayClassName": {
-        "required": false,
-        "flowType": {
-          "name": "string"
-        },
-        "description": "The CSS class name to add to the Overlay component that is rendered behind the Drawer",
-        "defaultValue": {
-          "value": "''",
-          "computed": false
-        }
-      },
-      "overlayStyle": {
-        "required": false,
-        "flowType": {
-          "name": "Object"
-        },
-        "description": "Override the inline-styles of the Overlay component that is rendered behind the Drawer",
-        "defaultValue": {
-          "value": "{}",
           "computed": false
         }
       },
@@ -2158,70 +2088,44 @@
         "flowType": {
           "name": "signature",
           "type": "function",
-          "raw": "() => void",
+          "raw": "(props: { modal?: boolean, open?: boolean }) => void",
           "signature": {
-            "arguments": [],
+            "arguments": [
+              {
+                "name": "props",
+                "type": {
+                  "name": "signature",
+                  "type": "object",
+                  "raw": "{ modal?: boolean, open?: boolean }",
+                  "signature": {
+                    "properties": [
+                      {
+                        "key": "modal",
+                        "value": {
+                          "name": "boolean",
+                          "required": false
+                        }
+                      },
+                      {
+                        "key": "open",
+                        "value": {
+                          "name": "boolean",
+                          "required": false
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
             "return": {
               "name": "void"
             }
           }
         },
-        "description": "Dash callback to update props",
+        "description": "Dash callback to update props on the server",
         "defaultValue": {
           "value": "() => {}",
-          "computed": false
-        }
-      },
-      "style": {
-        "required": false,
-        "flowType": {
-          "name": "Object"
-        },
-        "description": "Override the inline styles of the root element",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "swipeAreaWidth": {
-        "required": false,
-        "flowType": {
-          "name": "number"
-        },
-        "description": "The width of the left most (or right most) area in pixels where the Drawer can be swiped\nopen from. Setting this to null spans that area to the entire page (CAUTION! Setting this\nproperty to null might cause issues with sliders and swipeable Tabs: use at your own risk).",
-        "defaultValue": {
-          "value": "30",
-          "computed": false
-        }
-      },
-      "width": {
-        "required": false,
-        "flowType": {
-          "name": "union",
-          "raw": "string | number",
-          "elements": [
-            {
-              "name": "string"
-            },
-            {
-              "name": "number"
-            }
-          ]
-        },
-        "description": "The width of the Drawer in pixels or percentage in string format ex. 50% to fill half of the\nwindow or 100% and so on. Defaults to using the values from theme.",
-        "defaultValue": {
-          "value": "null",
-          "computed": false
-        }
-      },
-      "zDepth": {
-        "required": false,
-        "flowType": {
-          "name": "number"
-        },
-        "description": "The zDepth of the Drawer.",
-        "defaultValue": {
-          "value": "2",
           "computed": false
         }
       }

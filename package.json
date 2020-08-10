@@ -25,7 +25,9 @@
   },
   "homepage": "https://github.com/StratoDem/sd-material-ui",
   "dependencies": {
-    "material-ui": "^0.20.0"
+    "@material-ui/core": "^4.11.0",
+    "@material-ui/icons": "^4.9.1",
+    "material-ui": "^0.20.2"
   },
   "devDependencies": {
     "@babel/core": "7.5.5",

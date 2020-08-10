@@ -8,32 +8,32 @@ class DropDownMenu(Component):
 A Dash material-ui DropDownMenu component
 
 Keyword arguments:
-- anchorOrigin (optional): This is the point on the anchor that the popover's targetOrigin will attach to.
-Options: vertical: [top, center, bottom] horizontal: [left, middle, right].. anchorOrigin has the following type: dict containing keys 'vertical', 'horizontal'.
+- anchorOrigin (dict; default { vertical: 'top', horizontal: 'left'}): This is the point on the anchor that the popover's targetOrigin will attach to.
+Options: vertical: [top, center, bottom] horizontal: [left, middle, right]. anchorOrigin has the following type: dict containing keys 'vertical', 'horizontal'.
   Those keys have the following types:
   - vertical (optional)
   - horizontal (optional)
-- animated (boolean; optional): If true, the popover will apply transitions when it gets added to the DOM.
-- autoWidth (boolean; optional): The width will automatically be set according to the items inside the menu. To control
+- animated (boolean; default True): If true, the popover will apply transitions when it gets added to the DOM.
+- autoWidth (boolean; default True): The width will automatically be set according to the items inside the menu. To control
 this width in css instead, set this prop to false.
-- className (string; optional): The css class name of the root element.
-- disabled (boolean; optional): Disables the menu.
+- className (string; default ''): The css class name of the root element.
+- disabled (boolean; default False): Disables the menu.
 - iconButton (a list of or a singular dash component, string or number; optional): Overrides default SvgIcon dropdown arrow component.
 - iconStyle (dict; optional): Overrides the styles of icon element.
 - id (string; optional): The element's ID.
 - labelStyle (dict; optional): Overrides the styles of label when the DropDownMenu is inactive.
 - listStyle (dict; optional): The style object to use to override underlying list style.
-- maxHeight (number; optional): The maximum height of the Menu when it is displayed.
+- maxHeight (number; default 500): The maximum height of the Menu when it is displayed.
 - menuItemStyle (dict; optional): Override the inline-styles of menu items.
 - menuStyle (dict; optional): Overrides the styles of Menu when the DropDownMenu is displayed.
-- openImmediately (boolean; optional): Set to true to have the DropDownMenu automatically open on mount.
+- openImmediately (boolean; default False): Set to true to have the DropDownMenu automatically open on mount.
 - options (list; optional): Used to create the MenuItems to populate the Menu with. A Dash user passes in a list of dict
 items, each one having at least a `value` and `primaryText`. If the 'label' is used,
 that value will be used to render the representation of that item within the field.
 - selectedMenuItemStyle (dict; optional): Override the inline-styles of selected menu items.
 - style (dict; optional): Override the inline-styles of the root element.
-- targetOrigin (optional): This is the point on the popover which will attach to the anchor's origin.
-Options: vertical: [top, center, bottom] horizontal: [left, middle, right].. targetOrigin has the following type: dict containing keys 'vertical', 'horizontal'.
+- targetOrigin (dict; default {vertical: 'top', horizontal: 'left'}): This is the point on the popover which will attach to the anchor's origin.
+Options: vertical: [top, center, bottom] horizontal: [left, middle, right]. targetOrigin has the following type: dict containing keys 'vertical', 'horizontal'.
   Those keys have the following types:
   - vertical (optional)
   - horizontal (optional)

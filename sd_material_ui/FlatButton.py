@@ -15,23 +15,23 @@ which will then be displayed. (In our example,
 we are nesting an `<input type="file" />` and a `span`
 that acts as our label to be displayed.) This only
 applies to flat and raised buttons.
-- backgroundColor (string; optional): Button color when *no* hover event is triggered
-- className (string; optional): CSS class name of the root element
-- disableTouchRipple (boolean; optional): If true, the element's ripple effect will be disabled
-- disabled (boolean; optional): Disable the button?
-- fullWidth (boolean; optional): If true, the button will take up the full width of its container
-- hoverColor (string; optional): Color of button when mouse hovers over
-- href (string; optional): The URL to link to when the button is clicked
+- backgroundColor (string; default ''): Button color when *no* hover event is triggered
+- className (string; default ''): CSS class name of the root element
+- disableTouchRipple (boolean; default False): If true, the element's ripple effect will be disabled
+- disabled (boolean; default False): Disable the button?
+- fullWidth (boolean; default False): If true, the button will take up the full width of its container
+- hoverColor (string; default ''): Color of button when mouse hovers over
+- href (string; default ''): The URL to link to when the button is clicked
 - icon (a list of or a singular dash component, string or number; optional): Use this property to display an icon
 - id (string; optional): Element ID
 - label (string; required): Label for the button
-- labelPosition (optional): Place label before or after the passed children
+- labelPosition (default 'after'): Place label before or after the passed children
 - labelStyle (dict; optional): Override the inline styles of the button's label element
-- n_clicks (number; optional): An integer that represents the number fo times that this element has been clicked
-- n_clicks_previous (number; optional): An integer that represents the previous number of times this element has been clicked
-- primary (boolean; optional): If true, colors button according to primaryTextColor from the MuiTheme
-- rippleColor (string; optional): Color for the ripple when the button is clicked
-- secondary (boolean; optional): If true, colors button according to secondaryTextColor from the theme.
+- n_clicks (number; default 0): An integer that represents the number fo times that this element has been clicked
+- n_clicks_previous (number; default 0): An integer that represents the previous number of times this element has been clicked
+- primary (boolean; default False): If true, colors button according to primaryTextColor from the MuiTheme
+- rippleColor (string; default ''): Color for the ripple when the button is clicked
+- secondary (boolean; default False): If true, colors button according to secondaryTextColor from the theme.
 The primary prop has precendent if set to true.
 - style (dict; optional): Override the inline styles of the root element"""
     @_explicitize_args

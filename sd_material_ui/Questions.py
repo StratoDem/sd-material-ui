@@ -10,8 +10,8 @@ Questions wrapper copmonent
 Keyword arguments:
 - id (string; required): Component ID
 - questionSectionProps (list; required): Array of props for each QuestionSection
-- n_clicks (number; optional): Number of clicks by the user on the Questions component
-- n_clicks_previous (number; optional): The previous number of clicks from the Questions component
+- n_clicks (number; default 0): Number of clicks by the user on the Questions component
+- n_clicks_previous (number; default 0): The previous number of clicks from the Questions component
 - value (bool | number | str | dict | list; required): The value currently selected by clicking on a question answer prompt"""
     @_explicitize_args
     def __init__(self, id=Component.REQUIRED, questionSectionProps=Component.REQUIRED, n_clicks=Component.UNDEFINED, n_clicks_previous=Component.UNDEFINED, value=Component.REQUIRED, fireEvent=Component.UNDEFINED, **kwargs):

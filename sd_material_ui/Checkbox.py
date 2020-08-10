@@ -8,13 +8,13 @@ class Checkbox(Component):
 Material UI Checkbox component
 
 Keyword arguments:
-- checked (boolean; optional): Checkbox is checked if true
-- disabled (boolean; optional): Checkbox is disabled if true
+- checked (boolean; default False): Checkbox is checked if true
+- disabled (boolean; default False): Checkbox is disabled if true
 - iconStyle (dict; optional): Overrides the inline-styles of the icon element
 - id (string; required): The element's ID
 - inputStyle (dict; optional): Overrides the inline styles of the input element
-- label (string; optional): The text label for the checkbox
-- labelPosition (optional): Where the label will be placed next to the checkbox
+- label (string; default ''): The text label for the checkbox
+- labelPosition (default 'right'): Where the label will be placed next to the checkbox
 - labelStyle (dict; optional): Overrides the inline styles of the Checkbox element label
 - style (dict; optional): Override the inline styles of the root element"""
     @_explicitize_args

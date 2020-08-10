@@ -8,12 +8,12 @@ class CircularProgress(Component):
 Material UI CircularProgress component
 
 Keyword arguments:
-- color (string; optional): Override the progress's color
+- color (string; default '#00BCD4'): Override the progress's color
 - innerStyle (dict; optional): Style for inner wrapper div
 - mode (required): The mode of show your progress, for now, will always be indeterminate
-- size (number; optional): The diameter of the progress in pixels
+- size (number; default 40): The diameter of the progress in pixels
 - style (dict; optional): Override the inline-style of the root element
-- thickness (number; optional): Stroke width in pixels"""
+- thickness (number; default 3.5): Stroke width in pixels"""
     @_explicitize_args
     def __init__(self, color=Component.UNDEFINED, innerStyle=Component.UNDEFINED, mode=Component.REQUIRED, size=Component.UNDEFINED, style=Component.UNDEFINED, thickness=Component.UNDEFINED, **kwargs):
         self._prop_names = ['color', 'innerStyle', 'mode', 'size', 'style', 'thickness']

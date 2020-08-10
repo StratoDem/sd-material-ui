@@ -9,12 +9,12 @@ A Dash material-ui Paper component
 
 Keyword arguments:
 - children (a list of or a singular dash component, string or number; optional): Children passed int othe paper element
-- circle (boolean; optional): Set ot true to generate a circular paper container
-- rounded (boolean; optional): By default, the paper container will have a border radius.
+- circle (boolean; default False): Set ot true to generate a circular paper container
+- rounded (boolean; default True): By default, the paper container will have a border radius.
 Set this to false to generate a container with sharp corners.
 - style (dict; optional): Override the inline-styles of the root element
-- transitionEnabled (boolean; optional): Set to false to disable CSS transitions for the paper element
-- zDepth (optional): This number represents the zDepth of the paper shadow"""
+- transitionEnabled (boolean; default True): Set to false to disable CSS transitions for the paper element
+- zDepth (default 1): This number represents the zDepth of the paper shadow"""
     @_explicitize_args
     def __init__(self, children=None, circle=Component.UNDEFINED, rounded=Component.UNDEFINED, style=Component.UNDEFINED, transitionEnabled=Component.UNDEFINED, zDepth=Component.UNDEFINED, **kwargs):
         self._prop_names = ['children', 'circle', 'rounded', 'style', 'transitionEnabled', 'zDepth']

@@ -9,11 +9,11 @@ Material UI Tabs component
 
 Keyword arguments:
 - children (a list of or a singular dash component, string or number; optional): Pass Tab components as children
-- id (string; optional): Element ID
-- className (string; optional): CSS class name of the root element
-- contentContainerClassName (string; optional): CSS class name of the content's container
+- id (string; default ''): Element ID
+- className (string; default undefined): CSS class name of the root element
+- contentContainerClassName (string; default undefined): CSS class name of the content's container
 - contentContainerStyle (dict; optional): Override the inline-styles of the content's container
-- initialSelectedIndex (number; optional): Specify the initial visible tab index
+- initialSelectedIndex (number; default 0): Specify the initial visible tab index
 - inkBarStyle (dict; optional): Override the inline-styles of the InkBar
 - inkBarContainerStyle (dict; optional): Override the inline-styles of the InkBar container
 - style (dict; optional): Override the inline-styles of the root element
@@ -26,7 +26,7 @@ Keyword arguments:
    style: Object
    value: any
 - tabTemplateStyle (dict; optional): Override the inline-styles of the tab template
-- value (bool | number | str | dict | list; optional): Makes Tabs controllable and selects the tab whose value prop matches this prop"""
+- value (bool | number | str | dict | list; default undefined): Makes Tabs controllable and selects the tab whose value prop matches this prop"""
     @_explicitize_args
     def __init__(self, children=None, id=Component.UNDEFINED, className=Component.UNDEFINED, contentContainerClassName=Component.UNDEFINED, contentContainerStyle=Component.UNDEFINED, fireEvent=Component.UNDEFINED, initialSelectedIndex=Component.UNDEFINED, inkBarStyle=Component.UNDEFINED, inkBarContainerStyle=Component.UNDEFINED, style=Component.UNDEFINED, tabItemContainerStyle=Component.UNDEFINED, tabPropsArray=Component.REQUIRED, tabTemplateStyle=Component.UNDEFINED, value=Component.UNDEFINED, **kwargs):
         self._prop_names = ['children', 'id', 'className', 'contentContainerClassName', 'contentContainerStyle', 'initialSelectedIndex', 'inkBarStyle', 'inkBarContainerStyle', 'style', 'tabItemContainerStyle', 'tabPropsArray', 'tabTemplateStyle', 'value']

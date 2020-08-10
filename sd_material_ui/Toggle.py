@@ -8,19 +8,19 @@ class Toggle(Component):
 Material UI Toggle component
 
 Keyword arguments:
-- disabled (boolean; optional): Toggle disabled?
+- disabled (boolean; default False): Toggle disabled?
 - elementStyle (dict; optional): Override the inline style of the Toggle element
 - iconStyle (dict; optional): Override the inline style of the Icon element
 - id (string; required): Element ID
 - inputStyle (dict; optional): Override the inline styles of the input element
-- label (a list of or a singular dash component, string or number; optional): Label for toggle
-- labelPosition (optional): Where the label will be placed next to the toggle
+- label (a list of or a singular dash component, string or number; default ''): Label for toggle
+- labelPosition (default 'left'): Where the label will be placed next to the toggle
 - labelStyle (dict; optional): Override the inline styles of the Toggle element label
 - rippleStyle (dict; optional): Override ripple style on click
 - style (dict; optional): Override the inline styles of the root element
 - thumbStyle (dict; optional): Override style for thumb
 - thumbSwitchedStyle (dict; optional): Override the inline styles for thumb when the toggle switches
-- toggled (boolean; optional): Toggled on if true
+- toggled (boolean; default False): Toggled on if true
 - trackStyle (dict; optional): Override the inline style for track
 - trackSwitchedStyle (dict; optional): Override the inline styles for track when the toggle switches"""
     @_explicitize_args
