@@ -88,28 +88,21 @@ app.layout = html.Div([
 
     # Test SDDialog (modal)
     sd_material_ui.Dialog(
-        html.Div(children=[
-            html.P('pathname'),
-            html.P(id='closer', children='Close window'),
-        ]),
+        html.Div(children=html.P('pathname'), ),
         id='output2',
-        modal=True,
-        open=False),
-    html.Div(id='input2', children=[html.P('Share the page (modal)')]),
+        open=True),
 
     spacer,
-
-    # Test SDDialog (non-modal)
-    sd_material_ui.Dialog(
-        html.Div(children=[
-            html.P('Non-modal dialog'),
-        ]),
-        id='non-modal-output',
-        modal=False,
-        open=False),
-    html.Div(id='non-modal-input', children=[html.P('Share the page (non-modal)')]),
-
-    spacer,
+    #
+    # # Test SDDialog (non-modal)
+    # sd_material_ui.Dialog(
+    #     html.Div(children=[
+    #         html.P('Non-modal dialog'),
+    #     ]),
+    #     id='non-modal-output'),
+    # html.Div(id='non-modal-input', children=[html.P('Share the page (non-modal)')]),
+    #
+    # spacer,
 
     # Test SDRaisedButton
     html.Div(children=[
@@ -153,10 +146,7 @@ app.layout = html.Div([
 
     # # Test for SDDrawer (docked, secondary)
     sd_material_ui.Drawer(id='output6',
-                            docked=True,
-                            openSecondary=True,
-                            style={'backgroundColor': '#444'},
-                            children=[html.P(children='Drawer item')]),
+                        children=[html.P(children='Drawer item')]),
     html.Div(id='input6', children=[
         html.P(children='Open or close the drawer (docked)')
     ]),
@@ -467,34 +457,34 @@ def display_output(value):
     return 'You have entered {}'.format(value)
 
 
-# Callback for SDDialog (modal)
-@app.callback(
-    dash.dependencies.Output('output2', 'open'),
-    [dash.dependencies.Input('input2', 'n_clicks'),
-     dash.dependencies.Input('closer', 'n_clicks')],
-    [dash.dependencies.State('output2', 'open')])
-def show_modal_dialog(modal_click: int, close_button: int, open_state: bool):
-    if modal_click and modal_click > 0:
-        if not open_state:
-            return True
-    elif close_button:
-        if open_state:
-            return False
-    else:
-        return False
+# # Callback for SDDialog (modal)
+# @app.callback(
+#     dash.dependencies.Output('output2', 'open'),
+#     [dash.dependencies.Input('input2', 'n_clicks'),
+#      dash.dependencies.Input('closer', 'n_clicks')],
+#     [dash.dependencies.State('output2', 'open')])
+# def show_modal_dialog(modal_click: int, close_button: int, open_state: bool):
+#     if modal_click and modal_click > 0:
+#         if not open_state:
+#             return True
+#     elif close_button:
+#         if open_state:
+#             return False
+#     else:
+#         return False
 
 
 # Callback for SDDialog (non-modal)
-@app.callback(
-    dash.dependencies.Output('non-modal-output', 'open'),
-    [dash.dependencies.Input('non-modal-input', 'n_clicks')],
-    [dash.dependencies.State('non-modal-output', 'open')])
-def show_non_modal_dialog(non_modal_click: int, open_state: bool):
-    if non_modal_click and non_modal_click > 0:
-        if not open_state:
-            return True
-    else:
-        return False
+# @app.callback(
+#     dash.dependencies.Output('non-modal-output', 'open'),
+#     [dash.dependencies.Input('non-modal-input', 'n_clicks')],
+#     [dash.dependencies.State('non-modal-output', 'open')])
+# def show_non_modal_dialog(non_modal_click: int, open_state: bool):
+#     if non_modal_click and non_modal_click > 0:
+#         if not open_state:
+#             return True
+#     else:
+#         return False
 
 
 # Callback for SDRaisedButton

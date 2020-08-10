@@ -13,7 +13,7 @@
             "type": {
               "name": "signature",
               "type": "object",
-              "raw": "{\n  /** Location of the anchor for the auto complete */\n  anchorOrigin?: {\n    vertical?: 'top' | 'center' | 'bottom',\n    horizontal?: 'left' | 'middle' | 'right',\n  },\n  /** If true, auto complete is animated as it is toggled */\n  animated?: boolean,\n  /** Dash callback delay in ms - default is 500 ms */\n  dashCallbackDelay?: number,\n  /**\n   * Array of strings or nodes used to populate the list\n   * Alternatively, an Array of Objects with a structure like\n   * {label: 'My label to render', value: 'My value to ship on match'}\n   */\n  dataSource?: Array<any>,\n  /** Config for objects list dataSource */\n  dataSourceConfig?: Object,\n  /** Disables focus ripple when true */\n  disableFocusRipple?: boolean,\n  /** Override style prop for error */\n  errorStyle?: Object,\n  /** The error content to display */\n  errorText?: Node,\n  /** Should the search text have to match exactly to update props server side? */\n  exactMatch?: boolean,\n  /** String name for filter to be applied to user input.\n   * will later be mapped to function\n   */\n  filter?: 'caseInsensitiveFilter' | 'caseSensitiveFilter' | 'defaultFilter' |\n    'fuzzyFilter' | 'levenshteinDistanceFilter' | 'noFilter',\n  /** Dash-assigned callback that gets fired when the input changes. */\n  fireEvent?: () => void,\n  /** The content to use for adding floating label element */\n  floatingLabelText?: Node,\n  /** If true, field receives the property width: 100% */\n  fullWidth?: boolean,\n  /** The hint content to display */\n  hintText?: Node,\n  /** Autocomplete ID */\n  id: string,\n  /** Override style for list */\n  listStyle?: Object,\n  /** The max number of search results to be shown. By default it shows\n   * all the items which matches filter */\n  maxSearchResults?: number,\n  /** Delay for closing time of the menu */\n  menuCloseDelay?: number,\n  /** Props to be passed to menu */\n  menuProps?: Object,\n  /** Override style for menu */\n  menuStyle?: Object,\n  /** Auto complete menu is open if true */\n  open?: boolean,\n  /** If true, the list item is showed when a focus event triggers */\n  openOnFocus?: boolean,\n  /** Props to be passed to popover */\n  popoverProps?: Object,\n  /** Text being input to auto complete */\n  searchText?: string,\n  /** Value in the dataSource found by using searchText\n   * NOTE exactMatch must be true for this to work\n   */\n  searchValue?: any,\n  /** Dash callback to update props on the server. */\n  setProps?: () => void,\n  /** Override the inline-styles of the root element */\n  style?: Object,\n  /** Origin for location of target */\n  targetOrigin?: {\n    vertical?: 'top' | 'center' | 'bottom',\n    horizontal?: 'left' | 'middle' | 'right',\n  },\n  /** Override the inline-styles of AutoComplete's TextField element */\n  textFieldStyle?: Object,\n  /** If defined, the AutoComplete component hits this URL to search instead of string matching */\n  searchEndpointAPI?: string,\n  /** General JSON structure to send to the server */\n  searchJSONStructure?: Object,\n}",
+              "raw": "{\r\n  /** Location of the anchor for the auto complete */\r\n  anchorOrigin?: {\r\n    vertical?: 'top' | 'center' | 'bottom',\r\n    horizontal?: 'left' | 'middle' | 'right',\r\n  },\r\n  /** If true, auto complete is animated as it is toggled */\r\n  animated?: boolean,\r\n  /** Dash callback delay in ms - default is 500 ms */\r\n  dashCallbackDelay?: number,\r\n  /**\r\n   * Array of strings or nodes used to populate the list\r\n   * Alternatively, an Array of Objects with a structure like\r\n   * {label: 'My label to render', value: 'My value to ship on match'}\r\n   */\r\n  dataSource?: Array<any>,\r\n  /** Config for objects list dataSource */\r\n  dataSourceConfig?: Object,\r\n  /** Disables focus ripple when true */\r\n  disableFocusRipple?: boolean,\r\n  /** Override style prop for error */\r\n  errorStyle?: Object,\r\n  /** The error content to display */\r\n  errorText?: Node,\r\n  /** Should the search text have to match exactly to update props server side? */\r\n  exactMatch?: boolean,\r\n  /** String name for filter to be applied to user input.\r\n   * will later be mapped to function\r\n   */\r\n  filter?: 'caseInsensitiveFilter' | 'caseSensitiveFilter' | 'defaultFilter' |\r\n    'fuzzyFilter' | 'levenshteinDistanceFilter' | 'noFilter',\r\n  /** Dash-assigned callback that gets fired when the input changes. */\r\n  fireEvent?: () => void,\r\n  /** The content to use for adding floating label element */\r\n  floatingLabelText?: Node,\r\n  /** If true, field receives the property width: 100% */\r\n  fullWidth?: boolean,\r\n  /** The hint content to display */\r\n  hintText?: Node,\r\n  /** Autocomplete ID */\r\n  id: string,\r\n  /** Override style for list */\r\n  listStyle?: Object,\r\n  /** The max number of search results to be shown. By default it shows\r\n   * all the items which matches filter */\r\n  maxSearchResults?: number,\r\n  /** Delay for closing time of the menu */\r\n  menuCloseDelay?: number,\r\n  /** Props to be passed to menu */\r\n  menuProps?: Object,\r\n  /** Override style for menu */\r\n  menuStyle?: Object,\r\n  /** Auto complete menu is open if true */\r\n  open?: boolean,\r\n  /** If true, the list item is showed when a focus event triggers */\r\n  openOnFocus?: boolean,\r\n  /** Props to be passed to popover */\r\n  popoverProps?: Object,\r\n  /** Text being input to auto complete */\r\n  searchText?: string,\r\n  /** Value in the dataSource found by using searchText\r\n   * NOTE exactMatch must be true for this to work\r\n   */\r\n  searchValue?: any,\r\n  /** Dash callback to update props on the server. */\r\n  setProps?: () => void,\r\n  /** Override the inline-styles of the root element */\r\n  style?: Object,\r\n  /** Origin for location of target */\r\n  targetOrigin?: {\r\n    vertical?: 'top' | 'center' | 'bottom',\r\n    horizontal?: 'left' | 'middle' | 'right',\r\n  },\r\n  /** Override the inline-styles of AutoComplete's TextField element */\r\n  textFieldStyle?: Object,\r\n  /** If defined, the AutoComplete component hits this URL to search instead of string matching */\r\n  searchEndpointAPI?: string,\r\n  /** General JSON structure to send to the server */\r\n  searchJSONStructure?: Object,\r\n}",
               "signature": {
                 "properties": [
                   {
@@ -21,7 +21,7 @@
                     "value": {
                       "name": "signature",
                       "type": "object",
-                      "raw": "{\n  vertical?: 'top' | 'center' | 'bottom',\n  horizontal?: 'left' | 'middle' | 'right',\n}",
+                      "raw": "{\r\n  vertical?: 'top' | 'center' | 'bottom',\r\n  horizontal?: 'left' | 'middle' | 'right',\r\n}",
                       "signature": {
                         "properties": [
                           {
@@ -139,7 +139,7 @@
                     "key": "filter",
                     "value": {
                       "name": "union",
-                      "raw": "'caseInsensitiveFilter' | 'caseSensitiveFilter' | 'defaultFilter' |\n  'fuzzyFilter' | 'levenshteinDistanceFilter' | 'noFilter'",
+                      "raw": "'caseInsensitiveFilter' | 'caseSensitiveFilter' | 'defaultFilter' |\r\n  'fuzzyFilter' | 'levenshteinDistanceFilter' | 'noFilter'",
                       "elements": [
                         {
                           "name": "literal",
@@ -309,7 +309,7 @@
                     "value": {
                       "name": "signature",
                       "type": "object",
-                      "raw": "{\n  vertical?: 'top' | 'center' | 'bottom',\n  horizontal?: 'left' | 'middle' | 'right',\n}",
+                      "raw": "{\r\n  vertical?: 'top' | 'center' | 'bottom',\r\n  horizontal?: 'left' | 'middle' | 'right',\r\n}",
                       "signature": {
                         "properties": [
                           {
@@ -402,7 +402,7 @@
       },
       {
         "name": "handleChange",
-        "docblock": "calls function to fire callback and updates searchText in state\n@param searchText\n@param dataSource\n@param params",
+        "docblock": "calls function to fire callback and updates searchText in state\r\n@param searchText\r\n@param dataSource\r\n@param params",
         "modifiers": [],
         "params": [
           {
@@ -437,7 +437,7 @@
       },
       {
         "name": "_updateTextProps",
-        "docblock": "executes setProps function with searchText to update searchText in props;\nfires Dash callback event\n@param searchText\n@private",
+        "docblock": "executes setProps function with searchText to update searchText in props;\r\nfires Dash callback event\r\n@param searchText\r\n@private",
         "modifiers": [],
         "params": [
           {
@@ -450,7 +450,7 @@
           }
         ],
         "returns": null,
-        "description": "executes setProps function with searchText to update searchText in props;\nfires Dash callback event"
+        "description": "executes setProps function with searchText to update searchText in props;\r\nfires Dash callback event"
       }
     ],
     "props": {
@@ -459,7 +459,7 @@
         "flowType": {
           "name": "signature",
           "type": "object",
-          "raw": "{\n  vertical?: 'top' | 'center' | 'bottom',\n  horizontal?: 'left' | 'middle' | 'right',\n}",
+          "raw": "{\r\n  vertical?: 'top' | 'center' | 'bottom',\r\n  horizontal?: 'left' | 'middle' | 'right',\r\n}",
           "signature": {
             "properties": [
               {
@@ -548,7 +548,7 @@
           ],
           "raw": "Array<any>"
         },
-        "description": "Array of strings or nodes used to populate the list\nAlternatively, an Array of Objects with a structure like\n{label: 'My label to render', value: 'My value to ship on match'}",
+        "description": "Array of strings or nodes used to populate the list\r\nAlternatively, an Array of Objects with a structure like\r\n{label: 'My label to render', value: 'My value to ship on match'}",
         "defaultValue": {
           "value": "[]",
           "computed": false
@@ -613,7 +613,7 @@
         "required": false,
         "flowType": {
           "name": "union",
-          "raw": "'caseInsensitiveFilter' | 'caseSensitiveFilter' | 'defaultFilter' |\n  'fuzzyFilter' | 'levenshteinDistanceFilter' | 'noFilter'",
+          "raw": "'caseInsensitiveFilter' | 'caseSensitiveFilter' | 'defaultFilter' |\r\n  'fuzzyFilter' | 'levenshteinDistanceFilter' | 'noFilter'",
           "elements": [
             {
               "name": "literal",
@@ -641,7 +641,7 @@
             }
           ]
         },
-        "description": "String name for filter to be applied to user input.\nwill later be mapped to function",
+        "description": "String name for filter to be applied to user input.\r\nwill later be mapped to function",
         "defaultValue": {
           "value": "\"defaultFilter\"",
           "computed": false
@@ -722,7 +722,7 @@
         "flowType": {
           "name": "number"
         },
-        "description": "The max number of search results to be shown. By default it shows\nall the items which matches filter"
+        "description": "The max number of search results to be shown. By default it shows\r\nall the items which matches filter"
       },
       "menuCloseDelay": {
         "required": false,
@@ -806,7 +806,7 @@
         "flowType": {
           "name": "any"
         },
-        "description": "Value in the dataSource found by using searchText\nNOTE exactMatch must be true for this to work",
+        "description": "Value in the dataSource found by using searchText\r\nNOTE exactMatch must be true for this to work",
         "defaultValue": {
           "value": "null",
           "computed": false
@@ -847,7 +847,7 @@
         "flowType": {
           "name": "signature",
           "type": "object",
-          "raw": "{\n  vertical?: 'top' | 'center' | 'bottom',\n  horizontal?: 'left' | 'middle' | 'right',\n}",
+          "raw": "{\r\n  vertical?: 'top' | 'center' | 'bottom',\r\n  horizontal?: 'left' | 'middle' | 'right',\r\n}",
           "signature": {
             "properties": [
               {
@@ -952,7 +952,7 @@
             "type": {
               "name": "signature",
               "type": "object",
-              "raw": "{\n  /** Label to use for the navigation item */\n  label: string,\n  /** Icon to display for the navigation item */\n  icon: Node | string,\n  /** Value for the navigation item */\n  value: string | number,\n  /** ID of component to jump to when this option is selected */\n  targetId?: string,\n  /** Class to apply to the icon span */\n  iconClassName?: string,\n}",
+              "raw": "{\r\n  /** Label to use for the navigation item */\r\n  label: string,\r\n  /** Icon to display for the navigation item */\r\n  icon: Node | string,\r\n  /** Value for the navigation item */\r\n  value: string | number,\r\n  /** ID of component to jump to when this option is selected */\r\n  targetId?: string,\r\n  /** Class to apply to the icon span */\r\n  iconClassName?: string,\r\n}",
               "signature": {
                 "properties": [
                   {
@@ -1039,7 +1039,7 @@
             {
               "name": "signature",
               "type": "object",
-              "raw": "{\n  /** Label to use for the navigation item */\n  label: string,\n  /** Icon to display for the navigation item */\n  icon: Node | string,\n  /** Value for the navigation item */\n  value: string | number,\n  /** ID of component to jump to when this option is selected */\n  targetId?: string,\n  /** Class to apply to the icon span */\n  iconClassName?: string,\n}",
+              "raw": "{\r\n  /** Label to use for the navigation item */\r\n  label: string,\r\n  /** Icon to display for the navigation item */\r\n  icon: Node | string,\r\n  /** Value for the navigation item */\r\n  value: string | number,\r\n  /** ID of component to jump to when this option is selected */\r\n  targetId?: string,\r\n  /** Class to apply to the icon span */\r\n  iconClassName?: string,\r\n}",
               "signature": {
                 "properties": [
                   {
@@ -1158,7 +1158,7 @@
             }
           }
         },
-        "description": "Dash-assigned callback that should be called whenever any of the\nproperties change",
+        "description": "Dash-assigned callback that should be called whenever any of the\r\nproperties change",
         "defaultValue": {
           "value": "() => {}",
           "computed": false
@@ -1286,7 +1286,7 @@
         "flowType": {
           "name": "Node"
         },
-        "description": "This is the Avatar element to be displayed on the Card Header. If avatar is an Avatar or\nother element, it will be rendered. If avatar is a string, it will be used as the image src\nfor an Avatar.",
+        "description": "This is the Avatar element to be displayed on the Card Header. If avatar is an Avatar or\r\nother element, it will be rendered. If avatar is a string, it will be used as the image src\r\nfor an Avatar.",
         "defaultValue": {
           "value": "null",
           "computed": false
@@ -1771,6 +1771,20 @@
             "name": "void"
           }
         }
+      },
+      {
+        "name": "openDialog",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "closeDialog",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
       }
     ],
     "props": {
@@ -1781,38 +1795,12 @@
         },
         "description": "Dialog ID"
       },
-      "actions": {
-        "required": false,
-        "flowType": {
-          "name": "union",
-          "raw": "Node | Array<Node>",
-          "elements": [
-            {
-              "name": "Node"
-            },
-            {
-              "name": "Array",
-              "elements": [
-                {
-                  "name": "Node"
-                }
-              ],
-              "raw": "Array<Node>"
-            }
-          ]
-        },
-        "description": "Actions component or list of components for the Dialog",
-        "defaultValue": {
-          "value": "null",
-          "computed": false
-        }
-      },
       "children": {
         "required": false,
         "flowType": {
           "name": "Node"
         },
-        "description": "Children to render inside of the Dialog",
+        "description": "Actions component or list of components for the Dialog",
         "defaultValue": {
           "value": "null",
           "computed": false
@@ -1829,102 +1817,14 @@
           "computed": false
         }
       },
-      "modal": {
-        "required": false,
-        "flowType": {
-          "name": "boolean"
-        },
-        "description": "Is the Dialog a modal (must click on an action to close)?\n\nNOTE: If the Dialog is created with modal=False, the callback that controls opening and closing\nthe Dialog should include the component's open value as a state, and check whether it is either\nalready open or closed before attempting to open or close it. See comments for the open prop.",
-        "defaultValue": {
-          "value": "false",
-          "computed": false
-        }
-      },
       "open": {
         "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "description": "Is the dialog open?\n\nIMPORTANT: When using this component in Dash, a listener must be set up (either as state or\nan input) for this component's props.open value in order to achieve the desired behavior.\nIf such a listener is not in place, the non-modal version of this dialog will contaminate\nother callbacks in the browser",
+        "description": "Is the dialog open?\r\n\nIMPORTANT: When using this component in Dash, a listener must be set up (either as state or\r\nan input) for this component's props.open value in order to achieve the desired behavior.\r\nIf such a listener is not in place, the non-modal version of this dialog will contaminate\r\nother callbacks in the browser",
         "defaultValue": {
           "value": "false",
-          "computed": false
-        }
-      },
-      "autoScrollBodyContent": {
-        "required": false,
-        "flowType": {
-          "name": "boolean"
-        },
-        "description": "If set to true, the body content of the Dialog will be scrollable.",
-        "defaultValue": {
-          "value": "false",
-          "computed": false
-        }
-      },
-      "actionsContainerClassName": {
-        "required": false,
-        "flowType": {
-          "name": "string"
-        },
-        "description": "The className to add to the actions container's root element.",
-        "defaultValue": {
-          "value": "null",
-          "computed": false
-        }
-      },
-      "bodyClassName": {
-        "required": false,
-        "flowType": {
-          "name": "string"
-        },
-        "description": "The className to add to the content's root element under the title.",
-        "defaultValue": {
-          "value": "null",
-          "computed": false
-        }
-      },
-      "contentClassName": {
-        "required": false,
-        "flowType": {
-          "name": "string"
-        },
-        "description": "The className to add to the content container",
-        "defaultValue": {
-          "value": "null",
-          "computed": false
-        }
-      },
-      "overlayClassName": {
-        "required": false,
-        "flowType": {
-          "name": "string"
-        },
-        "description": "The className to add to the Overlay component rendered behind the Dialog",
-        "defaultValue": {
-          "value": "null",
-          "computed": false
-        }
-      },
-      "paperClassName": {
-        "required": false,
-        "flowType": {
-          "name": "string"
-        },
-        "description": "CSS class name of the Paper element",
-        "defaultValue": {
-          "value": "null",
-          "computed": false
-        }
-      },
-      "titleClassName": {
-        "required": false,
-        "flowType": {
-          "name": "string"
-        },
-        "description": "The className to add to the title's root container element",
-        "defaultValue": {
-          "value": "null",
           "computed": false
         }
       },
@@ -1933,7 +1833,7 @@
         "flowType": {
           "name": "signature",
           "type": "function",
-          "raw": "(props: { modal?: boolean, open?: boolean }) => void",
+          "raw": "(props: {open?: boolean}) => void",
           "signature": {
             "arguments": [
               {
@@ -1941,16 +1841,9 @@
                 "type": {
                   "name": "signature",
                   "type": "object",
-                  "raw": "{ modal?: boolean, open?: boolean }",
+                  "raw": "{open?: boolean}",
                   "signature": {
                     "properties": [
-                      {
-                        "key": "modal",
-                        "value": {
-                          "name": "boolean",
-                          "required": false
-                        }
-                      },
                       {
                         "key": "open",
                         "value": {
@@ -1968,7 +1861,7 @@
             }
           }
         },
-        "description": "Dash callback to update props on the server",
+        "description": "If set to true, the body content of the Dialog will be scrollable.",
         "defaultValue": {
           "value": "() => {}",
           "computed": false
@@ -2077,7 +1970,7 @@
         "flowType": {
           "name": "boolean"
         },
-        "description": "Is the drawer open?\n\nIMPORTANT: When using this component in Dash, a listener must be set up (either as state or\nan input) for this component's props.open value in order to achieve the desired behavior.",
+        "description": "Is the drawer open?\r\n\nIMPORTANT: When using this component in Dash, a listener must be set up (either as state or\r\nan input) for this component's props.open value in order to achieve the desired behavior.",
         "defaultValue": {
           "value": "false",
           "computed": false
@@ -2172,7 +2065,7 @@
             "type": {
               "name": "signature",
               "type": "object",
-              "raw": "{\n  /** If true, a checkmark will be rendered to the left of the item */\n  checked?: boolean,\n  /** ELements passed as children to the underlying ListItem */\n  children?: Node,\n  /**\n   * A field able to hold any additional data a Dash user may want to include with a menu item,\n   * but does not want rendered on screen.\n   */\n  customData: any,\n  /** If true, the menu item will be disabled */\n  disabled?: boolean,\n  /**\n   * The text to display in the dropdown menu when this item is selected (if not given,\n   * the menu will use the primaryText).\n   */\n  label?: string,\n  /**\n   * The text shown in the open menu and, if label is not given, also used to show the name\n   * of the selected item when the menu is closed.\n   */\n  primaryText: string,\n  /** Can be used to render secondary text within the menu item */\n  secondaryText?: string,\n  /** Override the inline styles of the root element */\n  style?: Object,\n  /** The value of the menu item */\n  value: any,\n}",
+              "raw": "{\r\n  /** If true, a checkmark will be rendered to the left of the item */\r\n  checked?: boolean,\r\n  /** ELements passed as children to the underlying ListItem */\r\n  children?: Node,\r\n  /**\r\n   * A field able to hold any additional data a Dash user may want to include with a menu item,\r\n   * but does not want rendered on screen.\r\n   */\r\n  customData: any,\r\n  /** If true, the menu item will be disabled */\r\n  disabled?: boolean,\r\n  /**\r\n   * The text to display in the dropdown menu when this item is selected (if not given,\r\n   * the menu will use the primaryText).\r\n   */\r\n  label?: string,\r\n  /**\r\n   * The text shown in the open menu and, if label is not given, also used to show the name\r\n   * of the selected item when the menu is closed.\r\n   */\r\n  primaryText: string,\r\n  /** Can be used to render secondary text within the menu item */\r\n  secondaryText?: string,\r\n  /** Override the inline styles of the root element */\r\n  style?: Object,\r\n  /** The value of the menu item */\r\n  value: any,\r\n}",
               "signature": {
                 "properties": [
                   {
@@ -2253,7 +2146,7 @@
         "flowType": {
           "name": "signature",
           "type": "object",
-          "raw": "{\n  vertical?: 'top' | 'center' | 'bottom',\n  horizontal?: 'left' | 'middle' | 'right',\n}",
+          "raw": "{\r\n  vertical?: 'top' | 'center' | 'bottom',\r\n  horizontal?: 'left' | 'middle' | 'right',\r\n}",
           "signature": {
             "properties": [
               {
@@ -2303,7 +2196,7 @@
             ]
           }
         },
-        "description": "This is the point on the anchor that the popover's targetOrigin will attach to.\nOptions: vertical: [top, center, bottom] horizontal: [left, middle, right].",
+        "description": "This is the point on the anchor that the popover's targetOrigin will attach to.\r\nOptions: vertical: [top, center, bottom] horizontal: [left, middle, right].",
         "defaultValue": {
           "value": "{ vertical: 'top', horizontal: 'left'}",
           "computed": false
@@ -2325,7 +2218,7 @@
         "flowType": {
           "name": "boolean"
         },
-        "description": "The width will automatically be set according to the items inside the menu. To control\nthis width in css instead, set this prop to false.",
+        "description": "The width will automatically be set according to the items inside the menu. To control\r\nthis width in css instead, set this prop to false.",
         "defaultValue": {
           "value": "true",
           "computed": false
@@ -2471,7 +2364,7 @@
             {
               "name": "signature",
               "type": "object",
-              "raw": "{\n  /** If true, a checkmark will be rendered to the left of the item */\n  checked?: boolean,\n  /** ELements passed as children to the underlying ListItem */\n  children?: Node,\n  /**\n   * A field able to hold any additional data a Dash user may want to include with a menu item,\n   * but does not want rendered on screen.\n   */\n  customData: any,\n  /** If true, the menu item will be disabled */\n  disabled?: boolean,\n  /**\n   * The text to display in the dropdown menu when this item is selected (if not given,\n   * the menu will use the primaryText).\n   */\n  label?: string,\n  /**\n   * The text shown in the open menu and, if label is not given, also used to show the name\n   * of the selected item when the menu is closed.\n   */\n  primaryText: string,\n  /** Can be used to render secondary text within the menu item */\n  secondaryText?: string,\n  /** Override the inline styles of the root element */\n  style?: Object,\n  /** The value of the menu item */\n  value: any,\n}",
+              "raw": "{\r\n  /** If true, a checkmark will be rendered to the left of the item */\r\n  checked?: boolean,\r\n  /** ELements passed as children to the underlying ListItem */\r\n  children?: Node,\r\n  /**\r\n   * A field able to hold any additional data a Dash user may want to include with a menu item,\r\n   * but does not want rendered on screen.\r\n   */\r\n  customData: any,\r\n  /** If true, the menu item will be disabled */\r\n  disabled?: boolean,\r\n  /**\r\n   * The text to display in the dropdown menu when this item is selected (if not given,\r\n   * the menu will use the primaryText).\r\n   */\r\n  label?: string,\r\n  /**\r\n   * The text shown in the open menu and, if label is not given, also used to show the name\r\n   * of the selected item when the menu is closed.\r\n   */\r\n  primaryText: string,\r\n  /** Can be used to render secondary text within the menu item */\r\n  secondaryText?: string,\r\n  /** Override the inline styles of the root element */\r\n  style?: Object,\r\n  /** The value of the menu item */\r\n  value: any,\r\n}",
               "signature": {
                 "properties": [
                   {
@@ -2543,7 +2436,7 @@
           ],
           "raw": "Array<SD_MENU_ITEM>"
         },
-        "description": "Used to create the MenuItems to populate the Menu with. A Dash user passes in a list of dict\nitems, each one having at least a `value` and `primaryText`. If the 'label' is used,\nthat value will be used to render the representation of that item within the field.",
+        "description": "Used to create the MenuItems to populate the Menu with. A Dash user passes in a list of dict\r\nitems, each one having at least a `value` and `primaryText`. If the 'label' is used,\r\nthat value will be used to render the representation of that item within the field.",
         "defaultValue": {
           "value": "[]",
           "computed": false
@@ -2595,7 +2488,7 @@
         "flowType": {
           "name": "signature",
           "type": "object",
-          "raw": "{\n  vertical?: 'top' | 'center' | 'bottom',\n  horizontal?: 'left' | 'middle' | 'right',\n}",
+          "raw": "{\r\n  vertical?: 'top' | 'center' | 'bottom',\r\n  horizontal?: 'left' | 'middle' | 'right',\r\n}",
           "signature": {
             "properties": [
               {
@@ -2645,7 +2538,7 @@
             ]
           }
         },
-        "description": "This is the point on the popover which will attach to the anchor's origin.\nOptions: vertical: [top, center, bottom] horizontal: [left, middle, right].",
+        "description": "This is the point on the popover which will attach to the anchor's origin.\r\nOptions: vertical: [top, center, bottom] horizontal: [left, middle, right].",
         "defaultValue": {
           "value": "{vertical: 'top', horizontal: 'left'}",
           "computed": false
@@ -2700,7 +2593,7 @@
         "flowType": {
           "name": "Node"
         },
-        "description": "This is what will be displayed inside the button.\nIf a label is specified, the text within the label prop will\nbe displayed. Otherwise, the component will expect children\nwhich will then be displayed. (In our example,\nwe are nesting an `<input type=\"file\" />` and a `span`\nthat acts as our label to be displayed.) This only\napplies to flat and raised buttons.",
+        "description": "This is what will be displayed inside the button.\r\nIf a label is specified, the text within the label prop will\r\nbe displayed. Otherwise, the component will expect children\r\nwhich will then be displayed. (In our example,\r\nwe are nesting an `<input type=\"file\" />` and a `span`\r\nthat acts as our label to be displayed.) This only\r\napplies to flat and raised buttons.",
         "defaultValue": {
           "value": "null",
           "computed": false
@@ -2898,7 +2791,7 @@
         "flowType": {
           "name": "boolean"
         },
-        "description": "If true, colors button according to secondaryTextColor from the theme.\nThe primary prop has precendent if set to true.",
+        "description": "If true, colors button according to secondaryTextColor from the theme.\r\nThe primary prop has precendent if set to true.",
         "defaultValue": {
           "value": "false",
           "computed": false
@@ -2957,7 +2850,7 @@
         "flowType": {
           "name": "string"
         },
-        "description": "font color of the font icon;\nIf not specified, this component will default\nto muiTheme.palette.textColor",
+        "description": "font color of the font icon;\r\nIf not specified, this component will default\r\nto muiTheme.palette.textColor",
         "defaultValue": {
           "value": "''",
           "computed": false
@@ -2968,7 +2861,7 @@
         "flowType": {
           "name": "string"
         },
-        "description": "defines specific icon when using custom icon font\nor defines font when using public icon font",
+        "description": "defines specific icon when using custom icon font\r\nor defines font when using public icon font",
         "defaultValue": {
           "value": "''",
           "computed": false
@@ -3027,7 +2920,7 @@
         "flowType": {
           "name": "Node"
         },
-        "description": "Used to pass a FontIcon element as the icon for the button\nSee method 3 at http://www.material-ui.com/#/components/icon-button\nNote: currently unable to pass in FontIcon component as child, you will need\nto use method 3 at the above link",
+        "description": "Used to pass a FontIcon element as the icon for the button\r\nSee method 3 at http://www.material-ui.com/#/components/icon-button\r\nNote: currently unable to pass in FontIcon component as child, you will need\r\nto use method 3 at the above link",
         "defaultValue": {
           "value": "null",
           "computed": false
@@ -3123,7 +3016,7 @@
         "flowType": {
           "name": "Object"
         },
-        "description": "Override the inline-styles of the icon element.\nNote: you can specify iconHoverColor as a String inside this object.",
+        "description": "Override the inline-styles of the icon element.\r\nNote: you can specify iconHoverColor as a String inside this object.",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -3204,7 +3097,7 @@
         "flowType": {
           "name": "propTypes.cornersAndCenter"
         },
-        "description": "The vertical and horizontal positions, respectively, of the element's tooltip.\nPossible values are: \"bottom-center\", \"top-center\", \"bottom-right\", \"top-right\",\n\"bottom-left\", and \"top-left\".",
+        "description": "The vertical and horizontal positions, respectively, of the element's tooltip.\r\nPossible values are: \"bottom-center\", \"top-center\", \"bottom-right\", \"top-right\",\r\n\"bottom-left\", and \"top-left\".",
         "defaultValue": {
           "value": "'bottom-center'",
           "computed": false
@@ -3226,7 +3119,7 @@
         "flowType": {
           "name": "boolean"
         },
-        "description": "If true, increase the tooltip element's size.\nUseful for increasing tooltip readability on mobile devices.",
+        "description": "If true, increase the tooltip element's size.\r\nUseful for increasing tooltip readability on mobile devices.",
         "defaultValue": {
           "value": "false",
           "computed": false
@@ -3266,7 +3159,7 @@
         "flowType": {
           "name": "boolean"
         },
-        "description": "By default, the paper container will have a border radius.\nSet this to false to generate a container with sharp corners.",
+        "description": "By default, the paper container will have a border radius.\r\nSet this to false to generate a container with sharp corners.",
         "defaultValue": {
           "value": "true",
           "computed": false
@@ -3337,7 +3230,7 @@
         "flowType": {
           "name": "signature",
           "type": "object",
-          "raw": "{\n  vertical?: 'top' | 'center' | 'bottom',\n  horizontal?: 'left' | 'middle' | 'right',\n}",
+          "raw": "{\r\n  vertical?: 'top' | 'center' | 'bottom',\r\n  horizontal?: 'left' | 'middle' | 'right',\r\n}",
           "signature": {
             "properties": [
               {
@@ -3387,7 +3280,7 @@
             ]
           }
         },
-        "description": "This is the point on the anchor where the popover's targetOrigin will attach to.\nOptions: vertical: [top, center, bottom] horizontal: [left, middle, right].",
+        "description": "This is the point on the anchor where the popover's targetOrigin will attach to.\r\nOptions: vertical: [top, center, bottom] horizontal: [left, middle, right].",
         "defaultValue": {
           "value": "{vertical: 'bottom', horizontal: 'left'}",
           "computed": false
@@ -3479,7 +3372,7 @@
         "flowType": {
           "name": "boolean"
         },
-        "description": "If true, the popover (potentially) ignores targetOrigin and anchorOrigin to make itself fit\non screen, which is useful for mobile devices.",
+        "description": "If true, the popover (potentially) ignores targetOrigin and anchorOrigin to make itself fit\r\non screen, which is useful for mobile devices.",
         "defaultValue": {
           "value": "true",
           "computed": false
@@ -3554,7 +3447,7 @@
         "flowType": {
           "name": "signature",
           "type": "object",
-          "raw": "{\n  vertical?: 'top' | 'center' | 'bottom',\n  horizontal?: 'left' | 'middle' | 'right',\n}",
+          "raw": "{\r\n  vertical?: 'top' | 'center' | 'bottom',\r\n  horizontal?: 'left' | 'middle' | 'right',\r\n}",
           "signature": {
             "properties": [
               {
@@ -3604,7 +3497,7 @@
             ]
           }
         },
-        "description": "This is the point on the popover which will attach to the anchor's origin.\nOptions: vertical: [top, center, bottom] horizontal: [left, middle, right].",
+        "description": "This is the point on the popover which will attach to the anchor's origin.\r\nOptions: vertical: [top, center, bottom] horizontal: [left, middle, right].",
         "defaultValue": {
           "value": "{vertical: 'top', horizontal: 'left'}",
           "computed": false
@@ -3615,7 +3508,7 @@
         "flowType": {
           "name": "boolean"
         },
-        "description": "If true, the popover will render on top of an invisible layer, which will prevent clicks\nto the underlying elements, and trigger an onRequestClose('clickAway') call.",
+        "description": "If true, the popover will render on top of an invisible layer, which will prevent clicks\r\nto the underlying elements, and trigger an onRequestClose('clickAway') call.",
         "defaultValue": {
           "value": "true",
           "computed": false
@@ -3669,7 +3562,7 @@
             {
               "name": "signature",
               "type": "object",
-              "raw": "{\n  questionProps: Array<QuestionProps>,\n  headerTitle: string,\n  titleStyle?: Object,\n  headerTitleStyle?: Object,\n  headerIconStyle?: Object,\n  initiallyExpanded: boolean,\n  clickHandler: (value: string) => void,\n}",
+              "raw": "{\r\n  questionProps: Array<QuestionProps>,\r\n  headerTitle: string,\r\n  titleStyle?: Object,\r\n  headerTitleStyle?: Object,\r\n  headerIconStyle?: Object,\r\n  initiallyExpanded: boolean,\r\n  clickHandler: (value: string) => void,\r\n}",
               "signature": {
                 "properties": [
                   {
@@ -3680,7 +3573,7 @@
                         {
                           "name": "signature",
                           "type": "object",
-                          "raw": "{\n  questionType: string,\n  questionText: string,\n  answerPrompt: string,\n  value: string,\n  clickHandler: (value: string) => void,\n}",
+                          "raw": "{\r\n  questionType: string,\r\n  questionText: string,\r\n  answerPrompt: string,\r\n  value: string,\r\n  clickHandler: (value: string) => void,\r\n}",
                           "signature": {
                             "properties": [
                               {
@@ -3910,7 +3803,7 @@
             {
               "name": "signature",
               "type": "object",
-              "raw": "{\n  questionProps: Array<QuestionProps>,\n  headerTitle: string,\n  clickHandler: (value: string) => void,\n}",
+              "raw": "{\r\n  questionProps: Array<QuestionProps>,\r\n  headerTitle: string,\r\n  clickHandler: (value: string) => void,\r\n}",
               "signature": {
                 "properties": [
                   {
@@ -3921,7 +3814,7 @@
                         {
                           "name": "signature",
                           "type": "object",
-                          "raw": "{\n  questionText: string,\n  value: string,\n  clickHandler: (value: string) => void,\n}",
+                          "raw": "{\r\n  questionText: string,\r\n  value: string,\r\n  clickHandler: (value: string) => void,\r\n}",
                           "signature": {
                             "properties": [
                               {
@@ -4091,7 +3984,7 @@
     "methods": [
       {
         "name": "handleChange",
-        "docblock": "calls function to fire callback and updates valueSelected in state\n@param event\n@param valueSelected",
+        "docblock": "calls function to fire callback and updates valueSelected in state\r\n@param event\r\n@param valueSelected",
         "modifiers": [],
         "params": [
           {
@@ -4126,7 +4019,7 @@
             "type": {
               "name": "signature",
               "type": "object",
-              "raw": "{\n  /** If true, the radio button is disabled */\n  disabled?: boolean,\n  /** Override the inline-styles of the icon element */\n  iconStyle?: Object,\n  /** Override the inline-styles of the input element */\n  inputStyle?: Object,\n  /** Label to appear next to button */\n  label?: string,\n  /** Override the inline-styles of the label element */\n  labelStyle?: Object,\n  /** Override the inline-styles of the root element */\n  style?: Object,\n  /** value of the the radio button */\n  value?: any,\n}",
+              "raw": "{\r\n  /** If true, the radio button is disabled */\r\n  disabled?: boolean,\r\n  /** Override the inline-styles of the icon element */\r\n  iconStyle?: Object,\r\n  /** Override the inline-styles of the input element */\r\n  inputStyle?: Object,\r\n  /** Label to appear next to button */\r\n  label?: string,\r\n  /** Override the inline-styles of the label element */\r\n  labelStyle?: Object,\r\n  /** Override the inline-styles of the root element */\r\n  style?: Object,\r\n  /** value of the the radio button */\r\n  value?: any,\r\n}",
               "signature": {
                 "properties": [
                   {
@@ -4204,7 +4097,7 @@
         "flowType": {
           "name": "any"
         },
-        "description": "the value property of the radio button that will\nbe selected by default",
+        "description": "the value property of the radio button that will\r\nbe selected by default",
         "defaultValue": {
           "value": "''",
           "computed": false
@@ -4252,7 +4145,7 @@
             }
           ]
         },
-        "description": "where the label will be placed for all child radio buttons;\ntakes precedence over labelPosition property of the RadioButton elements",
+        "description": "where the label will be placed for all child radio buttons;\r\ntakes precedence over labelPosition property of the RadioButton elements",
         "defaultValue": {
           "value": "'right'",
           "computed": false
@@ -4273,7 +4166,7 @@
             {
               "name": "signature",
               "type": "object",
-              "raw": "{\n  /** If true, the radio button is disabled */\n  disabled?: boolean,\n  /** Override the inline-styles of the icon element */\n  iconStyle?: Object,\n  /** Override the inline-styles of the input element */\n  inputStyle?: Object,\n  /** Label to appear next to button */\n  label?: string,\n  /** Override the inline-styles of the label element */\n  labelStyle?: Object,\n  /** Override the inline-styles of the root element */\n  style?: Object,\n  /** value of the the radio button */\n  value?: any,\n}",
+              "raw": "{\r\n  /** If true, the radio button is disabled */\r\n  disabled?: boolean,\r\n  /** Override the inline-styles of the icon element */\r\n  iconStyle?: Object,\r\n  /** Override the inline-styles of the input element */\r\n  inputStyle?: Object,\r\n  /** Label to appear next to button */\r\n  label?: string,\r\n  /** Override the inline-styles of the label element */\r\n  labelStyle?: Object,\r\n  /** Override the inline-styles of the root element */\r\n  style?: Object,\r\n  /** value of the the radio button */\r\n  value?: any,\r\n}",
               "signature": {
                 "properties": [
                   {
@@ -4331,7 +4224,7 @@
           ],
           "raw": "Array<SD_RADIO_BUTTON>"
         },
-        "description": "used to create the RadioButtons to populate the RadioButtonGroup with. A Dash user passes in a\nlist of dict items, each one having at least a `value` and `label`. If that value is selected,\nvalueSelected will be updated",
+        "description": "used to create the RadioButtons to populate the RadioButtonGroup with. A Dash user passes in a\r\nlist of dict items, each one having at least a `value` and `label`. If that value is selected,\r\nvalueSelected will be updated",
         "defaultValue": {
           "value": "[]",
           "computed": false
@@ -4403,7 +4296,7 @@
         "flowType": {
           "name": "string"
         },
-        "description": "Override the default background color for the button, but not the default disabled\nbackground color (use disabledBackgroundColor for this).",
+        "description": "Override the default background color for the button, but not the default disabled\r\nbackground color (use disabledBackgroundColor for this).",
         "defaultValue": {
           "value": "''",
           "computed": false
@@ -4425,7 +4318,7 @@
         "flowType": {
           "name": "Node"
         },
-        "description": "The content of the button. If a label is provided via the label prop, the text within the\nlabel will be displayed in addition to the content provided here.",
+        "description": "The content of the button. If a label is provided via the label prop, the text within the\r\nlabel will be displayed in addition to the content provided here.",
         "defaultValue": {
           "value": "null",
           "computed": false
@@ -4550,7 +4443,7 @@
         "flowType": {
           "name": "string"
         },
-        "description": "The label to be displayed within the button. If content is provided via the children prop,\nthat content will be displayed in addition to the label provided here."
+        "description": "The label to be displayed within the button. If content is provided via the children prop,\r\nthat content will be displayed in addition to the label provided here."
       },
       "labelColor": {
         "required": false,
@@ -4663,7 +4556,7 @@
         "flowType": {
           "name": "boolean"
         },
-        "description": "If true, the button will use the theme's secondary color. If both secondary and primary are\ntrue, the button will use the theme's primary color.",
+        "description": "If true, the button will use the theme's secondary color. If both secondary and primary are\r\ntrue, the button will use the theme's primary color.",
         "defaultValue": {
           "value": "false",
           "computed": false
@@ -4744,7 +4637,7 @@
         "flowType": {
           "name": "number"
         },
-        "description": "The number of milliseconds to wait before automatically dismissing. If no value is specified\nthe snackbar will dismiss normally. If a value is provided the snackbar can still be dismissed\nnormally. If a snackbar is dismissed before the timer expires, the timer will be cleared.",
+        "description": "The number of milliseconds to wait before automatically dismissing. If no value is specified\r\nthe snackbar will dismiss normally. If a value is provided the snackbar can still be dismissed\r\nnormally. If a snackbar is dismissed before the timer expires, the timer will be cleared.",
         "defaultValue": {
           "value": "3000",
           "computed": false
@@ -4814,7 +4707,7 @@
         "flowType": {
           "name": "Node"
         },
-        "description": "The message to be displayed.\n(Note: If the message is an element or array, and the Snackbar may re-render while it is\nstill open, ensure that the same object remains as the message property if you want to avoid\nthe Snackbar hiding and showing again)"
+        "description": "The message to be displayed.\r\n(Note: If the message is an element or array, and the Snackbar may re-render while it is\r\nstill open, ensure that the same object remains as the message property if you want to avoid\r\nthe Snackbar hiding and showing again)"
       },
       "n_clicks": {
         "required": false,
@@ -5113,7 +5006,7 @@
           ],
           "raw": "Array<string>"
         },
-        "description": "The text labels that will be shown next to each step number. The length of this array must\nmatch the total number of steps",
+        "description": "The text labels that will be shown next to each step number. The length of this array must\r\nmatch the total number of steps",
         "defaultValue": {
           "value": "['Step 1', 'Step 2', 'Step 3']",
           "computed": false
@@ -5391,7 +5284,7 @@
           ],
           "raw": "Array<Object>"
         },
-        "description": "The values that will be passed to the individual Tab components inside Tabs. Allowed values:\n   buttonStyle: Object\n   className: string\n   icon: Node\n   label: Node\n   style: Object\n   value: any"
+        "description": "The values that will be passed to the individual Tab components inside Tabs. Allowed values:\r\n   buttonStyle: Object\r\n   className: string\r\n   icon: Node\r\n   label: Node\r\n   style: Object\r\n   value: any"
       },
       "tabTemplateStyle": {
         "required": false,
