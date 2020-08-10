@@ -2043,6 +2043,17 @@
       }
     ],
     "props": {
+      "anchor": {
+        "required": false,
+        "flowType": {
+          "name": "str"
+        },
+        "description": "",
+        "defaultValue": {
+          "value": "\"left\"",
+          "computed": false
+        }
+      },
       "id": {
         "required": true,
         "flowType": {

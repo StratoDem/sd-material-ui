@@ -9,6 +9,7 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 
 type Props = {
+  anchor: str,
   /** Dialog ID */
   id: string,
   /** Children to render inside of the Dialog */
@@ -30,6 +31,7 @@ type State = {
 };
 
 const defaultProps = {
+  anchor: "left",
   children: null,
   className: '',
   open: false,
@@ -61,7 +63,7 @@ export default class LeftDrawer extends Component<Props> {
   };
 
   render() {
-    const {id, className} = this.props;
+    const {id, anchor, className} = this.props;
 
     return (
       <div id={id}>
@@ -75,9 +77,9 @@ export default class LeftDrawer extends Component<Props> {
           <MenuIcon/>
         </IconButton>
         <Drawer
+          anchor={anchor}
           className={className}
           variant="persistent"
-          anchor="left"
           open={this.state.open}
         >
           <div>

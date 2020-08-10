@@ -151,14 +151,35 @@ app.layout = html.Div([
 
     spacer,
 
-    # # Test for SDDrawer (docked, secondary)
-    sd_material_ui.Drawer(id='output6',
-                            docked=True,
-                            openSecondary=True,
-                            style={'backgroundColor': '#444'},
-                            children=[html.P(children='Drawer item')]),
+    # Test for SDDrawer (docked, secondary)
+    sd_material_ui.Drawer(
+        id='output6',
+        anchor='right',
+        children=[html.P(children='Drawer item')]),
     html.Div(id='input6', children=[
-        html.P(children='Open or close the drawer (docked)')
+        html.P(children='Open or close the drawer (right)')
+    ]),
+
+    spacer,
+
+# Test for SDDrawer (docked, secondary)
+    sd_material_ui.Drawer(
+        id='output62',
+        anchor='top',
+        children=[html.P(children='Drawer item')]),
+    html.Div(id='input62', children=[
+        html.P(children='Open or close the drawer (top)')
+    ]),
+
+    spacer,
+
+# Test for SDDrawer (docked, secondary)
+    sd_material_ui.Drawer(
+        id='output61',
+        anchor='bottom',
+        children=[html.P(children='Drawer item')]),
+    html.Div(id='input61', children=[
+        html.P(children='Open or close the drawer (bottom)')
     ]),
 
     spacer,
@@ -170,7 +191,7 @@ app.layout = html.Div([
         children=[
         html.P(id='close-input7', children='Drawer item')]),
     html.Div(id='input7', children=[
-        html.P(children='Open or close the drawer (not docked)')
+        html.P(children='Open or close the drawer (left)')
     ]),
 
     spacer,
@@ -581,30 +602,6 @@ def determine_button_callback(raised_n_clicks: int, flat_n_clicks: int, icon_n_c
     return ['Clicked values for flat ({}-{}) and raised ({}-{}) and icon ({}-{}) buttons'.format(
         flat_n_clicks, flat_n_clicks_prev, raised_n_clicks,
         raised_n_clicks_prev, icon_n_clicks, icon_n_clicks_prev)]
-
-
-# # Callback for SDDrawer (docked, secondary)
-# @app.callback(
-#     dash.dependencies.Output('output6', 'open'),
-#     [dash.dependencies.Input('input6', 'n_clicks')],
-#     [dash.dependencies.State('output6', 'open')])
-# def operate_drawer(button_click, drawer_state):
-#     if button_click:
-#         return not drawer_state
-
-
-# Callback for SDDrawer (not docked)
-@app.callback(
-    dash.dependencies.Output('output7', 'open'),
-    [dash.dependencies.Input('input7', 'n_clicks'),
-     dash.dependencies.Input('close-input7', 'n_clicks')],
-    [dash.dependencies.State('output7', 'open')])
-def operate_drawer(button_click, menu_item_click, drawer_state):
-    if not drawer_state:
-        if button_click:
-            return True
-    if menu_item_click:
-        return False
 
 
 # Callback for SDCheckbox
