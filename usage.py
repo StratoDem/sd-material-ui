@@ -94,7 +94,9 @@ app.layout = html.Div([
          html.P('Item 3'),
          html.P('Item 4')],
         id='output2',
-        open=True),
+        open=False,
+        useBrowserSideClose=False
+    ),
     html.Button('Open Dialog', id='input2'),
 
     spacer,

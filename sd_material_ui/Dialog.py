@@ -24,14 +24,15 @@ other callbacks in the browser
 - contentClassName (string; optional): The className to add to the content container
 - overlayClassName (string; optional): The className to add to the Overlay component rendered behind the Dialog
 - paperClassName (string; optional): CSS class name of the Paper element
-- titleClassName (string; optional): The className to add to the title's root container element"""
+- titleClassName (string; optional): The className to add to the title's root container element
+- useBrowserSideClose (boolean; default False): If set to true, the Close Icon will show in the upper right corner of the dialog, closing the Dialog browser side"""
     @_explicitize_args
-    def __init__(self, children=None, id=Component.REQUIRED, actions=Component.UNDEFINED, className=Component.UNDEFINED, open=Component.UNDEFINED, autoScrollBodyContent=Component.UNDEFINED, actionsContainerClassName=Component.UNDEFINED, bodyClassName=Component.UNDEFINED, contentClassName=Component.UNDEFINED, overlayClassName=Component.UNDEFINED, paperClassName=Component.UNDEFINED, titleClassName=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['children', 'id', 'actions', 'className', 'open', 'autoScrollBodyContent', 'actionsContainerClassName', 'bodyClassName', 'contentClassName', 'overlayClassName', 'paperClassName', 'titleClassName']
+    def __init__(self, children=None, id=Component.REQUIRED, actions=Component.UNDEFINED, className=Component.UNDEFINED, open=Component.UNDEFINED, autoScrollBodyContent=Component.UNDEFINED, actionsContainerClassName=Component.UNDEFINED, bodyClassName=Component.UNDEFINED, contentClassName=Component.UNDEFINED, overlayClassName=Component.UNDEFINED, paperClassName=Component.UNDEFINED, titleClassName=Component.UNDEFINED, useBrowserSideClose=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['children', 'id', 'actions', 'className', 'open', 'autoScrollBodyContent', 'actionsContainerClassName', 'bodyClassName', 'contentClassName', 'overlayClassName', 'paperClassName', 'titleClassName', 'useBrowserSideClose']
         self._type = 'Dialog'
         self._namespace = 'sd_material_ui'
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['children', 'id', 'actions', 'className', 'open', 'autoScrollBodyContent', 'actionsContainerClassName', 'bodyClassName', 'contentClassName', 'overlayClassName', 'paperClassName', 'titleClassName']
+        self.available_properties = ['children', 'id', 'actions', 'className', 'open', 'autoScrollBodyContent', 'actionsContainerClassName', 'bodyClassName', 'contentClassName', 'overlayClassName', 'paperClassName', 'titleClassName', 'useBrowserSideClose']
         self.available_wildcard_properties =            []
 
         _explicit_args = kwargs.pop('_explicit_args')

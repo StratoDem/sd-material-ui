@@ -41,6 +41,8 @@ type Props = {
   paperClassName?: string,
   /** The className to add to the title's root container element */
   titleClassName?: string,
+  /** If set to true, the Close Icon will show in the upper right corner of the dialog, closing the Dialog browser side*/
+  useBrowserSideClose?: boolean,
   /** Dash callback to update props on the server */
   setProps?: (props: { modal?: boolean, open?: boolean }) => void,
 };
@@ -62,6 +64,7 @@ const defaultProps = {
   paperClassName: null,
   titleClassName: null,
   autoScrollBodyContent: false,
+  useBrowserSideClose: false,
 };
 
 /** Material UI Dialog component */
@@ -104,7 +107,22 @@ export default class Dialog extends Component<Props, State> {
       contentClassName,
       overlayClassName,
       paperClassName,
-      titleClassName } = this.props;
+      titleClassName,
+      useBrowserSideClose} = this.props;
+
+    if (useBrowserSideClose) {
+       this.browserSideClose = <IconButton
+                color="inherit"
+                onClick={this.closeDialog}
+                style={{"float": "right",
+                        "margin-top": "-16px",
+                        "margin-right": "-12px",}}
+              >
+                <CloseIcon/>
+              </IconButton>
+    } else {
+      this.browserSideClose = <div/>
+    }
 
     return (
       <div id={id} className="sd-dialog">
@@ -124,15 +142,7 @@ export default class Dialog extends Component<Props, State> {
                      paperClassName={paperClassName}
                      titleClassName={titleClassName}>
             <div style={{"margin": "14px"}}>
-              <IconButton
-                color="inherit"
-                onClick={this.closeDialog}
-                style={{"float": "right",
-                        "margin-top": "-16px",
-                        "margin-right": "-12px",}}
-              >
-                <CloseIcon/>
-              </IconButton>
+              {this.browserSideClose}
               {this.props.children}
             </div>
           </MuiDialog>
