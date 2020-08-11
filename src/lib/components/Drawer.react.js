@@ -4,7 +4,9 @@ import React, { Component } from 'react';
 import Drawer from '@material-ui/core/Drawer';
 
 type Props = {
-  anchor: str,
+  /** Controls where the drawer appears. Must be one of "top", "bottom", "left", or "right"
+   * Defaults to "left" */
+  anchor: string,
   /** Dialog ID */
   id: string,
   /** Children to render inside of the Dialog */
