@@ -2,6 +2,14 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 4.0.0 2020-08-11
+### Changes
+- Changes the Drawer component to use the latest `material-ui`
+- Updates many dependencies to resolve various vulnerabilities
+
+### Related issues:
+- [404](https://github.com/StratoDem/sd-material-ui/issues/404)
+
 ## 3.2.0 2019-11-04
 ### Adds
 - Adds `value` prop to `Tabs` component. Add a `value` to the component initialization and a `value` key and value pair for each tab to the `tabPropsArray` to make the component expose the `value` for use in callbacks. Existing behavior should not change.
