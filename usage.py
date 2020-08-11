@@ -156,10 +156,16 @@ app.layout = html.Div([
         id='output7',
         open=False,
         children=[
-            html.P(id='close-input7', children='Drawer item')
+            html.P(id='close-input7', children='X'),
+            html.H4(children='Drawer items'),
+            html.Ul(children=[
+                html.Li(children=['Item 1']),
+                html.Li(children=['Item 2']),
+                html.Li(children=['Item 3']),
+            ]),
         ]),
     html.Div(id='input7', children=[
-        html.P(children='Open or close the drawer (left)')
+        html.Button(children='Open or close the drawer (left)')
     ]),
 
     spacer,
