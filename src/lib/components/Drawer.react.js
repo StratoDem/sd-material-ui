@@ -2,7 +2,6 @@
 
 import React, { Component } from 'react';
 import Drawer from '@material-ui/core/Drawer';
-import CssBaseline from '@material-ui/core/CssBaseline';
 
 type Props = {
   anchor: str,
@@ -56,9 +55,7 @@ export default class SD_Drawer extends Component<Props> {
           variant="persistent"
           open={this.state.open}
         >
-          <div>
-            {this.props.children}
-          </div>
+          {this.props.children}
         </Drawer>
       </div>
     );

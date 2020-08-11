@@ -9,6 +9,9 @@ class Drawer(Component):
 
 Keyword arguments:
 - children (a list of or a singular dash component, string or number; optional): Children to render inside of the Dialog
+- modalProps (dict; optional)
+- paperProps (dict; optional)
+- slideProps (dict; optional)
 - anchor (default "left")
 - id (string; required): Dialog ID
 - className (string; default ''): CSS class name of the root element
@@ -17,12 +20,12 @@ Keyword arguments:
 IMPORTANT: When using this component in Dash, a listener must be set up (either as state or
 an input) for this component's props.open value in order to achieve the desired behavior."""
     @_explicitize_args
-    def __init__(self, children=None, anchor=Component.UNDEFINED, id=Component.REQUIRED, className=Component.UNDEFINED, open=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['children', 'anchor', 'id', 'className', 'open']
+    def __init__(self, children=None, modalProps=Component.UNDEFINED, paperProps=Component.UNDEFINED, slideProps=Component.UNDEFINED, anchor=Component.UNDEFINED, id=Component.REQUIRED, className=Component.UNDEFINED, open=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['children', 'modalProps', 'paperProps', 'slideProps', 'anchor', 'id', 'className', 'open']
         self._type = 'Drawer'
         self._namespace = 'sd_material_ui'
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['children', 'anchor', 'id', 'className', 'open']
+        self.available_properties = ['children', 'modalProps', 'paperProps', 'slideProps', 'anchor', 'id', 'className', 'open']
         self.available_wildcard_properties =            []
 
         _explicit_args = kwargs.pop('_explicit_args')

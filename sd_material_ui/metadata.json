@@ -2010,6 +2010,39 @@
     "displayName": "SD_Drawer",
     "methods": [],
     "props": {
+      "modalProps": {
+        "required": false,
+        "flowType": {
+          "name": "Object"
+        },
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "paperProps": {
+        "required": false,
+        "flowType": {
+          "name": "Object"
+        },
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "slideProps": {
+        "required": false,
+        "flowType": {
+          "name": "Object"
+        },
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
       "anchor": {
         "required": false,
         "flowType": {
