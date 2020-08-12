@@ -58,7 +58,7 @@ const defaultProps = {
   autoScrollBodyContent: false,
   useBrowserSideClose: false,
   style: null,
-  scroll: '',
+  scroll: 'body',
   fullWidth: true
 };
 

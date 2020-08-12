@@ -285,7 +285,7 @@
         },
         "description": "\"paper\" or \"body\", Determines scroll container",
         "defaultValue": {
-          "value": "''",
+          "value": "'body'",
           "computed": false
         }
       },

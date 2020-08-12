@@ -22,7 +22,7 @@ other callbacks in the browser
 - componentContainerClassName (string; optional): The className to add to the component container
 - fullWidth (boolean; default True): The className to add to the content container
 - useBrowserSideClose (boolean; default False): If set to true, the Close Icon will show in the upper right corner of the dialog, closing the Dialog browser side
-- scroll (dict; default ''): "paper" or "body", Determines scroll container
+- scroll (dict; default 'body'): "paper" or "body", Determines scroll container
 - style (dict; optional): Styles to be implemented as inline css"""
     @_explicitize_args
     def __init__(self, children=None, id=Component.REQUIRED, ariaLabelledBy=Component.UNDEFINED, className=Component.UNDEFINED, open=Component.UNDEFINED, autoScrollBodyContent=Component.UNDEFINED, componentContainerClassName=Component.UNDEFINED, fullWidth=Component.UNDEFINED, useBrowserSideClose=Component.UNDEFINED, scroll=Component.UNDEFINED, style=Component.UNDEFINED, actions=Component.UNDEFINED, **kwargs):
