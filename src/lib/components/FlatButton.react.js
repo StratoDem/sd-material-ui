@@ -1,7 +1,8 @@
 // @flow
 
 import React, { Component } from 'react';
-import Button from '@material-ui/core/Button';
+import {Button as MUIButton} from '@material-ui/core/Button';
+import {IconButton as MUIIconButton} from '@material-ui/core/IconButton';
 
 type Props = {
   /** Button ID */
@@ -10,6 +11,10 @@ type Props = {
   children?: Node,
   /** CSS class name of the root element */
   className?: string,
+  /** Is the Button raised? */
+  raised?: boolean,
+  /** Is the Button an IconButton? */
+  useIcon?: boolean,
   /** Is the Button disabled? */
   disabled?: boolean,
   /** Dash callback to update props on the server */
@@ -27,7 +32,7 @@ const defaultProps = {
   setProps: () => {},
 };
 
-export default class FlatButton extends Component<Props> {
+export default class Button extends Component<Props> {
   constructor(props: Props) {
     super(props);
     this.state = {disabled: props.disabled};
@@ -39,20 +44,33 @@ export default class FlatButton extends Component<Props> {
   }
 
   render() {
-    const {id, className} = this.props;
-
+    const {id, className, useIcon} = this.props;
+    if (useIcon){
+      return (
+        <div id={id}>
+          <MUIButton
+            className={className}
+            disabled={this.state.disabled}
+            disableElevation={!this.props.raised}
+          >
+            {this.props.children}
+          </MUIButton>
+        </div>
+      );
+    }
     return (
       <div id={id}>
-        <Button
+        <MUIIconButton
           className={className}
           disabled={this.state.disabled}
-          disableElevation={true}
         >
           {this.props.children}
-        </Button>
+        </MUIIconButton>
       </div>
     );
+
+
   }
 }
 
-FlatButton.defaultProps = defaultProps;
+Button.defaultProps = defaultProps;
