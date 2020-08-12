@@ -9,7 +9,7 @@ Material UI Subheader component
 
 Keyword arguments:
 - children (a list of or a singular dash component, string or number; optional): Node that will be placed inside the Subheader
-- inset (boolean; optional): If true, the Subheader will be indented
+- inset (boolean; default False): If true, the Subheader will be indented
 - style (dict; optional): Override the inline-styles of the root element"""
     @_explicitize_args
     def __init__(self, children=None, inset=Component.UNDEFINED, style=Component.UNDEFINED, **kwargs):

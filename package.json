@@ -1,6 +1,6 @@
 {
   "name": "sd-material-ui",
-  "version": "3.2.0",
+  "version": "4.0.0",
   "description": "material-ui components for Dash",
   "main": "build/index.js",
   "author": "Michael Clawar, Eric Linden, Sreeja Keesara tech@stratodem.com",
@@ -25,7 +25,9 @@
   },
   "homepage": "https://github.com/StratoDem/sd-material-ui",
   "dependencies": {
-    "material-ui": "^0.20.0"
+    "@material-ui/core": "^4.11.0",
+    "@material-ui/icons": "^4.9.1",
+    "material-ui": "^0.20.2"
   },
   "devDependencies": {
     "@babel/core": "7.5.5",
@@ -42,9 +44,9 @@
     "eslint-config-prettier": "6.0.0",
     "eslint-plugin-import": "2.18.2",
     "eslint-plugin-react": "7.14.2",
-    "flow-bin": "0.103.0",
-    "node-sass": "4.12.0",
-    "npm": "6.10.1",
+    "flow-bin": "0.131.0",
+    "node-sass": "^4.14.1",
+    "npm": "^6.14.7",
     "react": "16.8.6",
     "react-docgen": "4.1.1",
     "react-dom": "16.8.6",

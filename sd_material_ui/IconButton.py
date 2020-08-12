@@ -4,7 +4,7 @@ from dash.development.base_component import Component, _explicitize_args
 
 
 class IconButton(Component):
-    """A IconButton component.
+    """An IconButton component.
 Material UI IconButton component
 
 Keyword arguments:
@@ -12,24 +12,24 @@ Keyword arguments:
 See method 3 at http://www.material-ui.com/#/components/icon-button
 Note: currently unable to pass in FontIcon component as child, you will need
 to use method 3 at the above link
-- className (string; optional): The CSS class name of the root element
-- disableTouchRipple (boolean; optional): If true, the element's ripple effect will be disabled
-- disabled (boolean; optional): Disable the button?
+- className (string; default ''): The CSS class name of the root element
+- disableTouchRipple (boolean; default False): If true, the element's ripple effect will be disabled
+- disabled (boolean; default False): Disable the button?
 - hoveredStyle (dict; optional): Override the inline-styles of the root element when the component is hovered
-- href (string; optional): The URL to link to when the button is clicked
-- iconClassName (string; optional): The CSS class name of the icon. Used for setting the icon with a stylesheet
+- href (string; default ''): The URL to link to when the button is clicked
+- iconClassName (string; default 'material-icons'): The CSS class name of the icon. Used for setting the icon with a stylesheet
 - iconStyle (dict; optional): Override the inline-styles of the icon element.
 Note: you can specify iconHoverColor as a String inside this object.
 - id (string; optional): Element ID
-- n_clicks (number; optional): An integer that represents the number fo times that this element has been clicked
-- n_clicks_previous (number; optional): An integer that represents the previous number of times this element has been clicked
+- n_clicks (number; default 0): An integer that represents the number fo times that this element has been clicked
+- n_clicks_previous (number; default 0): An integer that represents the previous number of times this element has been clicked
 - style (dict; optional): Override the inline-styles of the root element.
-- tooltip (a list of or a singular dash component, string or number; optional): The text to supply to the element's tooltip
-- tooltipPosition (optional): The vertical and horizontal positions, respectively, of the element's tooltip.
+- tooltip (a list of or a singular dash component, string or number; default ''): The text to supply to the element's tooltip
+- tooltipPosition (default 'bottom-center'): The vertical and horizontal positions, respectively, of the element's tooltip.
 Possible values are: "bottom-center", "top-center", "bottom-right", "top-right",
 "bottom-left", and "top-left".
 - tooltipStyles (dict; optional): Override the inline-styles of the tooltip element
-- touch (boolean; optional): If true, increase the tooltip element's size.
+- touch (boolean; default False): If true, increase the tooltip element's size.
 Useful for increasing tooltip readability on mobile devices."""
     @_explicitize_args
     def __init__(self, children=None, className=Component.UNDEFINED, disableTouchRipple=Component.UNDEFINED, disabled=Component.UNDEFINED, fireEvent=Component.UNDEFINED, hoveredStyle=Component.UNDEFINED, href=Component.UNDEFINED, iconClassName=Component.UNDEFINED, iconStyle=Component.UNDEFINED, id=Component.UNDEFINED, n_clicks=Component.UNDEFINED, n_clicks_previous=Component.UNDEFINED, style=Component.UNDEFINED, tooltip=Component.UNDEFINED, tooltipPosition=Component.UNDEFINED, tooltipStyles=Component.UNDEFINED, touch=Component.UNDEFINED, **kwargs):

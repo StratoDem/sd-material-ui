@@ -8,7 +8,7 @@ class Divider(Component):
 Material UI Divider component
 
 Keyword arguments:
-- inset (boolean; optional): If true, the Divider will be indented
+- inset (boolean; default False): If true, the Divider will be indented
 - style (dict; optional): Override the inline-styles of the root element"""
     @_explicitize_args
     def __init__(self, inset=Component.UNDEFINED, style=Component.UNDEFINED, **kwargs):

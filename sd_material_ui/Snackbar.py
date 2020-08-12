@@ -9,18 +9,18 @@ Material UI Snackbar component
 
 Keyword arguments:
 - action (a list of or a singular dash component, string or number; optional): Label for the action on the snackbar
-- autoHideDuration (number; optional): The number of milliseconds to wait before automatically dismissing. If no value is specified
+- autoHideDuration (number; default 3000): The number of milliseconds to wait before automatically dismissing. If no value is specified
 the snackbar will dismiss normally. If a value is provided the snackbar can still be dismissed
 normally. If a snackbar is dismissed before the timer expires, the timer will be cleared.
 - bodyStyle (optional): Override the inline styles of the body element
-- className (string; optional): CSS class name of the root element
+- className (string; default ''): CSS class name of the root element
 - contentStyle (optional): Override the inline styles of the content element
 - id (string; required): The element's ID
 - message (a list of or a singular dash component, string or number; required): The message to be displayed.
 (Note: If the message is an element or array, and the Snackbar may re-render while it is
 still open, ensure that the same object remains as the message property if you want to avoid
 the Snackbar hiding and showing again)
-- n_clicks (number; optional): An integer that represents the number of times that action button has been clicked
+- n_clicks (number; default 0): An integer that represents the number of times that action button has been clicked
 - open (boolean; required): Controls whether the Snackbar is opened or not
 - style (optional): Override the inline styles of the root element"""
     @_explicitize_args

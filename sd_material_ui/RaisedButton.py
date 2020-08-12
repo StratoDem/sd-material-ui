@@ -10,30 +10,30 @@ class RaisedButton(Component):
 Keyword arguments:
 - children (a list of or a singular dash component, string or number; optional): The content of the button. If a label is provided via the label prop, the text within the
 label will be displayed in addition to the content provided here.
-- backgroundColor (string; optional): Override the default background color for the button, but not the default disabled
+- backgroundColor (string; default ''): Override the default background color for the button, but not the default disabled
 background color (use disabledBackgroundColor for this).
 - buttonStyle (dict; optional): Override the inline styles of the button element.
-- className (string; optional): CSS class name of the root element
-- disableTouchRipple (boolean; optional): If true, the element's ripple effect will be disabled
-- disabled (boolean; optional): Button is disabled?
-- disabledBackgroundColor (string; optional): Override the default background for the disabled button
-- disabledLabelColor (string; optional): Override the default label color for the disabled button
-- fullWidth (boolean; optional): If true, the button will take up the full width of its container
-- href (string; optional): The URL to link to when the button is clicked
+- className (string; default ''): CSS class name of the root element
+- disableTouchRipple (boolean; default False): If true, the element's ripple effect will be disabled
+- disabled (boolean; default False): Button is disabled?
+- disabledBackgroundColor (string; default ''): Override the default background for the disabled button
+- disabledLabelColor (string; default ''): Override the default label color for the disabled button
+- fullWidth (boolean; default False): If true, the button will take up the full width of its container
+- href (string; default ''): The URL to link to when the button is clicked
 - icon (a list of or a singular dash component, string or number; optional): Use this property to display an icon
 - id (string; optional): Element ID
 - label (string; required): The label to be displayed within the button. If content is provided via the children prop,
 that content will be displayed in addition to the label provided here.
-- labelColor (string; optional): Color of the button's label
-- labelPosition (optional): The position of the button's label relative to its children
+- labelColor (string; default ''): Color of the button's label
+- labelPosition (default 'after'): The position of the button's label relative to its children
 - labelStyle (dict; optional): Override the inline styles of the label element
-- n_clicks (number; optional): An integer that represents the number of times this element has been clicked
-- n_clicks_previous (number; optional): An integer that represents the previous number of times this element has been clicked
+- n_clicks (number; default 0): An integer that represents the number of times this element has been clicked
+- n_clicks_previous (number; default 0): An integer that represents the previous number of times this element has been clicked
 - overlayStyle (dict; optional): Override the inline style of the button overlay
-- primary (boolean; optional): If true, the button will use the theme's primary color
+- primary (boolean; default False): If true, the button will use the theme's primary color
 - rippleColor (string; optional): Color of the ripple on click
 - rippleStyle (dict; optional): Override the inline style of the ripple element
-- secondary (boolean; optional): If true, the button will use the theme's secondary color. If both secondary and primary are
+- secondary (boolean; default False): If true, the button will use the theme's secondary color. If both secondary and primary are
 true, the button will use the theme's primary color.
 - style (dict; optional): Override the inline styles of the root element"""
     @_explicitize_args

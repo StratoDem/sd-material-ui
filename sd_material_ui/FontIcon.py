@@ -8,14 +8,14 @@ class FontIcon(Component):
 Material UI FontIcon component
 
 Keyword arguments:
-- id (string; optional): id for the component
-- color (string; optional): font color of the font icon;
+- id (string; default ''): id for the component
+- color (string; default ''): font color of the font icon;
 If not specified, this component will default
 to muiTheme.palette.textColor
-- className (string; optional): defines specific icon when using custom icon font
+- className (string; default ''): defines specific icon when using custom icon font
 or defines font when using public icon font
-- hoverColor (string; optional): icon color when the mouse hovers over the icon
-- iconName (string; optional): defines specific icon when using public icon font
+- hoverColor (string; default ''): icon color when the mouse hovers over the icon
+- iconName (string; default ''): defines specific icon when using public icon font
 - style (dict; optional): override inline-styles of root element"""
     @_explicitize_args
     def __init__(self, id=Component.UNDEFINED, color=Component.UNDEFINED, className=Component.UNDEFINED, hoverColor=Component.UNDEFINED, iconName=Component.UNDEFINED, style=Component.UNDEFINED, **kwargs):

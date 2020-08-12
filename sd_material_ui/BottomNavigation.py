@@ -10,7 +10,7 @@ BottomNavigationItem is an item in a BottomNavigation component
 Keyword arguments:
 - id (string; required): The ID used to identify this component in Dash callbacks
 - navItems (list; required): Array of navigation item props to pass to BottomNavigationItem
-- selectedIndex (number; optional): Initial selected index for the BottomNavigation
+- selectedIndex (number; default 0): Initial selected index for the BottomNavigation
 - selectedStyle (dict; optional): Style to apply to the selected icon"""
     @_explicitize_args
     def __init__(self, id=Component.REQUIRED, navItems=Component.REQUIRED, selectedIndex=Component.UNDEFINED, selectedStyle=Component.UNDEFINED, **kwargs):
