@@ -2,20 +2,16 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## 4.1.0 2020-08-12
-### Changes
-- Changes the Dialog component to use the latest `material-ui`
-
-### Related issues:
-- [402](https://github.com/StratoDem/sd-material-ui/issues/402)
 
 ## 4.0.0 2020-08-11
 ### Changes
 - Changes the Drawer component to use the latest `material-ui`
 - Updates many dependencies to resolve various vulnerabilities
+- Changes the Dialog component to use the latest `material-ui`
 
 ### Related issues:
 - [404](https://github.com/StratoDem/sd-material-ui/issues/404)
+- [402](https://github.com/StratoDem/sd-material-ui/issues/402)
 
 ## 3.2.0 2019-11-04
 ### Adds
