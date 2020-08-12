@@ -18,7 +18,7 @@ app.layout = html.Div([
     html.Div([
 
         html.Div([
-            html.P('Test for drawer'),
+            html.P([html.Strong('Test for drawer')]),
             sd_material_ui.Drawer(
                 id='drawer',
                 open=False,
@@ -39,7 +39,7 @@ app.layout = html.Div([
         spacer,
 
         html.Div([
-            html.P('Test for radio buttons'),
+            html.P([html.Strong('Test for radio buttons')]),
             sd_material_ui.RadioButtonGroup(
                 id='radio',
                 name='radio test',
