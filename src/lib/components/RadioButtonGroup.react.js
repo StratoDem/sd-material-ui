@@ -51,7 +51,7 @@ const defaultProps = {
   setProps: () => {},
 }
 
-export default class RadioButtonsGroup extends Component<Props, State> {
+export default class RadioButtonGroup extends Component<Props, State> {
   constructor(props: Props) {
     super(props);
     this.state = {value: this.props.valueSelected};
@@ -109,4 +109,4 @@ export default class RadioButtonsGroup extends Component<Props, State> {
   }
 };
 
-RadioButtonsGroup.defaultProps = defaultProps;
+RadioButtonGroup.defaultProps = defaultProps;
