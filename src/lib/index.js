@@ -12,7 +12,7 @@ export { default as Drawer } from './components/Drawer.react';
 // export { default as IconButton } from './components/IconButton.react';
 // export { default as Paper } from './components/Paper.react';
 // export { default as Popover } from './components/Popover.react';
-// export { default as RadioButtonGroup } from './components/RadioButtonGroup.react';
+export { default as RadioButtonGroup } from './components/RadioButtonGroup.react';
 // export { default as RaisedButton } from './components/RaisedButton.react';
 // export { default as Snackbar } from './components/Snackbar.react';
 // export { default as Stepper } from './components/Stepper.react';

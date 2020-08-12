@@ -102,5 +102,198 @@
         }
       }
     }
+  },
+  "src/lib/components/RadioButtonGroup.react.js": {
+    "description": "",
+    "displayName": "RadioButtonsGroup",
+    "methods": [
+      {
+        "name": "buildRadioButton",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "buttonItem",
+            "type": {
+              "name": "signature",
+              "type": "object",
+              "raw": "{\n    /** If true, the radio button is disabled */\n  disabled?: boolean,\n  /** Label to appear next to button */\n  label?: string,\n  /** Specify the location of the label relative to the radio button\n   * Must be one of: \"top\", \"start\", \"bottom\", or \"end\". Defaults to \"end\" */\n  labelPlacement?: string,\n  /** value of the the radio button */\n  value?: any,\n}",
+              "signature": {
+                "properties": [
+                  {
+                    "key": "disabled",
+                    "value": {
+                      "name": "boolean",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "label",
+                    "value": {
+                      "name": "string",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "labelPlacement",
+                    "value": {
+                      "name": "string",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "value",
+                    "value": {
+                      "name": "any",
+                      "required": false
+                    }
+                  }
+                ]
+              },
+              "alias": "SD_RADIO_BUTTON"
+            }
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "handleChange",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "event",
+            "type": {
+              "name": "Object",
+              "alias": "Object"
+            }
+          }
+        ],
+        "returns": null
+      }
+    ],
+    "props": {
+      "className": {
+        "required": false,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "the css class name of the root element",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "fireEvent": {
+        "required": false,
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "() => void",
+          "signature": {
+            "arguments": [],
+            "return": {
+              "name": "void"
+            }
+          }
+        },
+        "description": "a callback for firng events to dash",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      },
+      "id": {
+        "required": true,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "the element's ID"
+      },
+      "name": {
+        "required": true,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "the name that will be applied to the group of radio buttons"
+      },
+      "options": {
+        "required": false,
+        "flowType": {
+          "name": "Array",
+          "elements": [
+            {
+              "name": "signature",
+              "type": "object",
+              "raw": "{\n    /** If true, the radio button is disabled */\n  disabled?: boolean,\n  /** Label to appear next to button */\n  label?: string,\n  /** Specify the location of the label relative to the radio button\n   * Must be one of: \"top\", \"start\", \"bottom\", or \"end\". Defaults to \"end\" */\n  labelPlacement?: string,\n  /** value of the the radio button */\n  value?: any,\n}",
+              "signature": {
+                "properties": [
+                  {
+                    "key": "disabled",
+                    "value": {
+                      "name": "boolean",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "label",
+                    "value": {
+                      "name": "string",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "labelPlacement",
+                    "value": {
+                      "name": "string",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "value",
+                    "value": {
+                      "name": "any",
+                      "required": false
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "raw": "Array<SD_RADIO_BUTTON>"
+        },
+        "description": "used to create the RadioButtons to populate the RadioButtonGroup with. A Dash user passes in a\nlist of dict items, each one having at least a `value` and `label`. If that value is selected,\nvalueSelected will be updated",
+        "defaultValue": {
+          "value": "[]",
+          "computed": false
+        }
+      },
+      "setProps": {
+        "required": false,
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "() => void",
+          "signature": {
+            "arguments": [],
+            "return": {
+              "name": "void"
+            }
+          }
+        },
+        "description": "dash callback to update props on the server",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      },
+      "valueSelected": {
+        "required": true,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "Initial value selected"
+      }
+    }
   }
 }
