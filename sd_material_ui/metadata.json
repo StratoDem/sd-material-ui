@@ -1,7 +1,7 @@
 {
   "src/lib/components/Drawer.react.js": {
     "description": "",
-    "displayName": "SD_Drawer",
+    "displayName": "Drawer",
     "methods": [],
     "props": {
       "anchor": {
