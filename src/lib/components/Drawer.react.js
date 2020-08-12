@@ -1,7 +1,7 @@
 // @flow
 
 import React, { Component } from 'react';
-import Drawer from '@material-ui/core/Drawer';
+import { Drawer as MuiDrawer } from '@material-ui/core/Drawer';
 
 type Props = {
   /** Controls where the drawer appears. Must be one of "top", "bottom", "left", or "right"
@@ -35,7 +35,7 @@ const defaultProps = {
   setProps: () => {},
 };
 
-export default class SD_Drawer extends Component<Props> {
+export default class Drawer extends Component<Props, State> {
   constructor(props: Props) {
     super(props);
     this.state = {open: props.open};
@@ -51,17 +51,17 @@ export default class SD_Drawer extends Component<Props> {
 
     return (
       <div id={id}>
-        <Drawer
+        <MuiDrawer
           anchor={anchor}
           className={className}
           variant="persistent"
           open={this.state.open}
         >
           {this.props.children}
-        </Drawer>
+        </MuiDrawer>
       </div>
     );
   }
 }
 
-SD_Drawer.defaultProps = defaultProps;
+Drawer.defaultProps = defaultProps;
