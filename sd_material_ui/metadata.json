@@ -45,7 +45,7 @@
             "type": {
               "name": "signature",
               "type": "object",
-              "raw": "{\r\n  /** Dialog ID */\r\n  id: string,\r\n  /** Actions component or list of components for the Dialog */\r\n  actions?: Node | Array<Node>,\r\n  /** Children to render inside of the Dialog */\r\n  children?: Node,\r\n  /** CSS class name of the root element */\r\n  className?: string,\r\n  /** Is the dialog open?\r\n   *\r\n   * IMPORTANT: When using this component in Dash, a listener must be set up (either as state or\r\n   * an input) for this component's props.open value in order to achieve the desired behavior.\r\n   * If such a listener is not in place, the non-modal version of this dialog will contaminate\r\n   * other callbacks in the browser\r\n   */\r\n  open?: boolean,\r\n  /** If set to true, the body content of the Dialog will be scrollable. */\r\n  autoScrollBodyContent?: boolean,\r\n  /** The className to add to the actions container's root element. */\r\n  actionsContainerClassName?: string,\r\n  /** The className to add to the content's root element under the title. */\r\n  bodyClassName?: string,\r\n  /** The className to add to the content container */\r\n  contentClassName?: string,\r\n  /** The className to add to the Overlay component rendered behind the Dialog */\r\n  overlayClassName?: string,\r\n  /** CSS class name of the Paper element */\r\n  paperClassName?: string,\r\n  /** The className to add to the title's root container element */\r\n  titleClassName?: string,\r\n  /** If set to true, the Close Icon will show in the upper right corner of the dialog, closing the Dialog browser side*/\r\n  useBrowserSideClose?: boolean,\r\n  /** Dash callback to update props on the server */\r\n  setProps?: (props: { modal?: boolean, open?: boolean }) => void,\r\n}",
+              "raw": "{\r\n  /** Dialog ID */\r\n  id: string,\r\n  /** List of space separated id's of elements to use as aria labels  */\r\n  ariaLabelledBy?: string,\r\n  /** Actions component or list of components for the Dialog */\r\n  actions?: Node | Array<Node>,\r\n  /** Children to render inside of the Dialog */\r\n  children?: Node,\r\n  /** CSS class name of the root element */\r\n  className?: string,\r\n  /** Is the dialog open?\r\n   *\r\n   * IMPORTANT: When using this component in Dash, a listener must be set up (either as state or\r\n   * an input) for this component's props.open value in order to achieve the desired behavior.\r\n   * If such a listener is not in place, the non-modal version of this dialog will contaminate\r\n   * other callbacks in the browser\r\n   */\r\n  open?: boolean,\r\n  /** If set to true, the body content of the Dialog will be scrollable. */\r\n  autoScrollBodyContent?: boolean,\r\n  /** The className to add to the actions container's root element. */\r\n  actionsContainerClassName?: string,\r\n  /** The className to add to the content's root element under the title. */\r\n  bodyClassName?: string,\r\n  /** The className to add to the component container */\r\n  componentContainerClassName?: string,\r\n  /** The className to add to the content container */\r\n  contentClassName?: string,\r\n  /** Determines whether the Dialog is the full width of the container*/\r\n  fullWidth?: boolean,\r\n  /** The className to add to the Overlay component rendered behind the Dialog */\r\n  overlayClassName?: string,\r\n  /** CSS class name of the Paper element */\r\n  paperClassName?: string,\r\n  /** The className to add to the title's root container element */\r\n  titleClassName?: string,\r\n  /** If set to true, the Close Icon will show in the upper right corner of the dialog, closing the Dialog browser side*/\r\n  useBrowserSideClose?: boolean,\r\n  /** \"paper\" or \"body\", Determines scroll container */\r\n  scroll?: Object,\r\n  /** Styles to be implemented as inline css */\r\n  style?: Object,\r\n  /** Dash callback to update props on the server */\r\n  setProps?: (props: { modal?: boolean, open?: boolean }) => void,\r\n}",
               "signature": {
                 "properties": [
                   {
@@ -53,6 +53,13 @@
                     "value": {
                       "name": "string",
                       "required": true
+                    }
+                  },
+                  {
+                    "key": "ariaLabelledBy",
+                    "value": {
+                      "name": "string",
+                      "required": false
                     }
                   },
                   {
@@ -120,9 +127,23 @@
                     }
                   },
                   {
+                    "key": "componentContainerClassName",
+                    "value": {
+                      "name": "string",
+                      "required": false
+                    }
+                  },
+                  {
                     "key": "contentClassName",
                     "value": {
                       "name": "string",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "fullWidth",
+                    "value": {
+                      "name": "boolean",
                       "required": false
                     }
                   },
@@ -151,6 +172,20 @@
                     "key": "useBrowserSideClose",
                     "value": {
                       "name": "boolean",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "scroll",
+                    "value": {
+                      "name": "Object",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "style",
+                    "value": {
+                      "name": "Object",
                       "required": false
                     }
                   },
@@ -222,6 +257,17 @@
           "name": "string"
         },
         "description": "Dialog ID"
+      },
+      "ariaLabelledBy": {
+        "required": false,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "List of space separated id's of elements to use as aria labels",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
       },
       "actions": {
         "required": false,
@@ -315,6 +361,13 @@
           "computed": false
         }
       },
+      "componentContainerClassName": {
+        "required": false,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "The className to add to the component container"
+      },
       "contentClassName": {
         "required": false,
         "flowType": {
@@ -323,6 +376,17 @@
         "description": "The className to add to the content container",
         "defaultValue": {
           "value": "null",
+          "computed": false
+        }
+      },
+      "fullWidth": {
+        "required": false,
+        "flowType": {
+          "name": "boolean"
+        },
+        "description": "Determines whether the Dialog is the full width of the container",
+        "defaultValue": {
+          "value": "true",
           "computed": false
         }
       },
@@ -367,6 +431,28 @@
         "description": "If set to true, the Close Icon will show in the upper right corner of the dialog, closing the Dialog browser side",
         "defaultValue": {
           "value": "false",
+          "computed": false
+        }
+      },
+      "scroll": {
+        "required": false,
+        "flowType": {
+          "name": "Object"
+        },
+        "description": "\"paper\" or \"body\", Determines scroll container",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "style": {
+        "required": false,
+        "flowType": {
+          "name": "Object"
+        },
+        "description": "Styles to be implemented as inline css",
+        "defaultValue": {
+          "value": "null",
           "computed": false
         }
       },

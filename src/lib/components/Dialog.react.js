@@ -13,6 +13,8 @@ import IconButton from "@material-ui/core/IconButton";
 type Props = {
   /** Dialog ID */
   id: string,
+  /** List of space separated id's of elements to use as aria labels  */
+  ariaLabelledBy?: string,
   /** Actions component or list of components for the Dialog */
   actions?: Node | Array<Node>,
   /** Children to render inside of the Dialog */
@@ -33,8 +35,12 @@ type Props = {
   actionsContainerClassName?: string,
   /** The className to add to the content's root element under the title. */
   bodyClassName?: string,
+  /** The className to add to the component container */
+  componentContainerClassName?: string,
   /** The className to add to the content container */
   contentClassName?: string,
+  /** Determines whether the Dialog is the full width of the container*/
+  fullWidth?: boolean,
   /** The className to add to the Overlay component rendered behind the Dialog */
   overlayClassName?: string,
   /** CSS class name of the Paper element */
@@ -43,6 +49,10 @@ type Props = {
   titleClassName?: string,
   /** If set to true, the Close Icon will show in the upper right corner of the dialog, closing the Dialog browser side*/
   useBrowserSideClose?: boolean,
+  /** "paper" or "body", Determines scroll container */
+  scroll?: Object,
+  /** Styles to be implemented as inline css */
+  style?: Object,
   /** Dash callback to update props on the server */
   setProps?: (props: { modal?: boolean, open?: boolean }) => void,
 };
@@ -52,6 +62,7 @@ type State = {
 };
 
 const defaultProps = {
+  ariaLabelledBy: '',
   actions: null,
   children: null,
   className: '',
@@ -65,6 +76,9 @@ const defaultProps = {
   titleClassName: null,
   autoScrollBodyContent: false,
   useBrowserSideClose: false,
+  style: null,
+  scroll: null,
+  fullWidth: true
 };
 
 /** Material UI Dialog component */
@@ -102,12 +116,17 @@ export default class Dialog extends Component<Props, State> {
       id,
       className,
       actions,
+      ariaLabelledBy,
       actionsContainerClassName,
       bodyClassName,
+      componentContainerClassName,
       contentClassName,
       overlayClassName,
       paperClassName,
       titleClassName,
+      scroll,
+      style,
+      fullWidth,
       useBrowserSideClose} = this.props;
 
     if (useBrowserSideClose) {
@@ -125,13 +144,13 @@ export default class Dialog extends Component<Props, State> {
     }
 
     return (
-      <div id={id} className="sd-dialog">
+      <div id={id} className={componentContainerClassName}>
         <CssBaseline/>
         <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
-          <MuiDialog aria-labelledby="simple-dialog-title"
+          <MuiDialog aria-labelledby={ariaLabelledBy}
                      open={this.state.open}
-                     scroll="body"
-                     fullWidth={true}
+                     scroll={scroll}
+                     fullWidth={fullWidth}
                      onClose={this.closeDialog}
                      actions={actions}
                      className={className}
@@ -141,7 +160,7 @@ export default class Dialog extends Component<Props, State> {
                      overlayClassName={overlayClassName}
                      paperClassName={paperClassName}
                      titleClassName={titleClassName}>
-            <div style={{"margin": "14px"}}>
+            <div style={style}>
               {this.browserSideClose}
               {this.props.children}
             </div>
