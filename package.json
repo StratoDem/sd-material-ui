@@ -43,7 +43,7 @@
     "eslint": "6.1.0",
     "eslint-config-prettier": "6.0.0",
     "eslint-plugin-import": "2.18.2",
-    "eslint-plugin-react": "7.14.2",
+    "eslint-plugin-react": "7.20.5",
     "flow-bin": "0.131.0",
     "node-sass": "^4.14.1",
     "npm": "^6.14.7",
