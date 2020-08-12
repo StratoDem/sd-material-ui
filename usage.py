@@ -45,8 +45,12 @@ app.layout = html.Div([
 
     spacer,
 
-    sd_material_ui.FlatButton('This is a Flat Button',
-                              id='flat-button'),
+    sd_material_ui.FlatButton(html.P('This is a Flat Button'),
+                              id='flat-button',
+                              raised=False,
+                              useIcon=False,
+                              backgroundColor='#AB4587',
+                              disabled=True),
 
     final_spacer,
 ])
