@@ -43,6 +43,11 @@ app.layout = html.Div([
         html.Button(children='Open the dialog')
     ]),
 
+    spacer,
+
+    sd_material_ui.FlatButton('This is a Flat Button',
+                              id='flat-button'),
+
     final_spacer,
 ])
 

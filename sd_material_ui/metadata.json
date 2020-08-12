@@ -521,5 +521,98 @@
         }
       }
     }
+  },
+  "src/lib/components/FlatButton.react.js": {
+    "description": "",
+    "displayName": "FlatButton",
+    "methods": [],
+    "props": {
+      "id": {
+        "required": true,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "Button ID"
+      },
+      "children": {
+        "required": false,
+        "flowType": {
+          "name": "Node"
+        },
+        "description": "Children to render inside of the Button",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "className": {
+        "required": false,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "CSS class name of the root element",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "disabled": {
+        "required": false,
+        "flowType": {
+          "name": "boolean"
+        },
+        "description": "Is the Button disabled?",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "setProps": {
+        "required": false,
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "(props: { modal?: boolean, open?: boolean }) => void",
+          "signature": {
+            "arguments": [
+              {
+                "name": "props",
+                "type": {
+                  "name": "signature",
+                  "type": "object",
+                  "raw": "{ modal?: boolean, open?: boolean }",
+                  "signature": {
+                    "properties": [
+                      {
+                        "key": "modal",
+                        "value": {
+                          "name": "boolean",
+                          "required": false
+                        }
+                      },
+                      {
+                        "key": "open",
+                        "value": {
+                          "name": "boolean",
+                          "required": false
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "return": {
+              "name": "void"
+            }
+          }
+        },
+        "description": "Dash callback to update props on the server",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      }
+    }
   }
 }
