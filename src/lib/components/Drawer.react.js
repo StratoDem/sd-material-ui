@@ -2,13 +2,11 @@
 
 import React, { Component } from 'react';
 import Drawer from '@material-ui/core/Drawer';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
-import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 
 type Props = {
+  /** Controls where the drawer appears. Must be one of "top", "bottom", "left", or "right"
+   * Defaults to "left" */
+  anchor: string,
   /** Dialog ID */
   id: string,
   /** Children to render inside of the Dialog */
@@ -30,68 +28,40 @@ type State = {
 };
 
 const defaultProps = {
+  anchor: "left",
   children: null,
   className: '',
   open: false,
   setProps: () => {},
 };
 
-export default class LeftDrawer extends Component<Props> {
+export default class SD_Drawer extends Component<Props> {
   constructor(props: Props) {
     super(props);
     this.state = {open: props.open};
   }
 
-  changeOpenStatus = (open: boolean): void => {
-    const { setProps } = this.props;
-
-    if (typeof setProps === 'function') {
-      setProps({open});
-    }
-
-    this.setState({open});
-  };
-
-  handleDrawerOpen = () => {
-    this.changeOpenStatus(true);
-  };
-
-  handleDrawerClose = () => {
-    this.changeOpenStatus(false);
-  };
+  UNSAFE_componentWillReceiveProps(nextProps: Props, nextContext: *): void {
+    if (nextProps.open !== this.state.open)
+      this.setState({open: nextProps.open});
+  }
 
   render() {
-    const {id, className} = this.props;
+    const {id, anchor, className} = this.props;
 
     return (
       <div id={id}>
-        <CssBaseline/>
-        <IconButton
-          color="inherit"
-          aria-label="open drawer"
-          onClick={this.handleDrawerOpen}
-          edge="start"
-        >
-          <MenuIcon/>
-        </IconButton>
         <Drawer
+          anchor={anchor}
           className={className}
           variant="persistent"
-          anchor="left"
           open={this.state.open}
         >
-          <div>
-            <div>
-              <IconButton onClick={this.handleDrawerClose}>
-                <ChevronLeftIcon />
-              </IconButton>
-            </div>
-            {this.props.children}
-          </div>
+          {this.props.children}
         </Drawer>
       </div>
     );
   }
 }
 
-LeftDrawer.defaultProps = defaultProps;
+SD_Drawer.defaultProps = defaultProps;
