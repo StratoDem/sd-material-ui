@@ -1,7 +1,7 @@
 // @flow
 
 import React, { Component } from 'react';
-import { Drawer as MuiDrawer } from '@material-ui/core/Drawer';
+import MuiDrawer from '@material-ui/core/Drawer';
 
 type Props = {
   /** Controls where the drawer appears. Must be one of "top", "bottom", "left", or "right"

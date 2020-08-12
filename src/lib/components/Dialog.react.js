@@ -15,8 +15,6 @@ type Props = {
   id: string,
   /** List of space separated id's of elements to use as aria labels  */
   ariaLabelledBy?: string,
-  /** Actions component or list of components for the Dialog */
-  actions?: Node | Array<Node>,
   /** Children to render inside of the Dialog */
   children?: Node,
   /** CSS class name of the root element */
@@ -31,22 +29,11 @@ type Props = {
   open?: boolean,
   /** If set to true, the body content of the Dialog will be scrollable. */
   autoScrollBodyContent?: boolean,
-  /** The className to add to the actions container's root element. */
-  actionsContainerClassName?: string,
-  /** The className to add to the content's root element under the title. */
-  bodyClassName?: string,
   /** The className to add to the component container */
   componentContainerClassName?: string,
   /** The className to add to the content container */
-  contentClassName?: string,
-  /** Determines whether the Dialog is the full width of the container*/
   fullWidth?: boolean,
   /** The className to add to the Overlay component rendered behind the Dialog */
-  overlayClassName?: string,
-  /** CSS class name of the Paper element */
-  paperClassName?: string,
-  /** The className to add to the title's root container element */
-  titleClassName?: string,
   /** If set to true, the Close Icon will show in the upper right corner of the dialog, closing the Dialog browser side*/
   useBrowserSideClose?: boolean,
   /** "paper" or "body", Determines scroll container */
@@ -68,16 +55,10 @@ const defaultProps = {
   className: '',
   open: false,
   setProps: () => {},
-  actionsContainerClassName: null,
-  bodyClassName: null,
-  contentClassName: null,
-  overlayClassName: null,
-  paperClassName: null,
-  titleClassName: null,
   autoScrollBodyContent: false,
   useBrowserSideClose: false,
   style: null,
-  scroll: null,
+  scroll: '',
   fullWidth: true
 };
 
@@ -115,15 +96,8 @@ export default class Dialog extends Component<Props, State> {
     const {
       id,
       className,
-      actions,
       ariaLabelledBy,
-      actionsContainerClassName,
-      bodyClassName,
       componentContainerClassName,
-      contentClassName,
-      overlayClassName,
-      paperClassName,
-      titleClassName,
       scroll,
       style,
       fullWidth,
@@ -152,14 +126,7 @@ export default class Dialog extends Component<Props, State> {
                      scroll={scroll}
                      fullWidth={fullWidth}
                      onClose={this.closeDialog}
-                     actions={actions}
-                     className={className}
-                     actionsContainerClassName={actionsContainerClassName}
-                     bodyClassName={bodyClassName}
-                     contentClassName={contentClassName}
-                     overlayClassName={overlayClassName}
-                     paperClassName={paperClassName}
-                     titleClassName={titleClassName}>
+                     className={className}>
             <div style={style}>
               {this.browserSideClose}
               {this.props.children}
