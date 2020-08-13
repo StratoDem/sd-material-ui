@@ -52,6 +52,19 @@ app.layout = html.Div([
             ),
             html.P(id='radio-output', children='Selection is: '),
         ]),
+
+        spacer,
+
+        html.Div([
+            html.P([html.Strong('Test for toggle switch')]),
+            sd_material_ui.Toggle(
+                id='toggle-input',
+                label='Johnny?',
+                toggled=False,
+            ),
+            html.P(id='toggle-output', children=['Flame off']),
+        ]),
+
     ], style=dict(display='flex', flexWrap='wrap')),
 
     final_spacer,
@@ -258,15 +271,15 @@ def operate_drawer(button_click, menu_item_click, drawer_state):
 #         return ['Box is unchecked']
 #
 #
-# # Callback for SDToggle
-# @app.callback(
-#     dash.dependencies.Output('output9', 'children'),
-#     [dash.dependencies.Input('input9', 'toggled')])
-# def use_toggle(switch):
-#     if switch:
-#         return ['Flame on!']
-#     else:
-#         return ['Flame off']
+# Callback for SDToggle
+@app.callback(
+    dash.dependencies.Output('toggle-output', 'children'),
+    [dash.dependencies.Input('toggle-input', 'toggled')])
+def use_toggle(switch):
+    if switch:
+        return ['Flame on!']
+    else:
+        return ['Flame off']
 #
 #
 # # Callback for SDSnackbar
