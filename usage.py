@@ -52,18 +52,20 @@ app.layout = html.Div([
             ),
             html.P(id='radio-output', children='Selection is: '),
         ]),
+
+        spacer,
+
+        html.Div([
+            html.P([html.Strong('Test for dialog')]),
+            sd_material_ui.Dialog([
+                html.H3('Sample Dialog'),
+                html.Div(html.Button('Close Dialog'), id='closer')
+            ], id='output2'),
+            html.Div(id='input2', children=[
+                html.Button(children='Open the dialog')
+            ]),
+        ])
     ], style=dict(display='flex', flexWrap='wrap')),
-
-    spacer,
-
-
-    sd_material_ui.Dialog([
-        html.H3('Sample Dialog'),
-        html.Div(html.Button('Close Dialog'), id='closer')
-    ], id='output2'),
-    html.Div(id='input2', children=[
-        html.Button(children='Open the dialog')
-    ]),
 
     final_spacer,
 ])
