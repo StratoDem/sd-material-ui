@@ -184,6 +184,17 @@
           "computed": false
         }
       },
+      "classNameRoot": {
+        "required": false,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "The classname for the root elements of each individual radio button",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
       "fireEvent": {
         "required": false,
         "flowType": {
