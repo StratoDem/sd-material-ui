@@ -54,6 +54,17 @@ app.layout = html.Div([
         ]),
     ], style=dict(display='flex', flexWrap='wrap')),
 
+    spacer,
+
+
+    sd_material_ui.Dialog([
+        html.H3('Sample Dialog'),
+        html.Div(html.Button('Close Dialog'), id='closer')
+    ], id='output2'),
+    html.Div(id='input2', children=[
+        html.Button(children='Open the dialog')
+    ]),
+
     final_spacer,
 ])
 
@@ -117,21 +128,21 @@ app.layout = html.Div([
 #     return 'You have entered {}'.format(value)
 #
 #
-# # Callback for SDDialog (modal)
-# @app.callback(
-#     dash.dependencies.Output('output2', 'open'),
-#     [dash.dependencies.Input('input2', 'n_clicks'),
-#      dash.dependencies.Input('closer', 'n_clicks')],
-#     [dash.dependencies.State('output2', 'open')])
-# def show_modal_dialog(modal_click: int, close_button: int, open_state: bool):
-#     if modal_click and modal_click > 0:
-#         if not open_state:
-#             return True
-#     elif close_button:
-#         if open_state:
-#             return False
-#     else:
-#         return False
+# Callback for SDDialog (modal)
+@app.callback(
+    dash.dependencies.Output('output2', 'open'),
+    [dash.dependencies.Input('input2', 'n_clicks'),
+     dash.dependencies.Input('closer', 'n_clicks')],
+    [dash.dependencies.State('output2', 'open')])
+def show_modal_dialog(modal_click: int, close_button: int, open_state: bool):
+    if modal_click and modal_click > 0:
+        if not open_state:
+            return True
+    elif close_button:
+        if open_state:
+            return False
+    else:
+        return False
 #
 #
 # # Callback for SDDialog (non-modal)
