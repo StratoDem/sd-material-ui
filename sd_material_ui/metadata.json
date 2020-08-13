@@ -44,6 +44,17 @@
           "computed": false
         }
       },
+      "classNameRoot": {
+        "required": false,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "The classname of the root of the drawer",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
       "open": {
         "required": false,
         "flowType": {

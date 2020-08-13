@@ -13,17 +13,18 @@ Keyword arguments:
 Defaults to "left"
 - id (string; required): Dialog ID
 - className (string; default ''): CSS class name of the root element
+- classNameRoot (string; default ''): The classname of the root of the drawer
 - open (boolean; default False): Is the drawer open?
 
 IMPORTANT: When using this component in Dash, a listener must be set up (either as state or
 an input) for this component's props.open value in order to achieve the desired behavior."""
     @_explicitize_args
-    def __init__(self, children=None, anchor=Component.UNDEFINED, id=Component.REQUIRED, className=Component.UNDEFINED, open=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['children', 'anchor', 'id', 'className', 'open']
+    def __init__(self, children=None, anchor=Component.UNDEFINED, id=Component.REQUIRED, className=Component.UNDEFINED, classNameRoot=Component.UNDEFINED, open=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['children', 'anchor', 'id', 'className', 'classNameRoot', 'open']
         self._type = 'Drawer'
         self._namespace = 'sd_material_ui'
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['children', 'anchor', 'id', 'className', 'open']
+        self.available_properties = ['children', 'anchor', 'id', 'className', 'classNameRoot', 'open']
         self.available_wildcard_properties =            []
 
         _explicit_args = kwargs.pop('_explicit_args')

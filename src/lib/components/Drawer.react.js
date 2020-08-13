@@ -13,6 +13,8 @@ type Props = {
   children?: Node,
   /** CSS class name of the root element */
   className?: string,
+  /** The classname of the root of the drawer */
+  classNameRoot?: string,
   /** Is the drawer open?
    *
    * IMPORTANT: When using this component in Dash, a listener must be set up (either as state or
@@ -31,6 +33,7 @@ const defaultProps = {
   anchor: "left",
   children: null,
   className: '',
+  classNameRoot: '',
   open: false,
   setProps: () => {},
 };
@@ -47,12 +50,13 @@ export default class Drawer extends Component<Props, State> {
   }
 
   render() {
-    const {id, anchor, className} = this.props;
+    const {id, anchor, className, classNameRoot} = this.props;
 
     return (
       <div id={id}>
         <MuiDrawer
           anchor={anchor}
+          classes={{root: classNameRoot}}
           className={className}
           variant={"persistent"}
           open={this.state.open}
