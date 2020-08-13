@@ -51,7 +51,7 @@
     "react-docgen": "4.1.1",
     "react-dom": "^16.13.1",
     "sass-loader": "7.1.0",
-    "style-loader": "0.23.1",
+    "style-loader": "1.2.1",
     "webpack": "^4.44.1",
     "webpack-cli": "3.3.6",
     "webpack-serve": "^3.2.0"
