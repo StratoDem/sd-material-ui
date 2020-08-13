@@ -45,7 +45,7 @@
             "type": {
               "name": "signature",
               "type": "object",
-              "raw": "{\r\n  /** Dialog ID */\r\n  id: string,\r\n  /** List of space separated id's of elements to use as aria labels  */\r\n  ariaLabelledBy?: string,\r\n  /** Children to render inside of the Dialog */\r\n  children?: Node,\r\n  /** CSS class name of the root element */\r\n  className?: string,\r\n  /** Is the dialog open?\r\n   *\r\n   * IMPORTANT: When using this component in Dash, a listener must be set up (either as state or\r\n   * an input) for this component's props.open value in order to achieve the desired behavior.\r\n   * If such a listener is not in place, the non-modal version of this dialog will contaminate\r\n   * other callbacks in the browser\r\n   */\r\n  open?: boolean,\r\n  /** If set to true, the body content of the Dialog will be scrollable. */\r\n  autoScrollBodyContent?: boolean,\r\n  /** The className to add to the component container */\r\n  componentContainerClassName?: string,\r\n  /** The className to add to the content container */\r\n  fullWidth?: boolean,\r\n  /** The className to add to the Overlay component rendered behind the Dialog */\r\n  /** If set to true, the Close Icon will show in the upper right corner of the dialog, closing the Dialog browser side*/\r\n  useBrowserSideClose?: boolean,\r\n  /** \"paper\" or \"body\", Determines scroll container */\r\n  scroll?: Object,\r\n  /** Styles to be implemented as inline css */\r\n  style?: Object,\r\n  /** Dash callback to update props on the server */\r\n  setProps?: (props: { modal?: boolean, open?: boolean }) => void,\r\n}",
+              "raw": "{\n  /** Dialog ID */\n  id: string,\n  /** List of space separated id's of elements to use as aria labels  */\n  ariaLabelledBy?: string,\n  /** Children to render inside of the Dialog */\n  children?: Node,\n  /** CSS class name of the root element */\n  className?: string,\n  /** Is the dialog open?\n   *\n   * IMPORTANT: When using this component in Dash, a listener must be set up (either as state or\n   * an input) for this component's props.open value in order to achieve the desired behavior.\n   * If such a listener is not in place, the non-modal version of this dialog will contaminate\n   * other callbacks in the browser\n   */\n  open?: boolean,\n  /** If set to true, the body content of the Dialog will be scrollable. */\n  autoScrollBodyContent?: boolean,\n  /** The className to add to the component container */\n  componentContainerClassName?: string,\n  /** The className to add to the content container */\n  fullWidth?: boolean,\n  /** The className to add to the Overlay component rendered behind the Dialog */\n  /** If set to true, the Close Icon will show in the upper right corner of the dialog, closing the Dialog browser side*/\n  useBrowserSideClose?: boolean,\n  /** \"paper\" or \"body\", Determines scroll container */\n  scroll?: Object,\n  /** Styles to be implemented as inline css */\n  style?: Object,\n  /** Dash callback to update props on the server */\n  setProps?: (props: { modal?: boolean, open?: boolean }) => void,\n}",
               "signature": {
                 "properties": [
                   {
@@ -232,7 +232,7 @@
         "flowType": {
           "name": "boolean"
         },
-        "description": "Is the dialog open?\r\n\nIMPORTANT: When using this component in Dash, a listener must be set up (either as state or\r\nan input) for this component's props.open value in order to achieve the desired behavior.\r\nIf such a listener is not in place, the non-modal version of this dialog will contaminate\r\nother callbacks in the browser",
+        "description": "Is the dialog open?\n\nIMPORTANT: When using this component in Dash, a listener must be set up (either as state or\nan input) for this component's props.open value in order to achieve the desired behavior.\nIf such a listener is not in place, the non-modal version of this dialog will contaminate\nother callbacks in the browser",
         "defaultValue": {
           "value": "false",
           "computed": false
@@ -365,7 +365,7 @@
         "flowType": {
           "name": "string"
         },
-        "description": "Controls where the drawer appears. Must be one of \"top\", \"bottom\", \"left\", or \"right\"\r\nDefaults to \"left\"",
+        "description": "Controls where the drawer appears. Must be one of \"top\", \"bottom\", \"left\", or \"right\"\nDefaults to \"left\"",
         "defaultValue": {
           "value": "\"left\"",
           "computed": false
@@ -405,7 +405,7 @@
         "flowType": {
           "name": "boolean"
         },
-        "description": "Is the drawer open?\r\n\nIMPORTANT: When using this component in Dash, a listener must be set up (either as state or\r\nan input) for this component's props.open value in order to achieve the desired behavior.",
+        "description": "Is the drawer open?\n\nIMPORTANT: When using this component in Dash, a listener must be set up (either as state or\nan input) for this component's props.open value in order to achieve the desired behavior.",
         "defaultValue": {
           "value": "false",
           "computed": false

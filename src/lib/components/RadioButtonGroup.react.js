@@ -66,7 +66,7 @@ export default class RadioButtonGroup extends Component<Props, State> {
         key={buttonItem.value}
         value={buttonItem.value}
         disabled
-        control={<Radio classes={{root: classNameRoot}}/>}
+        control={<Radio classes={{root: this.props.classNameRoot}}/>}
         label={buttonItem.label}
         labelPlacement={buttonItem.labelPlacement ? buttonItem.labelPlacement : "end"}
       />
@@ -74,7 +74,7 @@ export default class RadioButtonGroup extends Component<Props, State> {
       <FormControlLabel
         key={buttonItem.value}
         value={buttonItem.value}
-        control={<Radio classes={{root: classNameRoot}}/>}
+        control={<Radio classes={{root: this.props.classNameRoot}}/>}
         label={buttonItem.label}
         labelPlacement={buttonItem.labelPlacement ? buttonItem.labelPlacement : "end"}
       />
