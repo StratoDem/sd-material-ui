@@ -8,40 +8,64 @@ app = dash.Dash('')
 
 app.scripts.config.serve_locally = True
 
-spacer = html.Div(children=[], style=dict(height=20))
+spacer = html.Div(children=[], style=dict(height=20, width=50))
 final_spacer = html.Div(children=[], style=dict(height=400))
 
 
 # Callback for BottomNavigation
 app.layout = html.Div([
 
-    # Test for SDDrawer (not docked)
-    sd_material_ui.Drawer(
-        id='output7',
-        open=False,
-        children=[
-            html.P(id='close-input7', children='X'),
-            html.H4(children='Drawer items'),
-            html.Ul(children=[
-                html.Li(children=['Item 1']),
-                html.Li(children=['Item 2']),
-                html.Li(children=['Item 3']),
+    html.Div([
+
+        html.Div([
+            html.P([html.Strong('Test for drawer')]),
+            sd_material_ui.Drawer(
+                id='drawer',
+                open=False,
+                children=[
+                    html.P(id='drawer-close-input', children='X'),
+                    html.H4(children='Drawer items'),
+                    html.Ul(children=[
+                        html.Li(children=['Item 1']),
+                        html.Li(children=['Item 2']),
+                        html.Li(children=['Item 3']),
+                    ]),
+                ]),
+            html.Div(id='drawer-input', children=[
+                html.Button(children='Open or close the drawer (left)')
             ]),
         ]),
-    html.Div(id='input7', children=[
-        html.Button(children='Open or close the drawer (left)')
-    ]),
 
-    spacer,
+        spacer,
 
+        html.Div([
+            html.P([html.Strong('Test for radio buttons')]),
+            sd_material_ui.RadioButtonGroup(
+                id='radio',
+                name='radio test',
+                options=[
+                    dict(label='option 1', value='1'),
+                    dict(label='option 2', value='2'),
+                    dict(label='option 3', value='3'),
+                ],
+                valueSelected='1',
+            ),
+            html.P(id='radio-output', children='Selection is: '),
+        ]),
 
-    sd_material_ui.Dialog([
-        html.H3('Sample Dialog'),
-        html.Div(html.Button('Close Dialog'), id='closer')
-    ], id='output2'),
-    html.Div(id='input2', children=[
-        html.Button(children='Open the dialog')
-    ]),
+        spacer,
+
+        html.Div([
+            html.P([html.Strong('Test for dialog')]),
+            sd_material_ui.Dialog([
+                html.H3('Sample Dialog'),
+                html.Div(html.Button('Close Dialog'), id='closer')
+            ], id='output2'),
+            html.Div(id='input2', children=[
+                html.Button(children='Open the dialog')
+            ]),
+        ])
+    ], style=dict(display='flex', flexWrap='wrap')),
 
     final_spacer,
 ])
@@ -224,10 +248,10 @@ def show_modal_dialog(modal_click: int, close_button: int, open_state: bool):
 
 # Callback for SDDrawer (not docked)
 @app.callback(
-    dash.dependencies.Output('output7', 'open'),
-    [dash.dependencies.Input('input7', 'n_clicks'),
-     dash.dependencies.Input('close-input7', 'n_clicks')],
-    [dash.dependencies.State('output7', 'open')])
+    dash.dependencies.Output('drawer', 'open'),
+    [dash.dependencies.Input('drawer-input', 'n_clicks'),
+     dash.dependencies.Input('drawer-close-input', 'n_clicks')],
+    [dash.dependencies.State('drawer', 'open')])
 def operate_drawer(button_click, menu_item_click, drawer_state):
     if not drawer_state:
         if button_click:
@@ -313,12 +337,12 @@ def operate_drawer(button_click, menu_item_click, drawer_state):
 #     return ['Selection is {}'.format(searchValue)]
 #
 #
-# # Callback for SDRadioButtonGroup
-# @app.callback(
-#     dash.dependencies.Output('output14', 'children'),
-#     [dash.dependencies.Input('input14', 'valueSelected')])
-# def radiobuttongroup_callback(valueSelected):
-#     return ['Selection is: {}'.format(valueSelected)]
+# Callback for SDRadioButtonGroup
+@app.callback(
+    dash.dependencies.Output('radio-output', 'children'),
+    [dash.dependencies.Input('radio', 'value')])
+def radiobuttongroup_callback(value):
+    return ['Selection is: {}'.format(value)]
 #
 #
 # # Callback for Stepper
