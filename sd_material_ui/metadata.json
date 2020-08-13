@@ -295,5 +295,162 @@
         "description": "Initial value selected"
       }
     }
+  },
+  "src/lib/components/Toggle.react.js": {
+    "description": "",
+    "displayName": "Toggle",
+    "methods": [
+      {
+        "name": "handleChange",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "event",
+            "type": null
+          }
+        ],
+        "returns": null
+      }
+    ],
+    "props": {
+      "className": {
+        "required": false,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "CSS class name of the root element",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "classNameRoot": {
+        "required": false,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "The classname of the root of the toggle switch",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "disabled": {
+        "required": false,
+        "flowType": {
+          "name": "boolean"
+        },
+        "description": "Whether the toggle is disabled (true) or not (false)",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "id": {
+        "required": true,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "Toggle ID"
+      },
+      "label": {
+        "required": false,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "The label for the toggle",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "labelPlacement": {
+        "required": false,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "If using a single label, its position can be: \"top\", \"start\", \"bottom\", or \"end\"",
+        "defaultValue": {
+          "value": "\"right\"",
+          "computed": false
+        }
+      },
+      "labelSpacing": {
+        "required": false,
+        "flowType": {
+          "name": "int"
+        },
+        "description": "The space between the label(s) and toggle",
+        "defaultValue": {
+          "value": "1",
+          "computed": false
+        }
+      },
+      "secondaryLabel": {
+        "required": false,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "A second label for the toggle. If this is used, the labelPlacement value is ignored, and the\nsecondaryLabel will be positioned to the right of the toggle, and the first label to the left",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "setProps": {
+        "required": false,
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "(props: { modal?: boolean, open?: boolean }) => void",
+          "signature": {
+            "arguments": [
+              {
+                "name": "props",
+                "type": {
+                  "name": "signature",
+                  "type": "object",
+                  "raw": "{ modal?: boolean, open?: boolean }",
+                  "signature": {
+                    "properties": [
+                      {
+                        "key": "modal",
+                        "value": {
+                          "name": "boolean",
+                          "required": false
+                        }
+                      },
+                      {
+                        "key": "open",
+                        "value": {
+                          "name": "boolean",
+                          "required": false
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "return": {
+              "name": "void"
+            }
+          }
+        },
+        "description": "Dash callback to update props on the server",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      },
+      "toggled": {
+        "required": true,
+        "flowType": {
+          "name": "boolean"
+        },
+        "description": "Whether toggle is on (true) or off (false)"
+      }
+    }
   }
 }
