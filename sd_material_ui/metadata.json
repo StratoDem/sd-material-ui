@@ -1,4 +1,360 @@
 {
+  "src/lib/components/Dialog.react.js": {
+    "description": "Material UI Dialog component",
+    "displayName": "Dialog",
+    "methods": [
+      {
+        "name": "changeDialogOpenStatus",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "open",
+            "type": {
+              "name": "boolean"
+            }
+          }
+        ],
+        "returns": {
+          "type": {
+            "name": "void"
+          }
+        }
+      },
+      {
+        "name": "openDialog",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "closeDialog",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "UNSAFE_componentWillReceiveProps",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "nextProps",
+            "type": {
+              "name": "signature",
+              "type": "object",
+              "raw": "{\n  /** Dialog ID */\n  id: string,\n  /** List of space separated id's of elements to use as aria labels  */\n  ariaLabelledBy?: string,\n  /** Children to render inside of the Dialog */\n  children?: Node,\n  /** CSS class name of the root element */\n  className?: string,\n  /** Is the dialog open?\n   *\n   * IMPORTANT: When using this component in Dash, a listener must be set up (either as state or\n   * an input) for this component's props.open value in order to achieve the desired behavior.\n   * If such a listener is not in place, the non-modal version of this dialog will contaminate\n   * other callbacks in the browser\n   */\n  open?: boolean,\n  /** If set to true, the body content of the Dialog will be scrollable. */\n  autoScrollBodyContent?: boolean,\n  /** The className to add to the component container */\n  componentContainerClassName?: string,\n  /** The className to add to the content container */\n  fullWidth?: boolean,\n  /** The className to add to the Overlay component rendered behind the Dialog */\n  /** If set to true, the Close Icon will show in the upper right corner of the dialog, closing the Dialog browser side*/\n  useBrowserSideClose?: boolean,\n  /** \"paper\" or \"body\", Determines scroll container */\n  scroll?: Object,\n  /** Styles to be implemented as inline css */\n  style?: Object,\n  /** Dash callback to update props on the server */\n  setProps?: (props: { modal?: boolean, open?: boolean }) => void,\n}",
+              "signature": {
+                "properties": [
+                  {
+                    "key": "id",
+                    "value": {
+                      "name": "string",
+                      "required": true
+                    }
+                  },
+                  {
+                    "key": "ariaLabelledBy",
+                    "value": {
+                      "name": "string",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "children",
+                    "value": {
+                      "name": "Node",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "className",
+                    "value": {
+                      "name": "string",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "open",
+                    "value": {
+                      "name": "boolean",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "autoScrollBodyContent",
+                    "value": {
+                      "name": "boolean",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "componentContainerClassName",
+                    "value": {
+                      "name": "string",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "fullWidth",
+                    "value": {
+                      "name": "boolean",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "useBrowserSideClose",
+                    "value": {
+                      "name": "boolean",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "scroll",
+                    "value": {
+                      "name": "Object",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "style",
+                    "value": {
+                      "name": "Object",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "setProps",
+                    "value": {
+                      "name": "signature",
+                      "type": "function",
+                      "raw": "(props: { modal?: boolean, open?: boolean }) => void",
+                      "signature": {
+                        "arguments": [
+                          {
+                            "name": "props",
+                            "type": {
+                              "name": "signature",
+                              "type": "object",
+                              "raw": "{ modal?: boolean, open?: boolean }",
+                              "signature": {
+                                "properties": [
+                                  {
+                                    "key": "modal",
+                                    "value": {
+                                      "name": "boolean",
+                                      "required": false
+                                    }
+                                  },
+                                  {
+                                    "key": "open",
+                                    "value": {
+                                      "name": "boolean",
+                                      "required": false
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          }
+                        ],
+                        "return": {
+                          "name": "void"
+                        }
+                      },
+                      "required": false
+                    }
+                  }
+                ]
+              },
+              "alias": "Props"
+            }
+          },
+          {
+            "name": "nextContent",
+            "type": {
+              "name": "unknown"
+            }
+          }
+        ],
+        "returns": {
+          "type": {
+            "name": "void"
+          }
+        }
+      }
+    ],
+    "props": {
+      "id": {
+        "required": true,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "Dialog ID"
+      },
+      "ariaLabelledBy": {
+        "required": false,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "List of space separated id's of elements to use as aria labels",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "children": {
+        "required": false,
+        "flowType": {
+          "name": "Node"
+        },
+        "description": "Children to render inside of the Dialog",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "className": {
+        "required": false,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "CSS class name of the root element",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "open": {
+        "required": false,
+        "flowType": {
+          "name": "boolean"
+        },
+        "description": "Is the dialog open?\n\nIMPORTANT: When using this component in Dash, a listener must be set up (either as state or\nan input) for this component's props.open value in order to achieve the desired behavior.\nIf such a listener is not in place, the non-modal version of this dialog will contaminate\nother callbacks in the browser",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "autoScrollBodyContent": {
+        "required": false,
+        "flowType": {
+          "name": "boolean"
+        },
+        "description": "If set to true, the body content of the Dialog will be scrollable.",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "componentContainerClassName": {
+        "required": false,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "The className to add to the component container"
+      },
+      "fullWidth": {
+        "required": false,
+        "flowType": {
+          "name": "boolean"
+        },
+        "description": "The className to add to the content container",
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        }
+      },
+      "useBrowserSideClose": {
+        "required": false,
+        "flowType": {
+          "name": "boolean"
+        },
+        "description": "If set to true, the Close Icon will show in the upper right corner of the dialog, closing the Dialog browser side",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "scroll": {
+        "required": false,
+        "flowType": {
+          "name": "Object"
+        },
+        "description": "\"paper\" or \"body\", Determines scroll container",
+        "defaultValue": {
+          "value": "'body'",
+          "computed": false
+        }
+      },
+      "style": {
+        "required": false,
+        "flowType": {
+          "name": "Object"
+        },
+        "description": "Styles to be implemented as inline css",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "setProps": {
+        "required": false,
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "(props: { modal?: boolean, open?: boolean }) => void",
+          "signature": {
+            "arguments": [
+              {
+                "name": "props",
+                "type": {
+                  "name": "signature",
+                  "type": "object",
+                  "raw": "{ modal?: boolean, open?: boolean }",
+                  "signature": {
+                    "properties": [
+                      {
+                        "key": "modal",
+                        "value": {
+                          "name": "boolean",
+                          "required": false
+                        }
+                      },
+                      {
+                        "key": "open",
+                        "value": {
+                          "name": "boolean",
+                          "required": false
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "return": {
+              "name": "void"
+            }
+          }
+        },
+        "description": "Dash callback to update props on the server",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      },
+      "actions": {
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        },
+        "required": false
+      }
+    }
+  },
   "src/lib/components/Drawer.react.js": {
     "description": "",
     "displayName": "Drawer",
@@ -190,6 +546,17 @@
           "name": "string"
         },
         "description": "the css class name of the root element",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "classNameRoot": {
+        "required": false,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "The classname for the root elements of each individual radio button",
         "defaultValue": {
           "value": "''",
           "computed": false
