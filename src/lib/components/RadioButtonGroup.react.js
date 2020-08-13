@@ -20,10 +20,11 @@ type SD_RADIO_BUTTON = {
 }
 
 type Props = {
+  /** The classes to be applied to this component. This keys in this object must be valid CSS rule
+   * names, and the values must be strings for the classnames to be assigned to each rule name */
+  classes?: Object,
   /** the css class name of the root element */
   className?: string,
-  /** The classname for the root elements of each individual radio button */
-  classNameRoot?: string,
   /** a callback for firng events to dash */
   fireEvent?: () => void,
   /** the element's ID */
@@ -47,8 +48,8 @@ type State = {
 };
 
 const defaultProps = {
+  classes: {},
   className: '',
-  classNameRoot: '',
   fireEvent: () => {},
   options: [],
   setProps: () => {},
@@ -66,7 +67,7 @@ export default class RadioButtonGroup extends Component<Props, State> {
         key={buttonItem.value}
         value={buttonItem.value}
         disabled
-        control={<Radio classes={{root: this.props.classNameRoot}}/>}
+        control={<Radio classes={this.props.classes}/>}
         label={buttonItem.label}
         labelPlacement={buttonItem.labelPlacement ? buttonItem.labelPlacement : "end"}
       />
@@ -74,7 +75,7 @@ export default class RadioButtonGroup extends Component<Props, State> {
       <FormControlLabel
         key={buttonItem.value}
         value={buttonItem.value}
-        control={<Radio classes={{root: this.props.classNameRoot}}/>}
+        control={<Radio classes={this.props.classes}/>}
         label={buttonItem.label}
         labelPlacement={buttonItem.labelPlacement ? buttonItem.labelPlacement : "end"}
       />

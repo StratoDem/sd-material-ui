@@ -6,10 +6,11 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 
 type Props = {
+  /** The classes to be applied to this component. This keys in this object must be valid CSS rule
+   * names, and the values must be strings for the classnames to be assigned to each rule name */
+  classes?: Object,
   /** CSS class name of the root element */
   className?: string,
-  /** The classname of the root of the toggle switch */
-  classNameRoot?: string,
   /** Whether the toggle is disabled (true) or not (false) */
   disabled?: boolean,
   /** Toggle ID */
@@ -37,7 +38,7 @@ type State = {
 
 const defaultProps = {
   className: '',
-  classNameRoot: '',
+  classes: {},
   disabled: false,
   labelPlacement: "right",
   label: '',
@@ -63,8 +64,8 @@ export default class Toggle extends Component<Props, State> {
   render() {
     const {
       id,
+      classes,
       className,
-      classNameRoot,
       disabled,
       label,
       secondaryLabel,
@@ -80,7 +81,7 @@ export default class Toggle extends Component<Props, State> {
                 checked={this.state.toggled}
                 onChange={this.handleChange}
                 disabled={disabled}
-                classes={{root: classNameRoot}}
+                classes={classes}
               />
             </Grid>
             <Grid item>{secondaryLabel}</Grid>
@@ -94,7 +95,7 @@ export default class Toggle extends Component<Props, State> {
             checked={this.state.toggled}
             onChange={this.handleChange}
             disabled={disabled}
-            classes={{root: classNameRoot}}
+            classes={classes}
           />}
           label={label}
           labelPlacement={labelPlacement}

@@ -11,10 +11,11 @@ type Props = {
   id: string,
   /** Children to render inside of the Dialog */
   children?: Node,
+  /** The classes to be applied to this component. This keys in this object must be valid CSS rule
+   * names, and the values must be strings for the classnames to be assigned to each rule name */
+  classes?: Object,
   /** CSS class name of the root element */
   className?: string,
-  /** The classname of the root of the drawer */
-  classNameRoot?: string,
   /** Is the drawer open?
    *
    * IMPORTANT: When using this component in Dash, a listener must be set up (either as state or
@@ -32,6 +33,7 @@ type State = {
 const defaultProps = {
   anchor: "left",
   children: null,
+  classes: {},
   className: '',
   classNameRoot: '',
   open: false,
@@ -50,13 +52,13 @@ export default class Drawer extends Component<Props, State> {
   }
 
   render() {
-    const {id, anchor, className, classNameRoot} = this.props;
+    const {id, anchor, classes, className} = this.props;
 
     return (
       <div id={id}>
         <MuiDrawer
           anchor={anchor}
-          classes={{root: classNameRoot}}
+          classes={classes}
           className={className}
           variant={"persistent"}
           open={this.state.open}

@@ -8,8 +8,9 @@ class Toggle(Component):
 
 
 Keyword arguments:
+- classes (dict; optional): The classes to be applied to this component. This keys in this object must be valid CSS rule
+names, and the values must be strings for the classnames to be assigned to each rule name
 - className (string; default ''): CSS class name of the root element
-- classNameRoot (string; default ''): The classname of the root of the toggle switch
 - disabled (boolean; default False): Whether the toggle is disabled (true) or not (false)
 - id (string; required): Toggle ID
 - label (string; default ''): The label for the toggle
@@ -19,12 +20,12 @@ Keyword arguments:
 secondaryLabel will be positioned to the right of the toggle, and the first label to the left
 - toggled (boolean; required): Whether toggle is on (true) or off (false)"""
     @_explicitize_args
-    def __init__(self, className=Component.UNDEFINED, classNameRoot=Component.UNDEFINED, disabled=Component.UNDEFINED, id=Component.REQUIRED, label=Component.UNDEFINED, labelPlacement=Component.UNDEFINED, labelSpacing=Component.UNDEFINED, secondaryLabel=Component.UNDEFINED, toggled=Component.REQUIRED, **kwargs):
-        self._prop_names = ['className', 'classNameRoot', 'disabled', 'id', 'label', 'labelPlacement', 'labelSpacing', 'secondaryLabel', 'toggled']
+    def __init__(self, classes=Component.UNDEFINED, className=Component.UNDEFINED, disabled=Component.UNDEFINED, id=Component.REQUIRED, label=Component.UNDEFINED, labelPlacement=Component.UNDEFINED, labelSpacing=Component.UNDEFINED, secondaryLabel=Component.UNDEFINED, toggled=Component.REQUIRED, **kwargs):
+        self._prop_names = ['classes', 'className', 'disabled', 'id', 'label', 'labelPlacement', 'labelSpacing', 'secondaryLabel', 'toggled']
         self._type = 'Toggle'
         self._namespace = 'sd_material_ui'
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['className', 'classNameRoot', 'disabled', 'id', 'label', 'labelPlacement', 'labelSpacing', 'secondaryLabel', 'toggled']
+        self.available_properties = ['classes', 'className', 'disabled', 'id', 'label', 'labelPlacement', 'labelSpacing', 'secondaryLabel', 'toggled']
         self.available_wildcard_properties =            []
 
         _explicit_args = kwargs.pop('_explicit_args')
