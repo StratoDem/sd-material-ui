@@ -70,32 +70,42 @@ app.layout = html.Div([
 
     spacer,
 
-    sd_material_ui.Button(html.P('This is a Raised Button'),
-                          id='raised-button',
-                          disableShadow=False,
-                          useIcon=False,
-                          variant='contained'),
+    html.Div([
+        html.P([html.Strong('Test for buttons')]),
 
-    spacer,
+        sd_material_ui.Button(html.P('This is a Raised Button'),
+                              id='button1',
+                              disableShadow=False,
+                              useIcon=False,
+                              variant='contained'),
 
-    sd_material_ui.Button(html.P('This is a Flat Button'),
-                          id='flat-button',
-                          disableShadow=False,
-                          useIcon=False,
-                          variant='outlined',
-                          classes={'root': 'SAMPLE_ROOT_CLASS',
-                                   'label': 'SAMPLE_LABEL_CLASS', }),
+        spacer,
 
-    spacer,
+        sd_material_ui.Button(html.P('This is a Flat Button'),
+                              id='button2',
+                              disableShadow=False,
+                              useIcon=False,
+                              variant='outlined',
+                              classes={'root': 'SAMPLE_ROOT_CLASS',
+                                       'label': 'SAMPLE_LABEL_CLASS', }),
 
-    sd_material_ui.Button('Text Button',
-                          id='text-button',
-                          variant='text',),
+        spacer,
 
-    spacer,
+        sd_material_ui.Button('Text Button',
+                              id='button3',
+                              variant='text',),
 
-    sd_material_ui.Button(useIcon=True,
-                          iconClass="glyphicon glyphicon-asterisk"),
+        spacer,
+
+        sd_material_ui.Button(useIcon=True,
+                              id='button4',
+                              iconClass="glyphicon glyphicon-asterisk"),
+
+        html.P(id='output-button')
+
+    ]),
+
+
 
     final_spacer,
 ])
@@ -230,33 +240,42 @@ def show_modal_dialog(modal_click: int, close_button: int, open_state: bool):
 #
 #
 # # Callback for combined button test
-# @app.callback(
-#     dash.dependencies.Output('output4-5-12', 'children'),
-#     [dash.dependencies.Input('input4', 'n_clicks'),
-#      dash.dependencies.Input('input5', 'n_clicks'),
-#      dash.dependencies.Input('input12', 'n_clicks')],
-#     [dash.dependencies.State('input4', 'n_clicks_previous'),
-#      dash.dependencies.State('input5', 'n_clicks_previous'),
-#      dash.dependencies.State('input12', 'n_clicks_previous')])
-# def determine_button_callback(raised_n_clicks: int, flat_n_clicks: int, icon_n_clicks: int,
-#                               raised_n_clicks_prev: int, flat_n_clicks_prev: int,
-#                               icon_n_clicks_prev: int) -> list:
-#     if raised_n_clicks is None and flat_n_clicks is None and icon_n_clicks is None:
-#         return ['Which button was clicked?']
-#     elif raised_n_clicks is not None and not raised_n_clicks_prev:
-#         return ['Which button was clicked? Raised button']
-#     elif flat_n_clicks is not None and not flat_n_clicks_prev:
-#         return ['Which button was clicked? Flat button']
-#     elif icon_n_clicks is not None and not icon_n_clicks_prev:
-#         return ['Which button was clicked? Icon button']
-#     elif raised_n_clicks > raised_n_clicks_prev:
-#         return ['Which button was clicked? Raised button']
-#     elif flat_n_clicks > flat_n_clicks_prev:
-#         return ['Which button was clicked? Flat button']
-#     elif icon_n_clicks > icon_n_clicks_prev:
-#         return ['Which button was clicked? Icon button']
-#     else:
-#         return ['Which button was clicked? ']
+@app.callback(
+    dash.dependencies.Output('output-button', 'children'),
+    [dash.dependencies.Input('button1', 'n_clicks'),
+     dash.dependencies.Input('button2', 'n_clicks'),
+     dash.dependencies.Input('button3', 'n_clicks'),
+     dash.dependencies.Input('button4', 'n_clicks')],
+    [dash.dependencies.State('button1', 'n_clicks_previous'),
+     dash.dependencies.State('button2', 'n_clicks_previous'),
+     dash.dependencies.State('button3', 'n_clicks_previous'),
+     dash.dependencies.State('button4', 'n_clicks_previous')])
+def determine_button_callback(raised_n_clicks: int, flat_n_clicks: int, text_n_clicks: int,
+                              icon_n_clicks: int,
+                              raised_n_clicks_prev: int, flat_n_clicks_prev: int,
+                              text_n_clicks_prev: int,
+                              icon_n_clicks_prev: int) -> list:
+    if raised_n_clicks is None and flat_n_clicks is None and icon_n_clicks is None and \
+            text_n_clicks is None:
+        return ['Which button was clicked?']
+    elif raised_n_clicks is not None and not raised_n_clicks_prev:
+        return ['Which button was clicked? Raised button']
+    elif flat_n_clicks is not None and not flat_n_clicks_prev:
+        return ['Which button was clicked? Flat button']
+    elif icon_n_clicks is not None and not icon_n_clicks_prev:
+        return ['Which button was clicked? Icon button']
+    elif text_n_clicks is not None and not text_n_clicks_prev:
+        return ['Which button was clicked? Text button']
+    elif raised_n_clicks > raised_n_clicks_prev:
+        return ['Which button was clicked? Raised button']
+    elif flat_n_clicks > flat_n_clicks_prev:
+        return ['Which button was clicked? Flat button']
+    elif icon_n_clicks > icon_n_clicks_prev:
+        return ['Which button was clicked? Icon button']
+    elif text_n_clicks > text_n_clicks_prev:
+        return ['Which button was clicked? Text button']
+    else:
+        return ['Which button was clicked? ']
 #
 #
 # # Callback for combined button test secondary

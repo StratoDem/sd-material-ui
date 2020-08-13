@@ -51,6 +51,8 @@ type Props = {
 
 type State = {
   disabled: boolean,
+  n_clicks: number,
+  n_clicks_previous: number
 };
 
 const defaultProps = {
@@ -73,7 +75,9 @@ const defaultProps = {
 export default class Button extends Component<Props> {
   constructor(props: Props) {
     super(props);
-    this.state = {disabled: props.disabled};
+    this.state = {disabled: props.disabled,
+                  n_clicks: props.n_clicks,
+                  n_clicks_previous: props.n_clicks_previous};
   }
 
   UNSAFE_componentWillReceiveProps(nextProps: Props, nextContext: *): void {
@@ -83,7 +87,11 @@ export default class Button extends Component<Props> {
 
   render() {
     const { className, classes, disableTouchRipple, disabled, fullWidth, href, iconClass, id, style,
-      useIcon, disableShadow, variant} = this.props;
+      useIcon, disableShadow, variant, n_clicks, n_clicks_previous} = this.props;
+    const iterate_n_clicks = () => {
+      this.setState({n_clicks_previous: this.state.n_clicks,
+                               n_clicks: this.state.n_clicks + 1})
+    }
     if (!useIcon){
       return (
         <div id={id}>
@@ -97,6 +105,9 @@ export default class Button extends Component<Props> {
             href={href}
             style={style}
             variant={variant}
+            onClick={iterate_n_clicks}
+            n_clicks={n_clicks}
+            n_clicks_previous={n_clicks_previous}
           >
             {this.props.children}
             <span className={iconClass}/>
@@ -113,6 +124,9 @@ export default class Button extends Component<Props> {
           disabled={disabled}
           href={href}
           style={style}
+          onClick={iterate_n_clicks}
+          n_clicks={n_clicks}
+          n_clicks_previous={n_clicks_previous}
         >
           <span className={iconClass}/>
           {this.props.children}
