@@ -86,16 +86,21 @@ export default class Button extends Component<Props> {
   }
 
   handleClick() {
-    if (this.props.setProps) this.props.setProps({n_clicks: this.props.n_clicks + 1});
-    if (this.props.setProps) this.props.setProps({n_clicks_previous: this.props.n_clicks + 1});
+    const n = this.props.n_clicks + 1
+    if (this.props.setProps) this.props.setProps({n_clicks: n});
+    if (this.props.setProps) this.props.setProps({n_clicks_previous: n});
+    if (this.setState) this.setState({n_clicks: n});
+    if (this.setState) this.setState({n_clicks_previous: n});
   }
 
   render() {
     const { className, classes, disableTouchRipple, disabled, fullWidth, href, iconClass, id, style,
       useIcon, disableShadow, variant, n_clicks, n_clicks_previous} = this.props;
-    const iterate_n_clicks = () => {
-      this.setState({n_clicks_previous: this.state.n_clicks,
-                               n_clicks: this.state.n_clicks + 1})
+    let onClick
+    if (this.props.setProps){
+      onClick = this.handleClick.bind(this)
+    } else {
+      onClick = null
     }
     if (!useIcon){
       return (
@@ -110,7 +115,7 @@ export default class Button extends Component<Props> {
             href={href}
             style={style}
             variant={variant}
-            onClick={this.handleClick}
+            onClick={onClick}
             n_clicks={n_clicks}
             n_clicks_previous={n_clicks_previous}
           >
@@ -129,7 +134,7 @@ export default class Button extends Component<Props> {
           disabled={disabled}
           href={href}
           style={style}
-          onClick={this.handleClick}
+          onClick={onClick}
           n_clicks={n_clicks}
           n_clicks_previous={n_clicks_previous}
         >
