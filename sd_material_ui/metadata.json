@@ -2,7 +2,15 @@
   "src/lib/components/Button.react.js": {
     "description": "",
     "displayName": "Button",
-    "methods": [],
+    "methods": [
+      {
+        "name": "handleClick",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      }
+    ],
     "props": {
       "children": {
         "required": false,
