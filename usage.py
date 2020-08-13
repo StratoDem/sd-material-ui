@@ -4,7 +4,8 @@ import flask
 import dash_html_components as html
 import time
 
-app = dash.Dash('')
+app = dash.Dash('',
+                external_stylesheets=['https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'])
 
 app.scripts.config.serve_locally = True
 
@@ -45,12 +46,32 @@ app.layout = html.Div([
 
     spacer,
 
-    sd_material_ui.FlatButton(html.P('This is a Flat Button'),
-                              id='flat-button',
-                              raised=False,
-                              useIcon=False,
-                              backgroundColor='#AB4587',
-                              disabled=True),
+    sd_material_ui.Button(html.P('This is a Raised Button'),
+                          id='raised-button',
+                          disableShadow=False,
+                          useIcon=False,
+                          variant='contained'),
+
+    spacer,
+
+    sd_material_ui.Button(html.P('This is a Flat Button'),
+                          id='flat-button',
+                          disableShadow=False,
+                          useIcon=False,
+                          variant='outlined',
+                          classes={'root': 'SAMPLE_ROOT_CLASS',
+                                   'label': 'SAMPLE_LABEL_CLASS', }),
+
+    spacer,
+
+    sd_material_ui.Button('Text Button',
+                          id='text-button',
+                          variant='text',),
+
+    spacer,
+
+    sd_material_ui.Button(useIcon=True,
+                          iconClass="glyphicon glyphicon-asterisk"),
 
     final_spacer,
 ])
@@ -354,5 +375,4 @@ def operate_drawer(button_click, menu_item_click, drawer_state):
 
 
 if __name__ == '__main__':
-    app.css.append_css({'external_url': 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'})
     app.run_server(debug=True)

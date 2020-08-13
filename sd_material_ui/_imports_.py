@@ -1,9 +1,9 @@
+from .Button import Button
 from .Dialog import Dialog
 from .Drawer import Drawer
-from .FlatButton import FlatButton
 
 __all__ = [
+    "Button",
     "Dialog",
-    "Drawer",
-    "FlatButton"
+    "Drawer"
 ]

@@ -5,8 +5,6 @@ import MUIButton from '@material-ui/core/Button';
 import MUIIconButton from '@material-ui/core/IconButton';
 
 type Props = {
-  /** Button color when *no* hover event is triggered */
-  backgroundColor?: string,
   /**
    * This is what will be displayed inside the button.
    * If a label is specified, the text within the label prop will
@@ -14,9 +12,11 @@ type Props = {
    * which will then be displayed. (In our example,
    * we are nesting an `<input type="file" />` and a `span`
    * that acts as our label to be displayed.) This only
-   * applies to flat and raised buttons.
+   * applies to flat and disableShadow buttons.
    */
   children?: Node,
+  /** Mapping from MUI Element name to the intended classname for that Element */
+  classes?: Object,
   /** CSS class name of the root element */
   className?: string,
   /** If true, the element's ripple effect will be disabled */
@@ -27,41 +27,26 @@ type Props = {
   fireEvent?: () => void,
   /** If true, the button will take up the full width of its container */
   fullWidth?: boolean,
-  /** Color of button when mouse hovers over */
-  hoverColor?: string,
   /** The URL to link to when the button is clicked */
   href?: string,
-  /** Use this property to display an icon */
-  icon?: Node,
+  /** Sets the class of a span element inside the button */
+  iconClass?: Node,
   /** Element ID */
   id?: string,
-  /** Label for the button */
-  label: string,
-  /** Place label before or after the passed children */
-  labelPosition?: 'before' | 'after',
-  /** Override the inline styles of the button's label element */
-  labelStyle?: Object,
   /** An integer that represents the number fo times that this element has been clicked */
   n_clicks?: number,
   /** An integer that represents the previous number of times this element has been clicked */
   n_clicks_previous?: number,
-  /** If true, colors button according to primaryTextColor from the MuiTheme */
-  primary?: boolean,
-  /** Color for the ripple when the button is clicked */
-  raised?: string,
-  /** Color for the ripple when the button is clicked */
-  rippleColor?: string,
-  /**
-   * If true, colors button according to secondaryTextColor from the theme.
-   * The primary prop has precendent if set to true.
-   */
-  secondary?: boolean,
+  /** Hide the shadow behind the button */
+  disableShadow?: string,
   /** Dash callback to update props */
   setProps?: () => void,
   /** Override the inline styles of the root element */
   style?: Object,
   /** If true, this object is rendered as an IconButton */
   useIcon?: boolean,
+  /** 'contained' | 'outlined' | 'text', Button type if not an IconButton */
+  variant?: string,
 };
 
 type State = {
@@ -69,28 +54,20 @@ type State = {
 };
 
 const defaultProps = {
-  backgroundColor: '',
   children: null,
+  classes: {},
   className: '',
   disableTouchRipple: false,
   disabled: false,
   fireEvent: () => {},
   fullWidth: false,
-  hoverColor: '',
   href: '',
-  icon: null,
-  labelPosition: 'after',
-  labelStyle: {},
-  label: '',
+  iconClass: null,
   n_clicks: 0,
   n_clicks_previous: 0,
-  primary: false,
-  rippleColor: '',
-  secondary: false,
   setProps: () => {},
   style: {},
-  useIcon: false,
-  raised: false,
+  variant: 'text'
 };
 
 export default class Button extends Component<Props> {
@@ -105,34 +82,24 @@ export default class Button extends Component<Props> {
   }
 
   render() {
-    const { backgroundColor, className, disableTouchRipple, disabled,
-      fullWidth, hoverColor, href, icon, id, label, labelPosition, labelStyle,
-      primary, rippleColor, secondary, style, useIcon, raised} = this.props;
-    let styles = style
-    if (backgroundColor){
-      styles['background-color'] = backgroundColor
-    }
+    const { className, classes, disableTouchRipple, disabled, fullWidth, href, iconClass, id, style,
+      useIcon, disableShadow, variant} = this.props;
     if (!useIcon){
       return (
         <div id={id}>
           <MUIButton
-            disableElevation={!raised}
+            disableElevation={disableShadow}
+            classes={classes}
             className={className}
             disableTouchRipple={disableTouchRipple}
             disabled={disabled}
             fullWidth={fullWidth}
-            hoverColor={hoverColor}
             href={href}
-            icon={icon}
-            label={label}
-            labelPosition={labelPosition}
-            labelStyle={labelStyle}
-            primary={primary}
-            rippleColor={rippleColor}
-            secondary={secondary}
-            style={styles}
+            style={style}
+            variant={variant}
           >
             {this.props.children}
+            <span className={iconClass}/>
           </MUIButton>
         </div>
       );
@@ -140,19 +107,14 @@ export default class Button extends Component<Props> {
     return (
       <div id={id}>
         <MUIIconButton
+          classes={classes}
           className={className}
           disableTouchRipple={disableTouchRipple}
           disabled={disabled}
           href={href}
-          icon={icon}
-          label={label}
-          labelPosition={labelPosition}
-          labelStyle={labelStyle}
-          primary={primary}
-          rippleColor={rippleColor}
-          secondary={secondary}
-          style={styles}
+          style={style}
         >
+          <span className={iconClass}/>
           {this.props.children}
         </MUIIconButton>
       </div>

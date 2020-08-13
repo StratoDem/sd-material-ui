@@ -7,7 +7,7 @@ export { default as Dialog } from './components/Dialog.react';
 // export { default as Divider } from './components/Divider.react';
 export { default as Drawer } from './components/Drawer.react';
 // export { default as DropDownMenu } from './components/DropDownMenu.react';
-export { default as FlatButton } from './components/FlatButton.react';
+export { default as Button } from './components/Button.react';
 // export { default as FontIcon } from './components/FontIcon.react';
 // export { default as IconButton } from './components/IconButton.react';
 // export { default as Paper } from './components/Paper.react';

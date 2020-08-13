@@ -17,6 +17,8 @@ type Props = {
   ariaLabelledBy?: string,
   /** Children to render inside of the Dialog */
   children?: Node,
+  /** Mapping from MUI Element name to the intended classname for that Element */
+  classes?: Object,
   /** CSS class name of the root element */
   className?: string,
   /** Is the dialog open?
@@ -53,12 +55,13 @@ const defaultProps = {
   actions: null,
   children: null,
   className: '',
+  classes: {},
   open: false,
   setProps: () => {},
   autoScrollBodyContent: false,
   useBrowserSideClose: false,
   style: null,
-  scroll: '',
+  scroll: 'body',
   fullWidth: true
 };
 
@@ -96,6 +99,7 @@ export default class Dialog extends Component<Props, State> {
     const {
       id,
       className,
+      classes,
       ariaLabelledBy,
       componentContainerClassName,
       scroll,
@@ -126,7 +130,8 @@ export default class Dialog extends Component<Props, State> {
                      scroll={scroll}
                      fullWidth={fullWidth}
                      onClose={this.closeDialog}
-                     className={className}>
+                     className={className}
+                     classes={classes}>
             <div style={style}>
               {this.browserSideClose}
               {this.props.children}
