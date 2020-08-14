@@ -14,7 +14,6 @@ final_spacer = html.Div(children=[], style=dict(height=400))
 
 # Callback for BottomNavigation
 app.layout = html.Div([
-
     html.Div([
 
         html.Div([

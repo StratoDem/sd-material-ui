@@ -20,6 +20,31 @@ type Props = {
   children?: Node,
   /** The CSS class name of the root element */
   className?: string,
+  /** The classes to be applied to this component. This keys in this object must be valid CSS rule
+   * names, and the values must be strings for the classnames to be assigned to each rule name */
+  classes?: Object,
+  /** The CSS class name of the actionArea element */
+  actionArConteaClassName?: string,
+  /** The classes to be applied to the actionArea component. This keys in this object must be valid CSS rule
+   * names, and the values must be strings for the classnames to be assigned to each rule name */
+  actionAreaClasses?: Object,
+  /** The CSS class name of the actions element */
+  actionsClassName?: string,
+  /** The classes to be applied to the actions component. This keys in this object must be valid CSS rule
+   * names, and the values must be strings for the classnames to be assigned to each rule name */
+  actionsClasses?: Object,
+  /** The CSS class name of the content element */
+  contentClassName?: string,
+  /** The classes to be applied to the content component. This keys in this object must be valid CSS rule
+   * names, and the values must be strings for the classnames to be assigned to each rule name */
+  contentClasses?: Object,
+  /** The CSS class name of the header element */
+  headerClassName?: string,
+  /** The classes to be applied to the header component. This keys in this object must be valid CSS rule
+   * names, and the values must be strings for the classnames to be assigned to each rule name */
+  headerClasses?: Object,
+  /** Styles to be implemented as inline css */
+  style?: Object,
 }
 
 const defaultProps = {
@@ -27,46 +52,31 @@ const defaultProps = {
   id: '',
   children: [],
   className: '',
-  containerStyle: {},
-  expandable: false,
-  expanded: null,
-  initiallyExpanded: false,
+  classes: {},
   style: {},
-  showExpandableButton: true,
 
   // Card header props
   headerAvatar: null,
-  headerActAsExpander: true,
-  headerStyle: {},
-  headerSubtitle: [],
-  headerSubtitleColor: '',
-  headerSubtitleStyle: {},
-  headerTextStyle: {},
-  headerTitle: [],
-  headerTitleColor: '',
-  headerTitleStyle: {},
-  headerIconStyle: {},
+  headerClassName: '',
+  headerClasses: {},
 
-  // Card title props
-  titleExpandable: true,
-  titleStyle: {},
-  titleSubtitle: [],
-  titleSubtitleColor: '',
-  titleSubtitleStyle: {},
-  titleTitle: [],
-  titleColor: '',
-  titleTitleStyle: {},
+  // Card content props
+  contentClassName: '',
+  contentClasses: {},
 
-  // Card text props
-  textExpandable: true,
-  textColor: '',
-  textStyle: {},
+  // Card actions props
+  actionsClassName: '',
+  actionsClasses: {},
+
+  // Card actionArea props
+  actionAreaClassName: '',
+  actionAreaClasses: {},
 };
 
 /** Material UI Card component */
 export default class Card extends Component<Props> {
   render() {
-    const { id, className, containerStyle, expandable, expanded, initiallyExpanded, style,
+    const { id, className,  style,
       showExpandableButton, headerAvatar, headerActAsExpander, headerStyle, headerSubtitle,
       headerSubtitleColor, headerSubtitleStyle, headerTextStyle, headerTitle, headerTitleColor,
       headerTitleStyle, textExpandable, textColor, textStyle, titleStyle, titleSubtitle,
