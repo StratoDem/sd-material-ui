@@ -12,7 +12,8 @@ type Props = {
   checked?: boolean,
   /** CSS class name of the root element */
   className?: string,
-  /** Mapping from MUI Element name to the intended classname for that Element */
+  /** Mapping from MUI Element name to the intended classname for that Element
+   * See https://material-ui.com/api/checkbox/#css*/
   classes?: Object,
   /** Checkbox is disabled if true */
   disabled?: boolean,
