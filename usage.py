@@ -65,45 +65,62 @@ app.layout = html.Div([
             html.Div(id='input2', children=[
                 html.Button(children='Open the dialog')
             ]),
-        ])
+        ]),
+
+        spacer,
+
+        html.Div([
+            html.P([html.Strong('Test for buttons')]),
+
+            sd_material_ui.Button(html.P('This is a Raised Button'),
+                                  id='button1',
+                                  disableShadow=False,
+                                  useIcon=False,
+                                  variant='contained'),
+
+            spacer,
+
+            sd_material_ui.Button(html.P('This is a Flat Button'),
+                                  id='button2',
+                                  disableShadow=False,
+                                  useIcon=False,
+                                  variant='outlined',
+                                  classes={'root': 'SAMPLE_ROOT_CLASS',
+                                           'label': 'SAMPLE_LABEL_CLASS', }),
+
+            spacer,
+
+            sd_material_ui.Button('Text Button',
+                                  id='button3',
+                                  variant='text',),
+
+            spacer,
+
+            sd_material_ui.Button(useIcon=True,
+                                  id='button4',
+                                  iconClass="glyphicon glyphicon-asterisk"),
+
+            html.P(id='output-button')
+
+        ]),
+
+        spacer,
+
+        html.Div([
+            html.P([html.Strong('Test for Checkbox')]),
+
+            sd_material_ui.Checkbox(id='checkbox1', label='Apple', name='Apple'),
+            sd_material_ui.Checkbox(id='checkbox2', label='2', name='2'),
+            sd_material_ui.Checkbox(id='checkbox3', label=5, name='5'),
+
+            html.P(id='checkbox-output'),
+        ]),
+
     ], style=dict(display='flex', flexWrap='wrap')),
 
     spacer,
 
-    html.Div([
-        html.P([html.Strong('Test for buttons')]),
 
-        sd_material_ui.Button(html.P('This is a Raised Button'),
-                              id='button1',
-                              disableShadow=False,
-                              useIcon=False,
-                              variant='contained'),
-
-        spacer,
-
-        sd_material_ui.Button(html.P('This is a Flat Button'),
-                              id='button2',
-                              disableShadow=False,
-                              useIcon=False,
-                              variant='outlined',
-                              classes={'root': 'SAMPLE_ROOT_CLASS',
-                                       'label': 'SAMPLE_LABEL_CLASS', }),
-
-        spacer,
-
-        sd_material_ui.Button('Text Button',
-                              id='button3',
-                              variant='text',),
-
-        spacer,
-
-        sd_material_ui.Button(useIcon=True,
-                              id='button4',
-                              iconClass="glyphicon glyphicon-asterisk"),
-
-        html.P(id='output-button')
-
-    ]),
 
 
 
@@ -185,6 +202,31 @@ def show_modal_dialog(modal_click: int, close_button: int, open_state: bool):
             return False
     else:
         return False
+
+@app.callback(
+    dash.dependencies.Output('checkbox-output', 'children'),
+    [dash.dependencies.Input('checkbox1', 'checked'),
+     dash.dependencies.Input('checkbox2', 'checked'),
+     dash.dependencies.Input('checkbox3', 'checked')],
+    [dash.dependencies.State('checkbox1', 'checked'),
+     dash.dependencies.State('checkbox2', 'checked'),
+     dash.dependencies.State('checkbox3', 'checked'),
+     dash.dependencies.State('checkbox1', 'name'),
+     dash.dependencies.State('checkbox2', 'name'),
+     dash.dependencies.State('checkbox3', 'name')])
+def callback_checkboxes(check_1: bool, check_2: bool, check_3: bool,
+                        _check_1: bool, _check_2: bool, _check_3: bool,
+                        name_1: str, name_2: str, name_3: str, ):
+    output = []
+    if _check_1:
+        output.append(name_1)
+    if _check_2:
+        output.append(name_2)
+    if _check_3:
+        output.append(name_3)
+    return f'{output}'
+
+
 #
 #
 # # Callback for SDDialog (non-modal)

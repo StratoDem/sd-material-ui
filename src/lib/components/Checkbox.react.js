@@ -1,150 +1,105 @@
 // @flow
 
 import React, { Component } from 'react';
-import MUICheckbox from '@material-ui/core/Checkbox'
+import MuiCheckbox from '@material-ui/core/Checkbox';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
-// type Props = {
-//   /**
-//    * This is what will be displayed inside the button.
-//    * If a label is specified, the text within the label prop will
-//    * be displayed. Otherwise, the component will expect children
-//    * which will then be displayed. (In our example,
-//    * we are nesting an `<input type="file" />` and a `span`
-//    * that acts as our label to be displayed.) This only
-//    * applies to flat and disableShadow buttons.
-//    */
-//   children?: Node,
-//   /** Mapping from MUI Element name to the intended classname for that Element */
-//   classes?: Object,
-//   /** CSS class name of the root element */
-//   className?: string,
-//   /** If true, the element's ripple effect will be disabled */
-//   disableTouchRipple?: boolean,
-//   /** Disable the button? */
-//   disabled?: boolean,
-//   /** Dash callback to trigger an event handler */
-//   fireEvent?: () => void,
-//   /** If true, the button will take up the full width of its container */
-//   fullWidth?: boolean,
-//   /** The URL to link to when the button is clicked */
-//   href?: string,
-//   /** Sets the class of a span element inside the button */
-//   iconClass?: Node,
-//   /** Element ID */
-//   id?: string,
-//   /** An integer that represents the number fo times that this element has been clicked */
-//   n_clicks?: number,
-//   /** An integer that represents the previous number of times this element has been clicked */
-//   n_clicks_previous?: number,
-//   /** Hide the shadow behind the button */
-//   disableShadow?: string,
-//   /** Dash callback to update props */
-//   setProps?: () => void,
-//   /** Override the inline styles of the root element */
-//   style?: Object,
-//   /** If true, this object is rendered as an IconButton */
-//   useIcon?: boolean,
-//   /** 'contained' | 'outlined' | 'text', Button type if not an IconButton */
-//   variant?: string,
-// };
-//
-// type State = {
-//   disabled: boolean,
-//   n_clicks: number,
-//   n_clicks_previous: number
-// };
-//
-// const defaultProps = {
-//   children: null,
-//   classes: {},
-//   className: '',
-//   disableTouchRipple: false,
-//   disabled: false,
-//   fireEvent: () => {},
-//   fullWidth: false,
-//   href: '',
-//   iconClass: null,
-//   n_clicks: 0,
-//   n_clicks_previous: 0,
-//   setProps: () => {},
-//   style: {},
-//   variant: 'text'
-// };
-//
-// export default class Button extends Component<Props> {
-//   constructor(props: Props) {
-//     super(props);
-//     this.state = {disabled: props.disabled,
-//                   n_clicks: props.n_clicks,
-//                   n_clicks_previous: props.n_clicks_previous};
-//   }
-//
-//   UNSAFE_componentWillReceiveProps(nextProps: Props, nextContext: *): void {
-//     if (nextProps.disabled !== this.state.disabled)
-//       this.setState({disabled: nextProps.disabled});
-//   }
-//
-//   handleClick() {
-//     const n = this.props.n_clicks + 1
-//     if (this.props.setProps) this.props.setProps({n_clicks: n});
-//     if (this.props.setProps) this.props.setProps({n_clicks_previous: n});
-//     if (this.setState) this.setState({n_clicks: n});
-//     if (this.setState) this.setState({n_clicks_previous: n});
-//   }
-//
-//   render() {
-//     const { className, classes, disableTouchRipple, disabled, fullWidth, href, iconClass, id, style,
-//       useIcon, disableShadow, variant, n_clicks, n_clicks_previous} = this.props;
-//     let onClick
-//     if (this.props.setProps){
-//       onClick = this.handleClick.bind(this)
-//     } else {
-//       onClick = null
-//     }
-//     if (!useIcon){
-//       return (
-//         <div id={id}>
-//           <MUIButton
-//             disableElevation={disableShadow}
-//             classes={classes}
-//             className={className}
-//             disableTouchRipple={disableTouchRipple}
-//             disabled={disabled}
-//             fullWidth={fullWidth}
-//             href={href}
-//             style={style}
-//             variant={variant}
-//             onClick={onClick}
-//             n_clicks={n_clicks}
-//             n_clicks_previous={n_clicks_previous}
-//           >
-//             {this.props.children}
-//             <span className={iconClass}/>
-//           </MUIButton>
-//         </div>
-//       );
-//     }
-//     return (
-//       <div id={id}>
-//         <MUIIconButton
-//           classes={classes}
-//           className={className}
-//           disableTouchRipple={disableTouchRipple}
-//           disabled={disabled}
-//           href={href}
-//           style={style}
-//           onClick={onClick}
-//           n_clicks={n_clicks}
-//           n_clicks_previous={n_clicks_previous}
-//         >
-//           <span className={iconClass}/>
-//           {this.props.children}
-//         </MUIIconButton>
-//       </div>
-//     );
-//
-//
-//   }
-// }
-//
-// Button.defaultProps = defaultProps;
+type Props = {
+  /** Checkbox is checked if true */
+  checked?: boolean,
+  /** CSS class name of the root element */
+  className?: string,
+  /** Mapping from MUI Element name to the intended classname for that Element */
+  classes?: Object,
+  /** Checkbox is disabled if true */
+  disabled?: boolean,
+  /** A callback for firing events to dash */
+  fireEvent?: () => void,
+  /** The element's ID */
+  id: string,
+  /** The label for the checkbox */
+  label: string,
+  /** The name prop of the checkbox */
+  name: string,
+  /** Dash callback to update props on the server */
+  setProps?: () => void,
+  /** Override the inline styles of the root element */
+  style?: Object,
+};
+
+type State = {
+  checked: boolean,
+};
+
+const defaultProps = {
+  checked: false,
+  disabled: false,
+  classes: {},
+  fireEvent: () => {},
+  setProps: () => {},
+  style: {},
+  className: null,
+  name: '',
+  label: null
+};
+
+/** Material UI Checkbox component */
+export default class Checkbox extends Component<Props, State> {
+  constructor(props: Props) {
+    super(props);
+    this.state = {checked: props.checked};
+  }
+
+  UNSAFE_componentWillReceiveProps(nextProps: Props, nextContext: *): void {
+    if (nextProps.checked !== null && nextProps.checked !== this.props.checked) {
+      this.props.setProps({checked: nextProps.checked})
+      // this.setState({checked: nextProps.checked});
+    }
+  }
+
+  handleClick = () => {
+    const set_check = !this.state.checked
+    if (this.setState) this.setState({checked: set_check})
+    if (this.props.setProps) this.props.setProps({checked: set_check})
+    if (this.props.fireEvent) this.props.fireEvent({event: 'click'});
+  };
+
+  render() {
+    const { disabled, style, classes, id, className, name, label} = this.props;
+    if (this.props.fireEvent || this.props.setProps) {
+      this.handleClick = this.handleClick.bind(this)
+      return (
+        <div id={id} className={className}>
+          <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
+            <FormControlLabel control={<MuiCheckbox
+                checked={this.state.checked}
+                disabled={disabled}
+                style={style}
+                classes={classes}
+                name={name}
+                onChange={this.handleClick}
+              />} label={label}/>
+
+          </MuiThemeProvider>
+        </div>);
+    }
+    return (
+      <div id={id} className={className}>
+        <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
+          <FormControlLabel control={ <MuiCheckbox
+              checked={this.state.checked}
+              disabled={disabled}
+              className={className}
+              style={style}
+              classes={classes}
+              name={name}
+            />} label={label}/>
+        </MuiThemeProvider>
+      </div>);
+  }
+}
+
+Checkbox.defaultProps = defaultProps;
