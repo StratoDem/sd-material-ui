@@ -245,7 +245,7 @@
         "flowType": {
           "name": "Object"
         },
-        "description": "Mapping from MUI Element name to the intended classname for that Element",
+        "description": "Mapping from MUI Element name to the intended classname for that Element\r\nSee https://material-ui.com/api/checkbox/#css",
         "defaultValue": {
           "value": "{}",
           "computed": false

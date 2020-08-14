@@ -11,6 +11,7 @@ Keyword arguments:
 - checked (boolean; default False): Checkbox is checked if true
 - className (string; optional): CSS class name of the root element
 - classes (dict; optional): Mapping from MUI Element name to the intended classname for that Element
+See https://material-ui.com/api/checkbox/#css
 - disabled (boolean; default False): Checkbox is disabled if true
 - id (string; required): The element's ID
 - label (string; optional): The label for the checkbox
