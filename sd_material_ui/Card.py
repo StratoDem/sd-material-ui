@@ -29,14 +29,15 @@ names, and the values must be strings for the classnames to be assigned to each 
 other element, it will be rendered. If avatar is a string, it will be used as the image src
 for an Avatar.
 - headerIconClassName (string; optional): The CSS class name of the header Icon element
-- style (dict; optional): Styles to be implemented as inline css"""
+- style (dict; optional): Styles to be implemented as inline css
+- raised (boolean; default True): If true, the Card component will appear raised"""
     @_explicitize_args
-    def __init__(self, children=None, id=Component.UNDEFINED, className=Component.UNDEFINED, classes=Component.UNDEFINED, actionAreaClassName=Component.UNDEFINED, actionAreaClasses=Component.UNDEFINED, actionsClassName=Component.UNDEFINED, actionsClasses=Component.UNDEFINED, contentClassName=Component.UNDEFINED, contentClasses=Component.UNDEFINED, headerClassName=Component.UNDEFINED, headerClasses=Component.UNDEFINED, headerAvatar=Component.UNDEFINED, headerIconClassName=Component.UNDEFINED, style=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['children', 'id', 'className', 'classes', 'actionAreaClassName', 'actionAreaClasses', 'actionsClassName', 'actionsClasses', 'contentClassName', 'contentClasses', 'headerClassName', 'headerClasses', 'headerAvatar', 'headerIconClassName', 'style']
+    def __init__(self, children=None, id=Component.UNDEFINED, className=Component.UNDEFINED, classes=Component.UNDEFINED, actionAreaClassName=Component.UNDEFINED, actionAreaClasses=Component.UNDEFINED, actionsClassName=Component.UNDEFINED, actionsClasses=Component.UNDEFINED, contentClassName=Component.UNDEFINED, contentClasses=Component.UNDEFINED, headerClassName=Component.UNDEFINED, headerClasses=Component.UNDEFINED, headerAvatar=Component.UNDEFINED, headerIconClassName=Component.UNDEFINED, style=Component.UNDEFINED, raised=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['children', 'id', 'className', 'classes', 'actionAreaClassName', 'actionAreaClasses', 'actionsClassName', 'actionsClasses', 'contentClassName', 'contentClasses', 'headerClassName', 'headerClasses', 'headerAvatar', 'headerIconClassName', 'style', 'raised']
         self._type = 'Card'
         self._namespace = 'sd_material_ui'
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['children', 'id', 'className', 'classes', 'actionAreaClassName', 'actionAreaClasses', 'actionsClassName', 'actionsClasses', 'contentClassName', 'contentClasses', 'headerClassName', 'headerClasses', 'headerAvatar', 'headerIconClassName', 'style']
+        self.available_properties = ['children', 'id', 'className', 'classes', 'actionAreaClassName', 'actionAreaClasses', 'actionsClassName', 'actionsClasses', 'contentClassName', 'contentClasses', 'headerClassName', 'headerClasses', 'headerAvatar', 'headerIconClassName', 'style', 'raised']
         self.available_wildcard_properties =            []
 
         _explicit_args = kwargs.pop('_explicit_args')

@@ -164,6 +164,17 @@
           "value": "{}",
           "computed": false
         }
+      },
+      "raised": {
+        "required": false,
+        "flowType": {
+          "name": "boolean"
+        },
+        "description": "If true, the Card component will appear raised",
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        }
       }
     }
   },
