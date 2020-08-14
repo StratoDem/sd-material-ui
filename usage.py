@@ -67,9 +67,16 @@ app.layout = html.Div([
     ], style=dict(display='flex', flexWrap='wrap')),
 
     html.Div([
-        sd_material_ui.Card([
-            html.P('Card Text')
+        html.Div([
+            html.P([html.Strong('Sample for Paper/Card')]),
+            sd_material_ui.Paper([
+                html.H3('Paper Title'),
+                sd_material_ui.Card([
+                    html.P('Card Text')
+                ]),
+            ])
         ]),
+
     ], style=dict(display='flex', flexWrap='wrap')),
 
     final_spacer,

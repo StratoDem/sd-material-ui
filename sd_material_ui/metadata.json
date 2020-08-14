@@ -638,6 +638,90 @@
       }
     }
   },
+  "src/lib/components/Paper.react.js": {
+    "description": "A Dash material-ui Paper component",
+    "displayName": "Paper",
+    "methods": [],
+    "props": {
+      "id": {
+        "required": false,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "ID for Paper",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "children": {
+        "required": false,
+        "flowType": {
+          "name": "Node"
+        },
+        "description": "Can be used to render elements inside the Paper",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "className": {
+        "required": false,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "The CSS class name of the root element",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "classes": {
+        "required": false,
+        "flowType": {
+          "name": "Object"
+        },
+        "description": "The classes to be applied to this component. This keys in this object must be valid CSS rule\r\nnames, and the values must be strings for the classnames to be assigned to each rule name",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "rounded": {
+        "required": false,
+        "flowType": {
+          "name": "boolean"
+        },
+        "description": "By default, the paper container will have a border radius.\r\nSet this to false to generate a container with sharp corners.",
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        }
+      },
+      "style": {
+        "required": false,
+        "flowType": {
+          "name": "Object"
+        },
+        "description": "Override the inline-styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "zDepth": {
+        "required": false,
+        "flowType": {
+          "name": "number"
+        },
+        "description": "This number represents the zDepth of the paper shadow",
+        "defaultValue": {
+          "value": "1",
+          "computed": false
+        }
+      }
+    }
+  },
   "src/lib/components/RadioButtonGroup.react.js": {
     "description": "",
     "displayName": "RadioButtonGroup",

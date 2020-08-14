@@ -10,7 +10,7 @@ export { default as Drawer } from './components/Drawer.react';
 // export { default as FlatButton } from './components/FlatButton.react';
 // export { default as FontIcon } from './components/FontIcon.react';
 // export { default as IconButton } from './components/IconButton.react';
-// export { default as Paper } from './components/Paper.react';
+export { default as Paper } from './components/Paper.react';
 // export { default as Popover } from './components/Popover.react';
 export { default as RadioButtonGroup } from './components/RadioButtonGroup.react';
 // export { default as RaisedButton } from './components/RaisedButton.react';
