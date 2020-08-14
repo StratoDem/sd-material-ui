@@ -12,7 +12,6 @@ spacer = html.Div(children=[], style=dict(height=20, width=50))
 final_spacer = html.Div(children=[], style=dict(height=400))
 
 
-# Callback for BottomNavigation
 app.layout = html.Div([
 
     html.Div([
@@ -96,8 +95,6 @@ app.layout = html.Div([
               [dash.dependencies.Input('bottom-nav', 'selectedValue')],
               [dash.dependencies.State('bottom-nav', 'selectedValue')],)
 def callback_bottom_nav(value, state_value):
-    print(value)
-    print(state_value)
     if value is None:
         return 'Value Selected: '
     return f'Value Selected: Item {value}'

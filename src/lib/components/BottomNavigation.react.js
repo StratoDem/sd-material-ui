@@ -22,6 +22,7 @@ type Props = {
   /** The ID used to identify this component in Dash callbacks */
   id: string,
   /** Mapping from MUI Element name to the intended classname for that Element */
+  /** See https://material-ui.com/api/bottom-navigation/#css*/
   classes?: Object,
   /** CSS class name of the root element */
   className?: string,
