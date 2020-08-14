@@ -15,7 +15,9 @@ type Props = {
    * applies to flat and disableShadow buttons.
    */
   children?: Node,
-  /** Mapping from MUI Element name to the intended classname for that Element */
+  /** Mapping from MUI Element name to the intended classname for that Element
+   * See https://material-ui.com/api/button/#css
+   * and https://material-ui.com/api/icon-button/#css*/
   classes?: Object,
   /** CSS class name of the root element */
   className?: string,
