@@ -8,8 +8,14 @@ class RadioButtonGroup(Component):
 
 
 Keyword arguments:
-- classes (dict; optional): The classes to be applied to this component. This keys in this object must be valid CSS rule
-names, and the values must be strings for the classnames to be assigned to each rule name
+- classes (dict; optional): The classes to be applied to each radio button. This keys in this object must be valid CSS
+rule names, and the values must be strings for the classnames to be assigned to each rule name
+Valid rule names are:
+  root
+  checked
+  disabled
+  colorPrimary
+  colorSecondary
 - className (string; default ''): the css class name of the root element
 - id (string; required): the element's ID
 - name (string; required): the name that will be applied to the group of radio buttons

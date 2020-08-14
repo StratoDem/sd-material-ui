@@ -20,8 +20,15 @@ type SD_RADIO_BUTTON = {
 }
 
 type Props = {
-  /** The classes to be applied to this component. This keys in this object must be valid CSS rule
-   * names, and the values must be strings for the classnames to be assigned to each rule name */
+  /** The classes to be applied to each radio button. This keys in this object must be valid CSS
+   * rule names, and the values must be strings for the classnames to be assigned to each rule name
+   * Valid rule names are:
+   *   root
+   *   checked
+   *   disabled
+   *   colorPrimary
+   *   colorSecondary
+   */
   classes?: Object,
   /** the css class name of the root element */
   className?: string,

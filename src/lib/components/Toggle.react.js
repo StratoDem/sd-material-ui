@@ -7,7 +7,21 @@ import Typography from '@material-ui/core/Typography';
 
 type Props = {
   /** The classes to be applied to this component. This keys in this object must be valid CSS rule
-   * names, and the values must be strings for the classnames to be assigned to each rule name */
+   * names, and the values must be strings for the classnames to be assigned to each rule name
+   * Valid rule names are:
+   *   root
+   *   edgeStart
+   *   edgeEnd
+   *   switchBase
+   *   colorPrimary
+   *   colorSecondary
+   *   sizeSmall
+   *   checked
+   *   disabled
+   *   input
+   *   thumb
+   *   tract
+   */
   classes?: Object,
   /** CSS class name of the root element */
   className?: string,
