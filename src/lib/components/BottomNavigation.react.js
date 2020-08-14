@@ -65,8 +65,11 @@ export default class BottomNavigation extends Component<Props, State> {
   }
 
   UNSAFE_componentWillReceiveProps(nextProps: Props): void {
-    if (nextProps.selectedValue !== this.props.selectedValue)
-      this.setState({selectedValue: nextProps.selectedValue});
+    const newValue = nextProps.selectedValue
+    if (nextProps.selectedValue !== newValue) {
+      this.setState({selectedValue: newValue});
+      this.props.setProps({selectedValue: newValue})
+    }
   }
 
   buildBottomNavigationItem = (navItem: T_NAV_ITEM, selectedValue: number) => {
@@ -80,26 +83,19 @@ export default class BottomNavigation extends Component<Props, State> {
         icon={navItemIcon}
         onClick={() => {
           this.setState({selectedValue: selectedValue});
-
-          if (typeof navItem.targetId === 'string') {
-            const targetElement = document.getElementById(navItem.targetId);
-            targetElement.scrollIntoView();
-          }
-
-          if (typeof this.props.setProps === 'function')
-            this.props.setProps({selectedValue: selectedValue});
+          this.props.setProps({selectedValue: selectedValue});
         }}
       />);
   };
 
   render() {
-    const {id, navItems, className} = this.props;
+    const {id, navItems, className, selectedValue} = this.props;
     this.buildBottomNavigationItem = this.buildBottomNavigationItem.bind(this)
 
     return (
       <div id={id} className={className}>
         <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
-          <MuiBottomNavigation value={this.state.selectedValue}>
+          <MuiBottomNavigation value={selectedValue}>
             {
               navItems.map(this.buildBottomNavigationItem)
             }

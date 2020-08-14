@@ -81,6 +81,8 @@ app.layout = html.Div([
                 selectedValue=0,
                 displayLabels=True,
             ),
+            spacer,
+            html.P(id='bottom-nav-output')
         ]),
 
 
@@ -88,6 +90,17 @@ app.layout = html.Div([
 
     final_spacer,
 ])
+
+
+@app.callback(dash.dependencies.Output('bottom-nav-output', 'children'),
+              [dash.dependencies.Input('bottom-nav', 'selectedValue')],
+              [dash.dependencies.State('bottom-nav', 'selectedValue')],)
+def callback_bottom_nav(value, state_value):
+    print(value)
+    print(state_value)
+    if value is None:
+        return 'Value Selected: '
+    return f'Value Selected: Item {value}'
 
 
 # @app.callback(
