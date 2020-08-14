@@ -59,7 +59,7 @@
             }
           },
           {
-            "name": "selectedIndex",
+            "name": "selectedValue",
             "type": {
               "name": "number"
             }
@@ -70,18 +70,48 @@
     ],
     "props": {
       "id": {
-        "required": true,
+        "required": false,
         "flowType": {
           "name": "string"
         },
-        "description": "The ID used to identify this component in Dash callbacks"
+        "description": "The ID used to identify this component in Dash callbacks",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "classes": {
+        "required": false,
+        "flowType": {
+          "name": "Object"
+        },
+        "description": "Mapping from MUI Element name to the intended classname for that Element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
       },
       "className": {
         "required": false,
         "flowType": {
           "name": "string"
         },
-        "description": "CSS class name of the root element"
+        "description": "CSS class name of the root element",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "displayLabels": {
+        "required": false,
+        "flowType": {
+          "name": "boolean"
+        },
+        "description": "If True, show the labels of unselected Items",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
       },
       "navItems": {
         "required": true,
@@ -139,30 +169,19 @@
         },
         "description": "Array of navigation item props to pass to BottomNavigationItem"
       },
-      "selectedIndex": {
+      "selectedValue": {
         "required": false,
         "flowType": {
           "name": "number"
         },
-        "description": "Initial selected index for the BottomNavigation",
-        "defaultValue": {
-          "value": "0",
-          "computed": false
-        }
-      },
-      "classes": {
-        "required": false,
-        "flowType": {
-          "name": "Object"
-        },
-        "description": "Style to apply to the selected icon"
+        "description": "Initial selected value for the BottomNavigation"
       },
       "setProps": {
         "required": false,
         "flowType": {
           "name": "signature",
           "type": "function",
-          "raw": "(props: { selectedIndex: number }) => void",
+          "raw": "(props: { selectedValue: number }) => void",
           "signature": {
             "arguments": [
               {
@@ -170,11 +189,11 @@
                 "type": {
                   "name": "signature",
                   "type": "object",
-                  "raw": "{ selectedIndex: number }",
+                  "raw": "{ selectedValue: number }",
                   "signature": {
                     "properties": [
                       {
-                        "key": "selectedIndex",
+                        "key": "selectedValue",
                         "value": {
                           "name": "number",
                           "required": true
@@ -195,13 +214,6 @@
           "value": "() => {}",
           "computed": false
         }
-      },
-      "selectedStyle": {
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        },
-        "required": false
       }
     }
   },

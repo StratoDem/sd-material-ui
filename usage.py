@@ -67,6 +67,25 @@ app.layout = html.Div([
         ])
     ], style=dict(display='flex', flexWrap='wrap')),
 
+    spacer,
+
+    html.Div([
+
+        html.Div([
+            html.P([html.Strong('Test for BottomNavigation')]),
+            sd_material_ui.BottomNavigation(
+                id='bottom-nav',
+                navItems=[dict(label=f'Item {x}',
+                               value=x,
+                               targetId=f'nav-item-{x}') for x in range(3)],
+                selectedValue=0,
+                displayLabels=True,
+            ),
+        ]),
+
+
+    ], style=dict(display='flex', flexWrap='wrap')),
+
     final_spacer,
 ])
 

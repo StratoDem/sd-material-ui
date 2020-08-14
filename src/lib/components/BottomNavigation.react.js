@@ -21,30 +21,32 @@ type T_NAV_ITEM = {
 type Props = {
   /** The ID used to identify this component in Dash callbacks */
   id: string,
+  /** Mapping from MUI Element name to the intended classname for that Element */
+  classes?: Object,
   /** CSS class name of the root element */
   className?: string,
+  /** If True, show the labels of unselected Items */
+  displayLabels: boolean,
   /** Array of navigation item props to pass to BottomNavigationItem */
   navItems: Array<T_NAV_ITEM>,
-  /** Initial selected index for the BottomNavigation */
-  selectedIndex?: number,
-  /** Style to apply to the selected icon */
-  classes?: Object,
+  /** Initial selected value for the BottomNavigation */
+  selectedValue?: number,
   /**
    * Dash-assigned callback that should be called whenever any of the
    * properties change
    */
-  setProps?: (props: { selectedIndex: number }) => void,
+  setProps?: (props: { selectedValue: number }) => void,
 };
 type State = {
-  selectedIndex: number,
+  selectedValue: number,
 };
 
 const defaultProps = {
-  selectedIndex: 0,
   classes: {},
   className: null,
   id: null,
   setProps: () => {},
+  displayLabels: null,
 };
 
 /**
@@ -58,25 +60,26 @@ export default class BottomNavigation extends Component<Props, State> {
     super(props);
 
     this.state = {
-      selectedIndex: props.selectedIndex,
+      selectedValue: props.selectedValue,
     };
   }
 
   UNSAFE_componentWillReceiveProps(nextProps: Props): void {
-    if (nextProps.selectedIndex !== this.props.selectedIndex)
-      this.setState({selectedIndex: nextProps.selectedIndex});
+    if (nextProps.selectedValue !== this.props.selectedValue)
+      this.setState({selectedValue: nextProps.selectedValue});
   }
 
-  buildBottomNavigationItem = (navItem: T_NAV_ITEM, selectedIndex: number) => {
+  buildBottomNavigationItem = (navItem: T_NAV_ITEM, selectedValue: number) => {
     const navItemIcon = (<span className={navItem.iconClassName}/>);
 
     return (
       <BottomNavigationItem
+        showLabel={this.props.displayLabels}
         key={navItem.label}
         label={navItem.label}
         icon={navItemIcon}
         onClick={() => {
-          this.setState({selectedIndex: selectedIndex});
+          this.setState({selectedValue: selectedValue});
 
           if (typeof navItem.targetId === 'string') {
             const targetElement = document.getElementById(navItem.targetId);
@@ -84,7 +87,7 @@ export default class BottomNavigation extends Component<Props, State> {
           }
 
           if (typeof this.props.setProps === 'function')
-            this.props.setProps({selectedIndex: selectedIndex});
+            this.props.setProps({selectedValue: selectedValue});
         }}
       />);
   };
@@ -96,7 +99,7 @@ export default class BottomNavigation extends Component<Props, State> {
     return (
       <div id={id} className={className}>
         <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
-          <MuiBottomNavigation value={this.state.selectedIndex}>
+          <MuiBottomNavigation value={this.state.selectedValue}>
             {
               navItems.map(this.buildBottomNavigationItem)
             }
