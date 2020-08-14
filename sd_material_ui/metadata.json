@@ -1,4 +1,210 @@
 {
+  "src/lib/components/BottomNavigation.react.js": {
+    "description": "BottomNavigationItem is an item in a BottomNavigation component",
+    "displayName": "BottomNavigation",
+    "methods": [
+      {
+        "name": "buildBottomNavigationItem",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "navItem",
+            "type": {
+              "name": "signature",
+              "type": "object",
+              "raw": "{\r\n  /** Label to use for the navigation item */\r\n  label: string,\r\n  /** Value for the navigation item */\r\n  value: string | number,\r\n  /** ID of component to jump to when this option is selected */\r\n  targetId?: string,\r\n  /** Class to apply to the icon span */\r\n  iconClassName?: string,\r\n}",
+              "signature": {
+                "properties": [
+                  {
+                    "key": "label",
+                    "value": {
+                      "name": "string",
+                      "required": true
+                    }
+                  },
+                  {
+                    "key": "value",
+                    "value": {
+                      "name": "union",
+                      "raw": "string | number",
+                      "elements": [
+                        {
+                          "name": "string"
+                        },
+                        {
+                          "name": "number"
+                        }
+                      ],
+                      "required": true
+                    }
+                  },
+                  {
+                    "key": "targetId",
+                    "value": {
+                      "name": "string",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "iconClassName",
+                    "value": {
+                      "name": "string",
+                      "required": false
+                    }
+                  }
+                ]
+              },
+              "alias": "T_NAV_ITEM"
+            }
+          },
+          {
+            "name": "selectedIndex",
+            "type": {
+              "name": "number"
+            }
+          }
+        ],
+        "returns": null
+      }
+    ],
+    "props": {
+      "id": {
+        "required": true,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "The ID used to identify this component in Dash callbacks"
+      },
+      "className": {
+        "required": false,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "CSS class name of the root element"
+      },
+      "navItems": {
+        "required": true,
+        "flowType": {
+          "name": "Array",
+          "elements": [
+            {
+              "name": "signature",
+              "type": "object",
+              "raw": "{\r\n  /** Label to use for the navigation item */\r\n  label: string,\r\n  /** Value for the navigation item */\r\n  value: string | number,\r\n  /** ID of component to jump to when this option is selected */\r\n  targetId?: string,\r\n  /** Class to apply to the icon span */\r\n  iconClassName?: string,\r\n}",
+              "signature": {
+                "properties": [
+                  {
+                    "key": "label",
+                    "value": {
+                      "name": "string",
+                      "required": true
+                    }
+                  },
+                  {
+                    "key": "value",
+                    "value": {
+                      "name": "union",
+                      "raw": "string | number",
+                      "elements": [
+                        {
+                          "name": "string"
+                        },
+                        {
+                          "name": "number"
+                        }
+                      ],
+                      "required": true
+                    }
+                  },
+                  {
+                    "key": "targetId",
+                    "value": {
+                      "name": "string",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "iconClassName",
+                    "value": {
+                      "name": "string",
+                      "required": false
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "raw": "Array<T_NAV_ITEM>"
+        },
+        "description": "Array of navigation item props to pass to BottomNavigationItem"
+      },
+      "selectedIndex": {
+        "required": false,
+        "flowType": {
+          "name": "number"
+        },
+        "description": "Initial selected index for the BottomNavigation",
+        "defaultValue": {
+          "value": "0",
+          "computed": false
+        }
+      },
+      "classes": {
+        "required": false,
+        "flowType": {
+          "name": "Object"
+        },
+        "description": "Style to apply to the selected icon"
+      },
+      "setProps": {
+        "required": false,
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "(props: { selectedIndex: number }) => void",
+          "signature": {
+            "arguments": [
+              {
+                "name": "props",
+                "type": {
+                  "name": "signature",
+                  "type": "object",
+                  "raw": "{ selectedIndex: number }",
+                  "signature": {
+                    "properties": [
+                      {
+                        "key": "selectedIndex",
+                        "value": {
+                          "name": "number",
+                          "required": true
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "return": {
+              "name": "void"
+            }
+          }
+        },
+        "description": "Dash-assigned callback that should be called whenever any of the\r\nproperties change",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      },
+      "selectedStyle": {
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        },
+        "required": false
+      }
+    }
+  },
   "src/lib/components/Dialog.react.js": {
     "description": "Material UI Dialog component",
     "displayName": "Dialog",
@@ -45,7 +251,7 @@
             "type": {
               "name": "signature",
               "type": "object",
-              "raw": "{\n  /** Dialog ID */\n  id: string,\n  /** List of space separated id's of elements to use as aria labels  */\n  ariaLabelledBy?: string,\n  /** Children to render inside of the Dialog */\n  children?: Node,\n  /** CSS class name of the root element */\n  className?: string,\n  /** Is the dialog open?\n   *\n   * IMPORTANT: When using this component in Dash, a listener must be set up (either as state or\n   * an input) for this component's props.open value in order to achieve the desired behavior.\n   * If such a listener is not in place, the non-modal version of this dialog will contaminate\n   * other callbacks in the browser\n   */\n  open?: boolean,\n  /** If set to true, the body content of the Dialog will be scrollable. */\n  autoScrollBodyContent?: boolean,\n  /** The className to add to the component container */\n  componentContainerClassName?: string,\n  /** The className to add to the content container */\n  fullWidth?: boolean,\n  /** The className to add to the Overlay component rendered behind the Dialog */\n  /** If set to true, the Close Icon will show in the upper right corner of the dialog, closing the Dialog browser side*/\n  useBrowserSideClose?: boolean,\n  /** \"paper\" or \"body\", Determines scroll container */\n  scroll?: Object,\n  /** Styles to be implemented as inline css */\n  style?: Object,\n  /** Dash callback to update props on the server */\n  setProps?: (props: { modal?: boolean, open?: boolean }) => void,\n}",
+              "raw": "{\r\n  /** Dialog ID */\r\n  id: string,\r\n  /** List of space separated id's of elements to use as aria labels  */\r\n  ariaLabelledBy?: string,\r\n  /** Children to render inside of the Dialog */\r\n  children?: Node,\r\n  /** CSS class name of the root element */\r\n  className?: string,\r\n  /** Is the dialog open?\r\n   *\r\n   * IMPORTANT: When using this component in Dash, a listener must be set up (either as state or\r\n   * an input) for this component's props.open value in order to achieve the desired behavior.\r\n   * If such a listener is not in place, the non-modal version of this dialog will contaminate\r\n   * other callbacks in the browser\r\n   */\r\n  open?: boolean,\r\n  /** If set to true, the body content of the Dialog will be scrollable. */\r\n  autoScrollBodyContent?: boolean,\r\n  /** The className to add to the component container */\r\n  componentContainerClassName?: string,\r\n  /** The className to add to the content container */\r\n  fullWidth?: boolean,\r\n  /** The className to add to the Overlay component rendered behind the Dialog */\r\n  /** If set to true, the Close Icon will show in the upper right corner of the dialog, closing the Dialog browser side*/\r\n  useBrowserSideClose?: boolean,\r\n  /** \"paper\" or \"body\", Determines scroll container */\r\n  scroll?: Object,\r\n  /** Styles to be implemented as inline css */\r\n  style?: Object,\r\n  /** Dash callback to update props on the server */\r\n  setProps?: (props: { modal?: boolean, open?: boolean }) => void,\r\n}",
               "signature": {
                 "properties": [
                   {
@@ -232,7 +438,7 @@
         "flowType": {
           "name": "boolean"
         },
-        "description": "Is the dialog open?\n\nIMPORTANT: When using this component in Dash, a listener must be set up (either as state or\nan input) for this component's props.open value in order to achieve the desired behavior.\nIf such a listener is not in place, the non-modal version of this dialog will contaminate\nother callbacks in the browser",
+        "description": "Is the dialog open?\r\n\nIMPORTANT: When using this component in Dash, a listener must be set up (either as state or\r\nan input) for this component's props.open value in order to achieve the desired behavior.\r\nIf such a listener is not in place, the non-modal version of this dialog will contaminate\r\nother callbacks in the browser",
         "defaultValue": {
           "value": "false",
           "computed": false
@@ -365,7 +571,7 @@
         "flowType": {
           "name": "string"
         },
-        "description": "Controls where the drawer appears. Must be one of \"top\", \"bottom\", \"left\", or \"right\"\nDefaults to \"left\"",
+        "description": "Controls where the drawer appears. Must be one of \"top\", \"bottom\", \"left\", or \"right\"\r\nDefaults to \"left\"",
         "defaultValue": {
           "value": "\"left\"",
           "computed": false
@@ -405,7 +611,7 @@
         "flowType": {
           "name": "boolean"
         },
-        "description": "Is the drawer open?\n\nIMPORTANT: When using this component in Dash, a listener must be set up (either as state or\nan input) for this component's props.open value in order to achieve the desired behavior.",
+        "description": "Is the drawer open?\r\n\nIMPORTANT: When using this component in Dash, a listener must be set up (either as state or\r\nan input) for this component's props.open value in order to achieve the desired behavior.",
         "defaultValue": {
           "value": "false",
           "computed": false
@@ -473,7 +679,7 @@
             "type": {
               "name": "signature",
               "type": "object",
-              "raw": "{\n    /** If true, the radio button is disabled */\n  disabled?: boolean,\n  /** Label to appear next to button */\n  label?: string,\n  /** Specify the location of the label relative to the radio button\n   * Must be one of: \"top\", \"start\", \"bottom\", or \"end\". Defaults to \"end\" */\n  labelPlacement?: string,\n  /** value of the the radio button */\n  value?: any,\n}",
+              "raw": "{\r\n    /** If true, the radio button is disabled */\r\n  disabled?: boolean,\r\n  /** Label to appear next to button */\r\n  label?: string,\r\n  /** Specify the location of the label relative to the radio button\r\n   * Must be one of: \"top\", \"start\", \"bottom\", or \"end\". Defaults to \"end\" */\r\n  labelPlacement?: string,\r\n  /** value of the the radio button */\r\n  value?: any,\r\n}",
               "signature": {
                 "properties": [
                   {
@@ -592,7 +798,7 @@
             {
               "name": "signature",
               "type": "object",
-              "raw": "{\n    /** If true, the radio button is disabled */\n  disabled?: boolean,\n  /** Label to appear next to button */\n  label?: string,\n  /** Specify the location of the label relative to the radio button\n   * Must be one of: \"top\", \"start\", \"bottom\", or \"end\". Defaults to \"end\" */\n  labelPlacement?: string,\n  /** value of the the radio button */\n  value?: any,\n}",
+              "raw": "{\r\n    /** If true, the radio button is disabled */\r\n  disabled?: boolean,\r\n  /** Label to appear next to button */\r\n  label?: string,\r\n  /** Specify the location of the label relative to the radio button\r\n   * Must be one of: \"top\", \"start\", \"bottom\", or \"end\". Defaults to \"end\" */\r\n  labelPlacement?: string,\r\n  /** value of the the radio button */\r\n  value?: any,\r\n}",
               "signature": {
                 "properties": [
                   {
@@ -629,7 +835,7 @@
           ],
           "raw": "Array<SD_RADIO_BUTTON>"
         },
-        "description": "used to create the RadioButtons to populate the RadioButtonGroup with. A Dash user passes in a\nlist of dict items, each one having at least a `value` and `label`. If that value is selected,\nvalueSelected will be updated",
+        "description": "used to create the RadioButtons to populate the RadioButtonGroup with. A Dash user passes in a\r\nlist of dict items, each one having at least a `value` and `label`. If that value is selected,\r\nvalueSelected will be updated",
         "defaultValue": {
           "value": "[]",
           "computed": false
