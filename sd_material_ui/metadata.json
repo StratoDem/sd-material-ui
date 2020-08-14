@@ -85,7 +85,7 @@
         "flowType": {
           "name": "Object"
         },
-        "description": "Mapping from MUI Element name to the intended classname for that Element",
+        "description": "See https://material-ui.com/api/bottom-navigation/#css",
         "defaultValue": {
           "value": "{}",
           "computed": false
