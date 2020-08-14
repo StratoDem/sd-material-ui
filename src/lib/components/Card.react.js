@@ -24,7 +24,7 @@ type Props = {
    * names, and the values must be strings for the classnames to be assigned to each rule name */
   classes?: Object,
   /** The CSS class name of the actionArea element */
-  actionArConteaClassName?: string,
+  actionAreaClassName?: string,
   /** The classes to be applied to the actionArea component. This keys in this object must be valid CSS rule
    * names, and the values must be strings for the classnames to be assigned to each rule name */
   actionAreaClasses?: Object,
@@ -43,8 +43,16 @@ type Props = {
   /** The classes to be applied to the header component. This keys in this object must be valid CSS rule
    * names, and the values must be strings for the classnames to be assigned to each rule name */
   headerClasses?: Object,
+  /** This is the Avatar element to be displayed on the Card Header. If avatar is an Avatar or
+   * other element, it will be rendered. If avatar is a string, it will be used as the image src
+   * for an Avatar. */
+  headerAvatar?: Node,
+  /** The CSS class name of the header Icon element */
+  headerIconClassName?: string,
   /** Styles to be implemented as inline css */
   style?: Object,
+  /** If true, the Card component will appear raised */
+  raised: boolean,
 }
 
 const defaultProps = {
@@ -54,6 +62,7 @@ const defaultProps = {
   className: '',
   classes: {},
   style: {},
+  raised: true,
 
   // Card header props
   headerAvatar: null,
@@ -76,12 +85,9 @@ const defaultProps = {
 /** Material UI Card component */
 export default class Card extends Component<Props> {
   render() {
-    const { id, className,  style,
-      showExpandableButton, headerAvatar, headerActAsExpander, headerStyle, headerSubtitle,
-      headerSubtitleColor, headerSubtitleStyle, headerTextStyle, headerTitle, headerTitleColor,
-      headerTitleStyle, textExpandable, textColor, textStyle, titleStyle, titleSubtitle,
-      headerIconStyle, titleSubtitleColor, titleSubtitleStyle, titleTitle, titleColor,
-      titleTitleStyle, titleExpandable} = this.props;
+    const { id, className, classes,  style, headerAvatar, headerClasses, headerClassName,
+            actionAreaClassName, actionAreaClasses, actionsClasses, actionsClassName,
+            contentClasses, contentClassName, headerIconClassName, raised} = this.props;
 
     return (
       <div id={id}>
@@ -89,11 +95,14 @@ export default class Card extends Component<Props> {
           <MuiCard
             className={className}
             style={style}
+            classes={classes}
+            raised={raised}
           >
             <CardHeader
               avatar={headerAvatar}
-              className={headerClass}>
-              <span className={headerIconClass}/>
+              className={headerClassName}>
+              classes={headerClasses}>
+              <span className={headerIconClassName}/>
             </CardHeader>
             <CardActionArea className={actionAreaClassName} classes={actionAreaClasses}/>
             <CardActions className={actionsClassName} classes={actionsClasses}/>
