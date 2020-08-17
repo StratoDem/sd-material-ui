@@ -100,16 +100,13 @@ app.layout = html.Div([
 
                 spacer,
 
-        html.Div([
-            html.P([html.Strong('Test for Snackbar')]),
-            html.Button('Open/Close Snackbar', id='snackbar-button'),
-            sd_material_ui.Snackbar(id='snackbar',
-                                    message='You opened the Snackbar!')
-        ]),
-
-        spacer,
-
-    ], style=dict(display='flex', flexWrap='wrap')),
+                html.Div([
+                    html.P([html.Strong('Test for Snackbar')]),
+                    html.Button('Open/Close Snackbar', id='snackbar-button'),
+                    sd_material_ui.Snackbar(id='snackbar',
+                                            message='You opened the Snackbar!')
+                ]),
+            ], style=dict(display='flex', flexWrap='wrap'))]),
 
         sd_material_ui.Divider(),
 
@@ -198,8 +195,7 @@ app.layout = html.Div([
                     html.Button('Clear Selections', id='clear-checks')
                 ]),
 
-            ], style=dict(display='flex', flexWrap='wrap')),
-        ]),
+            ], style=dict(display='flex', flexWrap='wrap'))]),
 
         sd_material_ui.Divider(),
 
@@ -207,7 +203,6 @@ app.layout = html.Div([
             final_spacer,
         ]),
 
-    ]),
     ], style={'list-style-type': 'none'})
 ])
 

@@ -8,8 +8,6 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
 type Props = {
-  /** Label for the action on the snackbar */
-  action?: Node,
   /**
    * The number of milliseconds to wait before automatically dismissing. If no value is specified
    * the snackbar will dismiss normally. If a value is provided the snackbar can still be dismissed
@@ -64,7 +62,6 @@ type State = {
 };
 
 const defaultProps = {
-  action: null,
   autoHideDuration: 3000,
   bodyStyle: {},
   className: '',
@@ -115,7 +112,7 @@ export default class Snackbar extends Component<Props, State> {
   };
 
   render() {
-    const { action, autoHideDuration, className, id,
+    const {autoHideDuration, className, id,
       message, style } = this.props;
 
     this.handleActionClick = this.handleActionClick.bind(this)
@@ -126,7 +123,6 @@ export default class Snackbar extends Component<Props, State> {
         <div id={id}>
           <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
             <MuiSnackbar
-              action={action}
               autoHideDuration={autoHideDuration}
               className={className}
               message={message}
