@@ -16,6 +16,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
     - FontIcon
     - Paper
     - Card
+    - Snackbar
 
 ### Related issues:
 - [402](https://github.com/StratoDem/sd-material-ui/issues/402)
@@ -30,6 +31,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - [399](https://github.com/StratoDem/sd-material-ui/issues/399)
 - [400](https://github.com/StratoDem/sd-material-ui/issues/400)
 - [408](https://github.com/StratoDem/sd-material-ui/issues/408)
+- [414](https://github.com/StratoDem/sd-material-ui/issues/414)
 
 ## 3.2.0 2019-11-04
 ### Adds
