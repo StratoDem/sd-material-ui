@@ -23,12 +23,12 @@ type Props = {
    *   disabled
    */
   classes?: {
-    root
-    select
-    filled
-    outlined
-    selectMenu
-    disabled
+    root?: string,
+    select?: string,
+    filled?: string,
+    outlined?: string,
+    selectMenu?: string,
+    disabled?: string
   },
   /** If true, this dropdown will not be interactive */
   disabled?: boolean,
