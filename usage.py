@@ -74,7 +74,6 @@ app.layout = html.Div([
         html.Div([
             html.P([html.Strong('Sample FontIcon')]),
             sd_material_ui.FontIcon(id='fonticon', iconName='insert_emoticon'),
-        ])
         ]),
 
         spacer,
