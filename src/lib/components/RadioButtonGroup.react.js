@@ -29,7 +29,13 @@ type Props = {
    *   colorPrimary
    *   colorSecondary
    */
-  classes?: Object,
+  classes?: {
+    root?: string,
+    checked?: string,
+    disabled?: string,
+    colorPrimary?: string,
+    colorSecondary?: string
+  },
   /** the css class name of the root element */
   className?: string,
   /** a callback for firng events to dash */

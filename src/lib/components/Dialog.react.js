@@ -36,7 +36,23 @@ type Props = {
    *   paperFullWidth
    *   paperFullScreen
    * */
-  classes?: Object,
+  classes?: {
+    root?: string,
+    container?: string,
+    paper?: string,
+    scrollPaper?: string,
+    scrollBody?: string,
+    paperScrollPaper?: string,
+    paperScrollBody?: string,
+    paperWidthFalse?: string,
+    paperWidthXs?: string,
+    paperWidthSm?: string,
+    paperWidthMd?: string,
+    paperWidthLg?: string,
+    paperWidthXl?: string,
+    paperFullWidth?: string,
+    paperFullScreen?: string
+  },
   /** CSS class name of the root element */
   className?: string,
   /** Is the dialog open?

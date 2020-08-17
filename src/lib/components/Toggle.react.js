@@ -22,7 +22,20 @@ type Props = {
    *   thumb
    *   tract
    */
-  classes?: Object,
+  classes?: {
+    root?: string,
+    edgeStart?: string,
+    edgeEnd?: string,
+    switchBase?: string,
+    colorPrimary?: string,
+    colorSecondary?: string,
+    sizeSmall?: string,
+    checked?: string,
+    disabled?: string,
+    input?: string,
+    thumb?: string,
+    tract?: string
+  },
   /** CSS class name of the root element */
   className?: string,
   /** Whether the toggle is disabled (true) or not (false) */

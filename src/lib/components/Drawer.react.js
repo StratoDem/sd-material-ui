@@ -27,7 +27,20 @@ type Props = {
    *   paperAnchorDockedBottom
    *   modal
    * */
-  classes?: Object,
+  classes?: {
+    root?: string,
+    docked?: string,
+    paper?: string,
+    paperAnchorLeft?: string,
+    paperAnchorRight?: string,
+    paperAnchorTop?: string,
+    paperAnchorBottom?: string,
+    paperAnchorDockedLeft?: string,
+    paperAnchorDockedTop?: string,
+    paperAnchorDockedRight?: string,
+    paperAnchorDockedBottom?: string,
+    modal?: string
+  },
   /** CSS class name of the root element */
   className?: string,
   /** Is the drawer open?
