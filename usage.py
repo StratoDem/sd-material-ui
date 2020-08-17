@@ -195,7 +195,18 @@ app.layout = html.Div([
                     html.Button('Clear Selections', id='clear-checks')
                 ]),
 
-            ], style=dict(display='flex', flexWrap='wrap'))]),
+                spacer,
+
+                html.Div([
+
+                    html.P([html.Strong('Sample for CircularProgress')]),
+
+                    sd_material_ui.CircularProgress(color='#00f2ff',
+                                                    thickness=5),
+                ]),
+
+            ], style=dict(display='flex', flexWrap='wrap')),
+        ]),
 
         sd_material_ui.Divider(),
 

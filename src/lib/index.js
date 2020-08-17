@@ -2,7 +2,7 @@
 export { default as BottomNavigation } from './components/BottomNavigation.react';
 export { default as Card } from './components/Card.react';
 export { default as Checkbox } from './components/Checkbox.react';
-// export { default as CircularProgress } from './components/CircularProgress.react';
+export { default as CircularProgress } from './components/CircularProgress.react';
 export { default as Dialog } from './components/Dialog.react';
 export { default as Divider } from './components/Divider.react';
 export { default as Drawer } from './components/Drawer.react';
