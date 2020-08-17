@@ -215,7 +215,12 @@ app.layout = html.Div([
         ]),
 
         html.Li([
-            html.Div([], style=dict(display='flex', flexWrap='wrap')),
+            html.Div([
+                html.Div([
+                    html.P([html.Strong('Sample for Stepper')]),
+                    sd_material_ui.Stepper(id='stepper', style={'background': 'inherit'}),
+                ]),
+            ], style=dict(display='flex', flexWrap='wrap')),
         ]),
 
         sd_material_ui.Divider(),
