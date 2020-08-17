@@ -8,6 +8,11 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
 type Props = {
+  /** The classes to be applied to this component. This keys in this object must be valid CSS rule
+   * names, and the values must be strings for the classnames to be assigned to each rule name */
+  classes?: Object,
+  /** CSS class name of the root element */
+  className?: string,
   /** id for the component */
   id?: string,
   /** defines specific icon when using public icon font */
@@ -18,6 +23,7 @@ type Props = {
 
 const defaultProps = {
   id: '',
+  classes: {},
   className: '',
   iconName: '',
   style: {},

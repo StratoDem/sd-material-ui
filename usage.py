@@ -64,6 +64,13 @@ app.layout = html.Div([
             html.Div(id='input2', children=[
                 html.Button(children='Open the dialog')
             ]),
+        ]),
+
+        spacer,
+
+        html.Div([
+            html.P([html.Strong('Sample FontIcon')]),
+            sd_material_ui.FontIcon(id='fonticon', iconName='add_circle'),
         ])
     ], style=dict(display='flex', flexWrap='wrap')),
 
