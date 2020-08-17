@@ -4,83 +4,212 @@ import flask
 import dash_html_components as html
 import time
 
-app = dash.Dash('')
+app = dash.Dash(
+    '',
+    external_stylesheets=['https://fonts.googleapis.com/icon?family=Material+Icons',
+                          'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'])
 
 app.scripts.config.serve_locally = True
 
 spacer = html.Div(children=[], style=dict(height=20, width=50))
 final_spacer = html.Div(children=[], style=dict(height=400))
 
-
-# Callback for BottomNavigation
 app.layout = html.Div([
+    html.Ul([
 
-    html.Div([
+        html.Li([
+            spacer,
+        ]),
 
-        html.Div([
-            html.P([html.Strong('Test for drawer')]),
-            sd_material_ui.Drawer(
-                id='drawer',
-                open=False,
-                children=[
-                    html.P(id='drawer-close-input', children='X'),
-                    html.H4(children='Drawer items'),
-                    html.Ul(children=[
-                        html.Li(children=['Item 1']),
-                        html.Li(children=['Item 2']),
-                        html.Li(children=['Item 3']),
+        sd_material_ui.Divider(),
+
+        html.Li([
+            spacer,
+        ]),
+
+        html.Li([
+            html.Div([
+
+                html.Div([
+                    html.P([html.Strong('Test for drawer')]),
+                    sd_material_ui.Drawer(
+                        id='drawer',
+                        open=False,
+                        children=[
+                            html.P(id='drawer-close-input', children='X'),
+                            html.H4(children='Drawer items'),
+                            html.Ul(children=[
+                                html.Li(children=['Item 1']),
+                                html.Li(children=['Item 2']),
+                                html.Li(children=['Item 3']),
+                            ]),
+                        ]),
+                    html.Div(id='drawer-input', children=[
+                        html.Button(children='Open or close the drawer (left)')
                     ]),
                 ]),
-            html.Div(id='drawer-input', children=[
-                html.Button(children='Open or close the drawer (left)')
-            ]),
+
+                spacer,
+
+                html.Div([
+                    html.P([html.Strong('Test for radio buttons')]),
+                    sd_material_ui.RadioButtonGroup(
+                        id='radio',
+                        name='radio test',
+                        options=[
+                            dict(label='option 1', value='1'),
+                            dict(label='option 2', value='2'),
+                            dict(label='option 3', value='3'),
+                        ],
+                        valueSelected='1',
+                    ),
+                    html.P(id='radio-output', children='Selection is: '),
+                ]),
+
+                spacer,
+
+                html.Div([
+                    html.P([html.Strong('Test for dialog')]),
+                    sd_material_ui.Dialog([
+                        html.H3('Sample Dialog'),
+                        html.Div(html.Button('Close Dialog'), id='closer')
+                    ], id='output2'),
+                    html.Div(id='input2', children=[
+                        html.Button(children='Open the dialog')
+                    ]),
+                ]),
+
+                spacer,
+
+                html.Div([
+                    html.P([html.Strong('Sample FontIcon')]),
+                    sd_material_ui.FontIcon(id='fonticon', iconName='insert_emoticon'),
+                ]),
+
+                spacer,
+
+                html.Div([
+                    html.P([html.Strong('Test for toggle switch')]),
+                    sd_material_ui.Toggle(
+                        id='toggle-input',
+                        label='Johnny?',
+                        toggled=False,
+                    ),
+                    html.P(id='toggle-output', children=['Flame off']),
+                ]),
+
+                spacer,
+
+            ], style=dict(display='flex', flexWrap='wrap')),
         ]),
 
-        spacer,
+        sd_material_ui.Divider(),
 
-        html.Div([
-            html.P([html.Strong('Test for radio buttons')]),
-            sd_material_ui.RadioButtonGroup(
-                id='radio',
-                name='radio test',
-                options=[
-                    dict(label='option 1', value='1'),
-                    dict(label='option 2', value='2'),
-                    dict(label='option 3', value='3'),
-                ],
-                valueSelected='1',
-            ),
-            html.P(id='radio-output', children='Selection is: '),
+        html.Li([
+            spacer,
         ]),
 
-        spacer,
+        html.Li([
+            html.Div([
 
-        html.Div([
-            html.P([html.Strong('Test for dialog')]),
-            sd_material_ui.Dialog([
-                html.H3('Sample Dialog'),
-                html.Div(html.Button('Close Dialog'), id='closer')
-            ], id='output2'),
-            html.Div(id='input2', children=[
-                html.Button(children='Open the dialog')
-            ]),
+                html.Div([
+
+                    html.P([html.Strong('Sample for Paper/Card')]),
+                    sd_material_ui.Paper([
+                        html.H3('Paper Title'),
+                        sd_material_ui.Card([
+                            html.P('Card Text')
+                        ]),
+                    ])
+                ]),
+
+                spacer,
+
+                html.Div([
+                    html.P([html.Strong('Test for BottomNavigation')]),
+                    sd_material_ui.BottomNavigation(
+                        id='bottom-nav',
+                        navItems=[dict(label=f'Item {x}',
+                                       value=x,
+                                       targetId=f'nav-item-{x}') for x in range(3)],
+                        selectedValue=0,
+                        displayLabels=True,
+                    ),
+                    spacer,
+                    html.P(id='bottom-nav-output')
+                ]),
+
+                spacer,
+
+                html.Div([
+                    html.P([html.Strong('Test for buttons')]),
+
+                    sd_material_ui.Button(html.P('This is a Raised Button'),
+                                          id='button1',
+                                          disableShadow=False,
+                                          useIcon=False,
+                                          variant='contained'),
+
+                    spacer,
+
+                    sd_material_ui.Button(html.P('This is a Flat Button'),
+                                          id='button2',
+                                          disableShadow=False,
+                                          useIcon=False,
+                                          variant='outlined',
+                                          classes={'root': 'SAMPLE_ROOT_CLASS',
+                                                   'label': 'SAMPLE_LABEL_CLASS', }),
+
+                    spacer,
+
+                    sd_material_ui.Button('Text Button',
+                                          id='button3',
+                                          variant='text', ),
+
+                    spacer,
+
+                    sd_material_ui.Button(useIcon=True,
+                                          id='button4',
+                                          iconClass="glyphicon glyphicon-asterisk"),
+
+                    html.P(id='output-button')
+
+                ]),
+
+                spacer,
+
+                html.Div([
+
+                    html.P([html.Strong('Test for Checkbox')]),
+
+                    sd_material_ui.Checkbox(id='checkbox1', label='Apple', name='Apple'),
+                    sd_material_ui.Checkbox(id='checkbox2', label='2', name='2'),
+                    sd_material_ui.Checkbox(id='checkbox3', label=5, name='5'),
+
+                    html.P(id='checkbox-output'),
+                    html.Button('Clear Selections', id='clear-checks')
+                ]),
+
+            ], style=dict(display='flex', flexWrap='wrap')),
         ]),
 
-        spacer,
+        sd_material_ui.Divider(),
 
-        html.Div([
-            html.P([html.Strong('Test for toggle switch')]),
-            sd_material_ui.Toggle(
-                id='toggle-input',
-                label='Johnny?',
-                toggled=False,
-            ),
-            html.P(id='toggle-output', children=['Flame off']),
+        html.Li([
+            final_spacer,
         ]),
-    ], style=dict(display='flex', flexWrap='wrap')),
 
-    final_spacer,
+    ], style={'list-style-type': 'none'})
 ])
+
+
+@app.callback(dash.dependencies.Output('bottom-nav-output', 'children'),
+              [dash.dependencies.Input('bottom-nav', 'selectedValue')],
+              [dash.dependencies.State('bottom-nav', 'selectedValue')], )
+def callback_bottom_nav(value, state_value):
+    if value is None:
+        return 'Value Selected: '
+    return f'Value Selected: Item {value}'
 
 
 # @app.callback(
@@ -157,6 +286,39 @@ def show_modal_dialog(modal_click: int, close_button: int, open_state: bool):
             return False
     else:
         return False
+
+
+@app.callback(
+    dash.dependencies.Output('checkbox-output', 'children'),
+    [dash.dependencies.Input('checkbox1', 'checked'),
+     dash.dependencies.Input('checkbox2', 'checked'),
+     dash.dependencies.Input('checkbox3', 'checked')],
+    [dash.dependencies.State('checkbox1', 'name'),
+     dash.dependencies.State('checkbox2', 'name'),
+     dash.dependencies.State('checkbox3', 'name')])
+def callback_checkboxes(check_1: bool, check_2: bool, check_3: bool,
+                        name_1: str, name_2: str, name_3: str, ):
+    output = []
+    if check_1:
+        output.append(name_1)
+    if check_2:
+        output.append(name_2)
+    if check_3:
+        output.append(name_3)
+    return f'{output}'
+
+
+@app.callback(
+    [dash.dependencies.Output('checkbox1', 'checked'),
+     dash.dependencies.Output('checkbox2', 'checked'),
+     dash.dependencies.Output('checkbox3', 'checked')],
+    [dash.dependencies.Input('clear-checks', 'n_clicks')])
+def callback_checkboxes(n: int):
+    if not n:
+        raise dash.exceptions.PreventUpdate
+    return False, False, False
+
+
 #
 #
 # # Callback for SDDialog (non-modal)
@@ -211,19 +373,24 @@ def show_modal_dialog(modal_click: int, close_button: int, open_state: bool):
 #         return ['n_clicks value: ']
 #
 #
-# # Callback for combined button test
+# # # Callback for combined button test
 # @app.callback(
-#     dash.dependencies.Output('output4-5-12', 'children'),
-#     [dash.dependencies.Input('input4', 'n_clicks'),
-#      dash.dependencies.Input('input5', 'n_clicks'),
-#      dash.dependencies.Input('input12', 'n_clicks')],
-#     [dash.dependencies.State('input4', 'n_clicks_previous'),
-#      dash.dependencies.State('input5', 'n_clicks_previous'),
-#      dash.dependencies.State('input12', 'n_clicks_previous')])
-# def determine_button_callback(raised_n_clicks: int, flat_n_clicks: int, icon_n_clicks: int,
+#     dash.dependencies.Output('output-button', 'children'),
+#     [dash.dependencies.Input('button1', 'n_clicks'),
+#      dash.dependencies.Input('button2', 'n_clicks'),
+#      dash.dependencies.Input('button3', 'n_clicks'),
+#      dash.dependencies.Input('button4', 'n_clicks')],
+#     [dash.dependencies.State('button1', 'n_clicks_previous'),
+#      dash.dependencies.State('button2', 'n_clicks_previous'),
+#      dash.dependencies.State('button3', 'n_clicks_previous'),
+#      dash.dependencies.State('button4', 'n_clicks_previous')])
+# def determine_button_callback(raised_n_clicks: int, flat_n_clicks: int, text_n_clicks: int,
+#                               icon_n_clicks: int,
 #                               raised_n_clicks_prev: int, flat_n_clicks_prev: int,
+#                               text_n_clicks_prev: int,
 #                               icon_n_clicks_prev: int) -> list:
-#     if raised_n_clicks is None and flat_n_clicks is None and icon_n_clicks is None:
+#     if raised_n_clicks is None and flat_n_clicks is None and icon_n_clicks is None and \
+#             text_n_clicks is None:
 #         return ['Which button was clicked?']
 #     elif raised_n_clicks is not None and not raised_n_clicks_prev:
 #         return ['Which button was clicked? Raised button']
@@ -231,12 +398,16 @@ def show_modal_dialog(modal_click: int, close_button: int, open_state: bool):
 #         return ['Which button was clicked? Flat button']
 #     elif icon_n_clicks is not None and not icon_n_clicks_prev:
 #         return ['Which button was clicked? Icon button']
+#     elif text_n_clicks is not None and not text_n_clicks_prev:
+#         return ['Which button was clicked? Text button']
 #     elif raised_n_clicks > raised_n_clicks_prev:
 #         return ['Which button was clicked? Raised button']
 #     elif flat_n_clicks > flat_n_clicks_prev:
 #         return ['Which button was clicked? Flat button']
 #     elif icon_n_clicks > icon_n_clicks_prev:
 #         return ['Which button was clicked? Icon button']
+#     elif text_n_clicks > text_n_clicks_prev:
+#         return ['Which button was clicked? Text button']
 #     else:
 #         return ['Which button was clicked? ']
 #
@@ -292,6 +463,8 @@ def use_toggle(switch):
         return ['Flame on!']
     else:
         return ['Flame off']
+
+
 #
 #
 # # Callback for SDSnackbar
@@ -355,6 +528,8 @@ def use_toggle(switch):
     [dash.dependencies.Input('radio', 'value')])
 def radiobuttongroup_callback(value):
     return ['Selection is: {}'.format(value)]
+
+
 #
 #
 # # Callback for Stepper
@@ -381,5 +556,4 @@ def radiobuttongroup_callback(value):
 
 
 if __name__ == '__main__':
-    app.css.append_css({'external_url': 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'})
     app.run_server(debug=True)
