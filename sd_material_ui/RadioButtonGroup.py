@@ -15,7 +15,13 @@ Valid rule names are:
   checked
   disabled
   colorPrimary
-  colorSecondary
+  colorSecondary. classes has the following type: dict containing keys 'root', 'checked', 'disabled', 'colorPrimary', 'colorSecondary'.
+  Those keys have the following types:
+  - root (string; optional)
+  - checked (string; optional)
+  - disabled (string; optional)
+  - colorPrimary (string; optional)
+  - colorSecondary (string; optional)
 - className (string; default ''): the css class name of the root element
 - id (string; required): the element's ID
 - name (string; required): the name that will be applied to the group of radio buttons
