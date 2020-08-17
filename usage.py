@@ -15,77 +15,90 @@ spacer = html.Div(children=[], style=dict(height=20, width=50))
 final_spacer = html.Div(children=[], style=dict(height=400))
 
 app.layout = html.Div([
-    html.Div([
+    html.Ul([
 
-        html.Div([
-            html.P([html.Strong('Test for drawer')]),
-            sd_material_ui.Drawer(
-                id='drawer',
-                open=False,
-                children=[
-                    html.P(id='drawer-close-input', children='X'),
-                    html.H4(children='Drawer items'),
-                    html.Ul(children=[
-                        html.Li(children=['Item 1']),
-                        html.Li(children=['Item 2']),
-                        html.Li(children=['Item 3']),
+        html.Li([
+            spacer,
+        ]),
+
+        sd_material_ui.Divider(),
+
+        html.Li([
+            spacer,
+        ]),
+
+        html.Li([
+            html.Div([
+
+                html.Div([
+                    html.P([html.Strong('Test for drawer')]),
+                    sd_material_ui.Drawer(
+                        id='drawer',
+                        open=False,
+                        children=[
+                            html.P(id='drawer-close-input', children='X'),
+                            html.H4(children='Drawer items'),
+                            html.Ul(children=[
+                                html.Li(children=['Item 1']),
+                                html.Li(children=['Item 2']),
+                                html.Li(children=['Item 3']),
+                            ]),
+                        ]),
+                    html.Div(id='drawer-input', children=[
+                        html.Button(children='Open or close the drawer (left)')
                     ]),
                 ]),
-            html.Div(id='drawer-input', children=[
-                html.Button(children='Open or close the drawer (left)')
-            ]),
-        ]),
 
-        spacer,
+                spacer,
 
-        html.Div([
-            html.P([html.Strong('Test for radio buttons')]),
-            sd_material_ui.RadioButtonGroup(
-                id='radio',
-                name='radio test',
-                options=[
-                    dict(label='option 1', value='1'),
-                    dict(label='option 2', value='2'),
-                    dict(label='option 3', value='3'),
-                ],
-                valueSelected='1',
-            ),
-            html.P(id='radio-output', children='Selection is: '),
-        ]),
+                html.Div([
+                    html.P([html.Strong('Test for radio buttons')]),
+                    sd_material_ui.RadioButtonGroup(
+                        id='radio',
+                        name='radio test',
+                        options=[
+                            dict(label='option 1', value='1'),
+                            dict(label='option 2', value='2'),
+                            dict(label='option 3', value='3'),
+                        ],
+                        valueSelected='1',
+                    ),
+                    html.P(id='radio-output', children='Selection is: '),
+                ]),
 
-        spacer,
+                spacer,
 
-        html.Div([
-            html.P([html.Strong('Test for dialog')]),
-            sd_material_ui.Dialog([
-                html.H3('Sample Dialog'),
-                html.Div(html.Button('Close Dialog'), id='closer')
-            ], id='output2'),
-            html.Div(id='input2', children=[
-                html.Button(children='Open the dialog')
-            ]),
-        ]),
+                html.Div([
+                    html.P([html.Strong('Test for dialog')]),
+                    sd_material_ui.Dialog([
+                        html.H3('Sample Dialog'),
+                        html.Div(html.Button('Close Dialog'), id='closer')
+                    ], id='output2'),
+                    html.Div(id='input2', children=[
+                        html.Button(children='Open the dialog')
+                    ]),
+                ]),
 
-        spacer,
+                spacer,
 
-        html.Div([
-            html.P([html.Strong('Sample FontIcon')]),
-            sd_material_ui.FontIcon(id='fonticon', iconName='insert_emoticon'),
-        ]),
+                html.Div([
+                    html.P([html.Strong('Sample FontIcon')]),
+                    sd_material_ui.FontIcon(id='fonticon', iconName='insert_emoticon'),
+                ]),
 
-        spacer,
+                spacer,
 
-        html.Div([
-            html.P([html.Strong('Test for toggle switch')]),
-            sd_material_ui.Toggle(
-                id='toggle-input',
-                label='Johnny?',
-                toggled=False,
-            ),
-            html.P(id='toggle-output', children=['Flame off']),
-        ]),
+                html.Div([
+                    html.P([html.Strong('Test for toggle switch')]),
+                    sd_material_ui.Toggle(
+                        id='toggle-input',
+                        label='Johnny?',
+                        toggled=False,
+                    ),
+                    html.P(id='toggle-output', children=['Flame off']),
+                ]),
 
-        spacer,
+                spacer,
 
         html.Div([
             html.P([html.Strong('Test for Snackbar')]),
@@ -98,91 +111,103 @@ app.layout = html.Div([
 
     ], style=dict(display='flex', flexWrap='wrap')),
 
-    spacer,
+        sd_material_ui.Divider(),
 
-    html.Div([
+        html.Li([
+            spacer,
+        ]),
 
-        html.Div([
+        html.Li([
+            html.Div([
 
-            html.P([html.Strong('Sample for Paper/Card')]),
-            sd_material_ui.Paper([
-                html.H3('Paper Title'),
-                sd_material_ui.Card([
-                    html.P('Card Text')
+                html.Div([
+
+                    html.P([html.Strong('Sample for Paper/Card')]),
+                    sd_material_ui.Paper([
+                        html.H3('Paper Title'),
+                        sd_material_ui.Card([
+                            html.P('Card Text')
+                        ]),
+                    ])
                 ]),
-            ])
+
+                spacer,
+
+                html.Div([
+                    html.P([html.Strong('Test for BottomNavigation')]),
+                    sd_material_ui.BottomNavigation(
+                        id='bottom-nav',
+                        navItems=[dict(label=f'Item {x}',
+                                       value=x,
+                                       targetId=f'nav-item-{x}') for x in range(3)],
+                        selectedValue=0,
+                        displayLabels=True,
+                    ),
+                    spacer,
+                    html.P(id='bottom-nav-output')
+                ]),
+
+                spacer,
+
+                html.Div([
+                    html.P([html.Strong('Test for buttons')]),
+
+                    sd_material_ui.Button(html.P('This is a Raised Button'),
+                                          id='button1',
+                                          disableShadow=False,
+                                          useIcon=False,
+                                          variant='contained'),
+
+                    spacer,
+
+                    sd_material_ui.Button(html.P('This is a Flat Button'),
+                                          id='button2',
+                                          disableShadow=False,
+                                          useIcon=False,
+                                          variant='outlined',
+                                          classes={'root': 'SAMPLE_ROOT_CLASS',
+                                                   'label': 'SAMPLE_LABEL_CLASS', }),
+
+                    spacer,
+
+                    sd_material_ui.Button('Text Button',
+                                          id='button3',
+                                          variant='text', ),
+
+                    spacer,
+
+                    sd_material_ui.Button(useIcon=True,
+                                          id='button4',
+                                          iconClass="glyphicon glyphicon-asterisk"),
+
+                    html.P(id='output-button')
+
+                ]),
+
+                spacer,
+
+                html.Div([
+
+                    html.P([html.Strong('Test for Checkbox')]),
+
+                    sd_material_ui.Checkbox(id='checkbox1', label='Apple', name='Apple'),
+                    sd_material_ui.Checkbox(id='checkbox2', label='2', name='2'),
+                    sd_material_ui.Checkbox(id='checkbox3', label=5, name='5'),
+
+                    html.P(id='checkbox-output'),
+                    html.Button('Clear Selections', id='clear-checks')
+                ]),
+
+            ], style=dict(display='flex', flexWrap='wrap')),
         ]),
 
-        spacer,
+        sd_material_ui.Divider(),
 
-        html.Div([
-            html.P([html.Strong('Test for BottomNavigation')]),
-            sd_material_ui.BottomNavigation(
-                id='bottom-nav',
-                navItems=[dict(label=f'Item {x}',
-                               value=x,
-                               targetId=f'nav-item-{x}') for x in range(3)],
-                selectedValue=0,
-                displayLabels=True,
-            ),
-            spacer,
-            html.P(id='bottom-nav-output')
+        html.Li([
+            final_spacer,
         ]),
 
-        spacer,
-
-        html.Div([
-            html.P([html.Strong('Test for buttons')]),
-
-            sd_material_ui.Button(html.P('This is a Raised Button'),
-                                  id='button1',
-                                  disableShadow=False,
-                                  useIcon=False,
-                                  variant='contained'),
-
-            spacer,
-
-            sd_material_ui.Button(html.P('This is a Flat Button'),
-                                  id='button2',
-                                  disableShadow=False,
-                                  useIcon=False,
-                                  variant='outlined',
-                                  classes={'root': 'SAMPLE_ROOT_CLASS',
-                                           'label': 'SAMPLE_LABEL_CLASS', }),
-
-            spacer,
-
-            sd_material_ui.Button('Text Button',
-                                  id='button3',
-                                  variant='text', ),
-
-            spacer,
-
-            sd_material_ui.Button(useIcon=True,
-                                  id='button4',
-                                  iconClass="glyphicon glyphicon-asterisk"),
-
-            html.P(id='output-button')
-
-        ]),
-
-        spacer,
-
-        html.Div([
-
-            html.P([html.Strong('Test for Checkbox')]),
-
-            sd_material_ui.Checkbox(id='checkbox1', label='Apple', name='Apple'),
-            sd_material_ui.Checkbox(id='checkbox2', label='2', name='2'),
-            sd_material_ui.Checkbox(id='checkbox3', label=5, name='5'),
-
-            html.P(id='checkbox-output'),
-            html.Button('Clear Selections', id='clear-checks')
-        ]),
-
-    ], style=dict(display='flex', flexWrap='wrap')),
-
-    final_spacer,
+    ], style={'list-style-type': 'none'})
 ])
 
 

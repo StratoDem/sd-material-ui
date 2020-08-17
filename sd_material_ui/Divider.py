@@ -8,15 +8,32 @@ class Divider(Component):
 Material UI Divider component
 
 Keyword arguments:
-- inset (boolean; default False): If true, the Divider will be indented
+- classes (dict; optional): The classes to be applied to this component. This keys in this object must be valid CSS rule
+names, and the values must be strings for the classnames to be assigned to each rule name
+Valid rule names are:
+  root
+  absolute
+  vertical
+  light
+  middle
+  inset
+  flexItem. classes has the following type: dict containing keys 'root', 'absolute', 'vertical', 'light', 'middle', 'inset', 'flexItem'.
+  Those keys have the following types:
+  - root (string; optional)
+  - absolute (string; optional)
+  - vertical (string; optional)
+  - light (string; optional)
+  - middle (string; optional)
+  - inset (string; optional)
+  - flexItem (string; optional)
 - style (dict; optional): Override the inline-styles of the root element"""
     @_explicitize_args
-    def __init__(self, inset=Component.UNDEFINED, style=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['inset', 'style']
+    def __init__(self, classes=Component.UNDEFINED, style=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['classes', 'style']
         self._type = 'Divider'
         self._namespace = 'sd_material_ui'
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['inset', 'style']
+        self.available_properties = ['classes', 'style']
         self.available_wildcard_properties =            []
 
         _explicit_args = kwargs.pop('_explicit_args')
