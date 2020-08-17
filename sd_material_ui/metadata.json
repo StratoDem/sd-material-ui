@@ -2610,17 +2610,6 @@
       }
     ],
     "props": {
-      "action": {
-        "required": false,
-        "flowType": {
-          "name": "Node"
-        },
-        "description": "Label for the action on the snackbar",
-        "defaultValue": {
-          "value": "null",
-          "computed": false
-        }
-      },
       "autoHideDuration": {
         "required": false,
         "flowType": {

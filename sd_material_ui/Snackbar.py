@@ -8,7 +8,6 @@ class Snackbar(Component):
 Material UI Snackbar component
 
 Keyword arguments:
-- action (a list of or a singular dash component, string or number; optional): Label for the action on the snackbar
 - autoHideDuration (number; default 3000): The number of milliseconds to wait before automatically dismissing. If no value is specified
 the snackbar will dismiss normally. If a value is provided the snackbar can still be dismissed
 normally. If a snackbar is dismissed before the timer expires, the timer will be cleared.
@@ -40,12 +39,12 @@ the Snackbar hiding and showing again)
 - open (boolean; default False): Controls whether the Snackbar is opened or not
 - style (dict; optional): Override the inline styles of the root element"""
     @_explicitize_args
-    def __init__(self, action=Component.UNDEFINED, autoHideDuration=Component.UNDEFINED, classes=Component.UNDEFINED, className=Component.UNDEFINED, fireEvent=Component.UNDEFINED, id=Component.REQUIRED, message=Component.REQUIRED, n_clicks=Component.UNDEFINED, open=Component.UNDEFINED, style=Component.UNDEFINED, bodyStyle=Component.UNDEFINED, contentStyle=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['action', 'autoHideDuration', 'classes', 'className', 'id', 'message', 'n_clicks', 'open', 'style']
+    def __init__(self, autoHideDuration=Component.UNDEFINED, classes=Component.UNDEFINED, className=Component.UNDEFINED, fireEvent=Component.UNDEFINED, id=Component.REQUIRED, message=Component.REQUIRED, n_clicks=Component.UNDEFINED, open=Component.UNDEFINED, style=Component.UNDEFINED, bodyStyle=Component.UNDEFINED, contentStyle=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['autoHideDuration', 'classes', 'className', 'id', 'message', 'n_clicks', 'open', 'style']
         self._type = 'Snackbar'
         self._namespace = 'sd_material_ui'
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['action', 'autoHideDuration', 'classes', 'className', 'id', 'message', 'n_clicks', 'open', 'style']
+        self.available_properties = ['autoHideDuration', 'classes', 'className', 'id', 'message', 'n_clicks', 'open', 'style']
         self.available_wildcard_properties =            []
 
         _explicit_args = kwargs.pop('_explicit_args')
