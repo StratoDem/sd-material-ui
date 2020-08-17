@@ -200,7 +200,7 @@ app.layout = html.Div([
             html.P([html.Strong('Test for dropdown menu')]),
             sd_material_ui.DropDownMenu(
                 id='dropdown-input',
-                labelText='Pick an option',
+                labelText='Test',
                 labelId='dropdown-label',
                 value=1,
                 useGrouping=True,
@@ -208,9 +208,9 @@ app.layout = html.Div([
                     dict(grouping='Group A'),
                     dict(primaryText='Option 1', value=1),
                     dict(primaryText='Option 2', value=2),
-                    dict(group='Group B'),
+                    dict(grouping='Group B'),
                     dict(primaryText='Option 3', value=3),
-                    dict(group='Group C'),
+                    dict(grouping='Group C'),
                     dict(primaryText='Option 4', value=4),
                 ]),
 
