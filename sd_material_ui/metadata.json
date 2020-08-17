@@ -1230,9 +1230,78 @@
       "classes": {
         "required": false,
         "flowType": {
-          "name": "Object"
+          "name": "signature",
+          "type": "object",
+          "raw": "{\r\n  root?: string,\r\n  colorPrimary: string,\r\n  colorSecondary: string,\r\n  colorAction: string,\r\n  colorError: string,\r\n  colorDisabled: string,\r\n  fontSizeSmall: string,\r\n  fontSizeLarge: string,\r\n  fontSizeInherit: string,\r\n}",
+          "signature": {
+            "properties": [
+              {
+                "key": "root",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "colorPrimary",
+                "value": {
+                  "name": "string",
+                  "required": true
+                }
+              },
+              {
+                "key": "colorSecondary",
+                "value": {
+                  "name": "string",
+                  "required": true
+                }
+              },
+              {
+                "key": "colorAction",
+                "value": {
+                  "name": "string",
+                  "required": true
+                }
+              },
+              {
+                "key": "colorError",
+                "value": {
+                  "name": "string",
+                  "required": true
+                }
+              },
+              {
+                "key": "colorDisabled",
+                "value": {
+                  "name": "string",
+                  "required": true
+                }
+              },
+              {
+                "key": "fontSizeSmall",
+                "value": {
+                  "name": "string",
+                  "required": true
+                }
+              },
+              {
+                "key": "fontSizeLarge",
+                "value": {
+                  "name": "string",
+                  "required": true
+                }
+              },
+              {
+                "key": "fontSizeInherit",
+                "value": {
+                  "name": "string",
+                  "required": true
+                }
+              }
+            ]
+          }
         },
-        "description": "The classes to be applied to this component. This keys in this object must be valid CSS rule\r\nnames, and the values must be strings for the classnames to be assigned to each rule name",
+        "description": "The classes to be applied to this component. This keys in this object must be valid CSS rule\r\nnames, and the values must be strings for the classnames to be assigned to each rule name\r\nValid rule names are:\r\n  root\r\n  colorPrimary\r\n  colorSecondary\r\n  colorAction\r\n  colorError\r\n  colorDisabled\r\n  fontSizeSmall\r\n  fontSizeLarge\r\n  fontSizeInherit",
         "defaultValue": {
           "value": "{}",
           "computed": false

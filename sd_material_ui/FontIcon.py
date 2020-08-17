@@ -10,6 +10,26 @@ Material UI FontIcon component
 Keyword arguments:
 - classes (dict; optional): The classes to be applied to this component. This keys in this object must be valid CSS rule
 names, and the values must be strings for the classnames to be assigned to each rule name
+Valid rule names are:
+  root
+  colorPrimary
+  colorSecondary
+  colorAction
+  colorError
+  colorDisabled
+  fontSizeSmall
+  fontSizeLarge
+  fontSizeInherit. classes has the following type: dict containing keys 'root', 'colorPrimary', 'colorSecondary', 'colorAction', 'colorError', 'colorDisabled', 'fontSizeSmall', 'fontSizeLarge', 'fontSizeInherit'.
+  Those keys have the following types:
+  - root (string; optional)
+  - colorPrimary (string; required)
+  - colorSecondary (string; required)
+  - colorAction (string; required)
+  - colorError (string; required)
+  - colorDisabled (string; required)
+  - fontSizeSmall (string; required)
+  - fontSizeLarge (string; required)
+  - fontSizeInherit (string; required)
 - className (string; default ''): CSS class name of the root element
 - id (string; default ''): id for the component
 - iconName (string; default ''): defines specific icon when using public icon font

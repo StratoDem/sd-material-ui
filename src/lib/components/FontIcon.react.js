@@ -9,8 +9,29 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
 type Props = {
   /** The classes to be applied to this component. This keys in this object must be valid CSS rule
-   * names, and the values must be strings for the classnames to be assigned to each rule name */
-  classes?: Object,
+   * names, and the values must be strings for the classnames to be assigned to each rule name
+   * Valid rule names are:
+   *   root
+   *   colorPrimary
+   *   colorSecondary
+   *   colorAction
+   *   colorError
+   *   colorDisabled
+   *   fontSizeSmall
+   *   fontSizeLarge
+   *   fontSizeInherit
+   * */
+  classes?: {
+    root?: string,
+    colorPrimary: string,
+    colorSecondary: string,
+    colorAction: string,
+    colorError: string,
+    colorDisabled: string,
+    fontSizeSmall: string,
+    fontSizeLarge: string,
+    fontSizeInherit: string,
+  },
   /** CSS class name of the root element */
   className?: string,
   /** id for the component */
