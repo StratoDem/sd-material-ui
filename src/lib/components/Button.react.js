@@ -15,10 +15,84 @@ type Props = {
    * applies to flat and disableShadow buttons.
    */
   children?: Node,
-  /** Mapping from MUI Element name to the intended classname for that Element
+  /** The classes to be applied to this component. This keys in this object must be valid CSS rule
+   * names, and the values must be strings for the classnames to be assigned to each rule name
+   * Valid rule names are:
+   *   root
+   *   label
+   *   text
+   *   textPrimary
+   *   textSecondary
+   *   outline
+   *   outlinedPrimary
+   *   outlinedSecondary
+   *   contained
+   *   containedPrimary
+   *   containedSecondary
+   *   disableElevation
+   *   focusVisible
+   *   disabled
+   *   colorInherit
+   *   textSizeSmall
+   *   textSizeLarge
+   *   outlinedSizeSmall
+   *   outlinedSizeLarge
+   *   containedSizeSmall
+   *   containedSizeLarge
+   *   sizeSmall
+   *   sizeLarge
+   *   fullWidth
+   *   startIcon
+   *   endIcon
+   *   iconSizeSmall
+   *   iconSizeMedium
+   *   iconSizeLarge
+   *
+   *   OR
+   *
+   *   root
+   *   edgeStart
+   *   edgeEnd
+   *   colorInherit
+   *   colorPrimary
+   *   colorSecondary
+   *   disabled
+   *   sizeSmall
+   *   label
+   *
    * See https://material-ui.com/api/button/#css
    * and https://material-ui.com/api/icon-button/#css*/
-  classes?: Object,
+  classes?: {
+    root?: string,
+    label?: string,
+    text?: string,
+    textPrimary?: string,
+    textSecondary?: string,
+    outline?: string,
+    outlinedPrimary?: string,
+    outlinedSecondary?: string,
+    contained?: string,
+    containedPrimary?: string,
+    containedSecondary?: string,
+    disableElevation?: string,
+    focusVisible?: string,
+    disabled?: string,
+    colorInherit?: string,
+    textSizeSmall?: string,
+    textSizeLarge?: string,
+    outlinedSizeSmall?: string,
+    outlinedSizeLarge?: string,
+    containedSizeSmall?: string,
+    containedSizeLarge?: string,
+    sizeSmall?: string,
+    sizeLarge?: string,
+    fullWidth?: string,
+    startIcon?: string,
+    endIcon?: string,
+    iconSizeSmall?: string,
+    iconSizeMedium?: string,
+    iconSizeLarge?: string,
+  },
   /** CSS class name of the root element */
   className?: string,
   /** If true, the element's ripple effect will be disabled */
