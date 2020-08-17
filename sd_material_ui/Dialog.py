@@ -11,6 +11,40 @@ Keyword arguments:
 - children (a list of or a singular dash component, string or number; optional): Children to render inside of the Dialog
 - id (string; required): Dialog ID
 - ariaLabelledBy (string; default ''): List of space separated id's of elements to use as aria labels
+- classes (dict; optional): The classes to be applied to this component. This keys in this object must be valid CSS rule
+names, and the values must be strings for the classnames to be assigned to each rule name
+Valid rule names are:
+  root
+  container
+  paper
+  scrollPaper
+  scrollBody
+  paperScrollPaper
+  paperScrollBody
+  paperWidthFalse
+  paperWidthXs
+  paperWidthSm
+  paperWidthMd
+  paperWidthLg
+  paperWidthXl
+  paperFullWidth
+  paperFullScreen. classes has the following type: dict containing keys 'root', 'container', 'paper', 'scrollPaper', 'scrollBody', 'paperScrollPaper', 'paperScrollBody', 'paperWidthFalse', 'paperWidthXs', 'paperWidthSm', 'paperWidthMd', 'paperWidthLg', 'paperWidthXl', 'paperFullWidth', 'paperFullScreen'.
+  Those keys have the following types:
+  - root (string; optional)
+  - container (string; optional)
+  - paper (string; optional)
+  - scrollPaper (string; optional)
+  - scrollBody (string; optional)
+  - paperScrollPaper (string; optional)
+  - paperScrollBody (string; optional)
+  - paperWidthFalse (string; optional)
+  - paperWidthXs (string; optional)
+  - paperWidthSm (string; optional)
+  - paperWidthMd (string; optional)
+  - paperWidthLg (string; optional)
+  - paperWidthXl (string; optional)
+  - paperFullWidth (string; optional)
+  - paperFullScreen (string; optional)
 - className (string; default ''): CSS class name of the root element
 - open (boolean; default False): Is the dialog open?
 
@@ -25,12 +59,12 @@ other callbacks in the browser
 - scroll (dict; default 'body'): "paper" or "body", Determines scroll container
 - style (dict; optional): Styles to be implemented as inline css"""
     @_explicitize_args
-    def __init__(self, children=None, id=Component.REQUIRED, ariaLabelledBy=Component.UNDEFINED, className=Component.UNDEFINED, open=Component.UNDEFINED, autoScrollBodyContent=Component.UNDEFINED, componentContainerClassName=Component.UNDEFINED, fullWidth=Component.UNDEFINED, useBrowserSideClose=Component.UNDEFINED, scroll=Component.UNDEFINED, style=Component.UNDEFINED, actions=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['children', 'id', 'ariaLabelledBy', 'className', 'open', 'autoScrollBodyContent', 'componentContainerClassName', 'fullWidth', 'useBrowserSideClose', 'scroll', 'style']
+    def __init__(self, children=None, id=Component.REQUIRED, ariaLabelledBy=Component.UNDEFINED, classes=Component.UNDEFINED, className=Component.UNDEFINED, open=Component.UNDEFINED, autoScrollBodyContent=Component.UNDEFINED, componentContainerClassName=Component.UNDEFINED, fullWidth=Component.UNDEFINED, useBrowserSideClose=Component.UNDEFINED, scroll=Component.UNDEFINED, style=Component.UNDEFINED, actions=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['children', 'id', 'ariaLabelledBy', 'classes', 'className', 'open', 'autoScrollBodyContent', 'componentContainerClassName', 'fullWidth', 'useBrowserSideClose', 'scroll', 'style']
         self._type = 'Dialog'
         self._namespace = 'sd_material_ui'
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['children', 'id', 'ariaLabelledBy', 'className', 'open', 'autoScrollBodyContent', 'componentContainerClassName', 'fullWidth', 'useBrowserSideClose', 'scroll', 'style']
+        self.available_properties = ['children', 'id', 'ariaLabelledBy', 'classes', 'className', 'open', 'autoScrollBodyContent', 'componentContainerClassName', 'fullWidth', 'useBrowserSideClose', 'scroll', 'style']
         self.available_wildcard_properties =            []
 
         _explicit_args = kwargs.pop('_explicit_args')
