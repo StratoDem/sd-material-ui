@@ -2,6 +2,7 @@ from .BottomNavigation import BottomNavigation
 from .Button import Button
 from .Card import Card
 from .Checkbox import Checkbox
+from .CircularProgress import CircularProgress
 from .Dialog import Dialog
 from .Divider import Divider
 from .Drawer import Drawer
@@ -16,6 +17,7 @@ __all__ = [
     "Button",
     "Card",
     "Checkbox",
+    "CircularProgress",
     "Dialog",
     "Divider",
     "Drawer",

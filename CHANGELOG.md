@@ -10,6 +10,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
     - Button
     - Card
     - Checkbox
+    - CircularProgress
     - Dialog
     - Divider
     - Drawer
@@ -23,6 +24,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - [398](https://github.com/StratoDem/sd-material-ui/issues/398)
 - [399](https://github.com/StratoDem/sd-material-ui/issues/399)
 - [400](https://github.com/StratoDem/sd-material-ui/issues/400)
+- [401](https://github.com/StratoDem/sd-material-ui/issues/401)
 - [402](https://github.com/StratoDem/sd-material-ui/issues/402)
 - [403](https://github.com/StratoDem/sd-material-ui/issues/403)
 - [404](https://github.com/StratoDem/sd-material-ui/issues/404)
