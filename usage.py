@@ -16,6 +16,17 @@ final_spacer = html.Div(children=[], style=dict(height=400))
 
 app.layout = html.Div([
     html.Ul([
+
+        html.Li([
+            spacer,
+        ]),
+
+        sd_material_ui.Divider(),
+
+        html.Li([
+            spacer,
+        ]),
+
         html.Li([
             html.Div([
 
@@ -91,6 +102,8 @@ app.layout = html.Div([
 
             ], style=dict(display='flex', flexWrap='wrap')),
         ]),
+
+        sd_material_ui.Divider(),
 
         html.Li([
             spacer,
@@ -180,11 +193,13 @@ app.layout = html.Div([
             ], style=dict(display='flex', flexWrap='wrap')),
         ]),
 
+        sd_material_ui.Divider(),
+
         html.Li([
             final_spacer,
         ]),
 
-    ])
+    ], style={'list-style-type': 'none'})
 ])
 
 
