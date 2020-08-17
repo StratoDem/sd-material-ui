@@ -21,13 +21,36 @@ Valid rule names are:
   elevation1
   ...
   elevation23
-  elevation24. classes has the following type: dict containing keys 'root', 'rounded', 'outlined', 'elevation0', 'elevation1'.
+  elevation24. classes has the following type: dict containing keys 'root', 'rounded', 'outlined', 'elevation0', 'elevation1', 'elevation2', 'elevation3', 'elevation4', 'elevation5', 'elevation6', 'elevation7', 'elevation8', 'elevation9', 'elevation10', 'elevation11', 'elevation12', 'elevation13', 'elevation14', 'elevation15', 'elevation16', 'elevation17', 'elevation18', 'elevation19', 'elevation20', 'elevation21', 'elevation22', 'elevation23', 'elevation24'.
   Those keys have the following types:
   - root (string; optional)
   - rounded (string; optional)
   - outlined (string; optional)
-  - elevation0 (string; required)
-  - elevation1 (string; required)
+  - elevation0 (string; optional)
+  - elevation1 (string; optional)
+  - elevation2 (string; optional)
+  - elevation3 (string; optional)
+  - elevation4 (string; optional)
+  - elevation5 (string; optional)
+  - elevation6 (string; optional)
+  - elevation7 (string; optional)
+  - elevation8 (string; optional)
+  - elevation9 (string; optional)
+  - elevation10 (string; optional)
+  - elevation11 (string; optional)
+  - elevation12 (string; optional)
+  - elevation13 (string; optional)
+  - elevation14 (string; optional)
+  - elevation15 (string; optional)
+  - elevation16 (string; optional)
+  - elevation17 (string; optional)
+  - elevation18 (string; optional)
+  - elevation19 (string; optional)
+  - elevation20 (string; optional)
+  - elevation21 (string; optional)
+  - elevation22 (string; optional)
+  - elevation23 (string; optional)
+  - elevation24 (string; optional)
 - rounded (boolean; default True): By default, the paper container will have a border radius.
 Set this to false to generate a container with sharp corners.
 - style (dict; optional): Override the inline-styles of the root element

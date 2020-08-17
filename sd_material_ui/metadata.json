@@ -2011,7 +2011,7 @@
         "flowType": {
           "name": "signature",
           "type": "object",
-          "raw": "{\r\n  root?: string,\r\n  rounded?: string,\r\n  outlined?: string,\r\n  elevation0: string,\r\n  elevation1: string,\r\n  ...\r\n}",
+          "raw": "{\r\n  root?: string,\r\n  rounded?: string,\r\n  outlined?: string,\r\n  elevation0?: string,\r\n  elevation1?: string,\r\n  elevation2?: string,\r\n  elevation3?: string,\r\n  elevation4?: string,\r\n  elevation5?: string,\r\n  elevation6?: string,\r\n  elevation7?: string,\r\n  elevation8?: string,\r\n  elevation9?: string,\r\n  elevation10?: string,\r\n  elevation11?: string,\r\n  elevation12?: string,\r\n  elevation13?: string,\r\n  elevation14?: string,\r\n  elevation15?: string,\r\n  elevation16?: string,\r\n  elevation17?: string,\r\n  elevation18?: string,\r\n  elevation19?: string,\r\n  elevation20?: string,\r\n  elevation21?: string,\r\n  elevation22?: string,\r\n  elevation23?: string,\r\n  elevation24?: string,\r\n}",
           "signature": {
             "properties": [
               {
@@ -2039,14 +2039,175 @@
                 "key": "elevation0",
                 "value": {
                   "name": "string",
-                  "required": true
+                  "required": false
                 }
               },
               {
                 "key": "elevation1",
                 "value": {
                   "name": "string",
-                  "required": true
+                  "required": false
+                }
+              },
+              {
+                "key": "elevation2",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "elevation3",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "elevation4",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "elevation5",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "elevation6",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "elevation7",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "elevation8",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "elevation9",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "elevation10",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "elevation11",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "elevation12",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "elevation13",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "elevation14",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "elevation15",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "elevation16",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "elevation17",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "elevation18",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "elevation19",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "elevation20",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "elevation21",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "elevation22",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "elevation23",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "elevation24",
+                "value": {
+                  "name": "string",
+                  "required": false
                 }
               }
             ]
