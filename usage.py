@@ -196,7 +196,7 @@ app.layout = html.Div([
 
                     html.P([html.Strong('Sample for CircularProgress')]),
 
-                    sd_material_ui.CircularProgress(color='#00f2ff',
+                    sd_material_ui.CircularProgress(color='inherit',
                                                     thickness=5),
                 ]),
 
