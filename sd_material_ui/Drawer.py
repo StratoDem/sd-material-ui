@@ -26,7 +26,20 @@ Valid rule names are:
   paperAnchorDockedTop
   paperAnchorDockedRight
   paperAnchorDockedBottom
-  modal
+  modal. classes has the following type: dict containing keys 'root', 'docked', 'paper', 'paperAnchorLeft', 'paperAnchorRight', 'paperAnchorTop', 'paperAnchorBottom', 'paperAnchorDockedLeft', 'paperAnchorDockedTop', 'paperAnchorDockedRight', 'paperAnchorDockedBottom', 'modal'.
+  Those keys have the following types:
+  - root (string; optional)
+  - docked (string; optional)
+  - paper (string; optional)
+  - paperAnchorLeft (string; optional)
+  - paperAnchorRight (string; optional)
+  - paperAnchorTop (string; optional)
+  - paperAnchorBottom (string; optional)
+  - paperAnchorDockedLeft (string; optional)
+  - paperAnchorDockedTop (string; optional)
+  - paperAnchorDockedRight (string; optional)
+  - paperAnchorDockedBottom (string; optional)
+  - modal (string; optional)
 - className (string; default ''): CSS class name of the root element
 - open (boolean; default False): Is the drawer open?
 

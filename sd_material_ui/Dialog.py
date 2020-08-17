@@ -28,7 +28,23 @@ Valid rule names are:
   paperWidthLg
   paperWidthXl
   paperFullWidth
-  paperFullScreen
+  paperFullScreen. classes has the following type: dict containing keys 'root', 'container', 'paper', 'scrollPaper', 'scrollBody', 'paperScrollPaper', 'paperScrollBody', 'paperWidthFalse', 'paperWidthXs', 'paperWidthSm', 'paperWidthMd', 'paperWidthLg', 'paperWidthXl', 'paperFullWidth', 'paperFullScreen'.
+  Those keys have the following types:
+  - root (string; optional)
+  - container (string; optional)
+  - paper (string; optional)
+  - scrollPaper (string; optional)
+  - scrollBody (string; optional)
+  - paperScrollPaper (string; optional)
+  - paperScrollBody (string; optional)
+  - paperWidthFalse (string; optional)
+  - paperWidthXs (string; optional)
+  - paperWidthSm (string; optional)
+  - paperWidthMd (string; optional)
+  - paperWidthLg (string; optional)
+  - paperWidthXl (string; optional)
+  - paperFullWidth (string; optional)
+  - paperFullScreen (string; optional)
 - className (string; default ''): CSS class name of the root element
 - open (boolean; default False): Is the dialog open?
 
