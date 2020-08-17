@@ -13,7 +13,6 @@ spacer = html.Div(children=[], style=dict(height=20, width=50))
 final_spacer = html.Div(children=[], style=dict(height=400))
 
 
-# Callback for BottomNavigation
 app.layout = html.Div([
 
     html.Div([
@@ -81,6 +80,25 @@ app.layout = html.Div([
 
         spacer,
 
+    html.Div([
+        html.P([html.Strong('Test for buttons')]),
+
+        sd_material_ui.Button(html.P('This is a Raised Button', style={'margin': 0}),
+                              id='button1',
+                              disableShadow=False,
+                              useIcon=False,
+                              variant='contained'),
+
+        spacer,
+
+        sd_material_ui.Button(html.P('This is a Flat Button',
+                                     style={'margin': 0}),
+                              id='button2',
+                              disableShadow=False,
+                              useIcon=False,
+                              variant='outlined',
+                              classes={'root': 'SAMPLE_ROOT_CLASS',
+                                       'label': 'SAMPLE_LABEL_CLASS', }),
         html.Div([
             html.P([html.Strong('Test for Checkbox')]),
 
@@ -95,8 +113,38 @@ app.layout = html.Div([
     ], style=dict(display='flex', flexWrap='wrap')),
 
 
+    spacer,
+
+    html.Div([
+
+        html.Div([
+            html.P([html.Strong('Test for BottomNavigation')]),
+            sd_material_ui.BottomNavigation(
+                id='bottom-nav',
+                navItems=[dict(label=f'Item {x}',
+                               value=x,
+                               targetId=f'nav-item-{x}') for x in range(3)],
+                selectedValue=0,
+                displayLabels=True,
+            ),
+            spacer,
+            html.P(id='bottom-nav-output')
+        ]),
+
+
+    ], style=dict(display='flex', flexWrap='wrap')),
+
     final_spacer,
 ])
+
+
+@app.callback(dash.dependencies.Output('bottom-nav-output', 'children'),
+              [dash.dependencies.Input('bottom-nav', 'selectedValue')],
+              [dash.dependencies.State('bottom-nav', 'selectedValue')],)
+def callback_bottom_nav(value, state_value):
+    if value is None:
+        return 'Value Selected: '
+    return f'Value Selected: Item {value}'
 
 
 # @app.callback(

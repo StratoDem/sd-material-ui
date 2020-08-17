@@ -10,12 +10,18 @@ This project adheres to [Semantic Versioning](http://semver.org/).
     - Dialog
     - RadioButtonGroup
     - Checkbox
+    - BottomNavigation
     - Toggle
+    - Button
 
 ### Related issues:
 - [402](https://github.com/StratoDem/sd-material-ui/issues/402)
 - [404](https://github.com/StratoDem/sd-material-ui/issues/404)
 - [412](https://github.com/StratoDem/sd-material-ui/issues/412)
+- [406](https://github.com/StratoDem/sd-material-ui/issues/406)
+- [407](https://github.com/StratoDem/sd-material-ui/issues/407)
+- [409](https://github.com/StratoDem/sd-material-ui/issues/409)
+- [398](https://github.com/StratoDem/sd-material-ui/issues/398)
 - [417](https://github.com/StratoDem/sd-material-ui/issues/417)
 - [400](https://github.com/StratoDem/sd-material-ui/issues/400)
 

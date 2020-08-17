@@ -1,25 +1,106 @@
 {
-  "src/lib/components/Checkbox.react.js": {
-    "description": "Material UI Checkbox component",
-    "displayName": "Checkbox",
+  "src/lib/components/BottomNavigation.react.js": {
+    "description": "BottomNavigationItem is an item in a BottomNavigation component",
+    "displayName": "BottomNavigation",
     "methods": [
       {
-        "name": "handleClick",
+        "name": "buildBottomNavigationItem",
         "docblock": null,
         "modifiers": [],
-        "params": [],
+        "params": [
+          {
+            "name": "navItem",
+            "type": {
+              "name": "signature",
+              "type": "object",
+              "raw": "{\r\n  /** Label to use for the navigation item */\r\n  label: string,\r\n  /** Value for the navigation item */\r\n  value: string | number,\r\n  /** ID of component to jump to when this option is selected */\r\n  targetId?: string,\r\n  /** Class to apply to the icon span */\r\n  iconClassName?: string,\r\n}",
+              "signature": {
+                "properties": [
+                  {
+                    "key": "label",
+                    "value": {
+                      "name": "string",
+                      "required": true
+                    }
+                  },
+                  {
+                    "key": "value",
+                    "value": {
+                      "name": "union",
+                      "raw": "string | number",
+                      "elements": [
+                        {
+                          "name": "string"
+                        },
+                        {
+                          "name": "number"
+                        }
+                      ],
+                      "required": true
+                    }
+                  },
+                  {
+                    "key": "targetId",
+                    "value": {
+                      "name": "string",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "iconClassName",
+                    "value": {
+                      "name": "string",
+                      "required": false
+                    }
+                  }
+                ]
+              },
+              "alias": "T_NAV_ITEM"
+            }
+          },
+          {
+            "name": "selectedValue",
+            "type": {
+              "name": "number"
+            }
+          }
+        ],
         "returns": null
       }
     ],
     "props": {
-      "checked": {
+      "id": {
         "required": false,
         "flowType": {
-          "name": "boolean"
+          "name": "string"
         },
-        "description": "Checkbox is checked if true",
+        "description": "The ID used to identify this component in Dash callbacks",
         "defaultValue": {
-          "value": "false",
+          "value": "null",
+          "computed": false
+        }
+      },
+      "classes": {
+        "required": false,
+        "flowType": {
+          "name": "signature",
+          "type": "object",
+          "raw": "{\r\n  root?: string,\r\n}",
+          "signature": {
+            "properties": [
+              {
+                "key": "root",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              }
+            ]
+          }
+        },
+        "description": "The classes to be applied to this component. This keys in this object must be valid CSS rule\r\nnames, and the values must be strings for the classnames to be assigned to each rule name\r\nValid rule names are:\r\n  root",
+        "defaultValue": {
+          "value": "{}",
           "computed": false
         }
       },
@@ -34,12 +115,151 @@
           "computed": false
         }
       },
+      "displayLabels": {
+        "required": false,
+        "flowType": {
+          "name": "boolean"
+        },
+        "description": "If True, show the labels of unselected Items",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "navItems": {
+        "required": true,
+        "flowType": {
+          "name": "Array",
+          "elements": [
+            {
+              "name": "signature",
+              "type": "object",
+              "raw": "{\r\n  /** Label to use for the navigation item */\r\n  label: string,\r\n  /** Value for the navigation item */\r\n  value: string | number,\r\n  /** ID of component to jump to when this option is selected */\r\n  targetId?: string,\r\n  /** Class to apply to the icon span */\r\n  iconClassName?: string,\r\n}",
+              "signature": {
+                "properties": [
+                  {
+                    "key": "label",
+                    "value": {
+                      "name": "string",
+                      "required": true
+                    }
+                  },
+                  {
+                    "key": "value",
+                    "value": {
+                      "name": "union",
+                      "raw": "string | number",
+                      "elements": [
+                        {
+                          "name": "string"
+                        },
+                        {
+                          "name": "number"
+                        }
+                      ],
+                      "required": true
+                    }
+                  },
+                  {
+                    "key": "targetId",
+                    "value": {
+                      "name": "string",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "iconClassName",
+                    "value": {
+                      "name": "string",
+                      "required": false
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "raw": "Array<T_NAV_ITEM>"
+        },
+        "description": "Array of navigation item props to pass to BottomNavigationItem"
+      },
+      "selectedValue": {
+        "required": false,
+        "flowType": {
+          "name": "number"
+        },
+        "description": "Initial selected value for the BottomNavigation"
+      },
+      "setProps": {
+        "required": false,
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "(props: { selectedValue: number }) => void",
+          "signature": {
+            "arguments": [
+              {
+                "name": "props",
+                "type": {
+                  "name": "signature",
+                  "type": "object",
+                  "raw": "{ selectedValue: number }",
+                  "signature": {
+                    "properties": [
+                      {
+                        "key": "selectedValue",
+                        "value": {
+                          "name": "number",
+                          "required": true
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "return": {
+              "name": "void"
+            }
+          }
+        },
+        "description": "Dash-assigned callback that should be called whenever any of the\r\nproperties change",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      }
+    }
+  },
+  "src/lib/components/Button.react.js": {
+    "description": "",
+    "displayName": "Button",
+    "methods": [
+      {
+        "name": "handleClick",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      }
+    ],
+    "props": {
+      "children": {
+        "required": false,
+        "flowType": {
+          "name": "Node"
+        },
+        "description": "This is what will be displayed inside the button.\r\nIf a label is specified, the text within the label prop will\r\nbe displayed. Otherwise, the component will expect children\r\nwhich will then be displayed. (In our example,\r\nwe are nesting an `<input type=\"file\" />` and a `span`\r\nthat acts as our label to be displayed.) This only\r\napplies to flat and disableShadow buttons.",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
       "classes": {
         "required": false,
         "flowType": {
           "name": "signature",
           "type": "object",
-          "raw": "{\r\n  root?: string,\r\n  checked?: string,\r\n  disabled?: string,\r\n  indeterminate?: string,\r\n  colorPrimary?: string,\r\n  colorSecondary?: string,\r\n  sizeSmall?: string,\r\n}",
+          "raw": "{\r\n  root?: string,\r\n  label?: string,\r\n  text?: string,\r\n  textPrimary?: string,\r\n  textSecondary?: string,\r\n  outline?: string,\r\n  outlinedPrimary?: string,\r\n  outlinedSecondary?: string,\r\n  contained?: string,\r\n  containedPrimary?: string,\r\n  containedSecondary?: string,\r\n  disableElevation?: string,\r\n  focusVisible?: string,\r\n  disabled?: string,\r\n  colorInherit?: string,\r\n  textSizeSmall?: string,\r\n  textSizeLarge?: string,\r\n  outlinedSizeSmall?: string,\r\n  outlinedSizeLarge?: string,\r\n  containedSizeSmall?: string,\r\n  containedSizeLarge?: string,\r\n  sizeSmall?: string,\r\n  sizeLarge?: string,\r\n  fullWidth?: string,\r\n  startIcon?: string,\r\n  endIcon?: string,\r\n  iconSizeSmall?: string,\r\n  iconSizeMedium?: string,\r\n  iconSizeLarge?: string,\r\n}",
           "signature": {
             "properties": [
               {
@@ -50,7 +270,84 @@
                 }
               },
               {
-                "key": "checked",
+                "key": "label",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "text",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "textPrimary",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "textSecondary",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "outline",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "outlinedPrimary",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "outlinedSecondary",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "contained",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "containedPrimary",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "containedSecondary",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "disableElevation",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "focusVisible",
                 "value": {
                   "name": "string",
                   "required": false
@@ -64,21 +361,49 @@
                 }
               },
               {
-                "key": "indeterminate",
+                "key": "colorInherit",
                 "value": {
                   "name": "string",
                   "required": false
                 }
               },
               {
-                "key": "colorPrimary",
+                "key": "textSizeSmall",
                 "value": {
                   "name": "string",
                   "required": false
                 }
               },
               {
-                "key": "colorSecondary",
+                "key": "textSizeLarge",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "outlinedSizeSmall",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "outlinedSizeLarge",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "containedSizeSmall",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "containedSizeLarge",
                 "value": {
                   "name": "string",
                   "required": false
@@ -90,13 +415,84 @@
                   "name": "string",
                   "required": false
                 }
+              },
+              {
+                "key": "sizeLarge",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "fullWidth",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "startIcon",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "endIcon",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "iconSizeSmall",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "iconSizeMedium",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "iconSizeLarge",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
               }
             ]
           }
         },
-        "description": "The classes to be applied to this component. This keys in this object must be valid CSS rule\r\nnames, and the values must be strings for the classnames to be assigned to each rule name\r\nValid rule names are:\r\n  root\r\n  checked\r\n  disabled\r\n  indeterminate\r\n  colorPrimary\r\n  colorSecondary",
+        "description": "The classes to be applied to this component. This keys in this object must be valid CSS rule\r\nnames, and the values must be strings for the classnames to be assigned to each rule name\r\nValid rule names are:\r\n  root\r\n  label\r\n  text\r\n  textPrimary\r\n  textSecondary\r\n  outline\r\n  outlinedPrimary\r\n  outlinedSecondary\r\n  contained\r\n  containedPrimary\r\n  containedSecondary\r\n  disableElevation\r\n  focusVisible\r\n  disabled\r\n  colorInherit\r\n  textSizeSmall\r\n  textSizeLarge\r\n  outlinedSizeSmall\r\n  outlinedSizeLarge\r\n  containedSizeSmall\r\n  containedSizeLarge\r\n  sizeSmall\r\n  sizeLarge\r\n  fullWidth\r\n  startIcon\r\n  endIcon\r\n  iconSizeSmall\r\n  iconSizeMedium\r\n  iconSizeLarge\r\n\n  OR\r\n\n  root\r\n  edgeStart\r\n  edgeEnd\r\n  colorInherit\r\n  colorPrimary\r\n  colorSecondary\r\n  disabled\r\n  sizeSmall\r\n  label\r\n\nSee https://material-ui.com/api/button/#css\r\nand https://material-ui.com/api/icon-button/#css",
         "defaultValue": {
           "value": "{}",
+          "computed": false
+        }
+      },
+      "className": {
+        "required": false,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "CSS class name of the root element",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "disableTouchRipple": {
+        "required": false,
+        "flowType": {
+          "name": "boolean"
+        },
+        "description": "If true, the element's ripple effect will be disabled",
+        "defaultValue": {
+          "value": "false",
           "computed": false
         }
       },
@@ -105,7 +501,7 @@
         "flowType": {
           "name": "boolean"
         },
-        "description": "Checkbox is disabled if true",
+        "description": "Disable the button?",
         "defaultValue": {
           "value": "false",
           "computed": false
@@ -124,40 +520,80 @@
             }
           }
         },
-        "description": "A callback for firing events to dash",
+        "description": "Dash callback to trigger an event handler",
         "defaultValue": {
           "value": "() => {}",
           "computed": false
         }
       },
-      "id": {
-        "required": true,
+      "fullWidth": {
+        "required": false,
         "flowType": {
-          "name": "string"
+          "name": "boolean"
         },
-        "description": "The element's ID"
+        "description": "If true, the button will take up the full width of its container",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
       },
-      "label": {
+      "href": {
         "required": false,
         "flowType": {
           "name": "string"
         },
-        "description": "The label for the checkbox",
+        "description": "The URL to link to when the button is clicked",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "iconClass": {
+        "required": false,
+        "flowType": {
+          "name": "Node"
+        },
+        "description": "Sets the class of a span element inside the button",
         "defaultValue": {
           "value": "null",
           "computed": false
         }
       },
-      "name": {
+      "id": {
         "required": false,
         "flowType": {
           "name": "string"
         },
-        "description": "The name prop of the checkbox",
+        "description": "Element ID"
+      },
+      "n_clicks": {
+        "required": false,
+        "flowType": {
+          "name": "number"
+        },
+        "description": "An integer that represents the number fo times that this element has been clicked",
         "defaultValue": {
-          "value": "''",
+          "value": "0",
           "computed": false
         }
+      },
+      "n_clicks_previous": {
+        "required": false,
+        "flowType": {
+          "name": "number"
+        },
+        "description": "An integer that represents the previous number of times this element has been clicked",
+        "defaultValue": {
+          "value": "0",
+          "computed": false
+        }
+      },
+      "disableShadow": {
+        "required": false,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "Hide the shadow behind the button"
       },
       "setProps": {
         "required": false,
@@ -172,7 +608,7 @@
             }
           }
         },
-        "description": "Dash callback to update props on the server",
+        "description": "Dash callback to update props",
         "defaultValue": {
           "value": "() => {}",
           "computed": false
@@ -186,6 +622,24 @@
         "description": "Override the inline styles of the root element",
         "defaultValue": {
           "value": "{}",
+          "computed": false
+        }
+      },
+      "useIcon": {
+        "required": false,
+        "flowType": {
+          "name": "boolean"
+        },
+        "description": "If true, this object is rendered as an IconButton"
+      },
+      "variant": {
+        "required": false,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "'contained' | 'outlined' | 'text', Button type if not an IconButton",
+        "defaultValue": {
+          "value": "'text'",
           "computed": false
         }
       }
