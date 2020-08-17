@@ -645,6 +645,198 @@
       }
     }
   },
+  "src/lib/components/Checkbox.react.js": {
+    "description": "Material UI Checkbox component",
+    "displayName": "Checkbox",
+    "methods": [
+      {
+        "name": "handleClick",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      }
+    ],
+    "props": {
+      "checked": {
+        "required": false,
+        "flowType": {
+          "name": "boolean"
+        },
+        "description": "Checkbox is checked if true",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "className": {
+        "required": false,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "CSS class name of the root element",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "classes": {
+        "required": false,
+        "flowType": {
+          "name": "signature",
+          "type": "object",
+          "raw": "{\r\n  root?: string,\r\n  checked?: string,\r\n  disabled?: string,\r\n  indeterminate?: string,\r\n  colorPrimary?: string,\r\n  colorSecondary?: string,\r\n  sizeSmall?: string,\r\n}",
+          "signature": {
+            "properties": [
+              {
+                "key": "root",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "checked",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "disabled",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "indeterminate",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "colorPrimary",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "colorSecondary",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "sizeSmall",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              }
+            ]
+          }
+        },
+        "description": "The classes to be applied to this component. This keys in this object must be valid CSS rule\r\nnames, and the values must be strings for the classnames to be assigned to each rule name\r\nValid rule names are:\r\n  root\r\n  checked\r\n  disabled\r\n  indeterminate\r\n  colorPrimary\r\n  colorSecondary",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "disabled": {
+        "required": false,
+        "flowType": {
+          "name": "boolean"
+        },
+        "description": "Checkbox is disabled if true",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "fireEvent": {
+        "required": false,
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "() => void",
+          "signature": {
+            "arguments": [],
+            "return": {
+              "name": "void"
+            }
+          }
+        },
+        "description": "A callback for firing events to dash",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      },
+      "id": {
+        "required": true,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "The element's ID"
+      },
+      "label": {
+        "required": false,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "The label for the checkbox",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "name": {
+        "required": false,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "The name prop of the checkbox",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "setProps": {
+        "required": false,
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "() => void",
+          "signature": {
+            "arguments": [],
+            "return": {
+              "name": "void"
+            }
+          }
+        },
+        "description": "Dash callback to update props on the server",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      },
+      "style": {
+        "required": false,
+        "flowType": {
+          "name": "Object"
+        },
+        "description": "Override the inline styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      }
+    }
+  },
   "src/lib/components/Dialog.react.js": {
     "description": "Material UI Dialog component",
     "displayName": "Dialog",

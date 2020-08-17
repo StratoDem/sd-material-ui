@@ -5,13 +5,13 @@ import dash_html_components as html
 import time
 
 app = dash.Dash('',
-                external_stylesheets=['https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'])
+                external_stylesheets=[
+                    'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'])
 
 app.scripts.config.serve_locally = True
 
 spacer = html.Div(children=[], style=dict(height=20, width=50))
 final_spacer = html.Div(children=[], style=dict(height=400))
-
 
 app.layout = html.Div([
 
@@ -77,47 +77,10 @@ app.layout = html.Div([
             ),
             html.P(id='toggle-output', children=['Flame off']),
         ]),
+
+        spacer,
+
     ], style=dict(display='flex', flexWrap='wrap')),
-
-    spacer,
-
-    html.Div([
-        html.P([html.Strong('Test for buttons')]),
-
-        sd_material_ui.Button(html.P('This is a Raised Button', style={'margin': 0}),
-                              id='button1',
-                              disableShadow=False,
-                              useIcon=False,
-                              variant='contained'),
-
-        spacer,
-
-        sd_material_ui.Button(html.P('This is a Flat Button',
-                                     style={'margin': 0}),
-                              id='button2',
-                              disableShadow=False,
-                              useIcon=False,
-                              variant='outlined',
-                              classes={'root': 'SAMPLE_ROOT_CLASS',
-                                       'label': 'SAMPLE_LABEL_CLASS', }),
-
-        spacer,
-
-        sd_material_ui.Button('Text Button',
-                              id='button3',
-                              variant='text',),
-
-        spacer,
-
-        sd_material_ui.Button(useIcon=True,
-                              id='button4',
-                              iconClass="glyphicon glyphicon-asterisk"),
-
-        html.P(id='output-button')
-
-    ]),
-
-
 
     spacer,
 
@@ -137,16 +100,69 @@ app.layout = html.Div([
             html.P(id='bottom-nav-output')
         ]),
 
+        spacer,
 
-    ], style=dict(display='flex', flexWrap='wrap')),
+        html.Div([
+            html.Div([
+                html.P([html.Strong('Test for buttons')]),
 
-    final_spacer,
+                sd_material_ui.Button(html.P('This is a Raised Button'),
+                                      id='button1',
+                                      disableShadow=False,
+                                      useIcon=False,
+                                      variant='contained'),
+
+                spacer,
+
+                sd_material_ui.Button(html.P('This is a Flat Button'),
+                                      id='button2',
+                                      disableShadow=False,
+                                      useIcon=False,
+                                      variant='outlined',
+                                      classes={'root': 'SAMPLE_ROOT_CLASS',
+                                               'label': 'SAMPLE_LABEL_CLASS', }),
+
+                spacer,
+
+                sd_material_ui.Button('Text Button',
+                                      id='button3',
+                                      variant='text', ),
+
+                spacer,
+
+                sd_material_ui.Button(useIcon=True,
+                                      id='button4',
+                                      iconClass="glyphicon glyphicon-asterisk"),
+
+                html.P(id='output-button')
+
+            ]),
+
+            spacer,
+
+            html.Div([
+
+                html.P([html.Strong('Test for Checkbox')]),
+
+                sd_material_ui.Checkbox(id='checkbox1', label='Apple', name='Apple'),
+                sd_material_ui.Checkbox(id='checkbox2', label='2', name='2'),
+                sd_material_ui.Checkbox(id='checkbox3', label=5, name='5'),
+
+                html.P(id='checkbox-output'),
+                html.Button('Clear Selections', id='clear-checks')
+            ]),
+
+        ], style=dict(display='flex', flexWrap='wrap')),
+
+        final_spacer,
+
+    ])
 ])
 
 
 @app.callback(dash.dependencies.Output('bottom-nav-output', 'children'),
               [dash.dependencies.Input('bottom-nav', 'selectedValue')],
-              [dash.dependencies.State('bottom-nav', 'selectedValue')],)
+              [dash.dependencies.State('bottom-nav', 'selectedValue')], )
 def callback_bottom_nav(value, state_value):
     if value is None:
         return 'Value Selected: '
@@ -227,6 +243,39 @@ def show_modal_dialog(modal_click: int, close_button: int, open_state: bool):
             return False
     else:
         return False
+
+
+@app.callback(
+    dash.dependencies.Output('checkbox-output', 'children'),
+    [dash.dependencies.Input('checkbox1', 'checked'),
+     dash.dependencies.Input('checkbox2', 'checked'),
+     dash.dependencies.Input('checkbox3', 'checked')],
+    [dash.dependencies.State('checkbox1', 'name'),
+     dash.dependencies.State('checkbox2', 'name'),
+     dash.dependencies.State('checkbox3', 'name')])
+def callback_checkboxes(check_1: bool, check_2: bool, check_3: bool,
+                        name_1: str, name_2: str, name_3: str, ):
+    output = []
+    if check_1:
+        output.append(name_1)
+    if check_2:
+        output.append(name_2)
+    if check_3:
+        output.append(name_3)
+    return f'{output}'
+
+
+@app.callback(
+    [dash.dependencies.Output('checkbox1', 'checked'),
+     dash.dependencies.Output('checkbox2', 'checked'),
+     dash.dependencies.Output('checkbox3', 'checked')],
+    [dash.dependencies.Input('clear-checks', 'n_clicks')])
+def callback_checkboxes(n: int):
+    if not n:
+        raise dash.exceptions.PreventUpdate
+    return False, False, False
+
+
 #
 #
 # # Callback for SDDialog (non-modal)
@@ -281,43 +330,43 @@ def show_modal_dialog(modal_click: int, close_button: int, open_state: bool):
 #         return ['n_clicks value: ']
 #
 #
-# # Callback for combined button test
-@app.callback(
-    dash.dependencies.Output('output-button', 'children'),
-    [dash.dependencies.Input('button1', 'n_clicks'),
-     dash.dependencies.Input('button2', 'n_clicks'),
-     dash.dependencies.Input('button3', 'n_clicks'),
-     dash.dependencies.Input('button4', 'n_clicks')],
-    [dash.dependencies.State('button1', 'n_clicks_previous'),
-     dash.dependencies.State('button2', 'n_clicks_previous'),
-     dash.dependencies.State('button3', 'n_clicks_previous'),
-     dash.dependencies.State('button4', 'n_clicks_previous')])
-def determine_button_callback(raised_n_clicks: int, flat_n_clicks: int, text_n_clicks: int,
-                              icon_n_clicks: int,
-                              raised_n_clicks_prev: int, flat_n_clicks_prev: int,
-                              text_n_clicks_prev: int,
-                              icon_n_clicks_prev: int) -> list:
-    if raised_n_clicks is None and flat_n_clicks is None and icon_n_clicks is None and \
-            text_n_clicks is None:
-        return ['Which button was clicked?']
-    elif raised_n_clicks is not None and not raised_n_clicks_prev:
-        return ['Which button was clicked? Raised button']
-    elif flat_n_clicks is not None and not flat_n_clicks_prev:
-        return ['Which button was clicked? Flat button']
-    elif icon_n_clicks is not None and not icon_n_clicks_prev:
-        return ['Which button was clicked? Icon button']
-    elif text_n_clicks is not None and not text_n_clicks_prev:
-        return ['Which button was clicked? Text button']
-    elif raised_n_clicks > raised_n_clicks_prev:
-        return ['Which button was clicked? Raised button']
-    elif flat_n_clicks > flat_n_clicks_prev:
-        return ['Which button was clicked? Flat button']
-    elif icon_n_clicks > icon_n_clicks_prev:
-        return ['Which button was clicked? Icon button']
-    elif text_n_clicks > text_n_clicks_prev:
-        return ['Which button was clicked? Text button']
-    else:
-        return ['Which button was clicked? ']
+# # # Callback for combined button test
+# @app.callback(
+#     dash.dependencies.Output('output-button', 'children'),
+#     [dash.dependencies.Input('button1', 'n_clicks'),
+#      dash.dependencies.Input('button2', 'n_clicks'),
+#      dash.dependencies.Input('button3', 'n_clicks'),
+#      dash.dependencies.Input('button4', 'n_clicks')],
+#     [dash.dependencies.State('button1', 'n_clicks_previous'),
+#      dash.dependencies.State('button2', 'n_clicks_previous'),
+#      dash.dependencies.State('button3', 'n_clicks_previous'),
+#      dash.dependencies.State('button4', 'n_clicks_previous')])
+# def determine_button_callback(raised_n_clicks: int, flat_n_clicks: int, text_n_clicks: int,
+#                               icon_n_clicks: int,
+#                               raised_n_clicks_prev: int, flat_n_clicks_prev: int,
+#                               text_n_clicks_prev: int,
+#                               icon_n_clicks_prev: int) -> list:
+#     if raised_n_clicks is None and flat_n_clicks is None and icon_n_clicks is None and \
+#             text_n_clicks is None:
+#         return ['Which button was clicked?']
+#     elif raised_n_clicks is not None and not raised_n_clicks_prev:
+#         return ['Which button was clicked? Raised button']
+#     elif flat_n_clicks is not None and not flat_n_clicks_prev:
+#         return ['Which button was clicked? Flat button']
+#     elif icon_n_clicks is not None and not icon_n_clicks_prev:
+#         return ['Which button was clicked? Icon button']
+#     elif text_n_clicks is not None and not text_n_clicks_prev:
+#         return ['Which button was clicked? Text button']
+#     elif raised_n_clicks > raised_n_clicks_prev:
+#         return ['Which button was clicked? Raised button']
+#     elif flat_n_clicks > flat_n_clicks_prev:
+#         return ['Which button was clicked? Flat button']
+#     elif icon_n_clicks > icon_n_clicks_prev:
+#         return ['Which button was clicked? Icon button']
+#     elif text_n_clicks > text_n_clicks_prev:
+#         return ['Which button was clicked? Text button']
+#     else:
+#         return ['Which button was clicked? ']
 #
 #
 # # Callback for combined button test secondary
@@ -371,6 +420,8 @@ def use_toggle(switch):
         return ['Flame on!']
     else:
         return ['Flame off']
+
+
 #
 #
 # # Callback for SDSnackbar
@@ -434,6 +485,8 @@ def use_toggle(switch):
     [dash.dependencies.Input('radio', 'value')])
 def radiobuttongroup_callback(value):
     return ['Selection is: {}'.format(value)]
+
+
 #
 #
 # # Callback for Stepper
