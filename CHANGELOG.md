@@ -9,6 +9,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
     - Drawer
     - Dialog
     - RadioButtonGroup
+    - BottomNavigation
+    - Toggle
+    - Button
 
 ### Related issues:
 - [402](https://github.com/StratoDem/sd-material-ui/issues/402)
@@ -17,6 +20,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - [406](https://github.com/StratoDem/sd-material-ui/issues/406)
 - [407](https://github.com/StratoDem/sd-material-ui/issues/407)
 - [409](https://github.com/StratoDem/sd-material-ui/issues/409)
+- [398](https://github.com/StratoDem/sd-material-ui/issues/398)
 - [417](https://github.com/StratoDem/sd-material-ui/issues/417)
 
 

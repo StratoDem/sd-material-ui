@@ -1,4 +1,235 @@
 {
+  "src/lib/components/BottomNavigation.react.js": {
+    "description": "BottomNavigationItem is an item in a BottomNavigation component",
+    "displayName": "BottomNavigation",
+    "methods": [
+      {
+        "name": "buildBottomNavigationItem",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "navItem",
+            "type": {
+              "name": "signature",
+              "type": "object",
+              "raw": "{\r\n  /** Label to use for the navigation item */\r\n  label: string,\r\n  /** Value for the navigation item */\r\n  value: string | number,\r\n  /** ID of component to jump to when this option is selected */\r\n  targetId?: string,\r\n  /** Class to apply to the icon span */\r\n  iconClassName?: string,\r\n}",
+              "signature": {
+                "properties": [
+                  {
+                    "key": "label",
+                    "value": {
+                      "name": "string",
+                      "required": true
+                    }
+                  },
+                  {
+                    "key": "value",
+                    "value": {
+                      "name": "union",
+                      "raw": "string | number",
+                      "elements": [
+                        {
+                          "name": "string"
+                        },
+                        {
+                          "name": "number"
+                        }
+                      ],
+                      "required": true
+                    }
+                  },
+                  {
+                    "key": "targetId",
+                    "value": {
+                      "name": "string",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "iconClassName",
+                    "value": {
+                      "name": "string",
+                      "required": false
+                    }
+                  }
+                ]
+              },
+              "alias": "T_NAV_ITEM"
+            }
+          },
+          {
+            "name": "selectedValue",
+            "type": {
+              "name": "number"
+            }
+          }
+        ],
+        "returns": null
+      }
+    ],
+    "props": {
+      "id": {
+        "required": false,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "The ID used to identify this component in Dash callbacks",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "classes": {
+        "required": false,
+        "flowType": {
+          "name": "signature",
+          "type": "object",
+          "raw": "{\r\n  root?: string,\r\n}",
+          "signature": {
+            "properties": [
+              {
+                "key": "root",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              }
+            ]
+          }
+        },
+        "description": "The classes to be applied to this component. This keys in this object must be valid CSS rule\r\nnames, and the values must be strings for the classnames to be assigned to each rule name\r\nValid rule names are:\r\n  root",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "className": {
+        "required": false,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "CSS class name of the root element",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "displayLabels": {
+        "required": false,
+        "flowType": {
+          "name": "boolean"
+        },
+        "description": "If True, show the labels of unselected Items",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "navItems": {
+        "required": true,
+        "flowType": {
+          "name": "Array",
+          "elements": [
+            {
+              "name": "signature",
+              "type": "object",
+              "raw": "{\r\n  /** Label to use for the navigation item */\r\n  label: string,\r\n  /** Value for the navigation item */\r\n  value: string | number,\r\n  /** ID of component to jump to when this option is selected */\r\n  targetId?: string,\r\n  /** Class to apply to the icon span */\r\n  iconClassName?: string,\r\n}",
+              "signature": {
+                "properties": [
+                  {
+                    "key": "label",
+                    "value": {
+                      "name": "string",
+                      "required": true
+                    }
+                  },
+                  {
+                    "key": "value",
+                    "value": {
+                      "name": "union",
+                      "raw": "string | number",
+                      "elements": [
+                        {
+                          "name": "string"
+                        },
+                        {
+                          "name": "number"
+                        }
+                      ],
+                      "required": true
+                    }
+                  },
+                  {
+                    "key": "targetId",
+                    "value": {
+                      "name": "string",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "iconClassName",
+                    "value": {
+                      "name": "string",
+                      "required": false
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "raw": "Array<T_NAV_ITEM>"
+        },
+        "description": "Array of navigation item props to pass to BottomNavigationItem"
+      },
+      "selectedValue": {
+        "required": false,
+        "flowType": {
+          "name": "number"
+        },
+        "description": "Initial selected value for the BottomNavigation"
+      },
+      "setProps": {
+        "required": false,
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "(props: { selectedValue: number }) => void",
+          "signature": {
+            "arguments": [
+              {
+                "name": "props",
+                "type": {
+                  "name": "signature",
+                  "type": "object",
+                  "raw": "{ selectedValue: number }",
+                  "signature": {
+                    "properties": [
+                      {
+                        "key": "selectedValue",
+                        "value": {
+                          "name": "number",
+                          "required": true
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "return": {
+              "name": "void"
+            }
+          }
+        },
+        "description": "Dash-assigned callback that should be called whenever any of the\r\nproperties change",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      }
+    }
+  },
   "src/lib/components/Button.react.js": {
     "description": "",
     "displayName": "Button",
