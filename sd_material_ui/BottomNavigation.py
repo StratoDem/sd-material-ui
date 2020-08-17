@@ -9,7 +9,12 @@ BottomNavigationItem is an item in a BottomNavigation component
 
 Keyword arguments:
 - id (string; optional): The ID used to identify this component in Dash callbacks
-- classes (dict; optional): See https://material-ui.com/api/bottom-navigation/#css
+- classes (dict; optional): The classes to be applied to this component. This keys in this object must be valid CSS rule
+names, and the values must be strings for the classnames to be assigned to each rule name
+Valid rule names are:
+  root. classes has the following type: dict containing keys 'root'.
+  Those keys have the following types:
+  - root (string; optional)
 - className (string; optional): CSS class name of the root element
 - displayLabels (boolean; optional): If True, show the labels of unselected Items
 - navItems (list; required): Array of navigation item props to pass to BottomNavigationItem

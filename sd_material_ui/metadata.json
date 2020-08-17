@@ -83,9 +83,22 @@
       "classes": {
         "required": false,
         "flowType": {
-          "name": "Object"
+          "name": "signature",
+          "type": "object",
+          "raw": "{\r\n  root?: string,\r\n}",
+          "signature": {
+            "properties": [
+              {
+                "key": "root",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              }
+            ]
+          }
         },
-        "description": "See https://material-ui.com/api/bottom-navigation/#css",
+        "description": "The classes to be applied to this component. This keys in this object must be valid CSS rule\r\nnames, and the values must be strings for the classnames to be assigned to each rule name\r\nValid rule names are:\r\n  root",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -263,7 +276,7 @@
             "type": {
               "name": "signature",
               "type": "object",
-              "raw": "{\r\n  /** Dialog ID */\r\n  id: string,\r\n  /** List of space separated id's of elements to use as aria labels  */\r\n  ariaLabelledBy?: string,\r\n  /** Children to render inside of the Dialog */\r\n  children?: Node,\r\n  /** CSS class name of the root element */\r\n  className?: string,\r\n  /** Is the dialog open?\r\n   *\r\n   * IMPORTANT: When using this component in Dash, a listener must be set up (either as state or\r\n   * an input) for this component's props.open value in order to achieve the desired behavior.\r\n   * If such a listener is not in place, the non-modal version of this dialog will contaminate\r\n   * other callbacks in the browser\r\n   */\r\n  open?: boolean,\r\n  /** If set to true, the body content of the Dialog will be scrollable. */\r\n  autoScrollBodyContent?: boolean,\r\n  /** The className to add to the component container */\r\n  componentContainerClassName?: string,\r\n  /** The className to add to the content container */\r\n  fullWidth?: boolean,\r\n  /** The className to add to the Overlay component rendered behind the Dialog */\r\n  /** If set to true, the Close Icon will show in the upper right corner of the dialog, closing the Dialog browser side*/\r\n  useBrowserSideClose?: boolean,\r\n  /** \"paper\" or \"body\", Determines scroll container */\r\n  scroll?: Object,\r\n  /** Styles to be implemented as inline css */\r\n  style?: Object,\r\n  /** Dash callback to update props on the server */\r\n  setProps?: (props: { modal?: boolean, open?: boolean }) => void,\r\n}",
+              "raw": "{\r\n  /** Dialog ID */\r\n  id: string,\r\n  /** List of space separated id's of elements to use as aria labels  */\r\n  ariaLabelledBy?: string,\r\n  /** Children to render inside of the Dialog */\r\n  children?: Node,\r\n  /** The classes to be applied to this component. This keys in this object must be valid CSS rule\r\n   * names, and the values must be strings for the classnames to be assigned to each rule name\r\n   * Valid rule names are:\r\n   *   root\r\n   *   container\r\n   *   paper\r\n   *   scrollPaper\r\n   *   scrollBody\r\n   *   paperScrollPaper\r\n   *   paperScrollBody\r\n   *   paperWidthFalse\r\n   *   paperWidthXs\r\n   *   paperWidthSm\r\n   *   paperWidthMd\r\n   *   paperWidthLg\r\n   *   paperWidthXl\r\n   *   paperFullWidth\r\n   *   paperFullScreen\r\n   * */\r\n  classes?: {\r\n    root?: string,\r\n    container?: string,\r\n    paper?: string,\r\n    scrollPaper?: string,\r\n    scrollBody?: string,\r\n    paperScrollPaper?: string,\r\n    paperScrollBody?: string,\r\n    paperWidthFalse?: string,\r\n    paperWidthXs?: string,\r\n    paperWidthSm?: string,\r\n    paperWidthMd?: string,\r\n    paperWidthLg?: string,\r\n    paperWidthXl?: string,\r\n    paperFullWidth?: string,\r\n    paperFullScreen?: string\r\n  },\r\n  /** CSS class name of the root element */\r\n  className?: string,\r\n  /** Is the dialog open?\r\n   *\r\n   * IMPORTANT: When using this component in Dash, a listener must be set up (either as state or\r\n   * an input) for this component's props.open value in order to achieve the desired behavior.\r\n   * If such a listener is not in place, the non-modal version of this dialog will contaminate\r\n   * other callbacks in the browser\r\n   */\r\n  open?: boolean,\r\n  /** If set to true, the body content of the Dialog will be scrollable. */\r\n  autoScrollBodyContent?: boolean,\r\n  /** The className to add to the component container */\r\n  componentContainerClassName?: string,\r\n  /** The className to add to the content container */\r\n  fullWidth?: boolean,\r\n  /** The className to add to the Overlay component rendered behind the Dialog */\r\n  /** If set to true, the Close Icon will show in the upper right corner of the dialog, closing the Dialog browser side*/\r\n  useBrowserSideClose?: boolean,\r\n  /** \"paper\" or \"body\", Determines scroll container */\r\n  scroll?: Object,\r\n  /** Styles to be implemented as inline css */\r\n  style?: Object,\r\n  /** Dash callback to update props on the server */\r\n  setProps?: (props: { modal?: boolean, open?: boolean }) => void,\r\n}",
               "signature": {
                 "properties": [
                   {
@@ -284,6 +297,124 @@
                     "key": "children",
                     "value": {
                       "name": "Node",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "classes",
+                    "value": {
+                      "name": "signature",
+                      "type": "object",
+                      "raw": "{\r\n  root?: string,\r\n  container?: string,\r\n  paper?: string,\r\n  scrollPaper?: string,\r\n  scrollBody?: string,\r\n  paperScrollPaper?: string,\r\n  paperScrollBody?: string,\r\n  paperWidthFalse?: string,\r\n  paperWidthXs?: string,\r\n  paperWidthSm?: string,\r\n  paperWidthMd?: string,\r\n  paperWidthLg?: string,\r\n  paperWidthXl?: string,\r\n  paperFullWidth?: string,\r\n  paperFullScreen?: string\r\n}",
+                      "signature": {
+                        "properties": [
+                          {
+                            "key": "root",
+                            "value": {
+                              "name": "string",
+                              "required": false
+                            }
+                          },
+                          {
+                            "key": "container",
+                            "value": {
+                              "name": "string",
+                              "required": false
+                            }
+                          },
+                          {
+                            "key": "paper",
+                            "value": {
+                              "name": "string",
+                              "required": false
+                            }
+                          },
+                          {
+                            "key": "scrollPaper",
+                            "value": {
+                              "name": "string",
+                              "required": false
+                            }
+                          },
+                          {
+                            "key": "scrollBody",
+                            "value": {
+                              "name": "string",
+                              "required": false
+                            }
+                          },
+                          {
+                            "key": "paperScrollPaper",
+                            "value": {
+                              "name": "string",
+                              "required": false
+                            }
+                          },
+                          {
+                            "key": "paperScrollBody",
+                            "value": {
+                              "name": "string",
+                              "required": false
+                            }
+                          },
+                          {
+                            "key": "paperWidthFalse",
+                            "value": {
+                              "name": "string",
+                              "required": false
+                            }
+                          },
+                          {
+                            "key": "paperWidthXs",
+                            "value": {
+                              "name": "string",
+                              "required": false
+                            }
+                          },
+                          {
+                            "key": "paperWidthSm",
+                            "value": {
+                              "name": "string",
+                              "required": false
+                            }
+                          },
+                          {
+                            "key": "paperWidthMd",
+                            "value": {
+                              "name": "string",
+                              "required": false
+                            }
+                          },
+                          {
+                            "key": "paperWidthLg",
+                            "value": {
+                              "name": "string",
+                              "required": false
+                            }
+                          },
+                          {
+                            "key": "paperWidthXl",
+                            "value": {
+                              "name": "string",
+                              "required": false
+                            }
+                          },
+                          {
+                            "key": "paperFullWidth",
+                            "value": {
+                              "name": "string",
+                              "required": false
+                            }
+                          },
+                          {
+                            "key": "paperFullScreen",
+                            "value": {
+                              "name": "string",
+                              "required": false
+                            }
+                          }
+                        ]
+                      },
                       "required": false
                     }
                   },
@@ -431,6 +562,128 @@
         "description": "Children to render inside of the Dialog",
         "defaultValue": {
           "value": "null",
+          "computed": false
+        }
+      },
+      "classes": {
+        "required": false,
+        "flowType": {
+          "name": "signature",
+          "type": "object",
+          "raw": "{\r\n  root?: string,\r\n  container?: string,\r\n  paper?: string,\r\n  scrollPaper?: string,\r\n  scrollBody?: string,\r\n  paperScrollPaper?: string,\r\n  paperScrollBody?: string,\r\n  paperWidthFalse?: string,\r\n  paperWidthXs?: string,\r\n  paperWidthSm?: string,\r\n  paperWidthMd?: string,\r\n  paperWidthLg?: string,\r\n  paperWidthXl?: string,\r\n  paperFullWidth?: string,\r\n  paperFullScreen?: string\r\n}",
+          "signature": {
+            "properties": [
+              {
+                "key": "root",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "container",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "paper",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "scrollPaper",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "scrollBody",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "paperScrollPaper",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "paperScrollBody",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "paperWidthFalse",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "paperWidthXs",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "paperWidthSm",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "paperWidthMd",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "paperWidthLg",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "paperWidthXl",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "paperFullWidth",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "paperFullScreen",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              }
+            ]
+          }
+        },
+        "description": "The classes to be applied to this component. This keys in this object must be valid CSS rule\r\nnames, and the values must be strings for the classnames to be assigned to each rule name\r\nValid rule names are:\r\n  root\r\n  container\r\n  paper\r\n  scrollPaper\r\n  scrollBody\r\n  paperScrollPaper\r\n  paperScrollBody\r\n  paperWidthFalse\r\n  paperWidthXs\r\n  paperWidthSm\r\n  paperWidthMd\r\n  paperWidthLg\r\n  paperWidthXl\r\n  paperFullWidth\r\n  paperFullScreen",
+        "defaultValue": {
+          "value": "{}",
           "computed": false
         }
       },
@@ -607,6 +860,107 @@
           "computed": false
         }
       },
+      "classes": {
+        "required": false,
+        "flowType": {
+          "name": "signature",
+          "type": "object",
+          "raw": "{\r\n  root?: string,\r\n  docked?: string,\r\n  paper?: string,\r\n  paperAnchorLeft?: string,\r\n  paperAnchorRight?: string,\r\n  paperAnchorTop?: string,\r\n  paperAnchorBottom?: string,\r\n  paperAnchorDockedLeft?: string,\r\n  paperAnchorDockedTop?: string,\r\n  paperAnchorDockedRight?: string,\r\n  paperAnchorDockedBottom?: string,\r\n  modal?: string\r\n}",
+          "signature": {
+            "properties": [
+              {
+                "key": "root",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "docked",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "paper",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "paperAnchorLeft",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "paperAnchorRight",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "paperAnchorTop",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "paperAnchorBottom",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "paperAnchorDockedLeft",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "paperAnchorDockedTop",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "paperAnchorDockedRight",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "paperAnchorDockedBottom",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "modal",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              }
+            ]
+          }
+        },
+        "description": "The classes to be applied to this component. This keys in this object must be valid CSS rule\r\nnames, and the values must be strings for the classnames to be assigned to each rule name\r\nValid rule names are:\r\n  root\r\n  docked\r\n  paper\r\n  paperAnchorLeft\r\n  paperAnchorRight\r\n  paperAnchorTop\r\n  paperAnchorBottom\r\n  paperAnchorDockedLeft\r\n  paperAnchorDockedTop\r\n  paperAnchorDockedRight\r\n  paperAnchorDockedBottom\r\n  modal",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
       "className": {
         "required": false,
         "flowType": {
@@ -674,6 +1028,13 @@
           "value": "() => {}",
           "computed": false
         }
+      },
+      "classNameRoot": {
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        },
+        "required": false
       }
     }
   },
@@ -747,23 +1108,64 @@
       }
     ],
     "props": {
+      "classes": {
+        "required": false,
+        "flowType": {
+          "name": "signature",
+          "type": "object",
+          "raw": "{\r\n  root?: string,\r\n  checked?: string,\r\n  disabled?: string,\r\n  colorPrimary?: string,\r\n  colorSecondary?: string\r\n}",
+          "signature": {
+            "properties": [
+              {
+                "key": "root",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "checked",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "disabled",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "colorPrimary",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "colorSecondary",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              }
+            ]
+          }
+        },
+        "description": "The classes to be applied to each radio button. This keys in this object must be valid CSS\r\nrule names, and the values must be strings for the classnames to be assigned to each rule name\r\nValid rule names are:\r\n  root\r\n  checked\r\n  disabled\r\n  colorPrimary\r\n  colorSecondary",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
       "className": {
         "required": false,
         "flowType": {
           "name": "string"
         },
         "description": "the css class name of the root element",
-        "defaultValue": {
-          "value": "''",
-          "computed": false
-        }
-      },
-      "classNameRoot": {
-        "required": false,
-        "flowType": {
-          "name": "string"
-        },
-        "description": "The classname for the root elements of each individual radio button",
         "defaultValue": {
           "value": "''",
           "computed": false
@@ -878,6 +1280,253 @@
           "name": "string"
         },
         "description": "Initial value selected"
+      }
+    }
+  },
+  "src/lib/components/Toggle.react.js": {
+    "description": "",
+    "displayName": "Toggle",
+    "methods": [
+      {
+        "name": "handleChange",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "event",
+            "type": null
+          }
+        ],
+        "returns": null
+      }
+    ],
+    "props": {
+      "classes": {
+        "required": false,
+        "flowType": {
+          "name": "signature",
+          "type": "object",
+          "raw": "{\r\n  root?: string,\r\n  edgeStart?: string,\r\n  edgeEnd?: string,\r\n  switchBase?: string,\r\n  colorPrimary?: string,\r\n  colorSecondary?: string,\r\n  sizeSmall?: string,\r\n  checked?: string,\r\n  disabled?: string,\r\n  input?: string,\r\n  thumb?: string,\r\n  tract?: string\r\n}",
+          "signature": {
+            "properties": [
+              {
+                "key": "root",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "edgeStart",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "edgeEnd",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "switchBase",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "colorPrimary",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "colorSecondary",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "sizeSmall",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "checked",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "disabled",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "input",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "thumb",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "tract",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              }
+            ]
+          }
+        },
+        "description": "The classes to be applied to this component. This keys in this object must be valid CSS rule\r\nnames, and the values must be strings for the classnames to be assigned to each rule name\r\nValid rule names are:\r\n  root\r\n  edgeStart\r\n  edgeEnd\r\n  switchBase\r\n  colorPrimary\r\n  colorSecondary\r\n  sizeSmall\r\n  checked\r\n  disabled\r\n  input\r\n  thumb\r\n  tract",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "className": {
+        "required": false,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "CSS class name of the root element",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "disabled": {
+        "required": false,
+        "flowType": {
+          "name": "boolean"
+        },
+        "description": "Whether the toggle is disabled (true) or not (false)",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "id": {
+        "required": true,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "Toggle ID"
+      },
+      "label": {
+        "required": false,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "The label for the toggle",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "labelPlacement": {
+        "required": false,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "If using a single label, its position can be: \"top\", \"start\", \"bottom\", or \"end\"",
+        "defaultValue": {
+          "value": "\"right\"",
+          "computed": false
+        }
+      },
+      "labelSpacing": {
+        "required": false,
+        "flowType": {
+          "name": "int"
+        },
+        "description": "The space between the label(s) and toggle",
+        "defaultValue": {
+          "value": "1",
+          "computed": false
+        }
+      },
+      "secondaryLabel": {
+        "required": false,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "A second label for the toggle. If this is used, the labelPlacement value is ignored, and the\r\nsecondaryLabel will be positioned to the right of the toggle, and the first label to the left",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "setProps": {
+        "required": false,
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "(props: { modal?: boolean, open?: boolean }) => void",
+          "signature": {
+            "arguments": [
+              {
+                "name": "props",
+                "type": {
+                  "name": "signature",
+                  "type": "object",
+                  "raw": "{ modal?: boolean, open?: boolean }",
+                  "signature": {
+                    "properties": [
+                      {
+                        "key": "modal",
+                        "value": {
+                          "name": "boolean",
+                          "required": false
+                        }
+                      },
+                      {
+                        "key": "open",
+                        "value": {
+                          "name": "boolean",
+                          "required": false
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "return": {
+              "name": "void"
+            }
+          }
+        },
+        "description": "Dash callback to update props on the server",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      },
+      "toggled": {
+        "required": true,
+        "flowType": {
+          "name": "boolean"
+        },
+        "description": "Whether toggle is on (true) or off (false)"
       }
     }
   }

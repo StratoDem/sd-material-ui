@@ -21,9 +21,14 @@ type T_NAV_ITEM = {
 type Props = {
   /** The ID used to identify this component in Dash callbacks */
   id: string,
-  /** Mapping from MUI Element name to the intended classname for that Element */
-  /** See https://material-ui.com/api/bottom-navigation/#css*/
-  classes?: Object,
+  /** The classes to be applied to this component. This keys in this object must be valid CSS rule
+   * names, and the values must be strings for the classnames to be assigned to each rule name
+   * Valid rule names are:
+   *   root
+   * */
+  classes?: {
+    root?: string,
+  },
   /** CSS class name of the root element */
   className?: string,
   /** If True, show the labels of unselected Items */
@@ -90,13 +95,13 @@ export default class BottomNavigation extends Component<Props, State> {
   };
 
   render() {
-    const {id, navItems, className, selectedValue} = this.props;
+    const {id, navItems, className} = this.props;
     this.buildBottomNavigationItem = this.buildBottomNavigationItem.bind(this)
 
     return (
       <div id={id} className={className}>
         <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
-          <MuiBottomNavigation value={selectedValue}>
+          <MuiBottomNavigation value={this.state.selectedValue}>
             {
               navItems.map(this.buildBottomNavigationItem)
             }
