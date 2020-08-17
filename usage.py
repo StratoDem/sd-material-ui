@@ -4,9 +4,10 @@ import flask
 import dash_html_components as html
 import time
 
-app = dash.Dash('',
-                external_stylesheets=[
-                    'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'])
+app = dash.Dash(
+    '',
+    external_stylesheets=['https://fonts.googleapis.com/icon?family=Material+Icons',
+                          'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'])
 
 app.scripts.config.serve_locally = True
 
@@ -64,6 +65,13 @@ app.layout = html.Div([
             html.Div(id='input2', children=[
                 html.Button(children='Open the dialog')
             ]),
+        ]),
+
+        spacer,
+
+        html.Div([
+            html.P([html.Strong('Sample FontIcon')]),
+            sd_material_ui.FontIcon(id='fonticon', iconName='insert_emoticon'),
         ]),
 
         spacer,

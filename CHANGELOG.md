@@ -13,6 +13,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
     - BottomNavigation
     - Toggle
     - Button
+    - FontIcon
 
 ### Related issues:
 - [402](https://github.com/StratoDem/sd-material-ui/issues/402)
@@ -24,6 +25,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - [398](https://github.com/StratoDem/sd-material-ui/issues/398)
 - [417](https://github.com/StratoDem/sd-material-ui/issues/417)
 - [400](https://github.com/StratoDem/sd-material-ui/issues/400)
+- [408](https://github.com/StratoDem/sd-material-ui/issues/408)
 
 ## 3.2.0 2019-11-04
 ### Adds
