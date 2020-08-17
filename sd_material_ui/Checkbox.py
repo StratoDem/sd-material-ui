@@ -9,21 +9,36 @@ Material UI Checkbox component
 
 Keyword arguments:
 - checked (boolean; default False): Checkbox is checked if true
+- className (string; optional): CSS class name of the root element
+- classes (dict; optional): The classes to be applied to this component. This keys in this object must be valid CSS rule
+names, and the values must be strings for the classnames to be assigned to each rule name
+Valid rule names are:
+  root
+  checked
+  disabled
+  indeterminate
+  colorPrimary
+  colorSecondary. classes has the following type: dict containing keys 'root', 'checked', 'disabled', 'indeterminate', 'colorPrimary', 'colorSecondary', 'sizeSmall'.
+  Those keys have the following types:
+  - root (string; optional)
+  - checked (string; optional)
+  - disabled (string; optional)
+  - indeterminate (string; optional)
+  - colorPrimary (string; optional)
+  - colorSecondary (string; optional)
+  - sizeSmall (string; optional)
 - disabled (boolean; default False): Checkbox is disabled if true
-- iconStyle (dict; optional): Overrides the inline-styles of the icon element
 - id (string; required): The element's ID
-- inputStyle (dict; optional): Overrides the inline styles of the input element
-- label (string; default ''): The text label for the checkbox
-- labelPosition (default 'right'): Where the label will be placed next to the checkbox
-- labelStyle (dict; optional): Overrides the inline styles of the Checkbox element label
+- label (string; optional): The label for the checkbox
+- name (string; default ''): The name prop of the checkbox
 - style (dict; optional): Override the inline styles of the root element"""
     @_explicitize_args
-    def __init__(self, checked=Component.UNDEFINED, disabled=Component.UNDEFINED, fireEvent=Component.UNDEFINED, iconStyle=Component.UNDEFINED, id=Component.REQUIRED, inputStyle=Component.UNDEFINED, label=Component.UNDEFINED, labelPosition=Component.UNDEFINED, labelStyle=Component.UNDEFINED, style=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['checked', 'disabled', 'iconStyle', 'id', 'inputStyle', 'label', 'labelPosition', 'labelStyle', 'style']
+    def __init__(self, checked=Component.UNDEFINED, className=Component.UNDEFINED, classes=Component.UNDEFINED, disabled=Component.UNDEFINED, fireEvent=Component.UNDEFINED, id=Component.REQUIRED, label=Component.UNDEFINED, name=Component.UNDEFINED, style=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['checked', 'className', 'classes', 'disabled', 'id', 'label', 'name', 'style']
         self._type = 'Checkbox'
         self._namespace = 'sd_material_ui'
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['checked', 'disabled', 'iconStyle', 'id', 'inputStyle', 'label', 'labelPosition', 'labelStyle', 'style']
+        self.available_properties = ['checked', 'className', 'classes', 'disabled', 'id', 'label', 'name', 'style']
         self.available_wildcard_properties =            []
 
         _explicit_args = kwargs.pop('_explicit_args')

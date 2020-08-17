@@ -1,4 +1,235 @@
 {
+  "src/lib/components/BottomNavigation.react.js": {
+    "description": "BottomNavigationItem is an item in a BottomNavigation component",
+    "displayName": "BottomNavigation",
+    "methods": [
+      {
+        "name": "buildBottomNavigationItem",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "navItem",
+            "type": {
+              "name": "signature",
+              "type": "object",
+              "raw": "{\r\n  /** Label to use for the navigation item */\r\n  label: string,\r\n  /** Value for the navigation item */\r\n  value: string | number,\r\n  /** ID of component to jump to when this option is selected */\r\n  targetId?: string,\r\n  /** Class to apply to the icon span */\r\n  iconClassName?: string,\r\n}",
+              "signature": {
+                "properties": [
+                  {
+                    "key": "label",
+                    "value": {
+                      "name": "string",
+                      "required": true
+                    }
+                  },
+                  {
+                    "key": "value",
+                    "value": {
+                      "name": "union",
+                      "raw": "string | number",
+                      "elements": [
+                        {
+                          "name": "string"
+                        },
+                        {
+                          "name": "number"
+                        }
+                      ],
+                      "required": true
+                    }
+                  },
+                  {
+                    "key": "targetId",
+                    "value": {
+                      "name": "string",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "iconClassName",
+                    "value": {
+                      "name": "string",
+                      "required": false
+                    }
+                  }
+                ]
+              },
+              "alias": "T_NAV_ITEM"
+            }
+          },
+          {
+            "name": "selectedValue",
+            "type": {
+              "name": "number"
+            }
+          }
+        ],
+        "returns": null
+      }
+    ],
+    "props": {
+      "id": {
+        "required": false,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "The ID used to identify this component in Dash callbacks",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "classes": {
+        "required": false,
+        "flowType": {
+          "name": "signature",
+          "type": "object",
+          "raw": "{\r\n  root?: string,\r\n}",
+          "signature": {
+            "properties": [
+              {
+                "key": "root",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              }
+            ]
+          }
+        },
+        "description": "The classes to be applied to this component. This keys in this object must be valid CSS rule\r\nnames, and the values must be strings for the classnames to be assigned to each rule name\r\nValid rule names are:\r\n  root",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "className": {
+        "required": false,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "CSS class name of the root element",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "displayLabels": {
+        "required": false,
+        "flowType": {
+          "name": "boolean"
+        },
+        "description": "If True, show the labels of unselected Items",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "navItems": {
+        "required": true,
+        "flowType": {
+          "name": "Array",
+          "elements": [
+            {
+              "name": "signature",
+              "type": "object",
+              "raw": "{\r\n  /** Label to use for the navigation item */\r\n  label: string,\r\n  /** Value for the navigation item */\r\n  value: string | number,\r\n  /** ID of component to jump to when this option is selected */\r\n  targetId?: string,\r\n  /** Class to apply to the icon span */\r\n  iconClassName?: string,\r\n}",
+              "signature": {
+                "properties": [
+                  {
+                    "key": "label",
+                    "value": {
+                      "name": "string",
+                      "required": true
+                    }
+                  },
+                  {
+                    "key": "value",
+                    "value": {
+                      "name": "union",
+                      "raw": "string | number",
+                      "elements": [
+                        {
+                          "name": "string"
+                        },
+                        {
+                          "name": "number"
+                        }
+                      ],
+                      "required": true
+                    }
+                  },
+                  {
+                    "key": "targetId",
+                    "value": {
+                      "name": "string",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "iconClassName",
+                    "value": {
+                      "name": "string",
+                      "required": false
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "raw": "Array<T_NAV_ITEM>"
+        },
+        "description": "Array of navigation item props to pass to BottomNavigationItem"
+      },
+      "selectedValue": {
+        "required": false,
+        "flowType": {
+          "name": "number"
+        },
+        "description": "Initial selected value for the BottomNavigation"
+      },
+      "setProps": {
+        "required": false,
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "(props: { selectedValue: number }) => void",
+          "signature": {
+            "arguments": [
+              {
+                "name": "props",
+                "type": {
+                  "name": "signature",
+                  "type": "object",
+                  "raw": "{ selectedValue: number }",
+                  "signature": {
+                    "properties": [
+                      {
+                        "key": "selectedValue",
+                        "value": {
+                          "name": "number",
+                          "required": true
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "return": {
+              "name": "void"
+            }
+          }
+        },
+        "description": "Dash-assigned callback that should be called whenever any of the\r\nproperties change",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      }
+    }
+  },
   "src/lib/components/Button.react.js": {
     "description": "",
     "displayName": "Button",
@@ -414,30 +645,27 @@
       }
     }
   },
-  "src/lib/components/Card.react.js": {
-    "description": "Material UI Card component",
-    "displayName": "Card",
-    "methods": [],
+  "src/lib/components/Checkbox.react.js": {
+    "description": "Material UI Checkbox component",
+    "displayName": "Checkbox",
+    "methods": [
+      {
+        "name": "handleClick",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      }
+    ],
     "props": {
-      "id": {
+      "checked": {
         "required": false,
         "flowType": {
-          "name": "string"
+          "name": "boolean"
         },
-        "description": "ID for Card",
+        "description": "Checkbox is checked if true",
         "defaultValue": {
-          "value": "''",
-          "computed": false
-        }
-      },
-      "children": {
-        "required": false,
-        "flowType": {
-          "name": "Node"
-        },
-        "description": "Can be used to render elements inside the Card.",
-        "defaultValue": {
-          "value": "[]",
+          "value": "false",
           "computed": false
         }
       },
@@ -446,9 +674,9 @@
         "flowType": {
           "name": "string"
         },
-        "description": "The CSS class name of the root element",
+        "description": "CSS class name of the root element",
         "defaultValue": {
-          "value": "''",
+          "value": "null",
           "computed": false
         }
       },
@@ -457,7 +685,7 @@
         "flowType": {
           "name": "signature",
           "type": "object",
-          "raw": "{\r\n  root?: string,\r\n}",
+          "raw": "{\r\n  root?: string,\r\n  checked?: string,\r\n  disabled?: string,\r\n  indeterminate?: string,\r\n  colorPrimary?: string,\r\n  colorSecondary?: string,\r\n  sizeSmall?: string,\r\n}",
           "signature": {
             "properties": [
               {
@@ -466,141 +694,144 @@
                   "name": "string",
                   "required": false
                 }
+              },
+              {
+                "key": "checked",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "disabled",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "indeterminate",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "colorPrimary",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "colorSecondary",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "sizeSmall",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
               }
             ]
           }
         },
-        "description": "The classes to be applied to this component. This keys in this object must be valid CSS rule\r\nnames, and the values must be strings for the classnames to be assigned to each rule name\r\nValid rule names are:\r\n  root",
+        "description": "The classes to be applied to this component. This keys in this object must be valid CSS rule\r\nnames, and the values must be strings for the classnames to be assigned to each rule name\r\nValid rule names are:\r\n  root\r\n  checked\r\n  disabled\r\n  indeterminate\r\n  colorPrimary\r\n  colorSecondary",
         "defaultValue": {
           "value": "{}",
           "computed": false
         }
       },
-      "actionAreaClassName": {
+      "disabled": {
+        "required": false,
+        "flowType": {
+          "name": "boolean"
+        },
+        "description": "Checkbox is disabled if true",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "fireEvent": {
+        "required": false,
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "() => void",
+          "signature": {
+            "arguments": [],
+            "return": {
+              "name": "void"
+            }
+          }
+        },
+        "description": "A callback for firing events to dash",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      },
+      "id": {
+        "required": true,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "The element's ID"
+      },
+      "label": {
         "required": false,
         "flowType": {
           "name": "string"
         },
-        "description": "The CSS class name of the actionArea element",
-        "defaultValue": {
-          "value": "''",
-          "computed": false
-        }
-      },
-      "actionAreaClasses": {
-        "required": false,
-        "flowType": {
-          "name": "Object"
-        },
-        "description": "The classes to be applied to the actionArea component. This keys in this object must be valid CSS rule\r\nnames, and the values must be strings for the classnames to be assigned to each rule name",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "actionsClassName": {
-        "required": false,
-        "flowType": {
-          "name": "string"
-        },
-        "description": "The CSS class name of the actions element",
-        "defaultValue": {
-          "value": "''",
-          "computed": false
-        }
-      },
-      "actionsClasses": {
-        "required": false,
-        "flowType": {
-          "name": "Object"
-        },
-        "description": "The classes to be applied to the actions component. This keys in this object must be valid CSS rule\r\nnames, and the values must be strings for the classnames to be assigned to each rule name",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "contentClassName": {
-        "required": false,
-        "flowType": {
-          "name": "string"
-        },
-        "description": "The CSS class name of the content element",
-        "defaultValue": {
-          "value": "''",
-          "computed": false
-        }
-      },
-      "contentClasses": {
-        "required": false,
-        "flowType": {
-          "name": "Object"
-        },
-        "description": "The classes to be applied to the content component. This keys in this object must be valid CSS rule\r\nnames, and the values must be strings for the classnames to be assigned to each rule name",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "headerClassName": {
-        "required": false,
-        "flowType": {
-          "name": "string"
-        },
-        "description": "The CSS class name of the header element",
-        "defaultValue": {
-          "value": "''",
-          "computed": false
-        }
-      },
-      "headerClasses": {
-        "required": false,
-        "flowType": {
-          "name": "Object"
-        },
-        "description": "The classes to be applied to the header component. This keys in this object must be valid CSS rule\r\nnames, and the values must be strings for the classnames to be assigned to each rule name",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "headerAvatar": {
-        "required": false,
-        "flowType": {
-          "name": "Node"
-        },
-        "description": "This is the Avatar element to be displayed on the Card Header. If avatar is an Avatar or\r\nother element, it will be rendered. If avatar is a string, it will be used as the image src\r\nfor an Avatar.",
+        "description": "The label for the checkbox",
         "defaultValue": {
           "value": "null",
           "computed": false
         }
       },
-      "headerIconClassName": {
+      "name": {
         "required": false,
         "flowType": {
           "name": "string"
         },
-        "description": "The CSS class name of the header Icon element"
+        "description": "The name prop of the checkbox",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "setProps": {
+        "required": false,
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "() => void",
+          "signature": {
+            "arguments": [],
+            "return": {
+              "name": "void"
+            }
+          }
+        },
+        "description": "Dash callback to update props on the server",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
       },
       "style": {
         "required": false,
         "flowType": {
           "name": "Object"
         },
-        "description": "Styles to be implemented as inline css",
+        "description": "Override the inline styles of the root element",
         "defaultValue": {
           "value": "{}",
-          "computed": false
-        }
-      },
-      "raised": {
-        "required": false,
-        "flowType": {
-          "name": "boolean"
-        },
-        "description": "If true, the Card component will appear raised",
-        "defaultValue": {
-          "value": "true",
           "computed": false
         }
       }
@@ -1414,50 +1645,17 @@
       }
     }
   },
-  "src/lib/components/Paper.react.js": {
-    "description": "A Dash material-ui Paper component",
-    "displayName": "Paper",
+  "src/lib/components/FontIcon.react.js": {
+    "description": "Material UI FontIcon component",
+    "displayName": "FontIcon",
     "methods": [],
     "props": {
-      "id": {
-        "required": false,
-        "flowType": {
-          "name": "string"
-        },
-        "description": "ID for Paper",
-        "defaultValue": {
-          "value": "null",
-          "computed": false
-        }
-      },
-      "children": {
-        "required": false,
-        "flowType": {
-          "name": "Node"
-        },
-        "description": "Can be used to render elements inside the Paper",
-        "defaultValue": {
-          "value": "null",
-          "computed": false
-        }
-      },
-      "className": {
-        "required": false,
-        "flowType": {
-          "name": "string"
-        },
-        "description": "The CSS class name of the root element",
-        "defaultValue": {
-          "value": "null",
-          "computed": false
-        }
-      },
       "classes": {
         "required": false,
         "flowType": {
           "name": "signature",
           "type": "object",
-          "raw": "{\r\n  root?: string,\r\n  rounded?: string,\r\n  outlined?: string,\r\n  elevation0: string,\r\n  elevation1: string,\r\n  ...\r\n}",
+          "raw": "{\r\n  root?: string,\r\n  colorPrimary?: string,\r\n  colorSecondary?: string,\r\n  colorAction?: string,\r\n  colorError?: string,\r\n  colorDisabled?: string,\r\n  fontSizeSmall?: string,\r\n  fontSizeLarge?: string,\r\n  fontSizeInherit?: string,\r\n}",
           "signature": {
             "properties": [
               {
@@ -1468,50 +1666,100 @@
                 }
               },
               {
-                "key": "rounded",
+                "key": "colorPrimary",
                 "value": {
                   "name": "string",
                   "required": false
                 }
               },
               {
-                "key": "outlined",
+                "key": "colorSecondary",
                 "value": {
                   "name": "string",
                   "required": false
                 }
               },
               {
-                "key": "elevation0",
+                "key": "colorAction",
                 "value": {
                   "name": "string",
-                  "required": true
+                  "required": false
                 }
               },
               {
-                "key": "elevation1",
+                "key": "colorError",
                 "value": {
                   "name": "string",
-                  "required": true
+                  "required": false
+                }
+              },
+              {
+                "key": "colorDisabled",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "fontSizeSmall",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "fontSizeLarge",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "fontSizeInherit",
+                "value": {
+                  "name": "string",
+                  "required": false
                 }
               }
             ]
           }
         },
-        "description": "The classes to be applied to this component. This keys in this object must be valid CSS rule\r\nnames, and the values must be strings for the classnames to be assigned to each rule name\r\nValid rule names are:\r\n  root\r\n  rounded\r\n  outlined\r\n  elevation0\r\n  elevation1\r\n  ...\r\n  elevation23\r\n  elevation24",
+        "description": "The classes to be applied to this component. This keys in this object must be valid CSS rule\r\nnames, and the values must be strings for the classnames to be assigned to each rule name\r\nValid rule names are:\r\n  root\r\n  colorPrimary\r\n  colorSecondary\r\n  colorAction\r\n  colorError\r\n  colorDisabled\r\n  fontSizeSmall\r\n  fontSizeLarge\r\n  fontSizeInherit",
         "defaultValue": {
           "value": "{}",
           "computed": false
         }
       },
-      "rounded": {
+      "className": {
         "required": false,
         "flowType": {
-          "name": "boolean"
+          "name": "string"
         },
-        "description": "By default, the paper container will have a border radius.\r\nSet this to false to generate a container with sharp corners.",
+        "description": "CSS class name of the root element",
         "defaultValue": {
-          "value": "true",
+          "value": "''",
+          "computed": false
+        }
+      },
+      "id": {
+        "required": false,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "id for the component",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "iconName": {
+        "required": false,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "defines specific icon when using public icon font",
+        "defaultValue": {
+          "value": "''",
           "computed": false
         }
       },
@@ -1520,20 +1768,9 @@
         "flowType": {
           "name": "Object"
         },
-        "description": "Override the inline-styles of the root element",
+        "description": "override inline-styles of root element",
         "defaultValue": {
           "value": "{}",
-          "computed": false
-        }
-      },
-      "zDepth": {
-        "required": false,
-        "flowType": {
-          "name": "number"
-        },
-        "description": "This number represents the zDepth of the paper shadow",
-        "defaultValue": {
-          "value": "1",
           "computed": false
         }
       }

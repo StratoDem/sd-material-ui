@@ -8,17 +8,24 @@ class BottomNavigation(Component):
 BottomNavigationItem is an item in a BottomNavigation component
 
 Keyword arguments:
-- id (string; required): The ID used to identify this component in Dash callbacks
+- id (string; optional): The ID used to identify this component in Dash callbacks
+- classes (dict; optional): The classes to be applied to this component. This keys in this object must be valid CSS rule
+names, and the values must be strings for the classnames to be assigned to each rule name
+Valid rule names are:
+  root. classes has the following type: dict containing keys 'root'.
+  Those keys have the following types:
+  - root (string; optional)
+- className (string; optional): CSS class name of the root element
+- displayLabels (boolean; optional): If True, show the labels of unselected Items
 - navItems (list; required): Array of navigation item props to pass to BottomNavigationItem
-- selectedIndex (number; default 0): Initial selected index for the BottomNavigation
-- selectedStyle (dict; optional): Style to apply to the selected icon"""
+- selectedValue (number; optional): Initial selected value for the BottomNavigation"""
     @_explicitize_args
-    def __init__(self, id=Component.REQUIRED, navItems=Component.REQUIRED, selectedIndex=Component.UNDEFINED, selectedStyle=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['id', 'navItems', 'selectedIndex', 'selectedStyle']
+    def __init__(self, id=Component.UNDEFINED, classes=Component.UNDEFINED, className=Component.UNDEFINED, displayLabels=Component.UNDEFINED, navItems=Component.REQUIRED, selectedValue=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['id', 'classes', 'className', 'displayLabels', 'navItems', 'selectedValue']
         self._type = 'BottomNavigation'
         self._namespace = 'sd_material_ui'
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['id', 'navItems', 'selectedIndex', 'selectedStyle']
+        self.available_properties = ['id', 'classes', 'className', 'displayLabels', 'navItems', 'selectedValue']
         self.available_wildcard_properties =            []
 
         _explicit_args = kwargs.pop('_explicit_args')
@@ -26,7 +33,7 @@ Keyword arguments:
         _locals.update(kwargs)  # For wildcard attrs
         args = {k: _locals[k] for k in _explicit_args if k != 'children'}
 
-        for k in ['id', 'navItems']:
+        for k in ['navItems']:
             if k not in args:
                 raise TypeError(
                     'Required argument `' + k + '` was not specified.')
