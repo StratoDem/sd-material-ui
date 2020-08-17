@@ -73,7 +73,7 @@ app.layout = html.Div([
     html.Div([
         html.P([html.Strong('Test for buttons')]),
 
-        sd_material_ui.Button(html.P('This is a Raised Button'),
+        sd_material_ui.Button(html.P('This is a Raised Button', style={'margin': 0}),
                               id='button1',
                               disableShadow=False,
                               useIcon=False,
@@ -81,7 +81,8 @@ app.layout = html.Div([
 
         spacer,
 
-        sd_material_ui.Button(html.P('This is a Flat Button'),
+        sd_material_ui.Button(html.P('This is a Flat Button',
+                                     style={'margin': 0}),
                               id='button2',
                               disableShadow=False,
                               useIcon=False,
