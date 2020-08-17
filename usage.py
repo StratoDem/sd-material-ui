@@ -211,6 +211,16 @@ app.layout = html.Div([
         sd_material_ui.Divider(),
 
         html.Li([
+            spacer,
+        ]),
+
+        html.Li([
+            html.Div([], style=dict(display='flex', flexWrap='wrap')),
+        ]),
+
+        sd_material_ui.Divider(),
+
+        html.Li([
             final_spacer,
         ]),
 
