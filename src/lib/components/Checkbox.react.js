@@ -12,9 +12,25 @@ type Props = {
   checked?: boolean,
   /** CSS class name of the root element */
   className?: string,
-  /** Mapping from MUI Element name to the intended classname for that Element
-   * See https://material-ui.com/api/checkbox/#css*/
-  classes?: Object,
+  /** The classes to be applied to this component. This keys in this object must be valid CSS rule
+   * names, and the values must be strings for the classnames to be assigned to each rule name
+   * Valid rule names are:
+   *   root
+   *   checked
+   *   disabled
+   *   indeterminate
+   *   colorPrimary
+   *   colorSecondary
+   */
+  classes?: {
+    root?: string,
+    checked?: string,
+    disabled?: string,
+    indeterminate?: string,
+    colorPrimary?: string,
+    colorSecondary?: string,
+    sizeSmall?: string,
+  },
   /** Checkbox is disabled if true */
   disabled?: boolean,
   /** A callback for firing events to dash */

@@ -10,8 +10,23 @@ Material UI Checkbox component
 Keyword arguments:
 - checked (boolean; default False): Checkbox is checked if true
 - className (string; optional): CSS class name of the root element
-- classes (dict; optional): Mapping from MUI Element name to the intended classname for that Element
-See https://material-ui.com/api/checkbox/#css
+- classes (dict; optional): The classes to be applied to this component. This keys in this object must be valid CSS rule
+names, and the values must be strings for the classnames to be assigned to each rule name
+Valid rule names are:
+  root
+  checked
+  disabled
+  indeterminate
+  colorPrimary
+  colorSecondary. classes has the following type: dict containing keys 'root', 'checked', 'disabled', 'indeterminate', 'colorPrimary', 'colorSecondary', 'sizeSmall'.
+  Those keys have the following types:
+  - root (string; optional)
+  - checked (string; optional)
+  - disabled (string; optional)
+  - indeterminate (string; optional)
+  - colorPrimary (string; optional)
+  - colorSecondary (string; optional)
+  - sizeSmall (string; optional)
 - disabled (boolean; default False): Checkbox is disabled if true
 - id (string; required): The element's ID
 - label (string; optional): The label for the checkbox

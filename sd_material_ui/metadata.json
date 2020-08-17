@@ -37,9 +37,64 @@
       "classes": {
         "required": false,
         "flowType": {
-          "name": "Object"
+          "name": "signature",
+          "type": "object",
+          "raw": "{\r\n  root?: string,\r\n  checked?: string,\r\n  disabled?: string,\r\n  indeterminate?: string,\r\n  colorPrimary?: string,\r\n  colorSecondary?: string,\r\n  sizeSmall?: string,\r\n}",
+          "signature": {
+            "properties": [
+              {
+                "key": "root",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "checked",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "disabled",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "indeterminate",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "colorPrimary",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "colorSecondary",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "sizeSmall",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              }
+            ]
+          }
         },
-        "description": "Mapping from MUI Element name to the intended classname for that Element\r\nSee https://material-ui.com/api/checkbox/#css",
+        "description": "The classes to be applied to this component. This keys in this object must be valid CSS rule\r\nnames, and the values must be strings for the classnames to be assigned to each rule name\r\nValid rule names are:\r\n  root\r\n  checked\r\n  disabled\r\n  indeterminate\r\n  colorPrimary\r\n  colorSecondary",
         "defaultValue": {
           "value": "{}",
           "computed": false
