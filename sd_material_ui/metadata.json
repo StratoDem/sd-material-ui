@@ -1029,6 +1029,156 @@
       }
     }
   },
+  "src/lib/components/CircularProgress.react.js": {
+    "description": "Material UI CircularProgress component",
+    "displayName": "CircularProgress",
+    "methods": [],
+    "props": {
+      "classes": {
+        "required": false,
+        "flowType": {
+          "name": "signature",
+          "type": "object",
+          "raw": "{\r\n  root?: string,\r\n  static?: string,\r\n  indeterminate?: string,\r\n  colorPrimary?: string,\r\n  colorSecondary?: string,\r\n  circle?: string,\r\n  circleStatic?: string,\r\n  circleIndeterminate?: string,\r\n  circleDisableShrink?: string,\r\n}",
+          "signature": {
+            "properties": [
+              {
+                "key": "root",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "static",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "indeterminate",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "colorPrimary",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "colorSecondary",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "circle",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "circleStatic",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "circleIndeterminate",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "circleDisableShrink",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              }
+            ]
+          }
+        },
+        "description": "The classes to be applied to this component. This keys in this object must be valid CSS rule\r\nnames, and the values must be strings for the classnames to be assigned to each rule name\r\nValid rule names are:\r\n  root\r\n  static\r\n  indeterminate\r\n  colorPrimary\r\n  colorSecondary\r\n  circle\r\n  circleStatic\r\n  circleIndeterminate\r\n  circleDisableShrink",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "color": {
+        "required": false,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "Override the progress's color",
+        "defaultValue": {
+          "value": "'inherit'",
+          "computed": false
+        }
+      },
+      "mode": {
+        "required": false,
+        "flowType": {
+          "name": "literal",
+          "value": "'indeterminate'"
+        },
+        "description": "The mode of show your progress, for now, will always be indeterminate",
+        "defaultValue": {
+          "value": "'indeterminate'",
+          "computed": false
+        }
+      },
+      "size": {
+        "required": false,
+        "flowType": {
+          "name": "number"
+        },
+        "description": "The diameter of the progress in pixels",
+        "defaultValue": {
+          "value": "40",
+          "computed": false
+        }
+      },
+      "style": {
+        "required": false,
+        "flowType": {
+          "name": "Object"
+        },
+        "description": "Override the inline-style of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "thickness": {
+        "required": false,
+        "flowType": {
+          "name": "number"
+        },
+        "description": "Stroke width in pixels",
+        "defaultValue": {
+          "value": "3.5",
+          "computed": false
+        }
+      },
+      "innerStyle": {
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        },
+        "required": false
+      }
+    }
+  },
   "src/lib/components/Dialog.react.js": {
     "description": "Material UI Dialog component",
     "displayName": "Dialog",

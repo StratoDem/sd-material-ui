@@ -8,19 +8,40 @@ class CircularProgress(Component):
 Material UI CircularProgress component
 
 Keyword arguments:
-- color (string; default '#00BCD4'): Override the progress's color
-- innerStyle (dict; optional): Style for inner wrapper div
-- mode (required): The mode of show your progress, for now, will always be indeterminate
+- classes (dict; optional): The classes to be applied to this component. This keys in this object must be valid CSS rule
+names, and the values must be strings for the classnames to be assigned to each rule name
+Valid rule names are:
+  root
+  static
+  indeterminate
+  colorPrimary
+  colorSecondary
+  circle
+  circleStatic
+  circleIndeterminate
+  circleDisableShrink. classes has the following type: dict containing keys 'root', 'static', 'indeterminate', 'colorPrimary', 'colorSecondary', 'circle', 'circleStatic', 'circleIndeterminate', 'circleDisableShrink'.
+  Those keys have the following types:
+  - root (string; optional)
+  - static (string; optional)
+  - indeterminate (string; optional)
+  - colorPrimary (string; optional)
+  - colorSecondary (string; optional)
+  - circle (string; optional)
+  - circleStatic (string; optional)
+  - circleIndeterminate (string; optional)
+  - circleDisableShrink (string; optional)
+- color (string; default 'inherit'): Override the progress's color
+- mode (default 'indeterminate'): The mode of show your progress, for now, will always be indeterminate
 - size (number; default 40): The diameter of the progress in pixels
 - style (dict; optional): Override the inline-style of the root element
 - thickness (number; default 3.5): Stroke width in pixels"""
     @_explicitize_args
-    def __init__(self, color=Component.UNDEFINED, innerStyle=Component.UNDEFINED, mode=Component.REQUIRED, size=Component.UNDEFINED, style=Component.UNDEFINED, thickness=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['color', 'innerStyle', 'mode', 'size', 'style', 'thickness']
+    def __init__(self, classes=Component.UNDEFINED, color=Component.UNDEFINED, mode=Component.UNDEFINED, size=Component.UNDEFINED, style=Component.UNDEFINED, thickness=Component.UNDEFINED, innerStyle=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['classes', 'color', 'mode', 'size', 'style', 'thickness']
         self._type = 'CircularProgress'
         self._namespace = 'sd_material_ui'
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['color', 'innerStyle', 'mode', 'size', 'style', 'thickness']
+        self.available_properties = ['classes', 'color', 'mode', 'size', 'style', 'thickness']
         self.available_wildcard_properties =            []
 
         _explicit_args = kwargs.pop('_explicit_args')
@@ -28,7 +49,7 @@ Keyword arguments:
         _locals.update(kwargs)  # For wildcard attrs
         args = {k: _locals[k] for k in _explicit_args if k != 'children'}
 
-        for k in ['mode']:
+        for k in []:
             if k not in args:
                 raise TypeError(
                     'Required argument `' + k + '` was not specified.')

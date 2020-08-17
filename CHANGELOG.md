@@ -17,6 +17,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
     - Paper
     - Card
     - Divider
+    - CircularProgress
 
 ### Related issues:
 - [402](https://github.com/StratoDem/sd-material-ui/issues/402)
@@ -32,6 +33,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - [400](https://github.com/StratoDem/sd-material-ui/issues/400)
 - [408](https://github.com/StratoDem/sd-material-ui/issues/408)
 - [403](https://github.com/StratoDem/sd-material-ui/issues/403)
+- [401](https://github.com/StratoDem/sd-material-ui/issues/401)
 
 ## 3.2.0 2019-11-04
 ### Adds
