@@ -89,6 +89,7 @@ app.layout = html.Div([
             sd_material_ui.Checkbox(id='checkbox3', label=5, name='5'),
 
             html.P(id='checkbox-output'),
+            html.Button('Clear Selections', id='clear-checks')
         ]),
 
     ], style=dict(display='flex', flexWrap='wrap')),
@@ -178,23 +179,31 @@ def show_modal_dialog(modal_click: int, close_button: int, open_state: bool):
     [dash.dependencies.Input('checkbox1', 'checked'),
      dash.dependencies.Input('checkbox2', 'checked'),
      dash.dependencies.Input('checkbox3', 'checked')],
-    [dash.dependencies.State('checkbox1', 'checked'),
-     dash.dependencies.State('checkbox2', 'checked'),
-     dash.dependencies.State('checkbox3', 'checked'),
-     dash.dependencies.State('checkbox1', 'name'),
+    [dash.dependencies.State('checkbox1', 'name'),
      dash.dependencies.State('checkbox2', 'name'),
      dash.dependencies.State('checkbox3', 'name')])
 def callback_checkboxes(check_1: bool, check_2: bool, check_3: bool,
-                        _check_1: bool, _check_2: bool, _check_3: bool,
                         name_1: str, name_2: str, name_3: str, ):
     output = []
-    if _check_1:
+    if check_1:
         output.append(name_1)
-    if _check_2:
+    if check_2:
         output.append(name_2)
-    if _check_3:
+    if check_3:
         output.append(name_3)
     return f'{output}'
+
+@app.callback(
+    [dash.dependencies.Output('checkbox1', 'checked'),
+     dash.dependencies.Output('checkbox2', 'checked'),
+     dash.dependencies.Output('checkbox3', 'checked')],
+    [dash.dependencies.Input('clear-checks', 'n_clicks')])
+def callback_checkboxes(n: int):
+    if not n:
+        raise dash.exceptions.PreventUpdate
+    return False, False, False
+
+
 
 
 #

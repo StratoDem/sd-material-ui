@@ -57,7 +57,7 @@ export default class Checkbox extends Component<Props, State> {
   UNSAFE_componentWillReceiveProps(nextProps: Props, nextContext: *): void {
     if (nextProps.checked !== null && nextProps.checked !== this.props.checked) {
       this.props.setProps({checked: nextProps.checked})
-      // this.setState({checked: nextProps.checked});
+      this.setState({checked: nextProps.checked});
     }
   }
 
