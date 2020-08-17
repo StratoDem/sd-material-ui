@@ -90,46 +90,48 @@ app.layout = html.Div([
             ])
         ]),
 
+        spacer,
+
+        html.Div([
+            html.P([html.Strong('Test for buttons')]),
+
+            sd_material_ui.Button(html.P('This is a Raised Button', style={'margin': 0}),
+                                  id='button1',
+                                  disableShadow=False,
+                                  useIcon=False,
+                                  variant='contained'),
+
+            spacer,
+
+            sd_material_ui.Button(html.P('This is a Flat Button',
+                                         style={'margin': 0}),
+                                  id='button2',
+                                  disableShadow=False,
+                                  useIcon=False,
+                                  variant='outlined',
+                                  classes={'root': 'SAMPLE_ROOT_CLASS',
+                                           'label': 'SAMPLE_LABEL_CLASS', }),
+
+            spacer,
+
+            sd_material_ui.Button('Text Button',
+                                  id='button3',
+                                  variant='text',),
+
+            spacer,
+
+            sd_material_ui.Button(useIcon=True,
+                                  id='button4',
+                                  iconClass="glyphicon glyphicon-asterisk"),
+
+            html.P(id='output-button')
+
+        ]),
+
+
+
+
     ], style=dict(display='flex', flexWrap='wrap')),
-
-    spacer,
-
-    html.Div([
-        html.P([html.Strong('Test for buttons')]),
-
-        sd_material_ui.Button(html.P('This is a Raised Button', style={'margin': 0}),
-                              id='button1',
-                              disableShadow=False,
-                              useIcon=False,
-                              variant='contained'),
-
-        spacer,
-
-        sd_material_ui.Button(html.P('This is a Flat Button',
-                                     style={'margin': 0}),
-                              id='button2',
-                              disableShadow=False,
-                              useIcon=False,
-                              variant='outlined',
-                              classes={'root': 'SAMPLE_ROOT_CLASS',
-                                       'label': 'SAMPLE_LABEL_CLASS', }),
-
-        spacer,
-
-        sd_material_ui.Button('Text Button',
-                              id='button3',
-                              variant='text',),
-
-        spacer,
-
-        sd_material_ui.Button(useIcon=True,
-                              id='button4',
-                              iconClass="glyphicon glyphicon-asterisk"),
-
-        html.P(id='output-button')
-
-    ]),
-
 
 
     final_spacer,
