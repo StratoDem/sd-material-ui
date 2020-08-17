@@ -21,8 +21,13 @@ type Props = {
   /** The CSS class name of the root element */
   className?: string,
   /** The classes to be applied to this component. This keys in this object must be valid CSS rule
-   * names, and the values must be strings for the classnames to be assigned to each rule name */
-  classes?: Object,
+   * names, and the values must be strings for the classnames to be assigned to each rule name
+   * Valid rule names are:
+   *   root
+   */
+  classes?: {
+    root?: string,
+  },
   /** The CSS class name of the actionArea element */
   actionAreaClassName?: string,
   /** The classes to be applied to the actionArea component. This keys in this object must be valid CSS rule

@@ -15,8 +15,25 @@ type Props = {
   /** The CSS class name of the root element */
   className?: string,
   /** The classes to be applied to this component. This keys in this object must be valid CSS rule
-   * names, and the values must be strings for the classnames to be assigned to each rule name */
-  classes?: Object,
+   * names, and the values must be strings for the classnames to be assigned to each rule name
+   * Valid rule names are:
+   *   root
+   *   rounded
+   *   outlined
+   *   elevation0
+   *   elevation1
+   *   ...
+   *   elevation23
+   *   elevation24
+   */
+  classes?: {
+    root?: string,
+    rounded?: string,
+    outlined?: string,
+    elevation0: string,
+    elevation1: string,
+    ...
+  },
   /** By default, the paper container will have a border radius.
    * Set this to false to generate a container with sharp corners.
    */

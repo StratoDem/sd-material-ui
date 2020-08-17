@@ -13,6 +13,21 @@ Keyword arguments:
 - className (string; optional): The CSS class name of the root element
 - classes (dict; optional): The classes to be applied to this component. This keys in this object must be valid CSS rule
 names, and the values must be strings for the classnames to be assigned to each rule name
+Valid rule names are:
+  root
+  rounded
+  outlined
+  elevation0
+  elevation1
+  ...
+  elevation23
+  elevation24. classes has the following type: dict containing keys 'root', 'rounded', 'outlined', 'elevation0', 'elevation1'.
+  Those keys have the following types:
+  - root (string; optional)
+  - rounded (string; optional)
+  - outlined (string; optional)
+  - elevation0 (string; required)
+  - elevation1 (string; required)
 - rounded (boolean; default True): By default, the paper container will have a border radius.
 Set this to false to generate a container with sharp corners.
 - style (dict; optional): Override the inline-styles of the root element

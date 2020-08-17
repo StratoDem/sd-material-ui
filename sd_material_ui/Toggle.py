@@ -22,7 +22,20 @@ Valid rule names are:
   disabled
   input
   thumb
-  tract
+  tract. classes has the following type: dict containing keys 'root', 'edgeStart', 'edgeEnd', 'switchBase', 'colorPrimary', 'colorSecondary', 'sizeSmall', 'checked', 'disabled', 'input', 'thumb', 'tract'.
+  Those keys have the following types:
+  - root (string; optional)
+  - edgeStart (string; optional)
+  - edgeEnd (string; optional)
+  - switchBase (string; optional)
+  - colorPrimary (string; optional)
+  - colorSecondary (string; optional)
+  - sizeSmall (string; optional)
+  - checked (string; optional)
+  - disabled (string; optional)
+  - input (string; optional)
+  - thumb (string; optional)
+  - tract (string; optional)
 - className (string; default ''): CSS class name of the root element
 - disabled (boolean; default False): Whether the toggle is disabled (true) or not (false)
 - id (string; required): Toggle ID
