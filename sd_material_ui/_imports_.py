@@ -3,6 +3,7 @@ from .Button import Button
 from .Card import Card
 from .Checkbox import Checkbox
 from .Dialog import Dialog
+from .Divider import Divider
 from .Drawer import Drawer
 from .FontIcon import FontIcon
 from .Paper import Paper
@@ -15,6 +16,7 @@ __all__ = [
     "Card",
     "Checkbox",
     "Dialog",
+    "Divider",
     "Drawer",
     "FontIcon",
     "Paper",
