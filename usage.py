@@ -217,6 +217,8 @@ app.layout = html.Div([
             html.P(id='dropdown-output'),
         ]),
 
+        spacer,
+
         html.Div([
             html.P([html.Strong('Sample for CircularProgress')]),
             sd_material_ui.CircularProgress(color='#00f2ff',
@@ -224,7 +226,7 @@ app.layout = html.Div([
         ]),
 
         final_spacer,
-    ]),
+    ], style=dict(display='flex', flexWrap='wrap')),
 
 ])
 

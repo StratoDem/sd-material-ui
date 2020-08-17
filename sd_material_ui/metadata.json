@@ -1039,7 +1039,7 @@
         "flowType": {
           "name": "signature",
           "type": "object",
-          "raw": "{\r\n  root?: string,\r\n  static?: string,\r\n  indeterminate?: string,\r\n  colorPrimary?: string,\r\n  colorSecondary?: string,\r\n  circle?: string,\r\n  circleStatic?: string,\r\n  circleIndeterminate?: string,\r\n  circleDisableShrink?: string,\r\n}",
+          "raw": "{\n  root?: string,\n  static?: string,\n  indeterminate?: string,\n  colorPrimary?: string,\n  colorSecondary?: string,\n  circle?: string,\n  circleStatic?: string,\n  circleIndeterminate?: string,\n  circleDisableShrink?: string,\n}",
           "signature": {
             "properties": [
               {
@@ -1108,7 +1108,7 @@
             ]
           }
         },
-        "description": "The classes to be applied to this component. This keys in this object must be valid CSS rule\r\nnames, and the values must be strings for the classnames to be assigned to each rule name\r\nValid rule names are:\r\n  root\r\n  static\r\n  indeterminate\r\n  colorPrimary\r\n  colorSecondary\r\n  circle\r\n  circleStatic\r\n  circleIndeterminate\r\n  circleDisableShrink",
+        "description": "The classes to be applied to this component. This keys in this object must be valid CSS rule\nnames, and the values must be strings for the classnames to be assigned to each rule name\nValid rule names are:\n  root\n  static\n  indeterminate\n  colorPrimary\n  colorSecondary\n  circle\n  circleStatic\n  circleIndeterminate\n  circleDisableShrink",
         "defaultValue": {
           "value": "{}",
           "computed": false
