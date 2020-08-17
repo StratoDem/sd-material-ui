@@ -11,6 +11,36 @@ type Props = {
   id: string,
   /** Children to render inside of the Dialog */
   children?: Node,
+  /** The classes to be applied to this component. This keys in this object must be valid CSS rule
+   * names, and the values must be strings for the classnames to be assigned to each rule name
+   * Valid rule names are:
+   *   root
+   *   docked
+   *   paper
+   *   paperAnchorLeft
+   *   paperAnchorRight
+   *   paperAnchorTop
+   *   paperAnchorBottom
+   *   paperAnchorDockedLeft
+   *   paperAnchorDockedTop
+   *   paperAnchorDockedRight
+   *   paperAnchorDockedBottom
+   *   modal
+   * */
+  classes?: {
+    root?: string,
+    docked?: string,
+    paper?: string,
+    paperAnchorLeft?: string,
+    paperAnchorRight?: string,
+    paperAnchorTop?: string,
+    paperAnchorBottom?: string,
+    paperAnchorDockedLeft?: string,
+    paperAnchorDockedTop?: string,
+    paperAnchorDockedRight?: string,
+    paperAnchorDockedBottom?: string,
+    modal?: string
+  },
   /** CSS class name of the root element */
   className?: string,
   /** Is the drawer open?
@@ -30,7 +60,9 @@ type State = {
 const defaultProps = {
   anchor: "left",
   children: null,
+  classes: {},
   className: '',
+  classNameRoot: '',
   open: false,
   setProps: () => {},
 };
@@ -47,12 +79,13 @@ export default class Drawer extends Component<Props, State> {
   }
 
   render() {
-    const {id, anchor, className} = this.props;
+    const {id, anchor, classes, className} = this.props;
 
     return (
       <div id={id}>
         <MuiDrawer
           anchor={anchor}
+          classes={classes}
           className={className}
           variant={"persistent"}
           open={this.state.open}
