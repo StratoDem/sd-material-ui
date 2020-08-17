@@ -207,6 +207,7 @@ app.layout = html.Div([
             final_spacer,
         ]),
 
+    ]),
     ], style={'list-style-type': 'none'})
 ])
 
