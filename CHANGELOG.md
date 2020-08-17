@@ -14,6 +14,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
     - Toggle
     - Button
     - FontIcon
+    - Paper
+    - Card
 
 ### Related issues:
 - [402](https://github.com/StratoDem/sd-material-ui/issues/402)
@@ -24,6 +26,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - [409](https://github.com/StratoDem/sd-material-ui/issues/409)
 - [398](https://github.com/StratoDem/sd-material-ui/issues/398)
 - [417](https://github.com/StratoDem/sd-material-ui/issues/417)
+- [410](https://github.com/StratoDem/sd-material-ui/issues/410)
+- [399](https://github.com/StratoDem/sd-material-ui/issues/399)
 - [400](https://github.com/StratoDem/sd-material-ui/issues/400)
 - [408](https://github.com/StratoDem/sd-material-ui/issues/408)
 
