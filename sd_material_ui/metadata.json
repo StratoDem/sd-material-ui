@@ -1,39 +1,25 @@
 {
-  "src/lib/components/Card.react.js": {
-    "description": "Material UI Card component",
-    "displayName": "Card",
-    "methods": [],
+  "src/lib/components/Button.react.js": {
+    "description": "",
+    "displayName": "Button",
+    "methods": [
+      {
+        "name": "handleClick",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      }
+    ],
     "props": {
-      "id": {
-        "required": false,
-        "flowType": {
-          "name": "string"
-        },
-        "description": "ID for Card",
-        "defaultValue": {
-          "value": "''",
-          "computed": false
-        }
-      },
       "children": {
         "required": false,
         "flowType": {
           "name": "Node"
         },
-        "description": "Can be used to render elements inside the Card.",
+        "description": "This is what will be displayed inside the button.\r\nIf a label is specified, the text within the label prop will\r\nbe displayed. Otherwise, the component will expect children\r\nwhich will then be displayed. (In our example,\r\nwe are nesting an `<input type=\"file\" />` and a `span`\r\nthat acts as our label to be displayed.) This only\r\napplies to flat and disableShadow buttons.",
         "defaultValue": {
-          "value": "[]",
-          "computed": false
-        }
-      },
-      "className": {
-        "required": false,
-        "flowType": {
-          "name": "string"
-        },
-        "description": "The CSS class name of the root element",
-        "defaultValue": {
-          "value": "''",
+          "value": "null",
           "computed": false
         }
       },
@@ -42,7 +28,7 @@
         "flowType": {
           "name": "signature",
           "type": "object",
-          "raw": "{\r\n  root?: string,\r\n}",
+          "raw": "{\r\n  root?: string,\r\n  label?: string,\r\n  text?: string,\r\n  textPrimary?: string,\r\n  textSecondary?: string,\r\n  outline?: string,\r\n  outlinedPrimary?: string,\r\n  outlinedSecondary?: string,\r\n  contained?: string,\r\n  containedPrimary?: string,\r\n  containedSecondary?: string,\r\n  disableElevation?: string,\r\n  focusVisible?: string,\r\n  disabled?: string,\r\n  colorInherit?: string,\r\n  textSizeSmall?: string,\r\n  textSizeLarge?: string,\r\n  outlinedSizeSmall?: string,\r\n  outlinedSizeLarge?: string,\r\n  containedSizeSmall?: string,\r\n  containedSizeLarge?: string,\r\n  sizeSmall?: string,\r\n  sizeLarge?: string,\r\n  fullWidth?: string,\r\n  startIcon?: string,\r\n  endIcon?: string,\r\n  iconSizeSmall?: string,\r\n  iconSizeMedium?: string,\r\n  iconSizeLarge?: string,\r\n}",
           "signature": {
             "properties": [
               {
@@ -51,141 +37,378 @@
                   "name": "string",
                   "required": false
                 }
+              },
+              {
+                "key": "label",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "text",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "textPrimary",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "textSecondary",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "outline",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "outlinedPrimary",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "outlinedSecondary",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "contained",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "containedPrimary",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "containedSecondary",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "disableElevation",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "focusVisible",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "disabled",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "colorInherit",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "textSizeSmall",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "textSizeLarge",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "outlinedSizeSmall",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "outlinedSizeLarge",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "containedSizeSmall",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "containedSizeLarge",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "sizeSmall",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "sizeLarge",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "fullWidth",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "startIcon",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "endIcon",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "iconSizeSmall",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "iconSizeMedium",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "iconSizeLarge",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
               }
             ]
           }
         },
-        "description": "The classes to be applied to this component. This keys in this object must be valid CSS rule\r\nnames, and the values must be strings for the classnames to be assigned to each rule name\r\nValid rule names are:\r\n  root",
+        "description": "The classes to be applied to this component. This keys in this object must be valid CSS rule\r\nnames, and the values must be strings for the classnames to be assigned to each rule name\r\nValid rule names are:\r\n  root\r\n  label\r\n  text\r\n  textPrimary\r\n  textSecondary\r\n  outline\r\n  outlinedPrimary\r\n  outlinedSecondary\r\n  contained\r\n  containedPrimary\r\n  containedSecondary\r\n  disableElevation\r\n  focusVisible\r\n  disabled\r\n  colorInherit\r\n  textSizeSmall\r\n  textSizeLarge\r\n  outlinedSizeSmall\r\n  outlinedSizeLarge\r\n  containedSizeSmall\r\n  containedSizeLarge\r\n  sizeSmall\r\n  sizeLarge\r\n  fullWidth\r\n  startIcon\r\n  endIcon\r\n  iconSizeSmall\r\n  iconSizeMedium\r\n  iconSizeLarge\r\n\n  OR\r\n\n  root\r\n  edgeStart\r\n  edgeEnd\r\n  colorInherit\r\n  colorPrimary\r\n  colorSecondary\r\n  disabled\r\n  sizeSmall\r\n  label\r\n\nSee https://material-ui.com/api/button/#css\r\nand https://material-ui.com/api/icon-button/#css",
         "defaultValue": {
           "value": "{}",
           "computed": false
         }
       },
-      "actionAreaClassName": {
+      "className": {
         "required": false,
         "flowType": {
           "name": "string"
         },
-        "description": "The CSS class name of the actionArea element",
+        "description": "CSS class name of the root element",
         "defaultValue": {
           "value": "''",
           "computed": false
         }
       },
-      "actionAreaClasses": {
+      "disableTouchRipple": {
         "required": false,
         "flowType": {
-          "name": "Object"
+          "name": "boolean"
         },
-        "description": "The classes to be applied to the actionArea component. This keys in this object must be valid CSS rule\r\nnames, and the values must be strings for the classnames to be assigned to each rule name",
+        "description": "If true, the element's ripple effect will be disabled",
         "defaultValue": {
-          "value": "{}",
+          "value": "false",
           "computed": false
         }
       },
-      "actionsClassName": {
+      "disabled": {
+        "required": false,
+        "flowType": {
+          "name": "boolean"
+        },
+        "description": "Disable the button?",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "fireEvent": {
+        "required": false,
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "() => void",
+          "signature": {
+            "arguments": [],
+            "return": {
+              "name": "void"
+            }
+          }
+        },
+        "description": "Dash callback to trigger an event handler",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      },
+      "fullWidth": {
+        "required": false,
+        "flowType": {
+          "name": "boolean"
+        },
+        "description": "If true, the button will take up the full width of its container",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "href": {
         "required": false,
         "flowType": {
           "name": "string"
         },
-        "description": "The CSS class name of the actions element",
+        "description": "The URL to link to when the button is clicked",
         "defaultValue": {
           "value": "''",
           "computed": false
         }
       },
-      "actionsClasses": {
-        "required": false,
-        "flowType": {
-          "name": "Object"
-        },
-        "description": "The classes to be applied to the actions component. This keys in this object must be valid CSS rule\r\nnames, and the values must be strings for the classnames to be assigned to each rule name",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "contentClassName": {
-        "required": false,
-        "flowType": {
-          "name": "string"
-        },
-        "description": "The CSS class name of the content element",
-        "defaultValue": {
-          "value": "''",
-          "computed": false
-        }
-      },
-      "contentClasses": {
-        "required": false,
-        "flowType": {
-          "name": "Object"
-        },
-        "description": "The classes to be applied to the content component. This keys in this object must be valid CSS rule\r\nnames, and the values must be strings for the classnames to be assigned to each rule name",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "headerClassName": {
-        "required": false,
-        "flowType": {
-          "name": "string"
-        },
-        "description": "The CSS class name of the header element",
-        "defaultValue": {
-          "value": "''",
-          "computed": false
-        }
-      },
-      "headerClasses": {
-        "required": false,
-        "flowType": {
-          "name": "Object"
-        },
-        "description": "The classes to be applied to the header component. This keys in this object must be valid CSS rule\r\nnames, and the values must be strings for the classnames to be assigned to each rule name",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "headerAvatar": {
+      "iconClass": {
         "required": false,
         "flowType": {
           "name": "Node"
         },
-        "description": "This is the Avatar element to be displayed on the Card Header. If avatar is an Avatar or\r\nother element, it will be rendered. If avatar is a string, it will be used as the image src\r\nfor an Avatar.",
+        "description": "Sets the class of a span element inside the button",
         "defaultValue": {
           "value": "null",
           "computed": false
         }
       },
-      "headerIconClassName": {
+      "id": {
         "required": false,
         "flowType": {
           "name": "string"
         },
-        "description": "The CSS class name of the header Icon element"
+        "description": "Element ID"
+      },
+      "n_clicks": {
+        "required": false,
+        "flowType": {
+          "name": "number"
+        },
+        "description": "An integer that represents the number fo times that this element has been clicked",
+        "defaultValue": {
+          "value": "0",
+          "computed": false
+        }
+      },
+      "n_clicks_previous": {
+        "required": false,
+        "flowType": {
+          "name": "number"
+        },
+        "description": "An integer that represents the previous number of times this element has been clicked",
+        "defaultValue": {
+          "value": "0",
+          "computed": false
+        }
+      },
+      "disableShadow": {
+        "required": false,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "Hide the shadow behind the button"
+      },
+      "setProps": {
+        "required": false,
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "() => void",
+          "signature": {
+            "arguments": [],
+            "return": {
+              "name": "void"
+            }
+          }
+        },
+        "description": "Dash callback to update props",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
       },
       "style": {
         "required": false,
         "flowType": {
           "name": "Object"
         },
-        "description": "Styles to be implemented as inline css",
+        "description": "Override the inline styles of the root element",
         "defaultValue": {
           "value": "{}",
           "computed": false
         }
       },
-      "raised": {
+      "useIcon": {
         "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "description": "If true, the Card component will appear raised",
+        "description": "If true, this object is rendered as an IconButton"
+      },
+      "variant": {
+        "required": false,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "'contained' | 'outlined' | 'text', Button type if not an IconButton",
         "defaultValue": {
-          "value": "true",
+          "value": "'text'",
           "computed": false
         }
       }
@@ -996,131 +1219,6 @@
           "computed": false
         },
         "required": false
-      }
-    }
-  },
-  "src/lib/components/Paper.react.js": {
-    "description": "A Dash material-ui Paper component",
-    "displayName": "Paper",
-    "methods": [],
-    "props": {
-      "id": {
-        "required": false,
-        "flowType": {
-          "name": "string"
-        },
-        "description": "ID for Paper",
-        "defaultValue": {
-          "value": "null",
-          "computed": false
-        }
-      },
-      "children": {
-        "required": false,
-        "flowType": {
-          "name": "Node"
-        },
-        "description": "Can be used to render elements inside the Paper",
-        "defaultValue": {
-          "value": "null",
-          "computed": false
-        }
-      },
-      "className": {
-        "required": false,
-        "flowType": {
-          "name": "string"
-        },
-        "description": "The CSS class name of the root element",
-        "defaultValue": {
-          "value": "null",
-          "computed": false
-        }
-      },
-      "classes": {
-        "required": false,
-        "flowType": {
-          "name": "signature",
-          "type": "object",
-          "raw": "{\r\n  root?: string,\r\n  rounded?: string,\r\n  outlined?: string,\r\n  elevation0: string,\r\n  elevation1: string,\r\n  ...\r\n}",
-          "signature": {
-            "properties": [
-              {
-                "key": "root",
-                "value": {
-                  "name": "string",
-                  "required": false
-                }
-              },
-              {
-                "key": "rounded",
-                "value": {
-                  "name": "string",
-                  "required": false
-                }
-              },
-              {
-                "key": "outlined",
-                "value": {
-                  "name": "string",
-                  "required": false
-                }
-              },
-              {
-                "key": "elevation0",
-                "value": {
-                  "name": "string",
-                  "required": true
-                }
-              },
-              {
-                "key": "elevation1",
-                "value": {
-                  "name": "string",
-                  "required": true
-                }
-              }
-            ]
-          }
-        },
-        "description": "The classes to be applied to this component. This keys in this object must be valid CSS rule\r\nnames, and the values must be strings for the classnames to be assigned to each rule name\r\nValid rule names are:\r\n  root\r\n  rounded\r\n  outlined\r\n  elevation0\r\n  elevation1\r\n  ...\r\n  elevation23\r\n  elevation24",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "rounded": {
-        "required": false,
-        "flowType": {
-          "name": "boolean"
-        },
-        "description": "By default, the paper container will have a border radius.\r\nSet this to false to generate a container with sharp corners.",
-        "defaultValue": {
-          "value": "true",
-          "computed": false
-        }
-      },
-      "style": {
-        "required": false,
-        "flowType": {
-          "name": "Object"
-        },
-        "description": "Override the inline-styles of the root element",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "zDepth": {
-        "required": false,
-        "flowType": {
-          "name": "number"
-        },
-        "description": "This number represents the zDepth of the paper shadow",
-        "defaultValue": {
-          "value": "1",
-          "computed": false
-        }
       }
     }
   },
