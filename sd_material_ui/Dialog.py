@@ -11,7 +11,24 @@ Keyword arguments:
 - children (a list of or a singular dash component, string or number; optional): Children to render inside of the Dialog
 - id (string; required): Dialog ID
 - ariaLabelledBy (string; default ''): List of space separated id's of elements to use as aria labels
-- classes (dict; optional): Mapping from MUI Element name to the intended classname for that Element
+- classes (dict; optional): The classes to be applied to this component. This keys in this object must be valid CSS rule
+names, and the values must be strings for the classnames to be assigned to each rule name
+Valid rule names are:
+  root
+  container
+  paper
+  scrollPaper
+  scrollBody
+  paperScrollPaper
+  paperScrollBody
+  paperWidthFalse
+  paperWidthXs
+  paperWidthSm
+  paperWidthMd
+  paperWidthLg
+  paperWidthXl
+  paperFullWidth
+  paperFullScreen
 - className (string; default ''): CSS class name of the root element
 - open (boolean; default False): Is the dialog open?
 

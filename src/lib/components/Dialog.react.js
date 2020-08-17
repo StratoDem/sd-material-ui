@@ -17,8 +17,42 @@ type Props = {
   ariaLabelledBy?: string,
   /** Children to render inside of the Dialog */
   children?: Node,
-  /** Mapping from MUI Element name to the intended classname for that Element */
-  classes?: Object,
+  /** The classes to be applied to this component. This keys in this object must be valid CSS rule
+   * names, and the values must be strings for the classnames to be assigned to each rule name
+   * Valid rule names are:
+   *   root
+   *   container
+   *   paper
+   *   scrollPaper
+   *   scrollBody
+   *   paperScrollPaper
+   *   paperScrollBody
+   *   paperWidthFalse
+   *   paperWidthXs
+   *   paperWidthSm
+   *   paperWidthMd
+   *   paperWidthLg
+   *   paperWidthXl
+   *   paperFullWidth
+   *   paperFullScreen
+   * */
+  classes?: {
+    root?: string,
+    container?: string,
+    paper?: string,
+    scrollPaper?: string,
+    scrollBody?: string,
+    paperScrollPaper?: string,
+    paperScrollBody?: string,
+    paperWidthFalse?: string,
+    paperWidthXs?: string,
+    paperWidthSm?: string,
+    paperWidthMd?: string,
+    paperWidthLg?: string,
+    paperWidthXl?: string,
+    paperFullWidth?: string,
+    paperFullScreen?: string
+  },
   /** CSS class name of the root element */
   className?: string,
   /** Is the dialog open?
@@ -54,8 +88,8 @@ const defaultProps = {
   ariaLabelledBy: '',
   actions: null,
   children: null,
-  className: '',
   classes: {},
+  className: '',
   open: false,
   setProps: () => {},
   autoScrollBodyContent: false,
@@ -98,8 +132,8 @@ export default class Dialog extends Component<Props, State> {
   render() {
     const {
       id,
-      className,
       classes,
+      className,
       ariaLabelledBy,
       componentContainerClassName,
       scroll,
@@ -125,13 +159,15 @@ export default class Dialog extends Component<Props, State> {
       <div id={id} className={componentContainerClassName}>
         <CssBaseline/>
         <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
-          <MuiDialog aria-labelledby={ariaLabelledBy}
-                     open={this.state.open}
-                     scroll={scroll}
-                     fullWidth={fullWidth}
-                     onClose={this.closeDialog}
-                     className={className}
-                     classes={classes}>
+          <MuiDialog
+            aria-labelledby={ariaLabelledBy}
+            classes={classes}
+            open={this.state.open}
+            scroll={scroll}
+            fullWidth={fullWidth}
+            onClose={this.closeDialog}
+            className={className}
+          >
             <div style={style}>
               {this.browserSideClose}
               {this.props.children}
