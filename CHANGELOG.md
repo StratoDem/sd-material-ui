@@ -18,6 +18,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
     - FontIcon
     - Paper
     - RadioButtonGroup
+    - Snackbar
     - Toggle
 
 ### Related issues:
@@ -35,6 +36,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - [409](https://github.com/StratoDem/sd-material-ui/issues/409)
 - [410](https://github.com/StratoDem/sd-material-ui/issues/410)
 - [412](https://github.com/StratoDem/sd-material-ui/issues/412)
+- [414](https://github.com/StratoDem/sd-material-ui/issues/414)
 - [417](https://github.com/StratoDem/sd-material-ui/issues/417)
 
 ## 3.2.0 2019-11-04

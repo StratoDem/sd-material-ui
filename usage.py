@@ -101,6 +101,13 @@ app.layout = html.Div([
 
             spacer,
 
+            html.Div([
+                html.P([html.Strong('Test for Snackbar')]),
+                html.Button('Open/Close Snackbar', id='snackbar-button'),
+                sd_material_ui.Snackbar(id='snackbar',
+                                        message='You opened the Snackbar!')
+            ]),
+
         ], style=dict(display='flex', flexWrap='wrap')),
     ]),
 
@@ -229,6 +236,16 @@ app.layout = html.Div([
     ], style=dict(display='flex', flexWrap='wrap')),
 
 ])
+
+
+@app.callback(
+    dash.dependencies.Output('snackbar', 'open'),
+    [dash.dependencies.Input('snackbar-button', 'n_clicks')],
+    [dash.dependencies.State('snackbar', 'open')])
+def callback_snackbar(n: int, _open: bool):
+    if not n:
+        raise dash.exceptions.PreventUpdate
+    return not _open
 
 
 @app.callback(dash.dependencies.Output('bottom-nav-output', 'children'),
