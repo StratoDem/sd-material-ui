@@ -4,7 +4,10 @@ import flask
 import dash_html_components as html
 import time
 
-app = dash.Dash('')
+app = dash.Dash(
+    '',
+    external_stylesheets=['https://fonts.googleapis.com/icon?family=Material+Icons',
+                          'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'])
 
 app.scripts.config.serve_locally = True
 
@@ -70,7 +73,7 @@ app.layout = html.Div([
 
         html.Div([
             html.P([html.Strong('Sample FontIcon')]),
-            sd_material_ui.FontIcon(id='fonticon', iconName='add_circle'),
+            sd_material_ui.FontIcon(id='fonticon', iconName='insert_emoticon'),
         ])
     ], style=dict(display='flex', flexWrap='wrap')),
 
@@ -376,5 +379,4 @@ def radiobuttongroup_callback(value):
 
 
 if __name__ == '__main__':
-    app.css.append_css({'external_url': 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'})
     app.run_server(debug=True)
