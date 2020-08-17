@@ -23,14 +23,14 @@ type Props = {
    * */
   classes?: {
     root?: string,
-    colorPrimary: string,
-    colorSecondary: string,
-    colorAction: string,
-    colorError: string,
-    colorDisabled: string,
-    fontSizeSmall: string,
-    fontSizeLarge: string,
-    fontSizeInherit: string,
+    colorPrimary?: string,
+    colorSecondary?: string,
+    colorAction?: string,
+    colorError?: string,
+    colorDisabled?: string,
+    fontSizeSmall?: string,
+    fontSizeLarge?: string,
+    fontSizeInherit?: string,
   },
   /** CSS class name of the root element */
   className?: string,

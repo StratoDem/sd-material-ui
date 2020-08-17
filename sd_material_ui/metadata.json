@@ -1232,7 +1232,7 @@
         "flowType": {
           "name": "signature",
           "type": "object",
-          "raw": "{\r\n  root?: string,\r\n  colorPrimary: string,\r\n  colorSecondary: string,\r\n  colorAction: string,\r\n  colorError: string,\r\n  colorDisabled: string,\r\n  fontSizeSmall: string,\r\n  fontSizeLarge: string,\r\n  fontSizeInherit: string,\r\n}",
+          "raw": "{\r\n  root?: string,\r\n  colorPrimary?: string,\r\n  colorSecondary?: string,\r\n  colorAction?: string,\r\n  colorError?: string,\r\n  colorDisabled?: string,\r\n  fontSizeSmall?: string,\r\n  fontSizeLarge?: string,\r\n  fontSizeInherit?: string,\r\n}",
           "signature": {
             "properties": [
               {
@@ -1246,56 +1246,56 @@
                 "key": "colorPrimary",
                 "value": {
                   "name": "string",
-                  "required": true
+                  "required": false
                 }
               },
               {
                 "key": "colorSecondary",
                 "value": {
                   "name": "string",
-                  "required": true
+                  "required": false
                 }
               },
               {
                 "key": "colorAction",
                 "value": {
                   "name": "string",
-                  "required": true
+                  "required": false
                 }
               },
               {
                 "key": "colorError",
                 "value": {
                   "name": "string",
-                  "required": true
+                  "required": false
                 }
               },
               {
                 "key": "colorDisabled",
                 "value": {
                   "name": "string",
-                  "required": true
+                  "required": false
                 }
               },
               {
                 "key": "fontSizeSmall",
                 "value": {
                   "name": "string",
-                  "required": true
+                  "required": false
                 }
               },
               {
                 "key": "fontSizeLarge",
                 "value": {
                   "name": "string",
-                  "required": true
+                  "required": false
                 }
               },
               {
                 "key": "fontSizeInherit",
                 "value": {
                   "name": "string",
-                  "required": true
+                  "required": false
                 }
               }
             ]

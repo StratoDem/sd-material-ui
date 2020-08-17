@@ -22,14 +22,14 @@ Valid rule names are:
   fontSizeInherit. classes has the following type: dict containing keys 'root', 'colorPrimary', 'colorSecondary', 'colorAction', 'colorError', 'colorDisabled', 'fontSizeSmall', 'fontSizeLarge', 'fontSizeInherit'.
   Those keys have the following types:
   - root (string; optional)
-  - colorPrimary (string; required)
-  - colorSecondary (string; required)
-  - colorAction (string; required)
-  - colorError (string; required)
-  - colorDisabled (string; required)
-  - fontSizeSmall (string; required)
-  - fontSizeLarge (string; required)
-  - fontSizeInherit (string; required)
+  - colorPrimary (string; optional)
+  - colorSecondary (string; optional)
+  - colorAction (string; optional)
+  - colorError (string; optional)
+  - colorDisabled (string; optional)
+  - fontSizeSmall (string; optional)
+  - fontSizeLarge (string; optional)
+  - fontSizeInherit (string; optional)
 - className (string; default ''): CSS class name of the root element
 - id (string; default ''): id for the component
 - iconName (string; default ''): defines specific icon when using public icon font
