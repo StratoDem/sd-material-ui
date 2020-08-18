@@ -50,7 +50,7 @@ type Props = {
    */
   open?: boolean,
   /** Dash callback to update props on the server */
-  setProps?: (props: { modal?: boolean, open?: boolean }) => void,
+  setProps?: () => void,
 };
 
 type State = {

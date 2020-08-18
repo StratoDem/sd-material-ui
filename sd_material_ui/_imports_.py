@@ -6,6 +6,7 @@ from .CircularProgress import CircularProgress
 from .Dialog import Dialog
 from .Divider import Divider
 from .Drawer import Drawer
+from .DropDownMenu import DropDownMenu
 from .FontIcon import FontIcon
 from .Paper import Paper
 from .Popover import Popover
@@ -22,6 +23,7 @@ __all__ = [
     "Dialog",
     "Divider",
     "Drawer",
+    "DropDownMenu",
     "FontIcon",
     "Paper",
     "Popover",
