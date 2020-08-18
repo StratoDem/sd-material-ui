@@ -12,6 +12,9 @@ from .Paper import Paper
 from .Popover import Popover
 from .RadioButtonGroup import RadioButtonGroup
 from .Snackbar import Snackbar
+from .Stepper import Stepper
+from .Subheader import Subheader
+from .Tabs import Tabs
 from .Toggle import Toggle
 
 __all__ = [
@@ -29,5 +32,8 @@ __all__ = [
     "Popover",
     "RadioButtonGroup",
     "Snackbar",
+    "Stepper",
+    "Subheader",
+    "Tabs",
     "Toggle"
 ]
