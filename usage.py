@@ -232,10 +232,17 @@ app.layout = html.Div([
                                             thickness=5),
         ]),
 
+        spacer,
+
+        html.Div([
+                    html.P([html.Strong('Sample for Stepper')]),
+                    sd_material_ui.Stepper(id='stepper', style={'background': 'inherit'}),
+                ]),
+
         final_spacer,
     ], style=dict(display='flex', flexWrap='wrap')),
 
-])
+    ], style={'list-style-type': 'none'})
 
 
 @app.callback(
