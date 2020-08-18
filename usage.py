@@ -205,6 +205,20 @@ app.layout = html.Div([
                                                     thickness=5),
                 ]),
 
+                spacer,
+
+                html.Div([
+
+                    html.P([html.Strong('Example of Popover')]),
+
+                    sd_material_ui.Popover([html.P('This is a Popover', style={'margin': 0})],
+                                           buttonType='flat',
+                                           buttonLabel='Open Popover',
+                                           open=False)
+
+                    ,
+                ]),
+
             ], style=dict(display='flex', flexWrap='wrap')),
         ]),
 

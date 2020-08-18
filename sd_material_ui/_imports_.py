@@ -8,6 +8,7 @@ from .Divider import Divider
 from .Drawer import Drawer
 from .FontIcon import FontIcon
 from .Paper import Paper
+from .Popover import Popover
 from .RadioButtonGroup import RadioButtonGroup
 from .Snackbar import Snackbar
 from .Toggle import Toggle
@@ -23,6 +24,7 @@ __all__ = [
     "Drawer",
     "FontIcon",
     "Paper",
+    "Popover",
     "RadioButtonGroup",
     "Snackbar",
     "Toggle"
