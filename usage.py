@@ -235,15 +235,12 @@ app.layout = html.Div([
         spacer,
 
         html.Div([
+            html.P([html.Strong('Example of Popover')]),
 
-                    html.P([html.Strong('Example of Popover')]),
-
-                    sd_material_ui.Popover([html.P('This is a Popover', style={'margin': 0})],
-                                           buttonType='flat',
-                                           buttonLabel='Open Popover',
-                                           open=False)
-
-                    ,
+            sd_material_ui.Popover([html.P('This is a Popover', style={'margin': 0})],
+                                   buttonType='flat',
+                                   buttonLabel='Open Popover',
+                                   open=False),
                 ]),
 
         final_spacer,
