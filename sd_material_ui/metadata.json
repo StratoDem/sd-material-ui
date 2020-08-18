@@ -3151,7 +3151,7 @@
         "flowType": {
           "name": "number"
         },
-        "description": "The number of milliseconds to wait before automatically dismissing. If no value is specified\r\nthe snackbar will dismiss normally. If a value is provided the snackbar can still be dismissed\r\nnormally. If a snackbar is dismissed before the timer expires, the timer will be cleared.",
+        "description": "The number of milliseconds to wait before automatically dismissing. If no value is specified\nthe snackbar will dismiss normally. If a value is provided the snackbar can still be dismissed\nnormally. If a snackbar is dismissed before the timer expires, the timer will be cleared.",
         "defaultValue": {
           "value": "3000",
           "computed": false
@@ -3162,7 +3162,7 @@
         "flowType": {
           "name": "signature",
           "type": "object",
-          "raw": "{\r\n  root?: string,\r\n  anchorOriginTopCenter?: string,\r\n  anchorOriginBottomCenter?: string,\r\n  anchorOriginTopRight?: string,\r\n  anchorOriginBottomRight?: string,\r\n  anchorOriginTopLeft?: string,\r\n  anchorOriginBottomLeft?: string,\r\n}",
+          "raw": "{\n  root?: string,\n  anchorOriginTopCenter?: string,\n  anchorOriginBottomCenter?: string,\n  anchorOriginTopRight?: string,\n  anchorOriginBottomRight?: string,\n  anchorOriginTopLeft?: string,\n  anchorOriginBottomLeft?: string,\n}",
           "signature": {
             "properties": [
               {
@@ -3217,7 +3217,7 @@
             ]
           }
         },
-        "description": "The classes to be applied to this component. This keys in this object must be valid CSS rule\r\nnames, and the values must be strings for the classnames to be assigned to each rule name\r\nValid rule names are:\r\n  root\r\n  anchorOriginTopCenter\r\n  anchorOriginBottomCenter\r\n  anchorOriginTopRight\r\n  anchorOriginBottomRight\r\n  anchorOriginTopLeft\r\n  anchorOriginBottomLeft"
+        "description": "The classes to be applied to this component. This keys in this object must be valid CSS rule\nnames, and the values must be strings for the classnames to be assigned to each rule name\nValid rule names are:\n  root\n  anchorOriginTopCenter\n  anchorOriginBottomCenter\n  anchorOriginTopRight\n  anchorOriginBottomRight\n  anchorOriginTopLeft\n  anchorOriginBottomLeft"
       },
       "className": {
         "required": false,
@@ -3261,7 +3261,7 @@
         "flowType": {
           "name": "Node"
         },
-        "description": "The message to be displayed.\r\n(Note: If the message is an element or array, and the Snackbar may re-render while it is\r\nstill open, ensure that the same object remains as the message property if you want to avoid\r\nthe Snackbar hiding and showing again)"
+        "description": "The message to be displayed.\n(Note: If the message is an element or array, and the Snackbar may re-render while it is\nstill open, ensure that the same object remains as the message property if you want to avoid\nthe Snackbar hiding and showing again)"
       },
       "n_clicks": {
         "required": false,
