@@ -81,6 +81,7 @@ const defaultProps = {
   value: false,
   setProps: () => {},
   fireEvent: () => {},
+  classes: {},
 };
 
 /** Material UI Tabs component */
@@ -112,7 +113,7 @@ export default class Tabs extends Component<Props, State> {
   };
 
   render() {
-    const { id, children, tabPropsArray, value} = this.props;
+    const { id, children, tabPropsArray, value, classes} = this.props;
     this.handleChange = this.handleChange.bind(this)
 
     return (
@@ -121,6 +122,7 @@ export default class Tabs extends Component<Props, State> {
           <MuiTabs
             onChange={this.handleChange}
             value={value}
+            classes={classes}
           >
             {children.map((child, idx) =>
               <MuiTab key={idx} {...tabPropsArray[idx]}/>)}

@@ -3077,7 +3077,11 @@
             ]
           }
         },
-        "description": "The classes to be applied to this component. This keys in this object must be valid CSS rule\r\nnames, and the values must be strings for the classnames to be assigned to each rule name\r\nValid rule names are:\r\n  root\r\n  textColorPrimary\r\n  textColorSecondary\r\n  textColorInherit\r\n  selected\r\n  disabled\r\n  fullWidth\r\n  wrapped\r\n  wrapper"
+        "description": "The classes to be applied to this component. This keys in this object must be valid CSS rule\r\nnames, and the values must be strings for the classnames to be assigned to each rule name\r\nValid rule names are:\r\n  root\r\n  textColorPrimary\r\n  textColorSecondary\r\n  textColorInherit\r\n  selected\r\n  disabled\r\n  fullWidth\r\n  wrapped\r\n  wrapper",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
       },
       "className": {
         "required": false,
