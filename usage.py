@@ -255,9 +255,9 @@ app.layout = html.Div([
         final_spacer,
     ], style=dict(display='flex', flexWrap='wrap')),
 
-        html.Li([
-            final_spacer,
-        ]),
+    html.Li([
+        final_spacer,
+    ]),
 
     ], style={'list-style-type': 'none'})
 
