@@ -113,11 +113,11 @@ export default class Tabs extends Component<Props, State> {
   };
 
   render() {
-    const { id, children, tabPropsArray, value, classes} = this.props;
+    const { id, children, tabPropsArray, value, classes, className} = this.props;
     this.handleChange = this.handleChange.bind(this)
 
     return (
-      <div id={id}>
+      <div id={id} className={className}>
         <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
           <MuiTabs
             onChange={this.handleChange}

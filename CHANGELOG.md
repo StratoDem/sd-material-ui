@@ -20,6 +20,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
     - RadioButtonGroup
     - Snackbar
     - Stepper
+    - Tabs
     - Toggle
 
 ### Related issues:
