@@ -18,11 +18,7 @@ final_spacer = html.Div(children=[], style=dict(height=400))
 
 app.layout = html.Div([
 
-    html.Div([
-        spacer,
-    ]),
-
-    sd_material_ui.Divider(),
+    spacer,
 
     html.Div([
         spacer,
@@ -187,7 +183,6 @@ app.layout = html.Div([
             spacer,
 
             html.Div([
-
                 html.P([html.Strong('Test for Checkbox')]),
 
                 sd_material_ui.Checkbox(id='checkbox1', label='Apple', name='Apple'),
@@ -196,6 +191,35 @@ app.layout = html.Div([
 
                 html.P(id='checkbox-output'),
                 html.Button('Clear Selections', id='clear-checks')
+            ]),
+
+            spacer,
+
+            html.Div([
+                html.P([html.Strong('Test for Accordion')]),
+
+                sd_material_ui.Accordion(
+                    id='accordion1',
+                    label='Accordion 1',
+                    expanded=False,
+                    children=html.P('Text inside the accordion')),
+                sd_material_ui.Accordion(
+                    id='accordion2',
+                    label='Accordion 2',
+                    expanded=False,
+                    square=True,
+                    children=html.Div([
+                        html.P('Line of text'),
+                        html.P('Another line of text'),
+                    ])),
+                sd_material_ui.Accordion(
+                    id='accordion3',
+                    label='Accordion 3',
+                    expanded=False,
+                    square=True,
+                    children=html.P('Text')),
+                sd_material_ui.Button(
+                    children='Open Accordion 1', variant='contained', id='accordion-input')
             ]),
         ], style=dict(display='flex', flexWrap='wrap')),
     ]),
@@ -408,6 +432,17 @@ def callback_checkboxes(n: int):
     if not n:
         raise dash.exceptions.PreventUpdate
     return False, False, False
+
+
+@app.callback(
+    [dash.dependencies.Output('accordion1', 'expanded'),
+     dash.dependencies.Output('accordion2', 'expanded'),
+     dash.dependencies.Output('accordion3', 'expanded')],
+    [dash.dependencies.Input('accordion-input', 'n_clicks')])
+def callback_accordions(clicks):
+    if not clicks:
+        raise dash.exceptions.PreventUpdate
+    return [True, False, False]
 
 
 #

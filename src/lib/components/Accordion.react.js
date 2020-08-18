@@ -1,7 +1,7 @@
 // @flow
 
 import React, { Component } from 'react';
-import Accordion from '@material-ui/core/Accordion';
+import { default as MuiAccordion } from '@material-ui/core/Accordion';
 import AccordionDetails from '@material-ui/core/AccordionDetails';
 import AccordionSummary from '@material-ui/core/AccordionSummary';
 import Typography from '@material-ui/core/Typography';
@@ -36,7 +36,7 @@ type Props = {
    */
   detailClasses?: {
     root?: string,
-  }
+  },
   /** If true, the accordion will be displayed in a disabled state */
   disabled?: boolean,
   /** If true, expands the accordion, otherwise collapse it. Setting this prop enables control
@@ -95,7 +95,7 @@ export default class Accordion extends Component<Props, State> {
 
     return (
       <div key={`accordion-${id}`} id={id} className={className}>
-        <Accordion
+        <MuiAccordion
           classes={classes}
           expanded={this.state.expanded}
           onChange={this.handleChange}
@@ -107,7 +107,7 @@ export default class Accordion extends Component<Props, State> {
           <AccordionDetails>
             {this.props.children}
           </AccordionDetails>
-        </Accordion>
+        </MuiAccordion>
       </div>
     )
   };

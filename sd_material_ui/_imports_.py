@@ -1,3 +1,4 @@
+from .Accordion import Accordion
 from .BottomNavigation import BottomNavigation
 from .Button import Button
 from .Card import Card
@@ -16,6 +17,7 @@ from .Tabs import Tabs
 from .Toggle import Toggle
 
 __all__ = [
+    "Accordion",
     "BottomNavigation",
     "Button",
     "Card",
