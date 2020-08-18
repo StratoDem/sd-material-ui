@@ -11,6 +11,30 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 type Props = {
   /** Element ID */
   id?: string,
+  /** The classes to be applied to this component. This keys in this object must be valid CSS rule
+   * names, and the values must be strings for the classnames to be assigned to each rule name
+   * Valid rule names are:
+   *   root
+   *   textColorPrimary
+   *   textColorSecondary
+   *   textColorInherit
+   *   selected
+   *   disabled
+   *   fullWidth
+   *   wrapped
+   *   wrapper
+   * */
+  classes?: {
+    root?: string,
+    textColorPrimary?: string,
+    textColorSecondary?: string,
+    textColorInherit?: string,
+    selected?: string,
+    disabled?: string,
+    fullWidth?: string,
+    wrapped?: string,
+    wrapper?: string,
+  },
   /** CSS class name of the root element */
   className?: string,
   /** Pass Tab components as children */

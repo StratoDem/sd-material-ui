@@ -3003,6 +3003,82 @@
           "computed": false
         }
       },
+      "classes": {
+        "required": false,
+        "flowType": {
+          "name": "signature",
+          "type": "object",
+          "raw": "{\r\n  root?: string,\r\n  textColorPrimary?: string,\r\n  textColorSecondary?: string,\r\n  textColorInherit?: string,\r\n  selected?: string,\r\n  disabled?: string,\r\n  fullWidth?: string,\r\n  wrapped?: string,\r\n  wrapper?: string,\r\n}",
+          "signature": {
+            "properties": [
+              {
+                "key": "root",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "textColorPrimary",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "textColorSecondary",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "textColorInherit",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "selected",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "disabled",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "fullWidth",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "wrapped",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "wrapper",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              }
+            ]
+          }
+        },
+        "description": "The classes to be applied to this component. This keys in this object must be valid CSS rule\r\nnames, and the values must be strings for the classnames to be assigned to each rule name\r\nValid rule names are:\r\n  root\r\n  textColorPrimary\r\n  textColorSecondary\r\n  textColorInherit\r\n  selected\r\n  disabled\r\n  fullWidth\r\n  wrapped\r\n  wrapper"
+      },
       "className": {
         "required": false,
         "flowType": {

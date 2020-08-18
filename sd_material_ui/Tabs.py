@@ -10,6 +10,28 @@ Material UI Tabs component
 Keyword arguments:
 - children (a list of or a singular dash component, string or number; optional): Pass Tab components as children
 - id (string; default ''): Element ID
+- classes (dict; optional): The classes to be applied to this component. This keys in this object must be valid CSS rule
+names, and the values must be strings for the classnames to be assigned to each rule name
+Valid rule names are:
+  root
+  textColorPrimary
+  textColorSecondary
+  textColorInherit
+  selected
+  disabled
+  fullWidth
+  wrapped
+  wrapper. classes has the following type: dict containing keys 'root', 'textColorPrimary', 'textColorSecondary', 'textColorInherit', 'selected', 'disabled', 'fullWidth', 'wrapped', 'wrapper'.
+  Those keys have the following types:
+  - root (string; optional)
+  - textColorPrimary (string; optional)
+  - textColorSecondary (string; optional)
+  - textColorInherit (string; optional)
+  - selected (string; optional)
+  - disabled (string; optional)
+  - fullWidth (string; optional)
+  - wrapped (string; optional)
+  - wrapper (string; optional)
 - className (string; optional): CSS class name of the root element
 - style (dict; optional): Override the inline-styles of the root element
 - tabPropsArray (list; optional): Array of tab properties. Available props:
@@ -23,12 +45,12 @@ value
 wrapped
 - value (bool | number | str | dict | list; default False): Makes Tabs controllable and selects the tab whose value prop matches this prop"""
     @_explicitize_args
-    def __init__(self, children=None, id=Component.UNDEFINED, className=Component.UNDEFINED, fireEvent=Component.UNDEFINED, style=Component.UNDEFINED, tabPropsArray=Component.UNDEFINED, value=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['children', 'id', 'className', 'style', 'tabPropsArray', 'value']
+    def __init__(self, children=None, id=Component.UNDEFINED, classes=Component.UNDEFINED, className=Component.UNDEFINED, fireEvent=Component.UNDEFINED, style=Component.UNDEFINED, tabPropsArray=Component.UNDEFINED, value=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['children', 'id', 'classes', 'className', 'style', 'tabPropsArray', 'value']
         self._type = 'Tabs'
         self._namespace = 'sd_material_ui'
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['children', 'id', 'className', 'style', 'tabPropsArray', 'value']
+        self.available_properties = ['children', 'id', 'classes', 'className', 'style', 'tabPropsArray', 'value']
         self.available_wildcard_properties =            []
 
         _explicit_args = kwargs.pop('_explicit_args')
