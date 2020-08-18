@@ -3351,24 +3351,38 @@
       }
     }
   },
-  "src/lib/components/Tabs.react.js": {
-    "description": "Material UI Tabs component",
-    "displayName": "Tabs",
+  "src/lib/components/Stepper.react.js": {
+    "description": "Material UI Stepper component",
+    "displayName": "Stepper",
     "methods": [
       {
-        "name": "handleChange",
+        "name": "handleNext",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "handlePrev",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "resetSteps",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "createSteps",
         "docblock": null,
         "modifiers": [],
         "params": [
           {
-            "name": "event",
-            "type": {
-              "name": "Object",
-              "alias": "Object"
-            }
-          },
-          {
-            "name": "index",
+            "name": "stepCount",
             "type": {
               "name": "number"
             }
@@ -3378,14 +3392,36 @@
       }
     ],
     "props": {
-      "id": {
+      "activeStep": {
         "required": false,
         "flowType": {
-          "name": "string"
+          "name": "number"
         },
-        "description": "Element ID",
+        "description": "Set the active step (zero based index). This will enable Step control helpers",
         "defaultValue": {
-          "value": "''",
+          "value": "0",
+          "computed": false
+        }
+      },
+      "alternativeLabel": {
+        "required": false,
+        "flowType": {
+          "name": "boolean"
+        },
+        "description": "If true, the labels will appear under the steps",
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        }
+      },
+      "backButtonStyle": {
+        "required": false,
+        "flowType": {
+          "name": "Object"
+        },
+        "description": "The style for the back button",
+        "defaultValue": {
+          "value": "{marginRight: 12}",
           "computed": false
         }
       },
@@ -3394,7 +3430,7 @@
         "flowType": {
           "name": "signature",
           "type": "object",
-          "raw": "{\r\n  root?: string,\r\n  textColorPrimary?: string,\r\n  textColorSecondary?: string,\r\n  textColorInherit?: string,\r\n  selected?: string,\r\n  disabled?: string,\r\n  fullWidth?: string,\r\n  wrapped?: string,\r\n  wrapper?: string,\r\n}",
+          "raw": "{\r\n  root?: string,\r\n  horizontal?: string,\r\n  vertical?: string,\r\n  alternativeLabel?: string,\r\n}",
           "signature": {
             "properties": [
               {
@@ -3405,56 +3441,21 @@
                 }
               },
               {
-                "key": "textColorPrimary",
+                "key": "horizontal",
                 "value": {
                   "name": "string",
                   "required": false
                 }
               },
               {
-                "key": "textColorSecondary",
+                "key": "vertical",
                 "value": {
                   "name": "string",
                   "required": false
                 }
               },
               {
-                "key": "textColorInherit",
-                "value": {
-                  "name": "string",
-                  "required": false
-                }
-              },
-              {
-                "key": "selected",
-                "value": {
-                  "name": "string",
-                  "required": false
-                }
-              },
-              {
-                "key": "disabled",
-                "value": {
-                  "name": "string",
-                  "required": false
-                }
-              },
-              {
-                "key": "fullWidth",
-                "value": {
-                  "name": "string",
-                  "required": false
-                }
-              },
-              {
-                "key": "wrapped",
-                "value": {
-                  "name": "string",
-                  "required": false
-                }
-              },
-              {
-                "key": "wrapper",
+                "key": "alternativeLabel",
                 "value": {
                   "name": "string",
                   "required": false
@@ -3463,11 +3464,7 @@
             ]
           }
         },
-        "description": "The classes to be applied to this component. This keys in this object must be valid CSS rule\r\nnames, and the values must be strings for the classnames to be assigned to each rule name\r\nValid rule names are:\r\n  root\r\n  textColorPrimary\r\n  textColorSecondary\r\n  textColorInherit\r\n  selected\r\n  disabled\r\n  fullWidth\r\n  wrapped\r\n  wrapper",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
+        "description": "The classes to be applied to this component. This keys in this object must be valid CSS rule\r\nnames, and the values must be strings for the classnames to be assigned to each rule name\r\nValid rule names are:\r\n  root\r\n  horizontal\r\n  vertical\r\n  alternativeLabel"
       },
       "className": {
         "required": false,
@@ -3476,18 +3473,29 @@
         },
         "description": "CSS class name of the root element",
         "defaultValue": {
-          "value": "null",
+          "value": "''",
           "computed": false
         }
       },
-      "children": {
+      "finishedButtonStyle": {
         "required": false,
         "flowType": {
-          "name": "Node"
+          "name": "Object"
         },
-        "description": "Pass Tab components as children",
+        "description": "The style for the button displayed after all steps have been finished",
         "defaultValue": {
-          "value": "[]",
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "finishedText": {
+        "required": false,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "The text to display on the final button when all steps have been completed",
+        "defaultValue": {
+          "value": "'Click here to view again'",
           "computed": false
         }
       },
@@ -3504,9 +3512,60 @@
             }
           }
         },
-        "description": "Dash-assigned callback that gets fired when the input changes.",
+        "description": "Dash event handler for click events",
         "defaultValue": {
           "value": "() => {}",
+          "computed": false
+        }
+      },
+      "id": {
+        "required": true,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "Dash ID"
+      },
+      "linear": {
+        "required": false,
+        "flowType": {
+          "name": "boolean"
+        },
+        "description": "If set to true, the Stepper will assist in controlling steps for linear flow",
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        }
+      },
+      "nextButtonStyle": {
+        "required": false,
+        "flowType": {
+          "name": "Object"
+        },
+        "description": "The style for the next button",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "orientation": {
+        "required": false,
+        "flowType": {
+          "name": "union",
+          "raw": "'horizontal' | 'vertical'",
+          "elements": [
+            {
+              "name": "literal",
+              "value": "'horizontal'"
+            },
+            {
+              "name": "literal",
+              "value": "'vertical'"
+            }
+          ]
+        },
+        "description": "The stepper orientation (layout flow direction)",
+        "defaultValue": {
+          "value": "'horizontal'",
           "computed": false
         }
       },
@@ -3515,7 +3574,7 @@
         "flowType": {
           "name": "signature",
           "type": "function",
-          "raw": "(props: { modal?: boolean, open?: boolean }) => void",
+          "raw": "(props: {stepIndex?: number}) => void",
           "signature": {
             "arguments": [
               {
@@ -3523,20 +3582,13 @@
                 "type": {
                   "name": "signature",
                   "type": "object",
-                  "raw": "{ modal?: boolean, open?: boolean }",
+                  "raw": "{stepIndex?: number}",
                   "signature": {
                     "properties": [
                       {
-                        "key": "modal",
+                        "key": "stepIndex",
                         "value": {
-                          "name": "boolean",
-                          "required": false
-                        }
-                      },
-                      {
-                        "key": "open",
-                        "value": {
-                          "name": "boolean",
+                          "name": "number",
                           "required": false
                         }
                       }
@@ -3556,100 +3608,42 @@
           "computed": false
         }
       },
-      "style": {
+      "stepCount": {
         "required": false,
         "flowType": {
-          "name": "Object"
+          "name": "number"
         },
-        "description": "Override the inline-styles of the root element",
+        "description": "The number of steps that this component will contain",
         "defaultValue": {
-          "value": "{}",
+          "value": "3",
           "computed": false
         }
       },
-      "tabPropsArray": {
+      "stepLabels": {
         "required": false,
         "flowType": {
           "name": "Array",
           "elements": [
             {
-              "name": "signature",
-              "type": "object",
-              "raw": "{\r\n  classes?: Object,\r\n  disabled: boolean,\r\n  disableFocusRipple: boolean,\r\n  disableRipple: boolean,\r\n  iconClass: string,\r\n  label: string,\r\n  value: any,\r\n  wrapped: boolean,\r\n}",
-              "signature": {
-                "properties": [
-                  {
-                    "key": "classes",
-                    "value": {
-                      "name": "Object",
-                      "required": false
-                    }
-                  },
-                  {
-                    "key": "disabled",
-                    "value": {
-                      "name": "boolean",
-                      "required": true
-                    }
-                  },
-                  {
-                    "key": "disableFocusRipple",
-                    "value": {
-                      "name": "boolean",
-                      "required": true
-                    }
-                  },
-                  {
-                    "key": "disableRipple",
-                    "value": {
-                      "name": "boolean",
-                      "required": true
-                    }
-                  },
-                  {
-                    "key": "iconClass",
-                    "value": {
-                      "name": "string",
-                      "required": true
-                    }
-                  },
-                  {
-                    "key": "label",
-                    "value": {
-                      "name": "string",
-                      "required": true
-                    }
-                  },
-                  {
-                    "key": "value",
-                    "value": {
-                      "name": "any",
-                      "required": true
-                    }
-                  },
-                  {
-                    "key": "wrapped",
-                    "value": {
-                      "name": "boolean",
-                      "required": true
-                    }
-                  }
-                ]
-              }
+              "name": "string"
             }
           ],
-          "raw": "Array<{\r\n  classes?: Object,\r\n  disabled: boolean,\r\n  disableFocusRipple: boolean,\r\n  disableRipple: boolean,\r\n  iconClass: string,\r\n  label: string,\r\n  value: any,\r\n  wrapped: boolean,\r\n}>"
+          "raw": "Array<string>"
         },
-        "description": "Array of tab properties. Available props:\r\nclasses\r\ndisabled\r\ndisableRipple\r\ndisableFocusRipple\r\nicon\r\nlabel\r\nvalue\r\nwrapped"
+        "description": "The text labels that will be shown next to each step number. The length of this array must\r\nmatch the total number of steps",
+        "defaultValue": {
+          "value": "['Step 1', 'Step 2', 'Step 3']",
+          "computed": false
+        }
       },
-      "value": {
+      "style": {
         "required": false,
         "flowType": {
-          "name": "any"
+          "name": "Object"
         },
-        "description": "Makes Tabs controllable and selects the tab whose value prop matches this prop",
+        "description": "Override the inline-style of the root element",
         "defaultValue": {
-          "value": "false",
+          "value": "{}",
           "computed": false
         }
       }
