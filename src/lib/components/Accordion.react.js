@@ -10,7 +10,7 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 type Props = {
   /** Elements to render inside the accordion */
   children?: Node,
-  /** The classes to be applied to this component. This keys in this object must be valid CSS rule
+  /** The classes to be applied to this component. The keys in this object must be valid CSS rule
    * names, and the values must be strings for the classnames to be assigned to each rule name
    * Valid rule names are:
    *   root
@@ -24,15 +24,32 @@ type Props = {
     expanded?: string,
     disabled?: string
   },
+  /** The className of the root element */
+  className?: string,
   /** If true, expands the accordion by defaulgt */
-  defaultExpanded: boolean,
+  defaultExpanded?: boolean,
+  /** The classes to be applied to the details component (the element containing the accordion's
+   * children. The keys in this object must be valid CSS rule names, and the values must be strings
+   * for the classnames to be assigned to each rule name
+   * Valid rule names are:
+   *   root
+   */
+  detailClasses?: {
+    root?: string,
+  }
   /** If true, the accordion will be displayed in a disabled state */
-  disabled: boolean,
+  disabled?: boolean,
   /** If true, expands the accordion, otherwise collapse it. Setting this prop enables control
    * over the accordion */
-  expanded: boolean,
+  expanded?: boolean,
+  /** Dash callback to trigger an event handler */
+  fireEvent?: () => void,
+  /** The ID of the root element */
+  id: string,
+  /** The text displayed at the top of the accordion, regardless of expanded state*/
+  label?: string,
   /** If true, rounded corners are disabled */
-  square: boolean,
+  square?: boolean,
 };
 
 type State = {
@@ -41,48 +58,54 @@ type State = {
 };
 
 const defaultProps = {
-  autoWidth: false,
+  children: null,
   classes: {},
+  defaultExpanded: false,
   disabled: false,
-  helperText: '',
-  labelText: '',
-  labelId: '',
-  multiple: false,
-  options: [],
-  useGrouping: false,
-  value: null,
-  variant: "standard"
+  expanded: false,
+  fireEvent: () => {},
+  label: '',
+  setProps: () => {},
+  square: false
 }
 
 export default class Accordion extends Component<Props, State> {
   constructor(props) {
     super(props);
-    this.state = {expanded: props.expanded};
+    this.state = {expanded: props.defaultExpanded};
   }
 
-  handleChange = (panel) => (event, isExpanded) => {
-    setExpanded(isExpanded ? panel : false);
+  handleChange = (event, isExpanded) => {
+    this.setState({expanded: isExpanded});
+
+    if (typeof this.props.setProps === 'function') {
+      this.props.setProps({expanded: isExpanded});
+    }
+  };
+
+  UNSAFE_componentWillReceiveProps = (nextProps: Props, nextContent: *): void => {
+    if (nextProps.disabled !== this.state.disabled)
+      this.setState({disabled: nextProps.disabled});
+    if (nextProps.expanded !== this.state.expanded)
+      this.setState({expanded: nextProps.expanded});
   };
 
   render() {
-    const {} = this.props;
+    const { id, className, classes, label, square } = this.props;
 
     return (
-      <div className={classes.root}>
-        <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
-          <AccordionSummary
-            expandIcon={<ExpandMoreIcon/>}
-            aria-controls="panel1bh-content"
-            id="panel1bh-header"
-          >
-            <Typography className={classes.heading}>General settings</Typography>
-            <Typography className={classes.secondaryHeading}>I am an accordion</Typography>
+      <div key={`accordion-${id}`} id={id} className={className}>
+        <Accordion
+          classes={classes}
+          expanded={this.state.expanded}
+          onChange={this.handleChange}
+          square={square}
+        >
+          <AccordionSummary expandIcon={<ExpandMoreIcon/>}>
+            <Typography>{label}</Typography>
           </AccordionSummary>
           <AccordionDetails>
-            <Typography>
-              Nulla facilisi. Phasellus sollicitudin nulla et quam mattis feugiat. Aliquam eget
-              maximus est, id dignissim quam.
-            </Typography>
+            {this.props.children}
           </AccordionDetails>
         </Accordion>
       </div>
