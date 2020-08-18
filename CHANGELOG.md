@@ -19,6 +19,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
     - Snackbar
     - Divider
     - CircularProgress
+    - Subheader
 
 ### Related issues:
 - [402](https://github.com/StratoDem/sd-material-ui/issues/402)
@@ -36,6 +37,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - [414](https://github.com/StratoDem/sd-material-ui/issues/414)
 - [403](https://github.com/StratoDem/sd-material-ui/issues/403)
 - [401](https://github.com/StratoDem/sd-material-ui/issues/401)
+- [418](https://github.com/StratoDem/sd-material-ui/issues/418)
 
 ## 3.2.0 2019-11-04
 ### Adds
