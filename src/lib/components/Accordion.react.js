@@ -29,7 +29,7 @@ type Props = {
   /** If true, expands the accordion by defaulgt */
   defaultExpanded?: boolean,
   /** The classes to be applied to the details component (the element containing the accordion's
-   * children. The keys in this object must be valid CSS rule names, and the values must be strings
+   * children). The keys in this object must be valid CSS rule names, and the values must be strings
    * for the classnames to be assigned to each rule name
    * Valid rule names are:
    *   root
@@ -50,6 +50,25 @@ type Props = {
   label?: string,
   /** If true, rounded corners are disabled */
   square?: boolean,
+  /** The classes to be applied to the summary component (the element containing the accordion's
+   * label). The keys in this object must be valid CSS rule names, and the values must be strings
+   * for the classnames to be assigned to each rule name
+   * Valid rule names are:
+   *   root
+   *   expanded
+   *   focused
+   *   disabled
+   *   content
+   *   expandIcon
+   */
+  summaryClasses?: {
+    root?: string,
+    expanded?: string,
+    focused?: string,
+    disabled?: string,
+    content?: string,
+    expandIcon?: string,
+  },
 };
 
 type State = {
@@ -91,20 +110,21 @@ export default class Accordion extends Component<Props, State> {
   };
 
   render() {
-    const { id, className, classes, label, square } = this.props;
+    const { id, className, classes, detailClasses, label, square, summaryClasses } = this.props;
 
     return (
       <div key={`accordion-${id}`} id={id} className={className}>
         <MuiAccordion
           classes={classes}
+          disabled={this.state.disabled}
           expanded={this.state.expanded}
           onChange={this.handleChange}
           square={square}
         >
-          <AccordionSummary expandIcon={<ExpandMoreIcon/>}>
+          <AccordionSummary classes={summaryClasses} expandIcon={<ExpandMoreIcon/>}>
             <Typography>{label}</Typography>
           </AccordionSummary>
-          <AccordionDetails>
+          <AccordionDetails classes={detailClasses}>
             {this.props.children}
           </AccordionDetails>
         </MuiAccordion>

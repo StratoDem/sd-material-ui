@@ -29,7 +29,7 @@
             "type": {
               "name": "signature",
               "type": "object",
-              "raw": "{\n  /** Elements to render inside the accordion */\n  children?: Node,\n  /** The classes to be applied to this component. The keys in this object must be valid CSS rule\n   * names, and the values must be strings for the classnames to be assigned to each rule name\n   * Valid rule names are:\n   *   root\n   *   rounded\n   *   expanded\n   *   disabled\n   */\n  classes?: {\n    root?: string,\n    rounded?: string,\n    expanded?: string,\n    disabled?: string\n  },\n  /** The className of the root element */\n  className?: string,\n  /** If true, expands the accordion by defaulgt */\n  defaultExpanded?: boolean,\n  /** The classes to be applied to the details component (the element containing the accordion's\n   * children. The keys in this object must be valid CSS rule names, and the values must be strings\n   * for the classnames to be assigned to each rule name\n   * Valid rule names are:\n   *   root\n   */\n  detailClasses?: {\n    root?: string,\n  },\n  /** If true, the accordion will be displayed in a disabled state */\n  disabled?: boolean,\n  /** If true, expands the accordion, otherwise collapse it. Setting this prop enables control\n   * over the accordion */\n  expanded?: boolean,\n  /** Dash callback to trigger an event handler */\n  fireEvent?: () => void,\n  /** The ID of the root element */\n  id: string,\n  /** The text displayed at the top of the accordion, regardless of expanded state*/\n  label?: string,\n  /** If true, rounded corners are disabled */\n  square?: boolean,\n}",
+              "raw": "{\n  /** Elements to render inside the accordion */\n  children?: Node,\n  /** The classes to be applied to this component. The keys in this object must be valid CSS rule\n   * names, and the values must be strings for the classnames to be assigned to each rule name\n   * Valid rule names are:\n   *   root\n   *   rounded\n   *   expanded\n   *   disabled\n   */\n  classes?: {\n    root?: string,\n    rounded?: string,\n    expanded?: string,\n    disabled?: string\n  },\n  /** The className of the root element */\n  className?: string,\n  /** If true, expands the accordion by defaulgt */\n  defaultExpanded?: boolean,\n  /** The classes to be applied to the details component (the element containing the accordion's\n   * children). The keys in this object must be valid CSS rule names, and the values must be strings\n   * for the classnames to be assigned to each rule name\n   * Valid rule names are:\n   *   root\n   */\n  detailClasses?: {\n    root?: string,\n  },\n  /** If true, the accordion will be displayed in a disabled state */\n  disabled?: boolean,\n  /** If true, expands the accordion, otherwise collapse it. Setting this prop enables control\n   * over the accordion */\n  expanded?: boolean,\n  /** Dash callback to trigger an event handler */\n  fireEvent?: () => void,\n  /** The ID of the root element */\n  id: string,\n  /** The text displayed at the top of the accordion, regardless of expanded state*/\n  label?: string,\n  /** If true, rounded corners are disabled */\n  square?: boolean,\n  /** The classes to be applied to the summary component (the element containing the accordion's\n   * label). The keys in this object must be valid CSS rule names, and the values must be strings\n   * for the classnames to be assigned to each rule name\n   * Valid rule names are:\n   *   root\n   *   expanded\n   *   focused\n   *   disabled\n   *   content\n   *   expandIcon\n   */\n  summaryClasses?: {\n    root?: string,\n    expanded?: string,\n    focused?: string,\n    disabled?: string,\n    content?: string,\n    expandIcon?: string,\n  },\n}",
               "signature": {
                 "properties": [
                   {
@@ -163,6 +163,61 @@
                       "name": "boolean",
                       "required": false
                     }
+                  },
+                  {
+                    "key": "summaryClasses",
+                    "value": {
+                      "name": "signature",
+                      "type": "object",
+                      "raw": "{\n  root?: string,\n  expanded?: string,\n  focused?: string,\n  disabled?: string,\n  content?: string,\n  expandIcon?: string,\n}",
+                      "signature": {
+                        "properties": [
+                          {
+                            "key": "root",
+                            "value": {
+                              "name": "string",
+                              "required": false
+                            }
+                          },
+                          {
+                            "key": "expanded",
+                            "value": {
+                              "name": "string",
+                              "required": false
+                            }
+                          },
+                          {
+                            "key": "focused",
+                            "value": {
+                              "name": "string",
+                              "required": false
+                            }
+                          },
+                          {
+                            "key": "disabled",
+                            "value": {
+                              "name": "string",
+                              "required": false
+                            }
+                          },
+                          {
+                            "key": "content",
+                            "value": {
+                              "name": "string",
+                              "required": false
+                            }
+                          },
+                          {
+                            "key": "expandIcon",
+                            "value": {
+                              "name": "string",
+                              "required": false
+                            }
+                          }
+                        ]
+                      },
+                      "required": false
+                    }
                   }
                 ]
               },
@@ -276,7 +331,7 @@
             ]
           }
         },
-        "description": "The classes to be applied to the details component (the element containing the accordion's\nchildren. The keys in this object must be valid CSS rule names, and the values must be strings\nfor the classnames to be assigned to each rule name\nValid rule names are:\n  root"
+        "description": "The classes to be applied to the details component (the element containing the accordion's\nchildren). The keys in this object must be valid CSS rule names, and the values must be strings\nfor the classnames to be assigned to each rule name\nValid rule names are:\n  root"
       },
       "disabled": {
         "required": false,
@@ -347,6 +402,61 @@
           "value": "false",
           "computed": false
         }
+      },
+      "summaryClasses": {
+        "required": false,
+        "flowType": {
+          "name": "signature",
+          "type": "object",
+          "raw": "{\n  root?: string,\n  expanded?: string,\n  focused?: string,\n  disabled?: string,\n  content?: string,\n  expandIcon?: string,\n}",
+          "signature": {
+            "properties": [
+              {
+                "key": "root",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "expanded",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "focused",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "disabled",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "content",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "expandIcon",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              }
+            ]
+          }
+        },
+        "description": "The classes to be applied to the summary component (the element containing the accordion's\nlabel). The keys in this object must be valid CSS rule names, and the values must be strings\nfor the classnames to be assigned to each rule name\nValid rule names are:\n  root\n  expanded\n  focused\n  disabled\n  content\n  expandIcon"
       },
       "setProps": {
         "defaultValue": {

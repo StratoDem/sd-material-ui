@@ -98,9 +98,9 @@ export default class DropDownMenu extends Component<Props, State> {
 
   buildMenuItem = (menuItem) => {
     if (this.props.useGrouping && menuItem.hasOwnProperty("grouping")) {
-      return <ListSubheader>{menuItem.grouping}</ListSubheader>
+      return <ListSubheader key={menuItem.grouping}>{menuItem.grouping}</ListSubheader>
     } else {
-      return <MenuItem value={menuItem.value}>{menuItem.primaryText}</MenuItem>
+      return <MenuItem key={menuItem.value} value={menuItem.value}>{menuItem.primaryText}</MenuItem>
     }
   };
 
