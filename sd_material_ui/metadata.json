@@ -3649,6 +3649,105 @@
       }
     }
   },
+  "src/lib/components/Subheader.react.js": {
+    "description": "Material UI Subheader component",
+    "displayName": "Subheader",
+    "methods": [],
+    "props": {
+      "children": {
+        "required": false,
+        "flowType": {
+          "name": "Node"
+        },
+        "description": "Node that will be placed inside the Subheader",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "classes": {
+        "required": false,
+        "flowType": {
+          "name": "signature",
+          "type": "object",
+          "raw": "{\r\n  root?: string,\r\n  colorPrimary?: string,\r\n  colorInherit?: string,\r\n  gutters?: string,\r\n  inset?: string,\r\n  sticky?: string,\r\n}",
+          "signature": {
+            "properties": [
+              {
+                "key": "root",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "colorPrimary",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "colorInherit",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "gutters",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "inset",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "sticky",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              }
+            ]
+          }
+        },
+        "description": "The classes to be applied to this component. This keys in this object must be valid CSS rule\r\nnames, and the values must be strings for the classnames to be assigned to each rule name\r\nValid rule names are:\r\n  root\r\n  colorPrimary\r\n  colorInherit\r\n  gutters\r\n  inset\r\n  sticky",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "inset": {
+        "required": false,
+        "flowType": {
+          "name": "boolean"
+        },
+        "description": "If true, the Subheader will be indented",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "style": {
+        "required": false,
+        "flowType": {
+          "name": "Object"
+        },
+        "description": "Override the inline-styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      }
+    }
+  },
   "src/lib/components/Tabs.react.js": {
     "description": "Material UI Tabs component",
     "displayName": "Tabs",
