@@ -1,3 +1,5 @@
+// @flow
+
 import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
@@ -54,12 +56,13 @@ type Props = {
    */
   secondaryLabel?: string,
   /** Dash callback to update props on the server */
-  setProps?: (props: { modal?: boolean, open?: boolean }) => void,
+  setProps?: () => void,
   /** Whether toggle is on (true) or off (false) */
   toggled: boolean,
 };
 
 type State = {
+  disabled: boolean,
   toggled: boolean,
 };
 
@@ -77,7 +80,7 @@ const defaultProps = {
 export default class Toggle extends Component<Props, State> {
   constructor(props: Props) {
     super(props);
-    this.state = {toggled: props.toggled};
+    this.state = {disabled: props.disabled, toggled: props.toggled};
   }
 
   handleChange = (event) => {
@@ -87,6 +90,11 @@ export default class Toggle extends Component<Props, State> {
       this.props.setProps({toggled: event.target.checked});
     }
   };
+
+  UNSAFE_componentWillReceiveProps = (nextProps: Props, nextContent: *): void => {
+    if (nextProps.disabled !== this.state.disabled)
+      this.setState({disabled: nextProps.disabled});
+  }
 
   render() {
     const {
@@ -107,7 +115,7 @@ export default class Toggle extends Component<Props, State> {
               <Switch
                 checked={this.state.toggled}
                 onChange={this.handleChange}
-                disabled={disabled}
+                disabled={this.state.disabled}
                 classes={classes}
               />
             </Grid>
@@ -121,7 +129,7 @@ export default class Toggle extends Component<Props, State> {
           control={<Switch
             checked={this.state.toggled}
             onChange={this.handleChange}
-            disabled={disabled}
+            disabled={this.state.disabled}
             classes={classes}
           />}
           label={label}
