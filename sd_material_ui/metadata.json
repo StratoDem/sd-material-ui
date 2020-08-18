@@ -3376,7 +3376,7 @@
         "flowType": {
           "name": "signature",
           "type": "object",
-          "raw": "{\r\n  vertical?: 'top' | 'center' | 'bottom',\r\n  horizontal?: 'left' | 'middle' | 'right',\r\n}",
+          "raw": "{\n  vertical?: 'top' | 'center' | 'bottom',\n  horizontal?: 'left' | 'middle' | 'right',\n}",
           "signature": {
             "properties": [
               {
@@ -3426,7 +3426,7 @@
             ]
           }
         },
-        "description": "This is the point on the anchor where the popover's targetOrigin will attach to.\r\nOptions: vertical: [top, center, bottom] horizontal: [left, middle, right].",
+        "description": "This is the point on the anchor where the popover's targetOrigin will attach to.\nOptions: vertical: [top, center, bottom] horizontal: [left, middle, right].",
         "defaultValue": {
           "value": "{vertical: 'bottom', horizontal: 'left'}",
           "computed": false
@@ -3510,7 +3510,7 @@
         "flowType": {
           "name": "signature",
           "type": "object",
-          "raw": "{\r\n  root?: string,\r\n  paper?: string,\r\n}",
+          "raw": "{\n  root?: string,\n  paper?: string,\n}",
           "signature": {
             "properties": [
               {
@@ -3530,7 +3530,7 @@
             ]
           }
         },
-        "description": "The classes to be applied to this component. This keys in this object must be valid CSS rule\r\nnames, and the values must be strings for the classnames to be assigned to each rule name\r\nValid rule names are:\r\n  root\r\n  paper"
+        "description": "The classes to be applied to this component. This keys in this object must be valid CSS rule\nnames, and the values must be strings for the classnames to be assigned to each rule name\nValid rule names are:\n  root\n  paper"
       },
       "children": {
         "required": false,
@@ -4392,7 +4392,7 @@
         "flowType": {
           "name": "signature",
           "type": "object",
-          "raw": "{\r\n  root?: string,\r\n  colorPrimary?: string,\r\n  colorInherit?: string,\r\n  gutters?: string,\r\n  inset?: string,\r\n  sticky?: string,\r\n}",
+          "raw": "{\n  root?: string,\n  colorPrimary?: string,\n  colorInherit?: string,\n  gutters?: string,\n  inset?: string,\n  sticky?: string,\n}",
           "signature": {
             "properties": [
               {
@@ -4440,7 +4440,7 @@
             ]
           }
         },
-        "description": "The classes to be applied to this component. This keys in this object must be valid CSS rule\r\nnames, and the values must be strings for the classnames to be assigned to each rule name\r\nValid rule names are:\r\n  root\r\n  colorPrimary\r\n  colorInherit\r\n  gutters\r\n  inset\r\n  sticky",
+        "description": "The classes to be applied to this component. This keys in this object must be valid CSS rule\nnames, and the values must be strings for the classnames to be assigned to each rule name\nValid rule names are:\n  root\n  colorPrimary\n  colorInherit\n  gutters\n  inset\n  sticky",
         "defaultValue": {
           "value": "{}",
           "computed": false
