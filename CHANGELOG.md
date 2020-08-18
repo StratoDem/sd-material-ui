@@ -20,6 +20,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
     - RadioButtonGroup
     - Snackbar
     - Stepper
+    - Tabs
     - Toggle
 
 ### Related issues:
@@ -39,6 +40,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - [412](https://github.com/StratoDem/sd-material-ui/issues/412)
 - [414](https://github.com/StratoDem/sd-material-ui/issues/414)
 - [415](https://github.com/StratoDem/sd-material-ui/issues/415)
+- [416](https://github.com/StratoDem/sd-material-ui/issues/416)
 - [417](https://github.com/StratoDem/sd-material-ui/issues/417)
 
 ## 3.2.0 2019-11-04
