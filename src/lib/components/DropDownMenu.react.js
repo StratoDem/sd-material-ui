@@ -71,7 +71,7 @@ type Props = {
 };
 
 type State = {
-  disabled: false,
+  disabled: boolean,
   value: any,
 };
 
