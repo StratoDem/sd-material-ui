@@ -229,15 +229,61 @@ app.layout = html.Div([
         spacer,
 
         html.Div([
+
             html.P([html.Strong('Sample for CircularProgress')]),
-            sd_material_ui.CircularProgress(color='#00f2ff',
+
+            sd_material_ui.CircularProgress(color='inherit',
                                             thickness=5),
         ]),
+
+        spacer,
+
+        html.Div([
+            html.P([html.Strong('Sample for Tabs')]),
+            sd_material_ui.Tabs([
+                html.H3('Header Tab 1'),
+                html.H3('Header Tab 2'),
+                html.H3('Header Tab 3'),
+            ], tabPropsArray=[{'value': 0, 'label': 'Tab 0'},
+                              {'value': 1, 'label': 'Tab 1'},
+                              {'value': 2, 'label': 'Tab 2'}],
+                id='tabs'),
+            html.Button('Reset Tab', id='reset-tab', style={'margin-right': '14px'}),
+            html.P(id='tabs-output', style={'display': 'contents'}),
+        ]),
+
+
+
+        spacer,
+
+        html.Div([
+                    html.P([html.Strong('Sample for Stepper')]),
+                    sd_material_ui.Stepper(id='stepper', style={'background': 'inherit'}),
+                ]),
 
         final_spacer,
     ], style=dict(display='flex', flexWrap='wrap')),
 
-])
+    ], style={'list-style-type': 'none'})
+
+
+
+@app.callback(
+    dash.dependencies.Output('tabs', 'value'),
+    [dash.dependencies.Input('reset-tab', 'n_clicks')],)
+def callback_reset_tab(n: int):
+    if not n:
+        raise dash.exceptions.PreventUpdate
+    return False
+
+@app.callback(
+    dash.dependencies.Output('tabs-output', 'children'),
+    [dash.dependencies.Input('tabs', 'value')],)
+def callback_tab(val: int):
+    if not val and isinstance(val, bool):
+        return ''
+    return f'Value Selected: {val}'
+
 
 
 @app.callback(

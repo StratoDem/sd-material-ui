@@ -11,7 +11,8 @@ from .FontIcon import FontIcon
 from .Paper import Paper
 from .RadioButtonGroup import RadioButtonGroup
 from .Snackbar import Snackbar
-from .Subheader import Subheader
+from .Stepper import Stepper
+from .Tabs import Tabs
 from .Toggle import Toggle
 
 __all__ = [
@@ -28,6 +29,7 @@ __all__ = [
     "Paper",
     "RadioButtonGroup",
     "Snackbar",
-    "Subheader",
+    "Stepper",
+    "Tabs",
     "Toggle"
 ]
