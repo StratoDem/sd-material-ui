@@ -18,7 +18,13 @@ final_spacer = html.Div(children=[], style=dict(height=400))
 
 app.layout = html.Div([
 
-    spacer,
+    html.Div([
+        spacer,
+    ]),
+
+    sd_material_ui.Subheader(['Sample Subheader']),
+
+    sd_material_ui.Divider(),
 
     html.Div([
         spacer,
@@ -263,6 +269,17 @@ app.layout = html.Div([
             sd_material_ui.CircularProgress(color='inherit',
                                             thickness=5),
         ]),
+
+        spacer,
+
+        html.Div([
+            html.P([html.Strong('Example of Popover')]),
+
+            sd_material_ui.Popover([html.P('This is a Popover', style={'margin': 0})],
+                                   buttonType='flat',
+                                   buttonLabel='Open Popover',
+                                   open=False),
+                ]),
 
         spacer,
 
