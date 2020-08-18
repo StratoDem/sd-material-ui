@@ -81,7 +81,6 @@ export default class Popover extends Component<Props, State> {
 
   handleClick = (event) => {
     // This prevents ghost click.
-    console.log(event)
     event.preventDefault();
 
     this.setState({
