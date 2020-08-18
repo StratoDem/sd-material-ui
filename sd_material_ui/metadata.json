@@ -3351,6 +3351,304 @@
       }
     }
   },
+  "src/lib/components/Stepper.react.js": {
+    "description": "Material UI Stepper component",
+    "displayName": "Stepper",
+    "methods": [
+      {
+        "name": "handleNext",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "handlePrev",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "resetSteps",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "createSteps",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "stepCount",
+            "type": {
+              "name": "number"
+            }
+          }
+        ],
+        "returns": null
+      }
+    ],
+    "props": {
+      "activeStep": {
+        "required": false,
+        "flowType": {
+          "name": "number"
+        },
+        "description": "Set the active step (zero based index). This will enable Step control helpers",
+        "defaultValue": {
+          "value": "0",
+          "computed": false
+        }
+      },
+      "alternativeLabel": {
+        "required": false,
+        "flowType": {
+          "name": "boolean"
+        },
+        "description": "If true, the labels will appear under the steps",
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        }
+      },
+      "backButtonStyle": {
+        "required": false,
+        "flowType": {
+          "name": "Object"
+        },
+        "description": "The style for the back button",
+        "defaultValue": {
+          "value": "{marginRight: 12}",
+          "computed": false
+        }
+      },
+      "classes": {
+        "required": false,
+        "flowType": {
+          "name": "signature",
+          "type": "object",
+          "raw": "{\r\n  root?: string,\r\n  horizontal?: string,\r\n  vertical?: string,\r\n  alternativeLabel?: string,\r\n}",
+          "signature": {
+            "properties": [
+              {
+                "key": "root",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "horizontal",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "vertical",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "alternativeLabel",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              }
+            ]
+          }
+        },
+        "description": "The classes to be applied to this component. This keys in this object must be valid CSS rule\r\nnames, and the values must be strings for the classnames to be assigned to each rule name\r\nValid rule names are:\r\n  root\r\n  horizontal\r\n  vertical\r\n  alternativeLabel"
+      },
+      "className": {
+        "required": false,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "CSS class name of the root element",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "finishedButtonStyle": {
+        "required": false,
+        "flowType": {
+          "name": "Object"
+        },
+        "description": "The style for the button displayed after all steps have been finished",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "finishedText": {
+        "required": false,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "The text to display on the final button when all steps have been completed",
+        "defaultValue": {
+          "value": "'Click here to view again'",
+          "computed": false
+        }
+      },
+      "fireEvent": {
+        "required": false,
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "() => void",
+          "signature": {
+            "arguments": [],
+            "return": {
+              "name": "void"
+            }
+          }
+        },
+        "description": "Dash event handler for click events",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      },
+      "id": {
+        "required": true,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "Dash ID"
+      },
+      "linear": {
+        "required": false,
+        "flowType": {
+          "name": "boolean"
+        },
+        "description": "If set to true, the Stepper will assist in controlling steps for linear flow",
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        }
+      },
+      "nextButtonStyle": {
+        "required": false,
+        "flowType": {
+          "name": "Object"
+        },
+        "description": "The style for the next button",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "orientation": {
+        "required": false,
+        "flowType": {
+          "name": "union",
+          "raw": "'horizontal' | 'vertical'",
+          "elements": [
+            {
+              "name": "literal",
+              "value": "'horizontal'"
+            },
+            {
+              "name": "literal",
+              "value": "'vertical'"
+            }
+          ]
+        },
+        "description": "The stepper orientation (layout flow direction)",
+        "defaultValue": {
+          "value": "'horizontal'",
+          "computed": false
+        }
+      },
+      "setProps": {
+        "required": false,
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "(props: {stepIndex?: number}) => void",
+          "signature": {
+            "arguments": [
+              {
+                "name": "props",
+                "type": {
+                  "name": "signature",
+                  "type": "object",
+                  "raw": "{stepIndex?: number}",
+                  "signature": {
+                    "properties": [
+                      {
+                        "key": "stepIndex",
+                        "value": {
+                          "name": "number",
+                          "required": false
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "return": {
+              "name": "void"
+            }
+          }
+        },
+        "description": "Dash callback to update props on the server",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      },
+      "stepCount": {
+        "required": false,
+        "flowType": {
+          "name": "number"
+        },
+        "description": "The number of steps that this component will contain",
+        "defaultValue": {
+          "value": "3",
+          "computed": false
+        }
+      },
+      "stepLabels": {
+        "required": false,
+        "flowType": {
+          "name": "Array",
+          "elements": [
+            {
+              "name": "string"
+            }
+          ],
+          "raw": "Array<string>"
+        },
+        "description": "The text labels that will be shown next to each step number. The length of this array must\r\nmatch the total number of steps",
+        "defaultValue": {
+          "value": "['Step 1', 'Step 2', 'Step 3']",
+          "computed": false
+        }
+      },
+      "style": {
+        "required": false,
+        "flowType": {
+          "name": "Object"
+        },
+        "description": "Override the inline-style of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      }
+    }
+  },
   "src/lib/components/Subheader.react.js": {
     "description": "Material UI Subheader component",
     "displayName": "Subheader",
@@ -3445,6 +3743,310 @@
         "description": "Override the inline-styles of the root element",
         "defaultValue": {
           "value": "{}",
+          "computed": false
+        }
+      }
+    }
+  },
+  "src/lib/components/Tabs.react.js": {
+    "description": "Material UI Tabs component",
+    "displayName": "Tabs",
+    "methods": [
+      {
+        "name": "handleChange",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "event",
+            "type": {
+              "name": "Object",
+              "alias": "Object"
+            }
+          },
+          {
+            "name": "index",
+            "type": {
+              "name": "number"
+            }
+          }
+        ],
+        "returns": null
+      }
+    ],
+    "props": {
+      "id": {
+        "required": false,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "Element ID",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "classes": {
+        "required": false,
+        "flowType": {
+          "name": "signature",
+          "type": "object",
+          "raw": "{\r\n  root?: string,\r\n  textColorPrimary?: string,\r\n  textColorSecondary?: string,\r\n  textColorInherit?: string,\r\n  selected?: string,\r\n  disabled?: string,\r\n  fullWidth?: string,\r\n  wrapped?: string,\r\n  wrapper?: string,\r\n}",
+          "signature": {
+            "properties": [
+              {
+                "key": "root",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "textColorPrimary",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "textColorSecondary",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "textColorInherit",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "selected",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "disabled",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "fullWidth",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "wrapped",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "wrapper",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              }
+            ]
+          }
+        },
+        "description": "The classes to be applied to this component. This keys in this object must be valid CSS rule\r\nnames, and the values must be strings for the classnames to be assigned to each rule name\r\nValid rule names are:\r\n  root\r\n  textColorPrimary\r\n  textColorSecondary\r\n  textColorInherit\r\n  selected\r\n  disabled\r\n  fullWidth\r\n  wrapped\r\n  wrapper",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "className": {
+        "required": false,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "CSS class name of the root element",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "children": {
+        "required": false,
+        "flowType": {
+          "name": "Node"
+        },
+        "description": "Pass Tab components as children",
+        "defaultValue": {
+          "value": "[]",
+          "computed": false
+        }
+      },
+      "fireEvent": {
+        "required": false,
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "() => void",
+          "signature": {
+            "arguments": [],
+            "return": {
+              "name": "void"
+            }
+          }
+        },
+        "description": "Dash-assigned callback that gets fired when the input changes.",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      },
+      "setProps": {
+        "required": false,
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "(props: { modal?: boolean, open?: boolean }) => void",
+          "signature": {
+            "arguments": [
+              {
+                "name": "props",
+                "type": {
+                  "name": "signature",
+                  "type": "object",
+                  "raw": "{ modal?: boolean, open?: boolean }",
+                  "signature": {
+                    "properties": [
+                      {
+                        "key": "modal",
+                        "value": {
+                          "name": "boolean",
+                          "required": false
+                        }
+                      },
+                      {
+                        "key": "open",
+                        "value": {
+                          "name": "boolean",
+                          "required": false
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "return": {
+              "name": "void"
+            }
+          }
+        },
+        "description": "Dash callback to update props on the server",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      },
+      "style": {
+        "required": false,
+        "flowType": {
+          "name": "Object"
+        },
+        "description": "Override the inline-styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "tabPropsArray": {
+        "required": false,
+        "flowType": {
+          "name": "Array",
+          "elements": [
+            {
+              "name": "signature",
+              "type": "object",
+              "raw": "{\r\n  classes?: Object,\r\n  disabled: boolean,\r\n  disableFocusRipple: boolean,\r\n  disableRipple: boolean,\r\n  iconClass: string,\r\n  label: string,\r\n  value: any,\r\n  wrapped: boolean,\r\n}",
+              "signature": {
+                "properties": [
+                  {
+                    "key": "classes",
+                    "value": {
+                      "name": "Object",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "disabled",
+                    "value": {
+                      "name": "boolean",
+                      "required": true
+                    }
+                  },
+                  {
+                    "key": "disableFocusRipple",
+                    "value": {
+                      "name": "boolean",
+                      "required": true
+                    }
+                  },
+                  {
+                    "key": "disableRipple",
+                    "value": {
+                      "name": "boolean",
+                      "required": true
+                    }
+                  },
+                  {
+                    "key": "iconClass",
+                    "value": {
+                      "name": "string",
+                      "required": true
+                    }
+                  },
+                  {
+                    "key": "label",
+                    "value": {
+                      "name": "string",
+                      "required": true
+                    }
+                  },
+                  {
+                    "key": "value",
+                    "value": {
+                      "name": "any",
+                      "required": true
+                    }
+                  },
+                  {
+                    "key": "wrapped",
+                    "value": {
+                      "name": "boolean",
+                      "required": true
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "raw": "Array<{\r\n  classes?: Object,\r\n  disabled: boolean,\r\n  disableFocusRipple: boolean,\r\n  disableRipple: boolean,\r\n  iconClass: string,\r\n  label: string,\r\n  value: any,\r\n  wrapped: boolean,\r\n}>"
+        },
+        "description": "Array of tab properties. Available props:\r\nclasses\r\ndisabled\r\ndisableRipple\r\ndisableFocusRipple\r\nicon\r\nlabel\r\nvalue\r\nwrapped"
+      },
+      "value": {
+        "required": false,
+        "flowType": {
+          "name": "any"
+        },
+        "description": "Makes Tabs controllable and selects the tab whose value prop matches this prop",
+        "defaultValue": {
+          "value": "false",
           "computed": false
         }
       }
