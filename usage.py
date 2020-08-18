@@ -215,11 +215,17 @@ app.layout = html.Div([
                 sd_material_ui.Accordion(
                     id='accordion3',
                     label='Accordion 3',
+                    disabled=False,
                     expanded=False,
                     square=True,
                     children=html.P('Text')),
                 sd_material_ui.Button(
-                    children='Open Accordion 1', variant='contained', id='accordion-input')
+                    children='Open Accordion 1', variant='contained', id='accordion-input'),
+                sd_material_ui.Toggle(
+                    id='accordion-toggle-input',
+                    label='3 is Disabled',
+                    toggled=False,
+                    secondaryLabel='3 is Enabled')
             ]),
         ], style=dict(display='flex', flexWrap='wrap')),
     ]),
@@ -270,7 +276,7 @@ app.layout = html.Div([
                               {'value': 1, 'label': 'Tab 1'},
                               {'value': 2, 'label': 'Tab 2'}],
                 id='tabs'),
-            html.Button('Reset Tab', id='reset-tab', style={'margin-right': '14px'}),
+            html.Button('Reset Tab', id='reset-tab', style={'marginRight': '14px'}),
             html.P(id='tabs-output', style={'display': 'contents'}),
         ]),
 
@@ -443,6 +449,15 @@ def callback_accordions(clicks):
     if not clicks:
         raise dash.exceptions.PreventUpdate
     return [True, False, False]
+
+
+@app.callback(
+    dash.dependencies.Output('accordion3', 'disabled'),
+    [dash.dependencies.Input('accordion-toggle-input', 'toggled')])
+def callback_accordion_disable(toggle_status):
+    if toggle_status is None:
+        return False
+    return not toggle_status
 
 
 #
