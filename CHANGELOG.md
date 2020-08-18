@@ -6,38 +6,40 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Changes
 - Updates many dependencies to resolve various vulnerabilities
 - Changes the following components to use the latest `material-ui`
-    - Drawer
-    - Dialog
-    - RadioButtonGroup
-    - Checkbox
     - BottomNavigation
-    - Toggle
     - Button
+    - Card
+    - Checkbox
+    - CircularProgress
+    - Dialog
+    - Divider
+    - Drawer
+    - DropDownMenu
     - FontIcon
     - Paper
-    - Card
+    - RadioButtonGroup
     - Snackbar
-    - Divider
-    - CircularProgress
     - Stepper
+    - Toggle
 
 ### Related issues:
-- [402](https://github.com/StratoDem/sd-material-ui/issues/402)
-- [404](https://github.com/StratoDem/sd-material-ui/issues/404)
-- [412](https://github.com/StratoDem/sd-material-ui/issues/412)
-- [406](https://github.com/StratoDem/sd-material-ui/issues/406)
-- [407](https://github.com/StratoDem/sd-material-ui/issues/407)
-- [409](https://github.com/StratoDem/sd-material-ui/issues/409)
 - [398](https://github.com/StratoDem/sd-material-ui/issues/398)
-- [417](https://github.com/StratoDem/sd-material-ui/issues/417)
-- [410](https://github.com/StratoDem/sd-material-ui/issues/410)
 - [399](https://github.com/StratoDem/sd-material-ui/issues/399)
 - [400](https://github.com/StratoDem/sd-material-ui/issues/400)
-- [408](https://github.com/StratoDem/sd-material-ui/issues/408)
-- [414](https://github.com/StratoDem/sd-material-ui/issues/414)
-- [403](https://github.com/StratoDem/sd-material-ui/issues/403)
 - [401](https://github.com/StratoDem/sd-material-ui/issues/401)
+- [402](https://github.com/StratoDem/sd-material-ui/issues/402)
+- [403](https://github.com/StratoDem/sd-material-ui/issues/403)
+- [404](https://github.com/StratoDem/sd-material-ui/issues/404)
+- [405](https://github.com/StratoDem/sd-material-ui/issues/405)
+- [406](https://github.com/StratoDem/sd-material-ui/issues/406)
+- [407](https://github.com/StratoDem/sd-material-ui/issues/407)
+- [408](https://github.com/StratoDem/sd-material-ui/issues/408)
+- [409](https://github.com/StratoDem/sd-material-ui/issues/409)
+- [410](https://github.com/StratoDem/sd-material-ui/issues/410)
+- [412](https://github.com/StratoDem/sd-material-ui/issues/412)
+- [414](https://github.com/StratoDem/sd-material-ui/issues/414)
 - [415](https://github.com/StratoDem/sd-material-ui/issues/415)
+- [417](https://github.com/StratoDem/sd-material-ui/issues/417)
 
 ## 3.2.0 2019-11-04
 ### Adds
