@@ -9,6 +9,7 @@ from .Drawer import Drawer
 from .DropDownMenu import DropDownMenu
 from .FontIcon import FontIcon
 from .Paper import Paper
+from .Popover import Popover
 from .RadioButtonGroup import RadioButtonGroup
 from .Snackbar import Snackbar
 from .Stepper import Stepper
@@ -28,6 +29,7 @@ __all__ = [
     "DropDownMenu",
     "FontIcon",
     "Paper",
+    "Popover",
     "RadioButtonGroup",
     "Snackbar",
     "Stepper",

@@ -239,6 +239,17 @@ app.layout = html.Div([
         spacer,
 
         html.Div([
+            html.P([html.Strong('Example of Popover')]),
+
+            sd_material_ui.Popover([html.P('This is a Popover', style={'margin': 0})],
+                                   buttonType='flat',
+                                   buttonLabel='Open Popover',
+                                   open=False),
+                ]),
+
+        spacer,
+
+        html.Div([
             html.P([html.Strong('Sample for Tabs')]),
             sd_material_ui.Tabs([
                 html.H3('Header Tab 1'),

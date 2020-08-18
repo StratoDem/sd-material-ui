@@ -17,6 +17,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
     - DropDownMenu
     - FontIcon
     - Paper
+    - Popover
     - RadioButtonGroup
     - Snackbar
     - Stepper
@@ -38,6 +39,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - [408](https://github.com/StratoDem/sd-material-ui/issues/408)
 - [409](https://github.com/StratoDem/sd-material-ui/issues/409)
 - [410](https://github.com/StratoDem/sd-material-ui/issues/410)
+- [411](https://github.com/StratoDem/sd-material-ui/issues/410)
 - [412](https://github.com/StratoDem/sd-material-ui/issues/412)
 - [414](https://github.com/StratoDem/sd-material-ui/issues/414)
 - [415](https://github.com/StratoDem/sd-material-ui/issues/415)

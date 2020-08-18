@@ -2874,6 +2874,256 @@
       }
     }
   },
+  "src/lib/components/Popover.react.js": {
+    "description": "Material UI Popover component",
+    "displayName": "Popover",
+    "methods": [
+      {
+        "name": "handleClick",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "event",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "handleRequestClose",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      }
+    ],
+    "props": {
+      "anchorOrigin": {
+        "required": false,
+        "flowType": {
+          "name": "signature",
+          "type": "object",
+          "raw": "{\r\n  vertical?: 'top' | 'center' | 'bottom',\r\n  horizontal?: 'left' | 'middle' | 'right',\r\n}",
+          "signature": {
+            "properties": [
+              {
+                "key": "vertical",
+                "value": {
+                  "name": "union",
+                  "raw": "'top' | 'center' | 'bottom'",
+                  "elements": [
+                    {
+                      "name": "literal",
+                      "value": "'top'"
+                    },
+                    {
+                      "name": "literal",
+                      "value": "'center'"
+                    },
+                    {
+                      "name": "literal",
+                      "value": "'bottom'"
+                    }
+                  ],
+                  "required": false
+                }
+              },
+              {
+                "key": "horizontal",
+                "value": {
+                  "name": "union",
+                  "raw": "'left' | 'middle' | 'right'",
+                  "elements": [
+                    {
+                      "name": "literal",
+                      "value": "'left'"
+                    },
+                    {
+                      "name": "literal",
+                      "value": "'middle'"
+                    },
+                    {
+                      "name": "literal",
+                      "value": "'right'"
+                    }
+                  ],
+                  "required": false
+                }
+              }
+            ]
+          }
+        },
+        "description": "This is the point on the anchor where the popover's targetOrigin will attach to.\r\nOptions: vertical: [top, center, bottom] horizontal: [left, middle, right].",
+        "defaultValue": {
+          "value": "{vertical: 'bottom', horizontal: 'left'}",
+          "computed": false
+        }
+      },
+      "animated": {
+        "required": false,
+        "flowType": {
+          "name": "boolean"
+        },
+        "description": "If true, the popover will apply transitions when it is added to the DOM."
+      },
+      "autoCloseWhenOffScreen": {
+        "required": false,
+        "flowType": {
+          "name": "boolean"
+        },
+        "description": "If true, the popover will hide when the anchor is scrolled off the screen"
+      },
+      "buttonLabel": {
+        "required": false,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "For Dash use - user can assign label to button",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "buttonType": {
+        "required": false,
+        "flowType": {
+          "name": "union",
+          "raw": "'flat' | 'raised' | 'icon'",
+          "elements": [
+            {
+              "name": "literal",
+              "value": "'flat'"
+            },
+            {
+              "name": "literal",
+              "value": "'raised'"
+            },
+            {
+              "name": "literal",
+              "value": "'icon'"
+            }
+          ]
+        },
+        "description": "For Dash use - user can anchor the popover to flat, icon, or raised button",
+        "defaultValue": {
+          "value": "'raised'",
+          "computed": false
+        }
+      },
+      "buttonIcon": {
+        "required": false,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "For Dash use - specify what icon to use when using an icon button",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "buttonStyle": {
+        "required": false,
+        "flowType": {
+          "name": "Object"
+        },
+        "description": "For Dash use - specify the styles for the button",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "classes": {
+        "required": false,
+        "flowType": {
+          "name": "signature",
+          "type": "object",
+          "raw": "{\r\n  root?: string,\r\n  paper?: string,\r\n}",
+          "signature": {
+            "properties": [
+              {
+                "key": "root",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "paper",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              }
+            ]
+          }
+        },
+        "description": "The classes to be applied to this component. This keys in this object must be valid CSS rule\r\nnames, and the values must be strings for the classnames to be assigned to each rule name\r\nValid rule names are:\r\n  root\r\n  paper"
+      },
+      "children": {
+        "required": false,
+        "flowType": {
+          "name": "Node"
+        },
+        "description": "The content of the popover",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "className": {
+        "required": false,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "The CSS class name of the root element",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "disableScrollLock": {
+        "required": false,
+        "flowType": {
+          "name": "boolean"
+        },
+        "description": "Disable the scroll lock behavior"
+      },
+      "open": {
+        "required": false,
+        "flowType": {
+          "name": "boolean"
+        },
+        "description": "If true, the popover is visible.",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "style": {
+        "required": false,
+        "flowType": {
+          "name": "Object"
+        },
+        "description": "Override the inline-styles of the root element.",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "zDepth": {
+        "required": false,
+        "flowType": {
+          "name": "number"
+        },
+        "description": "The zDepth of the popover.",
+        "defaultValue": {
+          "value": "1",
+          "computed": false
+        }
+      }
+    }
+  },
   "src/lib/components/RadioButtonGroup.react.js": {
     "description": "",
     "displayName": "RadioButtonGroup",
