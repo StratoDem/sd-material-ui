@@ -21,6 +21,8 @@ app.layout = html.Div([
             spacer,
         ]),
 
+        sd_material_ui.Subheader(['Sample Subheader']),
+
         sd_material_ui.Divider(),
 
         html.Li([
