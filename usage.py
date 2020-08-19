@@ -121,11 +121,9 @@ app.layout = html.Div([
 
     html.Div([
         html.Div([
-
             html.Div([
-
-                html.P([html.Strong('Sample for Transition and Paper/Card')]),
-                sd_material_ui.Transitions(id='transition-output', visible=True, children=[
+                html.P([html.Strong('Test for Collapse Transition and Paper/Card')]),
+                sd_material_ui.Transitions(id='transition-collapse', visible=True, children=[
                     sd_material_ui.Paper([
                         html.H3('Paper Title'),
                         sd_material_ui.Card([
@@ -135,6 +133,27 @@ app.layout = html.Div([
                 ]),
                 sd_material_ui.Toggle(id='transition-input', toggled=True, label='Show element?'),
             ]),
+
+            spacer,
+
+            html.Div([
+                html.P([html.Strong('Test for Fade Transition')]),
+                sd_material_ui.Transitions(
+                    id='transition-fade',
+                    visible=True,
+                    type='fade',
+                    children=[
+                        sd_material_ui.Card([
+                            html.P('Card Text')
+                        ]),
+                    ]),
+                sd_material_ui.Toggle(
+                    id='transition-fade-input', toggled=True, label='Show element?'),
+            ]),
+
+            # Grow
+            # Slide
+            # Zoom
 
             spacer,
 
@@ -315,7 +334,6 @@ app.layout = html.Div([
     ], style={'list-style-type': 'none'})
 
 
-
 @app.callback(
     dash.dependencies.Output('tabs', 'value'),
     [dash.dependencies.Input('reset-tab', 'n_clicks')],)
@@ -324,6 +342,7 @@ def callback_reset_tab(n: int):
         raise dash.exceptions.PreventUpdate
     return False
 
+
 @app.callback(
     dash.dependencies.Output('tabs-output', 'children'),
     [dash.dependencies.Input('tabs', 'value')],)
@@ -331,7 +350,6 @@ def callback_tab(val: int):
     if not val and isinstance(val, bool):
         return ''
     return f'Value Selected: {val}'
-
 
 
 @app.callback(
@@ -353,6 +371,15 @@ def callback_func_transition(checked: bool):
     return checked
 
 
+@app.callback(
+    dash.dependencies.Output('transition-fade', 'visible'),
+    [dash.dependencies.Input('transition-fade-input', 'toggled')])
+def callback_func_transition_fade(checked: bool):
+    if checked is None:
+        return True
+    return checked
+
+
 @app.callback(dash.dependencies.Output('bottom-nav-output', 'children'),
               [dash.dependencies.Input('bottom-nav', 'selectedValue')],
               [dash.dependencies.State('bottom-nav', 'selectedValue')], )
@@ -360,51 +387,6 @@ def callback_bottom_nav(value, state_value):
     if value is None:
         return 'Value Selected: '
     return f'Value Selected: Item {value}'
-
-
-# @app.callback(
-#     dash.dependencies.Output('question-output-id', 'children'),
-#     [
-#         dash.dependencies.Input('questions-id', 'value'),
-#         dash.dependencies.Input('questions-id', 'n_clicks'),
-#      ],
-#     [dash.dependencies.State('questions-id', 'n_clicks_previous')])
-# def update_questions_output(value, n_clicks, n_clicks_previous):
-#     time.sleep(5)
-#     return '{} {} {}'.format(value, n_clicks, n_clicks_previous)
-#
-#
-# @app.callback(
-#     dash.dependencies.Output('question-output-id2', 'children'),
-#     [
-#         dash.dependencies.Input('questions-id', 'value'),
-#         dash.dependencies.Input('questions-id', 'n_clicks'),
-#      ],
-#     [dash.dependencies.State('questions-id', 'n_clicks_previous')])
-# def update_questions_output(value, n_clicks, n_clicks_previous):
-#     return '{} {} {}'.format(value, n_clicks, n_clicks_previous)
-#
-#
-# # @app.callback(
-# #     dash.dependencies.Output('question-output-id3', 'children'),
-# #     [
-# #         dash.dependencies.Input('questions-tabs-id', 'value'),
-# #         dash.dependencies.Input('questions-tabs-id', 'n_clicks'),
-# #      ],
-# #     [dash.dependencies.State('questions-tabs-id', 'n_clicks_previous')])
-# # def update_questions_output(value, n_clicks, n_clicks_previous):
-# #     return '{} {} {}'.format(value, n_clicks, n_clicks_previous)
-# #
-# #
-# # @app.callback(
-# #     dash.dependencies.Output('question-output-id4', 'children'),
-# #     [
-# #         dash.dependencies.Input('questions-tabs-id', 'value'),
-# #         dash.dependencies.Input('questions-tabs-id', 'n_clicks'),
-# #      ],
-# #     [dash.dependencies.State('questions-tabs-id', 'n_clicks_previous')])
-# # def update_questions_output(value, n_clicks, n_clicks_previous):
-# #     return '{} {} {}'.format(value, n_clicks, n_clicks_previous)
 #
 #
 # @app.callback(
@@ -419,8 +401,8 @@ def callback_bottom_nav(value, state_value):
 #     [dash.dependencies.Input('input', 'selectedIndex')])
 # def display_output(value):
 #     return 'You have entered {}'.format(value)
-#
-#
+
+
 # Callback for SDDialog (modal)
 @app.callback(
     dash.dependencies.Output('output2', 'open'),

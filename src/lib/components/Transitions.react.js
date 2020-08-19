@@ -20,7 +20,7 @@ type Props = {
    *   wrapper
    *   wrapperInner
    */
-  classes: {
+  classes?: {
     root?: string,
     container?: string,
     entered?: string,
@@ -53,6 +53,7 @@ type State = {
 
 const defaultProps = {
   children: null,
+  classes: {},
   collapsedHeight: 0,
   visible: true,
   setProps: () => {},
