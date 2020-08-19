@@ -136,20 +136,20 @@ app.layout = html.Div([
 
             spacer,
 
-            html.Div([
-                html.P([html.Strong('Test for Fade Transition')]),
-                sd_material_ui.Transitions(
-                    id='transition-fade',
-                    visible=True,
-                    type='fade',
-                    children=[
-                        sd_material_ui.Card([
-                            html.P('Card Text')
-                        ]),
-                    ]),
-                sd_material_ui.Toggle(
-                    id='transition-fade-input', toggled=True, label='Show element?'),
-            ]),
+            # html.Div([
+            #     html.P([html.Strong('Test for Fade Transition')]),
+            #     sd_material_ui.Transitions(
+            #         id='transition-fade',
+            #         visible=True,
+            #         type='fade',
+            #         children=[
+            #             sd_material_ui.Card([
+            #                 html.P('Card Text')
+            #             ]),
+            #         ]),
+            #     sd_material_ui.Toggle(
+            #         id='transition-fade-input', toggled=True, label='Show element?'),
+            # ]),
 
             # Grow
             # Slide
@@ -319,8 +319,6 @@ app.layout = html.Div([
             html.P(id='tabs-output', style={'display': 'contents'}),
         ]),
 
-
-
         spacer,
 
         html.Div([
@@ -363,21 +361,21 @@ def callback_snackbar(n: int, _open: bool):
 
 
 @app.callback(
-    dash.dependencies.Output('transition-output', 'visible'),
+    dash.dependencies.Output('transition-collapse', 'visible'),
     [dash.dependencies.Input('transition-input', 'toggled')])
-def callback_func_transition(checked: bool):
-    if checked is None:
+def callback_func_transition(toggled: bool):
+    if toggled is None:
         return True
-    return checked
+    return toggled
 
 
-@app.callback(
-    dash.dependencies.Output('transition-fade', 'visible'),
-    [dash.dependencies.Input('transition-fade-input', 'toggled')])
-def callback_func_transition_fade(checked: bool):
-    if checked is None:
-        return True
-    return checked
+# @app.callback(
+#     dash.dependencies.Output('transition-fade', 'visible'),
+#     [dash.dependencies.Input('transition-fade-input', 'toggled')])
+# def callback_func_transition_fade(checked: bool):
+#     if checked is None:
+#         return True
+#     return checked
 
 
 @app.callback(dash.dependencies.Output('bottom-nav-output', 'children'),
