@@ -18,6 +18,7 @@ export { default as Stepper } from './components/Stepper.react';
 export { default as Subheader } from './components/Subheader.react';
 export { default as Tabs } from './components/Tabs.react';
 export { default as Toggle } from './components/Toggle.react';
+export { default as Transition } from './components/Transitions.react';
 
 // Special components
 // export { default as Questions } from './components/Questions.react';

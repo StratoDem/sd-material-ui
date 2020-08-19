@@ -17,6 +17,7 @@ from .Stepper import Stepper
 from .Subheader import Subheader
 from .Tabs import Tabs
 from .Toggle import Toggle
+from .Transitions import Transitions
 
 __all__ = [
     "Accordion",
@@ -37,5 +38,6 @@ __all__ = [
     "Stepper",
     "Subheader",
     "Tabs",
-    "Toggle"
+    "Toggle",
+    "Transitions"
 ]
