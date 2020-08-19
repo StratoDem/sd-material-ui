@@ -1647,6 +1647,161 @@
       }
     }
   },
+  "src/lib/components/CollapseTransition.react.js": {
+    "description": "",
+    "displayName": "CollapseTransition",
+    "methods": [
+      {
+        "name": "UNSAFE_componentWillReceiveProps",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "nextProps",
+            "type": {
+              "name": "signature",
+              "type": "object",
+              "raw": "{\n  /** The contents of the transition element */\n  children?: Node,\n  /** CSS class name of the root element */\n  className?: string,\n  /** The pixel height of the child element when collapsed */\n  collapsedHeight: number,\n  /** Dash ID of the transition element */\n  id: string,\n  /** Dash callback to update props on the server */\n  setProps?: () => void,\n  /** If true, the transition element is displayed, else it will be hidden */\n  visible?: boolean\n}",
+              "signature": {
+                "properties": [
+                  {
+                    "key": "children",
+                    "value": {
+                      "name": "Node",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "className",
+                    "value": {
+                      "name": "string",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "collapsedHeight",
+                    "value": {
+                      "name": "number",
+                      "required": true
+                    }
+                  },
+                  {
+                    "key": "id",
+                    "value": {
+                      "name": "string",
+                      "required": true
+                    }
+                  },
+                  {
+                    "key": "setProps",
+                    "value": {
+                      "name": "signature",
+                      "type": "function",
+                      "raw": "() => void",
+                      "signature": {
+                        "arguments": [],
+                        "return": {
+                          "name": "void"
+                        }
+                      },
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "visible",
+                    "value": {
+                      "name": "boolean",
+                      "required": false
+                    }
+                  }
+                ]
+              },
+              "alias": "Props"
+            }
+          },
+          {
+            "name": "nextContent",
+            "type": {
+              "name": "unknown"
+            }
+          }
+        ],
+        "returns": {
+          "type": {
+            "name": "void"
+          }
+        }
+      }
+    ],
+    "props": {
+      "children": {
+        "required": false,
+        "flowType": {
+          "name": "Node"
+        },
+        "description": "The contents of the transition element",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "className": {
+        "required": false,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "CSS class name of the root element"
+      },
+      "collapsedHeight": {
+        "required": false,
+        "flowType": {
+          "name": "number"
+        },
+        "description": "The pixel height of the child element when collapsed",
+        "defaultValue": {
+          "value": "0",
+          "computed": false
+        }
+      },
+      "id": {
+        "required": true,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "Dash ID of the transition element"
+      },
+      "setProps": {
+        "required": false,
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "() => void",
+          "signature": {
+            "arguments": [],
+            "return": {
+              "name": "void"
+            }
+          }
+        },
+        "description": "Dash callback to update props on the server",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      },
+      "visible": {
+        "required": false,
+        "flowType": {
+          "name": "boolean"
+        },
+        "description": "If true, the transition element is displayed, else it will be hidden",
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        }
+      }
+    }
+  },
   "src/lib/components/Dialog.react.js": {
     "description": "Material UI Dialog component",
     "displayName": "Dialog",
@@ -2929,6 +3084,161 @@
       }
     }
   },
+  "src/lib/components/FadeTransition.react.js": {
+    "description": "",
+    "displayName": "FadeTransition",
+    "methods": [
+      {
+        "name": "UNSAFE_componentWillReceiveProps",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "nextProps",
+            "type": {
+              "name": "signature",
+              "type": "object",
+              "raw": "{\n  /** The contents of the transition element */\n  children?: Node,\n  /** CSS class name of the root element */\n  className?: string,\n  /** Dash ID of the transition element */\n  id: string,\n  /** Dash callback to update props on the server */\n  setProps?: () => void,\n  /** The styles passed to the transition element\n   * An style object (even if empty) must be given to the transition element or it will fail\n   * silently. See: https://github.com/mui-org/material-ui/issues/15472\n   */\n  style?: Object,\n  /** If true, the transition element is displayed, else it will be hidden */\n  visible?: boolean\n}",
+              "signature": {
+                "properties": [
+                  {
+                    "key": "children",
+                    "value": {
+                      "name": "Node",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "className",
+                    "value": {
+                      "name": "string",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "id",
+                    "value": {
+                      "name": "string",
+                      "required": true
+                    }
+                  },
+                  {
+                    "key": "setProps",
+                    "value": {
+                      "name": "signature",
+                      "type": "function",
+                      "raw": "() => void",
+                      "signature": {
+                        "arguments": [],
+                        "return": {
+                          "name": "void"
+                        }
+                      },
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "style",
+                    "value": {
+                      "name": "Object",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "visible",
+                    "value": {
+                      "name": "boolean",
+                      "required": false
+                    }
+                  }
+                ]
+              },
+              "alias": "Props"
+            }
+          },
+          {
+            "name": "nextContent",
+            "type": {
+              "name": "unknown"
+            }
+          }
+        ],
+        "returns": {
+          "type": {
+            "name": "void"
+          }
+        }
+      }
+    ],
+    "props": {
+      "children": {
+        "required": false,
+        "flowType": {
+          "name": "Node"
+        },
+        "description": "The contents of the transition element",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "className": {
+        "required": false,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "CSS class name of the root element"
+      },
+      "id": {
+        "required": true,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "Dash ID of the transition element"
+      },
+      "setProps": {
+        "required": false,
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "() => void",
+          "signature": {
+            "arguments": [],
+            "return": {
+              "name": "void"
+            }
+          }
+        },
+        "description": "Dash callback to update props on the server",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      },
+      "style": {
+        "required": false,
+        "flowType": {
+          "name": "Object"
+        },
+        "description": "The styles passed to the transition element\nAn style object (even if empty) must be given to the transition element or it will fail\nsilently. See: https://github.com/mui-org/material-ui/issues/15472",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "visible": {
+        "required": false,
+        "flowType": {
+          "name": "boolean"
+        },
+        "description": "If true, the transition element is displayed, else it will be hidden",
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        }
+      }
+    }
+  },
   "src/lib/components/FontIcon.react.js": {
     "description": "Material UI FontIcon component",
     "displayName": "FontIcon",
@@ -3055,6 +3365,161 @@
         "description": "override inline-styles of root element",
         "defaultValue": {
           "value": "{}",
+          "computed": false
+        }
+      }
+    }
+  },
+  "src/lib/components/GrowTransition.react.js": {
+    "description": "",
+    "displayName": "GrowTransition",
+    "methods": [
+      {
+        "name": "UNSAFE_componentWillReceiveProps",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "nextProps",
+            "type": {
+              "name": "signature",
+              "type": "object",
+              "raw": "{\n  /** The contents of the transition element */\n  children?: Node,\n  /** CSS class name of the root element */\n  className?: string,\n  /** Dash ID of the transition element */\n  id: string,\n  /** Dash callback to update props on the server */\n  setProps?: () => void,\n  /** The styles passed to the transition element\n   * An style object (even if empty) must be given to the transition element or it will fail\n   * silently. See: https://github.com/mui-org/material-ui/issues/15472\n   */\n  style?: Object,\n  /** If true, the transition element is displayed, else it will be hidden */\n  visible?: boolean\n}",
+              "signature": {
+                "properties": [
+                  {
+                    "key": "children",
+                    "value": {
+                      "name": "Node",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "className",
+                    "value": {
+                      "name": "string",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "id",
+                    "value": {
+                      "name": "string",
+                      "required": true
+                    }
+                  },
+                  {
+                    "key": "setProps",
+                    "value": {
+                      "name": "signature",
+                      "type": "function",
+                      "raw": "() => void",
+                      "signature": {
+                        "arguments": [],
+                        "return": {
+                          "name": "void"
+                        }
+                      },
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "style",
+                    "value": {
+                      "name": "Object",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "visible",
+                    "value": {
+                      "name": "boolean",
+                      "required": false
+                    }
+                  }
+                ]
+              },
+              "alias": "Props"
+            }
+          },
+          {
+            "name": "nextContent",
+            "type": {
+              "name": "unknown"
+            }
+          }
+        ],
+        "returns": {
+          "type": {
+            "name": "void"
+          }
+        }
+      }
+    ],
+    "props": {
+      "children": {
+        "required": false,
+        "flowType": {
+          "name": "Node"
+        },
+        "description": "The contents of the transition element",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "className": {
+        "required": false,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "CSS class name of the root element"
+      },
+      "id": {
+        "required": true,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "Dash ID of the transition element"
+      },
+      "setProps": {
+        "required": false,
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "() => void",
+          "signature": {
+            "arguments": [],
+            "return": {
+              "name": "void"
+            }
+          }
+        },
+        "description": "Dash callback to update props on the server",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      },
+      "style": {
+        "required": false,
+        "flowType": {
+          "name": "Object"
+        },
+        "description": "The styles passed to the transition element\nAn style object (even if empty) must be given to the transition element or it will fail\nsilently. See: https://github.com/mui-org/material-ui/issues/15472",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "visible": {
+        "required": false,
+        "flowType": {
+          "name": "boolean"
+        },
+        "description": "If true, the transition element is displayed, else it will be hidden",
+        "defaultValue": {
+          "value": "true",
           "computed": false
         }
       }
@@ -3838,6 +4303,217 @@
           "name": "string"
         },
         "description": "Initial value selected"
+      }
+    }
+  },
+  "src/lib/components/SlideTransition.react.js": {
+    "description": "",
+    "displayName": "SlideTransition",
+    "methods": [
+      {
+        "name": "UNSAFE_componentWillReceiveProps",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "nextProps",
+            "type": {
+              "name": "signature",
+              "type": "object",
+              "raw": "{\n  /** The contents of the transition element */\n  children?: Node,\n  /** CSS class name of the root element */\n  className?: string,\n  /** Dash ID of the transition element */\n  id: string,\n  /** Dash callback to update props on the server */\n  setProps?: () => void,\n  /** The direction the child component will move when sliding into view */\n  slideDirection?: \"up\" | \"down\" | \"left\" | \"right\",\n  /** The styles passed to the transition element\n   * An style object (even if empty) must be given to the transition element or it will fail\n   * silently. See: https://github.com/mui-org/material-ui/issues/15472\n   */\n  style?: Object,\n  /** If true, the transition element is displayed, else it will be hidden */\n  visible?: boolean\n}",
+              "signature": {
+                "properties": [
+                  {
+                    "key": "children",
+                    "value": {
+                      "name": "Node",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "className",
+                    "value": {
+                      "name": "string",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "id",
+                    "value": {
+                      "name": "string",
+                      "required": true
+                    }
+                  },
+                  {
+                    "key": "setProps",
+                    "value": {
+                      "name": "signature",
+                      "type": "function",
+                      "raw": "() => void",
+                      "signature": {
+                        "arguments": [],
+                        "return": {
+                          "name": "void"
+                        }
+                      },
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "slideDirection",
+                    "value": {
+                      "name": "union",
+                      "raw": "\"up\" | \"down\" | \"left\" | \"right\"",
+                      "elements": [
+                        {
+                          "name": "literal",
+                          "value": "\"up\""
+                        },
+                        {
+                          "name": "literal",
+                          "value": "\"down\""
+                        },
+                        {
+                          "name": "literal",
+                          "value": "\"left\""
+                        },
+                        {
+                          "name": "literal",
+                          "value": "\"right\""
+                        }
+                      ],
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "style",
+                    "value": {
+                      "name": "Object",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "visible",
+                    "value": {
+                      "name": "boolean",
+                      "required": false
+                    }
+                  }
+                ]
+              },
+              "alias": "Props"
+            }
+          },
+          {
+            "name": "nextContent",
+            "type": {
+              "name": "unknown"
+            }
+          }
+        ],
+        "returns": {
+          "type": {
+            "name": "void"
+          }
+        }
+      }
+    ],
+    "props": {
+      "children": {
+        "required": false,
+        "flowType": {
+          "name": "Node"
+        },
+        "description": "The contents of the transition element",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "className": {
+        "required": false,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "CSS class name of the root element"
+      },
+      "id": {
+        "required": true,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "Dash ID of the transition element"
+      },
+      "setProps": {
+        "required": false,
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "() => void",
+          "signature": {
+            "arguments": [],
+            "return": {
+              "name": "void"
+            }
+          }
+        },
+        "description": "Dash callback to update props on the server",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      },
+      "slideDirection": {
+        "required": false,
+        "flowType": {
+          "name": "union",
+          "raw": "\"up\" | \"down\" | \"left\" | \"right\"",
+          "elements": [
+            {
+              "name": "literal",
+              "value": "\"up\""
+            },
+            {
+              "name": "literal",
+              "value": "\"down\""
+            },
+            {
+              "name": "literal",
+              "value": "\"left\""
+            },
+            {
+              "name": "literal",
+              "value": "\"right\""
+            }
+          ]
+        },
+        "description": "The direction the child component will move when sliding into view",
+        "defaultValue": {
+          "value": "\"up\"",
+          "computed": false
+        }
+      },
+      "style": {
+        "required": false,
+        "flowType": {
+          "name": "Object"
+        },
+        "description": "The styles passed to the transition element\nAn style object (even if empty) must be given to the transition element or it will fail\nsilently. See: https://github.com/mui-org/material-ui/issues/15472",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "visible": {
+        "required": false,
+        "flowType": {
+          "name": "boolean"
+        },
+        "description": "If true, the transition element is displayed, else it will be hidden",
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        }
       }
     }
   },
@@ -5139,7 +5815,7 @@
         },
         "description": "If using a single label, its position can be: \"top\", \"start\", \"bottom\", or \"end\"",
         "defaultValue": {
-          "value": "\"right\"",
+          "value": "\"end\"",
           "computed": false
         }
       },
@@ -5190,6 +5866,161 @@
           "name": "boolean"
         },
         "description": "Whether toggle is on (true) or off (false)"
+      }
+    }
+  },
+  "src/lib/components/ZoomTransition.react.js": {
+    "description": "",
+    "displayName": "ZoomTransition",
+    "methods": [
+      {
+        "name": "UNSAFE_componentWillReceiveProps",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "nextProps",
+            "type": {
+              "name": "signature",
+              "type": "object",
+              "raw": "{\n  /** The contents of the transition element */\n  children?: Node,\n  /** CSS class name of the root element */\n  className?: string,\n  /** Dash ID of the transition element */\n  id: string,\n  /** Dash callback to update props on the server */\n  setProps?: () => void,\n  /** The styles passed to the transition element\n   * An style object (even if empty) must be given to the transition element or it will fail\n   * silently. See: https://github.com/mui-org/material-ui/issues/15472\n   */\n  style?: Object,\n  /** If true, the transition element is displayed, else it will be hidden */\n  visible?: boolean\n}",
+              "signature": {
+                "properties": [
+                  {
+                    "key": "children",
+                    "value": {
+                      "name": "Node",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "className",
+                    "value": {
+                      "name": "string",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "id",
+                    "value": {
+                      "name": "string",
+                      "required": true
+                    }
+                  },
+                  {
+                    "key": "setProps",
+                    "value": {
+                      "name": "signature",
+                      "type": "function",
+                      "raw": "() => void",
+                      "signature": {
+                        "arguments": [],
+                        "return": {
+                          "name": "void"
+                        }
+                      },
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "style",
+                    "value": {
+                      "name": "Object",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "visible",
+                    "value": {
+                      "name": "boolean",
+                      "required": false
+                    }
+                  }
+                ]
+              },
+              "alias": "Props"
+            }
+          },
+          {
+            "name": "nextContent",
+            "type": {
+              "name": "unknown"
+            }
+          }
+        ],
+        "returns": {
+          "type": {
+            "name": "void"
+          }
+        }
+      }
+    ],
+    "props": {
+      "children": {
+        "required": false,
+        "flowType": {
+          "name": "Node"
+        },
+        "description": "The contents of the transition element",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "className": {
+        "required": false,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "CSS class name of the root element"
+      },
+      "id": {
+        "required": true,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "Dash ID of the transition element"
+      },
+      "setProps": {
+        "required": false,
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "() => void",
+          "signature": {
+            "arguments": [],
+            "return": {
+              "name": "void"
+            }
+          }
+        },
+        "description": "Dash callback to update props on the server",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      },
+      "style": {
+        "required": false,
+        "flowType": {
+          "name": "Object"
+        },
+        "description": "The styles passed to the transition element\nAn style object (even if empty) must be given to the transition element or it will fail\nsilently. See: https://github.com/mui-org/material-ui/issues/15472",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "visible": {
+        "required": false,
+        "flowType": {
+          "name": "boolean"
+        },
+        "description": "If true, the transition element is displayed, else it will be hidden",
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        }
       }
     }
   }

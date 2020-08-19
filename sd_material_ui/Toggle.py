@@ -40,7 +40,7 @@ Valid rule names are:
 - disabled (boolean; default False): Whether the toggle is disabled (true) or not (false)
 - id (string; required): Toggle ID
 - label (string; default ''): The label for the toggle
-- labelPlacement (string; default "right"): If using a single label, its position can be: "top", "start", "bottom", or "end"
+- labelPlacement (string; default "end"): If using a single label, its position can be: "top", "start", "bottom", or "end"
 - labelSpacing (default 1): The space between the label(s) and toggle
 - secondaryLabel (string; default ''): A second label for the toggle. If this is used, the labelPlacement value is ignored, and the
 secondaryLabel will be positioned to the right of the toggle, and the first label to the left

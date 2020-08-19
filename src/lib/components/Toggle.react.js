@@ -70,7 +70,7 @@ const defaultProps = {
   className: '',
   classes: {},
   disabled: false,
-  labelPlacement: "right",
+  labelPlacement: "end",
   label: '',
   labelSpacing: 1,
   secondaryLabel: '',
