@@ -123,7 +123,7 @@ app.layout = html.Div([
         html.Div([
             html.Div([
                 html.P([html.Strong('Test for Collapse Transition and Paper/Card')]),
-                sd_material_ui.Transitions(id='transition-collapse', visible=True, children=[
+                sd_material_ui.CollapseTransition(id='transition-collapse', visible=True, children=[
                     sd_material_ui.Paper([
                         html.H3('Paper Title'),
                         sd_material_ui.Card([
@@ -133,27 +133,6 @@ app.layout = html.Div([
                 ]),
                 sd_material_ui.Toggle(id='transition-input', toggled=True, label='Show element?'),
             ]),
-
-            spacer,
-
-            # html.Div([
-            #     html.P([html.Strong('Test for Fade Transition')]),
-            #     sd_material_ui.Transitions(
-            #         id='transition-fade',
-            #         visible=True,
-            #         type='fade',
-            #         children=[
-            #             sd_material_ui.Card([
-            #                 html.P('Card Text')
-            #             ]),
-            #         ]),
-            #     sd_material_ui.Toggle(
-            #         id='transition-fade-input', toggled=True, label='Show element?'),
-            # ]),
-
-            # Grow
-            # Slide
-            # Zoom
 
             spacer,
 
@@ -363,19 +342,10 @@ def callback_snackbar(n: int, _open: bool):
 @app.callback(
     dash.dependencies.Output('transition-collapse', 'visible'),
     [dash.dependencies.Input('transition-input', 'toggled')])
-def callback_func_transition(toggled: bool):
+def callback_func_transition_collapse(toggled: bool):
     if toggled is None:
         return True
     return toggled
-
-
-# @app.callback(
-#     dash.dependencies.Output('transition-fade', 'visible'),
-#     [dash.dependencies.Input('transition-fade-input', 'toggled')])
-# def callback_func_transition_fade(checked: bool):
-#     if checked is None:
-#         return True
-#     return checked
 
 
 @app.callback(dash.dependencies.Output('bottom-nav-output', 'children'),
@@ -385,20 +355,6 @@ def callback_bottom_nav(value, state_value):
     if value is None:
         return 'Value Selected: '
     return f'Value Selected: Item {value}'
-#
-#
-# @app.callback(
-#     dash.dependencies.Output('tab-output', 'children'),
-#     [dash.dependencies.Input('tab-input', 'value')])
-# def show_selected_tab_value(value):
-#     return 'Selected tab: {}'.format(value)
-#
-#
-# @app.callback(
-#     dash.dependencies.Output('output', 'children'),
-#     [dash.dependencies.Input('input', 'selectedIndex')])
-# def display_output(value):
-#     return 'You have entered {}'.format(value)
 
 
 # Callback for SDDialog (modal)
@@ -469,60 +425,6 @@ def callback_accordion_disable(toggle_status):
     return not toggle_status
 
 
-#
-#
-# # Callback for SDDialog (non-modal)
-# @app.callback(
-#     dash.dependencies.Output('non-modal-output', 'open'),
-#     [dash.dependencies.Input('non-modal-input', 'n_clicks')],
-#     [dash.dependencies.State('non-modal-output', 'open')])
-# def show_non_modal_dialog(non_modal_click: int, open_state: bool):
-#     if non_modal_click and non_modal_click > 0:
-#         if not open_state:
-#             return True
-#     else:
-#         return False
-#
-#
-# # Callback for SDRaisedButton
-# @app.callback(
-#     dash.dependencies.Output('output4', 'children'),
-#     [dash.dependencies.Input('input4', 'n_clicks')],
-#     [dash.dependencies.State('input4', 'n_clicks_previous')])
-# def display_clicks_raised(n_clicks_raised: int, n_clicks_raised_prev: int):
-#     if n_clicks_raised:
-#         return ['n_clicks value: {}. n_clicks_previous value: {}'.format(n_clicks_raised,
-#                                                                          n_clicks_raised_prev)]
-#     else:
-#         return ['n_clicks value: ']
-#
-#
-# # Callback for SDFlatButton
-# @app.callback(
-#     dash.dependencies.Output('output5', 'children'),
-#     [dash.dependencies.Input('input5', 'n_clicks')],
-#     [dash.dependencies.State('input5', 'n_clicks_previous')])
-# def display_clicks_flat(n_clicks_flat: int, n_clicks_flat_prev: int):
-#     if n_clicks_flat:
-#         return ['n_clicks value: {}. n_clicks_prev value: {}'.format(n_clicks_flat,
-#                                                                      n_clicks_flat_prev)]
-#     else:
-#         return ['n_clicks value: ']
-#
-#
-# # Callback for SDIconButton
-# @app.callback(
-#     dash.dependencies.Output('output12', 'children'),
-#     [dash.dependencies.Input('input12', 'n_clicks')],
-#     [dash.dependencies.State('input12', 'n_clicks_previous')])
-# def display_clicks_icon(n_clicks_icon: int, n_clicks_icon_prev: int):
-#     if n_clicks_icon:
-#         return ['n_clicks value: {}. n_clicks_prev value: {}'.format(n_clicks_icon,
-#                                                                      n_clicks_icon_prev)]
-#     else:
-#         return ['n_clicks value: ']
-
-
 # Callback for SDDrawer (not docked)
 @app.callback(
     dash.dependencies.Output('drawer', 'open'),
@@ -548,30 +450,6 @@ def use_toggle(switch):
         return ['Flame off']
 
 
-#
-#
-# # Callback for SDSnackbar
-# @app.callback(
-#     dash.dependencies.Output('snackbar', 'open'),
-#     [dash.dependencies.Input('input10', 'n_clicks')])
-# def open_snackbar(button_click: int):
-#     if button_click is not None and button_click > 0:
-#         return True
-#     else:
-#         return False
-#
-#
-# # Callback for SDSnackbar's action
-# @app.callback(
-#     dash.dependencies.Output('output10', 'children'),
-#     [dash.dependencies.Input('snackbar', 'n_clicks')])
-# def click_snackbar(snackbar_click: str):
-#     if snackbar_click is not None and snackbar_click > 0:
-#         return ['Found you!']
-#     else:
-#         return ['Looking...']
-#
-#
 # Callback for SDDropdownMenu and SDMenuItem
 @app.callback(
     dash.dependencies.Output('dropdown-output', 'children'),
@@ -612,16 +490,6 @@ def radiobuttongroup_callback(value):
     return ['Selection is: {}'.format(value)]
 
 
-#
-#
-# # Callback for Stepper
-# @app.callback(
-#     dash.dependencies.Output('output-stepper', 'children'),
-#     [dash.dependencies.Input('input-stepper', 'activeStep')])
-# def stepper_callback(activeStep: int):
-#     return 'Current step number is {}'.format(activeStep)
-#
-#
 # @app.server.route('/my-search', methods=['POST'])
 # def black_box_search_engine():
 #     search_term = flask.request.get_json().get('searchTerm')
