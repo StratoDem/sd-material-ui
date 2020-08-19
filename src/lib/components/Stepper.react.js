@@ -125,7 +125,7 @@ export default class Stepper extends Component<Props, State> {
     const steps = [];
 
     for (let i = 0; i < stepCount; i += 1) {
-      steps.push(<Step><StepLabel>{this.props.stepLabels[i]}</StepLabel></Step>);
+      steps.push(<Step key={`step${i}`}><StepLabel>{this.props.stepLabels[i]}</StepLabel></Step>);
     }
 
     return steps;
