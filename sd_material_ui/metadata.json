@@ -3098,7 +3098,7 @@
             "type": {
               "name": "signature",
               "type": "object",
-              "raw": "{\n  /** The contents of the transition element */\n  children?: Node,\n  /** CSS class name of the root element */\n  className?: string,\n  /** Dash ID of the transition element */\n  id: string,\n  /** Dash callback to update props on the server */\n  setProps?: () => void,\n  /** If true, the transition element is displayed, else it will be hidden */\n  visible?: boolean\n}",
+              "raw": "{\n  /** The contents of the transition element */\n  children?: Node,\n  /** CSS class name of the root element */\n  className?: string,\n  /** Dash ID of the transition element */\n  id: string,\n  /** Dash callback to update props on the server */\n  setProps?: () => void,\n  /** The styles passed to the transition element\n   * An style object (even if empty) must be given to the transition element or it will fail\n   * silently. See: https://github.com/mui-org/material-ui/issues/15472\n   */\n  style?: Object,\n  /** If true, the transition element is displayed, else it will be hidden */\n  visible?: boolean\n}",
               "signature": {
                 "properties": [
                   {
@@ -3134,6 +3134,13 @@
                           "name": "void"
                         }
                       },
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "style",
+                    "value": {
+                      "name": "Object",
                       "required": false
                     }
                   },
@@ -3205,6 +3212,17 @@
         "description": "Dash callback to update props on the server",
         "defaultValue": {
           "value": "() => {}",
+          "computed": false
+        }
+      },
+      "style": {
+        "required": false,
+        "flowType": {
+          "name": "Object"
+        },
+        "description": "The styles passed to the transition element\nAn style object (even if empty) must be given to the transition element or it will fail\nsilently. See: https://github.com/mui-org/material-ui/issues/15472",
+        "defaultValue": {
+          "value": "{}",
           "computed": false
         }
       },
@@ -3366,7 +3384,7 @@
             "type": {
               "name": "signature",
               "type": "object",
-              "raw": "{\n  /** The contents of the transition element */\n  children?: Node,\n  /** CSS class name of the root element */\n  className?: string,\n  /** Dash ID of the transition element */\n  id: string,\n  /** Dash callback to update props on the server */\n  setProps?: () => void,\n  /** If true, the transition element is displayed, else it will be hidden */\n  visible?: boolean\n}",
+              "raw": "{\n  /** The contents of the transition element */\n  children?: Node,\n  /** CSS class name of the root element */\n  className?: string,\n  /** Dash ID of the transition element */\n  id: string,\n  /** Dash callback to update props on the server */\n  setProps?: () => void,\n  /** The styles passed to the transition element\n   * An style object (even if empty) must be given to the transition element or it will fail\n   * silently. See: https://github.com/mui-org/material-ui/issues/15472\n   */\n  style?: Object,\n  /** If true, the transition element is displayed, else it will be hidden */\n  visible?: boolean\n}",
               "signature": {
                 "properties": [
                   {
@@ -3402,6 +3420,13 @@
                           "name": "void"
                         }
                       },
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "style",
+                    "value": {
+                      "name": "Object",
                       "required": false
                     }
                   },
@@ -3473,6 +3498,17 @@
         "description": "Dash callback to update props on the server",
         "defaultValue": {
           "value": "() => {}",
+          "computed": false
+        }
+      },
+      "style": {
+        "required": false,
+        "flowType": {
+          "name": "Object"
+        },
+        "description": "The styles passed to the transition element\nAn style object (even if empty) must be given to the transition element or it will fail\nsilently. See: https://github.com/mui-org/material-ui/issues/15472",
+        "defaultValue": {
+          "value": "{}",
           "computed": false
         }
       },
@@ -4284,7 +4320,7 @@
             "type": {
               "name": "signature",
               "type": "object",
-              "raw": "{\n  /** The contents of the transition element */\n  children?: Node,\n  /** CSS class name of the root element */\n  className?: string,\n  /** Dash ID of the transition element */\n  id: string,\n  /** Dash callback to update props on the server */\n  setProps?: () => void,\n  /** The direction the child component will move when sliding into view */\n  slideDirection?: \"up\" | \"down\" | \"left\" | \"right\",\n  /** If true, the transition element is displayed, else it will be hidden */\n  visible?: boolean\n}",
+              "raw": "{\n  /** The contents of the transition element */\n  children?: Node,\n  /** CSS class name of the root element */\n  className?: string,\n  /** Dash ID of the transition element */\n  id: string,\n  /** Dash callback to update props on the server */\n  setProps?: () => void,\n  /** The direction the child component will move when sliding into view */\n  slideDirection?: \"up\" | \"down\" | \"left\" | \"right\",\n  /** The styles passed to the transition element\n   * An style object (even if empty) must be given to the transition element or it will fail\n   * silently. See: https://github.com/mui-org/material-ui/issues/15472\n   */\n  style?: Object,\n  /** If true, the transition element is displayed, else it will be hidden */\n  visible?: boolean\n}",
               "signature": {
                 "properties": [
                   {
@@ -4346,6 +4382,13 @@
                           "value": "\"right\""
                         }
                       ],
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "style",
+                    "value": {
+                      "name": "Object",
                       "required": false
                     }
                   },
@@ -4447,6 +4490,17 @@
         "description": "The direction the child component will move when sliding into view",
         "defaultValue": {
           "value": "\"up\"",
+          "computed": false
+        }
+      },
+      "style": {
+        "required": false,
+        "flowType": {
+          "name": "Object"
+        },
+        "description": "The styles passed to the transition element\nAn style object (even if empty) must be given to the transition element or it will fail\nsilently. See: https://github.com/mui-org/material-ui/issues/15472",
+        "defaultValue": {
+          "value": "{}",
           "computed": false
         }
       },
@@ -5829,7 +5883,7 @@
             "type": {
               "name": "signature",
               "type": "object",
-              "raw": "{\n  /** The contents of the transition element */\n  children?: Node,\n  /** CSS class name of the root element */\n  className?: string,\n  /** Dash ID of the transition element */\n  id: string,\n  /** Dash callback to update props on the server */\n  setProps?: () => void,\n  /** If true, the transition element is displayed, else it will be hidden */\n  visible?: boolean\n}",
+              "raw": "{\n  /** The contents of the transition element */\n  children?: Node,\n  /** CSS class name of the root element */\n  className?: string,\n  /** Dash ID of the transition element */\n  id: string,\n  /** Dash callback to update props on the server */\n  setProps?: () => void,\n  /** The styles passed to the transition element\n   * An style object (even if empty) must be given to the transition element or it will fail\n   * silently. See: https://github.com/mui-org/material-ui/issues/15472\n   */\n  style?: Object,\n  /** If true, the transition element is displayed, else it will be hidden */\n  visible?: boolean\n}",
               "signature": {
                 "properties": [
                   {
@@ -5865,6 +5919,13 @@
                           "name": "void"
                         }
                       },
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "style",
+                    "value": {
+                      "name": "Object",
                       "required": false
                     }
                   },
@@ -5936,6 +5997,17 @@
         "description": "Dash callback to update props on the server",
         "defaultValue": {
           "value": "() => {}",
+          "computed": false
+        }
+      },
+      "style": {
+        "required": false,
+        "flowType": {
+          "name": "Object"
+        },
+        "description": "The styles passed to the transition element\nAn style object (even if empty) must be given to the transition element or it will fail\nsilently. See: https://github.com/mui-org/material-ui/issues/15472",
+        "defaultValue": {
+          "value": "{}",
           "computed": false
         }
       },

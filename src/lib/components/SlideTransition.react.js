@@ -14,6 +14,11 @@ type Props = {
   setProps?: () => void,
   /** The direction the child component will move when sliding into view */
   slideDirection?: "up" | "down" | "left" | "right",
+  /** The styles passed to the transition element
+   * An style object (even if empty) must be given to the transition element or it will fail
+   * silently. See: https://github.com/mui-org/material-ui/issues/15472
+   */
+  style?: Object,
   /** If true, the transition element is displayed, else it will be hidden */
   visible?: boolean
 };
@@ -24,6 +29,7 @@ type State = {
 
 const defaultProps = {
   children: null,
+  style: {},
   visible: true,
   setProps: () => {},
   slideDirection: "up",
@@ -41,17 +47,20 @@ export default class SlideTransition extends Component<Props, State> {
   }
 
   render() {
-    const { id, className, slideDirection } = this.props;
+    const { id, className, slideDirection, style } = this.props;
 
     return (
       <div id={id} className={className}>
         <Slide
           direction={slideDirection}
           in={this.state.visible}
+          style={style}
           mountOnEnter
           unmountOnExit
         >
-          {this.props.children}
+          <div>
+            {this.props.children}
+          </div>
         </Slide>
       </div>
     );

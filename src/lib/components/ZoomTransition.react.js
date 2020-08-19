@@ -12,6 +12,11 @@ type Props = {
   id: string,
   /** Dash callback to update props on the server */
   setProps?: () => void,
+  /** The styles passed to the transition element
+   * An style object (even if empty) must be given to the transition element or it will fail
+   * silently. See: https://github.com/mui-org/material-ui/issues/15472
+   */
+  style?: Object,
   /** If true, the transition element is displayed, else it will be hidden */
   visible?: boolean
 };
@@ -22,6 +27,7 @@ type State = {
 
 const defaultProps = {
   children: null,
+  style: {},
   visible: true,
   setProps: () => {},
 }
@@ -38,12 +44,14 @@ export default class ZoomTransition extends Component<Props, State> {
   }
 
   render() {
-    const { id, className } = this.props;
+    const { id, className, style } = this.props;
 
     return (
       <div id={id} className={className}>
-        <Zoom in={this.state.visible}>
-          {this.props.children}
+        <Zoom in={this.state.visible} style={style}>
+          <div>
+            {this.props.children}
+          </div>
         </Zoom>
       </div>
     );
