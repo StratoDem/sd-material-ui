@@ -10,24 +10,6 @@ import Zoom from '@material-ui/core/Zoom';
 type Props = {
   /** The contents of the transition element */
   children?: Node,
-  /** The classes to be applied to this component. The keys in this object must be valid CSS rule
-   * names, and the values must be strings for the classnames to be assigned to each rule name
-   * Valid rule names are:
-   *   root
-   *   container
-   *   entered
-   *   hidden
-   *   wrapper
-   *   wrapperInner
-   */
-  classes?: {
-    root?: string,
-    container?: string,
-    entered?: string,
-    hidden?: string,
-    wrapper?: string,
-    wrapperInner?: string,
-  },
   /** CSS class name of the root element */
   className?: string,
   /** The pixel height of the child element when collapsed */
@@ -38,9 +20,6 @@ type Props = {
   setProps?: () => void,
   /** The direction the child component will move when sliding into view */
   slideDirection?: "up" | "down" | "left" | "right",
-  /** The duration for the transition, in milliseconds. Set to 'auto' to automatically calculate
-   * transition time based on height */
-  timeout?: "auto" | number | { appear?: number, enter?: number, exit?: number },
   /** Type of transition to be used */
   type?: "collapse" | "fade" | "grow" | "slide" | "zoom",
   /** If true, the transition element is displayed, else it will be hidden */
@@ -53,12 +32,10 @@ type State = {
 
 const defaultProps = {
   children: null,
-  classes: {},
   collapsedHeight: 0,
   visible: true,
   setProps: () => {},
   slideDirection: "up",
-  timeout: "auto",
   type: "collapse",
 }
 
@@ -74,16 +51,12 @@ export default class Transition extends Component<Props, State> {
   }
 
   render() {
-    const { id, className, classes, collapsedHeight, slideDirection, timeout, type } = this.props;
+    const { id, className, collapsedHeight, slideDirection, type } = this.props;
 
     if (type === "collapsed") {
       return (
         <div id={id} className={className}>
-          <Collapse
-            classes={classes}
-            in={this.state.visible}
-            collapsedHeight={collapsedHeight}
-            timeout={timeout}>
+          <Collapse in={this.state.visible} collapsedHeight={collapsedHeight}>
             {this.props.children}
           </Collapse>
         </div>
@@ -91,7 +64,7 @@ export default class Transition extends Component<Props, State> {
     } else if (type === "fade") {
       return (
         <div id={id} className={className}>
-          <Fade in={this.state.visible} classes={classes} timeout={timeout}>
+          <Fade in={this.state.visible}>
             {this.props.children}
           </Fade>
         </div>
@@ -99,7 +72,7 @@ export default class Transition extends Component<Props, State> {
     } else if (type === "grow") {
       return (
         <div id={id} className={className}>
-          <Grow in={this.state.visible} classes={classes} timeout={timeout}>
+          <Grow in={this.state.visible}>
             {this.props.children}
           </Grow>
         </div>
@@ -108,10 +81,8 @@ export default class Transition extends Component<Props, State> {
       return (
         <div id={id} className={className}>
           <Slide
-            classes={classes}
             direction={slideDirection}
             in={this.state.visible}
-            timeout={timeout}
             mountOnEnter
             unmountOnExit
           >
@@ -122,7 +93,7 @@ export default class Transition extends Component<Props, State> {
     } else {
       return (
         <div id={id} className={className}>
-          <Zoom in={this.state.visible} classes={classes} timeout={timeout}>
+          <Zoom in={this.state.visible}>
             {this.props.children}
           </Zoom>
         </div>

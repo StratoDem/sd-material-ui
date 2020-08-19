@@ -5139,7 +5139,7 @@
         },
         "description": "If using a single label, its position can be: \"top\", \"start\", \"bottom\", or \"end\"",
         "defaultValue": {
-          "value": "\"right\"",
+          "value": "\"end\"",
           "computed": false
         }
       },
@@ -5207,68 +5207,13 @@
             "type": {
               "name": "signature",
               "type": "object",
-              "raw": "{\n  /** The contents of the transition element */\n  children?: Node,\n  /** The classes to be applied to this component. The keys in this object must be valid CSS rule\n   * names, and the values must be strings for the classnames to be assigned to each rule name\n   * Valid rule names are:\n   *   root\n   *   container\n   *   entered\n   *   hidden\n   *   wrapper\n   *   wrapperInner\n   */\n  classes?: {\n    root?: string,\n    container?: string,\n    entered?: string,\n    hidden?: string,\n    wrapper?: string,\n    wrapperInner?: string,\n  },\n  /** CSS class name of the root element */\n  className?: string,\n  /** The pixel height of the child element when collapsed */\n  collapsedHeight: number,\n  /** Dash ID of the transition element */\n  id: string,\n  /** Dash callback to update props on the server */\n  setProps?: () => void,\n  /** The direction the child component will move when sliding into view */\n  slideDirection?: \"up\" | \"down\" | \"left\" | \"right\",\n  /** The duration for the transition, in milliseconds. Set to 'auto' to automatically calculate\n   * transition time based on height */\n  timeout?: \"auto\" | number | { appear?: number, enter?: number, exit?: number },\n  /** Type of transition to be used */\n  type?: \"collapse\" | \"fade\" | \"grow\" | \"slide\" | \"zoom\",\n  /** If true, the transition element is displayed, else it will be hidden */\n  visible?: boolean\n}",
+              "raw": "{\n  /** The contents of the transition element */\n  children?: Node,\n  /** CSS class name of the root element */\n  className?: string,\n  /** The pixel height of the child element when collapsed */\n  collapsedHeight: number,\n  /** Dash ID of the transition element */\n  id: string,\n  /** Dash callback to update props on the server */\n  setProps?: () => void,\n  /** The direction the child component will move when sliding into view */\n  slideDirection?: \"up\" | \"down\" | \"left\" | \"right\",\n  /** Type of transition to be used */\n  type?: \"collapse\" | \"fade\" | \"grow\" | \"slide\" | \"zoom\",\n  /** If true, the transition element is displayed, else it will be hidden */\n  visible?: boolean\n}",
               "signature": {
                 "properties": [
                   {
                     "key": "children",
                     "value": {
                       "name": "Node",
-                      "required": false
-                    }
-                  },
-                  {
-                    "key": "classes",
-                    "value": {
-                      "name": "signature",
-                      "type": "object",
-                      "raw": "{\n  root?: string,\n  container?: string,\n  entered?: string,\n  hidden?: string,\n  wrapper?: string,\n  wrapperInner?: string,\n}",
-                      "signature": {
-                        "properties": [
-                          {
-                            "key": "root",
-                            "value": {
-                              "name": "string",
-                              "required": false
-                            }
-                          },
-                          {
-                            "key": "container",
-                            "value": {
-                              "name": "string",
-                              "required": false
-                            }
-                          },
-                          {
-                            "key": "entered",
-                            "value": {
-                              "name": "string",
-                              "required": false
-                            }
-                          },
-                          {
-                            "key": "hidden",
-                            "value": {
-                              "name": "string",
-                              "required": false
-                            }
-                          },
-                          {
-                            "key": "wrapper",
-                            "value": {
-                              "name": "string",
-                              "required": false
-                            }
-                          },
-                          {
-                            "key": "wrapperInner",
-                            "value": {
-                              "name": "string",
-                              "required": false
-                            }
-                          }
-                        ]
-                      },
                       "required": false
                     }
                   },
@@ -5329,53 +5274,6 @@
                         {
                           "name": "literal",
                           "value": "\"right\""
-                        }
-                      ],
-                      "required": false
-                    }
-                  },
-                  {
-                    "key": "timeout",
-                    "value": {
-                      "name": "union",
-                      "raw": "\"auto\" | number | { appear?: number, enter?: number, exit?: number }",
-                      "elements": [
-                        {
-                          "name": "literal",
-                          "value": "\"auto\""
-                        },
-                        {
-                          "name": "number"
-                        },
-                        {
-                          "name": "signature",
-                          "type": "object",
-                          "raw": "{ appear?: number, enter?: number, exit?: number }",
-                          "signature": {
-                            "properties": [
-                              {
-                                "key": "appear",
-                                "value": {
-                                  "name": "number",
-                                  "required": false
-                                }
-                              },
-                              {
-                                "key": "enter",
-                                "value": {
-                                  "name": "number",
-                                  "required": false
-                                }
-                              },
-                              {
-                                "key": "exit",
-                                "value": {
-                                  "name": "number",
-                                  "required": false
-                                }
-                              }
-                            ]
-                          }
                         }
                       ],
                       "required": false
@@ -5446,65 +5344,6 @@
         "description": "The contents of the transition element",
         "defaultValue": {
           "value": "null",
-          "computed": false
-        }
-      },
-      "classes": {
-        "required": false,
-        "flowType": {
-          "name": "signature",
-          "type": "object",
-          "raw": "{\n  root?: string,\n  container?: string,\n  entered?: string,\n  hidden?: string,\n  wrapper?: string,\n  wrapperInner?: string,\n}",
-          "signature": {
-            "properties": [
-              {
-                "key": "root",
-                "value": {
-                  "name": "string",
-                  "required": false
-                }
-              },
-              {
-                "key": "container",
-                "value": {
-                  "name": "string",
-                  "required": false
-                }
-              },
-              {
-                "key": "entered",
-                "value": {
-                  "name": "string",
-                  "required": false
-                }
-              },
-              {
-                "key": "hidden",
-                "value": {
-                  "name": "string",
-                  "required": false
-                }
-              },
-              {
-                "key": "wrapper",
-                "value": {
-                  "name": "string",
-                  "required": false
-                }
-              },
-              {
-                "key": "wrapperInner",
-                "value": {
-                  "name": "string",
-                  "required": false
-                }
-              }
-            ]
-          }
-        },
-        "description": "The classes to be applied to this component. The keys in this object must be valid CSS rule\nnames, and the values must be strings for the classnames to be assigned to each rule name\nValid rule names are:\n  root\n  container\n  entered\n  hidden\n  wrapper\n  wrapperInner",
-        "defaultValue": {
-          "value": "{}",
           "computed": false
         }
       },
@@ -5579,57 +5418,6 @@
         "description": "The direction the child component will move when sliding into view",
         "defaultValue": {
           "value": "\"up\"",
-          "computed": false
-        }
-      },
-      "timeout": {
-        "required": false,
-        "flowType": {
-          "name": "union",
-          "raw": "\"auto\" | number | { appear?: number, enter?: number, exit?: number }",
-          "elements": [
-            {
-              "name": "literal",
-              "value": "\"auto\""
-            },
-            {
-              "name": "number"
-            },
-            {
-              "name": "signature",
-              "type": "object",
-              "raw": "{ appear?: number, enter?: number, exit?: number }",
-              "signature": {
-                "properties": [
-                  {
-                    "key": "appear",
-                    "value": {
-                      "name": "number",
-                      "required": false
-                    }
-                  },
-                  {
-                    "key": "enter",
-                    "value": {
-                      "name": "number",
-                      "required": false
-                    }
-                  },
-                  {
-                    "key": "exit",
-                    "value": {
-                      "name": "number",
-                      "required": false
-                    }
-                  }
-                ]
-              }
-            }
-          ]
-        },
-        "description": "The duration for the transition, in milliseconds. Set to 'auto' to automatically calculate\ntransition time based on height",
-        "defaultValue": {
-          "value": "\"auto\"",
           "computed": false
         }
       },
