@@ -22,6 +22,8 @@ app.layout = html.Div([
         spacer,
     ]),
 
+    sd_material_ui.Subheader(['Sample Subheader']),
+
     sd_material_ui.Divider(),
 
     html.Div([
@@ -187,7 +189,6 @@ app.layout = html.Div([
             spacer,
 
             html.Div([
-
                 html.P([html.Strong('Test for Checkbox')]),
 
                 sd_material_ui.Checkbox(id='checkbox1', label='Apple', name='Apple'),
@@ -196,6 +197,41 @@ app.layout = html.Div([
 
                 html.P(id='checkbox-output'),
                 html.Button('Clear Selections', id='clear-checks')
+            ]),
+
+            spacer,
+
+            html.Div([
+                html.P([html.Strong('Test for Accordion')]),
+
+                sd_material_ui.Accordion(
+                    id='accordion1',
+                    label='Accordion 1',
+                    expanded=False,
+                    children=html.P('Text inside the accordion')),
+                sd_material_ui.Accordion(
+                    id='accordion2',
+                    label='Accordion 2',
+                    expanded=False,
+                    square=True,
+                    children=html.Div([
+                        html.P('Line of text'),
+                        html.P('Another line of text'),
+                    ])),
+                sd_material_ui.Accordion(
+                    id='accordion3',
+                    label='Accordion 3',
+                    disabled=False,
+                    expanded=False,
+                    square=True,
+                    children=html.P('Text')),
+                sd_material_ui.Button(
+                    children='Open Accordion 1', variant='contained', id='accordion-input'),
+                sd_material_ui.Toggle(
+                    id='accordion-toggle-input',
+                    label='3 is Disabled',
+                    toggled=False,
+                    secondaryLabel='3 is Enabled')
             ]),
         ], style=dict(display='flex', flexWrap='wrap')),
     ]),
@@ -227,15 +263,72 @@ app.layout = html.Div([
         spacer,
 
         html.Div([
+
             html.P([html.Strong('Sample for CircularProgress')]),
-            sd_material_ui.CircularProgress(color='#00f2ff',
+
+            sd_material_ui.CircularProgress(color='inherit',
                                             thickness=5),
         ]),
+
+        spacer,
+
+        html.Div([
+            html.P([html.Strong('Example of Popover')]),
+
+            sd_material_ui.Popover([html.P('This is a Popover', style={'margin': 0})],
+                                   buttonType='flat',
+                                   buttonLabel='Open Popover',
+                                   open=False),
+                ]),
+
+        spacer,
+
+        html.Div([
+            html.P([html.Strong('Sample for Tabs')]),
+            sd_material_ui.Tabs([
+                html.H3('Header Tab 1'),
+                html.H3('Header Tab 2'),
+                html.H3('Header Tab 3'),
+            ], tabPropsArray=[{'value': 0, 'label': 'Tab 0'},
+                              {'value': 1, 'label': 'Tab 1'},
+                              {'value': 2, 'label': 'Tab 2'}],
+                id='tabs'),
+            html.Button('Reset Tab', id='reset-tab', style={'marginRight': '14px'}),
+            html.P(id='tabs-output', style={'display': 'contents'}),
+        ]),
+
+
+
+        spacer,
+
+        html.Div([
+                    html.P([html.Strong('Sample for Stepper')]),
+                    sd_material_ui.Stepper(id='stepper', style={'background': 'inherit'}),
+                ]),
 
         final_spacer,
     ], style=dict(display='flex', flexWrap='wrap')),
 
-])
+    ], style={'list-style-type': 'none'})
+
+
+
+@app.callback(
+    dash.dependencies.Output('tabs', 'value'),
+    [dash.dependencies.Input('reset-tab', 'n_clicks')],)
+def callback_reset_tab(n: int):
+    if not n:
+        raise dash.exceptions.PreventUpdate
+    return False
+
+@app.callback(
+    dash.dependencies.Output('tabs-output', 'children'),
+    [dash.dependencies.Input('tabs', 'value')],)
+def callback_tab(val: int):
+    if not val and isinstance(val, bool):
+        return ''
+    return f'Value Selected: {val}'
+
 
 
 @app.callback(
@@ -362,6 +455,26 @@ def callback_checkboxes(n: int):
     if not n:
         raise dash.exceptions.PreventUpdate
     return False, False, False
+
+
+@app.callback(
+    [dash.dependencies.Output('accordion1', 'expanded'),
+     dash.dependencies.Output('accordion2', 'expanded'),
+     dash.dependencies.Output('accordion3', 'expanded')],
+    [dash.dependencies.Input('accordion-input', 'n_clicks')])
+def callback_accordions(clicks):
+    if not clicks:
+        raise dash.exceptions.PreventUpdate
+    return [True, False, False]
+
+
+@app.callback(
+    dash.dependencies.Output('accordion3', 'disabled'),
+    [dash.dependencies.Input('accordion-toggle-input', 'toggled')])
+def callback_accordion_disable(toggle_status):
+    if toggle_status is None:
+        return False
+    return not toggle_status
 
 
 #

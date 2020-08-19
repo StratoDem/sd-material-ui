@@ -17,7 +17,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/StratoDem/sd-material-ui.git"
+    "url": "git+https://github.com/StratoDem/sd-material-ui.git"
   },
   "license": "MIT",
   "bugs": {
@@ -27,7 +27,10 @@
   "dependencies": {
     "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.9.1",
-    "dot-prop": "^4.2.1",
+    "@material-ui/lab": "^4.0.0-alpha.56",
+    "dot-prop": "^5.2.0",
+    "lodash": "^4.17.20",
+    "lodash.merge": "^4.6.2",
     "material-ui": "^0.20.2"
   },
   "devDependencies": {
@@ -84,5 +87,8 @@
   "engines": {
     "node": ">=8.11.0",
     "npm": ">=6.1.0"
+  },
+  "directories": {
+    "test": "test"
   }
 }

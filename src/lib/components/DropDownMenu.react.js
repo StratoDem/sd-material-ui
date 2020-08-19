@@ -84,6 +84,7 @@ const defaultProps = {
   labelId: '',
   multiple: false,
   options: [],
+  setProps: () => {},
   useGrouping: false,
   value: null,
   variant: "standard"
@@ -97,9 +98,9 @@ export default class DropDownMenu extends Component<Props, State> {
 
   buildMenuItem = (menuItem) => {
     if (this.props.useGrouping && menuItem.hasOwnProperty("grouping")) {
-      return <ListSubheader>{menuItem.grouping}</ListSubheader>
+      return <ListSubheader key={menuItem.grouping}>{menuItem.grouping}</ListSubheader>
     } else {
-      return <MenuItem value={menuItem.value}>{menuItem.primaryText}</MenuItem>
+      return <MenuItem key={menuItem.value} value={menuItem.value}>{menuItem.primaryText}</MenuItem>
     }
   };
 
@@ -114,7 +115,7 @@ export default class DropDownMenu extends Component<Props, State> {
   UNSAFE_componentWillReceiveProps = (nextProps: Props, nextContent: *): void => {
     if (nextProps.disabled !== this.state.disabled)
       this.setState({disabled: nextProps.disabled});
-  }
+  };
 
   render() {
     const {

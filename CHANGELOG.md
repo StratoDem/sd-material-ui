@@ -6,6 +6,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Changes
 - Updates many dependencies to resolve various vulnerabilities
 - Changes the following components to use the latest `material-ui`
+    - Accordion
     - BottomNavigation
     - Button
     - Card
@@ -17,8 +18,12 @@ This project adheres to [Semantic Versioning](http://semver.org/).
     - DropDownMenu
     - FontIcon
     - Paper
+    - Popover
     - RadioButtonGroup
     - Snackbar
+    - Stepper
+    - Subheader
+    - Tabs
     - Toggle
 
 ### Related issues:
@@ -35,9 +40,14 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - [408](https://github.com/StratoDem/sd-material-ui/issues/408)
 - [409](https://github.com/StratoDem/sd-material-ui/issues/409)
 - [410](https://github.com/StratoDem/sd-material-ui/issues/410)
+- [411](https://github.com/StratoDem/sd-material-ui/issues/411)
 - [412](https://github.com/StratoDem/sd-material-ui/issues/412)
 - [414](https://github.com/StratoDem/sd-material-ui/issues/414)
+- [415](https://github.com/StratoDem/sd-material-ui/issues/415)
+- [416](https://github.com/StratoDem/sd-material-ui/issues/416)
 - [417](https://github.com/StratoDem/sd-material-ui/issues/417)
+- [418](https://github.com/StratoDem/sd-material-ui/issues/418)
+- [444](https://github.com/StratoDem/sd-material-ui/issues/444)
 
 ## 3.2.0 2019-11-04
 ### Adds

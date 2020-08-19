@@ -1,4 +1,472 @@
 {
+  "src/lib/components/Accordion.react.js": {
+    "description": "",
+    "displayName": "Accordion",
+    "methods": [
+      {
+        "name": "handleChange",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "event",
+            "type": null
+          },
+          {
+            "name": "isExpanded",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "UNSAFE_componentWillReceiveProps",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "nextProps",
+            "type": {
+              "name": "signature",
+              "type": "object",
+              "raw": "{\n  /** Elements to render inside the accordion */\n  children?: Node,\n  /** The classes to be applied to this component. The keys in this object must be valid CSS rule\n   * names, and the values must be strings for the classnames to be assigned to each rule name\n   * Valid rule names are:\n   *   root\n   *   rounded\n   *   expanded\n   *   disabled\n   */\n  classes?: {\n    root?: string,\n    rounded?: string,\n    expanded?: string,\n    disabled?: string\n  },\n  /** The className of the root element */\n  className?: string,\n  /** If true, expands the accordion by defaulgt */\n  defaultExpanded?: boolean,\n  /** The classes to be applied to the details component (the element containing the accordion's\n   * children). The keys in this object must be valid CSS rule names, and the values must be strings\n   * for the classnames to be assigned to each rule name\n   * Valid rule names are:\n   *   root\n   */\n  detailClasses?: {\n    root?: string,\n  },\n  /** If true, the accordion will be displayed in a disabled state */\n  disabled?: boolean,\n  /** If true, expands the accordion, otherwise collapse it. Setting this prop enables control\n   * over the accordion */\n  expanded?: boolean,\n  /** Dash callback to trigger an event handler */\n  fireEvent?: () => void,\n  /** The ID of the root element */\n  id: string,\n  /** The text displayed at the top of the accordion, regardless of expanded state*/\n  label?: string,\n  /** If true, rounded corners are disabled */\n  square?: boolean,\n  /** The classes to be applied to the summary component (the element containing the accordion's\n   * label). The keys in this object must be valid CSS rule names, and the values must be strings\n   * for the classnames to be assigned to each rule name\n   * Valid rule names are:\n   *   root\n   *   expanded\n   *   focused\n   *   disabled\n   *   content\n   *   expandIcon\n   */\n  summaryClasses?: {\n    root?: string,\n    expanded?: string,\n    focused?: string,\n    disabled?: string,\n    content?: string,\n    expandIcon?: string,\n  },\n}",
+              "signature": {
+                "properties": [
+                  {
+                    "key": "children",
+                    "value": {
+                      "name": "Node",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "classes",
+                    "value": {
+                      "name": "signature",
+                      "type": "object",
+                      "raw": "{\n  root?: string,\n  rounded?: string,\n  expanded?: string,\n  disabled?: string\n}",
+                      "signature": {
+                        "properties": [
+                          {
+                            "key": "root",
+                            "value": {
+                              "name": "string",
+                              "required": false
+                            }
+                          },
+                          {
+                            "key": "rounded",
+                            "value": {
+                              "name": "string",
+                              "required": false
+                            }
+                          },
+                          {
+                            "key": "expanded",
+                            "value": {
+                              "name": "string",
+                              "required": false
+                            }
+                          },
+                          {
+                            "key": "disabled",
+                            "value": {
+                              "name": "string",
+                              "required": false
+                            }
+                          }
+                        ]
+                      },
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "className",
+                    "value": {
+                      "name": "string",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "defaultExpanded",
+                    "value": {
+                      "name": "boolean",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "detailClasses",
+                    "value": {
+                      "name": "signature",
+                      "type": "object",
+                      "raw": "{\n  root?: string,\n}",
+                      "signature": {
+                        "properties": [
+                          {
+                            "key": "root",
+                            "value": {
+                              "name": "string",
+                              "required": false
+                            }
+                          }
+                        ]
+                      },
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "disabled",
+                    "value": {
+                      "name": "boolean",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "expanded",
+                    "value": {
+                      "name": "boolean",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "fireEvent",
+                    "value": {
+                      "name": "signature",
+                      "type": "function",
+                      "raw": "() => void",
+                      "signature": {
+                        "arguments": [],
+                        "return": {
+                          "name": "void"
+                        }
+                      },
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "id",
+                    "value": {
+                      "name": "string",
+                      "required": true
+                    }
+                  },
+                  {
+                    "key": "label",
+                    "value": {
+                      "name": "string",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "square",
+                    "value": {
+                      "name": "boolean",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "summaryClasses",
+                    "value": {
+                      "name": "signature",
+                      "type": "object",
+                      "raw": "{\n  root?: string,\n  expanded?: string,\n  focused?: string,\n  disabled?: string,\n  content?: string,\n  expandIcon?: string,\n}",
+                      "signature": {
+                        "properties": [
+                          {
+                            "key": "root",
+                            "value": {
+                              "name": "string",
+                              "required": false
+                            }
+                          },
+                          {
+                            "key": "expanded",
+                            "value": {
+                              "name": "string",
+                              "required": false
+                            }
+                          },
+                          {
+                            "key": "focused",
+                            "value": {
+                              "name": "string",
+                              "required": false
+                            }
+                          },
+                          {
+                            "key": "disabled",
+                            "value": {
+                              "name": "string",
+                              "required": false
+                            }
+                          },
+                          {
+                            "key": "content",
+                            "value": {
+                              "name": "string",
+                              "required": false
+                            }
+                          },
+                          {
+                            "key": "expandIcon",
+                            "value": {
+                              "name": "string",
+                              "required": false
+                            }
+                          }
+                        ]
+                      },
+                      "required": false
+                    }
+                  }
+                ]
+              },
+              "alias": "Props"
+            }
+          },
+          {
+            "name": "nextContent",
+            "type": {
+              "name": "unknown"
+            }
+          }
+        ],
+        "returns": {
+          "type": {
+            "name": "void"
+          }
+        }
+      }
+    ],
+    "props": {
+      "children": {
+        "required": false,
+        "flowType": {
+          "name": "Node"
+        },
+        "description": "Elements to render inside the accordion",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "classes": {
+        "required": false,
+        "flowType": {
+          "name": "signature",
+          "type": "object",
+          "raw": "{\n  root?: string,\n  rounded?: string,\n  expanded?: string,\n  disabled?: string\n}",
+          "signature": {
+            "properties": [
+              {
+                "key": "root",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "rounded",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "expanded",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "disabled",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              }
+            ]
+          }
+        },
+        "description": "The classes to be applied to this component. The keys in this object must be valid CSS rule\nnames, and the values must be strings for the classnames to be assigned to each rule name\nValid rule names are:\n  root\n  rounded\n  expanded\n  disabled",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "className": {
+        "required": false,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "The className of the root element"
+      },
+      "defaultExpanded": {
+        "required": false,
+        "flowType": {
+          "name": "boolean"
+        },
+        "description": "If true, expands the accordion by defaulgt",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "detailClasses": {
+        "required": false,
+        "flowType": {
+          "name": "signature",
+          "type": "object",
+          "raw": "{\n  root?: string,\n}",
+          "signature": {
+            "properties": [
+              {
+                "key": "root",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              }
+            ]
+          }
+        },
+        "description": "The classes to be applied to the details component (the element containing the accordion's\nchildren). The keys in this object must be valid CSS rule names, and the values must be strings\nfor the classnames to be assigned to each rule name\nValid rule names are:\n  root"
+      },
+      "disabled": {
+        "required": false,
+        "flowType": {
+          "name": "boolean"
+        },
+        "description": "If true, the accordion will be displayed in a disabled state",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "expanded": {
+        "required": false,
+        "flowType": {
+          "name": "boolean"
+        },
+        "description": "If true, expands the accordion, otherwise collapse it. Setting this prop enables control\nover the accordion",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "fireEvent": {
+        "required": false,
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "() => void",
+          "signature": {
+            "arguments": [],
+            "return": {
+              "name": "void"
+            }
+          }
+        },
+        "description": "Dash callback to trigger an event handler",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      },
+      "id": {
+        "required": true,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "The ID of the root element"
+      },
+      "label": {
+        "required": false,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "The text displayed at the top of the accordion, regardless of expanded state",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "square": {
+        "required": false,
+        "flowType": {
+          "name": "boolean"
+        },
+        "description": "If true, rounded corners are disabled",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "summaryClasses": {
+        "required": false,
+        "flowType": {
+          "name": "signature",
+          "type": "object",
+          "raw": "{\n  root?: string,\n  expanded?: string,\n  focused?: string,\n  disabled?: string,\n  content?: string,\n  expandIcon?: string,\n}",
+          "signature": {
+            "properties": [
+              {
+                "key": "root",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "expanded",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "focused",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "disabled",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "content",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "expandIcon",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              }
+            ]
+          }
+        },
+        "description": "The classes to be applied to the summary component (the element containing the accordion's\nlabel). The keys in this object must be valid CSS rule names, and the values must be strings\nfor the classnames to be assigned to each rule name\nValid rule names are:\n  root\n  expanded\n  focused\n  disabled\n  content\n  expandIcon"
+      },
+      "setProps": {
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        },
+        "required": false
+      }
+    }
+  },
   "src/lib/components/BottomNavigation.react.js": {
     "description": "BottomNavigationItem is an item in a BottomNavigation component",
     "displayName": "BottomNavigation",
@@ -2420,7 +2888,11 @@
             }
           }
         },
-        "description": "Dash callback to update props on the server"
+        "description": "Dash callback to update props on the server",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
       },
       "useGrouping": {
         "required": false,
@@ -2867,6 +3339,256 @@
           "name": "number"
         },
         "description": "This number represents the zDepth of the paper shadow",
+        "defaultValue": {
+          "value": "1",
+          "computed": false
+        }
+      }
+    }
+  },
+  "src/lib/components/Popover.react.js": {
+    "description": "Material UI Popover component",
+    "displayName": "Popover",
+    "methods": [
+      {
+        "name": "handleClick",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "event",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "handleRequestClose",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      }
+    ],
+    "props": {
+      "anchorOrigin": {
+        "required": false,
+        "flowType": {
+          "name": "signature",
+          "type": "object",
+          "raw": "{\n  vertical?: 'top' | 'center' | 'bottom',\n  horizontal?: 'left' | 'middle' | 'right',\n}",
+          "signature": {
+            "properties": [
+              {
+                "key": "vertical",
+                "value": {
+                  "name": "union",
+                  "raw": "'top' | 'center' | 'bottom'",
+                  "elements": [
+                    {
+                      "name": "literal",
+                      "value": "'top'"
+                    },
+                    {
+                      "name": "literal",
+                      "value": "'center'"
+                    },
+                    {
+                      "name": "literal",
+                      "value": "'bottom'"
+                    }
+                  ],
+                  "required": false
+                }
+              },
+              {
+                "key": "horizontal",
+                "value": {
+                  "name": "union",
+                  "raw": "'left' | 'middle' | 'right'",
+                  "elements": [
+                    {
+                      "name": "literal",
+                      "value": "'left'"
+                    },
+                    {
+                      "name": "literal",
+                      "value": "'middle'"
+                    },
+                    {
+                      "name": "literal",
+                      "value": "'right'"
+                    }
+                  ],
+                  "required": false
+                }
+              }
+            ]
+          }
+        },
+        "description": "This is the point on the anchor where the popover's targetOrigin will attach to.\nOptions: vertical: [top, center, bottom] horizontal: [left, middle, right].",
+        "defaultValue": {
+          "value": "{vertical: 'bottom', horizontal: 'left'}",
+          "computed": false
+        }
+      },
+      "animated": {
+        "required": false,
+        "flowType": {
+          "name": "boolean"
+        },
+        "description": "If true, the popover will apply transitions when it is added to the DOM."
+      },
+      "autoCloseWhenOffScreen": {
+        "required": false,
+        "flowType": {
+          "name": "boolean"
+        },
+        "description": "If true, the popover will hide when the anchor is scrolled off the screen"
+      },
+      "buttonLabel": {
+        "required": false,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "For Dash use - user can assign label to button",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "buttonType": {
+        "required": false,
+        "flowType": {
+          "name": "union",
+          "raw": "'flat' | 'raised' | 'icon'",
+          "elements": [
+            {
+              "name": "literal",
+              "value": "'flat'"
+            },
+            {
+              "name": "literal",
+              "value": "'raised'"
+            },
+            {
+              "name": "literal",
+              "value": "'icon'"
+            }
+          ]
+        },
+        "description": "For Dash use - user can anchor the popover to flat, icon, or raised button",
+        "defaultValue": {
+          "value": "'raised'",
+          "computed": false
+        }
+      },
+      "buttonIcon": {
+        "required": false,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "For Dash use - specify what icon to use when using an icon button",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "buttonStyle": {
+        "required": false,
+        "flowType": {
+          "name": "Object"
+        },
+        "description": "For Dash use - specify the styles for the button",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "classes": {
+        "required": false,
+        "flowType": {
+          "name": "signature",
+          "type": "object",
+          "raw": "{\n  root?: string,\n  paper?: string,\n}",
+          "signature": {
+            "properties": [
+              {
+                "key": "root",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "paper",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              }
+            ]
+          }
+        },
+        "description": "The classes to be applied to this component. This keys in this object must be valid CSS rule\nnames, and the values must be strings for the classnames to be assigned to each rule name\nValid rule names are:\n  root\n  paper"
+      },
+      "children": {
+        "required": false,
+        "flowType": {
+          "name": "Node"
+        },
+        "description": "The content of the popover",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "className": {
+        "required": false,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "The CSS class name of the root element",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "disableScrollLock": {
+        "required": false,
+        "flowType": {
+          "name": "boolean"
+        },
+        "description": "Disable the scroll lock behavior"
+      },
+      "open": {
+        "required": false,
+        "flowType": {
+          "name": "boolean"
+        },
+        "description": "If true, the popover is visible.",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "style": {
+        "required": false,
+        "flowType": {
+          "name": "Object"
+        },
+        "description": "Override the inline-styles of the root element.",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "zDepth": {
+        "required": false,
+        "flowType": {
+          "name": "number"
+        },
+        "description": "The zDepth of the popover.",
         "defaultValue": {
           "value": "1",
           "computed": false
@@ -3348,6 +4070,707 @@
           "computed": false
         },
         "required": false
+      }
+    }
+  },
+  "src/lib/components/Stepper.react.js": {
+    "description": "Material UI Stepper component",
+    "displayName": "Stepper",
+    "methods": [
+      {
+        "name": "handleNext",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "handlePrev",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "resetSteps",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "createSteps",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "stepCount",
+            "type": {
+              "name": "number"
+            }
+          }
+        ],
+        "returns": null
+      }
+    ],
+    "props": {
+      "activeStep": {
+        "required": false,
+        "flowType": {
+          "name": "number"
+        },
+        "description": "Set the active step (zero based index). This will enable Step control helpers",
+        "defaultValue": {
+          "value": "0",
+          "computed": false
+        }
+      },
+      "alternativeLabel": {
+        "required": false,
+        "flowType": {
+          "name": "boolean"
+        },
+        "description": "If true, the labels will appear under the steps",
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        }
+      },
+      "backButtonStyle": {
+        "required": false,
+        "flowType": {
+          "name": "Object"
+        },
+        "description": "The style for the back button",
+        "defaultValue": {
+          "value": "{marginRight: 12}",
+          "computed": false
+        }
+      },
+      "classes": {
+        "required": false,
+        "flowType": {
+          "name": "signature",
+          "type": "object",
+          "raw": "{\n  root?: string,\n  horizontal?: string,\n  vertical?: string,\n  alternativeLabel?: string,\n}",
+          "signature": {
+            "properties": [
+              {
+                "key": "root",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "horizontal",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "vertical",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "alternativeLabel",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              }
+            ]
+          }
+        },
+        "description": "The classes to be applied to this component. This keys in this object must be valid CSS rule\nnames, and the values must be strings for the classnames to be assigned to each rule name\nValid rule names are:\n  root\n  horizontal\n  vertical\n  alternativeLabel"
+      },
+      "className": {
+        "required": false,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "CSS class name of the root element",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "finishedButtonStyle": {
+        "required": false,
+        "flowType": {
+          "name": "Object"
+        },
+        "description": "The style for the button displayed after all steps have been finished",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "finishedText": {
+        "required": false,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "The text to display on the final button when all steps have been completed",
+        "defaultValue": {
+          "value": "'Click here to view again'",
+          "computed": false
+        }
+      },
+      "fireEvent": {
+        "required": false,
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "() => void",
+          "signature": {
+            "arguments": [],
+            "return": {
+              "name": "void"
+            }
+          }
+        },
+        "description": "Dash event handler for click events",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      },
+      "id": {
+        "required": true,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "Dash ID"
+      },
+      "linear": {
+        "required": false,
+        "flowType": {
+          "name": "boolean"
+        },
+        "description": "If set to true, the Stepper will assist in controlling steps for linear flow",
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        }
+      },
+      "nextButtonStyle": {
+        "required": false,
+        "flowType": {
+          "name": "Object"
+        },
+        "description": "The style for the next button",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "orientation": {
+        "required": false,
+        "flowType": {
+          "name": "union",
+          "raw": "'horizontal' | 'vertical'",
+          "elements": [
+            {
+              "name": "literal",
+              "value": "'horizontal'"
+            },
+            {
+              "name": "literal",
+              "value": "'vertical'"
+            }
+          ]
+        },
+        "description": "The stepper orientation (layout flow direction)",
+        "defaultValue": {
+          "value": "'horizontal'",
+          "computed": false
+        }
+      },
+      "setProps": {
+        "required": false,
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "(props: {stepIndex?: number}) => void",
+          "signature": {
+            "arguments": [
+              {
+                "name": "props",
+                "type": {
+                  "name": "signature",
+                  "type": "object",
+                  "raw": "{stepIndex?: number}",
+                  "signature": {
+                    "properties": [
+                      {
+                        "key": "stepIndex",
+                        "value": {
+                          "name": "number",
+                          "required": false
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "return": {
+              "name": "void"
+            }
+          }
+        },
+        "description": "Dash callback to update props on the server",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      },
+      "stepCount": {
+        "required": false,
+        "flowType": {
+          "name": "number"
+        },
+        "description": "The number of steps that this component will contain",
+        "defaultValue": {
+          "value": "3",
+          "computed": false
+        }
+      },
+      "stepLabels": {
+        "required": false,
+        "flowType": {
+          "name": "Array",
+          "elements": [
+            {
+              "name": "string"
+            }
+          ],
+          "raw": "Array<string>"
+        },
+        "description": "The text labels that will be shown next to each step number. The length of this array must\nmatch the total number of steps",
+        "defaultValue": {
+          "value": "['Step 1', 'Step 2', 'Step 3']",
+          "computed": false
+        }
+      },
+      "style": {
+        "required": false,
+        "flowType": {
+          "name": "Object"
+        },
+        "description": "Override the inline-style of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      }
+    }
+  },
+  "src/lib/components/Subheader.react.js": {
+    "description": "Material UI Subheader component",
+    "displayName": "Subheader",
+    "methods": [],
+    "props": {
+      "children": {
+        "required": false,
+        "flowType": {
+          "name": "Node"
+        },
+        "description": "Node that will be placed inside the Subheader",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "classes": {
+        "required": false,
+        "flowType": {
+          "name": "signature",
+          "type": "object",
+          "raw": "{\n  root?: string,\n  colorPrimary?: string,\n  colorInherit?: string,\n  gutters?: string,\n  inset?: string,\n  sticky?: string,\n}",
+          "signature": {
+            "properties": [
+              {
+                "key": "root",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "colorPrimary",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "colorInherit",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "gutters",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "inset",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "sticky",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              }
+            ]
+          }
+        },
+        "description": "The classes to be applied to this component. This keys in this object must be valid CSS rule\nnames, and the values must be strings for the classnames to be assigned to each rule name\nValid rule names are:\n  root\n  colorPrimary\n  colorInherit\n  gutters\n  inset\n  sticky",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "inset": {
+        "required": false,
+        "flowType": {
+          "name": "boolean"
+        },
+        "description": "If true, the Subheader will be indented",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "style": {
+        "required": false,
+        "flowType": {
+          "name": "Object"
+        },
+        "description": "Override the inline-styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      }
+    }
+  },
+  "src/lib/components/Tabs.react.js": {
+    "description": "Material UI Tabs component",
+    "displayName": "Tabs",
+    "methods": [
+      {
+        "name": "handleChange",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "event",
+            "type": {
+              "name": "Object",
+              "alias": "Object"
+            }
+          },
+          {
+            "name": "index",
+            "type": {
+              "name": "number"
+            }
+          }
+        ],
+        "returns": null
+      }
+    ],
+    "props": {
+      "id": {
+        "required": false,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "Element ID",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "classes": {
+        "required": false,
+        "flowType": {
+          "name": "signature",
+          "type": "object",
+          "raw": "{\n  root?: string,\n  textColorPrimary?: string,\n  textColorSecondary?: string,\n  textColorInherit?: string,\n  selected?: string,\n  disabled?: string,\n  fullWidth?: string,\n  wrapped?: string,\n  wrapper?: string,\n}",
+          "signature": {
+            "properties": [
+              {
+                "key": "root",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "textColorPrimary",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "textColorSecondary",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "textColorInherit",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "selected",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "disabled",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "fullWidth",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "wrapped",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "wrapper",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              }
+            ]
+          }
+        },
+        "description": "The classes to be applied to this component. This keys in this object must be valid CSS rule\nnames, and the values must be strings for the classnames to be assigned to each rule name\nValid rule names are:\n  root\n  textColorPrimary\n  textColorSecondary\n  textColorInherit\n  selected\n  disabled\n  fullWidth\n  wrapped\n  wrapper",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "className": {
+        "required": false,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "CSS class name of the root element",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "children": {
+        "required": false,
+        "flowType": {
+          "name": "Node"
+        },
+        "description": "Pass Tab components as children",
+        "defaultValue": {
+          "value": "[]",
+          "computed": false
+        }
+      },
+      "fireEvent": {
+        "required": false,
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "() => void",
+          "signature": {
+            "arguments": [],
+            "return": {
+              "name": "void"
+            }
+          }
+        },
+        "description": "Dash-assigned callback that gets fired when the input changes.",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      },
+      "setProps": {
+        "required": false,
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "(props: { modal?: boolean, open?: boolean }) => void",
+          "signature": {
+            "arguments": [
+              {
+                "name": "props",
+                "type": {
+                  "name": "signature",
+                  "type": "object",
+                  "raw": "{ modal?: boolean, open?: boolean }",
+                  "signature": {
+                    "properties": [
+                      {
+                        "key": "modal",
+                        "value": {
+                          "name": "boolean",
+                          "required": false
+                        }
+                      },
+                      {
+                        "key": "open",
+                        "value": {
+                          "name": "boolean",
+                          "required": false
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "return": {
+              "name": "void"
+            }
+          }
+        },
+        "description": "Dash callback to update props on the server",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      },
+      "style": {
+        "required": false,
+        "flowType": {
+          "name": "Object"
+        },
+        "description": "Override the inline-styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "tabPropsArray": {
+        "required": false,
+        "flowType": {
+          "name": "Array",
+          "elements": [
+            {
+              "name": "signature",
+              "type": "object",
+              "raw": "{\n  classes?: Object,\n  disabled: boolean,\n  disableFocusRipple: boolean,\n  disableRipple: boolean,\n  iconClass: string,\n  label: string,\n  value: any,\n  wrapped: boolean,\n}",
+              "signature": {
+                "properties": [
+                  {
+                    "key": "classes",
+                    "value": {
+                      "name": "Object",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "disabled",
+                    "value": {
+                      "name": "boolean",
+                      "required": true
+                    }
+                  },
+                  {
+                    "key": "disableFocusRipple",
+                    "value": {
+                      "name": "boolean",
+                      "required": true
+                    }
+                  },
+                  {
+                    "key": "disableRipple",
+                    "value": {
+                      "name": "boolean",
+                      "required": true
+                    }
+                  },
+                  {
+                    "key": "iconClass",
+                    "value": {
+                      "name": "string",
+                      "required": true
+                    }
+                  },
+                  {
+                    "key": "label",
+                    "value": {
+                      "name": "string",
+                      "required": true
+                    }
+                  },
+                  {
+                    "key": "value",
+                    "value": {
+                      "name": "any",
+                      "required": true
+                    }
+                  },
+                  {
+                    "key": "wrapped",
+                    "value": {
+                      "name": "boolean",
+                      "required": true
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "raw": "Array<{\n  classes?: Object,\n  disabled: boolean,\n  disableFocusRipple: boolean,\n  disableRipple: boolean,\n  iconClass: string,\n  label: string,\n  value: any,\n  wrapped: boolean,\n}>"
+        },
+        "description": "Array of tab properties. Available props:\nclasses\ndisabled\ndisableRipple\ndisableFocusRipple\nicon\nlabel\nvalue\nwrapped"
+      },
+      "value": {
+        "required": false,
+        "flowType": {
+          "name": "any"
+        },
+        "description": "Makes Tabs controllable and selects the tab whose value prop matches this prop",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
       }
     }
   },

@@ -146,8 +146,8 @@ export default class Dialog extends Component<Props, State> {
                 color="inherit"
                 onClick={this.closeDialog}
                 style={{"float": "right",
-                        "margin-top": "-16px",
-                        "margin-right": "-12px",}}
+                        "marginTop": "-16px",
+                        "marginRight": "-12px",}}
               >
                 <CloseIcon/>
               </IconButton>
