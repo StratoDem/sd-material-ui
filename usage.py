@@ -124,13 +124,16 @@ app.layout = html.Div([
 
             html.Div([
 
-                html.P([html.Strong('Sample for Paper/Card')]),
-                sd_material_ui.Paper([
-                    html.H3('Paper Title'),
-                    sd_material_ui.Card([
-                        html.P('Card Text')
-                    ]),
-                ])
+                html.P([html.Strong('Sample for Transition and Paper/Card')]),
+                sd_material_ui.Transitions(id='transition-output', visible=True, children=[
+                    sd_material_ui.Paper([
+                        html.H3('Paper Title'),
+                        sd_material_ui.Card([
+                            html.P('Card Text')
+                        ]),
+                    ])
+                ]),
+                sd_material_ui.Toggle(id='transition-input', toggled=True, label='Show element?'),
             ]),
 
             spacer,
@@ -339,6 +342,15 @@ def callback_snackbar(n: int, _open: bool):
     if not n:
         raise dash.exceptions.PreventUpdate
     return not _open
+
+
+@app.callback(
+    dash.dependencies.Output('transition-output', 'visible'),
+    [dash.dependencies.Input('transition-input', 'toggled')])
+def callback_func_transition(checked: bool):
+    if checked is None:
+        return True
+    return checked
 
 
 @app.callback(dash.dependencies.Output('bottom-nav-output', 'children'),
