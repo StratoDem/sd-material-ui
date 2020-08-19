@@ -329,7 +329,7 @@ app.layout = html.Div([
         final_spacer,
     ], style=dict(display='flex', flexWrap='wrap')),
 
-    ], style={'list-style-type': 'none'})
+    ], style={'listStyleType': 'none'})
 
 
 @app.callback(
