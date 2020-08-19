@@ -110,44 +110,39 @@ app.layout = html.Div([
                                         message='You opened the Snackbar!')
             ]),
 
-        ], style=dict(display='flex', flexWrap='wrap')),
-    ]),
-
-    sd_material_ui.Divider(),
-
-    html.Div([
-        spacer,
-    ]),
-
-    html.Div([
-        html.Div([
-            html.Div([
-                html.P([html.Strong('Test for Collapse Transition and Paper/Card')]),
-                sd_material_ui.CollapseTransition(id='transition-collapse', visible=True, children=[
-                    sd_material_ui.Paper([
-                        html.H3('Paper Title'),
-                        sd_material_ui.Card([
-                            html.P('Card Text')
-                        ]),
-                    ])
-                ]),
-                sd_material_ui.Toggle(id='transition-input', toggled=True, label='Show element?'),
-            ]),
-
             spacer,
 
             html.Div([
-                html.P([html.Strong('Test for BottomNavigation')]),
-                sd_material_ui.BottomNavigation(
-                    id='bottom-nav',
-                    navItems=[dict(label=f'Item {x}',
-                                   value=x,
-                                   targetId=f'nav-item-{x}') for x in range(3)],
-                    selectedValue=0,
-                    displayLabels=True,
-                ),
-                spacer,
-                html.P(id='bottom-nav-output')
+                html.P([html.Strong('Test for Accordion')]),
+
+                sd_material_ui.Accordion(
+                    id='accordion1',
+                    label='Accordion 1',
+                    expanded=False,
+                    children=html.P('Text inside the accordion')),
+                sd_material_ui.Accordion(
+                    id='accordion2',
+                    label='Accordion 2',
+                    expanded=False,
+                    square=True,
+                    children=html.Div([
+                        html.P('Line of text'),
+                        html.P('Another line of text'),
+                    ])),
+                sd_material_ui.Accordion(
+                    id='accordion3',
+                    label='Accordion 3',
+                    disabled=False,
+                    expanded=False,
+                    square=True,
+                    children=html.P('Text')),
+                sd_material_ui.Button(
+                    children='Open Accordion 1', variant='contained', id='accordion-input'),
+                sd_material_ui.Toggle(
+                    id='accordion-toggle-input',
+                    label='3 is Disabled',
+                    toggled=False,
+                    secondaryLabel='3 is Enabled')
             ]),
 
             spacer,
@@ -187,6 +182,98 @@ app.layout = html.Div([
 
             ]),
 
+        ], style=dict(display='flex', flexWrap='wrap')),
+    ]),
+
+    sd_material_ui.Divider(),
+
+    html.Div([
+        spacer,
+    ]),
+
+    html.Div([
+        html.Div([
+            html.Div([
+                html.P([html.Strong('Test for Collapse Transition and Paper/Card')]),
+                sd_material_ui.CollapseTransition(id='transition-collapse', visible=True, children=[
+                    sd_material_ui.Paper([
+                        html.H3('Paper Title'),
+                        sd_material_ui.Card([
+                            html.P('Card Text')
+                        ]),
+                    ])
+                ]),
+                sd_material_ui.Toggle(id='transition-input', toggled=True, label='Show element?'),
+            ]),
+
+            spacer,
+
+            html.Div([
+                html.P([html.Strong('Test for Fade Transition')]),
+                sd_material_ui.FadeTransition(id='transition-fade', visible=True, children=[
+                    sd_material_ui.Card([
+                        html.P('Card Text')
+                    ]),
+                ]),
+                sd_material_ui.Toggle(
+                    id='transition-fade-input', toggled=True, label='Show element?'),
+            ]),
+
+            spacer,
+
+            html.Div([
+                html.P([html.Strong('Test for Grow Transition')]),
+                sd_material_ui.GrowTransition(id='transition-grow', visible=True, children=[
+                    sd_material_ui.Card([
+                        html.P('Card Text')
+                    ]),
+                ]),
+                sd_material_ui.Toggle(
+                    id='transition-grow-input', toggled=True, label='Show element?'),
+            ]),
+
+            spacer,
+
+            html.Div([
+                html.P([html.Strong('Test for Slide Transition')]),
+                sd_material_ui.SlideTransition(id='transition-slide', visible=True, children=[
+                    sd_material_ui.Card([
+                        html.P('Card Text')
+                    ]),
+                ]),
+                sd_material_ui.Toggle(
+                    id='transition-slide-input', toggled=True, label='Show element?'),
+            ]),
+
+            spacer,
+
+            html.Div([
+                html.P([html.Strong('Test for Zoom Transition')]),
+                sd_material_ui.ZoomTransition(id='transition-zoom', visible=True, children=[
+                    sd_material_ui.Card([
+                        html.P('Card Text')
+                    ]),
+                ]),
+                sd_material_ui.Toggle(
+                    id='transition-zoom-input', toggled=True, label='Show element?'),
+            ]),
+
+            spacer,
+
+            html.Div([
+                html.P([html.Strong('Test for BottomNavigation')]),
+                sd_material_ui.BottomNavigation(
+                    id='bottom-nav',
+                    navItems=[dict(label=f'Item {x}',
+                                   value=x,
+                                   targetId=f'nav-item-{x}') for x in range(3)],
+                    selectedValue=0,
+                    displayLabels=True,
+                ),
+                spacer,
+                html.P(id='bottom-nav-output')
+            ]),
+
             spacer,
 
             html.Div([
@@ -202,38 +289,6 @@ app.layout = html.Div([
 
             spacer,
 
-            html.Div([
-                html.P([html.Strong('Test for Accordion')]),
-
-                sd_material_ui.Accordion(
-                    id='accordion1',
-                    label='Accordion 1',
-                    expanded=False,
-                    children=html.P('Text inside the accordion')),
-                sd_material_ui.Accordion(
-                    id='accordion2',
-                    label='Accordion 2',
-                    expanded=False,
-                    square=True,
-                    children=html.Div([
-                        html.P('Line of text'),
-                        html.P('Another line of text'),
-                    ])),
-                sd_material_ui.Accordion(
-                    id='accordion3',
-                    label='Accordion 3',
-                    disabled=False,
-                    expanded=False,
-                    square=True,
-                    children=html.P('Text')),
-                sd_material_ui.Button(
-                    children='Open Accordion 1', variant='contained', id='accordion-input'),
-                sd_material_ui.Toggle(
-                    id='accordion-toggle-input',
-                    label='3 is Disabled',
-                    toggled=False,
-                    secondaryLabel='3 is Enabled')
-            ]),
         ], style=dict(display='flex', flexWrap='wrap')),
     ]),
 
@@ -343,6 +398,42 @@ def callback_snackbar(n: int, _open: bool):
     dash.dependencies.Output('transition-collapse', 'visible'),
     [dash.dependencies.Input('transition-input', 'toggled')])
 def callback_func_transition_collapse(toggled: bool):
+    if toggled is None:
+        return True
+    return toggled
+
+
+@app.callback(
+    dash.dependencies.Output('transition-fade', 'visible'),
+    [dash.dependencies.Input('transition-fade-input', 'toggled')])
+def callback_func_transition_fade(toggled: bool):
+    if toggled is None:
+        return True
+    return toggled
+
+
+@app.callback(
+    dash.dependencies.Output('transition-grow', 'visible'),
+    [dash.dependencies.Input('transition-grow-input', 'toggled')])
+def callback_func_transition_grow(toggled: bool):
+    if toggled is None:
+        return True
+    return toggled
+
+
+@app.callback(
+    dash.dependencies.Output('transition-slide', 'visible'),
+    [dash.dependencies.Input('transition-slide-input', 'toggled')])
+def callback_func_transition_slide(toggled: bool):
+    if toggled is None:
+        return True
+    return toggled
+
+
+@app.callback(
+    dash.dependencies.Output('transition-zoom', 'visible'),
+    [dash.dependencies.Input('transition-zoom-input', 'toggled')])
+def callback_func_transition_zoom(toggled: bool):
     if toggled is None:
         return True
     return toggled
