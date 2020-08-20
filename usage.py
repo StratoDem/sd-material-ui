@@ -110,6 +110,23 @@ app.layout = html.Div([
                                         message='You opened the Snackbar!')
             ]),
 
+            spacer,
+
+            html.Div([
+                    html.P([html.Strong('Sample for AutoComplete')]),
+                    sd_material_ui.AutoComplete(
+                        id='autocomplete',
+                        dataSource=[{'label': 'Austin, TX', 'value': 'Austin'},
+                                    {'label': 'Houston, TX', 'value': 'Houston'},
+                                    {'label': 'New York, NY', 'value': 'New York'},
+                                    {'label': 'Denver, CO', 'value': 'Denver'},
+                                    {'label': 'Chicago, IL', 'value': 'Chicago'},
+                                    {'label': 'Detroit, MI', 'value': 'Detroit'},
+                                    {'label': 'Los Angeles, CA', 'value': 'Los Angeles'}],
+                        ),
+                    html.P(id='autocomplete-output')
+                ]),
+
         ], style=dict(display='flex', flexWrap='wrap')),
     ]),
 
@@ -311,7 +328,13 @@ app.layout = html.Div([
 
     ], style={'list-style-type': 'none'})
 
-
+@app.callback(
+    dash.dependencies.Output('autocomplete-output', 'children'),
+    [dash.dependencies.Input('autocomplete', 'selectedValue')],)
+def callback_autocomplete(value: str):
+    if not value:
+        raise dash.exceptions.PreventUpdate
+    return f'Searched Value: {value}'
 
 @app.callback(
     dash.dependencies.Output('tabs', 'value'),

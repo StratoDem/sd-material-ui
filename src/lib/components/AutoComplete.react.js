@@ -84,10 +84,6 @@ type Props = {
     'fuzzyFilter' | 'levenshteinDistanceFilter' | 'noFilter',
   /** Dash-assigned callback that gets fired when the input changes. */
   fireEvent?: () => void,
-  /** The content to use for adding floating label element */
-  floatingLabelText?: Node,
-  /** If true, field receives the property width: 100% */
-  fullWidth?: boolean,
   /** The hint content to display */
   hintText?: Node,
   /** Autocomplete ID */
@@ -95,18 +91,10 @@ type Props = {
   /** The max number of search results to be shown. By default it shows
    * all the items which matches filter */
   maxSearchResults?: number,
-  /** Delay for closing time of the menu */
-  menuCloseDelay?: number,
-  /** Props to be passed to menu */
-  menuProps?: Object,
-  /** Override style for menu */
-  menuStyle?: Object,
   /** Auto complete menu is open if true */
   open?: boolean,
   /** If true, the list item is showed when a focus event triggers */
   openOnFocus?: boolean,
-  /** Props to be passed to popover */
-  popoverProps?: Object,
   /** Text being input to auto complete */
   searchText?: string,
   /** Value in the dataSource found by using searchText
@@ -121,11 +109,14 @@ type Props = {
   searchEndpointAPI?: string,
   /** General JSON structure to send to the server */
   searchJSONStructure?: Object,
+  /** The selected value of the input */
+  selectedValue?: any,
 };
 
 type State = {
   searchText: string,
   dataSourceRender: Array<string>,
+  selectedValue: string,
 }
 
 const defaultProps = {
@@ -134,27 +125,76 @@ const defaultProps = {
   exactMatch: false,
   filter: "defaultFilter",
   fireEvent: () => {},
-  hintText: null,
+  hintText: "Search Here",
   maxSearchResults: 5,
   menuCloseDelay: 300,
-  open: false,
   openOnFocus: false,
   searchText: "",
   setProps: () => {},
   style: {},
   searchValue: null,
-  searchEndpointAPI: undefined,
+  searchEndpointAPI: null,
   searchJSONStructure: {},
+  selectedValue: null,
+};
+
+const levenshteinDistance = function (searchText, key) {
+  let current = [];
+  let prev = void 0;
+  let value = void 0;
+
+  for (let i = 0; i <= key.length; i++) {
+    for (let j = 0; j <= searchText.length; j++) {
+      if (i && j) {
+        if (searchText.charAt(j - 1) === key.charAt(i - 1)) value = prev;
+        else value = Math.min(current[j], current[j - 1], prev) + 1;
+      } else {
+        value = i + j;
+      }
+      prev = current[j];
+      current[j] = value;
+    }
+  }
+  return current.pop();
 };
 
 const mapFilterToFunc = {
-  caseInsensitiveFilter: MuiAutoComplete.caseInsensitiveFilter,
-  caseSensitiveFilter: MuiAutoComplete.caseSensitiveFilter,
-  defaultFilter: MuiAutoComplete.defaultFilter,
-  fuzzyFilter: MuiAutoComplete.fuzzyFilter,
-  levenshteinDistanceFilter: MuiAutoComplete.levenshteinDistanceFilter,
-  noFilter: MuiAutoComplete.noFilter,
+  caseInsensitiveFilter: function (searchText, key) {
+       return key.toLowerCase().indexOf(searchText.toLowerCase()) !== -1;
+    },
+  caseSensitiveFilter: function (searchText, key) {
+      return searchText !== '' && key.indexOf(searchText) !== -1;
+    },
+  defaultFilter: function (searchText, key) {
+       return searchText !== '' && key.indexOf(searchText) !== -1;
+    },
+  fuzzyFilter: function (searchText, key) {
+    const compareString = key.toLowerCase();
+    const searchTextLC = searchText.toLowerCase();
+
+    let searchTextIndex = 0;
+    for (let index = 0; index < key.length; index++) {
+      if (compareString[index] === searchTextLC[searchTextIndex]) {
+        searchTextIndex += 1;
+      }
+    }
+
+    return searchTextIndex === searchTextLC.length;
+  },
+  levenshteinDistanceFilter: function (distanceLessThan) {
+      if (distanceLessThan === null) {
+        return levenshteinDistance;
+      } else if (typeof distanceLessThan !== 'number') {
+        throw 'Error: AutoComplete.levenshteinDistanceFilter is a filter generator, not a filter!';
+      }
+
+      return function (s, k) {
+        return levenshteinDistance(s, k) < distanceLessThan;
+      };
+    },
+  noFilter: () => true,
 };
+
 
 /** Material UI AutoComplete component */
 export default class AutoComplete extends Component<Props, State> {
@@ -162,6 +202,7 @@ export default class AutoComplete extends Component<Props, State> {
     super(props);
     this.state = {
       searchText: this.props.searchText,
+      selectedValue: this.props.selectedValue,
       dataSourceRender: this.props.exactMatch
         ? this.props.dataSource.map(d => d.label)
         : this.props.dataSource,
@@ -175,9 +216,9 @@ export default class AutoComplete extends Component<Props, State> {
    * detects change in state (user-inputted search text) and fires callback event
    * @param nextProps
    */
-  componentWillReceiveProps(nextProps: Props): void {
+  UNSAFE_componentWillReceiveProps(nextProps: Props): void {
     if (nextProps.searchText !== null && nextProps.searchText !== this.props.searchText) {
-      this.handleChange(nextProps.searchText, this.props.dataSource, {});
+      this.handleChange(this.props.dataSource, nextProps.searchText);
     }
     if (this.props.dataSource !== nextProps.dataSource)
       this.setState({dataSourceRender: this.getDataSource(nextProps)});
@@ -189,24 +230,32 @@ export default class AutoComplete extends Component<Props, State> {
     return props.dataSource;
   };
 
+  filterFunc = (maxResults: number, inputText: string, options: Array) : Array => {
+    const filteredResults = options.filter((x) => mapFilterToFunc[this.props.filter](inputText, x.label))
+    if (filteredResults.length <= maxResults) return filteredResults
+    return filteredResults.slice(0, maxResults)
+  }
+
   /**
    * calls function to fire callback and updates searchText in state
    * @param searchText
-   * @param dataSource
    * @param params
    */
-  handleChange = (searchText: string, dataSource: Array, params: Object) => {
+  handleChange = (params: Object, searchText: string) => {
+    const dataSource = this.props.dataSource
+
     if (this.props.exactMatch) {
       // If we are looking for an exact match, then we want to update searchValue to pass
       // back data to the server at that index from the dataSource
       const filteredData = dataSource.filter(entry => entry.label === searchText);
       if (filteredData.length > 0 && typeof this.props.setProps === 'function')
-        this.props.setProps({searchValue: filteredData[0].value});
+        this.props.setProps({selectedValue: filteredData[0].value});
     }
-
     // Always want to handle searchText updates
-    this.updateTextProps(searchText);
-    this.setState({searchText});
+    if ((typeof searchText) === 'string'){
+      this.updateTextProps(searchText);
+      this.setState({searchText});
+    }
   };
 
   /**
@@ -243,26 +292,31 @@ export default class AutoComplete extends Component<Props, State> {
   };
 
   render() {
-    const { id, className, classes, filter, maxSearchResults, open, openOnFocus, style} = this.props;
-
+    const { id, className, classes, hintText, maxSearchResults, open, openOnFocus, style} = this.props;
+    this.handleChange = this.handleChange.bind(this)
+    this.filterFunc = this.filterFunc.bind(this)
     return (
-      <div id={id} className={className}>
+      <div className={className}>
         <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
           <MuiAutoComplete
             classes={classes}
-            filterOptions={typeof this.props.searchEndpointAPI === 'undefined'
-                ? mapFilterToFunc[filter]
-                : () => true}
-            maxSearchResults={maxSearchResults}
-            onInputChange={(searchText: string, dataSource: Array, params: Object) =>
-              this.handleChange(searchText, dataSource, params)}
-            open={open}
+            id={id}
+            filterOptions={(options, searchText) => {
+                  return this.filterFunc(maxSearchResults, searchText.inputValue, options)
+              }}
             openOnFocus={openOnFocus}
             style={style}
-            inputValue={this.state.searchText}
+            getOptionLabel={(option) => option.label}
             options={this.state.dataSourceRender}
+            onChange={(event => {
+              const val = this.state.dataSourceRender.filter((opt) => {
+                return event.target.textContent === opt.label
+              })[0].value
+              this.setState({selectedValue: val})
+              this.props.setProps({selectedValue: val})
+            })}
             renderInput={(params) =>
-              <TextField {...params} label="With categories" variant="outlined" />}/>
+              <TextField {...params} label={hintText} variant="outlined" />}/>
         </MuiThemeProvider>
       </div>);
   }

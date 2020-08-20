@@ -1,4 +1,5 @@
 from .Accordion import Accordion
+from .AutoComplete import AutoComplete
 from .BottomNavigation import BottomNavigation
 from .Button import Button
 from .Card import Card
@@ -20,6 +21,7 @@ from .Toggle import Toggle
 
 __all__ = [
     "Accordion",
+    "AutoComplete",
     "BottomNavigation",
     "Button",
     "Card",
