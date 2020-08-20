@@ -122,11 +122,9 @@ export default class Snackbar extends Component<Props, State> {
             open={this.state.open}
             style={style}
             action={
-              <React.Fragment>
-                <Button onClick={this.handleActionClick} style={actionStyles}>
-                  {action}
-                </Button>
-              </React.Fragment>
+              <Button onClick={this.handleActionClick} style={actionStyles}>
+                {action}
+              </Button>
             }
           />
         </MuiThemeProvider>
