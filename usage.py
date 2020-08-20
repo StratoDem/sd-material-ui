@@ -106,8 +106,12 @@ app.layout = html.Div([
             html.Div([
                 html.P([html.Strong('Test for Snackbar')]),
                 html.Button('Open/Close Snackbar', id='snackbar-button'),
-                sd_material_ui.Snackbar(id='snackbar',
-                                        message='You opened the Snackbar!')
+                html.Div(children=['Snackbar button clicks: None'], id='snackbar-output'),
+                sd_material_ui.Snackbar(
+                    id='snackbar',
+                    action='Update text',
+                    actionStyles=dict(color='white'),
+                    message='You opened the Snackbar!')
             ]),
 
             spacer,
@@ -150,33 +154,35 @@ app.layout = html.Div([
             html.Div([
                 html.P([html.Strong('Test for buttons')]),
 
-                sd_material_ui.Button(html.P('This is a Raised Button'),
-                                      id='button1',
-                                      disableShadow=False,
-                                      useIcon=False,
-                                      variant='contained'),
+                sd_material_ui.Button(
+                    children=html.P('This is a Raised Button'),
+                    id='button1',
+                    disableShadow=False,
+                    useIcon=False,
+                    variant='contained'),
 
                 spacer,
 
-                sd_material_ui.Button(html.P('This is a Flat Button'),
-                                      id='button2',
-                                      disableShadow=False,
-                                      useIcon=False,
-                                      variant='outlined',
-                                      classes={'root': 'SAMPLE_ROOT_CLASS',
-                                               'label': 'SAMPLE_LABEL_CLASS', }),
+                sd_material_ui.Button(
+                    children=html.P('This is a Flat Button'),
+                    id='button2',
+                    disableShadow=False,
+                    useIcon=False,
+                    variant='outlined',
+                    classes={'root': 'SAMPLE_ROOT_CLASS',
+                             'label': 'SAMPLE_LABEL_CLASS', }),
 
                 spacer,
 
-                sd_material_ui.Button('Text Button',
-                                      id='button3',
-                                      variant='text', ),
+                sd_material_ui.Button(
+                    children='Text Button',
+                    id='button3',
+                    variant='text', ),
 
                 spacer,
 
-                sd_material_ui.Button(useIcon=True,
-                                      id='button4',
-                                      iconClass="glyphicon glyphicon-asterisk"),
+                sd_material_ui.Button(
+                    useIcon=True, id='button4', iconClass="glyphicon glyphicon-asterisk"),
 
                 html.P(id='output-button')
 
@@ -331,11 +337,12 @@ app.layout = html.Div([
         html.Div([
             html.P([html.Strong('Example of Popover')]),
 
-            sd_material_ui.Popover([html.P('This is a Popover', style={'margin': 0})],
-                                   buttonType='flat',
-                                   buttonLabel='Open Popover',
-                                   open=False),
-                ]),
+            sd_material_ui.Popover(
+                children=[html.P('This is a Popover', style={'margin': 0})],
+                buttonType='flat',
+                buttonLabel='Open Popover',
+                open=False),
+        ]),
 
         spacer,
 
@@ -392,6 +399,15 @@ def callback_snackbar(n: int, _open: bool):
     if not n:
         raise dash.exceptions.PreventUpdate
     return not _open
+
+
+@app.callback(
+    dash.dependencies.Output('snackbar-output', 'children'),
+    [dash.dependencies.Input('snackbar', 'n_clicks')])
+def callback_snackbar_text(n: int):
+    if not n:
+        raise dash.exceptions.PreventUpdate
+    return f"Snackbar button clicks: {n}"
 
 
 @app.callback(
