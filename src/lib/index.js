@@ -1,5 +1,5 @@
 export { default as Accordion } from './components/Accordion.react';
-// export { default as AutoComplete } from './components/AutoComplete.react';
+export { default as AutoComplete } from './components/AutoComplete.react';
 export { default as BottomNavigation } from './components/BottomNavigation.react';
 export { default as Button } from './components/Button.react';
 export { default as Card } from './components/Card.react';

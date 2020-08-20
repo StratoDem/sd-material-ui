@@ -7,6 +7,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Updates many dependencies to resolve various vulnerabilities
 - Changes the following components to use the latest `material-ui`
     - Accordion
+    - Autocomplete
     - BottomNavigation
     - Button
     - Card
@@ -28,6 +29,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
     - Toggle
 
 ### Related issues:
+- [397](https://github.com/StratoDem/sd-material-ui/issues/397)
 - [398](https://github.com/StratoDem/sd-material-ui/issues/398)
 - [399](https://github.com/StratoDem/sd-material-ui/issues/399)
 - [400](https://github.com/StratoDem/sd-material-ui/issues/400)
