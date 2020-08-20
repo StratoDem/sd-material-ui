@@ -394,7 +394,7 @@ app.layout = html.Div([
     [dash.dependencies.Input('autocomplete', 'selectedValue')],)
 def callback_autocomplete(value: str):
     if not value:
-        raise dash.exceptions.PreventUpdate
+        return ''
     return f'Searched Value: {value}'
 
 @app.callback(
