@@ -117,6 +117,7 @@ type State = {
   searchText: string,
   dataSourceRender: Array<string>,
   selectedValue: string,
+  searchTextState: string,
 }
 
 const defaultProps = {
@@ -202,6 +203,7 @@ export default class AutoComplete extends Component<Props, State> {
     super(props);
     this.state = {
       searchText: this.props.searchText,
+      searchTextState: this.props.searchText,
       selectedValue: this.props.selectedValue,
       dataSourceRender: this.props.exactMatch
         ? this.props.dataSource.map(d => d.label)
@@ -315,6 +317,9 @@ export default class AutoComplete extends Component<Props, State> {
               this.setState({selectedValue: val})
               this.props.setProps({selectedValue: val})
             })}
+            onInputChange={(text) => {
+              this.setState({searchText: text.target.value})
+              this.props.setProps({searchText: text.target.value})}}
             renderInput={(params) =>
               <TextField {...params} label={hintText} variant="outlined" />}/>
         </MuiThemeProvider>

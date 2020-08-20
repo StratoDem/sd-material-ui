@@ -128,7 +128,11 @@ app.layout = html.Div([
                                     {'label': 'Detroit, MI', 'value': 'Detroit'},
                                     {'label': 'Los Angeles, CA', 'value': 'Los Angeles'}],
                         ),
-                    html.P(id='autocomplete-output')
+                    html.P(id='autocomplete-output'),
+                    html.Br(),
+                    html.Br(),
+                    html.Br(),
+                    html.P(id='autocomplete-search'),
                 ]),
 
             spacer,
@@ -396,6 +400,14 @@ def callback_autocomplete(value: str):
     if not value:
         return ''
     return f'Searched Value: {value}'
+
+@app.callback(
+    dash.dependencies.Output('autocomplete-search', 'children'),
+    [dash.dependencies.Input('autocomplete', 'searchText')],)
+def callback_autocomplete(value: str):
+    if not value:
+        return ''
+    return f'Search Text: {value}'
 
 @app.callback(
     dash.dependencies.Output('tabs', 'value'),
