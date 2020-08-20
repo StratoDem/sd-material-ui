@@ -4,6 +4,8 @@ import flask
 import dash_html_components as html
 import time
 
+# meaningless comment
+
 app = dash.Dash(
     '',
     external_stylesheets=[
