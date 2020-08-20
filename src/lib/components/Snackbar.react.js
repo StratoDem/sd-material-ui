@@ -3,11 +3,16 @@
 import React, { Component } from 'react';
 
 import MuiSnackbar from '@material-ui/core/Snackbar';
+import Button from '@material-ui/core/Button';
 import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
 type Props = {
+  /** The text of the action button inside the snackbar. If empty, no action button will be added */
+  action?: string,
+  /** Styles to be applied to the action button */
+  actionStyles?: Object,
   /**
    * The number of milliseconds to wait before automatically dismissing. If no value is specified
    * the snackbar will dismiss normally. If a value is provided the snackbar can still be dismissed
@@ -62,6 +67,7 @@ type State = {
 };
 
 const defaultProps = {
+  action: '',
   autoHideDuration: 3000,
   bodyStyle: {},
   className: '',
@@ -88,15 +94,6 @@ export default class Snackbar extends Component<Props, State> {
     }
   }
 
-  handleOpen = () => {
-    const { setProps } = this.props;
-
-    if (typeof setProps === 'function')
-      setProps({open: true});
-
-    this.setState({open: true});
-  };
-
   handleClose = () => {
     const { setProps } = this.props;
 
@@ -112,43 +109,40 @@ export default class Snackbar extends Component<Props, State> {
   };
 
   render() {
-    const {autoHideDuration, className, id,
-      message, style } = this.props;
+    const {action, actionStyles, autoHideDuration, className, id, message, style } = this.props;
 
-    this.handleActionClick = this.handleActionClick.bind(this)
-    this.handleClose = this.handleClose.bind(this)
-
-    if (this.props.fireEvent) {
-      return (
-        <div id={id}>
-          <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
-            <MuiSnackbar
-              autoHideDuration={autoHideDuration}
-              className={className}
-              message={message}
-              onActionClick={this.handleActionClick}
-              onRequestClose={this.handleClose}
-              open={this.state.open}
-              style={style}
-            />
-          </MuiThemeProvider>
-        </div>
-      );
-    }
-    return (
+    return action ? (
       <div id={id}>
         <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
           <MuiSnackbar
-            action={action}
             autoHideDuration={autoHideDuration}
             className={className}
             message={message}
-            onRequestClose={this.handleClose}
+            onClose={this.handleClose}
+            open={this.state.open}
+            style={style}
+            action={
+              <Button onClick={this.handleActionClick} style={actionStyles}>
+                {action}
+              </Button>
+            }
+          />
+        </MuiThemeProvider>
+      </div>
+    ) : (
+      <div id={id}>
+        <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
+          <MuiSnackbar
+            autoHideDuration={autoHideDuration}
+            className={className}
+            message={message}
+            onClose={this.handleClose}
             open={this.state.open}
             style={style}
           />
         </MuiThemeProvider>
-      </div>);
+      </div>
+    );
   }
 }
 
