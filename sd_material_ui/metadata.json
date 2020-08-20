@@ -1118,17 +1118,6 @@
     "displayName": "Card",
     "methods": [],
     "props": {
-      "id": {
-        "required": false,
-        "flowType": {
-          "name": "string"
-        },
-        "description": "ID for Card",
-        "defaultValue": {
-          "value": "''",
-          "computed": false
-        }
-      },
       "children": {
         "required": false,
         "flowType": {
