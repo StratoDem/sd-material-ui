@@ -5077,6 +5077,13 @@
           "computed": false
         }
       },
+      "row": {
+        "required": false,
+        "flowType": {
+          "name": "boolean"
+        },
+        "description": "If true, Radio Buttons appear as a row\""
+      },
       "setProps": {
         "required": false,
         "flowType": {
