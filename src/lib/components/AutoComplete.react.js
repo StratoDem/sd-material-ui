@@ -225,8 +225,8 @@ export default class AutoComplete extends Component<Props, State> {
   }
 
   getDataSource = (props: Props): Array<any> => {
-    if (props.exactMatch)
-      return props.dataSource.map(d => d.label);
+    // if (props.exactMatch)
+    //   return props.dataSource.map(d => d.label);
     return props.dataSource;
   };
 
