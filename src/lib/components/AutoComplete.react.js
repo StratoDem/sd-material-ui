@@ -269,8 +269,7 @@ export default class AutoComplete extends Component<Props, State> {
 
     if (typeof setProps === 'function')
       setProps({searchText});
-
-    if (typeof this.props.searchEndpointAPI !== 'undefined')
+    if (this.props.searchEndpointAPI !== null)
       fetch(this.props.searchEndpointAPI, {
         body: JSON.stringify({...this.props.searchJSONStructure, searchTerm: searchText}),
         cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
@@ -304,6 +303,7 @@ export default class AutoComplete extends Component<Props, State> {
             filterOptions={(options, searchText) => {
                   return this.filterFunc(maxSearchResults, searchText.inputValue, options)
               }}
+            open={open}
             openOnFocus={openOnFocus}
             style={style}
             getOptionLabel={(option) => option.label}
@@ -317,7 +317,7 @@ export default class AutoComplete extends Component<Props, State> {
             })}
             onInputChange={(text) => {
               this.setState({searchText: text.target.value})
-              this.props.setProps({searchText: text.target.value})}}
+              this.updateTextProps(text.target.value)}}
             renderInput={(params) =>
               <TextField {...params} label={hintText} variant="outlined" />}/>
         </MuiThemeProvider>
