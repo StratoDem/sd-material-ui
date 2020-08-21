@@ -295,6 +295,7 @@ export default class AutoComplete extends Component<Props, State> {
     const { id, className, classes, hintText, maxSearchResults, open, openOnFocus, style} = this.props;
     this.handleChange = this.handleChange.bind(this)
     this.filterFunc = this.filterFunc.bind(this)
+    this.updateTextProps = this.updateTextProps.bind(this)
     return (
       <div className={className}>
         <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
