@@ -75,19 +75,17 @@ all the items which matches filter
 - open (boolean; optional): Auto complete menu is open if true
 - openOnFocus (boolean; default False): If true, the list item is showed when a focus event triggers
 - searchText (string; default ""): Text being input to auto complete
-- searchValue (bool | number | str | dict | list; optional): Value in the dataSource found by using searchText
-NOTE exactMatch must be true for this to work
 - style (dict; optional): Override the inline-styles of the root element
 - searchEndpointAPI (string; optional): If defined, the AutoComplete component hits this URL to search instead of string matching
 - searchJSONStructure (dict; optional): General JSON structure to send to the server
 - selectedValue (bool | number | str | dict | list; optional): The selected value of the input"""
     @_explicitize_args
-    def __init__(self, classes=Component.UNDEFINED, className=Component.UNDEFINED, dashCallbackDelay=Component.UNDEFINED, dataSource=Component.UNDEFINED, exactMatch=Component.UNDEFINED, filter=Component.UNDEFINED, fireEvent=Component.UNDEFINED, hintText=Component.UNDEFINED, id=Component.REQUIRED, maxSearchResults=Component.UNDEFINED, open=Component.UNDEFINED, openOnFocus=Component.UNDEFINED, searchText=Component.UNDEFINED, searchValue=Component.UNDEFINED, style=Component.UNDEFINED, searchEndpointAPI=Component.UNDEFINED, searchJSONStructure=Component.UNDEFINED, selectedValue=Component.UNDEFINED, menuCloseDelay=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['classes', 'className', 'dashCallbackDelay', 'dataSource', 'exactMatch', 'filter', 'hintText', 'id', 'maxSearchResults', 'open', 'openOnFocus', 'searchText', 'searchValue', 'style', 'searchEndpointAPI', 'searchJSONStructure', 'selectedValue']
+    def __init__(self, classes=Component.UNDEFINED, className=Component.UNDEFINED, dashCallbackDelay=Component.UNDEFINED, dataSource=Component.UNDEFINED, exactMatch=Component.UNDEFINED, filter=Component.UNDEFINED, fireEvent=Component.UNDEFINED, hintText=Component.UNDEFINED, id=Component.REQUIRED, maxSearchResults=Component.UNDEFINED, open=Component.UNDEFINED, openOnFocus=Component.UNDEFINED, searchText=Component.UNDEFINED, style=Component.UNDEFINED, searchEndpointAPI=Component.UNDEFINED, searchJSONStructure=Component.UNDEFINED, selectedValue=Component.UNDEFINED, menuCloseDelay=Component.UNDEFINED, searchValue=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['classes', 'className', 'dashCallbackDelay', 'dataSource', 'exactMatch', 'filter', 'hintText', 'id', 'maxSearchResults', 'open', 'openOnFocus', 'searchText', 'style', 'searchEndpointAPI', 'searchJSONStructure', 'selectedValue']
         self._type = 'AutoComplete'
         self._namespace = 'sd_material_ui'
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['classes', 'className', 'dashCallbackDelay', 'dataSource', 'exactMatch', 'filter', 'hintText', 'id', 'maxSearchResults', 'open', 'openOnFocus', 'searchText', 'searchValue', 'style', 'searchEndpointAPI', 'searchJSONStructure', 'selectedValue']
+        self.available_properties = ['classes', 'className', 'dashCallbackDelay', 'dataSource', 'exactMatch', 'filter', 'hintText', 'id', 'maxSearchResults', 'open', 'openOnFocus', 'searchText', 'style', 'searchEndpointAPI', 'searchJSONStructure', 'selectedValue']
         self.available_wildcard_properties =            []
 
         _explicit_args = kwargs.pop('_explicit_args')

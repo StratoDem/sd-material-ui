@@ -97,10 +97,6 @@ type Props = {
   openOnFocus?: boolean,
   /** Text being input to auto complete */
   searchText?: string,
-  /** Value in the dataSource found by using searchText
-   * NOTE exactMatch must be true for this to work
-   */
-  searchValue?: any,
   /** Dash callback to update props on the server. */
   setProps?: () => void,
   /** Override the inline-styles of the root element */
