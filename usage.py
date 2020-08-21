@@ -127,7 +127,7 @@ app.layout = html.Div([
                                     {'label': 'Chicago, IL', 'value': 'Chicago'},
                                     {'label': 'Detroit, MI', 'value': 'Detroit'},
                                     {'label': 'Los Angeles, CA', 'value': 'Los Angeles'}],
-                        ),
+                        exactMatch=True),
                     html.P(id='autocomplete-output'),
                     html.Br(),
                     html.Br(),

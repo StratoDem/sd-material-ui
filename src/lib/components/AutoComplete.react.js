@@ -203,9 +203,7 @@ export default class AutoComplete extends Component<Props, State> {
     this.state = {
       searchText: this.props.searchText,
       selectedValue: this.props.selectedValue,
-      dataSourceRender: this.props.exactMatch
-        ? this.props.dataSource.map(d => d.label)
-        : this.props.dataSource,
+      dataSourceRender: this.props.dataSource,
     };
     /** _.debounce used to provide delay in callback to avoid firing callback every
      * time user input changes - waits this.props.dashCallbackDelay ms to fire callback */
@@ -243,8 +241,6 @@ export default class AutoComplete extends Component<Props, State> {
    */
   handleChange = (params: Object, searchText: string) => {
     const dataSource = this.props.dataSource
-    console.log(dataSource)
-    console.log(searchText)
     if (this.props.exactMatch) {
       // If we are looking for an exact match, then we want to update searchValue to pass
       // back data to the server at that index from the dataSource
@@ -318,7 +314,6 @@ export default class AutoComplete extends Component<Props, State> {
               this.props.setProps({selectedValue: val})
             })}
             onInputChange={(text) => {
-              console.log(text.target.value)
               this.setState({searchText: text.target.value})
               this.updateTextProps(text.target.value)}}
             renderInput={(params) =>
