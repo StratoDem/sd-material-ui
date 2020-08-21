@@ -216,7 +216,7 @@ export default class AutoComplete extends Component<Props, State> {
    * detects change in state (user-inputted search text) and fires callback event
    * @param nextProps
    */
-  UNSAFE_componentWillReceiveProps(nextProps: Props): void {
+  UNSAFE_componentWillReceiveProps(nextProps: Props, nextContext: *): void {
     if (nextProps.searchText !== null && nextProps.searchText !== this.props.searchText) {
       this.handleChange(this.props.dataSource, nextProps.searchText);
     }
@@ -243,7 +243,8 @@ export default class AutoComplete extends Component<Props, State> {
    */
   handleChange = (params: Object, searchText: string) => {
     const dataSource = this.props.dataSource
-
+    console.log(dataSource)
+    console.log(searchText)
     if (this.props.exactMatch) {
       // If we are looking for an exact match, then we want to update searchValue to pass
       // back data to the server at that index from the dataSource
