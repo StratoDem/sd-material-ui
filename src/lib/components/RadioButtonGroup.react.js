@@ -67,6 +67,7 @@ const defaultProps = {
   className: '',
   fireEvent: () => {},
   options: [],
+  row: false,
   setProps: () => {},
 }
 
