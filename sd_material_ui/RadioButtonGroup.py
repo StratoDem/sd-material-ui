@@ -28,7 +28,7 @@ Valid rule names are:
 - options (list; optional): used to create the RadioButtons to populate the RadioButtonGroup with. A Dash user passes in a
 list of dict items, each one having at least a `value` and `label`. If that value is selected,
 valueSelected will be updated
-- row (boolean; optional): If true, Radio Buttons appear as a row"
+- row (boolean; default False): If true, Radio Buttons appear as a row"
 - valueSelected (string; required): Initial value selected"""
     @_explicitize_args
     def __init__(self, classes=Component.UNDEFINED, className=Component.UNDEFINED, fireEvent=Component.UNDEFINED, id=Component.REQUIRED, name=Component.REQUIRED, options=Component.UNDEFINED, row=Component.UNDEFINED, valueSelected=Component.REQUIRED, **kwargs):

@@ -5082,7 +5082,11 @@
         "flowType": {
           "name": "boolean"
         },
-        "description": "If true, Radio Buttons appear as a row\""
+        "description": "If true, Radio Buttons appear as a row\"",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
       },
       "setProps": {
         "required": false,
