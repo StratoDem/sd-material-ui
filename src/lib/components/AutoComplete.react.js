@@ -203,7 +203,9 @@ export default class AutoComplete extends Component<Props, State> {
     this.state = {
       searchText: this.props.searchText,
       selectedValue: this.props.selectedValue,
-      dataSourceRender: this.props.dataSource,
+      dataSourceRender: this.props.exactMatch
+        ? this.props.dataSource.map(d => d.label)
+        : this.props.dataSource,
     };
     /** _.debounce used to provide delay in callback to avoid firing callback every
      * time user input changes - waits this.props.dashCallbackDelay ms to fire callback */
