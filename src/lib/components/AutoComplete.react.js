@@ -318,6 +318,7 @@ export default class AutoComplete extends Component<Props, State> {
               this.props.setProps({selectedValue: val})
             })}
             onInputChange={(text) => {
+              console.log(text.target.value)
               this.setState({searchText: text.target.value})
               this.updateTextProps(text.target.value)}}
             renderInput={(params) =>
