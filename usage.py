@@ -127,7 +127,9 @@ app.layout = html.Div([
                                     {'label': 'Chicago, IL', 'value': 'Chicago'},
                                     {'label': 'Detroit, MI', 'value': 'Detroit'},
                                     {'label': 'Los Angeles, CA', 'value': 'Los Angeles'}],
-                        exactMatch=True),
+                        exactMatch=True,
+                        dashCallbackDelay=3000
+                    ),
                     html.P(id='autocomplete-output'),
                     html.Br(),
                     html.Br(),
@@ -393,21 +395,21 @@ app.layout = html.Div([
 
     ], style={'listStyleType': 'none'})
 
-@app.callback(
-    dash.dependencies.Output('autocomplete-output', 'children'),
-    [dash.dependencies.Input('autocomplete', 'selectedValue')],)
-def callback_autocomplete(value: str):
-    if not value:
-        return ''
-    return f'Searched Value: {value}'
-
-@app.callback(
-    dash.dependencies.Output('autocomplete-search', 'children'),
-    [dash.dependencies.Input('autocomplete', 'searchText')],)
-def callback_autocomplete(value: str):
-    if not value:
-        return ''
-    return f'Search Text: {value}'
+# @app.callback(
+#     dash.dependencies.Output('autocomplete-output', 'children'),
+#     [dash.dependencies.Input('autocomplete', 'selectedValue')],)
+# def callback_autocomplete(value: str):
+#     if not value:
+#         return ''
+#     return f'Searched Value: {value}'
+#
+# @app.callback(
+#     dash.dependencies.Output('autocomplete-search', 'children'),
+#     [dash.dependencies.Input('autocomplete', 'searchText')],)
+# def callback_autocomplete(value: str):
+#     if not value:
+#         return ''
+#     return f'Search Text: {value}'
 
 @app.callback(
     dash.dependencies.Output('tabs', 'value'),
@@ -599,14 +601,14 @@ def use_toggle(switch):
     [dash.dependencies.Input('dropdown-input', 'value')])
 def dropdown_callback(value):
     return ['Selection is: {}'.format(value)]
-#
-#
-# # Callback for SDAutoComplete
-# @app.callback(
-#     dash.dependencies.Output('output13', 'children'),
-#     [dash.dependencies.Input('input13', 'searchText')])
-# def autocomplete_callback(searchText: str):
-#     return ['Selection is (should take 3 seconds to show up) : {}'.format(searchText)]
+
+
+# Callback for SDAutoComplete
+@app.callback(
+    dash.dependencies.Output('autocomplete-search', 'children'),
+    [dash.dependencies.Input('autocomplete', 'searchText')])
+def autocomplete_callback(searchText: str):
+    return ['Selection is (should take 3 seconds to show up) : {}'.format(searchText)]
 #
 #
 # # Callback for SDAutoComplete
@@ -617,12 +619,12 @@ def dropdown_callback(value):
 #     return ['Selection is {}'.format(searchValue)]
 #
 #
-# # Callback for SDAutoComplete
-# @app.callback(
-#     dash.dependencies.Output('output-autocomplete-search', 'children'),
-#     [dash.dependencies.Input('input-autocomplete-search', 'searchValue')])
-# def autocomplete_callback(searchValue: int):
-#     return ['Selection is {}'.format(searchValue)]
+# Callback for SDAutoComplete
+@app.callback(
+    dash.dependencies.Output('autocomplete-output', 'children'),
+    [dash.dependencies.Input('autocomplete', 'selectedValue')])
+def autocomplete_callback(searchValue: int):
+    return ['Selection is {}'.format(searchValue if searchValue else '')]
 #
 #
 # Callback for SDRadioButtonGroup
