@@ -250,6 +250,7 @@ export default class AutoComplete extends Component<Props, State> {
     }
     // Always want to handle searchText updates
     if ((typeof searchText) === 'string'){
+      this.updateTextProps = this.updateTextProps.bind(this)
       this.updateTextProps(searchText);
       this.setState({searchText});
     }
