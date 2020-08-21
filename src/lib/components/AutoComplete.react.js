@@ -243,13 +243,13 @@ export default class AutoComplete extends Component<Props, State> {
    */
   handleChange = (params: Object, searchText: string) => {
     const dataSource = this.props.dataSource
-    if (this.props.exactMatch) {
-      // If we are looking for an exact match, then we want to update searchValue to pass
-      // back data to the server at that index from the dataSource
-      const filteredData = dataSource.filter(entry => entry.label === searchText);
-      if (filteredData.length > 0 && typeof this.props.setProps === 'function')
-        this.props.setProps({selectedValue: filteredData[0].value});
-    }
+    // if (this.props.exactMatch) {
+    //   // If we are looking for an exact match, then we want to update searchValue to pass
+    //   // back data to the server at that index from the dataSource
+    //   const filteredData = dataSource.filter(entry => entry.label === searchText);
+    //   if (filteredData.length > 0 && typeof this.props.setProps === 'function')
+    //     this.props.setProps({selectedValue: filteredData[0].value});
+    // }
     // Always want to handle searchText updates
     if ((typeof searchText) === 'string'){
       this.updateTextProps = this.updateTextProps.bind(this)
