@@ -111,6 +111,7 @@ export default class RadioButtonGroup extends Component<Props, State> {
 
   render() {
     const { id, className, name, options, valueSelected, row} = this.props;
+    this.handleChange = this.handleChange.bind(this)
 
     return (
       <FormControl id={id} className={className} component="fieldset">

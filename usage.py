@@ -65,6 +65,7 @@ app.layout = html.Div([
                         dict(label='option 3', value='3'),
                     ],
                     valueSelected='1',
+                    row=True,
                 ),
                 html.P(id='radio-output', children='Selection is: '),
             ]),
