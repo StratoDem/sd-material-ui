@@ -94,6 +94,9 @@ export default class Toggle extends Component<Props, State> {
   UNSAFE_componentWillReceiveProps = (nextProps: Props, nextContent: *): void => {
     if (nextProps.disabled !== this.state.disabled)
       this.setState({disabled: nextProps.disabled});
+
+    if (nextProps.toggled !== this.state.toggled)
+      this.setState({toggled: nextProps.toggled});
   }
 
   render() {
