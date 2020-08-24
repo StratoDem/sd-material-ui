@@ -481,7 +481,7 @@
             "type": {
               "name": "signature",
               "type": "object",
-              "raw": "{\r\n  /** The classes to be applied to this component. This keys in this object must be valid CSS rule\r\n   * names, and the values must be strings for the classnames to be assigned to each rule name\r\n   * Valid rule names are:\r\n   *   root\r\n   *   fullWidth\r\n   *   focus\r\n   *   tag\r\n   *   tagSizeSmall\r\n   *   hasPopupIcon\r\n   *   hasClearIcon\r\n   *   inputRoot\r\n   *   input\r\n   *   inputFocused\r\n   *   endAdornment\r\n   *   clearIndicator\r\n   *   clearIndicatorDirty\r\n   *   popupIndicator\r\n   *   popupIndicatorOpen\r\n   *   popper\r\n   *   popperDisablePortal\r\n   *   paper\r\n   *   listbox\r\n   *   loading\r\n   *   noOptions\r\n   *   option\r\n   *   groupLabel\r\n   *   groupUl\r\n   * */\r\n  classes?: {\r\n    root?: string,\r\n    fullWidth?: string,\r\n    focus?: string,\r\n    tag?: string,\r\n    tagSizeSmall?: string,\r\n    hasPopupIcon?: string,\r\n    hasClearIcon?: string,\r\n    inputRoot?: string,\r\n    input?: string,\r\n    inputFocused?: string,\r\n    endAdornment?: string,\r\n    clearIndicator?: string,\r\n    clearIndicatorDirty?: string,\r\n    popupIndicator?: string,\r\n    popupIndicatorOpen?: string,\r\n    popper?: string,\r\n    popperDisablePortal?: string,\r\n    paper?: string,\r\n    listbox?: string,\r\n    loading?: string,\r\n    noOptions?: string,\r\n    option?: string,\r\n    groupLabel?: string,\r\n    groupUl?: string,\r\n  },\r\n  /** CSS class name of the root element */\r\n  className?: string,\r\n  /** Dash callback delay in ms - default is 500 ms */\r\n  dashCallbackDelay?: number,\r\n  /**\r\n   * Array of strings or nodes used to populate the list\r\n   * Alternatively, an Array of Objects with a structure like\r\n   * {label: 'My label to render', value: 'My value to ship on match'}\r\n   */\r\n  dataSource?: Array<any>,\r\n  /** Should the search text have to match exactly to update props server side? */\r\n  exactMatch?: boolean,\r\n  /** String name for filter to be applied to user input.\r\n   * will later be mapped to function\r\n   */\r\n  filter?: 'caseInsensitiveFilter' | 'caseSensitiveFilter' | 'defaultFilter' |\r\n    'fuzzyFilter' | 'levenshteinDistanceFilter' | 'noFilter',\r\n  /** Dash-assigned callback that gets fired when the input changes. */\r\n  fireEvent?: () => void,\r\n  /** The hint content to display */\r\n  hintText?: Node,\r\n  /** Autocomplete ID */\r\n  id: string,\r\n  /** The max number of search results to be shown. By default it shows\r\n   * all the items which matches filter */\r\n  maxSearchResults?: number,\r\n  /** Auto complete menu is open if true */\r\n  open?: boolean,\r\n  /** If true, the list item is showed when a focus event triggers */\r\n  openOnFocus?: boolean,\r\n  /** Text being input to auto complete */\r\n  searchText?: string,\r\n  /** Value in the dataSource found by using searchText\r\n   * NOTE exactMatch must be true for this to work\r\n   */\r\n  searchValue?: any,\r\n  /** Dash callback to update props on the server. */\r\n  setProps?: () => void,\r\n  /** Override the inline-styles of the root element */\r\n  style?: Object,\r\n  /** If defined, the AutoComplete component hits this URL to search instead of string matching */\r\n  searchEndpointAPI?: string,\r\n  /** General JSON structure to send to the server */\r\n  searchJSONStructure?: Object,\r\n  /** The selected value of the input */\r\n  selectedValue?: any,\r\n}",
+              "raw": "{\r\n  /** The classes to be applied to this component. This keys in this object must be valid CSS rule\r\n   * names, and the values must be strings for the classnames to be assigned to each rule name\r\n   * Valid rule names are:\r\n   *   root\r\n   *   fullWidth\r\n   *   focus\r\n   *   tag\r\n   *   tagSizeSmall\r\n   *   hasPopupIcon\r\n   *   hasClearIcon\r\n   *   inputRoot\r\n   *   input\r\n   *   inputFocused\r\n   *   endAdornment\r\n   *   clearIndicator\r\n   *   clearIndicatorDirty\r\n   *   popupIndicator\r\n   *   popupIndicatorOpen\r\n   *   popper\r\n   *   popperDisablePortal\r\n   *   paper\r\n   *   listbox\r\n   *   loading\r\n   *   noOptions\r\n   *   option\r\n   *   groupLabel\r\n   *   groupUl\r\n   * */\r\n  classes?: {\r\n    root?: string,\r\n    fullWidth?: string,\r\n    focus?: string,\r\n    tag?: string,\r\n    tagSizeSmall?: string,\r\n    hasPopupIcon?: string,\r\n    hasClearIcon?: string,\r\n    inputRoot?: string,\r\n    input?: string,\r\n    inputFocused?: string,\r\n    endAdornment?: string,\r\n    clearIndicator?: string,\r\n    clearIndicatorDirty?: string,\r\n    popupIndicator?: string,\r\n    popupIndicatorOpen?: string,\r\n    popper?: string,\r\n    popperDisablePortal?: string,\r\n    paper?: string,\r\n    listbox?: string,\r\n    loading?: string,\r\n    noOptions?: string,\r\n    option?: string,\r\n    groupLabel?: string,\r\n    groupUl?: string,\r\n  },\r\n  /** CSS class name of the root element */\r\n  className?: string,\r\n  /** Dash callback delay in ms - default is 500 ms */\r\n  dashCallbackDelay?: number,\r\n  /**\r\n   * Array of strings or nodes used to populate the list\r\n   * Alternatively, an Array of Objects with a structure like\r\n   * {label: 'My label to render', value: 'My value to ship on match'}\r\n   */\r\n  dataSource?: Array<any>,\r\n  /** String name for filter to be applied to user input.\r\n   * will later be mapped to function\r\n   */\r\n  filter?: 'caseInsensitiveFilter' | 'caseSensitiveFilter' | 'defaultFilter' |\r\n    'fuzzyFilter' | 'levenshteinDistanceFilter' | 'noFilter',\r\n  /** Dash-assigned callback that gets fired when the input changes. */\r\n  fireEvent?: () => void,\r\n  /** The hint content to display */\r\n  hintText?: Node,\r\n  /** Autocomplete ID */\r\n  id: string,\r\n  /** The max number of search results to be shown. By default it shows\r\n   * all the items which matches filter */\r\n  maxSearchResults?: number,\r\n  /** Auto complete menu is open if true */\r\n  open?: boolean,\r\n  /** If true, the list item is showed when a focus event triggers */\r\n  openOnFocus?: boolean,\r\n  /** Text being input to auto complete */\r\n  searchText?: string,\r\n  /** Dash callback to update props on the server. */\r\n  setProps?: () => void,\r\n  /** Override the inline-styles of the root element */\r\n  style?: Object,\r\n  /** If defined, the AutoComplete component hits this URL to search instead of string matching */\r\n  searchEndpointAPI?: string,\r\n  /** General JSON structure to send to the server */\r\n  searchJSONStructure?: Object,\r\n  /** The selected value of the input */\r\n  selectedValue?: any,\r\n}",
               "signature": {
                 "properties": [
                   {
@@ -693,13 +693,6 @@
                     }
                   },
                   {
-                    "key": "exactMatch",
-                    "value": {
-                      "name": "boolean",
-                      "required": false
-                    }
-                  },
-                  {
                     "key": "filter",
                     "value": {
                       "name": "union",
@@ -787,13 +780,6 @@
                     "key": "searchText",
                     "value": {
                       "name": "string",
-                      "required": false
-                    }
-                  },
-                  {
-                    "key": "searchValue",
-                    "value": {
-                      "name": "any",
                       "required": false
                     }
                   },
@@ -1150,17 +1136,6 @@
           "computed": false
         }
       },
-      "exactMatch": {
-        "required": false,
-        "flowType": {
-          "name": "boolean"
-        },
-        "description": "Should the search text have to match exactly to update props server side?",
-        "defaultValue": {
-          "value": "false",
-          "computed": false
-        }
-      },
       "filter": {
         "required": false,
         "flowType": {
@@ -1276,17 +1251,6 @@
           "computed": false
         }
       },
-      "searchValue": {
-        "required": false,
-        "flowType": {
-          "name": "any"
-        },
-        "description": "Value in the dataSource found by using searchText\r\nNOTE exactMatch must be true for this to work",
-        "defaultValue": {
-          "value": "null",
-          "computed": false
-        }
-      },
       "setProps": {
         "required": false,
         "flowType": {
@@ -1353,6 +1317,13 @@
       "menuCloseDelay": {
         "defaultValue": {
           "value": "300",
+          "computed": false
+        },
+        "required": false
+      },
+      "searchValue": {
+        "defaultValue": {
+          "value": "null",
           "computed": false
         },
         "required": false
@@ -5085,6 +5056,17 @@
         "description": "used to create the RadioButtons to populate the RadioButtonGroup with. A Dash user passes in a\r\nlist of dict items, each one having at least a `value` and `label`. If that value is selected,\r\nvalueSelected will be updated",
         "defaultValue": {
           "value": "[]",
+          "computed": false
+        }
+      },
+      "row": {
+        "required": false,
+        "flowType": {
+          "name": "boolean"
+        },
+        "description": "If true, Radio Buttons appear as a row\"",
+        "defaultValue": {
+          "value": "false",
           "computed": false
         }
       },

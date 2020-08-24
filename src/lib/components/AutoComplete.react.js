@@ -75,8 +75,6 @@ type Props = {
    * {label: 'My label to render', value: 'My value to ship on match'}
    */
   dataSource?: Array<any>,
-  /** Should the search text have to match exactly to update props server side? */
-  exactMatch?: boolean,
   /** String name for filter to be applied to user input.
    * will later be mapped to function
    */
@@ -97,10 +95,6 @@ type Props = {
   openOnFocus?: boolean,
   /** Text being input to auto complete */
   searchText?: string,
-  /** Value in the dataSource found by using searchText
-   * NOTE exactMatch must be true for this to work
-   */
-  searchValue?: any,
   /** Dash callback to update props on the server. */
   setProps?: () => void,
   /** Override the inline-styles of the root element */
@@ -122,7 +116,6 @@ type State = {
 const defaultProps = {
   dashCallbackDelay: 500,
   dataSource: [],
-  exactMatch: false,
   filter: "defaultFilter",
   fireEvent: () => {},
   hintText: "Search Here",
@@ -203,9 +196,7 @@ export default class AutoComplete extends Component<Props, State> {
     this.state = {
       searchText: this.props.searchText,
       selectedValue: this.props.selectedValue,
-      dataSourceRender: this.props.exactMatch
-        ? this.props.dataSource.map(d => d.label)
-        : this.props.dataSource,
+      dataSourceRender: this.props.dataSource,
     };
     /** _.debounce used to provide delay in callback to avoid firing callback every
      * time user input changes - waits this.props.dashCallbackDelay ms to fire callback */
@@ -216,7 +207,7 @@ export default class AutoComplete extends Component<Props, State> {
    * detects change in state (user-inputted search text) and fires callback event
    * @param nextProps
    */
-  UNSAFE_componentWillReceiveProps(nextProps: Props): void {
+  UNSAFE_componentWillReceiveProps(nextProps: Props, nextContext: *): void {
     if (nextProps.searchText !== null && nextProps.searchText !== this.props.searchText) {
       this.handleChange(this.props.dataSource, nextProps.searchText);
     }
@@ -225,8 +216,6 @@ export default class AutoComplete extends Component<Props, State> {
   }
 
   getDataSource = (props: Props): Array<any> => {
-    if (props.exactMatch)
-      return props.dataSource.map(d => d.label);
     return props.dataSource;
   };
 
@@ -243,16 +232,9 @@ export default class AutoComplete extends Component<Props, State> {
    */
   handleChange = (params: Object, searchText: string) => {
     const dataSource = this.props.dataSource
-
-    if (this.props.exactMatch) {
-      // If we are looking for an exact match, then we want to update searchValue to pass
-      // back data to the server at that index from the dataSource
-      const filteredData = dataSource.filter(entry => entry.label === searchText);
-      if (filteredData.length > 0 && typeof this.props.setProps === 'function')
-        this.props.setProps({selectedValue: filteredData[0].value});
-    }
     // Always want to handle searchText updates
     if ((typeof searchText) === 'string'){
+      this.updateTextProps = this.updateTextProps.bind(this)
       this.updateTextProps(searchText);
       this.setState({searchText});
     }
@@ -269,8 +251,7 @@ export default class AutoComplete extends Component<Props, State> {
 
     if (typeof setProps === 'function')
       setProps({searchText});
-
-    if (typeof this.props.searchEndpointAPI !== 'undefined')
+    if (this.props.searchEndpointAPI !== null)
       fetch(this.props.searchEndpointAPI, {
         body: JSON.stringify({...this.props.searchJSONStructure, searchTerm: searchText}),
         cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
@@ -295,6 +276,7 @@ export default class AutoComplete extends Component<Props, State> {
     const { id, className, classes, hintText, maxSearchResults, open, openOnFocus, style} = this.props;
     this.handleChange = this.handleChange.bind(this)
     this.filterFunc = this.filterFunc.bind(this)
+    this.updateTextProps = this.updateTextProps.bind(this)
     return (
       <div className={className}>
         <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
@@ -304,6 +286,7 @@ export default class AutoComplete extends Component<Props, State> {
             filterOptions={(options, searchText) => {
                   return this.filterFunc(maxSearchResults, searchText.inputValue, options)
               }}
+            open={open}
             openOnFocus={openOnFocus}
             style={style}
             getOptionLabel={(option) => option.label}
@@ -315,6 +298,9 @@ export default class AutoComplete extends Component<Props, State> {
               this.setState({selectedValue: val})
               this.props.setProps({selectedValue: val})
             })}
+            onInputChange={(text) => {
+              this.setState({searchText: text.target.value})
+              this.updateTextProps(text.target.value)}}
             renderInput={(params) =>
               <TextField {...params} label={hintText} variant="outlined" />}/>
         </MuiThemeProvider>
