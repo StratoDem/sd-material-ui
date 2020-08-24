@@ -65,7 +65,6 @@ app.layout = html.Div([
                         dict(label='option 3', value='3'),
                     ],
                     valueSelected='1',
-                    row=True,
                 ),
                 html.P(id='radio-output', children='Selection is: '),
             ]),
@@ -396,21 +395,6 @@ app.layout = html.Div([
 
     ], style={'listStyleType': 'none'})
 
-# @app.callback(
-#     dash.dependencies.Output('autocomplete-output', 'children'),
-#     [dash.dependencies.Input('autocomplete', 'selectedValue')],)
-# def callback_autocomplete(value: str):
-#     if not value:
-#         return ''
-#     return f'Searched Value: {value}'
-#
-# @app.callback(
-#     dash.dependencies.Output('autocomplete-search', 'children'),
-#     [dash.dependencies.Input('autocomplete', 'searchText')],)
-# def callback_autocomplete(value: str):
-#     if not value:
-#         return ''
-#     return f'Search Text: {value}'
 
 @app.callback(
     dash.dependencies.Output('tabs', 'value'),
