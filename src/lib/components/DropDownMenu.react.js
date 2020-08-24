@@ -72,6 +72,7 @@ type Props = {
 
 type State = {
   disabled: boolean,
+  options: Array<Object>,
   value: any,
 };
 
@@ -93,7 +94,7 @@ const defaultProps = {
 export default class DropDownMenu extends Component<Props, State> {
   constructor(props: Props) {
     super(props);
-    this.state = {disabled: props.disabled, value: props.value};
+    this.state = {disabled: props.disabled, options: props.options, value: props.value};
   }
 
   buildMenuItem = (menuItem) => {
@@ -118,6 +119,9 @@ export default class DropDownMenu extends Component<Props, State> {
 
     if (nextProps.value !== this.state.value)
       this.setState({value: nextProps.value});
+
+    if (nextProps.options !== this.state.options)
+      this.setState({options: nextProps.options});
   };
 
   render() {
