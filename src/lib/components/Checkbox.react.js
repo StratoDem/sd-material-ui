@@ -49,6 +49,7 @@ type Props = {
 
 type State = {
   checked: boolean,
+  disabled: boolean,
 };
 
 const defaultProps = {
@@ -75,6 +76,11 @@ export default class Checkbox extends Component<Props, State> {
       this.props.setProps({checked: nextProps.checked})
       this.setState({checked: nextProps.checked});
     }
+
+    if (nextProps.disabled !== null && nextProps.disabled !== this.props.disabled) {
+      this.props.setProps({disabled: nextProps.disabled})
+      this.setState({disabled: nextProps.disabled});
+    }
   }
 
   handleClick = () => {
@@ -93,7 +99,7 @@ export default class Checkbox extends Component<Props, State> {
           <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
             <FormControlLabel control={<MuiCheckbox
                 checked={this.state.checked}
-                disabled={disabled}
+                disabled={this.state.disabled}
                 style={style}
                 classes={classes}
                 name={name}
