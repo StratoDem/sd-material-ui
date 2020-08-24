@@ -102,6 +102,7 @@ app.layout = html.Div([
                     toggled=False,
                 ),
                 html.P(id='toggle-output', children=['Flame off']),
+                html.Button('Reset toggle', id='toggle-input2'),
             ]),
 
             spacer,
@@ -608,6 +609,13 @@ def use_toggle(switch):
         return ['Flame on!']
     else:
         return ['Flame off']
+
+
+@app.callback(
+    dash.dependencies.Output('toggle-input', 'toggled'),
+    [dash.dependencies.Input('toggle-input2', 'n_clicks')])
+def reset_toggle(clicks):
+    return False
 
 
 # Callback for SDDropdownMenu and SDMenuItem
