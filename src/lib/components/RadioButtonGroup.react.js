@@ -50,6 +50,8 @@ type Props = {
    * valueSelected will be updated
    */
   options?: Array<SD_RADIO_BUTTON>,
+  /** If true, Radio Buttons appear as a row" */
+  row?: boolean,
   /** dash callback to update props on the server */
   setProps?: () => void,
   /** Initial value selected */
@@ -65,6 +67,7 @@ const defaultProps = {
   className: '',
   fireEvent: () => {},
   options: [],
+  row: false,
   setProps: () => {},
 }
 
@@ -107,7 +110,8 @@ export default class RadioButtonGroup extends Component<Props, State> {
   };
 
   render() {
-    const { id, className, name, options, valueSelected} = this.props;
+    const { id, className, name, options, valueSelected, row} = this.props;
+    this.handleChange = this.handleChange.bind(this)
 
     return (
       <FormControl id={id} className={className} component="fieldset">
@@ -118,6 +122,7 @@ export default class RadioButtonGroup extends Component<Props, State> {
           value={this.state.value}
           defaultValue={valueSelected}
           onChange={this.handleChange}
+          row={row}
         >
           {options.map(this.buildRadioButton)}
         </RadioGroup>
