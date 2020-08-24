@@ -190,7 +190,7 @@ app.layout = html.Div([
                 spacer,
 
                 sd_material_ui.Button(
-                    children=html.P('This is a Flat Button'),
+                    children=html.P('This is a Flat Button. Enables/Disables raised button'),
                     id='button2',
                     disableShadow=False,
                     useIcon=False,
@@ -573,6 +573,16 @@ def callback_accordion_disable(toggle_status):
     if toggle_status is None:
         return False
     return not toggle_status
+
+
+@app.callback(
+    dash.dependencies.Output('button1', 'disabled'),
+    [dash.dependencies.Input('button2', 'n_clicks')],
+    [dash.dependencies.State('button1', 'disabled')])
+def callback_accordion_disable(clicks, disabled_state):
+    if clicks is None:
+        return True
+    return not disabled_state
 
 
 # Callback for SDDrawer (not docked)
