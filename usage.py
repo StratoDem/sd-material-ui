@@ -67,7 +67,6 @@ app.layout = html.Div([
                         dict(label='option 3', value='3'),
                     ],
                     valueSelected='1',
-                    row=True,
                 ),
                 html.P(id='radio-output', children='Selection is: '),
             ]),
@@ -131,7 +130,6 @@ app.layout = html.Div([
                                     {'label': 'Chicago, IL', 'value': 'Chicago'},
                                     {'label': 'Detroit, MI', 'value': 'Detroit'},
                                     {'label': 'Los Angeles, CA', 'value': 'Los Angeles'}],
-                        exactMatch=True,
                         dashCallbackDelay=3000
                     ),
                     html.P(id='autocomplete-output'),
@@ -401,21 +399,6 @@ app.layout = html.Div([
 
     ], style={'listStyleType': 'none'})
 
-# @app.callback(
-#     dash.dependencies.Output('autocomplete-output', 'children'),
-#     [dash.dependencies.Input('autocomplete', 'selectedValue')],)
-# def callback_autocomplete(value: str):
-#     if not value:
-#         return ''
-#     return f'Searched Value: {value}'
-#
-# @app.callback(
-#     dash.dependencies.Output('autocomplete-search', 'children'),
-#     [dash.dependencies.Input('autocomplete', 'searchText')],)
-# def callback_autocomplete(value: str):
-#     if not value:
-#         return ''
-#     return f'Search Text: {value}'
 
 @app.callback(
     dash.dependencies.Output('tabs', 'value'),
@@ -646,16 +629,8 @@ def dropdown_callback(clicks):
     [dash.dependencies.Input('autocomplete', 'searchText')])
 def autocomplete_callback(searchText: str):
     return ['Selection is (should take 3 seconds to show up) : {}'.format(searchText)]
-#
-#
-# # Callback for SDAutoComplete
-# @app.callback(
-#     dash.dependencies.Output('output-autocomplete-exactmatch', 'children'),
-#     [dash.dependencies.Input('input-autocomplete-exactmatch', 'searchValue')])
-# def autocomplete_callback(searchValue: int):
-#     return ['Selection is {}'.format(searchValue)]
-#
-#
+
+
 # Callback for SDAutoComplete
 @app.callback(
     dash.dependencies.Output('autocomplete-output', 'children'),

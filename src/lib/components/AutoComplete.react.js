@@ -75,8 +75,6 @@ type Props = {
    * {label: 'My label to render', value: 'My value to ship on match'}
    */
   dataSource?: Array<any>,
-  /** Should the search text have to match exactly to update props server side? */
-  exactMatch?: boolean,
   /** String name for filter to be applied to user input.
    * will later be mapped to function
    */
@@ -118,7 +116,6 @@ type State = {
 const defaultProps = {
   dashCallbackDelay: 500,
   dataSource: [],
-  exactMatch: false,
   filter: "defaultFilter",
   fireEvent: () => {},
   hintText: "Search Here",
@@ -199,9 +196,7 @@ export default class AutoComplete extends Component<Props, State> {
     this.state = {
       searchText: this.props.searchText,
       selectedValue: this.props.selectedValue,
-      dataSourceRender: this.props.dataSource, // this.props.exactMatch
-        // ? this.props.dataSource.map(d => d.label)
-        // : this.props.dataSource,
+      dataSourceRender: this.props.dataSource,
     };
     /** _.debounce used to provide delay in callback to avoid firing callback every
      * time user input changes - waits this.props.dashCallbackDelay ms to fire callback */
@@ -221,8 +216,6 @@ export default class AutoComplete extends Component<Props, State> {
   }
 
   getDataSource = (props: Props): Array<any> => {
-    // if (props.exactMatch)
-    //   return props.dataSource.map(d => d.label);
     return props.dataSource;
   };
 
@@ -239,13 +232,6 @@ export default class AutoComplete extends Component<Props, State> {
    */
   handleChange = (params: Object, searchText: string) => {
     const dataSource = this.props.dataSource
-    // if (this.props.exactMatch) {
-    //   // If we are looking for an exact match, then we want to update searchValue to pass
-    //   // back data to the server at that index from the dataSource
-    //   const filteredData = dataSource.filter(entry => entry.label === searchText);
-    //   if (filteredData.length > 0 && typeof this.props.setProps === 'function')
-    //     this.props.setProps({selectedValue: filteredData[0].value});
-    // }
     // Always want to handle searchText updates
     if ((typeof searchText) === 'string'){
       this.updateTextProps = this.updateTextProps.bind(this)

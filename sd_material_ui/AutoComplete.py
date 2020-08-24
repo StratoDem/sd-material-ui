@@ -65,7 +65,6 @@ Valid rule names are:
 - dataSource (list of boolean | number | string | dict | lists; optional): Array of strings or nodes used to populate the list
 Alternatively, an Array of Objects with a structure like
 {label: 'My label to render', value: 'My value to ship on match'}
-- exactMatch (boolean; default False): Should the search text have to match exactly to update props server side?
 - filter (default "defaultFilter"): String name for filter to be applied to user input.
 will later be mapped to function
 - hintText (a list of or a singular dash component, string or number; default "Search Here"): The hint content to display
@@ -80,12 +79,12 @@ all the items which matches filter
 - searchJSONStructure (dict; optional): General JSON structure to send to the server
 - selectedValue (bool | number | str | dict | list; optional): The selected value of the input"""
     @_explicitize_args
-    def __init__(self, classes=Component.UNDEFINED, className=Component.UNDEFINED, dashCallbackDelay=Component.UNDEFINED, dataSource=Component.UNDEFINED, exactMatch=Component.UNDEFINED, filter=Component.UNDEFINED, fireEvent=Component.UNDEFINED, hintText=Component.UNDEFINED, id=Component.REQUIRED, maxSearchResults=Component.UNDEFINED, open=Component.UNDEFINED, openOnFocus=Component.UNDEFINED, searchText=Component.UNDEFINED, style=Component.UNDEFINED, searchEndpointAPI=Component.UNDEFINED, searchJSONStructure=Component.UNDEFINED, selectedValue=Component.UNDEFINED, menuCloseDelay=Component.UNDEFINED, searchValue=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['classes', 'className', 'dashCallbackDelay', 'dataSource', 'exactMatch', 'filter', 'hintText', 'id', 'maxSearchResults', 'open', 'openOnFocus', 'searchText', 'style', 'searchEndpointAPI', 'searchJSONStructure', 'selectedValue']
+    def __init__(self, classes=Component.UNDEFINED, className=Component.UNDEFINED, dashCallbackDelay=Component.UNDEFINED, dataSource=Component.UNDEFINED, filter=Component.UNDEFINED, fireEvent=Component.UNDEFINED, hintText=Component.UNDEFINED, id=Component.REQUIRED, maxSearchResults=Component.UNDEFINED, open=Component.UNDEFINED, openOnFocus=Component.UNDEFINED, searchText=Component.UNDEFINED, style=Component.UNDEFINED, searchEndpointAPI=Component.UNDEFINED, searchJSONStructure=Component.UNDEFINED, selectedValue=Component.UNDEFINED, menuCloseDelay=Component.UNDEFINED, searchValue=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['classes', 'className', 'dashCallbackDelay', 'dataSource', 'filter', 'hintText', 'id', 'maxSearchResults', 'open', 'openOnFocus', 'searchText', 'style', 'searchEndpointAPI', 'searchJSONStructure', 'selectedValue']
         self._type = 'AutoComplete'
         self._namespace = 'sd_material_ui'
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['classes', 'className', 'dashCallbackDelay', 'dataSource', 'exactMatch', 'filter', 'hintText', 'id', 'maxSearchResults', 'open', 'openOnFocus', 'searchText', 'style', 'searchEndpointAPI', 'searchJSONStructure', 'selectedValue']
+        self.available_properties = ['classes', 'className', 'dashCallbackDelay', 'dataSource', 'filter', 'hintText', 'id', 'maxSearchResults', 'open', 'openOnFocus', 'searchText', 'style', 'searchEndpointAPI', 'searchJSONStructure', 'selectedValue']
         self.available_wildcard_properties =            []
 
         _explicit_args = kwargs.pop('_explicit_args')
