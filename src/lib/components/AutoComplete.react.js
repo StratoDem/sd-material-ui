@@ -75,8 +75,6 @@ type Props = {
    * {label: 'My label to render', value: 'My value to ship on match'}
    */
   dataSource?: Array<any>,
-  /** Should the search text have to match exactly to update props server side? */
-  exactMatch?: boolean,
   /** String name for filter to be applied to user input.
    * will later be mapped to function
    */
@@ -118,7 +116,6 @@ type State = {
 const defaultProps = {
   dashCallbackDelay: 500,
   dataSource: [],
-  exactMatch: false,
   filter: "defaultFilter",
   fireEvent: () => {},
   hintText: "Search Here",

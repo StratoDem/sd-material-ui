@@ -127,7 +127,6 @@ app.layout = html.Div([
                                     {'label': 'Chicago, IL', 'value': 'Chicago'},
                                     {'label': 'Detroit, MI', 'value': 'Detroit'},
                                     {'label': 'Los Angeles, CA', 'value': 'Los Angeles'}],
-                        exactMatch=True,
                         dashCallbackDelay=3000
                     ),
                     html.P(id='autocomplete-output'),
@@ -594,16 +593,8 @@ def dropdown_callback(value):
     [dash.dependencies.Input('autocomplete', 'searchText')])
 def autocomplete_callback(searchText: str):
     return ['Selection is (should take 3 seconds to show up) : {}'.format(searchText)]
-#
-#
-# # Callback for SDAutoComplete
-# @app.callback(
-#     dash.dependencies.Output('output-autocomplete-exactmatch', 'children'),
-#     [dash.dependencies.Input('input-autocomplete-exactmatch', 'searchValue')])
-# def autocomplete_callback(searchValue: int):
-#     return ['Selection is {}'.format(searchValue)]
-#
-#
+
+
 # Callback for SDAutoComplete
 @app.callback(
     dash.dependencies.Output('autocomplete-output', 'children'),
