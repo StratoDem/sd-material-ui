@@ -346,6 +346,8 @@ app.layout = html.Div([
                 ]),
 
             html.P(id='dropdown-output'),
+            html.Button('Remove groups from options', id='dropdown-input2'),
+
         ]),
 
         spacer,
@@ -604,6 +606,20 @@ def use_toggle(switch):
     [dash.dependencies.Input('dropdown-input', 'value')])
 def dropdown_callback(value):
     return ['Selection is: {}'.format(value)]
+
+
+@app.callback(
+    dash.dependencies.Output('dropdown-input', 'options'),
+    [dash.dependencies.Input('dropdown-input2', 'n_clicks')])
+def dropdown_callback(clicks):
+    if clicks is None:
+        raise dash.exceptions.PreventUpdate
+    return [
+        dict(primaryText='Option 1', value=1),
+        dict(primaryText='Option 2', value=2),
+        dict(primaryText='Option 3', value=3),
+        dict(primaryText='Option 4', value=4),
+    ]
 
 
 # Callback for SDAutoComplete
