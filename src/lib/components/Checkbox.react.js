@@ -33,6 +33,8 @@ type Props = {
   },
   /** Checkbox is disabled if true */
   disabled?: boolean,
+  /** Ripple is disabled if true */
+  disableRipple?: boolean,
   /** A callback for firing events to dash */
   fireEvent?: () => void,
   /** The element's ID */
@@ -55,6 +57,7 @@ const defaultProps = {
   checked: false,
   disabled: false,
   classes: {},
+  disableRipple: false,
   fireEvent: () => {},
   setProps: () => {},
   style: {},
@@ -85,7 +88,7 @@ export default class Checkbox extends Component<Props, State> {
   };
 
   render() {
-    const { disabled, style, classes, id, className, name, label} = this.props;
+    const { disabled, style, classes, id, className, name, label, disableRipple} = this.props;
     if (this.props.fireEvent || this.props.setProps) {
       this.handleClick = this.handleClick.bind(this)
       return (
@@ -109,6 +112,7 @@ export default class Checkbox extends Component<Props, State> {
           <FormControlLabel control={ <MuiCheckbox
               checked={this.state.checked}
               disabled={disabled}
+              disableRipple={disableRipple}
               className={className}
               style={style}
               classes={classes}
