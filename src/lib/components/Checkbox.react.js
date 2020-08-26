@@ -97,6 +97,7 @@ export default class Checkbox extends Component<Props, State> {
             <FormControlLabel control={<MuiCheckbox
                 checked={this.state.checked}
                 disabled={disabled}
+                disableRipple={disableRipple}
                 style={style}
                 classes={classes}
                 name={name}

@@ -307,7 +307,7 @@ app.layout = html.Div([
             html.Div([
                 html.P([html.Strong('Test for Checkbox')]),
 
-                sd_material_ui.Checkbox(id='checkbox1', label='Apple', name='Apple'),
+                sd_material_ui.Checkbox(id='checkbox1', label='Apple', name='Apple', disableRipple=True),
                 sd_material_ui.Checkbox(id='checkbox2', label='2', name='2'),
                 sd_material_ui.Checkbox(id='checkbox3', label=5, name='5'),
 
