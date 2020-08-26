@@ -2198,6 +2198,17 @@
           "computed": false
         }
       },
+      "disableRipple": {
+        "required": false,
+        "flowType": {
+          "name": "boolean"
+        },
+        "description": "Ripple is disabled if true",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
       "fireEvent": {
         "required": false,
         "flowType": {
