@@ -110,12 +110,21 @@ export default class Accordion extends Component<Props, State> {
   };
 
   render() {
-    const { id, className, classes, detailClasses, label, square, summaryClasses } = this.props;
+    const {
+      id,
+      className,
+      classes,
+      defaultExpanded,
+      detailClasses,
+      label,
+      square,
+      summaryClasses } = this.props;
 
     return (
       <div key={`accordion-${id}`} id={id} className={className}>
         <MuiAccordion
           classes={classes}
+          defaultExpanded={defaultExpanded}
           disabled={this.state.disabled}
           expanded={this.state.expanded}
           onChange={this.handleChange}

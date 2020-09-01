@@ -109,6 +109,11 @@ export default class RadioButtonGroup extends Component<Props, State> {
     }
   };
 
+  UNSAFE_componentWillReceiveProps = (nextProps: Props, nextContent: *): void => {
+    if (nextProps.value !== this.state.value)
+      this.setState({value: nextProps.value});
+  }
+
   render() {
     const { id, className, name, options, valueSelected, row} = this.props;
     this.handleChange = this.handleChange.bind(this)
