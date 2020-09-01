@@ -115,6 +115,8 @@ export default class DropDownMenu extends Component<Props, State> {
   UNSAFE_componentWillReceiveProps = (nextProps: Props, nextContent: *): void => {
     if (nextProps.disabled !== this.state.disabled)
       this.setState({disabled: nextProps.disabled});
+    if (nextProps.value !== this.state.value)
+      this.setState({value: nextProps.value});
   };
 
   render() {
