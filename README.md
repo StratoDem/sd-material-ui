@@ -55,10 +55,10 @@ if __name__ == '__main__':
 - [x] [`FontIcon`](https://material-ui.com/components/icons/#icon-font-icons)
 - [x] [`IconButton`](http://www.material-ui.com/components/buttons)
 - [x] [`Paper`](http://www.material-ui.com/components/paper)
-- [x] [`RaisedButton`](https://material-ui.com/components/switches/)
+- [x] [`RaisedButton`](http://material-ui.com/components/buttons/#contained-buttons)
 - [x] [`Snackbar`](http://www.material-ui.com/components/snackbars)
 - [x] [`Subheader`](http://material-ui.com/components/lists/#pinned-subheader-list)
-- [x] [`Toggle`](http://www.material-ui.com/components/toggle-button)
+- [x] [`Toggle`](https://material-ui.com/components/switches/)
 
 ## Examples
 ![sd-material-ui examples](https://github.com/StratoDem/sd-material-ui/blob/8b1bf6587f7977c41be414e92ef594ec55768657/Peek%202018-02-22%2010-49.gif)
