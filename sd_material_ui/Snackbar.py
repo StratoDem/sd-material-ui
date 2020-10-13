@@ -8,7 +8,7 @@ class Snackbar(Component):
 Material UI Snackbar component
 
 Keyword arguments:
-- children (a list of or a singular dash component, string or number; optional): Elements to render inside the snackbar. Note that this does not work along message and actions
+- children (a list of or a singular dash component, string or number; optional): Elements to render inside the snackbar. Note that this will override message and actions
 - action (string; default ''): The text of the action button inside the snackbar. If empty, no action button will be added
 Note that this does not work with children.
 - actionStyles (dict; optional): Styles to be applied to the action button
@@ -35,10 +35,7 @@ Valid rule names are:
   - anchorOriginBottomLeft (string; optional)
 - className (string; default ''): CSS class name of the root element
 - id (string; required): The element's ID
-- message (a list of or a singular dash component, string or number; default ''): The message to be displayed.
-(Note: If the message is an element or array, and the Snackbar may re-render while it is
-still open, ensure that the same object remains as the message property if you want to avoid
-the Snackbar hiding and showing again). Note that this does not work with children.
+- message (a list of or a singular dash component, string or number; default '')
 - n_clicks (number; default 0): An integer that represents the number of times that action button has been clicked
 - open (boolean; default False): Controls whether the Snackbar is opened or not
 - style (dict; optional): Override the inline styles of the root element"""

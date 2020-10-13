@@ -5638,7 +5638,7 @@
         "flowType": {
           "name": "Node"
         },
-        "description": "Elements to render inside the snackbar. Note that this does not work along message and actions",
+        "description": "Elements to render inside the snackbar. Note that this will override message and actions",
         "defaultValue": {
           "value": "null",
           "computed": false
@@ -5675,7 +5675,7 @@
         "flowType": {
           "name": "Node"
         },
-        "description": "The message to be displayed.\r\n(Note: If the message is an element or array, and the Snackbar may re-render while it is\r\nstill open, ensure that the same object remains as the message property if you want to avoid\r\nthe Snackbar hiding and showing again). Note that this does not work with children.",
+        "description": "",
         "defaultValue": {
           "value": "''",
           "computed": false

@@ -42,13 +42,13 @@ type Props = {
   },
   /** CSS class name of the root element */
   className?: string,
-  /** Elements to render inside the snackbar. Note that this does not work along message and actions */
+  /** Elements to render inside the snackbar. Note that this will override message and actions*/
   children?: Node,
   /** Dash event handler for click events */
   fireEvent?: () => void,
   /** The element's ID */
   id: string,
-  /**
+  /**Modif
    * The message to be displayed.
    * (Note: If the message is an element or array, and the Snackbar may re-render while it is
    * still open, ensure that the same object remains as the message property if you want to avoid
