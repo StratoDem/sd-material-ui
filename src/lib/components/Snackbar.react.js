@@ -9,7 +9,8 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
 type Props = {
-  /** The text of the action button inside the snackbar. If empty, no action button will be added */
+  /** The text of the action button inside the snackbar. If empty, no action button will be added
+   * Note that this does not work with children. */
   action?: string,
   /** Styles to be applied to the action button */
   actionStyles?: Object,
@@ -41,6 +42,8 @@ type Props = {
   },
   /** CSS class name of the root element */
   className?: string,
+  /** Elements to render inside the snackbar. Note that this will override message and actions*/
+  children?: Node,
   /** Dash event handler for click events */
   fireEvent?: () => void,
   /** The element's ID */
@@ -49,9 +52,9 @@ type Props = {
    * The message to be displayed.
    * (Note: If the message is an element or array, and the Snackbar may re-render while it is
    * still open, ensure that the same object remains as the message property if you want to avoid
-   * the Snackbar hiding and showing again)
+   * the Snackbar hiding and showing again). Note that this does not work with children.
    */
-  message: Node,
+  message?: Node,
   /** An integer that represents the number of times that action button has been clicked */
   n_clicks?: number,
   /** Controls whether the Snackbar is opened or not */
@@ -71,8 +74,10 @@ const defaultProps = {
   autoHideDuration: 3000,
   bodyStyle: {},
   className: '',
+  children: null,
   contentStyle: {},
   fireEvent: () => {},
+  message: '',
   n_clicks: 0,
   open: false,
   setProps: () => {},
@@ -109,7 +114,7 @@ export default class Snackbar extends Component<Props, State> {
   };
 
   render() {
-    const {action, actionStyles, autoHideDuration, className, id, message, style } = this.props;
+    const {action, actionStyles, autoHideDuration, className, children, id, message, style } = this.props;
 
     return action ? (
       <div id={id}>
@@ -117,6 +122,7 @@ export default class Snackbar extends Component<Props, State> {
           <MuiSnackbar
             autoHideDuration={autoHideDuration}
             className={className}
+            children={children}
             message={message}
             onClose={this.handleClose}
             open={this.state.open}
@@ -135,6 +141,7 @@ export default class Snackbar extends Component<Props, State> {
           <MuiSnackbar
             autoHideDuration={autoHideDuration}
             className={className}
+            children={children}
             message={message}
             onClose={this.handleClose}
             open={this.state.open}

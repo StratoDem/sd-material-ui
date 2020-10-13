@@ -111,8 +111,10 @@ app.layout = html.Div([
                     id='snackbar',
                     action='Update text',
                     actionStyles=dict(color='white'),
-                    message='You opened the Snackbar!')
-            ]),
+                    message='sample message',
+                    # children=html.P('You opened the Snackbar!'),
+                )]),
+
 
             spacer,
 

@@ -29,7 +29,7 @@
             "type": {
               "name": "signature",
               "type": "object",
-              "raw": "{\n  /** Elements to render inside the accordion */\n  children?: Node,\n  /** The classes to be applied to this component. The keys in this object must be valid CSS rule\n   * names, and the values must be strings for the classnames to be assigned to each rule name\n   * Valid rule names are:\n   *   root\n   *   rounded\n   *   expanded\n   *   disabled\n   */\n  classes?: {\n    root?: string,\n    rounded?: string,\n    expanded?: string,\n    disabled?: string\n  },\n  /** The className of the root element */\n  className?: string,\n  /** If true, expands the accordion by defaulgt */\n  defaultExpanded?: boolean,\n  /** The classes to be applied to the details component (the element containing the accordion's\n   * children). The keys in this object must be valid CSS rule names, and the values must be strings\n   * for the classnames to be assigned to each rule name\n   * Valid rule names are:\n   *   root\n   */\n  detailClasses?: {\n    root?: string,\n  },\n  /** If true, the accordion will be displayed in a disabled state */\n  disabled?: boolean,\n  /** If true, expands the accordion, otherwise collapse it. Setting this prop enables control\n   * over the accordion */\n  expanded?: boolean,\n  /** Dash callback to trigger an event handler */\n  fireEvent?: () => void,\n  /** The ID of the root element */\n  id: string,\n  /** The text displayed at the top of the accordion, regardless of expanded state*/\n  label?: string,\n  /** If true, rounded corners are disabled */\n  square?: boolean,\n  /** The classes to be applied to the summary component (the element containing the accordion's\n   * label). The keys in this object must be valid CSS rule names, and the values must be strings\n   * for the classnames to be assigned to each rule name\n   * Valid rule names are:\n   *   root\n   *   expanded\n   *   focused\n   *   disabled\n   *   content\n   *   expandIcon\n   */\n  summaryClasses?: {\n    root?: string,\n    expanded?: string,\n    focused?: string,\n    disabled?: string,\n    content?: string,\n    expandIcon?: string,\n  },\n}",
+              "raw": "{\r\n  /** Elements to render inside the accordion */\r\n  children?: Node,\r\n  /** The classes to be applied to this component. The keys in this object must be valid CSS rule\r\n   * names, and the values must be strings for the classnames to be assigned to each rule name\r\n   * Valid rule names are:\r\n   *   root\r\n   *   rounded\r\n   *   expanded\r\n   *   disabled\r\n   */\r\n  classes?: {\r\n    root?: string,\r\n    rounded?: string,\r\n    expanded?: string,\r\n    disabled?: string\r\n  },\r\n  /** The className of the root element */\r\n  className?: string,\r\n  /** If true, expands the accordion by defaulgt */\r\n  defaultExpanded?: boolean,\r\n  /** The classes to be applied to the details component (the element containing the accordion's\r\n   * children). The keys in this object must be valid CSS rule names, and the values must be strings\r\n   * for the classnames to be assigned to each rule name\r\n   * Valid rule names are:\r\n   *   root\r\n   */\r\n  detailClasses?: {\r\n    root?: string,\r\n  },\r\n  /** If true, the accordion will be displayed in a disabled state */\r\n  disabled?: boolean,\r\n  /** If true, expands the accordion, otherwise collapse it. Setting this prop enables control\r\n   * over the accordion */\r\n  expanded?: boolean,\r\n  /** Dash callback to trigger an event handler */\r\n  fireEvent?: () => void,\r\n  /** The ID of the root element */\r\n  id: string,\r\n  /** The text displayed at the top of the accordion, regardless of expanded state*/\r\n  label?: string,\r\n  /** If true, rounded corners are disabled */\r\n  square?: boolean,\r\n  /** The classes to be applied to the summary component (the element containing the accordion's\r\n   * label). The keys in this object must be valid CSS rule names, and the values must be strings\r\n   * for the classnames to be assigned to each rule name\r\n   * Valid rule names are:\r\n   *   root\r\n   *   expanded\r\n   *   focused\r\n   *   disabled\r\n   *   content\r\n   *   expandIcon\r\n   */\r\n  summaryClasses?: {\r\n    root?: string,\r\n    expanded?: string,\r\n    focused?: string,\r\n    disabled?: string,\r\n    content?: string,\r\n    expandIcon?: string,\r\n  },\r\n}",
               "signature": {
                 "properties": [
                   {
@@ -44,7 +44,7 @@
                     "value": {
                       "name": "signature",
                       "type": "object",
-                      "raw": "{\n  root?: string,\n  rounded?: string,\n  expanded?: string,\n  disabled?: string\n}",
+                      "raw": "{\r\n  root?: string,\r\n  rounded?: string,\r\n  expanded?: string,\r\n  disabled?: string\r\n}",
                       "signature": {
                         "properties": [
                           {
@@ -99,7 +99,7 @@
                     "value": {
                       "name": "signature",
                       "type": "object",
-                      "raw": "{\n  root?: string,\n}",
+                      "raw": "{\r\n  root?: string,\r\n}",
                       "signature": {
                         "properties": [
                           {
@@ -169,7 +169,7 @@
                     "value": {
                       "name": "signature",
                       "type": "object",
-                      "raw": "{\n  root?: string,\n  expanded?: string,\n  focused?: string,\n  disabled?: string,\n  content?: string,\n  expandIcon?: string,\n}",
+                      "raw": "{\r\n  root?: string,\r\n  expanded?: string,\r\n  focused?: string,\r\n  disabled?: string,\r\n  content?: string,\r\n  expandIcon?: string,\r\n}",
                       "signature": {
                         "properties": [
                           {
@@ -255,7 +255,7 @@
         "flowType": {
           "name": "signature",
           "type": "object",
-          "raw": "{\n  root?: string,\n  rounded?: string,\n  expanded?: string,\n  disabled?: string\n}",
+          "raw": "{\r\n  root?: string,\r\n  rounded?: string,\r\n  expanded?: string,\r\n  disabled?: string\r\n}",
           "signature": {
             "properties": [
               {
@@ -289,7 +289,7 @@
             ]
           }
         },
-        "description": "The classes to be applied to this component. The keys in this object must be valid CSS rule\nnames, and the values must be strings for the classnames to be assigned to each rule name\nValid rule names are:\n  root\n  rounded\n  expanded\n  disabled",
+        "description": "The classes to be applied to this component. The keys in this object must be valid CSS rule\r\nnames, and the values must be strings for the classnames to be assigned to each rule name\r\nValid rule names are:\r\n  root\r\n  rounded\r\n  expanded\r\n  disabled",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -318,7 +318,7 @@
         "flowType": {
           "name": "signature",
           "type": "object",
-          "raw": "{\n  root?: string,\n}",
+          "raw": "{\r\n  root?: string,\r\n}",
           "signature": {
             "properties": [
               {
@@ -331,7 +331,7 @@
             ]
           }
         },
-        "description": "The classes to be applied to the details component (the element containing the accordion's\nchildren). The keys in this object must be valid CSS rule names, and the values must be strings\nfor the classnames to be assigned to each rule name\nValid rule names are:\n  root"
+        "description": "The classes to be applied to the details component (the element containing the accordion's\r\nchildren). The keys in this object must be valid CSS rule names, and the values must be strings\r\nfor the classnames to be assigned to each rule name\r\nValid rule names are:\r\n  root"
       },
       "disabled": {
         "required": false,
@@ -349,7 +349,7 @@
         "flowType": {
           "name": "boolean"
         },
-        "description": "If true, expands the accordion, otherwise collapse it. Setting this prop enables control\nover the accordion",
+        "description": "If true, expands the accordion, otherwise collapse it. Setting this prop enables control\r\nover the accordion",
         "defaultValue": {
           "value": "false",
           "computed": false
@@ -408,7 +408,7 @@
         "flowType": {
           "name": "signature",
           "type": "object",
-          "raw": "{\n  root?: string,\n  expanded?: string,\n  focused?: string,\n  disabled?: string,\n  content?: string,\n  expandIcon?: string,\n}",
+          "raw": "{\r\n  root?: string,\r\n  expanded?: string,\r\n  focused?: string,\r\n  disabled?: string,\r\n  content?: string,\r\n  expandIcon?: string,\r\n}",
           "signature": {
             "properties": [
               {
@@ -456,7 +456,7 @@
             ]
           }
         },
-        "description": "The classes to be applied to the summary component (the element containing the accordion's\nlabel). The keys in this object must be valid CSS rule names, and the values must be strings\nfor the classnames to be assigned to each rule name\nValid rule names are:\n  root\n  expanded\n  focused\n  disabled\n  content\n  expandIcon"
+        "description": "The classes to be applied to the summary component (the element containing the accordion's\r\nlabel). The keys in this object must be valid CSS rule names, and the values must be strings\r\nfor the classnames to be assigned to each rule name\r\nValid rule names are:\r\n  root\r\n  expanded\r\n  focused\r\n  disabled\r\n  content\r\n  expandIcon"
       },
       "setProps": {
         "defaultValue": {
@@ -481,7 +481,7 @@
             "type": {
               "name": "signature",
               "type": "object",
-              "raw": "{\n  /** The classes to be applied to this component. This keys in this object must be valid CSS rule\n   * names, and the values must be strings for the classnames to be assigned to each rule name\n   * Valid rule names are:\n   *   root\n   *   fullWidth\n   *   focus\n   *   tag\n   *   tagSizeSmall\n   *   hasPopupIcon\n   *   hasClearIcon\n   *   inputRoot\n   *   input\n   *   inputFocused\n   *   endAdornment\n   *   clearIndicator\n   *   clearIndicatorDirty\n   *   popupIndicator\n   *   popupIndicatorOpen\n   *   popper\n   *   popperDisablePortal\n   *   paper\n   *   listbox\n   *   loading\n   *   noOptions\n   *   option\n   *   groupLabel\n   *   groupUl\n   * */\n  classes?: {\n    root?: string,\n    fullWidth?: string,\n    focus?: string,\n    tag?: string,\n    tagSizeSmall?: string,\n    hasPopupIcon?: string,\n    hasClearIcon?: string,\n    inputRoot?: string,\n    input?: string,\n    inputFocused?: string,\n    endAdornment?: string,\n    clearIndicator?: string,\n    clearIndicatorDirty?: string,\n    popupIndicator?: string,\n    popupIndicatorOpen?: string,\n    popper?: string,\n    popperDisablePortal?: string,\n    paper?: string,\n    listbox?: string,\n    loading?: string,\n    noOptions?: string,\n    option?: string,\n    groupLabel?: string,\n    groupUl?: string,\n  },\n  /** CSS class name of the root element */\n  className?: string,\n  /** Dash callback delay in ms - default is 500 ms */\n  dashCallbackDelay?: number,\n  /**\n   * Array of strings or nodes used to populate the list\n   * Alternatively, an Array of Objects with a structure like\n   * {label: 'My label to render', value: 'My value to ship on match'}\n   */\n  dataSource?: Array<any>,\n  /** String name for filter to be applied to user input.\n   * will later be mapped to function\n   */\n  filter?: 'caseInsensitiveFilter' | 'caseSensitiveFilter' | 'defaultFilter' |\n    'fuzzyFilter' | 'levenshteinDistanceFilter' | 'noFilter',\n  /** Dash-assigned callback that gets fired when the input changes. */\n  fireEvent?: () => void,\n  /** The hint content to display */\n  hintText?: Node,\n  /** Autocomplete ID */\n  id: string,\n  /** The max number of search results to be shown. By default it shows\n   * all the items which matches filter */\n  maxSearchResults?: number,\n  /** Auto complete menu is open if true */\n  open?: boolean,\n  /** If true, the list item is showed when a focus event triggers */\n  openOnFocus?: boolean,\n  /** Text being input to auto complete */\n  searchText?: string,\n  /** Dash callback to update props on the server. */\n  setProps?: () => void,\n  /** Override the inline-styles of the root element */\n  style?: Object,\n  /** If defined, the AutoComplete component hits this URL to search instead of string matching */\n  searchEndpointAPI?: string,\n  /** General JSON structure to send to the server */\n  searchJSONStructure?: Object,\n  /** The selected value of the input */\n  selectedValue?: any,\n}",
+              "raw": "{\r\n  /** The classes to be applied to this component. This keys in this object must be valid CSS rule\r\n   * names, and the values must be strings for the classnames to be assigned to each rule name\r\n   * Valid rule names are:\r\n   *   root\r\n   *   fullWidth\r\n   *   focus\r\n   *   tag\r\n   *   tagSizeSmall\r\n   *   hasPopupIcon\r\n   *   hasClearIcon\r\n   *   inputRoot\r\n   *   input\r\n   *   inputFocused\r\n   *   endAdornment\r\n   *   clearIndicator\r\n   *   clearIndicatorDirty\r\n   *   popupIndicator\r\n   *   popupIndicatorOpen\r\n   *   popper\r\n   *   popperDisablePortal\r\n   *   paper\r\n   *   listbox\r\n   *   loading\r\n   *   noOptions\r\n   *   option\r\n   *   groupLabel\r\n   *   groupUl\r\n   * */\r\n  classes?: {\r\n    root?: string,\r\n    fullWidth?: string,\r\n    focus?: string,\r\n    tag?: string,\r\n    tagSizeSmall?: string,\r\n    hasPopupIcon?: string,\r\n    hasClearIcon?: string,\r\n    inputRoot?: string,\r\n    input?: string,\r\n    inputFocused?: string,\r\n    endAdornment?: string,\r\n    clearIndicator?: string,\r\n    clearIndicatorDirty?: string,\r\n    popupIndicator?: string,\r\n    popupIndicatorOpen?: string,\r\n    popper?: string,\r\n    popperDisablePortal?: string,\r\n    paper?: string,\r\n    listbox?: string,\r\n    loading?: string,\r\n    noOptions?: string,\r\n    option?: string,\r\n    groupLabel?: string,\r\n    groupUl?: string,\r\n  },\r\n  /** CSS class name of the root element */\r\n  className?: string,\r\n  /** Dash callback delay in ms - default is 500 ms */\r\n  dashCallbackDelay?: number,\r\n  /**\r\n   * Array of strings or nodes used to populate the list\r\n   * Alternatively, an Array of Objects with a structure like\r\n   * {label: 'My label to render', value: 'My value to ship on match'}\r\n   */\r\n  dataSource?: Array<any>,\r\n  /** String name for filter to be applied to user input.\r\n   * will later be mapped to function\r\n   */\r\n  filter?: 'caseInsensitiveFilter' | 'caseSensitiveFilter' | 'defaultFilter' |\r\n    'fuzzyFilter' | 'levenshteinDistanceFilter' | 'noFilter',\r\n  /** Dash-assigned callback that gets fired when the input changes. */\r\n  fireEvent?: () => void,\r\n  /** The hint content to display */\r\n  hintText?: Node,\r\n  /** Autocomplete ID */\r\n  id: string,\r\n  /** The max number of search results to be shown. By default it shows\r\n   * all the items which matches filter */\r\n  maxSearchResults?: number,\r\n  /** Auto complete menu is open if true */\r\n  open?: boolean,\r\n  /** If true, the list item is showed when a focus event triggers */\r\n  openOnFocus?: boolean,\r\n  /** Text being input to auto complete */\r\n  searchText?: string,\r\n  /** Dash callback to update props on the server. */\r\n  setProps?: () => void,\r\n  /** Override the inline-styles of the root element */\r\n  style?: Object,\r\n  /** If defined, the AutoComplete component hits this URL to search instead of string matching */\r\n  searchEndpointAPI?: string,\r\n  /** General JSON structure to send to the server */\r\n  searchJSONStructure?: Object,\r\n  /** The selected value of the input */\r\n  selectedValue?: any,\r\n}",
               "signature": {
                 "properties": [
                   {
@@ -489,7 +489,7 @@
                     "value": {
                       "name": "signature",
                       "type": "object",
-                      "raw": "{\n  root?: string,\n  fullWidth?: string,\n  focus?: string,\n  tag?: string,\n  tagSizeSmall?: string,\n  hasPopupIcon?: string,\n  hasClearIcon?: string,\n  inputRoot?: string,\n  input?: string,\n  inputFocused?: string,\n  endAdornment?: string,\n  clearIndicator?: string,\n  clearIndicatorDirty?: string,\n  popupIndicator?: string,\n  popupIndicatorOpen?: string,\n  popper?: string,\n  popperDisablePortal?: string,\n  paper?: string,\n  listbox?: string,\n  loading?: string,\n  noOptions?: string,\n  option?: string,\n  groupLabel?: string,\n  groupUl?: string,\n}",
+                      "raw": "{\r\n  root?: string,\r\n  fullWidth?: string,\r\n  focus?: string,\r\n  tag?: string,\r\n  tagSizeSmall?: string,\r\n  hasPopupIcon?: string,\r\n  hasClearIcon?: string,\r\n  inputRoot?: string,\r\n  input?: string,\r\n  inputFocused?: string,\r\n  endAdornment?: string,\r\n  clearIndicator?: string,\r\n  clearIndicatorDirty?: string,\r\n  popupIndicator?: string,\r\n  popupIndicatorOpen?: string,\r\n  popper?: string,\r\n  popperDisablePortal?: string,\r\n  paper?: string,\r\n  listbox?: string,\r\n  loading?: string,\r\n  noOptions?: string,\r\n  option?: string,\r\n  groupLabel?: string,\r\n  groupUl?: string,\r\n}",
                       "signature": {
                         "properties": [
                           {
@@ -696,7 +696,7 @@
                     "key": "filter",
                     "value": {
                       "name": "union",
-                      "raw": "'caseInsensitiveFilter' | 'caseSensitiveFilter' | 'defaultFilter' |\n'fuzzyFilter' | 'levenshteinDistanceFilter' | 'noFilter'",
+                      "raw": "'caseInsensitiveFilter' | 'caseSensitiveFilter' | 'defaultFilter' |\r\n  'fuzzyFilter' | 'levenshteinDistanceFilter' | 'noFilter'",
                       "elements": [
                         {
                           "name": "literal",
@@ -877,7 +877,7 @@
       },
       {
         "name": "handleChange",
-        "docblock": "calls function to fire callback and updates searchText in state\n@param searchText\n@param params",
+        "docblock": "calls function to fire callback and updates searchText in state\r\n@param searchText\r\n@param params",
         "modifiers": [],
         "params": [
           {
@@ -903,7 +903,7 @@
       },
       {
         "name": "_updateTextProps",
-        "docblock": "executes setProps function with searchText to update searchText in props;\nfires Dash callback event\n@param searchText\n@private",
+        "docblock": "executes setProps function with searchText to update searchText in props;\r\nfires Dash callback event\r\n@param searchText\r\n@private",
         "modifiers": [],
         "params": [
           {
@@ -916,7 +916,7 @@
           }
         ],
         "returns": null,
-        "description": "executes setProps function with searchText to update searchText in props;\nfires Dash callback event"
+        "description": "executes setProps function with searchText to update searchText in props;\r\nfires Dash callback event"
       }
     ],
     "props": {
@@ -925,7 +925,7 @@
         "flowType": {
           "name": "signature",
           "type": "object",
-          "raw": "{\n  root?: string,\n  fullWidth?: string,\n  focus?: string,\n  tag?: string,\n  tagSizeSmall?: string,\n  hasPopupIcon?: string,\n  hasClearIcon?: string,\n  inputRoot?: string,\n  input?: string,\n  inputFocused?: string,\n  endAdornment?: string,\n  clearIndicator?: string,\n  clearIndicatorDirty?: string,\n  popupIndicator?: string,\n  popupIndicatorOpen?: string,\n  popper?: string,\n  popperDisablePortal?: string,\n  paper?: string,\n  listbox?: string,\n  loading?: string,\n  noOptions?: string,\n  option?: string,\n  groupLabel?: string,\n  groupUl?: string,\n}",
+          "raw": "{\r\n  root?: string,\r\n  fullWidth?: string,\r\n  focus?: string,\r\n  tag?: string,\r\n  tagSizeSmall?: string,\r\n  hasPopupIcon?: string,\r\n  hasClearIcon?: string,\r\n  inputRoot?: string,\r\n  input?: string,\r\n  inputFocused?: string,\r\n  endAdornment?: string,\r\n  clearIndicator?: string,\r\n  clearIndicatorDirty?: string,\r\n  popupIndicator?: string,\r\n  popupIndicatorOpen?: string,\r\n  popper?: string,\r\n  popperDisablePortal?: string,\r\n  paper?: string,\r\n  listbox?: string,\r\n  loading?: string,\r\n  noOptions?: string,\r\n  option?: string,\r\n  groupLabel?: string,\r\n  groupUl?: string,\r\n}",
           "signature": {
             "properties": [
               {
@@ -1099,7 +1099,7 @@
             ]
           }
         },
-        "description": "The classes to be applied to this component. This keys in this object must be valid CSS rule\nnames, and the values must be strings for the classnames to be assigned to each rule name\nValid rule names are:\n  root\n  fullWidth\n  focus\n  tag\n  tagSizeSmall\n  hasPopupIcon\n  hasClearIcon\n  inputRoot\n  input\n  inputFocused\n  endAdornment\n  clearIndicator\n  clearIndicatorDirty\n  popupIndicator\n  popupIndicatorOpen\n  popper\n  popperDisablePortal\n  paper\n  listbox\n  loading\n  noOptions\n  option\n  groupLabel\n  groupUl"
+        "description": "The classes to be applied to this component. This keys in this object must be valid CSS rule\r\nnames, and the values must be strings for the classnames to be assigned to each rule name\r\nValid rule names are:\r\n  root\r\n  fullWidth\r\n  focus\r\n  tag\r\n  tagSizeSmall\r\n  hasPopupIcon\r\n  hasClearIcon\r\n  inputRoot\r\n  input\r\n  inputFocused\r\n  endAdornment\r\n  clearIndicator\r\n  clearIndicatorDirty\r\n  popupIndicator\r\n  popupIndicatorOpen\r\n  popper\r\n  popperDisablePortal\r\n  paper\r\n  listbox\r\n  loading\r\n  noOptions\r\n  option\r\n  groupLabel\r\n  groupUl"
       },
       "className": {
         "required": false,
@@ -1130,7 +1130,7 @@
           ],
           "raw": "Array<any>"
         },
-        "description": "Array of strings or nodes used to populate the list\nAlternatively, an Array of Objects with a structure like\n{label: 'My label to render', value: 'My value to ship on match'}",
+        "description": "Array of strings or nodes used to populate the list\r\nAlternatively, an Array of Objects with a structure like\r\n{label: 'My label to render', value: 'My value to ship on match'}",
         "defaultValue": {
           "value": "[]",
           "computed": false
@@ -1140,7 +1140,7 @@
         "required": false,
         "flowType": {
           "name": "union",
-          "raw": "'caseInsensitiveFilter' | 'caseSensitiveFilter' | 'defaultFilter' |\n'fuzzyFilter' | 'levenshteinDistanceFilter' | 'noFilter'",
+          "raw": "'caseInsensitiveFilter' | 'caseSensitiveFilter' | 'defaultFilter' |\r\n  'fuzzyFilter' | 'levenshteinDistanceFilter' | 'noFilter'",
           "elements": [
             {
               "name": "literal",
@@ -1168,7 +1168,7 @@
             }
           ]
         },
-        "description": "String name for filter to be applied to user input.\nwill later be mapped to function",
+        "description": "String name for filter to be applied to user input.\r\nwill later be mapped to function",
         "defaultValue": {
           "value": "\"defaultFilter\"",
           "computed": false
@@ -1216,7 +1216,7 @@
         "flowType": {
           "name": "number"
         },
-        "description": "The max number of search results to be shown. By default it shows\nall the items which matches filter",
+        "description": "The max number of search results to be shown. By default it shows\r\nall the items which matches filter",
         "defaultValue": {
           "value": "5",
           "computed": false
@@ -1344,7 +1344,7 @@
             "type": {
               "name": "signature",
               "type": "object",
-              "raw": "{\n  /** Label to use for the navigation item */\n  label: string,\n  /** Value for the navigation item */\n  value: string | number,\n  /** ID of component to jump to when this option is selected */\n  targetId?: string,\n  /** Class to apply to the icon span */\n  iconClassName?: string,\n}",
+              "raw": "{\r\n  /** Label to use for the navigation item */\r\n  label: string,\r\n  /** Value for the navigation item */\r\n  value: string | number,\r\n  /** ID of component to jump to when this option is selected */\r\n  targetId?: string,\r\n  /** Class to apply to the icon span */\r\n  iconClassName?: string,\r\n}",
               "signature": {
                 "properties": [
                   {
@@ -1416,7 +1416,7 @@
         "flowType": {
           "name": "signature",
           "type": "object",
-          "raw": "{\n  root?: string,\n}",
+          "raw": "{\r\n  root?: string,\r\n}",
           "signature": {
             "properties": [
               {
@@ -1429,7 +1429,7 @@
             ]
           }
         },
-        "description": "The classes to be applied to this component. This keys in this object must be valid CSS rule\nnames, and the values must be strings for the classnames to be assigned to each rule name\nValid rule names are:\n  root",
+        "description": "The classes to be applied to this component. This keys in this object must be valid CSS rule\r\nnames, and the values must be strings for the classnames to be assigned to each rule name\r\nValid rule names are:\r\n  root",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -1465,7 +1465,7 @@
             {
               "name": "signature",
               "type": "object",
-              "raw": "{\n  /** Label to use for the navigation item */\n  label: string,\n  /** Value for the navigation item */\n  value: string | number,\n  /** ID of component to jump to when this option is selected */\n  targetId?: string,\n  /** Class to apply to the icon span */\n  iconClassName?: string,\n}",
+              "raw": "{\r\n  /** Label to use for the navigation item */\r\n  label: string,\r\n  /** Value for the navigation item */\r\n  value: string | number,\r\n  /** ID of component to jump to when this option is selected */\r\n  targetId?: string,\r\n  /** Class to apply to the icon span */\r\n  iconClassName?: string,\r\n}",
               "signature": {
                 "properties": [
                   {
@@ -1553,7 +1553,7 @@
             }
           }
         },
-        "description": "Dash-assigned callback that should be called whenever any of the\nproperties change",
+        "description": "Dash-assigned callback that should be called whenever any of the\r\nproperties change",
         "defaultValue": {
           "value": "() => {}",
           "computed": false
@@ -1579,7 +1579,7 @@
         "flowType": {
           "name": "Node"
         },
-        "description": "This is what will be displayed inside the button.\nIf a label is specified, the text within the label prop will\nbe displayed. Otherwise, the component will expect children\nwhich will then be displayed. (In our example,\nwe are nesting an `<input type=\"file\" />` and a `span`\nthat acts as our label to be displayed.) This only\napplies to flat and disableShadow buttons.",
+        "description": "This is what will be displayed inside the button.\r\nIf a label is specified, the text within the label prop will\r\nbe displayed. Otherwise, the component will expect children\r\nwhich will then be displayed. (In our example,\r\nwe are nesting an `<input type=\"file\" />` and a `span`\r\nthat acts as our label to be displayed.) This only\r\napplies to flat and disableShadow buttons.",
         "defaultValue": {
           "value": "null",
           "computed": false
@@ -1590,7 +1590,7 @@
         "flowType": {
           "name": "signature",
           "type": "object",
-          "raw": "{\n  root?: string,\n  label?: string,\n  text?: string,\n  textPrimary?: string,\n  textSecondary?: string,\n  outline?: string,\n  outlinedPrimary?: string,\n  outlinedSecondary?: string,\n  contained?: string,\n  containedPrimary?: string,\n  containedSecondary?: string,\n  disableElevation?: string,\n  focusVisible?: string,\n  disabled?: string,\n  colorInherit?: string,\n  textSizeSmall?: string,\n  textSizeLarge?: string,\n  outlinedSizeSmall?: string,\n  outlinedSizeLarge?: string,\n  containedSizeSmall?: string,\n  containedSizeLarge?: string,\n  sizeSmall?: string,\n  sizeLarge?: string,\n  fullWidth?: string,\n  startIcon?: string,\n  endIcon?: string,\n  iconSizeSmall?: string,\n  iconSizeMedium?: string,\n  iconSizeLarge?: string,\n}",
+          "raw": "{\r\n  root?: string,\r\n  label?: string,\r\n  text?: string,\r\n  textPrimary?: string,\r\n  textSecondary?: string,\r\n  outline?: string,\r\n  outlinedPrimary?: string,\r\n  outlinedSecondary?: string,\r\n  contained?: string,\r\n  containedPrimary?: string,\r\n  containedSecondary?: string,\r\n  disableElevation?: string,\r\n  focusVisible?: string,\r\n  disabled?: string,\r\n  colorInherit?: string,\r\n  textSizeSmall?: string,\r\n  textSizeLarge?: string,\r\n  outlinedSizeSmall?: string,\r\n  outlinedSizeLarge?: string,\r\n  containedSizeSmall?: string,\r\n  containedSizeLarge?: string,\r\n  sizeSmall?: string,\r\n  sizeLarge?: string,\r\n  fullWidth?: string,\r\n  startIcon?: string,\r\n  endIcon?: string,\r\n  iconSizeSmall?: string,\r\n  iconSizeMedium?: string,\r\n  iconSizeLarge?: string,\r\n}",
           "signature": {
             "properties": [
               {
@@ -1799,7 +1799,7 @@
             ]
           }
         },
-        "description": "The classes to be applied to this component. This keys in this object must be valid CSS rule\nnames, and the values must be strings for the classnames to be assigned to each rule name\nValid rule names are:\n  root\n  label\n  text\n  textPrimary\n  textSecondary\n  outline\n  outlinedPrimary\n  outlinedSecondary\n  contained\n  containedPrimary\n  containedSecondary\n  disableElevation\n  focusVisible\n  disabled\n  colorInherit\n  textSizeSmall\n  textSizeLarge\n  outlinedSizeSmall\n  outlinedSizeLarge\n  containedSizeSmall\n  containedSizeLarge\n  sizeSmall\n  sizeLarge\n  fullWidth\n  startIcon\n  endIcon\n  iconSizeSmall\n  iconSizeMedium\n  iconSizeLarge\n\n  OR\n\n  root\n  edgeStart\n  edgeEnd\n  colorInherit\n  colorPrimary\n  colorSecondary\n  disabled\n  sizeSmall\n  label\n\nSee https://material-ui.com/api/button/#css\nand https://material-ui.com/api/icon-button/#css",
+        "description": "The classes to be applied to this component. This keys in this object must be valid CSS rule\r\nnames, and the values must be strings for the classnames to be assigned to each rule name\r\nValid rule names are:\r\n  root\r\n  label\r\n  text\r\n  textPrimary\r\n  textSecondary\r\n  outline\r\n  outlinedPrimary\r\n  outlinedSecondary\r\n  contained\r\n  containedPrimary\r\n  containedSecondary\r\n  disableElevation\r\n  focusVisible\r\n  disabled\r\n  colorInherit\r\n  textSizeSmall\r\n  textSizeLarge\r\n  outlinedSizeSmall\r\n  outlinedSizeLarge\r\n  containedSizeSmall\r\n  containedSizeLarge\r\n  sizeSmall\r\n  sizeLarge\r\n  fullWidth\r\n  startIcon\r\n  endIcon\r\n  iconSizeSmall\r\n  iconSizeMedium\r\n  iconSizeLarge\r\n\n  OR\r\n\n  root\r\n  edgeStart\r\n  edgeEnd\r\n  colorInherit\r\n  colorPrimary\r\n  colorSecondary\r\n  disabled\r\n  sizeSmall\r\n  label\r\n\nSee https://material-ui.com/api/button/#css\r\nand https://material-ui.com/api/icon-button/#css",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -2008,7 +2008,7 @@
         "flowType": {
           "name": "signature",
           "type": "object",
-          "raw": "{\n  root?: string,\n}",
+          "raw": "{\r\n  root?: string,\r\n}",
           "signature": {
             "properties": [
               {
@@ -2021,7 +2021,7 @@
             ]
           }
         },
-        "description": "The classes to be applied to this component. This keys in this object must be valid CSS rule\nnames, and the values must be strings for the classnames to be assigned to each rule name\nValid rule names are:\n  root",
+        "description": "The classes to be applied to this component. This keys in this object must be valid CSS rule\r\nnames, and the values must be strings for the classnames to be assigned to each rule name\r\nValid rule names are:\r\n  root",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -2043,7 +2043,7 @@
         "flowType": {
           "name": "signature",
           "type": "object",
-          "raw": "{\n  root?: string,\n}",
+          "raw": "{\r\n  root?: string,\r\n}",
           "signature": {
             "properties": [
               {
@@ -2056,7 +2056,7 @@
             ]
           }
         },
-        "description": "The classes to be applied to the content component. This keys in this object must be valid\nCSS rule names, and the values must be strings for the classnames to be assigned to each rule\nname",
+        "description": "The classes to be applied to the content component. This keys in this object must be valid\r\nCSS rule names, and the values must be strings for the classnames to be assigned to each rule\r\nname",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -2126,7 +2126,7 @@
         "flowType": {
           "name": "signature",
           "type": "object",
-          "raw": "{\n  root?: string,\n  checked?: string,\n  disabled?: string,\n  indeterminate?: string,\n  colorPrimary?: string,\n  colorSecondary?: string,\n  sizeSmall?: string,\n}",
+          "raw": "{\r\n  root?: string,\r\n  checked?: string,\r\n  disabled?: string,\r\n  indeterminate?: string,\r\n  colorPrimary?: string,\r\n  colorSecondary?: string,\r\n  sizeSmall?: string,\r\n}",
           "signature": {
             "properties": [
               {
@@ -2181,7 +2181,7 @@
             ]
           }
         },
-        "description": "The classes to be applied to this component. This keys in this object must be valid CSS rule\nnames, and the values must be strings for the classnames to be assigned to each rule name\nValid rule names are:\n  root\n  checked\n  disabled\n  indeterminate\n  colorPrimary\n  colorSecondary",
+        "description": "The classes to be applied to this component. This keys in this object must be valid CSS rule\r\nnames, and the values must be strings for the classnames to be assigned to each rule name\r\nValid rule names are:\r\n  root\r\n  checked\r\n  disabled\r\n  indeterminate\r\n  colorPrimary\r\n  colorSecondary",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -2299,7 +2299,7 @@
         "flowType": {
           "name": "signature",
           "type": "object",
-          "raw": "{\n  root?: string,\n  static?: string,\n  indeterminate?: string,\n  colorPrimary?: string,\n  colorSecondary?: string,\n  circle?: string,\n  circleStatic?: string,\n  circleIndeterminate?: string,\n  circleDisableShrink?: string,\n}",
+          "raw": "{\r\n  root?: string,\r\n  static?: string,\r\n  indeterminate?: string,\r\n  colorPrimary?: string,\r\n  colorSecondary?: string,\r\n  circle?: string,\r\n  circleStatic?: string,\r\n  circleIndeterminate?: string,\r\n  circleDisableShrink?: string,\r\n}",
           "signature": {
             "properties": [
               {
@@ -2368,7 +2368,7 @@
             ]
           }
         },
-        "description": "The classes to be applied to this component. This keys in this object must be valid CSS rule\nnames, and the values must be strings for the classnames to be assigned to each rule name\nValid rule names are:\n  root\n  static\n  indeterminate\n  colorPrimary\n  colorSecondary\n  circle\n  circleStatic\n  circleIndeterminate\n  circleDisableShrink",
+        "description": "The classes to be applied to this component. This keys in this object must be valid CSS rule\r\nnames, and the values must be strings for the classnames to be assigned to each rule name\r\nValid rule names are:\r\n  root\r\n  static\r\n  indeterminate\r\n  colorPrimary\r\n  colorSecondary\r\n  circle\r\n  circleStatic\r\n  circleIndeterminate\r\n  circleDisableShrink",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -2453,7 +2453,7 @@
             "type": {
               "name": "signature",
               "type": "object",
-              "raw": "{\n  /** The contents of the transition element */\n  children?: Node,\n  /** CSS class name of the root element */\n  className?: string,\n  /** The pixel height of the child element when collapsed */\n  collapsedHeight: number,\n  /** Dash ID of the transition element */\n  id: string,\n  /** Dash callback to update props on the server */\n  setProps?: () => void,\n  /** If true, the transition element is displayed, else it will be hidden */\n  visible?: boolean\n}",
+              "raw": "{\r\n  /** The contents of the transition element */\r\n  children?: Node,\r\n  /** CSS class name of the root element */\r\n  className?: string,\r\n  /** The pixel height of the child element when collapsed */\r\n  collapsedHeight: number,\r\n  /** Dash ID of the transition element */\r\n  id: string,\r\n  /** Dash callback to update props on the server */\r\n  setProps?: () => void,\r\n  /** If true, the transition element is displayed, else it will be hidden */\r\n  visible?: boolean\r\n}",
               "signature": {
                 "properties": [
                   {
@@ -2640,7 +2640,7 @@
             "type": {
               "name": "signature",
               "type": "object",
-              "raw": "{\n  /** Dialog ID */\n  id: string,\n  /** List of space separated id's of elements to use as aria labels  */\n  ariaLabelledBy?: string,\n  /** Children to render inside of the Dialog */\n  children?: Node,\n  /** The classes to be applied to this component. This keys in this object must be valid CSS rule\n   * names, and the values must be strings for the classnames to be assigned to each rule name\n   * Valid rule names are:\n   *   root\n   *   container\n   *   paper\n   *   scrollPaper\n   *   scrollBody\n   *   paperScrollPaper\n   *   paperScrollBody\n   *   paperWidthFalse\n   *   paperWidthXs\n   *   paperWidthSm\n   *   paperWidthMd\n   *   paperWidthLg\n   *   paperWidthXl\n   *   paperFullWidth\n   *   paperFullScreen\n   * */\n  classes?: {\n    root?: string,\n    container?: string,\n    paper?: string,\n    scrollPaper?: string,\n    scrollBody?: string,\n    paperScrollPaper?: string,\n    paperScrollBody?: string,\n    paperWidthFalse?: string,\n    paperWidthXs?: string,\n    paperWidthSm?: string,\n    paperWidthMd?: string,\n    paperWidthLg?: string,\n    paperWidthXl?: string,\n    paperFullWidth?: string,\n    paperFullScreen?: string\n  },\n  /** CSS class name of the root element */\n  className?: string,\n  /** Is the dialog open?\n   *\n   * IMPORTANT: When using this component in Dash, a listener must be set up (either as state or\n   * an input) for this component's props.open value in order to achieve the desired behavior.\n   * If such a listener is not in place, the non-modal version of this dialog will contaminate\n   * other callbacks in the browser\n   */\n  open?: boolean,\n  /** If set to true, the body content of the Dialog will be scrollable. */\n  autoScrollBodyContent?: boolean,\n  /** The className to add to the component container */\n  componentContainerClassName?: string,\n  /** The className to add to the content container */\n  fullWidth?: boolean,\n  /** The className to add to the Overlay component rendered behind the Dialog */\n  /** If set to true, the Close Icon will show in the upper right corner of the dialog, closing the Dialog browser side*/\n  useBrowserSideClose?: boolean,\n  /** \"paper\" or \"body\", Determines scroll container */\n  scroll?: Object,\n  /** Styles to be implemented as inline css */\n  style?: Object,\n  /** Dash callback to update props on the server */\n  setProps?: (props: { modal?: boolean, open?: boolean }) => void,\n}",
+              "raw": "{\r\n  /** Dialog ID */\r\n  id: string,\r\n  /** List of space separated id's of elements to use as aria labels  */\r\n  ariaLabelledBy?: string,\r\n  /** Children to render inside of the Dialog */\r\n  children?: Node,\r\n  /** The classes to be applied to this component. This keys in this object must be valid CSS rule\r\n   * names, and the values must be strings for the classnames to be assigned to each rule name\r\n   * Valid rule names are:\r\n   *   root\r\n   *   container\r\n   *   paper\r\n   *   scrollPaper\r\n   *   scrollBody\r\n   *   paperScrollPaper\r\n   *   paperScrollBody\r\n   *   paperWidthFalse\r\n   *   paperWidthXs\r\n   *   paperWidthSm\r\n   *   paperWidthMd\r\n   *   paperWidthLg\r\n   *   paperWidthXl\r\n   *   paperFullWidth\r\n   *   paperFullScreen\r\n   * */\r\n  classes?: {\r\n    root?: string,\r\n    container?: string,\r\n    paper?: string,\r\n    scrollPaper?: string,\r\n    scrollBody?: string,\r\n    paperScrollPaper?: string,\r\n    paperScrollBody?: string,\r\n    paperWidthFalse?: string,\r\n    paperWidthXs?: string,\r\n    paperWidthSm?: string,\r\n    paperWidthMd?: string,\r\n    paperWidthLg?: string,\r\n    paperWidthXl?: string,\r\n    paperFullWidth?: string,\r\n    paperFullScreen?: string\r\n  },\r\n  /** CSS class name of the root element */\r\n  className?: string,\r\n  /** Is the dialog open?\r\n   *\r\n   * IMPORTANT: When using this component in Dash, a listener must be set up (either as state or\r\n   * an input) for this component's props.open value in order to achieve the desired behavior.\r\n   * If such a listener is not in place, the non-modal version of this dialog will contaminate\r\n   * other callbacks in the browser\r\n   */\r\n  open?: boolean,\r\n  /** If set to true, the body content of the Dialog will be scrollable. */\r\n  autoScrollBodyContent?: boolean,\r\n  /** The className to add to the component container */\r\n  componentContainerClassName?: string,\r\n  /** The className to add to the content container */\r\n  fullWidth?: boolean,\r\n  /** The className to add to the Overlay component rendered behind the Dialog */\r\n  /** If set to true, the Close Icon will show in the upper right corner of the dialog, closing the Dialog browser side*/\r\n  useBrowserSideClose?: boolean,\r\n  /** \"paper\" or \"body\", Determines scroll container */\r\n  scroll?: Object,\r\n  /** Styles to be implemented as inline css */\r\n  style?: Object,\r\n  /** Dash callback to update props on the server */\r\n  setProps?: (props: { modal?: boolean, open?: boolean }) => void,\r\n}",
               "signature": {
                 "properties": [
                   {
@@ -2669,7 +2669,7 @@
                     "value": {
                       "name": "signature",
                       "type": "object",
-                      "raw": "{\n  root?: string,\n  container?: string,\n  paper?: string,\n  scrollPaper?: string,\n  scrollBody?: string,\n  paperScrollPaper?: string,\n  paperScrollBody?: string,\n  paperWidthFalse?: string,\n  paperWidthXs?: string,\n  paperWidthSm?: string,\n  paperWidthMd?: string,\n  paperWidthLg?: string,\n  paperWidthXl?: string,\n  paperFullWidth?: string,\n  paperFullScreen?: string\n}",
+                      "raw": "{\r\n  root?: string,\r\n  container?: string,\r\n  paper?: string,\r\n  scrollPaper?: string,\r\n  scrollBody?: string,\r\n  paperScrollPaper?: string,\r\n  paperScrollBody?: string,\r\n  paperWidthFalse?: string,\r\n  paperWidthXs?: string,\r\n  paperWidthSm?: string,\r\n  paperWidthMd?: string,\r\n  paperWidthLg?: string,\r\n  paperWidthXl?: string,\r\n  paperFullWidth?: string,\r\n  paperFullScreen?: string\r\n}",
                       "signature": {
                         "properties": [
                           {
@@ -2934,7 +2934,7 @@
         "flowType": {
           "name": "signature",
           "type": "object",
-          "raw": "{\n  root?: string,\n  container?: string,\n  paper?: string,\n  scrollPaper?: string,\n  scrollBody?: string,\n  paperScrollPaper?: string,\n  paperScrollBody?: string,\n  paperWidthFalse?: string,\n  paperWidthXs?: string,\n  paperWidthSm?: string,\n  paperWidthMd?: string,\n  paperWidthLg?: string,\n  paperWidthXl?: string,\n  paperFullWidth?: string,\n  paperFullScreen?: string\n}",
+          "raw": "{\r\n  root?: string,\r\n  container?: string,\r\n  paper?: string,\r\n  scrollPaper?: string,\r\n  scrollBody?: string,\r\n  paperScrollPaper?: string,\r\n  paperScrollBody?: string,\r\n  paperWidthFalse?: string,\r\n  paperWidthXs?: string,\r\n  paperWidthSm?: string,\r\n  paperWidthMd?: string,\r\n  paperWidthLg?: string,\r\n  paperWidthXl?: string,\r\n  paperFullWidth?: string,\r\n  paperFullScreen?: string\r\n}",
           "signature": {
             "properties": [
               {
@@ -3045,7 +3045,7 @@
             ]
           }
         },
-        "description": "The classes to be applied to this component. This keys in this object must be valid CSS rule\nnames, and the values must be strings for the classnames to be assigned to each rule name\nValid rule names are:\n  root\n  container\n  paper\n  scrollPaper\n  scrollBody\n  paperScrollPaper\n  paperScrollBody\n  paperWidthFalse\n  paperWidthXs\n  paperWidthSm\n  paperWidthMd\n  paperWidthLg\n  paperWidthXl\n  paperFullWidth\n  paperFullScreen",
+        "description": "The classes to be applied to this component. This keys in this object must be valid CSS rule\r\nnames, and the values must be strings for the classnames to be assigned to each rule name\r\nValid rule names are:\r\n  root\r\n  container\r\n  paper\r\n  scrollPaper\r\n  scrollBody\r\n  paperScrollPaper\r\n  paperScrollBody\r\n  paperWidthFalse\r\n  paperWidthXs\r\n  paperWidthSm\r\n  paperWidthMd\r\n  paperWidthLg\r\n  paperWidthXl\r\n  paperFullWidth\r\n  paperFullScreen",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -3067,7 +3067,7 @@
         "flowType": {
           "name": "boolean"
         },
-        "description": "Is the dialog open?\n\nIMPORTANT: When using this component in Dash, a listener must be set up (either as state or\nan input) for this component's props.open value in order to achieve the desired behavior.\nIf such a listener is not in place, the non-modal version of this dialog will contaminate\nother callbacks in the browser",
+        "description": "Is the dialog open?\r\n\nIMPORTANT: When using this component in Dash, a listener must be set up (either as state or\r\nan input) for this component's props.open value in order to achieve the desired behavior.\r\nIf such a listener is not in place, the non-modal version of this dialog will contaminate\r\nother callbacks in the browser",
         "defaultValue": {
           "value": "false",
           "computed": false
@@ -3200,7 +3200,7 @@
         "flowType": {
           "name": "signature",
           "type": "object",
-          "raw": "{\n  root?: string,\n  absolute?: string,\n  vertical?: string,\n  light?: string,\n  middle?: string,\n  inset?: string,\n  flexItem?: string,\n}",
+          "raw": "{\r\n  root?: string,\r\n  absolute?: string,\r\n  vertical?: string,\r\n  light?: string,\r\n  middle?: string,\r\n  inset?: string,\r\n  flexItem?: string,\r\n}",
           "signature": {
             "properties": [
               {
@@ -3255,7 +3255,7 @@
             ]
           }
         },
-        "description": "The classes to be applied to this component. This keys in this object must be valid CSS rule\nnames, and the values must be strings for the classnames to be assigned to each rule name\nValid rule names are:\n  root\n  absolute\n  vertical\n  light\n  middle\n  inset\n  flexItem",
+        "description": "The classes to be applied to this component. This keys in this object must be valid CSS rule\r\nnames, and the values must be strings for the classnames to be assigned to each rule name\r\nValid rule names are:\r\n  root\r\n  absolute\r\n  vertical\r\n  light\r\n  middle\r\n  inset\r\n  flexItem",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -3284,7 +3284,7 @@
         "flowType": {
           "name": "string"
         },
-        "description": "Controls where the drawer appears. Must be one of \"top\", \"bottom\", \"left\", or \"right\"\nDefaults to \"left\"",
+        "description": "Controls where the drawer appears. Must be one of \"top\", \"bottom\", \"left\", or \"right\"\r\nDefaults to \"left\"",
         "defaultValue": {
           "value": "\"left\"",
           "computed": false
@@ -3313,7 +3313,7 @@
         "flowType": {
           "name": "signature",
           "type": "object",
-          "raw": "{\n  root?: string,\n  docked?: string,\n  paper?: string,\n  paperAnchorLeft?: string,\n  paperAnchorRight?: string,\n  paperAnchorTop?: string,\n  paperAnchorBottom?: string,\n  paperAnchorDockedLeft?: string,\n  paperAnchorDockedTop?: string,\n  paperAnchorDockedRight?: string,\n  paperAnchorDockedBottom?: string,\n  modal?: string\n}",
+          "raw": "{\r\n  root?: string,\r\n  docked?: string,\r\n  paper?: string,\r\n  paperAnchorLeft?: string,\r\n  paperAnchorRight?: string,\r\n  paperAnchorTop?: string,\r\n  paperAnchorBottom?: string,\r\n  paperAnchorDockedLeft?: string,\r\n  paperAnchorDockedTop?: string,\r\n  paperAnchorDockedRight?: string,\r\n  paperAnchorDockedBottom?: string,\r\n  modal?: string\r\n}",
           "signature": {
             "properties": [
               {
@@ -3403,7 +3403,7 @@
             ]
           }
         },
-        "description": "The classes to be applied to this component. This keys in this object must be valid CSS rule\nnames, and the values must be strings for the classnames to be assigned to each rule name\nValid rule names are:\n  root\n  docked\n  paper\n  paperAnchorLeft\n  paperAnchorRight\n  paperAnchorTop\n  paperAnchorBottom\n  paperAnchorDockedLeft\n  paperAnchorDockedTop\n  paperAnchorDockedRight\n  paperAnchorDockedBottom\n  modal",
+        "description": "The classes to be applied to this component. This keys in this object must be valid CSS rule\r\nnames, and the values must be strings for the classnames to be assigned to each rule name\r\nValid rule names are:\r\n  root\r\n  docked\r\n  paper\r\n  paperAnchorLeft\r\n  paperAnchorRight\r\n  paperAnchorTop\r\n  paperAnchorBottom\r\n  paperAnchorDockedLeft\r\n  paperAnchorDockedTop\r\n  paperAnchorDockedRight\r\n  paperAnchorDockedBottom\r\n  modal",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -3425,7 +3425,7 @@
         "flowType": {
           "name": "boolean"
         },
-        "description": "Is the drawer open?\n\nIMPORTANT: When using this component in Dash, a listener must be set up (either as state or\nan input) for this component's props.open value in order to achieve the desired behavior.",
+        "description": "Is the drawer open?\r\n\nIMPORTANT: When using this component in Dash, a listener must be set up (either as state or\r\nan input) for this component's props.open value in order to achieve the desired behavior.",
         "defaultValue": {
           "value": "false",
           "computed": false
@@ -3497,7 +3497,7 @@
             "type": {
               "name": "signature",
               "type": "object",
-              "raw": "{\n  /** If true, the width of the popover will automatically be set according to the items inside\n   * the menu, otherwise it will be at least the width of the select input. */\n  autoWidth?: boolean,\n  /** The classes to be applied to this component. This keys in this object must be valid CSS rule\n   * names, and the values must be strings for the classnames to be assigned to each rule name\n   * Valid rule names are:\n   *   root\n   *   select\n   *   filled\n   *   outlined\n   *   selectMenu\n   *   disabled\n   */\n  classes?: {\n    root?: string,\n    select?: string,\n    filled?: string,\n    outlined?: string,\n    selectMenu?: string,\n    disabled?: string\n  },\n  /** If true, this dropdown will not be interactive */\n  disabled?: boolean,\n  /** Text to display under the menu */\n  helperText?: string,\n  /** The ID used for this dropdown menu */\n  id: string,\n  /** The text that will be displayed when no items are selected, and which will move to above the\n   * menu when there is at least one selection */\n  labelText?: string,\n  /** The ID associated with the label */\n  labelId?: string,\n  /** Allows multiple selections from the dropdown if true, else only one selection */\n  multiple?: boolean,\n  /** An array of objects, with each object representing an option in the menu. Each object must\n   * must contain either a value and primaryText keys or, if useGrouping is set to true, then an\n   * object may contain a grouping key. The order of the array is important when grouping, as each\n   * item will be associated with the grouping most recently seen while iterating through the array\n   * Example:\n   *  [\n   *    {\"grouping\": \"group A\"},\n   *    {\"primaryText\": \"option 1\", \"value\": 1},\n   *    {\"primaryText\": \"option 2\", \"value\": 2},\n   *    {\"grouping\": \"group B\"},\n   *    {\"primaryText\": \"option 3\", \"value\": 3},\n   *  ]\n   *  This will group options 1 and 2 with group A, and option 3 with group B.\n   */\n  options?: Array<Object>,\n  /** Dash callback to update props on the server */\n  setProps?: () => void,\n  /** If true, the expanded dropdown menu will include labels for the various groups of options.\n   * Those labels and groupings are set in the options prop*/\n  useGrouping?: boolean,\n  /** The active selection for the menu */\n  value?: any,\n  /** Allows selection of one of three variant types of menus: filled, outlined, or standard. Set\n   * to standard by default */\n  variant?: string\n}",
+              "raw": "{\r\n  /** If true, the width of the popover will automatically be set according to the items inside\r\n   * the menu, otherwise it will be at least the width of the select input. */\r\n  autoWidth?: boolean,\r\n  /** The classes to be applied to this component. This keys in this object must be valid CSS rule\r\n   * names, and the values must be strings for the classnames to be assigned to each rule name\r\n   * Valid rule names are:\r\n   *   root\r\n   *   select\r\n   *   filled\r\n   *   outlined\r\n   *   selectMenu\r\n   *   disabled\r\n   */\r\n  classes?: {\r\n    root?: string,\r\n    select?: string,\r\n    filled?: string,\r\n    outlined?: string,\r\n    selectMenu?: string,\r\n    disabled?: string\r\n  },\r\n  /** If true, this dropdown will not be interactive */\r\n  disabled?: boolean,\r\n  /** Text to display under the menu */\r\n  helperText?: string,\r\n  /** The ID used for this dropdown menu */\r\n  id: string,\r\n  /** The text that will be displayed when no items are selected, and which will move to above the\r\n   * menu when there is at least one selection */\r\n  labelText?: string,\r\n  /** The ID associated with the label */\r\n  labelId?: string,\r\n  /** Allows multiple selections from the dropdown if true, else only one selection */\r\n  multiple?: boolean,\r\n  /** An array of objects, with each object representing an option in the menu. Each object must\r\n   * must contain either a value and primaryText keys or, if useGrouping is set to true, then an\r\n   * object may contain a grouping key. The order of the array is important when grouping, as each\r\n   * item will be associated with the grouping most recently seen while iterating through the array\r\n   * Example:\r\n   *  [\r\n   *    {\"grouping\": \"group A\"},\r\n   *    {\"primaryText\": \"option 1\", \"value\": 1},\r\n   *    {\"primaryText\": \"option 2\", \"value\": 2},\r\n   *    {\"grouping\": \"group B\"},\r\n   *    {\"primaryText\": \"option 3\", \"value\": 3},\r\n   *  ]\r\n   *  This will group options 1 and 2 with group A, and option 3 with group B.\r\n   */\r\n  options?: Array<Object>,\r\n  /** Dash callback to update props on the server */\r\n  setProps?: () => void,\r\n  /** If true, the expanded dropdown menu will include labels for the various groups of options.\r\n   * Those labels and groupings are set in the options prop*/\r\n  useGrouping?: boolean,\r\n  /** The active selection for the menu */\r\n  value?: any,\r\n  /** Allows selection of one of three variant types of menus: filled, outlined, or standard. Set\r\n   * to standard by default */\r\n  variant?: string\r\n}",
               "signature": {
                 "properties": [
                   {
@@ -3512,7 +3512,7 @@
                     "value": {
                       "name": "signature",
                       "type": "object",
-                      "raw": "{\n  root?: string,\n  select?: string,\n  filled?: string,\n  outlined?: string,\n  selectMenu?: string,\n  disabled?: string\n}",
+                      "raw": "{\r\n  root?: string,\r\n  select?: string,\r\n  filled?: string,\r\n  outlined?: string,\r\n  selectMenu?: string,\r\n  disabled?: string\r\n}",
                       "signature": {
                         "properties": [
                           {
@@ -3678,7 +3678,7 @@
         "flowType": {
           "name": "boolean"
         },
-        "description": "If true, the width of the popover will automatically be set according to the items inside\nthe menu, otherwise it will be at least the width of the select input.",
+        "description": "If true, the width of the popover will automatically be set according to the items inside\r\nthe menu, otherwise it will be at least the width of the select input.",
         "defaultValue": {
           "value": "false",
           "computed": false
@@ -3689,7 +3689,7 @@
         "flowType": {
           "name": "signature",
           "type": "object",
-          "raw": "{\n  root?: string,\n  select?: string,\n  filled?: string,\n  outlined?: string,\n  selectMenu?: string,\n  disabled?: string\n}",
+          "raw": "{\r\n  root?: string,\r\n  select?: string,\r\n  filled?: string,\r\n  outlined?: string,\r\n  selectMenu?: string,\r\n  disabled?: string\r\n}",
           "signature": {
             "properties": [
               {
@@ -3737,7 +3737,7 @@
             ]
           }
         },
-        "description": "The classes to be applied to this component. This keys in this object must be valid CSS rule\nnames, and the values must be strings for the classnames to be assigned to each rule name\nValid rule names are:\n  root\n  select\n  filled\n  outlined\n  selectMenu\n  disabled",
+        "description": "The classes to be applied to this component. This keys in this object must be valid CSS rule\r\nnames, and the values must be strings for the classnames to be assigned to each rule name\r\nValid rule names are:\r\n  root\r\n  select\r\n  filled\r\n  outlined\r\n  selectMenu\r\n  disabled",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -3777,7 +3777,7 @@
         "flowType": {
           "name": "string"
         },
-        "description": "The text that will be displayed when no items are selected, and which will move to above the\nmenu when there is at least one selection",
+        "description": "The text that will be displayed when no items are selected, and which will move to above the\r\nmenu when there is at least one selection",
         "defaultValue": {
           "value": "''",
           "computed": false
@@ -3816,7 +3816,7 @@
           ],
           "raw": "Array<Object>"
         },
-        "description": "An array of objects, with each object representing an option in the menu. Each object must\nmust contain either a value and primaryText keys or, if useGrouping is set to true, then an\nobject may contain a grouping key. The order of the array is important when grouping, as each\nitem will be associated with the grouping most recently seen while iterating through the array\nExample:\n [\n   {\"grouping\": \"group A\"},\n   {\"primaryText\": \"option 1\", \"value\": 1},\n   {\"primaryText\": \"option 2\", \"value\": 2},\n   {\"grouping\": \"group B\"},\n   {\"primaryText\": \"option 3\", \"value\": 3},\n ]\n This will group options 1 and 2 with group A, and option 3 with group B.",
+        "description": "An array of objects, with each object representing an option in the menu. Each object must\r\nmust contain either a value and primaryText keys or, if useGrouping is set to true, then an\r\nobject may contain a grouping key. The order of the array is important when grouping, as each\r\nitem will be associated with the grouping most recently seen while iterating through the array\r\nExample:\r\n [\r\n   {\"grouping\": \"group A\"},\r\n   {\"primaryText\": \"option 1\", \"value\": 1},\r\n   {\"primaryText\": \"option 2\", \"value\": 2},\r\n   {\"grouping\": \"group B\"},\r\n   {\"primaryText\": \"option 3\", \"value\": 3},\r\n ]\r\n This will group options 1 and 2 with group A, and option 3 with group B.",
         "defaultValue": {
           "value": "[]",
           "computed": false
@@ -3846,7 +3846,7 @@
         "flowType": {
           "name": "boolean"
         },
-        "description": "If true, the expanded dropdown menu will include labels for the various groups of options.\nThose labels and groupings are set in the options prop",
+        "description": "If true, the expanded dropdown menu will include labels for the various groups of options.\r\nThose labels and groupings are set in the options prop",
         "defaultValue": {
           "value": "false",
           "computed": false
@@ -3868,7 +3868,7 @@
         "flowType": {
           "name": "string"
         },
-        "description": "Allows selection of one of three variant types of menus: filled, outlined, or standard. Set\nto standard by default",
+        "description": "Allows selection of one of three variant types of menus: filled, outlined, or standard. Set\r\nto standard by default",
         "defaultValue": {
           "value": "\"standard\"",
           "computed": false
@@ -3890,7 +3890,7 @@
             "type": {
               "name": "signature",
               "type": "object",
-              "raw": "{\n  /** The contents of the transition element */\n  children?: Node,\n  /** CSS class name of the root element */\n  className?: string,\n  /** Dash ID of the transition element */\n  id: string,\n  /** Dash callback to update props on the server */\n  setProps?: () => void,\n  /** The styles passed to the transition element\n   * An style object (even if empty) must be given to the transition element or it will fail\n   * silently. See: https://github.com/mui-org/material-ui/issues/15472\n   */\n  style?: Object,\n  /** If true, the transition element is displayed, else it will be hidden */\n  visible?: boolean\n}",
+              "raw": "{\r\n  /** The contents of the transition element */\r\n  children?: Node,\r\n  /** CSS class name of the root element */\r\n  className?: string,\r\n  /** Dash ID of the transition element */\r\n  id: string,\r\n  /** Dash callback to update props on the server */\r\n  setProps?: () => void,\r\n  /** The styles passed to the transition element\r\n   * An style object (even if empty) must be given to the transition element or it will fail\r\n   * silently. See: https://github.com/mui-org/material-ui/issues/15472\r\n   */\r\n  style?: Object,\r\n  /** If true, the transition element is displayed, else it will be hidden */\r\n  visible?: boolean\r\n}",
               "signature": {
                 "properties": [
                   {
@@ -4012,7 +4012,7 @@
         "flowType": {
           "name": "Object"
         },
-        "description": "The styles passed to the transition element\nAn style object (even if empty) must be given to the transition element or it will fail\nsilently. See: https://github.com/mui-org/material-ui/issues/15472",
+        "description": "The styles passed to the transition element\r\nAn style object (even if empty) must be given to the transition element or it will fail\r\nsilently. See: https://github.com/mui-org/material-ui/issues/15472",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -4041,7 +4041,7 @@
         "flowType": {
           "name": "signature",
           "type": "object",
-          "raw": "{\n  root?: string,\n  colorPrimary?: string,\n  colorSecondary?: string,\n  colorAction?: string,\n  colorError?: string,\n  colorDisabled?: string,\n  fontSizeSmall?: string,\n  fontSizeLarge?: string,\n  fontSizeInherit?: string,\n}",
+          "raw": "{\r\n  root?: string,\r\n  colorPrimary?: string,\r\n  colorSecondary?: string,\r\n  colorAction?: string,\r\n  colorError?: string,\r\n  colorDisabled?: string,\r\n  fontSizeSmall?: string,\r\n  fontSizeLarge?: string,\r\n  fontSizeInherit?: string,\r\n}",
           "signature": {
             "properties": [
               {
@@ -4110,7 +4110,7 @@
             ]
           }
         },
-        "description": "The classes to be applied to this component. This keys in this object must be valid CSS rule\nnames, and the values must be strings for the classnames to be assigned to each rule name\nValid rule names are:\n  root\n  colorPrimary\n  colorSecondary\n  colorAction\n  colorError\n  colorDisabled\n  fontSizeSmall\n  fontSizeLarge\n  fontSizeInherit",
+        "description": "The classes to be applied to this component. This keys in this object must be valid CSS rule\r\nnames, and the values must be strings for the classnames to be assigned to each rule name\r\nValid rule names are:\r\n  root\r\n  colorPrimary\r\n  colorSecondary\r\n  colorAction\r\n  colorError\r\n  colorDisabled\r\n  fontSizeSmall\r\n  fontSizeLarge\r\n  fontSizeInherit",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -4176,7 +4176,7 @@
             "type": {
               "name": "signature",
               "type": "object",
-              "raw": "{\n  /** The contents of the transition element */\n  children?: Node,\n  /** CSS class name of the root element */\n  className?: string,\n  /** Dash ID of the transition element */\n  id: string,\n  /** Dash callback to update props on the server */\n  setProps?: () => void,\n  /** The styles passed to the transition element\n   * An style object (even if empty) must be given to the transition element or it will fail\n   * silently. See: https://github.com/mui-org/material-ui/issues/15472\n   */\n  style?: Object,\n  /** If true, the transition element is displayed, else it will be hidden */\n  visible?: boolean\n}",
+              "raw": "{\r\n  /** The contents of the transition element */\r\n  children?: Node,\r\n  /** CSS class name of the root element */\r\n  className?: string,\r\n  /** Dash ID of the transition element */\r\n  id: string,\r\n  /** Dash callback to update props on the server */\r\n  setProps?: () => void,\r\n  /** The styles passed to the transition element\r\n   * An style object (even if empty) must be given to the transition element or it will fail\r\n   * silently. See: https://github.com/mui-org/material-ui/issues/15472\r\n   */\r\n  style?: Object,\r\n  /** If true, the transition element is displayed, else it will be hidden */\r\n  visible?: boolean\r\n}",
               "signature": {
                 "properties": [
                   {
@@ -4298,7 +4298,7 @@
         "flowType": {
           "name": "Object"
         },
-        "description": "The styles passed to the transition element\nAn style object (even if empty) must be given to the transition element or it will fail\nsilently. See: https://github.com/mui-org/material-ui/issues/15472",
+        "description": "The styles passed to the transition element\r\nAn style object (even if empty) must be given to the transition element or it will fail\r\nsilently. See: https://github.com/mui-org/material-ui/issues/15472",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -4360,7 +4360,7 @@
         "flowType": {
           "name": "signature",
           "type": "object",
-          "raw": "{\n  root?: string,\n  rounded?: string,\n  outlined?: string,\n  elevation0?: string,\n  elevation1?: string,\n  elevation2?: string,\n  elevation3?: string,\n  elevation4?: string,\n  elevation5?: string,\n  elevation6?: string,\n  elevation7?: string,\n  elevation8?: string,\n  elevation9?: string,\n  elevation10?: string,\n  elevation11?: string,\n  elevation12?: string,\n  elevation13?: string,\n  elevation14?: string,\n  elevation15?: string,\n  elevation16?: string,\n  elevation17?: string,\n  elevation18?: string,\n  elevation19?: string,\n  elevation20?: string,\n  elevation21?: string,\n  elevation22?: string,\n  elevation23?: string,\n  elevation24?: string,\n}",
+          "raw": "{\r\n  root?: string,\r\n  rounded?: string,\r\n  outlined?: string,\r\n  elevation0?: string,\r\n  elevation1?: string,\r\n  elevation2?: string,\r\n  elevation3?: string,\r\n  elevation4?: string,\r\n  elevation5?: string,\r\n  elevation6?: string,\r\n  elevation7?: string,\r\n  elevation8?: string,\r\n  elevation9?: string,\r\n  elevation10?: string,\r\n  elevation11?: string,\r\n  elevation12?: string,\r\n  elevation13?: string,\r\n  elevation14?: string,\r\n  elevation15?: string,\r\n  elevation16?: string,\r\n  elevation17?: string,\r\n  elevation18?: string,\r\n  elevation19?: string,\r\n  elevation20?: string,\r\n  elevation21?: string,\r\n  elevation22?: string,\r\n  elevation23?: string,\r\n  elevation24?: string,\r\n}",
           "signature": {
             "properties": [
               {
@@ -4562,7 +4562,7 @@
             ]
           }
         },
-        "description": "The classes to be applied to this component. This keys in this object must be valid CSS rule\nnames, and the values must be strings for the classnames to be assigned to each rule name\nValid rule names are:\n  root\n  rounded\n  outlined\n  elevation0\n  elevation1\n  ...\n  elevation23\n  elevation24",
+        "description": "The classes to be applied to this component. This keys in this object must be valid CSS rule\r\nnames, and the values must be strings for the classnames to be assigned to each rule name\r\nValid rule names are:\r\n  root\r\n  rounded\r\n  outlined\r\n  elevation0\r\n  elevation1\r\n  ...\r\n  elevation23\r\n  elevation24",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -4573,7 +4573,7 @@
         "flowType": {
           "name": "boolean"
         },
-        "description": "By default, the paper container will have a border radius.\nSet this to false to generate a container with sharp corners.",
+        "description": "By default, the paper container will have a border radius.\r\nSet this to false to generate a container with sharp corners.",
         "defaultValue": {
           "value": "true",
           "computed": false
@@ -4633,7 +4633,7 @@
         "flowType": {
           "name": "signature",
           "type": "object",
-          "raw": "{\n  vertical?: 'top' | 'center' | 'bottom',\n  horizontal?: 'left' | 'middle' | 'right',\n}",
+          "raw": "{\r\n  vertical?: 'top' | 'center' | 'bottom',\r\n  horizontal?: 'left' | 'middle' | 'right',\r\n}",
           "signature": {
             "properties": [
               {
@@ -4683,7 +4683,7 @@
             ]
           }
         },
-        "description": "This is the point on the anchor where the popover's targetOrigin will attach to.\nOptions: vertical: [top, center, bottom] horizontal: [left, middle, right].",
+        "description": "This is the point on the anchor where the popover's targetOrigin will attach to.\r\nOptions: vertical: [top, center, bottom] horizontal: [left, middle, right].",
         "defaultValue": {
           "value": "{vertical: 'bottom', horizontal: 'left'}",
           "computed": false
@@ -4767,7 +4767,7 @@
         "flowType": {
           "name": "signature",
           "type": "object",
-          "raw": "{\n  root?: string,\n  paper?: string,\n}",
+          "raw": "{\r\n  root?: string,\r\n  paper?: string,\r\n}",
           "signature": {
             "properties": [
               {
@@ -4787,7 +4787,7 @@
             ]
           }
         },
-        "description": "The classes to be applied to this component. This keys in this object must be valid CSS rule\nnames, and the values must be strings for the classnames to be assigned to each rule name\nValid rule names are:\n  root\n  paper"
+        "description": "The classes to be applied to this component. This keys in this object must be valid CSS rule\r\nnames, and the values must be strings for the classnames to be assigned to each rule name\r\nValid rule names are:\r\n  root\r\n  paper"
       },
       "children": {
         "required": false,
@@ -4867,7 +4867,7 @@
             "type": {
               "name": "signature",
               "type": "object",
-              "raw": "{\n    /** If true, the radio button is disabled */\n  disabled?: boolean,\n  /** Label to appear next to button */\n  label?: string,\n  /** Specify the location of the label relative to the radio button\n   * Must be one of: \"top\", \"start\", \"bottom\", or \"end\". Defaults to \"end\" */\n  labelPlacement?: string,\n  /** value of the the radio button */\n  value?: any,\n}",
+              "raw": "{\r\n    /** If true, the radio button is disabled */\r\n  disabled?: boolean,\r\n  /** Label to appear next to button */\r\n  label?: string,\r\n  /** Specify the location of the label relative to the radio button\r\n   * Must be one of: \"top\", \"start\", \"bottom\", or \"end\". Defaults to \"end\" */\r\n  labelPlacement?: string,\r\n  /** value of the the radio button */\r\n  value?: any,\r\n}",
               "signature": {
                 "properties": [
                   {
@@ -4931,7 +4931,7 @@
             "type": {
               "name": "signature",
               "type": "object",
-              "raw": "{\n  /** The classes to be applied to each radio button. This keys in this object must be valid CSS\n   * rule names, and the values must be strings for the classnames to be assigned to each rule name\n   * Valid rule names are:\n   *   root\n   *   checked\n   *   disabled\n   *   colorPrimary\n   *   colorSecondary\n   */\n  classes?: {\n    root?: string,\n    checked?: string,\n    disabled?: string,\n    colorPrimary?: string,\n    colorSecondary?: string\n  },\n  /** the css class name of the root element */\n  className?: string,\n  /** a callback for firng events to dash */\n  fireEvent?: () => void,\n  /** the element's ID */\n  id: string,\n  /** the name that will be applied to the group of radio buttons */\n  name: string,\n  /**\n   * used to create the RadioButtons to populate the RadioButtonGroup with. A Dash user passes in a\n   * list of dict items, each one having at least a `value` and `label`. If that value is selected,\n   * valueSelected will be updated\n   */\n  options?: Array<SD_RADIO_BUTTON>,\n  /** If true, Radio Buttons appear as a row\" */\n  row?: boolean,\n  /** dash callback to update props on the server */\n  setProps?: () => void,\n  /** Initial value selected */\n  valueSelected: string,\n}",
+              "raw": "{\r\n  /** The classes to be applied to each radio button. This keys in this object must be valid CSS\r\n   * rule names, and the values must be strings for the classnames to be assigned to each rule name\r\n   * Valid rule names are:\r\n   *   root\r\n   *   checked\r\n   *   disabled\r\n   *   colorPrimary\r\n   *   colorSecondary\r\n   */\r\n  classes?: {\r\n    root?: string,\r\n    checked?: string,\r\n    disabled?: string,\r\n    colorPrimary?: string,\r\n    colorSecondary?: string\r\n  },\r\n  /** the css class name of the root element */\r\n  className?: string,\r\n  /** a callback for firng events to dash */\r\n  fireEvent?: () => void,\r\n  /** the element's ID */\r\n  id: string,\r\n  /** the name that will be applied to the group of radio buttons */\r\n  name: string,\r\n  /**\r\n   * used to create the RadioButtons to populate the RadioButtonGroup with. A Dash user passes in a\r\n   * list of dict items, each one having at least a `value` and `label`. If that value is selected,\r\n   * valueSelected will be updated\r\n   */\r\n  options?: Array<SD_RADIO_BUTTON>,\r\n  /** If true, Radio Buttons appear as a row\" */\r\n  row?: boolean,\r\n  /** dash callback to update props on the server */\r\n  setProps?: () => void,\r\n  /** Initial value selected */\r\n  valueSelected: string,\r\n}",
               "signature": {
                 "properties": [
                   {
@@ -4939,7 +4939,7 @@
                     "value": {
                       "name": "signature",
                       "type": "object",
-                      "raw": "{\n  root?: string,\n  checked?: string,\n  disabled?: string,\n  colorPrimary?: string,\n  colorSecondary?: string\n}",
+                      "raw": "{\r\n  root?: string,\r\n  checked?: string,\r\n  disabled?: string,\r\n  colorPrimary?: string,\r\n  colorSecondary?: string\r\n}",
                       "signature": {
                         "properties": [
                           {
@@ -5026,7 +5026,7 @@
                         {
                           "name": "signature",
                           "type": "object",
-                          "raw": "{\n    /** If true, the radio button is disabled */\n  disabled?: boolean,\n  /** Label to appear next to button */\n  label?: string,\n  /** Specify the location of the label relative to the radio button\n   * Must be one of: \"top\", \"start\", \"bottom\", or \"end\". Defaults to \"end\" */\n  labelPlacement?: string,\n  /** value of the the radio button */\n  value?: any,\n}",
+                          "raw": "{\r\n    /** If true, the radio button is disabled */\r\n  disabled?: boolean,\r\n  /** Label to appear next to button */\r\n  label?: string,\r\n  /** Specify the location of the label relative to the radio button\r\n   * Must be one of: \"top\", \"start\", \"bottom\", or \"end\". Defaults to \"end\" */\r\n  labelPlacement?: string,\r\n  /** value of the the radio button */\r\n  value?: any,\r\n}",
                           "signature": {
                             "properties": [
                               {
@@ -5119,7 +5119,7 @@
         "flowType": {
           "name": "signature",
           "type": "object",
-          "raw": "{\n  root?: string,\n  checked?: string,\n  disabled?: string,\n  colorPrimary?: string,\n  colorSecondary?: string\n}",
+          "raw": "{\r\n  root?: string,\r\n  checked?: string,\r\n  disabled?: string,\r\n  colorPrimary?: string,\r\n  colorSecondary?: string\r\n}",
           "signature": {
             "properties": [
               {
@@ -5160,7 +5160,7 @@
             ]
           }
         },
-        "description": "The classes to be applied to each radio button. This keys in this object must be valid CSS\nrule names, and the values must be strings for the classnames to be assigned to each rule name\nValid rule names are:\n  root\n  checked\n  disabled\n  colorPrimary\n  colorSecondary",
+        "description": "The classes to be applied to each radio button. This keys in this object must be valid CSS\r\nrule names, and the values must be strings for the classnames to be assigned to each rule name\r\nValid rule names are:\r\n  root\r\n  checked\r\n  disabled\r\n  colorPrimary\r\n  colorSecondary",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -5218,7 +5218,7 @@
             {
               "name": "signature",
               "type": "object",
-              "raw": "{\n    /** If true, the radio button is disabled */\n  disabled?: boolean,\n  /** Label to appear next to button */\n  label?: string,\n  /** Specify the location of the label relative to the radio button\n   * Must be one of: \"top\", \"start\", \"bottom\", or \"end\". Defaults to \"end\" */\n  labelPlacement?: string,\n  /** value of the the radio button */\n  value?: any,\n}",
+              "raw": "{\r\n    /** If true, the radio button is disabled */\r\n  disabled?: boolean,\r\n  /** Label to appear next to button */\r\n  label?: string,\r\n  /** Specify the location of the label relative to the radio button\r\n   * Must be one of: \"top\", \"start\", \"bottom\", or \"end\". Defaults to \"end\" */\r\n  labelPlacement?: string,\r\n  /** value of the the radio button */\r\n  value?: any,\r\n}",
               "signature": {
                 "properties": [
                   {
@@ -5255,7 +5255,7 @@
           ],
           "raw": "Array<SD_RADIO_BUTTON>"
         },
-        "description": "used to create the RadioButtons to populate the RadioButtonGroup with. A Dash user passes in a\nlist of dict items, each one having at least a `value` and `label`. If that value is selected,\nvalueSelected will be updated",
+        "description": "used to create the RadioButtons to populate the RadioButtonGroup with. A Dash user passes in a\r\nlist of dict items, each one having at least a `value` and `label`. If that value is selected,\r\nvalueSelected will be updated",
         "defaultValue": {
           "value": "[]",
           "computed": false
@@ -5314,7 +5314,7 @@
             "type": {
               "name": "signature",
               "type": "object",
-              "raw": "{\n  /** The contents of the transition element */\n  children?: Node,\n  /** CSS class name of the root element */\n  className?: string,\n  /** Dash ID of the transition element */\n  id: string,\n  /** Dash callback to update props on the server */\n  setProps?: () => void,\n  /** The direction the child component will move when sliding into view */\n  slideDirection?: \"up\" | \"down\" | \"left\" | \"right\",\n  /** The styles passed to the transition element\n   * An style object (even if empty) must be given to the transition element or it will fail\n   * silently. See: https://github.com/mui-org/material-ui/issues/15472\n   */\n  style?: Object,\n  /** If true, the transition element is displayed, else it will be hidden */\n  visible?: boolean\n}",
+              "raw": "{\r\n  /** The contents of the transition element */\r\n  children?: Node,\r\n  /** CSS class name of the root element */\r\n  className?: string,\r\n  /** Dash ID of the transition element */\r\n  id: string,\r\n  /** Dash callback to update props on the server */\r\n  setProps?: () => void,\r\n  /** The direction the child component will move when sliding into view */\r\n  slideDirection?: \"up\" | \"down\" | \"left\" | \"right\",\r\n  /** The styles passed to the transition element\r\n   * An style object (even if empty) must be given to the transition element or it will fail\r\n   * silently. See: https://github.com/mui-org/material-ui/issues/15472\r\n   */\r\n  style?: Object,\r\n  /** If true, the transition element is displayed, else it will be hidden */\r\n  visible?: boolean\r\n}",
               "signature": {
                 "properties": [
                   {
@@ -5492,7 +5492,7 @@
         "flowType": {
           "name": "Object"
         },
-        "description": "The styles passed to the transition element\nAn style object (even if empty) must be given to the transition element or it will fail\nsilently. See: https://github.com/mui-org/material-ui/issues/15472",
+        "description": "The styles passed to the transition element\r\nAn style object (even if empty) must be given to the transition element or it will fail\r\nsilently. See: https://github.com/mui-org/material-ui/issues/15472",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -5536,7 +5536,7 @@
         "flowType": {
           "name": "string"
         },
-        "description": "The text of the action button inside the snackbar. If empty, no action button will be added",
+        "description": "The text of the action button inside the snackbar. If empty, no action button will be added\r\nNote that this does not work with children.",
         "defaultValue": {
           "value": "''",
           "computed": false
@@ -5554,7 +5554,7 @@
         "flowType": {
           "name": "number"
         },
-        "description": "The number of milliseconds to wait before automatically dismissing. If no value is specified\nthe snackbar will dismiss normally. If a value is provided the snackbar can still be dismissed\nnormally. If a snackbar is dismissed before the timer expires, the timer will be cleared.",
+        "description": "The number of milliseconds to wait before automatically dismissing. If no value is specified\r\nthe snackbar will dismiss normally. If a value is provided the snackbar can still be dismissed\r\nnormally. If a snackbar is dismissed before the timer expires, the timer will be cleared.",
         "defaultValue": {
           "value": "3000",
           "computed": false
@@ -5565,7 +5565,7 @@
         "flowType": {
           "name": "signature",
           "type": "object",
-          "raw": "{\n  root?: string,\n  anchorOriginTopCenter?: string,\n  anchorOriginBottomCenter?: string,\n  anchorOriginTopRight?: string,\n  anchorOriginBottomRight?: string,\n  anchorOriginTopLeft?: string,\n  anchorOriginBottomLeft?: string,\n}",
+          "raw": "{\r\n  root?: string,\r\n  anchorOriginTopCenter?: string,\r\n  anchorOriginBottomCenter?: string,\r\n  anchorOriginTopRight?: string,\r\n  anchorOriginBottomRight?: string,\r\n  anchorOriginTopLeft?: string,\r\n  anchorOriginBottomLeft?: string,\r\n}",
           "signature": {
             "properties": [
               {
@@ -5620,7 +5620,7 @@
             ]
           }
         },
-        "description": "The classes to be applied to this component. This keys in this object must be valid CSS rule\nnames, and the values must be strings for the classnames to be assigned to each rule name\nValid rule names are:\n  root\n  anchorOriginTopCenter\n  anchorOriginBottomCenter\n  anchorOriginTopRight\n  anchorOriginBottomRight\n  anchorOriginTopLeft\n  anchorOriginBottomLeft"
+        "description": "The classes to be applied to this component. This keys in this object must be valid CSS rule\r\nnames, and the values must be strings for the classnames to be assigned to each rule name\r\nValid rule names are:\r\n  root\r\n  anchorOriginTopCenter\r\n  anchorOriginBottomCenter\r\n  anchorOriginTopRight\r\n  anchorOriginBottomRight\r\n  anchorOriginTopLeft\r\n  anchorOriginBottomLeft"
       },
       "className": {
         "required": false,
@@ -5630,6 +5630,17 @@
         "description": "CSS class name of the root element",
         "defaultValue": {
           "value": "''",
+          "computed": false
+        }
+      },
+      "children": {
+        "required": false,
+        "flowType": {
+          "name": "Node"
+        },
+        "description": "Elements to render inside the snackbar. Note that this will override message and actions",
+        "defaultValue": {
+          "value": "null",
           "computed": false
         }
       },
@@ -5660,11 +5671,15 @@
         "description": "The element's ID"
       },
       "message": {
-        "required": true,
+        "required": false,
         "flowType": {
           "name": "Node"
         },
-        "description": "The message to be displayed.\n(Note: If the message is an element or array, and the Snackbar may re-render while it is\nstill open, ensure that the same object remains as the message property if you want to avoid\nthe Snackbar hiding and showing again)"
+        "description": "The message to be displayed.\r\n(Note: If the message is an element or array, and the Snackbar may re-render while it is\r\nstill open, ensure that the same object remains as the message property if you want to avoid\r\nthe Snackbar hiding and showing again). Note that this does not work with children.",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
       },
       "n_clicks": {
         "required": false,
@@ -5833,7 +5848,7 @@
         "flowType": {
           "name": "signature",
           "type": "object",
-          "raw": "{\n  root?: string,\n  horizontal?: string,\n  vertical?: string,\n  alternativeLabel?: string,\n}",
+          "raw": "{\r\n  root?: string,\r\n  horizontal?: string,\r\n  vertical?: string,\r\n  alternativeLabel?: string,\r\n}",
           "signature": {
             "properties": [
               {
@@ -5867,7 +5882,7 @@
             ]
           }
         },
-        "description": "The classes to be applied to this component. This keys in this object must be valid CSS rule\nnames, and the values must be strings for the classnames to be assigned to each rule name\nValid rule names are:\n  root\n  horizontal\n  vertical\n  alternativeLabel"
+        "description": "The classes to be applied to this component. This keys in this object must be valid CSS rule\r\nnames, and the values must be strings for the classnames to be assigned to each rule name\r\nValid rule names are:\r\n  root\r\n  horizontal\r\n  vertical\r\n  alternativeLabel"
       },
       "className": {
         "required": false,
@@ -6033,7 +6048,7 @@
           ],
           "raw": "Array<string>"
         },
-        "description": "The text labels that will be shown next to each step number. The length of this array must\nmatch the total number of steps",
+        "description": "The text labels that will be shown next to each step number. The length of this array must\r\nmatch the total number of steps",
         "defaultValue": {
           "value": "['Step 1', 'Step 2', 'Step 3']",
           "computed": false
@@ -6073,7 +6088,7 @@
         "flowType": {
           "name": "signature",
           "type": "object",
-          "raw": "{\n  root?: string,\n  colorPrimary?: string,\n  colorInherit?: string,\n  gutters?: string,\n  inset?: string,\n  sticky?: string,\n}",
+          "raw": "{\r\n  root?: string,\r\n  colorPrimary?: string,\r\n  colorInherit?: string,\r\n  gutters?: string,\r\n  inset?: string,\r\n  sticky?: string,\r\n}",
           "signature": {
             "properties": [
               {
@@ -6121,7 +6136,7 @@
             ]
           }
         },
-        "description": "The classes to be applied to this component. This keys in this object must be valid CSS rule\nnames, and the values must be strings for the classnames to be assigned to each rule name\nValid rule names are:\n  root\n  colorPrimary\n  colorInherit\n  gutters\n  inset\n  sticky",
+        "description": "The classes to be applied to this component. This keys in this object must be valid CSS rule\r\nnames, and the values must be strings for the classnames to be assigned to each rule name\r\nValid rule names are:\r\n  root\r\n  colorPrimary\r\n  colorInherit\r\n  gutters\r\n  inset\r\n  sticky",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -6194,7 +6209,7 @@
         "flowType": {
           "name": "signature",
           "type": "object",
-          "raw": "{\n  root?: string,\n  textColorPrimary?: string,\n  textColorSecondary?: string,\n  textColorInherit?: string,\n  selected?: string,\n  disabled?: string,\n  fullWidth?: string,\n  wrapped?: string,\n  wrapper?: string,\n}",
+          "raw": "{\r\n  root?: string,\r\n  textColorPrimary?: string,\r\n  textColorSecondary?: string,\r\n  textColorInherit?: string,\r\n  selected?: string,\r\n  disabled?: string,\r\n  fullWidth?: string,\r\n  wrapped?: string,\r\n  wrapper?: string,\r\n}",
           "signature": {
             "properties": [
               {
@@ -6263,7 +6278,7 @@
             ]
           }
         },
-        "description": "The classes to be applied to this component. This keys in this object must be valid CSS rule\nnames, and the values must be strings for the classnames to be assigned to each rule name\nValid rule names are:\n  root\n  textColorPrimary\n  textColorSecondary\n  textColorInherit\n  selected\n  disabled\n  fullWidth\n  wrapped\n  wrapper",
+        "description": "The classes to be applied to this component. This keys in this object must be valid CSS rule\r\nnames, and the values must be strings for the classnames to be assigned to each rule name\r\nValid rule names are:\r\n  root\r\n  textColorPrimary\r\n  textColorSecondary\r\n  textColorInherit\r\n  selected\r\n  disabled\r\n  fullWidth\r\n  wrapped\r\n  wrapper",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -6375,7 +6390,7 @@
             {
               "name": "signature",
               "type": "object",
-              "raw": "{\n  classes?: Object,\n  disabled: boolean,\n  disableFocusRipple: boolean,\n  disableRipple: boolean,\n  iconClass: string,\n  label: string,\n  value: any,\n  wrapped: boolean,\n}",
+              "raw": "{\r\n  classes?: Object,\r\n  disabled: boolean,\r\n  disableFocusRipple: boolean,\r\n  disableRipple: boolean,\r\n  iconClass: string,\r\n  label: string,\r\n  value: any,\r\n  wrapped: boolean,\r\n}",
               "signature": {
                 "properties": [
                   {
@@ -6438,9 +6453,9 @@
               }
             }
           ],
-          "raw": "Array<{\n  classes?: Object,\n  disabled: boolean,\n  disableFocusRipple: boolean,\n  disableRipple: boolean,\n  iconClass: string,\n  label: string,\n  value: any,\n  wrapped: boolean,\n}>"
+          "raw": "Array<{\r\n  classes?: Object,\r\n  disabled: boolean,\r\n  disableFocusRipple: boolean,\r\n  disableRipple: boolean,\r\n  iconClass: string,\r\n  label: string,\r\n  value: any,\r\n  wrapped: boolean,\r\n}>"
         },
-        "description": "Array of tab properties. Available props:\nclasses\ndisabled\ndisableRipple\ndisableFocusRipple\nicon\nlabel\nvalue\nwrapped"
+        "description": "Array of tab properties. Available props:\r\nclasses\r\ndisabled\r\ndisableRipple\r\ndisableFocusRipple\r\nicon\r\nlabel\r\nvalue\r\nwrapped"
       },
       "value": {
         "required": false,
@@ -6481,7 +6496,7 @@
             "type": {
               "name": "signature",
               "type": "object",
-              "raw": "{\n  /** The classes to be applied to this component. This keys in this object must be valid CSS rule\n   * names, and the values must be strings for the classnames to be assigned to each rule name\n   * Valid rule names are:\n   *   root\n   *   edgeStart\n   *   edgeEnd\n   *   switchBase\n   *   colorPrimary\n   *   colorSecondary\n   *   sizeSmall\n   *   checked\n   *   disabled\n   *   input\n   *   thumb\n   *   tract\n   */\n  classes?: {\n    root?: string,\n    edgeStart?: string,\n    edgeEnd?: string,\n    switchBase?: string,\n    colorPrimary?: string,\n    colorSecondary?: string,\n    sizeSmall?: string,\n    checked?: string,\n    disabled?: string,\n    input?: string,\n    thumb?: string,\n    tract?: string\n  },\n  /** CSS class name of the root element */\n  className?: string,\n  /** Whether the toggle is disabled (true) or not (false) */\n  disabled?: boolean,\n  /** Toggle ID */\n  id: string,\n  /** The label for the toggle */\n  label?: string,\n  /** If using a single label, its position can be: \"top\", \"start\", \"bottom\", or \"end\" */\n  labelPlacement?: string,\n  /** The space between the label(s) and toggle */\n  labelSpacing?: int,\n  /**\n   * A second label for the toggle. If this is used, the labelPlacement value is ignored, and the\n   * secondaryLabel will be positioned to the right of the toggle, and the first label to the left\n   */\n  secondaryLabel?: string,\n  /** Dash callback to update props on the server */\n  setProps?: () => void,\n  /** Whether toggle is on (true) or off (false) */\n  toggled: boolean,\n}",
+              "raw": "{\r\n  /** The classes to be applied to this component. This keys in this object must be valid CSS rule\r\n   * names, and the values must be strings for the classnames to be assigned to each rule name\r\n   * Valid rule names are:\r\n   *   root\r\n   *   edgeStart\r\n   *   edgeEnd\r\n   *   switchBase\r\n   *   colorPrimary\r\n   *   colorSecondary\r\n   *   sizeSmall\r\n   *   checked\r\n   *   disabled\r\n   *   input\r\n   *   thumb\r\n   *   tract\r\n   */\r\n  classes?: {\r\n    root?: string,\r\n    edgeStart?: string,\r\n    edgeEnd?: string,\r\n    switchBase?: string,\r\n    colorPrimary?: string,\r\n    colorSecondary?: string,\r\n    sizeSmall?: string,\r\n    checked?: string,\r\n    disabled?: string,\r\n    input?: string,\r\n    thumb?: string,\r\n    tract?: string\r\n  },\r\n  /** CSS class name of the root element */\r\n  className?: string,\r\n  /** Whether the toggle is disabled (true) or not (false) */\r\n  disabled?: boolean,\r\n  /** Toggle ID */\r\n  id: string,\r\n  /** The label for the toggle */\r\n  label?: string,\r\n  /** If using a single label, its position can be: \"top\", \"start\", \"bottom\", or \"end\" */\r\n  labelPlacement?: string,\r\n  /** The space between the label(s) and toggle */\r\n  labelSpacing?: int,\r\n  /**\r\n   * A second label for the toggle. If this is used, the labelPlacement value is ignored, and the\r\n   * secondaryLabel will be positioned to the right of the toggle, and the first label to the left\r\n   */\r\n  secondaryLabel?: string,\r\n  /** Dash callback to update props on the server */\r\n  setProps?: () => void,\r\n  /** Whether toggle is on (true) or off (false) */\r\n  toggled: boolean,\r\n}",
               "signature": {
                 "properties": [
                   {
@@ -6489,7 +6504,7 @@
                     "value": {
                       "name": "signature",
                       "type": "object",
-                      "raw": "{\n  root?: string,\n  edgeStart?: string,\n  edgeEnd?: string,\n  switchBase?: string,\n  colorPrimary?: string,\n  colorSecondary?: string,\n  sizeSmall?: string,\n  checked?: string,\n  disabled?: string,\n  input?: string,\n  thumb?: string,\n  tract?: string\n}",
+                      "raw": "{\r\n  root?: string,\r\n  edgeStart?: string,\r\n  edgeEnd?: string,\r\n  switchBase?: string,\r\n  colorPrimary?: string,\r\n  colorSecondary?: string,\r\n  sizeSmall?: string,\r\n  checked?: string,\r\n  disabled?: string,\r\n  input?: string,\r\n  thumb?: string,\r\n  tract?: string\r\n}",
                       "signature": {
                         "properties": [
                           {
@@ -6677,7 +6692,7 @@
         "flowType": {
           "name": "signature",
           "type": "object",
-          "raw": "{\n  root?: string,\n  edgeStart?: string,\n  edgeEnd?: string,\n  switchBase?: string,\n  colorPrimary?: string,\n  colorSecondary?: string,\n  sizeSmall?: string,\n  checked?: string,\n  disabled?: string,\n  input?: string,\n  thumb?: string,\n  tract?: string\n}",
+          "raw": "{\r\n  root?: string,\r\n  edgeStart?: string,\r\n  edgeEnd?: string,\r\n  switchBase?: string,\r\n  colorPrimary?: string,\r\n  colorSecondary?: string,\r\n  sizeSmall?: string,\r\n  checked?: string,\r\n  disabled?: string,\r\n  input?: string,\r\n  thumb?: string,\r\n  tract?: string\r\n}",
           "signature": {
             "properties": [
               {
@@ -6767,7 +6782,7 @@
             ]
           }
         },
-        "description": "The classes to be applied to this component. This keys in this object must be valid CSS rule\nnames, and the values must be strings for the classnames to be assigned to each rule name\nValid rule names are:\n  root\n  edgeStart\n  edgeEnd\n  switchBase\n  colorPrimary\n  colorSecondary\n  sizeSmall\n  checked\n  disabled\n  input\n  thumb\n  tract",
+        "description": "The classes to be applied to this component. This keys in this object must be valid CSS rule\r\nnames, and the values must be strings for the classnames to be assigned to each rule name\r\nValid rule names are:\r\n  root\r\n  edgeStart\r\n  edgeEnd\r\n  switchBase\r\n  colorPrimary\r\n  colorSecondary\r\n  sizeSmall\r\n  checked\r\n  disabled\r\n  input\r\n  thumb\r\n  tract",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -6840,7 +6855,7 @@
         "flowType": {
           "name": "string"
         },
-        "description": "A second label for the toggle. If this is used, the labelPlacement value is ignored, and the\nsecondaryLabel will be positioned to the right of the toggle, and the first label to the left",
+        "description": "A second label for the toggle. If this is used, the labelPlacement value is ignored, and the\r\nsecondaryLabel will be positioned to the right of the toggle, and the first label to the left",
         "defaultValue": {
           "value": "''",
           "computed": false
@@ -6888,7 +6903,7 @@
             "type": {
               "name": "signature",
               "type": "object",
-              "raw": "{\n  /** The contents of the transition element */\n  children?: Node,\n  /** CSS class name of the root element */\n  className?: string,\n  /** Dash ID of the transition element */\n  id: string,\n  /** Dash callback to update props on the server */\n  setProps?: () => void,\n  /** The styles passed to the transition element\n   * An style object (even if empty) must be given to the transition element or it will fail\n   * silently. See: https://github.com/mui-org/material-ui/issues/15472\n   */\n  style?: Object,\n  /** If true, the transition element is displayed, else it will be hidden */\n  visible?: boolean\n}",
+              "raw": "{\r\n  /** The contents of the transition element */\r\n  children?: Node,\r\n  /** CSS class name of the root element */\r\n  className?: string,\r\n  /** Dash ID of the transition element */\r\n  id: string,\r\n  /** Dash callback to update props on the server */\r\n  setProps?: () => void,\r\n  /** The styles passed to the transition element\r\n   * An style object (even if empty) must be given to the transition element or it will fail\r\n   * silently. See: https://github.com/mui-org/material-ui/issues/15472\r\n   */\r\n  style?: Object,\r\n  /** If true, the transition element is displayed, else it will be hidden */\r\n  visible?: boolean\r\n}",
               "signature": {
                 "properties": [
                   {
@@ -7010,7 +7025,7 @@
         "flowType": {
           "name": "Object"
         },
-        "description": "The styles passed to the transition element\nAn style object (even if empty) must be given to the transition element or it will fail\nsilently. See: https://github.com/mui-org/material-ui/issues/15472",
+        "description": "The styles passed to the transition element\r\nAn style object (even if empty) must be given to the transition element or it will fail\r\nsilently. See: https://github.com/mui-org/material-ui/issues/15472",
         "defaultValue": {
           "value": "{}",
           "computed": false
