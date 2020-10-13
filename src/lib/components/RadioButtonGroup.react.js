@@ -59,7 +59,7 @@ type Props = {
 };
 
 type State = {
-  value: string,
+  valueSelected: string,
 };
 
 const defaultProps = {
@@ -74,7 +74,7 @@ const defaultProps = {
 export default class RadioButtonGroup extends Component<Props, State> {
   constructor(props: Props) {
     super(props);
-    this.state = {value: this.props.valueSelected};
+    this.state = {valueSelected: this.props.valueSelected};
   }
 
   buildRadioButton = (buttonItem: SD_RADIO_BUTTON) => {
@@ -99,19 +99,19 @@ export default class RadioButtonGroup extends Component<Props, State> {
   };
 
   handleChange = (event: Object) => {
-    this.setState({value: event.target.value});
+    this.setState({valueSelected: event.target.value});
 
     if (this.props.fireEvent) {
       this.props.fireEvent({event: 'change'});
     }
     if (typeof this.props.setProps === 'function') {
-      this.props.setProps({value: event.target.value});
+      this.props.setProps({valueSelected: event.target.value});
     }
   };
 
   UNSAFE_componentWillReceiveProps = (nextProps: Props, nextContent: *): void => {
-    if (nextProps.value !== this.state.value)
-      this.setState({value: nextProps.value});
+    if (nextProps.valueSelected !== this.state.valueSelected)
+      this.setState({valueSelected: nextProps.valueSelected});
   }
 
   render() {
@@ -124,7 +124,7 @@ export default class RadioButtonGroup extends Component<Props, State> {
         <RadioGroup
           aria-label={name}
           name={name}
-          value={this.state.value}
+          value={this.state.valueSelected}
           defaultValue={valueSelected}
           onChange={this.handleChange}
           row={row}
