@@ -35,7 +35,10 @@ Valid rule names are:
   - anchorOriginBottomLeft (string; optional)
 - className (string; default ''): CSS class name of the root element
 - id (string; required): The element's ID
-- message (a list of or a singular dash component, string or number; default '')
+- message (a list of or a singular dash component, string or number; default ''): The message to be displayed.
+(Note: If the message is an element or array, and the Snackbar may re-render while it is
+still open, ensure that the same object remains as the message property if you want to avoid
+the Snackbar hiding and showing again). Note that this does not work with children.
 - n_clicks (number; default 0): An integer that represents the number of times that action button has been clicked
 - open (boolean; default False): Controls whether the Snackbar is opened or not
 - style (dict; optional): Override the inline styles of the root element"""
