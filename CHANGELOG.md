@@ -4,6 +4,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 4.0.3 2020-10-13
 ### Adds
+- Adds support for variant to Drawer
+
+## 4.0.3 2020-10-13
+### Adds
 - Adds support for children to Snackbar
 
 ## 4.0.2 2020-10-09
