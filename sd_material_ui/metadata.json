@@ -3436,7 +3436,7 @@
         "flowType": {
           "name": "string"
         },
-        "description": "Type of drawer to be used, default is \"persistent\"",
+        "description": "Type of drawer to be used, default is persistent",
         "defaultValue": {
           "value": "\"persistent\"",
           "computed": false

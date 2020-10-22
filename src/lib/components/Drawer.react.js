@@ -49,7 +49,7 @@ type Props = {
    * an input) for this component's props.open value in order to achieve the desired behavior.
    */
   open?: boolean,
-  /** Type of drawer to be used, default is "persistent" */
+  /** Type of drawer to be used, default is persistent */
   variant?: string,
   /** Dash callback to update props on the server */
   setProps?: () => void,
