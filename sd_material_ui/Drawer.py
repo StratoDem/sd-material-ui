@@ -44,14 +44,15 @@ Valid rule names are:
 - open (boolean; default False): Is the drawer open?
 
 IMPORTANT: When using this component in Dash, a listener must be set up (either as state or
-an input) for this component's props.open value in order to achieve the desired behavior."""
+an input) for this component's props.open value in order to achieve the desired behavior.
+- variant (string; default "persistent"): Type of drawer to be used, default is persistent"""
     @_explicitize_args
-    def __init__(self, children=None, anchor=Component.UNDEFINED, id=Component.REQUIRED, classes=Component.UNDEFINED, className=Component.UNDEFINED, open=Component.UNDEFINED, classNameRoot=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['children', 'anchor', 'id', 'classes', 'className', 'open']
+    def __init__(self, children=None, anchor=Component.UNDEFINED, id=Component.REQUIRED, classes=Component.UNDEFINED, className=Component.UNDEFINED, open=Component.UNDEFINED, variant=Component.UNDEFINED, classNameRoot=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['children', 'anchor', 'id', 'classes', 'className', 'open', 'variant']
         self._type = 'Drawer'
         self._namespace = 'sd_material_ui'
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['children', 'anchor', 'id', 'classes', 'className', 'open']
+        self.available_properties = ['children', 'anchor', 'id', 'classes', 'className', 'open', 'variant']
         self.available_wildcard_properties =            []
 
         _explicit_args = kwargs.pop('_explicit_args')

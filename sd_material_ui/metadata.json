@@ -3431,6 +3431,17 @@
           "computed": false
         }
       },
+      "variant": {
+        "required": false,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "Type of drawer to be used, default is persistent",
+        "defaultValue": {
+          "value": "\"persistent\"",
+          "computed": false
+        }
+      },
       "setProps": {
         "required": false,
         "flowType": {

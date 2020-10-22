@@ -49,6 +49,8 @@ type Props = {
    * an input) for this component's props.open value in order to achieve the desired behavior.
    */
   open?: boolean,
+  /** Type of drawer to be used, default is persistent */
+  variant?: string,
   /** Dash callback to update props on the server */
   setProps?: () => void,
 };
@@ -64,6 +66,7 @@ const defaultProps = {
   className: '',
   classNameRoot: '',
   open: false,
+  variant: "persistent",
   setProps: () => {},
 };
 
@@ -79,7 +82,7 @@ export default class Drawer extends Component<Props, State> {
   }
 
   render() {
-    const {id, anchor, classes, className} = this.props;
+    const {id, anchor, classes, className, variant} = this.props;
 
     return (
       <div id={id}>
@@ -87,7 +90,7 @@ export default class Drawer extends Component<Props, State> {
           anchor={anchor}
           classes={classes}
           className={className}
-          variant={"persistent"}
+          variant={variant}
           open={this.state.open}
         >
           {this.props.children}
