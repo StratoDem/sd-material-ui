@@ -1,6 +1,6 @@
 {
   "name": "sd-material-ui",
-  "version": "4.1.1",
+  "version": "4.2.0",
   "description": "material-ui components for Dash",
   "main": "build/index.js",
   "author": "Michael Clawar, Eric Linden, Sreeja Keesara tech@stratodem.com",

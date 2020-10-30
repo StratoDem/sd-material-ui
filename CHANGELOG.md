@@ -2,7 +2,7 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## 4.1.1 2020-10-30
+## 4.2.0 2020-10-30
 ### Adds
 - Adds `Pagination` component (https://material-ui.com/components/pagination/)
 
