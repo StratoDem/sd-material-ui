@@ -2,6 +2,13 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 4.1.1 2020-10-30
+### Adds
+- Adds `Pagination` component (https://material-ui.com/components/pagination/)
+
+### Related Issues
+- [#528](https://github.com/StratoDem/sd-material-ui/issues/528)
+
 ## 4.1.0 2020-10-13
 ### Adds
 - Adds support for variant to Drawer
