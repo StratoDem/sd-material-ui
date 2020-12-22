@@ -4328,6 +4328,92 @@
       }
     }
   },
+  "src/lib/components/Pagination.react.js": {
+    "description": "Material UI Pagination component",
+    "displayName": "Pagination",
+    "methods": [],
+    "props": {
+      "id": {
+        "required": true,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "Component ID"
+      },
+      "page": {
+        "required": false,
+        "flowType": {
+          "name": "number"
+        },
+        "description": "Page number",
+        "defaultValue": {
+          "value": "1",
+          "computed": false
+        }
+      },
+      "count": {
+        "required": true,
+        "flowType": {
+          "name": "number"
+        },
+        "description": "Number of pages"
+      },
+      "setProps": {
+        "required": false,
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "(props: { stepIndex?: number }) => void",
+          "signature": {
+            "arguments": [
+              {
+                "name": "props",
+                "type": {
+                  "name": "signature",
+                  "type": "object",
+                  "raw": "{ stepIndex?: number }",
+                  "signature": {
+                    "properties": [
+                      {
+                        "key": "stepIndex",
+                        "value": {
+                          "name": "number",
+                          "required": false
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "return": {
+              "name": "void"
+            }
+          }
+        },
+        "description": "Dash callback to update props on the server",
+        "defaultValue": {
+          "value": "() => {\r\n}",
+          "computed": false
+        }
+      },
+      "fireEvent": {
+        "required": false,
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "() => void",
+          "signature": {
+            "arguments": [],
+            "return": {
+              "name": "void"
+            }
+          }
+        },
+        "description": "Dash event handler for click events"
+      }
+    }
+  },
   "src/lib/components/Paper.react.js": {
     "description": "A Dash material-ui Paper component",
     "displayName": "Paper",
@@ -4666,7 +4752,7 @@
         "flowType": {
           "name": "string"
         },
-        "description": "Representation of date or time, either YYYY-MM-DD or HH:MM:SS",
+        "description": "Representation of datetime, like 2020-12-25T13:11:00.000Z",
         "defaultValue": {
           "value": "\"01-01-2020\"",
           "computed": false

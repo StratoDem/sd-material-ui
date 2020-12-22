@@ -15,7 +15,7 @@ type Props = {
   label?: string,
   /** Type of date or time picker, "time", "date", or "date-dialog" */
   type?: string,
-  /** Representation of date or time, either YYYY-MM-DD or HH:MM:SS */
+  /** Representation of datetime, like 2020-12-25T13:11:00.000Z */
   value?: string,
   /** Dash callback to update props on the server */
   setProps?: () => void,
