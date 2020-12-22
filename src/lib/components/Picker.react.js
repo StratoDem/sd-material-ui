@@ -9,6 +9,8 @@ import {
 } from '@material-ui/pickers';
 
 type Props = {
+  /** Format to be used in displaying date */
+  format?: string,
   /** Picker ID */
   id: string,
   /** Label for the date or time picker */
@@ -29,6 +31,7 @@ const defaultProps = {
   label: "",
   value: "01-01-2020",
   type: "date",
+  format: "",
   setProps: () => {},
 };
 
@@ -53,16 +56,22 @@ export default class Picker extends Component<Props, State> {
   };
 
   render() {
-    const {id, label, type, value} = this.props;
+    const {id, label, type, value, format} = this.props;
     const selectedDate = new Date(value);
 
     if(type === "date"){
+      let _format;
+      if(format === "") {
+        _format = "yyyy-MM-dd"
+      } else {
+        _format = format
+      }
       return (
       <MuiPickersUtilsProvider utils={DateFnsUtils}>
           <KeyboardDatePicker
             disableToolbar
             variant="inline"
-            format="MM/dd/yyyy"
+            format={_format}
             id={id}
             label={label}
             value={selectedDate}
@@ -72,26 +81,33 @@ export default class Picker extends Component<Props, State> {
             }}/>
     </MuiPickersUtilsProvider>);
     }else if(type === "date-dialog") {
+      let _format;
+      if(format === "") {
+        _format = "yyyy-MM-dd"
+      } else {
+        _format = format
+      }
       return(
         <MuiPickersUtilsProvider utils={DateFnsUtils}>
           <KeyboardDatePicker
           margin="normal"
-          id="date-picker-dialog"
-          label="Date picker dialog"
-          format="MM/dd/yyyy"
+          id={id}
+          label={label}
+          format={_format}
           value={selectedDate}
           onChange={this.handleChange}
           KeyboardButtonProps={{
             'aria-label': 'change date',
           }}
         />
-        </MuiPickersUtilsProvider>);}else if(type === "time"){
+        </MuiPickersUtilsProvider>);
+    }else if(type === "time"){
       return(
         <MuiPickersUtilsProvider utils={DateFnsUtils}>
           <KeyboardTimePicker
           margin="normal"
-          id="time-picker"
-          label="Time picker"
+          id={id}
+          label={label}
           value={selectedDate}
           onChange={this.handleChange}
           KeyboardButtonProps={{

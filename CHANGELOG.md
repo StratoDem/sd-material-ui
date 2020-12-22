@@ -5,7 +5,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 4.3.0 2020-12-22
 ### Adds
-- Adds data and time picker components to sd-material-ui
+- Adds date and time picker components to sd-material-ui
 
 ### Related issues:
 - [#560](https://github.com/StratoDem/sd-material-ui/issues/560)

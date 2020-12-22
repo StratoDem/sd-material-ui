@@ -4718,6 +4718,17 @@
       }
     ],
     "props": {
+      "format": {
+        "required": false,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "Format to be used in displaying date",
+        "defaultValue": {
+          "value": "\"\"",
+          "computed": false
+        }
+      },
       "id": {
         "required": true,
         "flowType": {
