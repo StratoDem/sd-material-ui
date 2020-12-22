@@ -9,7 +9,10 @@ import {
 } from '@material-ui/pickers';
 
 type Props = {
-  /** Format to be used in displaying date */
+  /** Format to be used in displaying date. Some possibilities:
+   * yyyy-MM-dd
+   * MM/dd/yyyy
+   * MM-dd */
   format?: string,
   /** Picker ID */
   id: string,
@@ -59,13 +62,13 @@ export default class Picker extends Component<Props, State> {
     const {id, label, type, value, format} = this.props;
     const selectedDate = new Date(value);
 
+    let _format;
+    if(format === "") {
+      _format = "yyyy-MM-dd"
+    } else {
+      _format = format
+    }
     if(type === "date"){
-      let _format;
-      if(format === "") {
-        _format = "yyyy-MM-dd"
-      } else {
-        _format = format
-      }
       return (
       <MuiPickersUtilsProvider utils={DateFnsUtils}>
           <KeyboardDatePicker
@@ -81,12 +84,6 @@ export default class Picker extends Component<Props, State> {
             }}/>
     </MuiPickersUtilsProvider>);
     }else if(type === "date-dialog") {
-      let _format;
-      if(format === "") {
-        _format = "yyyy-MM-dd"
-      } else {
-        _format = format
-      }
       return(
         <MuiPickersUtilsProvider utils={DateFnsUtils}>
           <KeyboardDatePicker
