@@ -4723,7 +4723,7 @@
         "flowType": {
           "name": "string"
         },
-        "description": "Format to be used in displaying date",
+        "description": "Format to be used in displaying date. Some possibilities:\nyyyy-MM-dd\nMM/dd/yyyy\nMM-dd",
         "defaultValue": {
           "value": "\"\"",
           "computed": false
