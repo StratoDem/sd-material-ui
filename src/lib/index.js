@@ -13,6 +13,7 @@ export { default as DropDownMenu } from './components/DropDownMenu.react';
 export { default as FadeTransition } from './components/FadeTransition.react';
 export { default as FontIcon } from './components/FontIcon.react';
 export { default as GrowTransition } from './components/GrowTransition.react';
+export { default as Pagination } from './components/Pagination.react';
 export { default as Paper } from './components/Paper.react';
 export { default as Picker } from './components/Picker.react';
 export { default as Popover } from './components/Popover.react';

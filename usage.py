@@ -419,6 +419,13 @@ app.layout = html.Div([
         final_spacer,
     ], style=dict(display='flex', flexWrap='wrap')),
 
+    sd_material_ui.Pagination(
+        id='pagination-component',
+        page=5,
+        count=10
+    ),
+    html.Div([], id='pagination-page-number'),
+
     ], style={'listStyleType': 'none'})
 
 
@@ -659,6 +666,12 @@ def autocomplete_callback(searchValue: int):
     [dash.dependencies.Input('radio', 'value')])
 def radiobuttongroup_callback(value):
     return ['Selection is: {}'.format(value)]
+
+@app.callback(
+    dash.dependencies.Output('pagination-page-number', 'children'),
+    [dash.dependencies.Input('pagination-component', 'page')])
+def pagination_component_page_number_callback(page_num: int) -> str:
+    return f'Page number selected: {page_num}'
 
 
 # @app.server.route('/my-search', methods=['POST'])

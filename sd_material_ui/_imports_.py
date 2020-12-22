@@ -13,6 +13,7 @@ from .DropDownMenu import DropDownMenu
 from .FadeTransition import FadeTransition
 from .FontIcon import FontIcon
 from .GrowTransition import GrowTransition
+from .Pagination import Pagination
 from .Paper import Paper
 from .Picker import Picker
 from .Popover import Popover
@@ -41,6 +42,7 @@ __all__ = [
     "FadeTransition",
     "FontIcon",
     "GrowTransition",
+    "Pagination",
     "Paper",
     "Picker",
     "Popover",
