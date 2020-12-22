@@ -481,7 +481,7 @@
             "type": {
               "name": "signature",
               "type": "object",
-              "raw": "{\r\n  /** The classes to be applied to this component. This keys in this object must be valid CSS rule\r\n   * names, and the values must be strings for the classnames to be assigned to each rule name\r\n   * Valid rule names are:\r\n   *   root\r\n   *   fullWidth\r\n   *   focus\r\n   *   tag\r\n   *   tagSizeSmall\r\n   *   hasPopupIcon\r\n   *   hasClearIcon\r\n   *   inputRoot\r\n   *   input\r\n   *   inputFocused\r\n   *   endAdornment\r\n   *   clearIndicator\r\n   *   clearIndicatorDirty\r\n   *   popupIndicator\r\n   *   popupIndicatorOpen\r\n   *   popper\r\n   *   popperDisablePortal\r\n   *   paper\r\n   *   listbox\r\n   *   loading\r\n   *   noOptions\r\n   *   option\r\n   *   groupLabel\r\n   *   groupUl\r\n   * */\r\n  classes?: {\r\n    root?: string,\r\n    fullWidth?: string,\r\n    focus?: string,\r\n    tag?: string,\r\n    tagSizeSmall?: string,\r\n    hasPopupIcon?: string,\r\n    hasClearIcon?: string,\r\n    inputRoot?: string,\r\n    input?: string,\r\n    inputFocused?: string,\r\n    endAdornment?: string,\r\n    clearIndicator?: string,\r\n    clearIndicatorDirty?: string,\r\n    popupIndicator?: string,\r\n    popupIndicatorOpen?: string,\r\n    popper?: string,\r\n    popperDisablePortal?: string,\r\n    paper?: string,\r\n    listbox?: string,\r\n    loading?: string,\r\n    noOptions?: string,\r\n    option?: string,\r\n    groupLabel?: string,\r\n    groupUl?: string,\r\n  },\r\n  /** CSS class name of the root element */\r\n  className?: string,\r\n  /** Dash callback delay in ms - default is 500 ms */\r\n  dashCallbackDelay?: number,\r\n  /**\r\n   * Array of strings or nodes used to populate the list\r\n   * Alternatively, an Array of Objects with a structure like\r\n   * {label: 'My label to render', value: 'My value to ship on match'}\r\n   */\r\n  dataSource?: Array<any>,\r\n  /** String name for filter to be applied to user input.\r\n   * will later be mapped to function\r\n   */\r\n  filter?: 'caseInsensitiveFilter' | 'caseSensitiveFilter' | 'defaultFilter' |\r\n    'fuzzyFilter' | 'levenshteinDistanceFilter' | 'noFilter',\r\n  /** Dash-assigned callback that gets fired when the input changes. */\r\n  fireEvent?: () => void,\r\n  /** The hint content to display */\r\n  hintText?: Node,\r\n  /** Autocomplete ID */\r\n  id: string,\r\n  /** The max number of search results to be shown. By default it shows\r\n   * all the items which matches filter */\r\n  maxSearchResults?: number,\r\n  /** Auto complete menu is open if true */\r\n  open?: boolean,\r\n  /** If true, the list item is showed when a focus event triggers */\r\n  openOnFocus?: boolean,\r\n  /** Text being input to auto complete */\r\n  searchText?: string,\r\n  /** Dash callback to update props on the server. */\r\n  setProps?: () => void,\r\n  /** Override the inline-styles of the root element */\r\n  style?: Object,\r\n  /** If defined, the AutoComplete component hits this URL to search instead of string matching */\r\n  searchEndpointAPI?: string,\r\n  /** General JSON structure to send to the server */\r\n  searchJSONStructure?: Object,\r\n  /** The selected value of the input */\r\n  selectedValue?: any,\r\n}",
+              "raw": "{\n  /** The classes to be applied to this component. This keys in this object must be valid CSS rule\n   * names, and the values must be strings for the classnames to be assigned to each rule name\n   * Valid rule names are:\n   *   root\n   *   fullWidth\n   *   focus\n   *   tag\n   *   tagSizeSmall\n   *   hasPopupIcon\n   *   hasClearIcon\n   *   inputRoot\n   *   input\n   *   inputFocused\n   *   endAdornment\n   *   clearIndicator\n   *   clearIndicatorDirty\n   *   popupIndicator\n   *   popupIndicatorOpen\n   *   popper\n   *   popperDisablePortal\n   *   paper\n   *   listbox\n   *   loading\n   *   noOptions\n   *   option\n   *   groupLabel\n   *   groupUl\n   * */\n  classes?: {\n    root?: string,\n    fullWidth?: string,\n    focus?: string,\n    tag?: string,\n    tagSizeSmall?: string,\n    hasPopupIcon?: string,\n    hasClearIcon?: string,\n    inputRoot?: string,\n    input?: string,\n    inputFocused?: string,\n    endAdornment?: string,\n    clearIndicator?: string,\n    clearIndicatorDirty?: string,\n    popupIndicator?: string,\n    popupIndicatorOpen?: string,\n    popper?: string,\n    popperDisablePortal?: string,\n    paper?: string,\n    listbox?: string,\n    loading?: string,\n    noOptions?: string,\n    option?: string,\n    groupLabel?: string,\n    groupUl?: string,\n  },\n  /** CSS class name of the root element */\n  className?: string,\n  /** Dash callback delay in ms - default is 500 ms */\n  dashCallbackDelay?: number,\n  /**\n   * Array of strings or nodes used to populate the list\n   * Alternatively, an Array of Objects with a structure like\n   * {label: 'My label to render', value: 'My value to ship on match'}\n   */\n  dataSource?: Array<any>,\n  /** String name for filter to be applied to user input.\n   * will later be mapped to function\n   */\n  filter?: 'caseInsensitiveFilter' | 'caseSensitiveFilter' | 'defaultFilter' |\n    'fuzzyFilter' | 'levenshteinDistanceFilter' | 'noFilter',\n  /** Dash-assigned callback that gets fired when the input changes. */\n  fireEvent?: () => void,\n  /** The hint content to display */\n  hintText?: Node,\n  /** Autocomplete ID */\n  id: string,\n  /** The max number of search results to be shown. By default it shows\n   * all the items which matches filter */\n  maxSearchResults?: number,\n  /** Auto complete menu is open if true */\n  open?: boolean,\n  /** If true, the list item is showed when a focus event triggers */\n  openOnFocus?: boolean,\n  /** Text being input to auto complete */\n  searchText?: string,\n  /** Dash callback to update props on the server. */\n  setProps?: () => void,\n  /** Override the inline-styles of the root element */\n  style?: Object,\n  /** If defined, the AutoComplete component hits this URL to search instead of string matching */\n  searchEndpointAPI?: string,\n  /** General JSON structure to send to the server */\n  searchJSONStructure?: Object,\n  /** The selected value of the input */\n  selectedValue?: any,\n}",
               "signature": {
                 "properties": [
                   {
@@ -489,7 +489,7 @@
                     "value": {
                       "name": "signature",
                       "type": "object",
-                      "raw": "{\r\n  root?: string,\r\n  fullWidth?: string,\r\n  focus?: string,\r\n  tag?: string,\r\n  tagSizeSmall?: string,\r\n  hasPopupIcon?: string,\r\n  hasClearIcon?: string,\r\n  inputRoot?: string,\r\n  input?: string,\r\n  inputFocused?: string,\r\n  endAdornment?: string,\r\n  clearIndicator?: string,\r\n  clearIndicatorDirty?: string,\r\n  popupIndicator?: string,\r\n  popupIndicatorOpen?: string,\r\n  popper?: string,\r\n  popperDisablePortal?: string,\r\n  paper?: string,\r\n  listbox?: string,\r\n  loading?: string,\r\n  noOptions?: string,\r\n  option?: string,\r\n  groupLabel?: string,\r\n  groupUl?: string,\r\n}",
+                      "raw": "{\n  root?: string,\n  fullWidth?: string,\n  focus?: string,\n  tag?: string,\n  tagSizeSmall?: string,\n  hasPopupIcon?: string,\n  hasClearIcon?: string,\n  inputRoot?: string,\n  input?: string,\n  inputFocused?: string,\n  endAdornment?: string,\n  clearIndicator?: string,\n  clearIndicatorDirty?: string,\n  popupIndicator?: string,\n  popupIndicatorOpen?: string,\n  popper?: string,\n  popperDisablePortal?: string,\n  paper?: string,\n  listbox?: string,\n  loading?: string,\n  noOptions?: string,\n  option?: string,\n  groupLabel?: string,\n  groupUl?: string,\n}",
                       "signature": {
                         "properties": [
                           {
@@ -696,7 +696,7 @@
                     "key": "filter",
                     "value": {
                       "name": "union",
-                      "raw": "'caseInsensitiveFilter' | 'caseSensitiveFilter' | 'defaultFilter' |\r\n  'fuzzyFilter' | 'levenshteinDistanceFilter' | 'noFilter'",
+                      "raw": "'caseInsensitiveFilter' | 'caseSensitiveFilter' | 'defaultFilter' |\n'fuzzyFilter' | 'levenshteinDistanceFilter' | 'noFilter'",
                       "elements": [
                         {
                           "name": "literal",
@@ -877,7 +877,7 @@
       },
       {
         "name": "handleChange",
-        "docblock": "calls function to fire callback and updates searchText in state\r\n@param searchText\r\n@param params",
+        "docblock": "calls function to fire callback and updates searchText in state\n@param searchText\n@param params",
         "modifiers": [],
         "params": [
           {
@@ -903,7 +903,7 @@
       },
       {
         "name": "_updateTextProps",
-        "docblock": "executes setProps function with searchText to update searchText in props;\r\nfires Dash callback event\r\n@param searchText\r\n@private",
+        "docblock": "executes setProps function with searchText to update searchText in props;\nfires Dash callback event\n@param searchText\n@private",
         "modifiers": [],
         "params": [
           {
@@ -916,7 +916,7 @@
           }
         ],
         "returns": null,
-        "description": "executes setProps function with searchText to update searchText in props;\r\nfires Dash callback event"
+        "description": "executes setProps function with searchText to update searchText in props;\nfires Dash callback event"
       }
     ],
     "props": {
@@ -925,7 +925,7 @@
         "flowType": {
           "name": "signature",
           "type": "object",
-          "raw": "{\r\n  root?: string,\r\n  fullWidth?: string,\r\n  focus?: string,\r\n  tag?: string,\r\n  tagSizeSmall?: string,\r\n  hasPopupIcon?: string,\r\n  hasClearIcon?: string,\r\n  inputRoot?: string,\r\n  input?: string,\r\n  inputFocused?: string,\r\n  endAdornment?: string,\r\n  clearIndicator?: string,\r\n  clearIndicatorDirty?: string,\r\n  popupIndicator?: string,\r\n  popupIndicatorOpen?: string,\r\n  popper?: string,\r\n  popperDisablePortal?: string,\r\n  paper?: string,\r\n  listbox?: string,\r\n  loading?: string,\r\n  noOptions?: string,\r\n  option?: string,\r\n  groupLabel?: string,\r\n  groupUl?: string,\r\n}",
+          "raw": "{\n  root?: string,\n  fullWidth?: string,\n  focus?: string,\n  tag?: string,\n  tagSizeSmall?: string,\n  hasPopupIcon?: string,\n  hasClearIcon?: string,\n  inputRoot?: string,\n  input?: string,\n  inputFocused?: string,\n  endAdornment?: string,\n  clearIndicator?: string,\n  clearIndicatorDirty?: string,\n  popupIndicator?: string,\n  popupIndicatorOpen?: string,\n  popper?: string,\n  popperDisablePortal?: string,\n  paper?: string,\n  listbox?: string,\n  loading?: string,\n  noOptions?: string,\n  option?: string,\n  groupLabel?: string,\n  groupUl?: string,\n}",
           "signature": {
             "properties": [
               {
@@ -1099,7 +1099,7 @@
             ]
           }
         },
-        "description": "The classes to be applied to this component. This keys in this object must be valid CSS rule\r\nnames, and the values must be strings for the classnames to be assigned to each rule name\r\nValid rule names are:\r\n  root\r\n  fullWidth\r\n  focus\r\n  tag\r\n  tagSizeSmall\r\n  hasPopupIcon\r\n  hasClearIcon\r\n  inputRoot\r\n  input\r\n  inputFocused\r\n  endAdornment\r\n  clearIndicator\r\n  clearIndicatorDirty\r\n  popupIndicator\r\n  popupIndicatorOpen\r\n  popper\r\n  popperDisablePortal\r\n  paper\r\n  listbox\r\n  loading\r\n  noOptions\r\n  option\r\n  groupLabel\r\n  groupUl"
+        "description": "The classes to be applied to this component. This keys in this object must be valid CSS rule\nnames, and the values must be strings for the classnames to be assigned to each rule name\nValid rule names are:\n  root\n  fullWidth\n  focus\n  tag\n  tagSizeSmall\n  hasPopupIcon\n  hasClearIcon\n  inputRoot\n  input\n  inputFocused\n  endAdornment\n  clearIndicator\n  clearIndicatorDirty\n  popupIndicator\n  popupIndicatorOpen\n  popper\n  popperDisablePortal\n  paper\n  listbox\n  loading\n  noOptions\n  option\n  groupLabel\n  groupUl"
       },
       "className": {
         "required": false,
@@ -1130,7 +1130,7 @@
           ],
           "raw": "Array<any>"
         },
-        "description": "Array of strings or nodes used to populate the list\r\nAlternatively, an Array of Objects with a structure like\r\n{label: 'My label to render', value: 'My value to ship on match'}",
+        "description": "Array of strings or nodes used to populate the list\nAlternatively, an Array of Objects with a structure like\n{label: 'My label to render', value: 'My value to ship on match'}",
         "defaultValue": {
           "value": "[]",
           "computed": false
@@ -1140,7 +1140,7 @@
         "required": false,
         "flowType": {
           "name": "union",
-          "raw": "'caseInsensitiveFilter' | 'caseSensitiveFilter' | 'defaultFilter' |\r\n  'fuzzyFilter' | 'levenshteinDistanceFilter' | 'noFilter'",
+          "raw": "'caseInsensitiveFilter' | 'caseSensitiveFilter' | 'defaultFilter' |\n'fuzzyFilter' | 'levenshteinDistanceFilter' | 'noFilter'",
           "elements": [
             {
               "name": "literal",
@@ -1168,7 +1168,7 @@
             }
           ]
         },
-        "description": "String name for filter to be applied to user input.\r\nwill later be mapped to function",
+        "description": "String name for filter to be applied to user input.\nwill later be mapped to function",
         "defaultValue": {
           "value": "\"defaultFilter\"",
           "computed": false
@@ -1216,7 +1216,7 @@
         "flowType": {
           "name": "number"
         },
-        "description": "The max number of search results to be shown. By default it shows\r\nall the items which matches filter",
+        "description": "The max number of search results to be shown. By default it shows\nall the items which matches filter",
         "defaultValue": {
           "value": "5",
           "computed": false
@@ -1799,7 +1799,7 @@
             ]
           }
         },
-        "description": "The classes to be applied to this component. This keys in this object must be valid CSS rule\r\nnames, and the values must be strings for the classnames to be assigned to each rule name\r\nValid rule names are:\r\n  root\r\n  label\r\n  text\r\n  textPrimary\r\n  textSecondary\r\n  outline\r\n  outlinedPrimary\r\n  outlinedSecondary\r\n  contained\r\n  containedPrimary\r\n  containedSecondary\r\n  disableElevation\r\n  focusVisible\r\n  disabled\r\n  colorInherit\r\n  textSizeSmall\r\n  textSizeLarge\r\n  outlinedSizeSmall\r\n  outlinedSizeLarge\r\n  containedSizeSmall\r\n  containedSizeLarge\r\n  sizeSmall\r\n  sizeLarge\r\n  fullWidth\r\n  startIcon\r\n  endIcon\r\n  iconSizeSmall\r\n  iconSizeMedium\r\n  iconSizeLarge\r\n\n  OR\r\n\n  root\r\n  edgeStart\r\n  edgeEnd\r\n  colorInherit\r\n  colorPrimary\r\n  colorSecondary\r\n  disabled\r\n  sizeSmall\r\n  label\r\n\nSee https://material-ui.com/api/button/#css\r\nand https://material-ui.com/api/icon-button/#css",
+        "description": "The classes to be applied to this component. This keys in this object must be valid CSS rule\r\nnames, and the values must be strings for the classnames to be assigned to each rule name\r\nValid rule names are:\r\n  root\r\n  label\r\n  text\r\n  textPrimary\r\n  textSecondary\r\n  outline\r\n  outlinedPrimary\r\n  outlinedSecondary\r\n  contained\r\n  containedPrimary\r\n  containedSecondary\r\n  disableElevation\r\n  focusVisible\r\n  disabled\r\n  colorInherit\r\n  textSizeSmall\r\n  textSizeLarge\r\n  outlinedSizeSmall\r\n  outlinedSizeLarge\r\n  containedSizeSmall\r\n  containedSizeLarge\r\n  sizeSmall\r\n  sizeLarge\r\n  fullWidth\r\n  startIcon\r\n  endIcon\r\n  iconSizeSmall\r\n  iconSizeMedium\r\n  iconSizeLarge\r\n\r\n  OR\r\n\r\n  root\r\n  edgeStart\r\n  edgeEnd\r\n  colorInherit\r\n  colorPrimary\r\n  colorSecondary\r\n  disabled\r\n  sizeSmall\r\n  label\r\n\r\nSee https://material-ui.com/api/button/#css\r\nand https://material-ui.com/api/icon-button/#css",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -3067,7 +3067,7 @@
         "flowType": {
           "name": "boolean"
         },
-        "description": "Is the dialog open?\r\n\nIMPORTANT: When using this component in Dash, a listener must be set up (either as state or\r\nan input) for this component's props.open value in order to achieve the desired behavior.\r\nIf such a listener is not in place, the non-modal version of this dialog will contaminate\r\nother callbacks in the browser",
+        "description": "Is the dialog open?\r\n\r\nIMPORTANT: When using this component in Dash, a listener must be set up (either as state or\r\nan input) for this component's props.open value in order to achieve the desired behavior.\r\nIf such a listener is not in place, the non-modal version of this dialog will contaminate\r\nother callbacks in the browser",
         "defaultValue": {
           "value": "false",
           "computed": false
@@ -3425,7 +3425,7 @@
         "flowType": {
           "name": "boolean"
         },
-        "description": "Is the drawer open?\r\n\nIMPORTANT: When using this component in Dash, a listener must be set up (either as state or\r\nan input) for this component's props.open value in order to achieve the desired behavior.",
+        "description": "Is the drawer open?\r\n\r\nIMPORTANT: When using this component in Dash, a listener must be set up (either as state or\r\nan input) for this component's props.open value in order to achieve the desired behavior.",
         "defaultValue": {
           "value": "false",
           "computed": false
@@ -4614,6 +4614,85 @@
       }
     }
   },
+  "src/lib/components/Picker.react.js": {
+    "description": "",
+    "displayName": "Picker",
+    "methods": [
+      {
+        "name": "handleChange",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "event",
+            "type": null
+          }
+        ],
+        "returns": null
+      }
+    ],
+    "props": {
+      "id": {
+        "required": true,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "Picker ID"
+      },
+      "label": {
+        "required": false,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "Label for the date or time picker",
+        "defaultValue": {
+          "value": "\"\"",
+          "computed": false
+        }
+      },
+      "type": {
+        "required": false,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "Type of date or time picker, \"time\", \"date\", or \"date-dialog\"",
+        "defaultValue": {
+          "value": "\"date\"",
+          "computed": false
+        }
+      },
+      "value": {
+        "required": false,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "Representation of date or time, either YYYY-MM-DD or HH:MM:SS",
+        "defaultValue": {
+          "value": "\"01-01-2020\"",
+          "computed": false
+        }
+      },
+      "setProps": {
+        "required": false,
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "() => void",
+          "signature": {
+            "arguments": [],
+            "return": {
+              "name": "void"
+            }
+          }
+        },
+        "description": "Dash callback to update props on the server",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      }
+    }
+  },
   "src/lib/components/Popover.react.js": {
     "description": "Material UI Popover component",
     "displayName": "Popover",
@@ -5547,7 +5626,7 @@
         "flowType": {
           "name": "string"
         },
-        "description": "The text of the action button inside the snackbar. If empty, no action button will be added\r\nNote that this does not work with children.",
+        "description": "The text of the action button inside the snackbar. If empty, no action button will be added\nNote that this does not work with children.",
         "defaultValue": {
           "value": "''",
           "computed": false
@@ -5565,7 +5644,7 @@
         "flowType": {
           "name": "number"
         },
-        "description": "The number of milliseconds to wait before automatically dismissing. If no value is specified\r\nthe snackbar will dismiss normally. If a value is provided the snackbar can still be dismissed\r\nnormally. If a snackbar is dismissed before the timer expires, the timer will be cleared.",
+        "description": "The number of milliseconds to wait before automatically dismissing. If no value is specified\nthe snackbar will dismiss normally. If a value is provided the snackbar can still be dismissed\nnormally. If a snackbar is dismissed before the timer expires, the timer will be cleared.",
         "defaultValue": {
           "value": "3000",
           "computed": false
@@ -5576,7 +5655,7 @@
         "flowType": {
           "name": "signature",
           "type": "object",
-          "raw": "{\r\n  root?: string,\r\n  anchorOriginTopCenter?: string,\r\n  anchorOriginBottomCenter?: string,\r\n  anchorOriginTopRight?: string,\r\n  anchorOriginBottomRight?: string,\r\n  anchorOriginTopLeft?: string,\r\n  anchorOriginBottomLeft?: string,\r\n}",
+          "raw": "{\n  root?: string,\n  anchorOriginTopCenter?: string,\n  anchorOriginBottomCenter?: string,\n  anchorOriginTopRight?: string,\n  anchorOriginBottomRight?: string,\n  anchorOriginTopLeft?: string,\n  anchorOriginBottomLeft?: string,\n}",
           "signature": {
             "properties": [
               {
@@ -5631,7 +5710,7 @@
             ]
           }
         },
-        "description": "The classes to be applied to this component. This keys in this object must be valid CSS rule\r\nnames, and the values must be strings for the classnames to be assigned to each rule name\r\nValid rule names are:\r\n  root\r\n  anchorOriginTopCenter\r\n  anchorOriginBottomCenter\r\n  anchorOriginTopRight\r\n  anchorOriginBottomRight\r\n  anchorOriginTopLeft\r\n  anchorOriginBottomLeft"
+        "description": "The classes to be applied to this component. This keys in this object must be valid CSS rule\nnames, and the values must be strings for the classnames to be assigned to each rule name\nValid rule names are:\n  root\n  anchorOriginTopCenter\n  anchorOriginBottomCenter\n  anchorOriginTopRight\n  anchorOriginBottomRight\n  anchorOriginTopLeft\n  anchorOriginBottomLeft"
       },
       "className": {
         "required": false,
@@ -5686,7 +5765,7 @@
         "flowType": {
           "name": "Node"
         },
-        "description": "The message to be displayed.\r\n(Note: If the message is an element or array, and the Snackbar may re-render while it is\r\nstill open, ensure that the same object remains as the message property if you want to avoid\r\nthe Snackbar hiding and showing again). Note that this does not work with children.",
+        "description": "The message to be displayed.\n(Note: If the message is an element or array, and the Snackbar may re-render while it is\nstill open, ensure that the same object remains as the message property if you want to avoid\nthe Snackbar hiding and showing again). Note that this does not work with children.",
         "defaultValue": {
           "value": "''",
           "computed": false

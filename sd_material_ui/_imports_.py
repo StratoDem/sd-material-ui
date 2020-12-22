@@ -14,6 +14,7 @@ from .FadeTransition import FadeTransition
 from .FontIcon import FontIcon
 from .GrowTransition import GrowTransition
 from .Paper import Paper
+from .Picker import Picker
 from .Popover import Popover
 from .RadioButtonGroup import RadioButtonGroup
 from .SlideTransition import SlideTransition
@@ -41,6 +42,7 @@ __all__ = [
     "FontIcon",
     "GrowTransition",
     "Paper",
+    "Picker",
     "Popover",
     "RadioButtonGroup",
     "SlideTransition",
