@@ -46,7 +46,7 @@
     "@material-ui/pickers": "^3.2.10",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.2.2",
-    "copyfiles": "2.1.1",
+    "copyfiles": "2.4.1",
     "css-loader": "^4.3.0",
     "eslint": "^7.16.0",
     "eslint-config-prettier": "^6.15.0",
