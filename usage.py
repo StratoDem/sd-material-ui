@@ -1,3 +1,5 @@
+import datetime
+
 import sd_material_ui
 import dash
 import flask
@@ -391,6 +393,29 @@ app.layout = html.Div([
                     sd_material_ui.Stepper(id='stepper', style={'background': 'inherit'}),
                 ]),
 
+
+        spacer,
+
+        html.Div([
+                    html.P([html.Strong('Sample for Date Picker')]),
+                    sd_material_ui.Picker(id='date-picker',
+                                          value='2020-12-25T13:11:00.000Z',
+                                          type='date',
+                                          label='This is a date picker'),
+                    html.P(id='date-picker-output')
+
+                ]),
+
+        html.Div([
+                    html.P([html.Strong('Sample for Time Picker')]),
+                    sd_material_ui.Picker(id='time-picker',
+                                          value='2020-12-25T13:11:00.000Z',
+                                          type='time',
+                                          label='This is a time picker'),
+
+                    html.P(id='time-picker-output')
+                ]),
+
         final_spacer,
     ], style=dict(display='flex', flexWrap='wrap')),
 
@@ -403,6 +428,29 @@ app.layout = html.Div([
 
     ], style={'listStyleType': 'none'})
 
+
+@app.callback(
+    dash.dependencies.Output('time-picker-output', 'children'),
+    [dash.dependencies.Input('time-picker', 'value')],)
+def callback_time_picker(_datetime: str):
+    _date, _time = _datetime.split('T')
+    hours = int(_time.split(':')[0]) + 19
+    hours = hours if hours < 24 else hours - 24
+    if hours >= 12:
+        tag = 'PM'
+    else:
+        tag = 'AM'
+    if hours > 12:
+        hours = hours - 12
+
+    return f'Selected time is {hours}:{_time.split(":")[1]} {tag}'\
+
+@app.callback(
+    dash.dependencies.Output('date-picker-output', 'children'),
+    [dash.dependencies.Input('date-picker', 'value')],)
+def callback_time_picker(_datetime: str):
+    _date, _time = _datetime.split('T')
+    return f'Selected date is {_date.split("-")[1]}/{_date.split("-")[2]}/{_date.split("-")[0]}'
 
 @app.callback(
     dash.dependencies.Output('tabs', 'value'),

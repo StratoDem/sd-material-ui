@@ -2,6 +2,14 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+
+## 4.3.0 2020-12-22
+### Adds
+- Adds date and time picker components to sd-material-ui
+
+### Related issues:
+- [#560](https://github.com/StratoDem/sd-material-ui/issues/560)
+
 ## 4.2.0 2020-10-30
 ### Adds
 - Adds `Pagination` component (https://material-ui.com/components/pagination/)
