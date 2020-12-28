@@ -1,10 +1,6 @@
-import datetime
-
-import sd_material_ui
 import dash
-import flask
 import dash_html_components as html
-import time
+import sd_material_ui
 
 app = dash.Dash(
     '',
