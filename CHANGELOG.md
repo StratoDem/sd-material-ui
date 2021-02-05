@@ -2,6 +2,13 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 4.4.0 2021-02-02
+### Adds
+- Adds tooltip component
+
+### Related issues:
+- [#585](https://github.com/StratoDem/sd-material-ui/issues/585)
+
 ## 4.3.2 2020-12-28
 ### Fixes
 - Fixes file that was missing from git

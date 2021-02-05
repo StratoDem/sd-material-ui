@@ -411,17 +411,26 @@ app.layout = html.Div([
 
                     html.P(id='time-picker-output')
                 ]),
-
-        final_spacer,
     ], style=dict(display='flex', flexWrap='wrap')),
 
-    sd_material_ui.Pagination(
-        id='pagination-component',
-        page=5,
-        count=10
-    ),
-    html.Div([], id='pagination-page-number'),
+    sd_material_ui.Divider(),
 
+    html.Div([
+        sd_material_ui.Tooltip(
+            children=html.Button('This button has a tooltip', id='tooltip-button'),
+            title='Hovering over the button shows the tooltip',
+        ),
+        html.P(['Tooltip button clicks: ', html.Span('0', id='tooltip-button-output')]),
+
+        sd_material_ui.Pagination(
+            id='pagination-component',
+            page=5,
+            count=10
+        ),
+        html.Div([], id='pagination-page-number'),
+    ], style=dict(display='flex', flexWrap='wrap')),
+
+    final_spacer
     ], style={'listStyleType': 'none'})
 
 
@@ -668,6 +677,13 @@ def radiobuttongroup_callback(value):
     [dash.dependencies.Input('pagination-component', 'page')])
 def pagination_component_page_number_callback(page_num: int) -> str:
     return f'Page number selected: {page_num}'
+
+
+@app.callback(
+    dash.dependencies.Output('tooltip-button-output', 'children'),
+    [dash.dependencies.Input('tooltip-button', 'n_clicks')])
+def tooltip_button_callback(clicks: int) -> str:
+    return clicks
 
 
 # @app.server.route('/my-search', methods=['POST'])

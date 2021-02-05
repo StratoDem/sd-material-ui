@@ -24,6 +24,7 @@ from .Stepper import Stepper
 from .Subheader import Subheader
 from .Tabs import Tabs
 from .Toggle import Toggle
+from .Tooltip import Tooltip
 from .ZoomTransition import ZoomTransition
 
 __all__ = [
@@ -53,5 +54,6 @@ __all__ = [
     "Subheader",
     "Tabs",
     "Toggle",
+    "Tooltip",
     "ZoomTransition"
 ]
