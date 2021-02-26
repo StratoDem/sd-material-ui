@@ -92,6 +92,11 @@ export default class Stepper extends Component<Props, State> {
     };
   }
 
+  UNSAFE_componentWillReceiveProps(nextProps: Props, nextContext: *): void {
+    if (nextProps.activeStep !== this.state.stepIndex)
+      this.setState({stepIndex: nextProps.activeStep});
+  }
+
   handleNext = () => {
     const {stepIndex} = this.state;
     const increased = stepIndex + 1;
