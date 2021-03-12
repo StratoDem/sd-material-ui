@@ -18,6 +18,7 @@ from .Paper import Paper
 from .Picker import Picker
 from .Popover import Popover
 from .RadioButtonGroup import RadioButtonGroup
+from .Select import Select
 from .SlideTransition import SlideTransition
 from .Snackbar import Snackbar
 from .Stepper import Stepper
@@ -48,6 +49,7 @@ __all__ = [
     "Picker",
     "Popover",
     "RadioButtonGroup",
+    "Select",
     "SlideTransition",
     "Snackbar",
     "Stepper",
