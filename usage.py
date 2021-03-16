@@ -386,7 +386,15 @@ app.layout = html.Div([
 
         html.Div([
                     html.P([html.Strong('Sample for Stepper')]),
-                    sd_material_ui.Stepper(id='stepper', style={'background': 'inherit'}),
+                    sd_material_ui.Stepper(id='stepper',
+                                           style={'background': 'inherit'},
+                                           # nextButtonStyle={'display': 'None'},
+                                           # backButtonStyle={'display': 'None'},
+                                           # finishedButtonStyle={'display': 'None'},
+                                           activeStep=0
+                                           ),
+                    html.Button('Add one step', id='stepper-button'),
+                    html.P(id='stepper-output')
                 ]),
 
 
@@ -433,6 +441,17 @@ app.layout = html.Div([
     final_spacer
     ], style={'listStyleType': 'none'})
 
+
+@app.callback(
+    [dash.dependencies.Output('stepper-output', 'children'),
+     dash.dependencies.Output('stepper', 'activeStep')],
+    [dash.dependencies.Input('stepper-button', 'n_clicks')],
+    [
+        dash.dependencies.State('stepper', 'activeStep')
+    ])
+def callback_stepper(n_clicks: int,
+                     step: int):
+    return f'Step {step}', step + 1
 
 @app.callback(
     dash.dependencies.Output('time-picker-output', 'children'),
