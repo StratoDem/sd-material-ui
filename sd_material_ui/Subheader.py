@@ -9,7 +9,7 @@ Material UI Subheader component
 
 Keyword arguments:
 - children (a list of or a singular dash component, string or number; optional): Node that will be placed inside the Subheader
-- classes (optional): The classes to be applied to this component. This keys in this object must be valid CSS rule
+- classes (dict; optional): The classes to be applied to this component. This keys in this object must be valid CSS rule
 names, and the values must be strings for the classnames to be assigned to each rule name
 Valid rule names are:
   root
@@ -25,7 +25,7 @@ Valid rule names are:
   - gutters (string; optional)
   - inset (string; optional)
   - sticky (string; optional)
-- inset (boolean; optional): If true, the Subheader will be indented
+- inset (boolean; default False): If true, the Subheader will be indented
 - style (dict; optional): Override the inline-styles of the root element"""
     @_explicitize_args
     def __init__(self, children=None, classes=Component.UNDEFINED, inset=Component.UNDEFINED, style=Component.UNDEFINED, **kwargs):

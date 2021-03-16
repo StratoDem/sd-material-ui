@@ -9,8 +9,8 @@ Material UI Tooltip component
 
 Keyword arguments:
 - children (a list of or a singular dash component, string or number; optional): Tooltip reference element
-- arrow (boolean; optional): If true, adds an arrow to the tooltip
-- classes (optional): The classes to be applied to this component. This keys in this object must be valid CSS rule
+- arrow (boolean; default False): If true, adds an arrow to the tooltip
+- classes (dict; optional): The classes to be applied to this component. This keys in this object must be valid CSS rule
 names, and the values must be strings for the classnames to be assigned to each rule name
 Valid rule names are:
   tooltip
@@ -28,9 +28,9 @@ Valid rule names are:
   - tooltipPlacementRight (string; optional)
   - tooltipPlacementTop (string; optional)
   - tooltipPlacementBottom (string; optional)
-- enterDelay (number; optional): The number of milliseconds to wait before showing the tooltip
-- leaveDelay (number; optional): The number of milliseconds to wait before hiding the tooltip
-- placement (optional): Tooltip placement
+- enterDelay (number; default 100): The number of milliseconds to wait before showing the tooltip
+- leaveDelay (number; default 0): The number of milliseconds to wait before hiding the tooltip
+- placement (default 'bottom'): Tooltip placement
 - title (a list of or a singular dash component, string or number; required): Tooltip title. Zero-length titles string are never displayed"""
     @_explicitize_args
     def __init__(self, children=None, arrow=Component.UNDEFINED, classes=Component.UNDEFINED, enterDelay=Component.UNDEFINED, leaveDelay=Component.UNDEFINED, placement=Component.UNDEFINED, title=Component.REQUIRED, **kwargs):

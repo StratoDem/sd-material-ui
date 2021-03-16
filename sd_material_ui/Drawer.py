@@ -9,10 +9,10 @@ class Drawer(Component):
 
 Keyword arguments:
 - children (a list of or a singular dash component, string or number; optional): Children to render inside of the Dialog
-- anchor (string; optional): Controls where the drawer appears. Must be one of "top", "bottom", "left", or "right"
+- anchor (string; default "left"): Controls where the drawer appears. Must be one of "top", "bottom", "left", or "right"
 Defaults to "left"
 - id (string; required): Dialog ID
-- classes (optional): The classes to be applied to this component. This keys in this object must be valid CSS rule
+- classes (dict; optional): The classes to be applied to this component. This keys in this object must be valid CSS rule
 names, and the values must be strings for the classnames to be assigned to each rule name
 Valid rule names are:
   root
@@ -40,12 +40,12 @@ Valid rule names are:
   - paperAnchorDockedRight (string; optional)
   - paperAnchorDockedBottom (string; optional)
   - modal (string; optional)
-- className (string; optional): CSS class name of the root element
-- open (boolean; optional): Is the drawer open?
+- className (string; default ''): CSS class name of the root element
+- open (boolean; default False): Is the drawer open?
 
 IMPORTANT: When using this component in Dash, a listener must be set up (either as state or
 an input) for this component's props.open value in order to achieve the desired behavior.
-- variant (string; optional): Type of drawer to be used, default is persistent"""
+- variant (string; default "persistent"): Type of drawer to be used, default is persistent"""
     @_explicitize_args
     def __init__(self, children=None, anchor=Component.UNDEFINED, id=Component.REQUIRED, classes=Component.UNDEFINED, className=Component.UNDEFINED, open=Component.UNDEFINED, variant=Component.UNDEFINED, classNameRoot=Component.UNDEFINED, **kwargs):
         self._prop_names = ['children', 'anchor', 'id', 'classes', 'className', 'open', 'variant']

@@ -9,7 +9,7 @@ Material UI Pagination component
 
 Keyword arguments:
 - id (string; required): Component ID
-- page (number; optional): Page number
+- page (number; default 1): Page number
 - count (number; required): Number of pages"""
     @_explicitize_args
     def __init__(self, id=Component.REQUIRED, page=Component.UNDEFINED, count=Component.REQUIRED, fireEvent=Component.UNDEFINED, **kwargs):

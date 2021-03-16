@@ -8,7 +8,7 @@ class Toggle(Component):
 
 
 Keyword arguments:
-- classes (optional): The classes to be applied to this component. This keys in this object must be valid CSS rule
+- classes (dict; optional): The classes to be applied to this component. This keys in this object must be valid CSS rule
 names, and the values must be strings for the classnames to be assigned to each rule name
 Valid rule names are:
   root
@@ -36,13 +36,13 @@ Valid rule names are:
   - input (string; optional)
   - thumb (string; optional)
   - tract (string; optional)
-- className (string; optional): CSS class name of the root element
-- disabled (boolean; optional): Whether the toggle is disabled (true) or not (false)
+- className (string; default ''): CSS class name of the root element
+- disabled (boolean; default False): Whether the toggle is disabled (true) or not (false)
 - id (string; required): Toggle ID
-- label (string; optional): The label for the toggle
-- labelPlacement (string; optional): If using a single label, its position can be: "top", "start", "bottom", or "end"
-- labelSpacing (optional): The space between the label(s) and toggle
-- secondaryLabel (string; optional): A second label for the toggle. If this is used, the labelPlacement value is ignored, and the
+- label (string; default ''): The label for the toggle
+- labelPlacement (string; default "end"): If using a single label, its position can be: "top", "start", "bottom", or "end"
+- labelSpacing (default 1): The space between the label(s) and toggle
+- secondaryLabel (string; default ''): A second label for the toggle. If this is used, the labelPlacement value is ignored, and the
 secondaryLabel will be positioned to the right of the toggle, and the first label to the left
 - toggled (boolean; required): Whether toggle is on (true) or off (false)"""
     @_explicitize_args

@@ -9,21 +9,21 @@ Material UI Card component
 
 Keyword arguments:
 - children (a list of or a singular dash component, string or number; optional): Can be used to render elements inside the Card.
-- className (string; optional): The CSS class name of the root element
-- classes (optional): The classes to be applied to this component. This keys in this object must be valid CSS rule
+- className (string; default ''): The CSS class name of the root element
+- classes (dict; optional): The classes to be applied to this component. This keys in this object must be valid CSS rule
 names, and the values must be strings for the classnames to be assigned to each rule name
 Valid rule names are:
   root. classes has the following type: dict containing keys 'root'.
   Those keys have the following types:
   - root (string; optional)
-- contentClassName (string; optional): The CSS class name of the content element
-- contentClasses (optional): The classes to be applied to the content component. This keys in this object must be valid
+- contentClassName (string; default ''): The CSS class name of the content element
+- contentClasses (dict; optional): The classes to be applied to the content component. This keys in this object must be valid
 CSS rule names, and the values must be strings for the classnames to be assigned to each rule
 name. contentClasses has the following type: dict containing keys 'root'.
   Those keys have the following types:
   - root (string; optional)
 - style (dict; optional): Styles to be implemented as inline css
-- raised (boolean; optional): If true, the Card component will appear raised"""
+- raised (boolean; default True): If true, the Card component will appear raised"""
     @_explicitize_args
     def __init__(self, children=None, className=Component.UNDEFINED, classes=Component.UNDEFINED, contentClassName=Component.UNDEFINED, contentClasses=Component.UNDEFINED, style=Component.UNDEFINED, raised=Component.UNDEFINED, **kwargs):
         self._prop_names = ['children', 'className', 'classes', 'contentClassName', 'contentClasses', 'style', 'raised']

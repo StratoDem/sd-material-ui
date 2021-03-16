@@ -10,8 +10,8 @@ Material UI Dialog component
 Keyword arguments:
 - children (a list of or a singular dash component, string or number; optional): Children to render inside of the Dialog
 - id (string; required): Dialog ID
-- ariaLabelledBy (string; optional): List of space separated id's of elements to use as aria labels
-- classes (optional): The classes to be applied to this component. This keys in this object must be valid CSS rule
+- ariaLabelledBy (string; default ''): List of space separated id's of elements to use as aria labels
+- classes (dict; optional): The classes to be applied to this component. This keys in this object must be valid CSS rule
 names, and the values must be strings for the classnames to be assigned to each rule name
 Valid rule names are:
   root
@@ -45,18 +45,18 @@ Valid rule names are:
   - paperWidthXl (string; optional)
   - paperFullWidth (string; optional)
   - paperFullScreen (string; optional)
-- className (string; optional): CSS class name of the root element
-- open (boolean; optional): Is the dialog open?
+- className (string; default ''): CSS class name of the root element
+- open (boolean; default False): Is the dialog open?
 
 IMPORTANT: When using this component in Dash, a listener must be set up (either as state or
 an input) for this component's props.open value in order to achieve the desired behavior.
 If such a listener is not in place, the non-modal version of this dialog will contaminate
 other callbacks in the browser
-- autoScrollBodyContent (boolean; optional): If set to true, the body content of the Dialog will be scrollable.
+- autoScrollBodyContent (boolean; default False): If set to true, the body content of the Dialog will be scrollable.
 - componentContainerClassName (string; optional): The className to add to the component container
-- fullWidth (boolean; optional): The className to add to the content container
-- useBrowserSideClose (boolean; optional): If set to true, the Close Icon will show in the upper right corner of the dialog, closing the Dialog browser side
-- scroll (dict; optional): "paper" or "body", Determines scroll container
+- fullWidth (boolean; default True): The className to add to the content container
+- useBrowserSideClose (boolean; default False): If set to true, the Close Icon will show in the upper right corner of the dialog, closing the Dialog browser side
+- scroll (dict; default 'body'): "paper" or "body", Determines scroll container
 - style (dict; optional): Styles to be implemented as inline css"""
     @_explicitize_args
     def __init__(self, children=None, id=Component.REQUIRED, ariaLabelledBy=Component.UNDEFINED, classes=Component.UNDEFINED, className=Component.UNDEFINED, open=Component.UNDEFINED, autoScrollBodyContent=Component.UNDEFINED, componentContainerClassName=Component.UNDEFINED, fullWidth=Component.UNDEFINED, useBrowserSideClose=Component.UNDEFINED, scroll=Component.UNDEFINED, style=Component.UNDEFINED, actions=Component.UNDEFINED, **kwargs):

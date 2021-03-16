@@ -8,9 +8,9 @@ class Checkbox(Component):
 Material UI Checkbox component
 
 Keyword arguments:
-- checked (boolean; optional): Checkbox is checked if true
+- checked (boolean; default False): Checkbox is checked if true
 - className (string; optional): CSS class name of the root element
-- classes (optional): The classes to be applied to this component. This keys in this object must be valid CSS rule
+- classes (dict; optional): The classes to be applied to this component. This keys in this object must be valid CSS rule
 names, and the values must be strings for the classnames to be assigned to each rule name
 Valid rule names are:
   root
@@ -27,11 +27,11 @@ Valid rule names are:
   - colorPrimary (string; optional)
   - colorSecondary (string; optional)
   - sizeSmall (string; optional)
-- disabled (boolean; optional): Checkbox is disabled if true
-- disableRipple (boolean; optional): Ripple is disabled if true
+- disabled (boolean; default False): Checkbox is disabled if true
+- disableRipple (boolean; default False): Ripple is disabled if true
 - id (string; required): The element's ID
 - label (string; optional): The label for the checkbox
-- name (string; optional): The name prop of the checkbox
+- name (string; default ''): The name prop of the checkbox
 - style (dict; optional): Override the inline styles of the root element"""
     @_explicitize_args
     def __init__(self, checked=Component.UNDEFINED, className=Component.UNDEFINED, classes=Component.UNDEFINED, disabled=Component.UNDEFINED, disableRipple=Component.UNDEFINED, fireEvent=Component.UNDEFINED, id=Component.REQUIRED, label=Component.UNDEFINED, name=Component.UNDEFINED, style=Component.UNDEFINED, **kwargs):

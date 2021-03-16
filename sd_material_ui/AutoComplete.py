@@ -4,11 +4,11 @@ from dash.development.base_component import Component, _explicitize_args
 
 
 class AutoComplete(Component):
-    """A AutoComplete component.
+    """An AutoComplete component.
 Material UI AutoComplete component
 
 Keyword arguments:
-- classes (optional): The classes to be applied to this component. This keys in this object must be valid CSS rule
+- classes (dict; optional): The classes to be applied to this component. This keys in this object must be valid CSS rule
 names, and the values must be strings for the classnames to be assigned to each rule name
 Valid rule names are:
   root
@@ -61,19 +61,19 @@ Valid rule names are:
   - groupLabel (string; optional)
   - groupUl (string; optional)
 - className (string; optional): CSS class name of the root element
-- dashCallbackDelay (number; optional): Dash callback delay in ms - default is 500 ms
+- dashCallbackDelay (number; default 500): Dash callback delay in ms - default is 500 ms
 - dataSource (list of boolean | number | string | dict | lists; optional): Array of strings or nodes used to populate the list
 Alternatively, an Array of Objects with a structure like
 {label: 'My label to render', value: 'My value to ship on match'}
-- filter (optional): String name for filter to be applied to user input.
+- filter (default "defaultFilter"): String name for filter to be applied to user input.
 will later be mapped to function
-- hintText (a list of or a singular dash component, string or number; optional): The hint content to display
+- hintText (a list of or a singular dash component, string or number; default "Search Here"): The hint content to display
 - id (string; required): Autocomplete ID
-- maxSearchResults (number; optional): The max number of search results to be shown. By default it shows
+- maxSearchResults (number; default 5): The max number of search results to be shown. By default it shows
 all the items which matches filter
 - open (boolean; optional): Auto complete menu is open if true
-- openOnFocus (boolean; optional): If true, the list item is showed when a focus event triggers
-- searchText (string; optional): Text being input to auto complete
+- openOnFocus (boolean; default False): If true, the list item is showed when a focus event triggers
+- searchText (string; default ""): Text being input to auto complete
 - style (dict; optional): Override the inline-styles of the root element
 - searchEndpointAPI (string; optional): If defined, the AutoComplete component hits this URL to search instead of string matching
 - searchJSONStructure (dict; optional): General JSON structure to send to the server
