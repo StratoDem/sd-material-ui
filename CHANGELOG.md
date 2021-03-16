@@ -2,6 +2,10 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 4.4.1 2021-03-16
+### Fixes
+- Fixes Stepper to allow activeStep to be changed by callbacks
+
 ## 4.4.0 2021-02-02
 ### Adds
 - Adds tooltip component
