@@ -8,14 +8,14 @@ class Picker(Component):
 
 
 Keyword arguments:
-- format (string; default ""): Format to be used in displaying date. Some possibilities:
+- format (string; optional): Format to be used in displaying date. Some possibilities:
 yyyy-MM-dd
 MM/dd/yyyy
 MM-dd
 - id (string; required): Picker ID
-- label (string; default ""): Label for the date or time picker
-- type (string; default "date"): Type of date or time picker, "time", "date", or "date-dialog"
-- value (string; default "01-01-2020"): Representation of datetime, like 2020-12-25T13:11:00.000Z"""
+- label (string; optional): Label for the date or time picker
+- type (string; optional): Type of date or time picker, "time", "date", or "date-dialog"
+- value (string; optional): Representation of datetime, like 2020-12-25T13:11:00.000Z"""
     @_explicitize_args
     def __init__(self, format=Component.UNDEFINED, id=Component.REQUIRED, label=Component.UNDEFINED, type=Component.UNDEFINED, value=Component.UNDEFINED, **kwargs):
         self._prop_names = ['format', 'id', 'label', 'type', 'value']

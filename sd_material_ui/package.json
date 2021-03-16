@@ -1,9 +1,9 @@
 {
   "name": "sd-material-ui",
-  "version": "4.4.0",
+  "version": "4.4.1",
   "description": "material-ui components for Dash",
   "main": "build/index.js",
-  "author": "Michael Clawar, Eric Linden, Sreeja Keesara tech@stratodem.com",
+  "author": "Michael Clawar, Eric Linden, Sreeja Keesara, Danny Kaminsky tech@stratodem.com",
   "scripts": {
     "start": "webpack-serve ./webpack.serve.config.js --open",
     "validate-init": "python _validate_init.py",

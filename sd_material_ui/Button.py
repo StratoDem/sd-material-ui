@@ -15,7 +15,7 @@ which will then be displayed. (In our example,
 we are nesting an `<input type="file" />` and a `span`
 that acts as our label to be displayed.) This only
 applies to flat and disableShadow buttons.
-- classes (dict; optional): The classes to be applied to this component. This keys in this object must be valid CSS rule
+- classes (optional): The classes to be applied to this component. This keys in this object must be valid CSS rule
 names, and the values must be strings for the classnames to be assigned to each rule name
 Valid rule names are:
   root
@@ -92,19 +92,19 @@ and https://material-ui.com/api/icon-button/#css. classes has the following type
   - iconSizeSmall (string; optional)
   - iconSizeMedium (string; optional)
   - iconSizeLarge (string; optional)
-- className (string; default ''): CSS class name of the root element
-- disableTouchRipple (boolean; default False): If true, the element's ripple effect will be disabled
-- disabled (boolean; default False): Disable the button?
-- fullWidth (boolean; default False): If true, the button will take up the full width of its container
-- href (string; default ''): The URL to link to when the button is clicked
+- className (string; optional): CSS class name of the root element
+- disableTouchRipple (boolean; optional): If true, the element's ripple effect will be disabled
+- disabled (boolean; optional): Disable the button?
+- fullWidth (boolean; optional): If true, the button will take up the full width of its container
+- href (string; optional): The URL to link to when the button is clicked
 - iconClass (a list of or a singular dash component, string or number; optional): Sets the class of a span element inside the button
 - id (string; optional): Element ID
-- n_clicks (number; default 0): An integer that represents the number fo times that this element has been clicked
-- n_clicks_previous (number; default 0): An integer that represents the previous number of times this element has been clicked
+- n_clicks (number; optional): An integer that represents the number fo times that this element has been clicked
+- n_clicks_previous (number; optional): An integer that represents the previous number of times this element has been clicked
 - disableShadow (string; optional): Hide the shadow behind the button
 - style (dict; optional): Override the inline styles of the root element
 - useIcon (boolean; optional): If true, this object is rendered as an IconButton
-- variant (string; default 'text'): 'contained' | 'outlined' | 'text', Button type if not an IconButton"""
+- variant (string; optional): 'contained' | 'outlined' | 'text', Button type if not an IconButton"""
     @_explicitize_args
     def __init__(self, children=None, classes=Component.UNDEFINED, className=Component.UNDEFINED, disableTouchRipple=Component.UNDEFINED, disabled=Component.UNDEFINED, fireEvent=Component.UNDEFINED, fullWidth=Component.UNDEFINED, href=Component.UNDEFINED, iconClass=Component.UNDEFINED, id=Component.UNDEFINED, n_clicks=Component.UNDEFINED, n_clicks_previous=Component.UNDEFINED, disableShadow=Component.UNDEFINED, style=Component.UNDEFINED, useIcon=Component.UNDEFINED, variant=Component.UNDEFINED, **kwargs):
         self._prop_names = ['children', 'classes', 'className', 'disableTouchRipple', 'disabled', 'fullWidth', 'href', 'iconClass', 'id', 'n_clicks', 'n_clicks_previous', 'disableShadow', 'style', 'useIcon', 'variant']

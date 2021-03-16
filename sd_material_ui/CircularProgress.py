@@ -8,7 +8,7 @@ class CircularProgress(Component):
 Material UI CircularProgress component
 
 Keyword arguments:
-- classes (dict; optional): The classes to be applied to this component. This keys in this object must be valid CSS rule
+- classes (optional): The classes to be applied to this component. This keys in this object must be valid CSS rule
 names, and the values must be strings for the classnames to be assigned to each rule name
 Valid rule names are:
   root
@@ -30,11 +30,11 @@ Valid rule names are:
   - circleStatic (string; optional)
   - circleIndeterminate (string; optional)
   - circleDisableShrink (string; optional)
-- color (string; default 'inherit'): Override the progress's color
-- mode (default 'indeterminate'): The mode of show your progress, for now, will always be indeterminate
-- size (number; default 40): The diameter of the progress in pixels
+- color (string; optional): Override the progress's color
+- mode (optional): The mode of show your progress, for now, will always be indeterminate
+- size (number; optional): The diameter of the progress in pixels
 - style (dict; optional): Override the inline-style of the root element
-- thickness (number; default 3.5): Stroke width in pixels"""
+- thickness (number; optional): Stroke width in pixels"""
     @_explicitize_args
     def __init__(self, classes=Component.UNDEFINED, color=Component.UNDEFINED, mode=Component.UNDEFINED, size=Component.UNDEFINED, style=Component.UNDEFINED, thickness=Component.UNDEFINED, innerStyle=Component.UNDEFINED, **kwargs):
         self._prop_names = ['classes', 'color', 'mode', 'size', 'style', 'thickness']

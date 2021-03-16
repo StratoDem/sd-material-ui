@@ -8,7 +8,7 @@ class FontIcon(Component):
 Material UI FontIcon component
 
 Keyword arguments:
-- classes (dict; optional): The classes to be applied to this component. This keys in this object must be valid CSS rule
+- classes (optional): The classes to be applied to this component. This keys in this object must be valid CSS rule
 names, and the values must be strings for the classnames to be assigned to each rule name
 Valid rule names are:
   root
@@ -30,9 +30,9 @@ Valid rule names are:
   - fontSizeSmall (string; optional)
   - fontSizeLarge (string; optional)
   - fontSizeInherit (string; optional)
-- className (string; default ''): CSS class name of the root element
-- id (string; default ''): id for the component
-- iconName (string; default ''): defines specific icon when using public icon font
+- className (string; optional): CSS class name of the root element
+- id (string; optional): id for the component
+- iconName (string; optional): defines specific icon when using public icon font
 - style (dict; optional): override inline-styles of root element"""
     @_explicitize_args
     def __init__(self, classes=Component.UNDEFINED, className=Component.UNDEFINED, id=Component.UNDEFINED, iconName=Component.UNDEFINED, style=Component.UNDEFINED, **kwargs):

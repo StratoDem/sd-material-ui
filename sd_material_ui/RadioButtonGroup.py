@@ -8,7 +8,7 @@ class RadioButtonGroup(Component):
 
 
 Keyword arguments:
-- classes (dict; optional): The classes to be applied to each radio button. This keys in this object must be valid CSS
+- classes (optional): The classes to be applied to each radio button. This keys in this object must be valid CSS
 rule names, and the values must be strings for the classnames to be assigned to each rule name
 Valid rule names are:
   root
@@ -22,13 +22,13 @@ Valid rule names are:
   - disabled (string; optional)
   - colorPrimary (string; optional)
   - colorSecondary (string; optional)
-- className (string; default ''): the css class name of the root element
+- className (string; optional): the css class name of the root element
 - id (string; required): the element's ID
 - name (string; required): the name that will be applied to the group of radio buttons
 - options (list; optional): used to create the RadioButtons to populate the RadioButtonGroup with. A Dash user passes in a
 list of dict items, each one having at least a `value` and `label`. If that value is selected,
 valueSelected will be updated
-- row (boolean; default False): If true, Radio Buttons appear as a row"
+- row (boolean; optional): If true, Radio Buttons appear as a row"
 - valueSelected (string; required): Initial value selected"""
     @_explicitize_args
     def __init__(self, classes=Component.UNDEFINED, className=Component.UNDEFINED, fireEvent=Component.UNDEFINED, id=Component.REQUIRED, name=Component.REQUIRED, options=Component.UNDEFINED, row=Component.UNDEFINED, valueSelected=Component.REQUIRED, **kwargs):

@@ -9,8 +9,8 @@ Material UI Tabs component
 
 Keyword arguments:
 - children (a list of or a singular dash component, string or number; optional): Pass Tab components as children
-- id (string; default ''): Element ID
-- classes (dict; optional): The classes to be applied to this component. This keys in this object must be valid CSS rule
+- id (string; optional): Element ID
+- classes (optional): The classes to be applied to this component. This keys in this object must be valid CSS rule
 names, and the values must be strings for the classnames to be assigned to each rule name
 Valid rule names are:
   root
@@ -43,7 +43,7 @@ icon
 label
 value
 wrapped
-- value (bool | number | str | dict | list; default False): Makes Tabs controllable and selects the tab whose value prop matches this prop"""
+- value (bool | number | str | dict | list; optional): Makes Tabs controllable and selects the tab whose value prop matches this prop"""
     @_explicitize_args
     def __init__(self, children=None, id=Component.UNDEFINED, classes=Component.UNDEFINED, className=Component.UNDEFINED, fireEvent=Component.UNDEFINED, style=Component.UNDEFINED, tabPropsArray=Component.UNDEFINED, value=Component.UNDEFINED, **kwargs):
         self._prop_names = ['children', 'id', 'classes', 'className', 'style', 'tabPropsArray', 'value']

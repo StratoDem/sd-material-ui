@@ -10,9 +10,9 @@ class CollapseTransition(Component):
 Keyword arguments:
 - children (a list of or a singular dash component, string or number; optional): The contents of the transition element
 - className (string; optional): CSS class name of the root element
-- collapsedHeight (number; default 0): The pixel height of the child element when collapsed
+- collapsedHeight (number; optional): The pixel height of the child element when collapsed
 - id (string; required): Dash ID of the transition element
-- visible (boolean; default True): If true, the transition element is displayed, else it will be hidden"""
+- visible (boolean; optional): If true, the transition element is displayed, else it will be hidden"""
     @_explicitize_args
     def __init__(self, children=None, className=Component.UNDEFINED, collapsedHeight=Component.UNDEFINED, id=Component.REQUIRED, visible=Component.UNDEFINED, **kwargs):
         self._prop_names = ['children', 'className', 'collapsedHeight', 'id', 'visible']

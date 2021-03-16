@@ -4,12 +4,12 @@ from dash.development.base_component import Component, _explicitize_args
 
 
 class Accordion(Component):
-    """An Accordion component.
+    """A Accordion component.
 
 
 Keyword arguments:
 - children (a list of or a singular dash component, string or number; optional): Elements to render inside the accordion
-- classes (dict; optional): The classes to be applied to this component. The keys in this object must be valid CSS rule
+- classes (optional): The classes to be applied to this component. The keys in this object must be valid CSS rule
 names, and the values must be strings for the classnames to be assigned to each rule name
 Valid rule names are:
   root
@@ -22,21 +22,21 @@ Valid rule names are:
   - expanded (string; optional)
   - disabled (string; optional)
 - className (string; optional): The className of the root element
-- defaultExpanded (boolean; default False): If true, expands the accordion by defaulgt
-- detailClasses (dict; optional): The classes to be applied to the details component (the element containing the accordion's
+- defaultExpanded (boolean; optional): If true, expands the accordion by defaulgt
+- detailClasses (optional): The classes to be applied to the details component (the element containing the accordion's
 children). The keys in this object must be valid CSS rule names, and the values must be strings
 for the classnames to be assigned to each rule name
 Valid rule names are:
   root. detailClasses has the following type: dict containing keys 'root'.
   Those keys have the following types:
   - root (string; optional)
-- disabled (boolean; default False): If true, the accordion will be displayed in a disabled state
-- expanded (boolean; default False): If true, expands the accordion, otherwise collapse it. Setting this prop enables control
+- disabled (boolean; optional): If true, the accordion will be displayed in a disabled state
+- expanded (boolean; optional): If true, expands the accordion, otherwise collapse it. Setting this prop enables control
 over the accordion
 - id (string; required): The ID of the root element
-- label (string; default ''): The text displayed at the top of the accordion, regardless of expanded state
-- square (boolean; default False): If true, rounded corners are disabled
-- summaryClasses (dict; optional): The classes to be applied to the summary component (the element containing the accordion's
+- label (string; optional): The text displayed at the top of the accordion, regardless of expanded state
+- square (boolean; optional): If true, rounded corners are disabled
+- summaryClasses (optional): The classes to be applied to the summary component (the element containing the accordion's
 label). The keys in this object must be valid CSS rule names, and the values must be strings
 for the classnames to be assigned to each rule name
 Valid rule names are:

@@ -11,11 +11,11 @@ Keyword arguments:
 - children (a list of or a singular dash component, string or number; optional): The contents of the transition element
 - className (string; optional): CSS class name of the root element
 - id (string; required): Dash ID of the transition element
-- slideDirection (default "up"): The direction the child component will move when sliding into view
+- slideDirection (optional): The direction the child component will move when sliding into view
 - style (dict; optional): The styles passed to the transition element
 An style object (even if empty) must be given to the transition element or it will fail
 silently. See: https://github.com/mui-org/material-ui/issues/15472
-- visible (boolean; default True): If true, the transition element is displayed, else it will be hidden"""
+- visible (boolean; optional): If true, the transition element is displayed, else it will be hidden"""
     @_explicitize_args
     def __init__(self, children=None, className=Component.UNDEFINED, id=Component.REQUIRED, slideDirection=Component.UNDEFINED, style=Component.UNDEFINED, visible=Component.UNDEFINED, **kwargs):
         self._prop_names = ['children', 'className', 'id', 'slideDirection', 'style', 'visible']

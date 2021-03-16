@@ -8,9 +8,9 @@ class DropDownMenu(Component):
 
 
 Keyword arguments:
-- autoWidth (boolean; default False): If true, the width of the popover will automatically be set according to the items inside
+- autoWidth (boolean; optional): If true, the width of the popover will automatically be set according to the items inside
 the menu, otherwise it will be at least the width of the select input.
-- classes (dict; optional): The classes to be applied to this component. This keys in this object must be valid CSS rule
+- classes (optional): The classes to be applied to this component. This keys in this object must be valid CSS rule
 names, and the values must be strings for the classnames to be assigned to each rule name
 Valid rule names are:
   root
@@ -26,13 +26,13 @@ Valid rule names are:
   - outlined (string; optional)
   - selectMenu (string; optional)
   - disabled (string; optional)
-- disabled (boolean; default False): If true, this dropdown will not be interactive
-- helperText (string; default ''): Text to display under the menu
+- disabled (boolean; optional): If true, this dropdown will not be interactive
+- helperText (string; optional): Text to display under the menu
 - id (string; required): The ID used for this dropdown menu
-- labelText (string; default ''): The text that will be displayed when no items are selected, and which will move to above the
+- labelText (string; optional): The text that will be displayed when no items are selected, and which will move to above the
 menu when there is at least one selection
-- labelId (string; default ''): The ID associated with the label
-- multiple (boolean; default False): Allows multiple selections from the dropdown if true, else only one selection
+- labelId (string; optional): The ID associated with the label
+- multiple (boolean; optional): Allows multiple selections from the dropdown if true, else only one selection
 - options (list; optional): An array of objects, with each object representing an option in the menu. Each object must
 must contain either a value and primaryText keys or, if useGrouping is set to true, then an
 object may contain a grouping key. The order of the array is important when grouping, as each
@@ -46,10 +46,10 @@ Example:
    {"primaryText": "option 3", "value": 3},
  ]
  This will group options 1 and 2 with group A, and option 3 with group B.
-- useGrouping (boolean; default False): If true, the expanded dropdown menu will include labels for the various groups of options.
+- useGrouping (boolean; optional): If true, the expanded dropdown menu will include labels for the various groups of options.
 Those labels and groupings are set in the options prop
 - value (bool | number | str | dict | list; optional): The active selection for the menu
-- variant (string; default "standard"): Allows selection of one of three variant types of menus: filled, outlined, or standard. Set
+- variant (string; optional): Allows selection of one of three variant types of menus: filled, outlined, or standard. Set
 to standard by default"""
     @_explicitize_args
     def __init__(self, autoWidth=Component.UNDEFINED, classes=Component.UNDEFINED, disabled=Component.UNDEFINED, helperText=Component.UNDEFINED, id=Component.REQUIRED, labelText=Component.UNDEFINED, labelId=Component.UNDEFINED, multiple=Component.UNDEFINED, options=Component.UNDEFINED, useGrouping=Component.UNDEFINED, value=Component.UNDEFINED, variant=Component.UNDEFINED, **kwargs):

@@ -8,10 +8,10 @@ class Stepper(Component):
 Material UI Stepper component
 
 Keyword arguments:
-- activeStep (number; default 0): Set the active step (zero based index). This will enable Step control helpers
-- alternativeLabel (boolean; default True): If true, the labels will appear under the steps
-- backButtonStyle (dict; default {marginRight: 12}): The style for the back button
-- classes (dict; optional): The classes to be applied to this component. This keys in this object must be valid CSS rule
+- activeStep (number; optional): Set the active step (zero based index). This will enable Step control helpers
+- alternativeLabel (boolean; optional): If true, the labels will appear under the steps
+- backButtonStyle (dict; optional): The style for the back button
+- classes (optional): The classes to be applied to this component. This keys in this object must be valid CSS rule
 names, and the values must be strings for the classnames to be assigned to each rule name
 Valid rule names are:
   root
@@ -23,15 +23,15 @@ Valid rule names are:
   - horizontal (string; optional)
   - vertical (string; optional)
   - alternativeLabel (string; optional)
-- className (string; default ''): CSS class name of the root element
+- className (string; optional): CSS class name of the root element
 - finishedButtonStyle (dict; optional): The style for the button displayed after all steps have been finished
-- finishedText (string; default 'Click here to view again'): The text to display on the final button when all steps have been completed
+- finishedText (string; optional): The text to display on the final button when all steps have been completed
 - id (string; required): Dash ID
-- linear (boolean; default True): If set to true, the Stepper will assist in controlling steps for linear flow
+- linear (boolean; optional): If set to true, the Stepper will assist in controlling steps for linear flow
 - nextButtonStyle (dict; optional): The style for the next button
-- orientation (default 'horizontal'): The stepper orientation (layout flow direction)
-- stepCount (number; default 3): The number of steps that this component will contain
-- stepLabels (list of strings; default ['Step 1', 'Step 2', 'Step 3']): The text labels that will be shown next to each step number. The length of this array must
+- orientation (optional): The stepper orientation (layout flow direction)
+- stepCount (number; optional): The number of steps that this component will contain
+- stepLabels (list of strings; optional): The text labels that will be shown next to each step number. The length of this array must
 match the total number of steps
 - style (dict; optional): Override the inline-style of the root element"""
     @_explicitize_args
