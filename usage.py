@@ -139,6 +139,26 @@ app.layout = html.Div([
             spacer,
 
             html.Div([
+                    html.P([html.Strong('Sample for Select')]),
+                    sd_material_ui.Select(
+                        id='select',
+                        value=1,
+                        options=[
+                            dict(primaryText='Option 1', value=1),
+                            dict(primaryText='Option 2', value=2),
+                            dict(primaryText='Option 3', value=3),
+                            dict(primaryText='Option 4', value=4),
+                        ]
+                        dashCallbackDelay=3000
+                    ),
+                    html.P(id='select-output'),
+
+
+            ]),
+
+            spacer,
+
+            html.Div([
                 html.P([html.Strong('Test for Accordion')]),
 
                 sd_material_ui.Accordion(
