@@ -27,7 +27,7 @@ type Props = {
     readOnly?: boolean,
     renderValue?: Node,
     tabIndex?: number,
-    value?: T,
+    value?: any,
     variant?: 'standard' | 'outlined' | 'filled',
 };
 
@@ -50,10 +50,7 @@ const defaultProps = {
 export default class Select extends Component<Props, State> {
     constructor(props: Props) {
         super(props);
-        this.state = {
-            selectedValue: this.props.selectedValue,
-            dataSourceRender: this.props.dataSource,
-        };
+        this.state = { value: props.value, disabled: props.disabled };
         /** _.debounce used to provide delay in callback to avoid firing callback every
          * time user input changes - waits this.props.dashCallbackDelay ms to fire callback */
         this.updateTextProps = _.debounce(
@@ -84,20 +81,11 @@ export default class Select extends Component<Props, State> {
      * @param params
      */
     handleChange = (event) => {
-        const index = childrenArray
-            .map((child) => child.props.value)
-            .indexOf(event.target.value);
+      this.setState({value: event.target.value});
 
-        if (index === -1) {
-            return;
-        }
-
-        const child = childrenArray[index];
-        this.setState({value: child.props.value});
-
-        if (onChange) {
-            onChange(event, child);
-        }
+      if (typeof this.props.setProps === 'function') {
+        this.props.setProps({value: event.target.value});
+      }
     };
 
     render() {
