@@ -138,6 +138,16 @@ app.layout = html.Div([
 
             spacer,
 
+                html.Div([
+                    html.P([html.Strong('Sample for Textfield')]),
+                    sd_material_ui.Textfield(
+                        id='textfield'
+                    ),
+                    html.P(id='textfield-output'),
+                ]),
+
+            spacer,
+
             html.Div([
                 html.P([html.Strong('Test for Accordion')]),
 
@@ -682,8 +692,14 @@ def autocomplete_callback(searchText: str):
     [dash.dependencies.Input('autocomplete', 'selectedValue')])
 def autocomplete_callback(searchValue: int):
     return ['Selection is {}'.format(searchValue if searchValue else '')]
-#
-#
+
+# Callback for SDTextfield
+@app.callback(
+    dash.dependencies.Output('textfield-output', 'children'),
+    [dash.dependencies.Input('textfield', 'value')])
+def textfield_callback(value):
+    return ['Selection is: {}'.format(value)]
+
 # Callback for SDRadioButtonGroup
 @app.callback(
     dash.dependencies.Output('radio-output', 'children'),

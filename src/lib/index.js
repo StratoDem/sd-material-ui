@@ -23,6 +23,7 @@ export { default as Snackbar } from './components/Snackbar.react';
 export { default as Stepper } from './components/Stepper.react';
 export { default as Subheader } from './components/Subheader.react';
 export { default as Tabs } from './components/Tabs.react';
+export { default as Textfield } from './components/Textfield.react';
 export { default as Toggle } from './components/Toggle.react';
 export { default as Tooltip } from './components/Tooltip.react';
 export { default as ZoomTransition } from './components/ZoomTransition.react';

@@ -23,6 +23,7 @@ from .Snackbar import Snackbar
 from .Stepper import Stepper
 from .Subheader import Subheader
 from .Tabs import Tabs
+from .Textfield import Textfield
 from .Toggle import Toggle
 from .Tooltip import Tooltip
 from .ZoomTransition import ZoomTransition
@@ -53,6 +54,7 @@ __all__ = [
     "Stepper",
     "Subheader",
     "Tabs",
+    "Textfield",
     "Toggle",
     "Tooltip",
     "ZoomTransition"
