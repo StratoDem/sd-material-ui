@@ -1,4 +1,5 @@
 export { default as Accordion } from './components/Accordion.react';
+export { default as AppBar } from './components/AppBar.react';
 export { default as AutoComplete } from './components/AutoComplete.react';
 export { default as BottomNavigation } from './components/BottomNavigation.react';
 export { default as Button } from './components/Button.react';
@@ -24,5 +25,6 @@ export { default as Stepper } from './components/Stepper.react';
 export { default as Subheader } from './components/Subheader.react';
 export { default as Tabs } from './components/Tabs.react';
 export { default as Toggle } from './components/Toggle.react';
+export { default as Toolbar } from './components/Toolbar.react';
 export { default as Tooltip } from './components/Tooltip.react';
 export { default as ZoomTransition } from './components/ZoomTransition.react';

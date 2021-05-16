@@ -1,4 +1,5 @@
 from .Accordion import Accordion
+from .AppBar import AppBar
 from .AutoComplete import AutoComplete
 from .BottomNavigation import BottomNavigation
 from .Button import Button
@@ -24,11 +25,13 @@ from .Stepper import Stepper
 from .Subheader import Subheader
 from .Tabs import Tabs
 from .Toggle import Toggle
+from .Toolbar import Toolbar
 from .Tooltip import Tooltip
 from .ZoomTransition import ZoomTransition
 
 __all__ = [
     "Accordion",
+    "AppBar",
     "AutoComplete",
     "BottomNavigation",
     "Button",
@@ -54,6 +57,7 @@ __all__ = [
     "Subheader",
     "Tabs",
     "Toggle",
+    "Toolbar",
     "Tooltip",
     "ZoomTransition"
 ]
