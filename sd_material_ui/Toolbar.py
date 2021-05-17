@@ -57,7 +57,7 @@ Keyword arguments:
 - disableGutters (boolean; default False):
     If True, disables gutter padding.. Defaults to `False`.
 
-- variant (string; default 'regular'):
+- variant (default 'regular'):
     The variant to use. Defaults to `regular`."""
     @_explicitize_args
     def __init__(self, children=None, id=Component.REQUIRED, classes=Component.UNDEFINED, className=Component.UNDEFINED, component=Component.UNDEFINED, disableGutters=Component.UNDEFINED, variant=Component.UNDEFINED, classNameRoot=Component.UNDEFINED, **kwargs):

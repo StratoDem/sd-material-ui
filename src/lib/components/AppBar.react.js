@@ -40,9 +40,9 @@ type Props = {
   /** CSS class name of the root element */
   className?: string,
   /** The color of the component. It supports those theme colors that make sense for this component. */
-  color?: string,
+  color?: 'default' | 'inherit' | 'primary' | 'secondary' | 'transparent',
   /** The positioning type. Defaults to `fixed`*/
-  position?: string,
+  position?: 'absolute' | 'fixed' | 'relative' | 'static' | 'sticky',
 };
 
 const defaultProps = {

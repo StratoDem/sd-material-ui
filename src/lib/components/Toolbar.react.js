@@ -44,7 +44,7 @@ type Props = {
   /** If true, disables gutter padding.. Defaults to `false`*/
   disableGutters?: boolean,
   /** The variant to use. Defaults to `regular`*/
-  variant?: string,
+  variant?: 'regular' | 'dense',
 };
 
 const defaultProps = {

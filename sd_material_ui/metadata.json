@@ -598,7 +598,30 @@
       "color": {
         "required": false,
         "flowType": {
-          "name": "string"
+          "name": "union",
+          "raw": "'default' | 'inherit' | 'primary' | 'secondary' | 'transparent'",
+          "elements": [
+            {
+              "name": "literal",
+              "value": "'default'"
+            },
+            {
+              "name": "literal",
+              "value": "'inherit'"
+            },
+            {
+              "name": "literal",
+              "value": "'primary'"
+            },
+            {
+              "name": "literal",
+              "value": "'secondary'"
+            },
+            {
+              "name": "literal",
+              "value": "'transparent'"
+            }
+          ]
         },
         "description": "The color of the component. It supports those theme colors that make sense for this component.",
         "defaultValue": {
@@ -609,7 +632,30 @@
       "position": {
         "required": false,
         "flowType": {
-          "name": "string"
+          "name": "union",
+          "raw": "'absolute' | 'fixed' | 'relative' | 'static' | 'sticky'",
+          "elements": [
+            {
+              "name": "literal",
+              "value": "'absolute'"
+            },
+            {
+              "name": "literal",
+              "value": "'fixed'"
+            },
+            {
+              "name": "literal",
+              "value": "'relative'"
+            },
+            {
+              "name": "literal",
+              "value": "'static'"
+            },
+            {
+              "name": "literal",
+              "value": "'sticky'"
+            }
+          ]
         },
         "description": "The positioning type. Defaults to `fixed`",
         "defaultValue": {
@@ -7395,7 +7441,18 @@
       "variant": {
         "required": false,
         "flowType": {
-          "name": "string"
+          "name": "union",
+          "raw": "'regular' | 'dense'",
+          "elements": [
+            {
+              "name": "literal",
+              "value": "'regular'"
+            },
+            {
+              "name": "literal",
+              "value": "'dense'"
+            }
+          ]
         },
         "description": "The variant to use. Defaults to `regular`",
         "defaultValue": {

@@ -51,11 +51,11 @@ Keyword arguments:
 
     - colorTransparent (string; optional)
 
-- color (string; default 'primary'):
+- color (default 'primary'):
     The color of the component. It supports those theme colors that
     make sense for this component.
 
-- position (string; default 'fixed'):
+- position (default 'fixed'):
     The positioning type. Defaults to `fixed`."""
     @_explicitize_args
     def __init__(self, children=None, id=Component.REQUIRED, classes=Component.UNDEFINED, className=Component.UNDEFINED, color=Component.UNDEFINED, position=Component.UNDEFINED, classNameRoot=Component.UNDEFINED, **kwargs):
