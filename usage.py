@@ -30,6 +30,19 @@ app.layout = html.Div([
 
     html.Div([
         html.Div([
+            html.Div([
+                html.P([html.Strong('Test for AppBar')]),
+                sd_material_ui.AppBar(
+                    id='appbar',
+                    children=sd_material_ui.Toolbar(
+                        id='toolbar',
+                        children=[
+                            html.H4(children='AppBar'),
+                       ]),
+                    )
+            ]),
+
+            spacer,
 
             html.Div([
                 html.P([html.Strong('Test for drawer')]),

@@ -467,6 +467,218 @@
       }
     }
   },
+  "src/lib/components/AppBar.react.js": {
+    "description": "",
+    "displayName": "AppBar",
+    "methods": [],
+    "props": {
+      "id": {
+        "required": true,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "Appbar ID"
+      },
+      "children": {
+        "required": false,
+        "flowType": {
+          "name": "Node"
+        },
+        "description": "Children to render inside of the Appbar",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "classes": {
+        "required": false,
+        "flowType": {
+          "name": "signature",
+          "type": "object",
+          "raw": "{\n  root?: string,\n  positionFixed?: string,\n  positionAbsolute?: string,\n  positionSticky?: string,\n  positionStatic?: string,\n  positionRelative?: string,\n  colorDefault?: string,\n  colorPrimary?: string,\n  colorSecondary?: string,\n  colorInherit?: string,\n  colorTransparent?: string,\n}",
+          "signature": {
+            "properties": [
+              {
+                "key": "root",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "positionFixed",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "positionAbsolute",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "positionSticky",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "positionStatic",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "positionRelative",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "colorDefault",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "colorPrimary",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "colorSecondary",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "colorInherit",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "colorTransparent",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              }
+            ]
+          }
+        },
+        "description": "The classes to be applied to this component. This keys in this object must be valid CSS rule\nnames, and the values must be strings for the classnames to be assigned to each rule name\nValid rule names are:\n  root\n  docked\n  paper\n  paperAnchorLeft\n  paperAnchorRight\n  paperAnchorTop\n  paperAnchorBottom\n  paperAnchorDockedLeft\n  paperAnchorDockedTop\n  paperAnchorDockedRight\n  paperAnchorDockedBottom\n  modal",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "className": {
+        "required": false,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "CSS class name of the root element",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "color": {
+        "required": false,
+        "flowType": {
+          "name": "union",
+          "raw": "'default' | 'inherit' | 'primary' | 'secondary' | 'transparent'",
+          "elements": [
+            {
+              "name": "literal",
+              "value": "'default'"
+            },
+            {
+              "name": "literal",
+              "value": "'inherit'"
+            },
+            {
+              "name": "literal",
+              "value": "'primary'"
+            },
+            {
+              "name": "literal",
+              "value": "'secondary'"
+            },
+            {
+              "name": "literal",
+              "value": "'transparent'"
+            }
+          ]
+        },
+        "description": "The color of the component. It supports those theme colors that make sense for this component.",
+        "defaultValue": {
+          "value": "'primary'",
+          "computed": false
+        }
+      },
+      "position": {
+        "required": false,
+        "flowType": {
+          "name": "union",
+          "raw": "'absolute' | 'fixed' | 'relative' | 'static' | 'sticky'",
+          "elements": [
+            {
+              "name": "literal",
+              "value": "'absolute'"
+            },
+            {
+              "name": "literal",
+              "value": "'fixed'"
+            },
+            {
+              "name": "literal",
+              "value": "'relative'"
+            },
+            {
+              "name": "literal",
+              "value": "'static'"
+            },
+            {
+              "name": "literal",
+              "value": "'sticky'"
+            }
+          ]
+        },
+        "description": "The positioning type. Defaults to `fixed`",
+        "defaultValue": {
+          "value": "'fixed'",
+          "computed": false
+        }
+      },
+      "classNameRoot": {
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        },
+        "required": false
+      },
+      "setProps": {
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        },
+        "required": false
+      }
+    }
+  },
   "src/lib/components/AutoComplete.react.js": {
     "description": "Material UI AutoComplete component",
     "displayName": "AutoComplete",
@@ -7073,6 +7285,194 @@
           "name": "boolean"
         },
         "description": "Whether toggle is on (true) or off (false)"
+      }
+    }
+  },
+  "src/lib/components/Toolbar.react.js": {
+    "description": "",
+    "displayName": "Toolbar",
+    "methods": [],
+    "props": {
+      "id": {
+        "required": true,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "Appbar ID"
+      },
+      "children": {
+        "required": false,
+        "flowType": {
+          "name": "Node"
+        },
+        "description": "Children to render inside of the Appbar",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "classes": {
+        "required": false,
+        "flowType": {
+          "name": "signature",
+          "type": "object",
+          "raw": "{\n  root?: string,\n  positionFixed?: string,\n  positionAbsolute?: string,\n  positionSticky?: string,\n  positionStatic?: string,\n  positionRelative?: string,\n  colorDefault?: string,\n  colorPrimary?: string,\n  colorSecondary?: string,\n  colorInherit?: string,\n  colorTransparent?: string,\n}",
+          "signature": {
+            "properties": [
+              {
+                "key": "root",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "positionFixed",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "positionAbsolute",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "positionSticky",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "positionStatic",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "positionRelative",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "colorDefault",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "colorPrimary",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "colorSecondary",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "colorInherit",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              {
+                "key": "colorTransparent",
+                "value": {
+                  "name": "string",
+                  "required": false
+                }
+              }
+            ]
+          }
+        },
+        "description": "The classes to be applied to this component. This keys in this object must be valid CSS rule\nnames, and the values must be strings for the classnames to be assigned to each rule name\nValid rule names are:\n  root\n  docked\n  paper\n  paperAnchorLeft\n  paperAnchorRight\n  paperAnchorTop\n  paperAnchorBottom\n  paperAnchorDockedLeft\n  paperAnchorDockedTop\n  paperAnchorDockedRight\n  paperAnchorDockedBottom\n  modal",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "className": {
+        "required": false,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "CSS class name of the root element",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "component": {
+        "required": false,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "The component used for the root node. Defaults to `div`.",
+        "defaultValue": {
+          "value": "'div'",
+          "computed": false
+        }
+      },
+      "disableGutters": {
+        "required": false,
+        "flowType": {
+          "name": "boolean"
+        },
+        "description": "If true, disables gutter padding.. Defaults to `false`",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "variant": {
+        "required": false,
+        "flowType": {
+          "name": "union",
+          "raw": "'regular' | 'dense'",
+          "elements": [
+            {
+              "name": "literal",
+              "value": "'regular'"
+            },
+            {
+              "name": "literal",
+              "value": "'dense'"
+            }
+          ]
+        },
+        "description": "The variant to use. Defaults to `regular`",
+        "defaultValue": {
+          "value": "'regular'",
+          "computed": false
+        }
+      },
+      "classNameRoot": {
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        },
+        "required": false
+      },
+      "setProps": {
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        },
+        "required": false
       }
     }
   },
