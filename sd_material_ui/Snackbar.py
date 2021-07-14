@@ -18,7 +18,7 @@ Keyword arguments:
 
 - action (string; default ''):
     The text of the action button inside the snackbar. If empty, no
-    action button will be added Note that this does not work with
+    action button will be added  Note that this does not work with
     children.
 
 - actionStyles (dict; optional):
@@ -26,9 +26,9 @@ Keyword arguments:
 
 - autoHideDuration (number; default 3000):
     The number of milliseconds to wait before automatically
-    dismissing. If no value is specified the snackbar will dismiss
+    dismissing. If no value is specified  the snackbar will dismiss
     normally. If a value is provided the snackbar can still be
-    dismissed normally. If a snackbar is dismissed before the timer
+    dismissed  normally. If a snackbar is dismissed before the timer
     expires, the timer will be cleared.
 
 - className (string; default ''):
@@ -36,11 +36,11 @@ Keyword arguments:
 
 - classes (dict; optional):
     The classes to be applied to this component. This keys in this
-    object must be valid CSS rule names, and the values must be
-    strings for the classnames to be assigned to each rule name Valid
-    rule names are:   root   anchorOriginTopCenter
-    anchorOriginBottomCenter   anchorOriginTopRight
-    anchorOriginBottomRight   anchorOriginTopLeft
+    object must be valid CSS rule  names, and the values must be
+    strings for the classnames to be assigned to each rule name  Valid
+    rule names are:    root    anchorOriginTopCenter
+    anchorOriginBottomCenter    anchorOriginTopRight
+    anchorOriginBottomRight    anchorOriginTopLeft
     anchorOriginBottomLeft.
 
     `classes` is a dict with keys:
@@ -60,10 +60,10 @@ Keyword arguments:
     - anchorOriginBottomLeft (string; optional)
 
 - message (a list of or a singular dash component, string or number; default ''):
-    The message to be displayed. (Note: If the message is an element
-    or array, and the Snackbar may re-render while it is still open,
+    The message to be displayed.  (Note: If the message is an element
+    or array, and the Snackbar may re-render while it is  still open,
     ensure that the same object remains as the message property if you
-    want to avoid the Snackbar hiding and showing again). Note that
+    want to avoid  the Snackbar hiding and showing again). Note that
     this does not work with children.
 
 - n_clicks (number; default 0):

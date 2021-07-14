@@ -17,19 +17,19 @@ Keyword arguments:
 
 - anchor (string; default "left"):
     Controls where the drawer appears. Must be one of \"top\",
-    \"bottom\", \"left\", or \"right\" Defaults to \"left\".
+    \"bottom\", \"left\", or \"right\"  Defaults to \"left\".
 
 - className (string; default ''):
     CSS class name of the root element.
 
 - classes (dict; optional):
     The classes to be applied to this component. This keys in this
-    object must be valid CSS rule names, and the values must be
-    strings for the classnames to be assigned to each rule name Valid
-    rule names are:   root   docked   paper   paperAnchorLeft
-    paperAnchorRight   paperAnchorTop   paperAnchorBottom
-    paperAnchorDockedLeft   paperAnchorDockedTop
-    paperAnchorDockedRight   paperAnchorDockedBottom   modal.
+    object must be valid CSS rule  names, and the values must be
+    strings for the classnames to be assigned to each rule name  Valid
+    rule names are:    root    docked    paper    paperAnchorLeft
+    paperAnchorRight    paperAnchorTop    paperAnchorBottom
+    paperAnchorDockedLeft    paperAnchorDockedTop
+    paperAnchorDockedRight    paperAnchorDockedBottom    modal.
 
     `classes` is a dict with keys:
 
@@ -58,9 +58,9 @@ Keyword arguments:
     - modal (string; optional)
 
 - open (boolean; default False):
-    Is the drawer open?  IMPORTANT: When using this component in Dash,
-    a listener must be set up (either as state or an input) for this
-    component's props.open value in order to achieve the desired
+    Is the drawer open?    IMPORTANT: When using this component in
+    Dash, a listener must be set up (either as state or  an input) for
+    this component's props.open value in order to achieve the desired
     behavior.
 
 - variant (string; default "persistent"):

@@ -14,10 +14,10 @@ Keyword arguments:
 
 - classes (dict; optional):
     The classes to be applied to this component. This keys in this
-    object must be valid CSS rule names, and the values must be
-    strings for the classnames to be assigned to each rule name Valid
-    rule names are:   root   colorPrimary   colorInherit   gutters
-    inset   sticky.
+    object must be valid CSS rule  names, and the values must be
+    strings for the classnames to be assigned to each rule name  Valid
+    rule names are:    root    colorPrimary    colorInherit    gutters
+    inset    sticky.
 
     `classes` is a dict with keys:
 

@@ -26,12 +26,12 @@ Keyword arguments:
 
 - classes (dict; optional):
     The classes to be applied to this component. This keys in this
-    object must be valid CSS rule names, and the values must be
-    strings for the classnames to be assigned to each rule name Valid
-    rule names are:   root   container   paper   scrollPaper
-    scrollBody   paperScrollPaper   paperScrollBody   paperWidthFalse
-    paperWidthXs   paperWidthSm   paperWidthMd   paperWidthLg
-    paperWidthXl   paperFullWidth   paperFullScreen.
+    object must be valid CSS rule  names, and the values must be
+    strings for the classnames to be assigned to each rule name  Valid
+    rule names are:    root    container    paper    scrollPaper
+    scrollBody    paperScrollPaper    paperScrollBody
+    paperWidthFalse    paperWidthXs    paperWidthSm    paperWidthMd
+    paperWidthLg    paperWidthXl    paperFullWidth    paperFullScreen.
 
     `classes` is a dict with keys:
 
@@ -72,11 +72,11 @@ Keyword arguments:
     The className to add to the content container.
 
 - open (boolean; default False):
-    Is the dialog open?  IMPORTANT: When using this component in Dash,
-    a listener must be set up (either as state or an input) for this
-    component's props.open value in order to achieve the desired
-    behavior. If such a listener is not in place, the non-modal
-    version of this dialog will contaminate other callbacks in the
+    Is the dialog open?    IMPORTANT: When using this component in
+    Dash, a listener must be set up (either as state or  an input) for
+    this component's props.open value in order to achieve the desired
+    behavior.  If such a listener is not in place, the non-modal
+    version of this dialog will contaminate  other callbacks in the
     browser.
 
 - scroll (dict; default 'body'):

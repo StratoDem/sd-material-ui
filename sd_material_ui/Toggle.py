@@ -17,11 +17,11 @@ Keyword arguments:
 
 - classes (dict; optional):
     The classes to be applied to this component. This keys in this
-    object must be valid CSS rule names, and the values must be
-    strings for the classnames to be assigned to each rule name Valid
-    rule names are:   root   edgeStart   edgeEnd   switchBase
-    colorPrimary   colorSecondary   sizeSmall   checked   disabled
-    input   thumb   tract.
+    object must be valid CSS rule  names, and the values must be
+    strings for the classnames to be assigned to each rule name  Valid
+    rule names are:    root    edgeStart    edgeEnd    switchBase
+    colorPrimary    colorSecondary    sizeSmall    checked    disabled
+    input    thumb    tract.
 
     `classes` is a dict with keys:
 
@@ -64,8 +64,8 @@ Keyword arguments:
 
 - secondaryLabel (string; default ''):
     A second label for the toggle. If this is used, the labelPlacement
-    value is ignored, and the secondaryLabel will be positioned to the
-    right of the toggle, and the first label to the left.
+    value is ignored, and the  secondaryLabel will be positioned to
+    the right of the toggle, and the first label to the left.
 
 - toggled (boolean; required):
     Whether toggle is on (True) or off (False)."""

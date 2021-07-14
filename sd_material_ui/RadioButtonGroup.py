@@ -17,9 +17,9 @@ Keyword arguments:
 
 - classes (dict; optional):
     The classes to be applied to each radio button. This keys in this
-    object must be valid CSS rule names, and the values must be
-    strings for the classnames to be assigned to each rule name Valid
-    rule names are:   root   checked   disabled   colorPrimary
+    object must be valid CSS  rule names, and the values must be
+    strings for the classnames to be assigned to each rule name  Valid
+    rule names are:    root    checked    disabled    colorPrimary
     colorSecondary.
 
     `classes` is a dict with keys:
@@ -39,7 +39,7 @@ Keyword arguments:
 
 - options (list; optional):
     used to create the RadioButtons to populate the RadioButtonGroup
-    with. A Dash user passes in a list of dict items, each one having
+    with. A Dash user passes in a  list of dict items, each one having
     at least a `value` and `label`. If that value is selected,
     valueSelected will be updated.
 

@@ -23,7 +23,7 @@ Keyword arguments:
     view.
 
 - style (dict; optional):
-    The styles passed to the transition element An style object (even
+    The styles passed to the transition element  An style object (even
     if empty) must be given to the transition element or it will fail
     silently. See:
     https://github.com/mui-org/material-ui/issues/15472.

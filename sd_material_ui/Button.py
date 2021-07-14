@@ -10,12 +10,12 @@ class Button(Component):
 Keyword arguments:
 
 - children (a list of or a singular dash component, string or number; optional):
-    This is what will be displayed inside the button. If a label is
-    specified, the text within the label prop will be displayed.
-    Otherwise, the component will expect children which will then be
-    displayed. (In our example, we are nesting an `<input
-    type=\"file\" />` and a `span` that acts as our label to be
-    displayed.) This only applies to flat and disableShadow buttons.
+    This is what will be displayed inside the button.  If a label is
+    specified, the text within the label prop will  be displayed.
+    Otherwise, the component will expect children  which will then be
+    displayed. (In our example,  we are nesting an `<input
+    type=\"file\" />` and a `span`  that acts as our label to be
+    displayed.) This only  applies to flat and disableShadow buttons.
 
 - id (string; optional):
     Element ID.
@@ -25,19 +25,19 @@ Keyword arguments:
 
 - classes (dict; optional):
     The classes to be applied to this component. This keys in this
-    object must be valid CSS rule names, and the values must be
-    strings for the classnames to be assigned to each rule name Valid
-    rule names are:   root   label   text   textPrimary
-    textSecondary   outline   outlinedPrimary   outlinedSecondary
-    contained   containedPrimary   containedSecondary
-    disableElevation   focusVisible   disabled   colorInherit
-    textSizeSmall   textSizeLarge   outlinedSizeSmall
-    outlinedSizeLarge   containedSizeSmall   containedSizeLarge
-    sizeSmall   sizeLarge   fullWidth   startIcon   endIcon
-    iconSizeSmall   iconSizeMedium   iconSizeLarge    OR    root
-    edgeStart   edgeEnd   colorInherit   colorPrimary   colorSecondary
-    disabled   sizeSmall   label  See
-    https://material-ui.com/api/button/#css and
+    object must be valid CSS rule  names, and the values must be
+    strings for the classnames to be assigned to each rule name  Valid
+    rule names are:    root    label    text    textPrimary
+    textSecondary    outline    outlinedPrimary    outlinedSecondary
+    contained    containedPrimary    containedSecondary
+    disableElevation    focusVisible    disabled    colorInherit
+    textSizeSmall    textSizeLarge    outlinedSizeSmall
+    outlinedSizeLarge    containedSizeSmall    containedSizeLarge
+    sizeSmall    sizeLarge    fullWidth    startIcon    endIcon
+    iconSizeSmall    iconSizeMedium    iconSizeLarge      OR      root
+    edgeStart    edgeEnd    colorInherit    colorPrimary
+    colorSecondary    disabled    sizeSmall    label    See
+    https://material-ui.com/api/button/#css  and
     https://material-ui.com/api/icon-button/#css.
 
     `classes` is a dict with keys:

@@ -20,9 +20,9 @@ Keyword arguments:
 
 - classes (dict; optional):
     The classes to be applied to this component. The keys in this
-    object must be valid CSS rule names, and the values must be
-    strings for the classnames to be assigned to each rule name Valid
-    rule names are:   root   rounded   expanded   disabled.
+    object must be valid CSS rule  names, and the values must be
+    strings for the classnames to be assigned to each rule name  Valid
+    rule names are:    root    rounded    expanded    disabled.
 
     `classes` is a dict with keys:
 
@@ -39,10 +39,10 @@ Keyword arguments:
 
 - detailClasses (dict; optional):
     The classes to be applied to the details component (the element
-    containing the accordion's children). The keys in this object must
-    be valid CSS rule names, and the values must be strings for the
-    classnames to be assigned to each rule name Valid rule names are:
-    root.
+    containing the accordion's  children). The keys in this object
+    must be valid CSS rule names, and the values must be strings  for
+    the classnames to be assigned to each rule name  Valid rule names
+    are:    root.
 
     `detailClasses` is a dict with keys:
 
@@ -53,7 +53,7 @@ Keyword arguments:
 
 - expanded (boolean; default False):
     If True, expands the accordion, otherwise collapse it. Setting
-    this prop enables control over the accordion.
+    this prop enables control  over the accordion.
 
 - label (string; default ''):
     The text displayed at the top of the accordion, regardless of
@@ -64,10 +64,10 @@ Keyword arguments:
 
 - summaryClasses (dict; optional):
     The classes to be applied to the summary component (the element
-    containing the accordion's label). The keys in this object must be
-    valid CSS rule names, and the values must be strings for the
-    classnames to be assigned to each rule name Valid rule names are:
-    root   expanded   focused   disabled   content   expandIcon.
+    containing the accordion's  label). The keys in this object must
+    be valid CSS rule names, and the values must be strings  for the
+    classnames to be assigned to each rule name  Valid rule names are:
+    root    expanded    focused    disabled    content    expandIcon.
 
     `summaryClasses` is a dict with keys:
 

@@ -23,7 +23,7 @@ Keyword arguments:
     Type of date or time picker, \"time\", \"date\", or
     \"date-dialog\".
 
-- value (string; default "01-01-2020"):
+- value (string; default "2021/01/01"):
     Representation of datetime, like 2020-12-25T13:11:00.000Z."""
     @_explicitize_args
     def __init__(self, format=Component.UNDEFINED, id=Component.REQUIRED, label=Component.UNDEFINED, type=Component.UNDEFINED, value=Component.UNDEFINED, **kwargs):

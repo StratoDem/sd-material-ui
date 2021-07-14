@@ -27,9 +27,10 @@ Keyword arguments:
 
 - classes (dict; optional):
     The classes to be applied to this component. This keys in this
-    object must be valid CSS rule names, and the values must be
-    strings for the classnames to be assigned to each rule name Valid
-    rule names are:   root   horizontal   vertical   alternativeLabel.
+    object must be valid CSS rule  names, and the values must be
+    strings for the classnames to be assigned to each rule name  Valid
+    rule names are:    root    horizontal    vertical
+    alternativeLabel.
 
     `classes` is a dict with keys:
 
@@ -64,7 +65,7 @@ Keyword arguments:
 
 - stepLabels (list of strings; default ['Step 1', 'Step 2', 'Step 3']):
     The text labels that will be shown next to each step number. The
-    length of this array must match the total number of steps.
+    length of this array must  match the total number of steps.
 
 - style (dict; optional):
     Override the inline-style of the root element."""

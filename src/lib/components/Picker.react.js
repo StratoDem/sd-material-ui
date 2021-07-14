@@ -32,7 +32,7 @@ type State = {
 
 const defaultProps = {
   label: "",
-  value: "01-01-2020",
+  value: "2021/01/01",
   type: "date",
   format: "",
   setProps: () => {},
@@ -50,7 +50,10 @@ export default class Picker extends Component<Props, State> {
   }
 
   handleChange = (event) => {
-    const selectedDate = event
+    let selectedDate = event
+    if (selectedDate === null)
+      selectedDate = defaultProps.value;
+
     this.setState({value: selectedDate });
 
     if (typeof this.props.setProps === 'function') {
@@ -64,7 +67,7 @@ export default class Picker extends Component<Props, State> {
 
     let _format;
     if(format === "") {
-      _format = "yyyy-MM-dd"
+      _format = "yyyy/MM/dd"
     } else {
       _format = format
     }
