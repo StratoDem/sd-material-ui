@@ -14,7 +14,7 @@ Keyword arguments:
 
 - format (string; default ""):
     Format to be used in displaying date. Some possibilities:
-    yyyy-MM-dd MM/dd/yyyy MM-dd.
+    yyyy/MM/dd MM/dd/yyyy MM/dd.
 
 - label (string; default ""):
     Label for the date or time picker.

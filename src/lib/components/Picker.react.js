@@ -10,9 +10,9 @@ import {
 
 type Props = {
   /** Format to be used in displaying date. Some possibilities:
-   * yyyy-MM-dd
+   * yyyy/MM/dd
    * MM/dd/yyyy
-   * MM-dd */
+   * MM/dd */
   format?: string,
   /** Picker ID */
   id: string,

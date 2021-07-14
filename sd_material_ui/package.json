@@ -1,6 +1,6 @@
 {
   "name": "sd-material-ui",
-  "version": "4.5.0",
+  "version": "4.5.1",
   "description": "material-ui components for Dash",
   "main": "build/index.js",
   "author": "Michael Clawar, Eric Linden, Sreeja Keesara, Danny Kaminsky tech@stratodem.com",
@@ -34,7 +34,6 @@
     "lodash": "^4.17.20",
     "lodash.merge": "^4.6.2",
     "material-ui": "^0.20.2",
-    "moment": "^2.29.1",
     "react-transition-group": "^4.4.1"
   },
   "devDependencies": {
