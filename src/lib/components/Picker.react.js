@@ -9,7 +9,8 @@ import {
 } from '@material-ui/pickers';
 
 type Props = {
-  /** Format to be used in displaying date. Some possibilities:
+  /** Format to be used in displaying date. The slashes between values are important, because they tell JavaScript
+   * not to update timezones automatically. Some possibilities:
    * yyyy/MM/dd
    * MM/dd/yyyy
    * MM/dd */
@@ -20,7 +21,8 @@ type Props = {
   label?: string,
   /** Type of date or time picker, "time", "date", or "date-dialog" */
   type?: string,
-  /** Representation of datetime, like 2020-12-25T13:11:00.000Z */
+  /** Representation of datetime, like 2020/12/25. The slashes between values are important, because they tell
+   * JavaScript not to update timezones automatically.  */
   value?: string,
   /** Dash callback to update props on the server */
   setProps?: () => void,

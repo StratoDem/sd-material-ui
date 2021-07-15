@@ -13,8 +13,10 @@ Keyword arguments:
     Picker ID.
 
 - format (string; default ""):
-    Format to be used in displaying date. Some possibilities:
-    yyyy/MM/dd MM/dd/yyyy MM/dd.
+    Format to be used in displaying date. The slashes between values
+    are important, because they tell JavaScript not to update
+    timezones automatically. Some possibilities: yyyy/MM/dd MM/dd/yyyy
+    MM/dd.
 
 - label (string; default ""):
     Label for the date or time picker.
@@ -24,7 +26,9 @@ Keyword arguments:
     \"date-dialog\".
 
 - value (string; default "2021/01/01"):
-    Representation of datetime, like 2020-12-25T13:11:00.000Z."""
+    Representation of datetime, like 2020/12/25. The slashes between
+    values are important, because they tell JavaScript not to update
+    timezones automatically."""
     @_explicitize_args
     def __init__(self, format=Component.UNDEFINED, id=Component.REQUIRED, label=Component.UNDEFINED, type=Component.UNDEFINED, value=Component.UNDEFINED, **kwargs):
         self._prop_names = ['id', 'format', 'label', 'type', 'value']
