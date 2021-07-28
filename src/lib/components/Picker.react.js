@@ -52,14 +52,12 @@ export default class Picker extends Component<Props, State> {
   }
 
   handleChange = (event) => {
-    let selectedDate = event
-    if (selectedDate === null)
-      selectedDate = defaultProps.value;
+    if (event !== null) {
+      this.setState({value: event});
 
-    this.setState({value: selectedDate });
-
-    if (typeof this.props.setProps === 'function') {
-      this.props.setProps({value: selectedDate});
+      if (typeof this.props.setProps === 'function') {
+        this.props.setProps({value: event});
+      }
     }
   };
 
