@@ -20,10 +20,10 @@ Keyword arguments:
 
 - classes (dict; optional):
     The classes to be applied to this component. This keys in this
-    object must be valid CSS rule names, and the values must be
-    strings for the classnames to be assigned to each rule name Valid
-    rule names are:   root   textColorPrimary   textColorSecondary
-    textColorInherit   selected   disabled   fullWidth   wrapped
+    object must be valid CSS rule  names, and the values must be
+    strings for the classnames to be assigned to each rule name  Valid
+    rule names are:    root    textColorPrimary    textColorSecondary
+    textColorInherit    selected    disabled    fullWidth    wrapped
     wrapper.
 
     `classes` is a dict with keys:
@@ -50,8 +50,8 @@ Keyword arguments:
     Override the inline-styles of the root element.
 
 - tabPropsArray (list; optional):
-    Array of tab properties. Available props: classes disabled
-    disableRipple disableFocusRipple icon label value wrapped.
+    Array of tab properties. Available props:  classes  disabled
+    disableRipple  disableFocusRipple  icon  label  value  wrapped.
 
 - value (bool | number | str | dict | list; default False):
     Makes Tabs controllable and selects the tab whose value prop

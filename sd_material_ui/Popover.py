@@ -14,7 +14,7 @@ Keyword arguments:
 
 - anchorOrigin (dict; default {vertical: 'bottom', horizontal: 'left'}):
     This is the point on the anchor where the popover's targetOrigin
-    will attach to. Options: vertical: [top, center, bottom]
+    will attach to.  Options: vertical: [top, center, bottom]
     horizontal: [left, middle, right].
 
     `anchorOrigin` is a dict with keys:
@@ -49,9 +49,9 @@ Keyword arguments:
 
 - classes (dict; optional):
     The classes to be applied to this component. This keys in this
-    object must be valid CSS rule names, and the values must be
-    strings for the classnames to be assigned to each rule name Valid
-    rule names are:   root   paper.
+    object must be valid CSS rule  names, and the values must be
+    strings for the classnames to be assigned to each rule name  Valid
+    rule names are:    root    paper.
 
     `classes` is a dict with keys:
 

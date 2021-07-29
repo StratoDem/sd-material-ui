@@ -9,10 +9,11 @@ import {
 } from '@material-ui/pickers';
 
 type Props = {
-  /** Format to be used in displaying date. Some possibilities:
-   * yyyy-MM-dd
+  /** Format to be used in displaying date. The slashes between values are important, because they tell JavaScript
+   * not to update timezones automatically. Some possibilities:
+   * yyyy/MM/dd
    * MM/dd/yyyy
-   * MM-dd */
+   * MM/dd */
   format?: string,
   /** Picker ID */
   id: string,
@@ -20,7 +21,8 @@ type Props = {
   label?: string,
   /** Type of date or time picker, "time", "date", or "date-dialog" */
   type?: string,
-  /** Representation of datetime, like 2020-12-25T13:11:00.000Z */
+  /** Representation of datetime, like 2020/12/25. The slashes between values are important, because they tell
+   * JavaScript not to update timezones automatically.  */
   value?: string,
   /** Dash callback to update props on the server */
   setProps?: () => void,
@@ -32,7 +34,7 @@ type State = {
 
 const defaultProps = {
   label: "",
-  value: "01-01-2020",
+  value: "2021/01/01",
   type: "date",
   format: "",
   setProps: () => {},
@@ -50,11 +52,12 @@ export default class Picker extends Component<Props, State> {
   }
 
   handleChange = (event) => {
-    const selectedDate = event
-    this.setState({value: selectedDate });
+    if (event !== null) {
+      this.setState({value: event});
 
-    if (typeof this.props.setProps === 'function') {
-      this.props.setProps({value: selectedDate});
+      if (typeof this.props.setProps === 'function') {
+        this.props.setProps({value: event});
+      }
     }
   };
 
@@ -64,7 +67,7 @@ export default class Picker extends Component<Props, State> {
 
     let _format;
     if(format === "") {
-      _format = "yyyy-MM-dd"
+      _format = "yyyy/MM/dd"
     } else {
       _format = format
     }

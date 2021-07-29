@@ -17,11 +17,11 @@ Keyword arguments:
 
 - classes (dict; optional):
     The classes to be applied to this component. This keys in this
-    object must be valid CSS rule names, and the values must be
-    strings for the classnames to be assigned to each rule name Valid
-    rule names are:   tooltip   tooltipArrow   arrow
-    tooltipPlacementLeft   tooltipPlacementRight   tooltipPlacementTop
-    tooltipPlacementBottom.
+    object must be valid CSS rule  names, and the values must be
+    strings for the classnames to be assigned to each rule name  Valid
+    rule names are:    tooltip    tooltipArrow    arrow
+    tooltipPlacementLeft    tooltipPlacementRight
+    tooltipPlacementTop    tooltipPlacementBottom.
 
     `classes` is a dict with keys:
 

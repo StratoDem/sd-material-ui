@@ -17,14 +17,14 @@ Keyword arguments:
 
 - classes (dict; optional):
     The classes to be applied to this component. This keys in this
-    object must be valid CSS rule names, and the values must be
-    strings for the classnames to be assigned to each rule name Valid
-    rule names are:   root   fullWidth   focus   tag   tagSizeSmall
-    hasPopupIcon   hasClearIcon   inputRoot   input   inputFocused
-    endAdornment   clearIndicator   clearIndicatorDirty
-    popupIndicator   popupIndicatorOpen   popper   popperDisablePortal
-    paper   listbox   loading   noOptions   option   groupLabel
-    groupUl.
+    object must be valid CSS rule  names, and the values must be
+    strings for the classnames to be assigned to each rule name  Valid
+    rule names are:    root    fullWidth    focus    tag
+    tagSizeSmall    hasPopupIcon    hasClearIcon    inputRoot    input
+    inputFocused    endAdornment    clearIndicator
+    clearIndicatorDirty    popupIndicator    popupIndicatorOpen
+    popper    popperDisablePortal    paper    listbox    loading
+    noOptions    option    groupLabel    groupUl.
 
     `classes` is a dict with keys:
 
@@ -80,12 +80,12 @@ Keyword arguments:
     Dash callback delay in ms - default is 500 ms.
 
 - dataSource (list of boolean | number | string | dict | lists; optional):
-    Array of strings or nodes used to populate the list Alternatively,
-    an Array of Objects with a structure like {label: 'My label to
-    render', value: 'My value to ship on match'}.
+    Array of strings or nodes used to populate the list
+    Alternatively, an Array of Objects with a structure like  {label:
+    'My label to render', value: 'My value to ship on match'}.
 
 - filter (default "defaultFilter"):
-    String name for filter to be applied to user input. will later be
+    String name for filter to be applied to user input.  will later be
     mapped to function.
 
 - hintText (a list of or a singular dash component, string or number; default "Search Here"):
