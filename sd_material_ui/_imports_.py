@@ -14,6 +14,9 @@ from .DropDownMenu import DropDownMenu
 from .FadeTransition import FadeTransition
 from .FontIcon import FontIcon
 from .GrowTransition import GrowTransition
+from .LinearBuffer import LinearBuffer
+from .LinearDeterminate import LinearDeterminate
+from .LinearIndeterminate import LinearIndeterminate
 from .Pagination import Pagination
 from .Paper import Paper
 from .Picker import Picker
@@ -46,6 +49,9 @@ __all__ = [
     "FadeTransition",
     "FontIcon",
     "GrowTransition",
+    "LinearBuffer",
+    "LinearDeterminate",
+    "LinearIndeterminate",
     "Pagination",
     "Paper",
     "Picker",

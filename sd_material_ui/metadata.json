@@ -4540,6 +4540,424 @@
       }
     }
   },
+  "src/lib/components/LinearBuffer.react.js": {
+    "description": "",
+    "displayName": "LinearBuffer",
+    "methods": [
+      {
+        "name": "UNSAFE_componentWillReceiveProps",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "nextProps",
+            "type": {
+              "name": "signature",
+              "type": "object",
+              "raw": "{\n  /** Override the progress's color */\n  color?: string,\n  /** LinearDeterminate component ID */\n  id: string,\n  /** The value of the progress buffer. Value between 0 and 100. */\n  buffer: number,\n  /** The value of the progress indicator. Value between 0 and 100. */\n  value: number,\n  /** Dash callback to update props on the server */\n  setProps?: (props: { modal?: boolean, open?: boolean }) => void,\n}",
+              "signature": {
+                "properties": [
+                  {
+                    "key": "color",
+                    "value": {
+                      "name": "string",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "id",
+                    "value": {
+                      "name": "string",
+                      "required": true
+                    }
+                  },
+                  {
+                    "key": "buffer",
+                    "value": {
+                      "name": "number",
+                      "required": true
+                    }
+                  },
+                  {
+                    "key": "value",
+                    "value": {
+                      "name": "number",
+                      "required": true
+                    }
+                  },
+                  {
+                    "key": "setProps",
+                    "value": {
+                      "name": "signature",
+                      "type": "function",
+                      "raw": "(props: { modal?: boolean, open?: boolean }) => void",
+                      "signature": {
+                        "arguments": [
+                          {
+                            "name": "props",
+                            "type": {
+                              "name": "signature",
+                              "type": "object",
+                              "raw": "{ modal?: boolean, open?: boolean }",
+                              "signature": {
+                                "properties": [
+                                  {
+                                    "key": "modal",
+                                    "value": {
+                                      "name": "boolean",
+                                      "required": false
+                                    }
+                                  },
+                                  {
+                                    "key": "open",
+                                    "value": {
+                                      "name": "boolean",
+                                      "required": false
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          }
+                        ],
+                        "return": {
+                          "name": "void"
+                        }
+                      },
+                      "required": false
+                    }
+                  }
+                ]
+              },
+              "alias": "Props"
+            }
+          },
+          {
+            "name": "nextContent",
+            "type": {
+              "name": "unknown"
+            }
+          }
+        ],
+        "returns": {
+          "type": {
+            "name": "void"
+          }
+        }
+      }
+    ],
+    "props": {
+      "color": {
+        "required": false,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "Override the progress's color",
+        "defaultValue": {
+          "value": "'inherit'",
+          "computed": false
+        }
+      },
+      "id": {
+        "required": true,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "LinearDeterminate component ID"
+      },
+      "buffer": {
+        "required": true,
+        "flowType": {
+          "name": "number"
+        },
+        "description": "The value of the progress buffer. Value between 0 and 100."
+      },
+      "value": {
+        "required": true,
+        "flowType": {
+          "name": "number"
+        },
+        "description": "The value of the progress indicator. Value between 0 and 100."
+      },
+      "setProps": {
+        "required": false,
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "(props: { modal?: boolean, open?: boolean }) => void",
+          "signature": {
+            "arguments": [
+              {
+                "name": "props",
+                "type": {
+                  "name": "signature",
+                  "type": "object",
+                  "raw": "{ modal?: boolean, open?: boolean }",
+                  "signature": {
+                    "properties": [
+                      {
+                        "key": "modal",
+                        "value": {
+                          "name": "boolean",
+                          "required": false
+                        }
+                      },
+                      {
+                        "key": "open",
+                        "value": {
+                          "name": "boolean",
+                          "required": false
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "return": {
+              "name": "void"
+            }
+          }
+        },
+        "description": "Dash callback to update props on the server",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      }
+    }
+  },
+  "src/lib/components/LinearDeterminate.react.js": {
+    "description": "",
+    "displayName": "LinearDeterminate",
+    "methods": [
+      {
+        "name": "UNSAFE_componentWillReceiveProps",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "nextProps",
+            "type": {
+              "name": "signature",
+              "type": "object",
+              "raw": "{\n  /** Override the progress's color */\n  color?: string,\n  /** LinearDeterminate component ID */\n  id: string,\n  /** The value of the progress indicator for the determinate and buffer variants. Value between 0 and 100. */\n  value: number,\n  /** The variant to use. Options are \"determinate\" or \"progress\" to have no label, or show the label respectively.*/\n  variant?: 'determinate' | 'progress',\n  /** Dash callback to update props on the server */\n  setProps?: (props: { modal?: boolean, open?: boolean }) => void,\n}",
+              "signature": {
+                "properties": [
+                  {
+                    "key": "color",
+                    "value": {
+                      "name": "string",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "id",
+                    "value": {
+                      "name": "string",
+                      "required": true
+                    }
+                  },
+                  {
+                    "key": "value",
+                    "value": {
+                      "name": "number",
+                      "required": true
+                    }
+                  },
+                  {
+                    "key": "variant",
+                    "value": {
+                      "name": "union",
+                      "raw": "'determinate' | 'progress'",
+                      "elements": [
+                        {
+                          "name": "literal",
+                          "value": "'determinate'"
+                        },
+                        {
+                          "name": "literal",
+                          "value": "'progress'"
+                        }
+                      ],
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "setProps",
+                    "value": {
+                      "name": "signature",
+                      "type": "function",
+                      "raw": "(props: { modal?: boolean, open?: boolean }) => void",
+                      "signature": {
+                        "arguments": [
+                          {
+                            "name": "props",
+                            "type": {
+                              "name": "signature",
+                              "type": "object",
+                              "raw": "{ modal?: boolean, open?: boolean }",
+                              "signature": {
+                                "properties": [
+                                  {
+                                    "key": "modal",
+                                    "value": {
+                                      "name": "boolean",
+                                      "required": false
+                                    }
+                                  },
+                                  {
+                                    "key": "open",
+                                    "value": {
+                                      "name": "boolean",
+                                      "required": false
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          }
+                        ],
+                        "return": {
+                          "name": "void"
+                        }
+                      },
+                      "required": false
+                    }
+                  }
+                ]
+              },
+              "alias": "Props"
+            }
+          },
+          {
+            "name": "nextContent",
+            "type": {
+              "name": "unknown"
+            }
+          }
+        ],
+        "returns": {
+          "type": {
+            "name": "void"
+          }
+        }
+      }
+    ],
+    "props": {
+      "color": {
+        "required": false,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "Override the progress's color",
+        "defaultValue": {
+          "value": "'inherit'",
+          "computed": false
+        }
+      },
+      "id": {
+        "required": true,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "LinearDeterminate component ID"
+      },
+      "value": {
+        "required": true,
+        "flowType": {
+          "name": "number"
+        },
+        "description": "The value of the progress indicator for the determinate and buffer variants. Value between 0 and 100."
+      },
+      "variant": {
+        "required": false,
+        "flowType": {
+          "name": "union",
+          "raw": "'determinate' | 'progress'",
+          "elements": [
+            {
+              "name": "literal",
+              "value": "'determinate'"
+            },
+            {
+              "name": "literal",
+              "value": "'progress'"
+            }
+          ]
+        },
+        "description": "The variant to use. Options are \"determinate\" or \"progress\" to have no label, or show the label respectively.",
+        "defaultValue": {
+          "value": "'determinate'",
+          "computed": false
+        }
+      },
+      "setProps": {
+        "required": false,
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "(props: { modal?: boolean, open?: boolean }) => void",
+          "signature": {
+            "arguments": [
+              {
+                "name": "props",
+                "type": {
+                  "name": "signature",
+                  "type": "object",
+                  "raw": "{ modal?: boolean, open?: boolean }",
+                  "signature": {
+                    "properties": [
+                      {
+                        "key": "modal",
+                        "value": {
+                          "name": "boolean",
+                          "required": false
+                        }
+                      },
+                      {
+                        "key": "open",
+                        "value": {
+                          "name": "boolean",
+                          "required": false
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "return": {
+              "name": "void"
+            }
+          }
+        },
+        "description": "Dash callback to update props on the server",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      }
+    }
+  },
+  "src/lib/components/LinearIndeterminate.react.js": {
+    "description": "",
+    "displayName": "LinearIndeterminate",
+    "methods": [],
+    "props": {
+      "color": {
+        "required": false,
+        "flowType": {
+          "name": "string"
+        },
+        "description": "Override the progress's color",
+        "defaultValue": {
+          "value": "'inherit'",
+          "computed": false
+        }
+      }
+    }
+  },
   "src/lib/components/Pagination.react.js": {
     "description": "Material UI Pagination component",
     "displayName": "Pagination",
@@ -4935,7 +5353,7 @@
         "flowType": {
           "name": "string"
         },
-        "description": "Format to be used in displaying date. The slashes between values are important, because they tell JavaScript\nnot to update timezones automatically. Some possibilities:\nyyyy/MM/dd\nMM/dd/yyyy\nMM/dd",
+        "description": "Format to be used in displaying date. The slashes between values are important, because they tell JavaScript\r\nnot to update timezones automatically. Some possibilities:\r\nyyyy/MM/dd\r\nMM/dd/yyyy\r\nMM/dd",
         "defaultValue": {
           "value": "\"\"",
           "computed": false
@@ -4975,7 +5393,7 @@
         "flowType": {
           "name": "string"
         },
-        "description": "Representation of datetime, like 2020/12/25. The slashes between values are important, because they tell\nJavaScript not to update timezones automatically.",
+        "description": "Representation of datetime, like 2020/12/25. The slashes between values are important, because they tell\r\nJavaScript not to update timezones automatically.",
         "defaultValue": {
           "value": "\"2021/01/01\"",
           "computed": false
