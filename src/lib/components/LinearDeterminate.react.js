@@ -12,15 +12,15 @@ type Props = {
   id: string,
   /** The value of the progress indicator for the determinate and buffer variants. Value between 0 and 100. */
   value: number,
-  /** The variant to use. Options are "determinate" or "progress" to have no label, or show the label respectively.*/
-  variant?: 'determinate' | 'progress',
+  /** The variant to use. Options are "label" or "no-label".*/
+  variant?: 'label' | 'no-label',
   /** Dash callback to update props on the server */
   setProps?: (props: { modal?: boolean, open?: boolean }) => void,
 };
 
 const defaultProps = {
   color: 'inherit',
-  variant: 'determinate',
+  variant: 'no-label',
   setProps: () => {},
 };
 
@@ -38,11 +38,11 @@ export default class LinearDeterminate extends Component<Props> {
   render() {
     const {color, id, variant} = this.props;
 
-    return variant === 'determinate' ? (
+    return variant === 'no-label' ? (
       <div id={id}>
         <Box sx={{width: '100%', color: color}}>
           <LinearProgress
-            color="inherit"
+            color='inherit'
             variant='determinate'
             value={this.state.value}
           />
@@ -52,7 +52,7 @@ export default class LinearDeterminate extends Component<Props> {
       <div id={id} style={{display: 'flex', alignItems: 'center'}}>
         <Box sx={{width: '100%', color: color, mr: 1}}>
           <LinearProgress
-            color="inherit"
+            color='inherit'
             variant='determinate'
             value={this.state.value}
           />

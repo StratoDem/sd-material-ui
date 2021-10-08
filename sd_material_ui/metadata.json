@@ -4741,7 +4741,7 @@
             "type": {
               "name": "signature",
               "type": "object",
-              "raw": "{\n  /** Override the progress's color */\n  color?: string,\n  /** LinearDeterminate component ID */\n  id: string,\n  /** The value of the progress indicator for the determinate and buffer variants. Value between 0 and 100. */\n  value: number,\n  /** The variant to use. Options are \"determinate\" or \"progress\" to have no label, or show the label respectively.*/\n  variant?: 'determinate' | 'progress',\n  /** Dash callback to update props on the server */\n  setProps?: (props: { modal?: boolean, open?: boolean }) => void,\n}",
+              "raw": "{\n  /** Override the progress's color */\n  color?: string,\n  /** LinearDeterminate component ID */\n  id: string,\n  /** The value of the progress indicator for the determinate and buffer variants. Value between 0 and 100. */\n  value: number,\n  /** The variant to use. Options are \"label\" or \"no-label\".*/\n  variant?: 'label' | 'no-label',\n  /** Dash callback to update props on the server */\n  setProps?: (props: { modal?: boolean, open?: boolean }) => void,\n}",
               "signature": {
                 "properties": [
                   {
@@ -4769,15 +4769,15 @@
                     "key": "variant",
                     "value": {
                       "name": "union",
-                      "raw": "'determinate' | 'progress'",
+                      "raw": "'label' | 'no-label'",
                       "elements": [
                         {
                           "name": "literal",
-                          "value": "'determinate'"
+                          "value": "'label'"
                         },
                         {
                           "name": "literal",
-                          "value": "'progress'"
+                          "value": "'no-label'"
                         }
                       ],
                       "required": false
@@ -4874,21 +4874,21 @@
         "required": false,
         "flowType": {
           "name": "union",
-          "raw": "'determinate' | 'progress'",
+          "raw": "'label' | 'no-label'",
           "elements": [
             {
               "name": "literal",
-              "value": "'determinate'"
+              "value": "'label'"
             },
             {
               "name": "literal",
-              "value": "'progress'"
+              "value": "'no-label'"
             }
           ]
         },
-        "description": "The variant to use. Options are \"determinate\" or \"progress\" to have no label, or show the label respectively.",
+        "description": "The variant to use. Options are \"label\" or \"no-label\".",
         "defaultValue": {
-          "value": "'determinate'",
+          "value": "'no-label'",
           "computed": false
         }
       },

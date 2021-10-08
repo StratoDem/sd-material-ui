@@ -19,9 +19,8 @@ Keyword arguments:
     The value of the progress indicator for the determinate and buffer
     variants. Value between 0 and 100.
 
-- variant (default 'determinate'):
-    The variant to use. Options are \"determinate\" or \"progress\" to
-    have no label, or show the label respectively."""
+- variant (default 'no-label'):
+    The variant to use. Options are \"label\" or \"no-label\"."""
     @_explicitize_args
     def __init__(self, color=Component.UNDEFINED, id=Component.REQUIRED, value=Component.REQUIRED, variant=Component.UNDEFINED, **kwargs):
         self._prop_names = ['id', 'color', 'value', 'variant']

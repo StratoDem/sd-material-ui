@@ -464,7 +464,7 @@ app.layout = html.Div([
 
         html.P('Example of linear progress bar with label'),
         sd_material_ui.LinearDeterminate(
-            id='linear-label', color='green', value=0, variant='progress'),
+            id='linear-label', color='green', value=0, variant='label'),
 
         html.P('Example of linear buffer bar'),
         sd_material_ui.LinearBuffer(
