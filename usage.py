@@ -1,4 +1,5 @@
 import dash
+import dash_core_components
 import dash_html_components as html
 import sd_material_ui
 
@@ -451,8 +452,41 @@ app.layout = html.Div([
         html.Div([], id='pagination-page-number'),
     ], style=dict(display='flex', flexWrap='wrap')),
 
+    sd_material_ui.Divider(),
+
+    html.Div([
+        html.P('Example of linear indeterminate progress bar'),
+        sd_material_ui.LinearIndeterminate(color='blue'),
+
+        html.P('Example of linear determinate progress bar'),
+        sd_material_ui.LinearDeterminate(id='linear-progress', color='red', value=0),
+        dash_core_components.Interval(id='interval', interval=1000),
+
+        html.P('Example of linear progress bar with label'),
+        sd_material_ui.LinearDeterminate(
+            id='linear-label', color='green', value=0, variant='label'),
+
+        html.P('Example of linear buffer bar'),
+        sd_material_ui.LinearBuffer(
+            id='linear-buffer', color='purple', value=0, buffer=0),
+    ], style=dict(width=400)),
+
     final_spacer
     ], style={'listStyleType': 'none'})
+
+
+@app.callback(
+    [dash.dependencies.Output('linear-progress', 'value'),
+     dash.dependencies.Output('linear-label', 'value'),
+     dash.dependencies.Output('linear-buffer', 'value'),
+     dash.dependencies.Output('linear-buffer', 'buffer')],
+    [dash.dependencies.Input('interval', 'n_intervals')])
+def callback_update_progress(n_intervals):
+    if not n_intervals:
+        return 0, 0, 0, 0
+
+    value = n_intervals % 11
+    return value * 10, value * 10, value * 10, value * 10 + 10
 
 
 @app.callback(

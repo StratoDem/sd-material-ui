@@ -2,6 +2,16 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 4.6.0 2021-10-08
+### Adds
+- Adds three new loading components:
+  - LinearBuffer
+  - LinearDeterminate (with or without label)
+  - LinearIndeterminate
+
+### Related issues:
+- [#786](https://github.com/StratoDem/sd-material-ui/issues/786)
+
 ## 4.5.1 2021-07-14
 ### Fixes
 - Fixes picker so it no longer converts timezones automatically, which was causing it to output a date other than what was expected sometimes

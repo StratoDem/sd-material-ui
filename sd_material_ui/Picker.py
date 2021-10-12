@@ -14,9 +14,9 @@ Keyword arguments:
 
 - format (string; default ""):
     Format to be used in displaying date. The slashes between values
-    are important, because they tell JavaScript not to update
-    timezones automatically. Some possibilities: yyyy/MM/dd MM/dd/yyyy
-    MM/dd.
+    are important, because they tell JavaScript  not to update
+    timezones automatically. Some possibilities:  yyyy/MM/dd
+    MM/dd/yyyy  MM/dd.
 
 - label (string; default ""):
     Label for the date or time picker.
@@ -27,7 +27,7 @@ Keyword arguments:
 
 - value (string; default "2021/01/01"):
     Representation of datetime, like 2020/12/25. The slashes between
-    values are important, because they tell JavaScript not to update
+    values are important, because they tell  JavaScript not to update
     timezones automatically."""
     @_explicitize_args
     def __init__(self, format=Component.UNDEFINED, id=Component.REQUIRED, label=Component.UNDEFINED, type=Component.UNDEFINED, value=Component.UNDEFINED, **kwargs):
