@@ -27,7 +27,7 @@ my_app.layout = sd_material_ui.Paper([
 ])
 
 # Callback for Button
-@app.callback(
+@my_app.callback(
     dash.dependencies.Output('output', 'children'),
     [dash.dependencies.Input('input', 'n_clicks')],
     [dash.dependencies.State('input', 'n_clicks_previous')])
